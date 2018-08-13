@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 
 import { Layout } from 'components/Layout'
-import { PageLayoutText } from 'components/PageLayoutText'
+import { PageLayoutText } from 'slices/PageLayoutText'
 
 const PageTemplate = ({ data }) => (
   <>
