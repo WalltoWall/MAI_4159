@@ -8,6 +8,11 @@ const theme = {
   colors: {
     black: '#000',
     white: '#fff',
+    darkgrey1: '#283f43',
+    darkgrey2: '#646e6a',
+    yellow: '#ddd33d',
+    lightgrey1: '#e7e4db',
+    lightgrey2: '#f6f4f2',
   },
   lineHeights: {
     solid: 1,
@@ -15,8 +20,9 @@ const theme = {
     copy: 1.4,
   },
   fontFamilies: {
-    sans: 'Helvetica, sans-serif',
-    serif: '"Times New Roman", serif',
+    sans: '"Barlow Condensed", Helvetica, sans-serif',
+    serif: '"Abhaya Libre", "Times New Roman", serif',
+    sans2: '"Lato", Helvetica, sans-serif',
   },
   fontSize: s => ms(s / 2) + 'rem',
   mediaSizes: {

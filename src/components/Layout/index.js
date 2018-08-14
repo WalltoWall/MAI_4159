@@ -13,13 +13,20 @@ import { Container } from './index.styled'
 import 'modern-normalize'
 
 injectGlobal`
+  @@import url('https://fonts.googleapis.com/css?family=Abhaya+Libre|Barlow+Condensed|Lato');
+
+  * {
+    box-sizing: border-box;
+  }
+
   html {
     -webkit-font-smoothing: antialiased;
   }
 
   body {
-    background-color: ${t.c.white};
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
   }
 
   a {
