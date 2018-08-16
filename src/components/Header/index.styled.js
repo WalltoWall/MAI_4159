@@ -17,9 +17,16 @@ export const Content = styled.div`
 
 export const Title = styled.h1`
   margin: 0;
+  display: inline-block;
 `
 
 export const TitleLink = styled(Link)`
   color: inherit;
   text-decoration: none;
+`
+
+export const LogoIcon = styled.img`
+	width: 70px;
+	display: inline-block;
+	margin: 0 2rem;
 `

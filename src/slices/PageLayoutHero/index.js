@@ -12,6 +12,9 @@ const renderItem = item => (
 
 export const PageLayoutHero = ({ data }) => (
   <Container>
+    <ImageContainer>
+      <Image src={get(data, 'primary.image.url')} />
+    </ImageContainer>
     <Text
       dangerouslySetInnerHTML={{ __html: get(data, 'primary.text.html') }}
       textColor={get(data, 'primary.text_color')}
