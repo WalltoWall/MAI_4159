@@ -45,7 +45,10 @@ const render = ({ children }) => queryData => (
           name: 'description',
           content: get(queryData, 'site.siteMetadata.description'),
         },
-        { name: 'keywords', content: get(queryData, 'site.siteMetadata.keywords') },
+        {
+          name: 'keywords',
+          content: get(queryData, 'site.siteMetadata.keywords'),
+        },
         { name: 'robots', content: 'noindex' },
       ]}
     >

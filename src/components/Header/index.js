@@ -6,9 +6,7 @@ export const Header = ({ siteTitle }) => (
   <Container>
     <Content>
       <Title>
-        <TitleLink to="/">
-          {siteTitle}
-        </TitleLink>
+        <TitleLink to="/">{siteTitle}</TitleLink>
       </Title>
     </Content>
   </Container>
