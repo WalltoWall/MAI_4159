@@ -19,10 +19,6 @@ export const Text = styled.div`
   font-weight: 700;
 `
 
-export const Images = styled.div`
-	display: none;
-`
-
 export const ImageContainer = styled.div`
   width: 70%;
   -webkit-clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
@@ -38,3 +34,6 @@ export const ImageContainer = styled.div`
 
 export const Image = styled.img``
 
+export const Images = styled.div``
+
+export const Copy = styled.p``
