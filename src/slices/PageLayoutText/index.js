@@ -10,6 +10,7 @@ export const PageLayoutText = ({ data }) => (
       dangerouslySetInnerHTML={{ __html: get(data, 'primary.text.html') }}
       textColor={get(data, 'primary.text_color')}
     />
+
   </Container>
 )
 
@@ -32,3 +33,4 @@ export const query = graphql`
     }
   }
 `
+

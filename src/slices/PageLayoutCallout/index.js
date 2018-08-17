@@ -2,10 +2,13 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 
-import { Container, Text } from './index.styled'
+import { Container, Text, Headline } from './index.styled'
 
 export const PageLayoutCallout = ({ data }) => (
   <Container>
+    <Headline
+      dangerouslySetInnerHTML={{ __html: get(data, 'primary.title1.html') }}
+    />
     <Text
       dangerouslySetInnerHTML={{ __html: get(data, 'primary.text.html') }}
     />
