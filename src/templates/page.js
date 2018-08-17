@@ -5,7 +5,6 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 
 import { Layout } from 'components/Layout'
-import { PageLayoutText } from 'slices/PageLayoutText'
 import { PageLayoutHero } from 'slices/PageLayoutHero'
 import { PageLayoutCallout } from 'slices/PageLayoutCallout'
 
@@ -18,7 +17,6 @@ const PageTemplate = ({ data }) => (
         getType={x => x.__typename.replace(/^Prismic/, '')}
         list={get(data, 'prismicPage.data.layout')}
         map={{
-          PageLayoutText,
           PageLayoutHero,
           PageLayoutCallout,
         }}
@@ -43,7 +41,6 @@ export const query = graphql`
         }
       }
     }
-    ...PageLayoutText
     ...PageLayoutHero
     ...PageLayoutCallout
   }

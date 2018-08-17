@@ -4,9 +4,8 @@ import { Link } from 'gatsby'
 import t from 'theme'
 
 export const Container = styled.div`
-  background: ${t.c.darkgrey1};
+  background: ${t.c.darkgrey2};
   color: ${t.c.white};
-  margin-bottom: ${t.s(0)};
   postition: fixed;
   top: 0;
 `

@@ -4,13 +4,13 @@ import { get } from 'lodash'
 
 import { Container, Text, Headline } from './index.styled'
 
-export const PageLayoutCallout = ({ data }) => (
+export const PageLayoutCallout = ({ data , item }) => (
   <Container>
     <Headline
       dangerouslySetInnerHTML={{ __html: get(data, 'primary.title1.html') }}
     />
     <Text
-      dangerouslySetInnerHTML={{ __html: get(data, 'primary.text.html') }}
+      dangerouslySetInnerHTML={{ __html: get(item, 'items.text.html') }}
     />
   </Container>
 )

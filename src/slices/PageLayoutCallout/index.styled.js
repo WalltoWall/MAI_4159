@@ -14,13 +14,12 @@ export const Container = styled.div`
  `
 
 export const Text = styled.p`
-  color: black;
+  color: ${t.c.darkgrey2};
   font-family: ${t.ff.sans};
-  text-transform: uppercase;
-  font-weight: 700;
+  font-size: 1rem;
 `
 
-export const Headline = styled.h1`
+export const Headline = styled.div`
   color: ${t.c.darkgrey2};
   font-family: ${t.ff.sans};
   text-transform: uppercase;

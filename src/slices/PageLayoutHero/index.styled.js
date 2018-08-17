@@ -4,14 +4,12 @@ import t from 'theme'
 export const Container = styled.div`
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   margin: 0 auto;
   max-width: ${t.ms.xx};
-  min-height: 60vh;
-  padding: ${t.s(0)};
-  position: relative;
-  ${t.mq.l} {
-    min-height: 50vh;
-  }
+  height: 60vh;
+  background-color: ${t.c.darkgrey1};
+  overflow: hidden;
  `
 
 export const Text = styled.div`
@@ -22,14 +20,13 @@ export const Text = styled.div`
 `
 
 export const Images = styled.div`
-	display: none;`
+	display: none;
+`
 
 export const ImageContainer = styled.div`
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
+  width: 70%;
+  -webkit-clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
   .gatsby-image-outer-wrapper,
   .gatsby-image-wrapper {
     height: 100%;
@@ -37,6 +34,7 @@ export const ImageContainer = styled.div`
       object-position: center 20% !important;
     }
   }
- `
+`
 
 export const Image = styled.img``
+
