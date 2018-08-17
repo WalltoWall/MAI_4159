@@ -21,6 +21,9 @@ export const PageLayoutHero = ({ data }) => (
         textColor={get(data, 'primary.text_color')}
       />
     </Container>
+      <Text
+        dangerouslySetInnerHTML={{ __html: get(data, 'title1.text.html') }}
+      />
       <Images>
       {get(data, 'items', []).map(renderItem)}
     </Images>
