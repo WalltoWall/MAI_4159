@@ -4,9 +4,11 @@ import { Link } from 'gatsby'
 import t from 'theme'
 
 export const Container = styled.div`
-  background: ${t.c.black};
+  background: ${t.c.darkgrey1};
   color: ${t.c.white};
   margin-bottom: ${t.s(0)};
+  postition: fixed;
+  top: 0;
 `
 
 export const Content = styled.div`
@@ -15,12 +17,7 @@ export const Content = styled.div`
   padding: ${t.s(1)} ${t.s(0)};
 `
 
-export const Title = styled.h1`
-  margin: 0;
-  display: inline-block;
-`
-
-export const TitleLink = styled(Link)`
+export const HomeLink = styled(Link)`
   color: inherit;
   text-decoration: none;
 `

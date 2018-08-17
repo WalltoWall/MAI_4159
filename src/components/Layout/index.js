@@ -5,7 +5,6 @@ import { StaticQuery, graphql } from 'gatsby'
 import { injectGlobal } from 'emotion'
 import { get } from 'lodash'
 
-import t from 'theme'
 import { DevRefreshButton } from 'components/DevRefreshButton'
 import { Header } from 'components/Header'
 import { Container } from './index.styled'

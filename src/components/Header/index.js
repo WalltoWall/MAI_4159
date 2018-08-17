@@ -1,15 +1,16 @@
 import React from 'react'
 import logoicon from 'assets/logo-yellow.svg'
 
-import { Container, Content, Title, TitleLink, LogoIcon } from './index.styled'
+import { Container, Content, HomeLink, LogoIcon } from './index.styled'
 
-export const Header = ({ siteTitle }) => (
+ export const Header = () => (
   <Container>
     <Content>
-    	<LogoIcon src={logoicon} />
-      <Title>
-        <TitleLink to="/">{siteTitle}</TitleLink>
-      </Title>
+      <HomeLink to="/">
+        <LogoIcon src={logoicon} />
+      </HomeLink>
     </Content>
   </Container>
 )
+
+
