@@ -7,8 +7,9 @@ export const Container = styled.div`
   flex-wrap: wrap;
   margin: 0 auto;
   max-width: ${t.ms.xx};
-  height: 60vh;
+  height: 800px;
   background-color: ${t.c.darkgrey1};
+  position: relative;
   overflow: hidden;
  `
 
@@ -23,9 +24,9 @@ export const Headline = styled.div`
 `
 
 export const ImageContainer = styled.div`
-  width: 70%;
-  -webkit-clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
-  clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
+  width: 60rem;
+  -webkit-clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%);
   .gatsby-image-outer-wrapper,
   .gatsby-image-wrapper {
     height: 100%;
@@ -41,15 +42,17 @@ export const Images = styled.div`
   display: none;
 `
 
-export const Copy = styled.p`
-  color: ${p => p.textColor};
-  font-family: ${t.ff.sans};
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1rem;
-`
-
 export const HeadlineWrapper = styled.div`
   position: absolute;
   margin-left: 2rem;
+`
+
+export const Description = styled.div`
+  color: white;
+  font-family: ${t.ff.sans2};
+  font-weight: 300;
+  position: absolute;
+  right: 0;
+  margin-right: 3rem;
+  width: 350px;
 `

@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 
-import { Container, HeadlineWrapper, Headline, Images, ImageContainer, Image } from './index.styled'
+import { Container, HeadlineWrapper, Headline, Images, ImageContainer, Image, Description } from './index.styled'
 
 const renderItem = item => (
   <Container>
@@ -22,6 +22,9 @@ export const PageLayoutHero = ({ data }) => (
           dangerouslySetInnerHTML={{ __html: get(data, 'primary.title1.html') }}
         />
       </HeadlineWrapper>
+      <Description
+          dangerouslySetInnerHTML={{ __html: get(data, 'primary.description.html') }}
+        />
     </Container>
       <Images>
       {get(data, 'items', []).map(renderItem)}
@@ -41,6 +44,9 @@ export const query = graphql`
                 url
               }
               title1 {
+                html
+              }
+              description {
                 html
               }
             }

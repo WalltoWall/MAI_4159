@@ -10,7 +10,7 @@ export const PageLayoutCallout = ({ data , item }) => (
       dangerouslySetInnerHTML={{ __html: get(data, 'primary.title1.html') }}
     />
     <Text
-      dangerouslySetInnerHTML={{ __html: get(item, 'items.text.html') }}
+      dangerouslySetInnerHTML={{ __html: get(item, 'primary.items.html') }}
     />
   </Container>
 )
