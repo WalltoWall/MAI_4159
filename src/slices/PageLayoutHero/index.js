@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 
-import { Container, HeadlineWrapper, Headline, Images, ImageContainer, Image, Description } from './index.styled'
+import { Gradient, Container, HeadlineWrapper, Headline, Images, ImageContainer, Image, Description } from './index.styled'
 
 const renderItem = item => (
   <Container>
@@ -15,6 +15,7 @@ export const PageLayoutHero = ({ data }) => (
   <div>
     <Container>
       <ImageContainer>
+        <Gradient />
         <Image src={get(data, 'primary.image.url')} />
       </ImageContainer>
       <HeadlineWrapper>

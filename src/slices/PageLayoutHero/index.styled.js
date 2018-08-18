@@ -25,6 +25,7 @@ export const Headline = styled.div`
 
 export const ImageContainer = styled.div`
   width: 60rem;
+  position: relative;
   -webkit-clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%);
   clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%);
   .gatsby-image-outer-wrapper,
@@ -36,7 +37,18 @@ export const ImageContainer = styled.div`
   }
 `
 
-export const Image = styled.img``
+export const Image = styled.img`
+`
+
+export const Gradient = styled.div`
+  display: block;
+  position: absolute;
+  background-image: linear-gradient(to left, transparent 0%, black 100%);
+  margin-top: -150px;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+`
 
 export const Images = styled.div`
   display: none;
