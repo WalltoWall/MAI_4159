@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 
-import { Container, Text, Images, ImageContainer, Image, Copy } from './index.styled'
+import { Container, Text, Images, ImageContainer, Image} from './index.styled'
 
 const renderItem = item => (
   <ImageContainer>
@@ -21,11 +21,8 @@ export const PageLayoutHero = ({ data }) => (
       <Text
         dangerouslySetInnerHTML={{ __html: get(data, 'title1.text.html') }}
       />
-      <Copy
-        dangerouslySetInnerHTML={{ __html: get(data, 'body_copy.text.html') }}
-      />
       <Images>
-      {get(data, 'items', []).map(renderItem)}
+      {/* {get(data, 'items', []).map(renderItem)} */}
      </Images>
   </div>
 )
@@ -44,7 +41,7 @@ export const query = graphql`
               title1 {
                 html
               }
-              body_copy {
+              description {
                 html
               }
             }
