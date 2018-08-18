@@ -12,11 +12,14 @@ export const Container = styled.div`
   overflow: hidden;
  `
 
-export const Text = styled.div`
-  color: ${p => p.textColor};
+export const Headline = styled.div`
+  color: ${t.c.yellow};
   font-family: ${t.ff.sans};
   text-transform: uppercase;
   font-weight: 700;
+  font-size: 2.4rem;
+  letter-spacing: 2px;
+  margin: 0;
 `
 
 export const ImageContainer = styled.div`
@@ -34,6 +37,19 @@ export const ImageContainer = styled.div`
 
 export const Image = styled.img``
 
-export const Images = styled.div``
+export const Images = styled.div`
+  display: none;
+`
 
-export const Copy = styled.p``
+export const Copy = styled.p`
+  color: ${p => p.textColor};
+  font-family: ${t.ff.sans};
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+`
+
+export const HeadlineWrapper = styled.div`
+  position: absolute;
+  margin-left: 2rem;
+`
