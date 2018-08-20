@@ -23,5 +23,10 @@ export const Headline = styled.div`
   color: ${t.c.darkgrey2};
   font-family: ${t.ff.serif};
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+`
+
+
+export const Image = styled.img`
 `

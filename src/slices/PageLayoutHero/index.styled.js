@@ -26,8 +26,8 @@ export const Headline = styled.div`
 export const ImageContainer = styled.div`
   width: 60rem;
   position: relative;
-  -webkit-clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%);
-  clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
   .gatsby-image-outer-wrapper,
   .gatsby-image-wrapper {
     height: 100%;
