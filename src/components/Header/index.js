@@ -2,16 +2,16 @@ import React from 'react'
 import logoicon from 'assets/logo-yellow.svg'
 import { Desktop } from 'components/Header/Desktop'
 
-import { Container, Content, HomeLink, LogoIcon } from './index.styled'
+import { Container, Content, HomeLink, LogoIcon, NavWrapper } from './index.styled'
 
  export const Header = () => (
   <Container>
-    <Content>
+    <NavWrapper>
       <HomeLink to="/">
         <LogoIcon src={logoicon} />
-      </HomeLink>
+      </HomeLink> 
       <Desktop />
-    </Content>
+    </NavWrapper>
   </Container>
 )
 
