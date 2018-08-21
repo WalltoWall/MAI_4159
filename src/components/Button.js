@@ -1,7 +1,7 @@
 import styled from 'react-emotion'
 
 import t from '../theme'
-import Link from './Link'
+import { Link } from './Link'
 
 const Button = styled(Link)`
 	background-color: ${t.c.yellow};

@@ -4,7 +4,7 @@ import { get } from 'lodash'
 
 import { Container, Headline, Image, Description, Project, BoxBody, ProjectContainer } from './index.styled'
 import Button from 'components/Button.js'
-import Link from 'components/Link.js'
+import { Link } from 'components/Link.js'
 
 export const PageLayoutProject = ({ data }) => (
   <Container>
