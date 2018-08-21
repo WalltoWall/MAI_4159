@@ -2,29 +2,31 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 
-import { Container, Headline, Image, Description, Project, ProjectContainer, ProjectTitle } from './index.styled'
+import { Container, Headline, Image, Description, Project, ProjectContainer, ProjectTitle, ImageContainer } from './index.styled'
 import Button from 'components/Button.js'
 import { Link } from 'components/Link.js'
 
 export const PageLayoutProject = ({ data }) => (
   <Container>
-  <ProjectContainer>
-    {get(data, 'items', []).map(item => (
-      <Link to={get(item, 'project_link.url')}>
-        <Project>
-          <Image src={get(item, 'project_image1.url')} />
-          <ProjectTitle dangerouslySetInnerHTML={{ __html: get(item, 'project_title1.html')}} />
-        </Project>
-    </Link>
-  ))}
- </ProjectContainer>
-      <Headline
-        dangerouslySetInnerHTML={{ __html: get(data, 'primary.title1.html') }}
-      />
-      <Description
-        dangerouslySetInnerHTML={{ __html: get(data, 'primary.description.html') }}
-      />
-      <Button to="/">see our work</Button>
+    <ProjectContainer>
+      {get(data, 'items', []).map(item => (
+        <Link to={get(item, 'project_link.url')}>
+          <Project>
+            <ImageContainer>
+              <Image src={get(item, 'project_image1.url')} />
+            </ImageContainer>
+            <ProjectTitle dangerouslySetInnerHTML={{ __html: get(item, 'project_title1.html')}} />
+          </Project>
+        </Link>
+      ))}
+    </ProjectContainer>
+    <Headline
+      dangerouslySetInnerHTML={{ __html: get(data, 'primary.title1.html') }}
+    />
+    <Description
+      dangerouslySetInnerHTML={{ __html: get(data, 'primary.description.html') }}
+    />
+    <Button to="/">see our work</Button>
   </Container>
 )
 

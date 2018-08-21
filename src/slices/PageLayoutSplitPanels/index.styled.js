@@ -5,7 +5,6 @@ export const Container = styled.div`
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  margin: 4rem auto;
   background-color: ${t.c.lightgrey2};
   position: relative;
   overflow: hidden;
