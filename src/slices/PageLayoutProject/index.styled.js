@@ -32,9 +32,26 @@ export const Image = styled.img`
   width: 600px;
   height: 450px;
   margin: 2rem;
+  transition: all 2ms;
+
+  &:hover {
+    opacity: 0.5;
+  }
 `
 
-export const Images = styled.div`
+export const Description = styled.div`
+  text-align: center;
+  width: 500px;
+  margin: 2rem auto;
+  font-family: ${t.ff.sans2};
+  font-weight: 300;
+`
+
+export const Project = styled.div``
+
+export const BoxBody = styled.div``
+
+export const ProjectContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
