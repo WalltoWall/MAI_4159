@@ -45,11 +45,6 @@ export const query = graphql`
                 html
               }
             }
-            items {
-              image {
-                url
-              }
-            }
           }
         }
       }

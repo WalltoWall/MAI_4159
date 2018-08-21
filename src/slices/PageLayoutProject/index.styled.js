@@ -30,8 +30,8 @@ export const Headline = styled.div`
 export const Image = styled.img`
   display: block;
   width: 500px;
-  height: 400px;
-  transition: all 2ms;
+  height: 380px;
+  transition: opacity 200ms;
 `
 
 export const Description = styled.div`
@@ -49,12 +49,13 @@ export const ProjectTitle = styled.div`
   color: ${t.c.white};
   font-size: 1.4rem;
   position: absolute;
-  top: 40%;
+  top: 36%;
   right: 0;
   left: 0;
   font-weight: 400;
   max-width: 200px;
   margin: 0 auto;
+  transition: color 200ms;
 `
 
 export const ProjectContainer = styled.div`
