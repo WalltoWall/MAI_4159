@@ -3,11 +3,10 @@ import t from 'theme'
 
 export const Container = styled.div`
   background-color: ${t.c.lightgrey2};
-  align-items: center;
   margin: 0 auto;
+  display: block;
   min-height: 10vh;
   padding: ${t.s(0)};
-  position: relative;
   ${t.mq.l} {
     min-height: 50vh;
   }
@@ -29,4 +28,15 @@ export const Headline = styled.div`
 
 
 export const Image = styled.img`
+  display: block;
+  width: 600px;
+  height: 450px;
+  margin: 2rem;
+`
+
+export const Images = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
 `

@@ -2,17 +2,25 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 
-import { Container, Text, Headline, Image } from './index.styled'
+import { Container, Text, Headline, Image, Images } from './index.styled'
+import Button from 'components/Button.js'
+
+const renderItem = item => (
+    <Image src={get(item, 'project_image1.url')} />
+)
 
 export const PageLayoutProject = ({ data , item }) => (
   <Container>
+    <Images>
+      {get(data, 'items', []).map(renderItem)}
+    </Images>
     <Headline
       dangerouslySetInnerHTML={{ __html: get(data, 'primary.title1.html') }}
     />
-    <Image src={get(data, 'items.project_image1.url')} />
     <Text
       dangerouslySetInnerHTML={{ __html: get(data, 'items.project_title1.html') }}
     />
+    <Button to="/">see our work</Button>
   </Container>
 )
 
