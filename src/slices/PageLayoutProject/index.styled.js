@@ -40,6 +40,8 @@ export const Description = styled.div`
   margin: 2rem auto;
   font-family: ${t.ff.sans2};
   font-weight: 300;
+  line-height: 1.4rem;
+  margin-top: -10px;
 `
 
 export const ProjectTitle = styled.div`
@@ -70,11 +72,23 @@ export const Project = styled.div`
   background-color: white;
   margin: 2rem;
 
+  &::after {
+    width: 100%;
+    height: 10px;
+    background-color: ${t.c.yellow};
+    position: absolute;
+    bottom: 0;
+    content: '';
+    display: none;
+  }
+
   &:hover {
-    border-bottom: 10px solid #ddd33d;
+    &::after {
+      display: block;
+    }
 
     ${Image} {
-      opacity: 0.6;
+      opacity: 0.4;
     }
 
     ${ProjectTitle} {
