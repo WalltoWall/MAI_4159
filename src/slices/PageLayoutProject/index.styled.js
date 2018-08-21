@@ -51,7 +51,7 @@ export const Description = styled.div`
   font-family: ${t.ff.sans2};
   font-weight: 300;
   line-height: ${t.lh.copy};
-  margin-top: -10px;
+  margin-top: -2rem;
 `
 
 export const ProjectTitle = styled.div`

@@ -6,6 +6,7 @@ export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
+  padding-bottom: 2rem;
   height: auto;
   background-color: ${t.c.white};
   position: relative;
@@ -14,6 +15,7 @@ export const Container = styled.div`
   ${t.mq.l} {
     height: 800px;
     background-color: ${t.c.darkgrey1};
+    padding-bottom: 0;
   }
  `
 
@@ -26,6 +28,7 @@ export const Headline = styled.div`
   letter-spacing: 3px;
   text-align: center;
   margin: 0;
+  margin-bottom: -2rem;
   ${t.mq.l} {
     text-align: left;
     font-size: ${t.f(6)};
@@ -78,16 +81,24 @@ export const Gradient = styled.div`
 export const HeadlineWrapper = styled.div`
   position: relative;
   display: block;
+  width: 100%;
 
   ${t.mq.l} {
     position: absolute;
     margin-left: 2rem;
+    width: auto;
   }
 `
 
 export const Description = styled.div`
-  color: white;
+  color: ${t.c.darkgrey1};
   width: 300px;
+  text-align: center;
+
+  ${t.mq.l} {
+    color: ${t.c.white};
+    text-align: left;
+  }
 `
 export const DescriptionWrapper = styled.div`
   font-family: ${t.ff.sans2};
@@ -96,5 +107,9 @@ export const DescriptionWrapper = styled.div`
   width: 30%;
   display: block;
   padding: 0 3rem;
-  background-color: ${t.c.darkgrey1};
+  background-color: ${t.c.white};
+
+  ${t.mq.l} {
+    background-color: ${t.c.darkgrey1};
+  }
 `
