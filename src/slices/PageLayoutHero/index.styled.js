@@ -6,10 +6,15 @@ export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  height: 800px;
-  background-color: ${t.c.darkgrey1};
+  height: auto;
+  background-color: ${t.c.white};
   position: relative;
   overflow: hidden;
+
+  ${t.mq.l} {
+    height: 800px;
+    background-color: ${t.c.darkgrey1};
+  }
  `
 
 export const Headline = styled.div`
@@ -17,16 +22,22 @@ export const Headline = styled.div`
   font-family: ${t.ff.sans};
   text-transform: uppercase;
   font-weight: 700;
-  font-size: ${t.f(6)};
+  font-size: ${t.f(3)};
   letter-spacing: 3px;
+  text-align: center;
   margin: 0;
+  ${t.mq.l} {
+    text-align: left;
+    font-size: ${t.f(6)};
+  }
 `
 
 export const ImageContainer = styled.div`
-  width: 70%;
+  width: 100%;
   position: relative;
-  -webkit-clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
-  clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
+  overflow: hidden;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
   .gatsby-image-outer-wrapper,
   .gatsby-image-wrapper {
     height: 100%;
@@ -34,28 +45,44 @@ export const ImageContainer = styled.div`
       object-position: center 20% !important;
     }
   }
+  ${t.mq.l} {
+    width: 60%;
+    height: 800px;
+    -webkit-clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
+  }
+  ${t.mq.x} {
+    width: 70%;
+  }
 `
 
 export const Image = styled.img`
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 `
 
 export const Gradient = styled.div`
-  display: block;
+  display: none;
   position: absolute;
   background-image: linear-gradient(to left, transparent 0%, black 100%);
-  margin-top: -150px;
-  height: 100%;
+  height: 800px;
   width: 100%;
   opacity: 0.5;
-`
 
-export const Images = styled.div`
-  display: none;
+  ${t.mq.l} {
+    display: block;
+  }
 `
 
 export const HeadlineWrapper = styled.div`
-  position: absolute;
-  margin-left: 2rem;
+  position: relative;
+  display: block;
+
+  ${t.mq.l} {
+    position: absolute;
+    margin-left: 2rem;
+  }
 `
 
 export const Description = styled.div`
@@ -68,6 +95,6 @@ export const DescriptionWrapper = styled.div`
   font-weight: 300;
   width: 30%;
   display: block;
-  padding: 0 5rem;
+  padding: 0 3rem;
   background-color: ${t.c.darkgrey1};
 `
