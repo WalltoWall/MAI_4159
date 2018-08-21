@@ -26,6 +26,7 @@ export const linkClassName = secondary => css`
   transition: border-bottom-color ${t.t};
 `
 
-export const linkActiveClassName = secondary => css`
+export const linkActiveClassName = css`
   border-bottom-color: ${t.c.white};
+  color: red;
 `

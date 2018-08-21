@@ -20,7 +20,7 @@ const render = () => queryData => (
     </NavList>
 )
 
-export const Desktop = props => (
+export const Desktop = (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -39,6 +39,6 @@ export const Desktop = props => (
         }
       }
     `}
-    render={render(props)}
+    render={render()}
   />
 )

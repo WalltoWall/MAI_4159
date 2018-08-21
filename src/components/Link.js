@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link as GatsbyLink } from 'gatsby'
 
-const Link = ({ to, children, ...props }) =>
+export const Link = ({ to, children, ...props }) =>
   to && to.startsWith('/') ? (
     <GatsbyLink to={to} {...props}>
       {children}
@@ -11,5 +11,3 @@ const Link = ({ to, children, ...props }) =>
       {children}
     </a>
   )
-
-export default Link

@@ -16,26 +16,27 @@ export const Content = styled.div`
   padding: ${t.s(1)} ${t.s(0)};
 `
 
-export const HomeLink = styled(Link)`
+export const LogoLink = styled(Link)`
   color: inherit;
   text-decoration: none;
+  display: block;
+  margin: 24px 0 0 1.2rem;
+  padding-left: 1.4rem;
 `
 
 export const LogoIcon = styled.img`
 	width: 70px;
   display: inline-block;
-  padding-bottom: 24px;
 `
 
-export const NavWrapper = styled.ul`
+export const NavWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   z-index: 30;
-  margin-left: 1.2rem;
 `
 
-export const NavList = styled.li`
+export const NavList = styled.ul`
   color: pink;
   list-style-type: none;
   font-size: 1.1rem;
