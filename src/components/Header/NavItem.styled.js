@@ -44,8 +44,7 @@ export const NavList = styled.ul`
   font-weight: 600;
 `
 
-export const NavItem = styled(Link)`
-  display: none;
+export const navItemClassName = css`
   transition: transform ${t.t};
   transform: translateY(5%);
   display: inline-block;
