@@ -2,14 +2,14 @@ import React from 'react'
 import logoicon from 'assets/logo-yellow.svg'
 import { Desktop } from 'components/Header/Desktop'
 
-import { Container, HomeLink, LogoIcon, NavWrapper } from './index.styled'
+import { Container, LogoLink, HomeLink, LogoIcon, NavWrapper } from './index.styled'
 
  export const Header = () => (
   <Container>
     <NavWrapper>
-      <HomeLink to="/">
+      <LogoLink to="/">
         <LogoIcon src={logoicon} />
-      </HomeLink> 
+      </LogoLink> 
       <Desktop />
     </NavWrapper>
   </Container>

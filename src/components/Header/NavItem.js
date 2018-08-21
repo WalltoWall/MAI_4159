@@ -3,37 +3,35 @@ import { Toggle } from 'react-powerplug'
 import classnames from 'classnames'
 
 import { isPathActive } from 'lib/helpers'
-import { Link } from 'components/Link'
+import { Link } from '../Link'
 import {
   Container,
-  linkClassName,
   linkActiveClassName,
 } from './NavItem.styled'
 
-const getLinkProps = secondary => ({ href, location: { pathname } }) => ({
+const getLinkProps = () => ({ href, location: { pathname } }) => ({
   className: classnames(
-    linkClassName(secondary),
-    isPathActive(pathname, href) && linkActiveClassName(secondary)
+    isPathActive(pathname, href) && linkActiveClassName
   ),
 })
 
 export const NavItem = ({
   name,
   to = '/',
-  secondary = false,
+  isActive = false,
   ...props
 }) => (
   <Toggle>
-    {({ on, set }) => (
+    {({ on, set }) => ( 
       <Container
-        secondary={secondary}
+        isActive={isActive}
         onMouseOver={() => set(true)}
         onMouseOut={() => set(false)}
       >
         <Link
           to={to}
           onClick={() => set(false)}
-          getProps={getLinkProps(secondary)}
+          getProps={getLinkProps()}
         >
           {name}
         </Link>
