@@ -6,7 +6,6 @@ export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  max-width: ${t.ms.xx};
   height: 800px;
   background-color: ${t.c.darkgrey1};
   position: relative;
@@ -18,7 +17,7 @@ export const Headline = styled.div`
   font-family: ${t.ff.sans};
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 2.4rem;
+  font-size: ${t.f(5)};
   letter-spacing: 2px;
   margin: 0;
 `
@@ -69,5 +68,3 @@ export const Description = styled.div`
   margin-right: 3rem;
   width: 350px;
 `
-
-export const Text = styled.div``
