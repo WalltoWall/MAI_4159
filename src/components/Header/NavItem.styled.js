@@ -1,6 +1,5 @@
 import styled from 'react-emotion'
 import { css } from 'emotion'
-import { transparentize } from 'polished'
 import t from 'theme'
 
 export const Container = styled.li`

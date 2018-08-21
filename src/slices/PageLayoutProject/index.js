@@ -16,11 +16,11 @@ export const PageLayoutProject = ({ data }) => (
           <Image src={get(item, 'project_image1.url')} />
            )}
            {get(item, 'primary.title1.html') && (
-              <>
+              <div>
                 <BoxBody
                   dangerouslySetInnerHTML={{__html: get(item, 'project_title1.html') }}
                 />
-              </>
+              </div>
             )}
         </Project>
     </Link>
