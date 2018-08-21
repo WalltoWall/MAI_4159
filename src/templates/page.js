@@ -6,7 +6,7 @@ import { get } from 'lodash'
 
 import { Layout } from 'components/Layout'
 import { PageLayoutHero } from 'slices/PageLayoutHero'
-import { PageLayoutCallout } from 'slices/PageLayoutCallout'
+import { PageLayoutProject } from 'slices/PageLayoutProject'
 
 const PageTemplate = ({ data }) => (
   <>
@@ -18,7 +18,7 @@ const PageTemplate = ({ data }) => (
         list={get(data, 'prismicPage.data.layout')}
         map={{
           PageLayoutHero,
-          PageLayoutCallout,
+          PageLayoutProject,
         }}
         page={get(data, 'prismicPage')}
         rootData={data}
@@ -42,6 +42,6 @@ export const query = graphql`
       }
     }
     ...PageLayoutHero
-    ...PageLayoutCallout
+    ...PageLayoutProject
   }
 `
