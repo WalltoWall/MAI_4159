@@ -9,11 +9,9 @@ export const Container = styled.li`
   margin-right: ${t.s(2)};
   position: relative;
   transition: color ${t.t};
-
   &:hover {
     color: ${t.c.white};
   }
-
   &:last-child {
     margin-right: 0;
   }
