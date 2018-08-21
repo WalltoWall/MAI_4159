@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 
-import { Container, Headline, Image, Description, Project, BoxBody, ProjectContainer } from './index.styled'
+import { Container, Headline, Image, Description, Project, ProjectContainer, ProjectTitle } from './index.styled'
 import Button from 'components/Button.js'
 import { Link } from 'components/Link.js'
 
@@ -12,16 +12,8 @@ export const PageLayoutProject = ({ data }) => (
     {get(data, 'items', []).map(item => (
       <Link to={get(item, 'project_link.url')}>
         <Project>
-          {get(item, 'project_image1.url') && (
           <Image src={get(item, 'project_image1.url')} />
-           )}
-           {get(item, 'primary.title1.html') && (
-              <div>
-                <BoxBody
-                  dangerouslySetInnerHTML={{__html: get(item, 'project_title1.html') }}
-                />
-              </div>
-            )}
+          <ProjectTitle dangerouslySetInnerHTML={{ __html: get(item, 'project_title1.html')}} />
         </Project>
     </Link>
   ))}

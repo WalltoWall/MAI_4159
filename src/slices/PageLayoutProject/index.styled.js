@@ -33,10 +33,6 @@ export const Image = styled.img`
   height: 450px;
   margin: 2rem;
   transition: all 2ms;
-
-  &:hover {
-    opacity: 0.5;
-  }
 `
 
 export const Description = styled.div`
@@ -47,9 +43,18 @@ export const Description = styled.div`
   font-weight: 300;
 `
 
-export const Project = styled.div``
-
-export const BoxBody = styled.div``
+export const ProjectTitle = styled.div`
+  font-family: ${t.ff.serif};
+  color: ${t.c.white};
+  font-size: 1.4rem;
+  position: absolute;
+  top: 40%;
+  right: 0;
+  left: 0;
+  font-weight: 400;
+  max-width: 200px;
+  margin: 0 auto;
+`
 
 export const ProjectContainer = styled.div`
   display: flex;
@@ -57,3 +62,22 @@ export const ProjectContainer = styled.div`
   justify-content: space-around;
   flex-wrap: wrap;
 `
+
+export const Project = styled.div`
+  position: relative;
+  text-align: center;
+
+  &:hover {
+
+    ${Image} {
+      opacity: 0.5;
+      border-bottom: 10px solid #ddd33d;
+    }
+
+    ${ProjectTitle} {
+      color: ${t.c.darkgrey1};
+    }
+  }
+`
+
+
