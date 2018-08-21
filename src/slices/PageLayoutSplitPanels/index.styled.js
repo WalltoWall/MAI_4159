@@ -27,8 +27,9 @@ export const Image = styled.img`
 `
 
 export const Description = styled.div`
-  color: ${t.c.darkgrey2};
+  color: ${t.c.darkgrey1};
   font-family: ${t.ff.sans2};
+  line-height: ${t.lh.copy};
   font-weight: 300;
   max-width: 500px;
 `

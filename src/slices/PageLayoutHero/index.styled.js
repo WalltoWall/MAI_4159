@@ -62,6 +62,7 @@ export const HeadlineWrapper = styled.div`
 export const Description = styled.div`
   color: white;
   font-family: ${t.ff.sans2};
+  line-height: ${t.lh.copy};
   font-weight: 300;
   position: absolute;
   right: 0;

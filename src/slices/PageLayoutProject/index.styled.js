@@ -40,7 +40,7 @@ export const Description = styled.div`
   margin: 2rem auto;
   font-family: ${t.ff.sans2};
   font-weight: 300;
-  line-height: 1.4rem;
+  line-height: ${t.lh.copy};
   margin-top: -10px;
 `
 
