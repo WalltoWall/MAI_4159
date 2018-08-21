@@ -3,7 +3,7 @@ import { Toggle } from 'react-powerplug'
 import classnames from 'classnames'
 
 import { isPathActive } from 'lib/helpers'
-import { Link } from 'components/Link'
+import { Link } from '../Link'
 import {
   Container,
   linkActiveClassName,

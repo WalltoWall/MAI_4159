@@ -2,13 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 
-import { Gradient, Container, HeadlineWrapper, Headline, Images, ImageContainer, Image, Description } from './index.styled'
-
-const renderItem = item => (
-  <Container>
-    <Image src={get(item, 'image.url')} />
-  </Container>
-)
+import { Gradient, Container, HeadlineWrapper, Headline, ImageContainer, Image, Description, Text } from './index.styled'
 
 
 export const PageLayoutHero = ({ data }) => (
@@ -27,9 +21,9 @@ export const PageLayoutHero = ({ data }) => (
           dangerouslySetInnerHTML={{ __html: get(data, 'primary.description.html') }}
         />
     </Container>
-      <Images>
-      {/* {get(data, 'items', []).map(renderItem)} */}
-     </Images>
+      <Text
+        dangerouslySetInnerHTML={{ __html: get(data, 'title1.text.html') }}
+      />
   </div>
 )
 

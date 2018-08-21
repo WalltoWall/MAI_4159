@@ -2,7 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { get } from 'lodash'
 import { NavItem } from 'components/Header/NavItem'
-import { Container, HomeLink, NavList } from './index.styled'
+import { NavList } from './index.styled'
 
 
 const renderLink = item => (

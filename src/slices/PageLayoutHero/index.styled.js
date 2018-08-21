@@ -68,3 +68,5 @@ export const Description = styled.div`
   margin-right: 3rem;
   width: 350px;
 `
+
+export const Text = styled.div``

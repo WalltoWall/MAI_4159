@@ -12,7 +12,7 @@ import { Container } from './index.styled'
 import 'modern-normalize'
 
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Abhaya+Libre|Barlow+Condensed|Lato');
+  @import url('https://fonts.googleapis.com/css?family=Abhaya+Libre|Barlow+Condensed|Lato:300,400');
 
   * {
     box-sizing: border-box;
