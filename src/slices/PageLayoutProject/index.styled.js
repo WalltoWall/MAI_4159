@@ -22,7 +22,7 @@ export const Headline = styled.div`
   color: ${t.c.darkgrey2};
   font-family: ${t.ff.serif};
   text-align: center;
-  font-size: 1.2rem;
+  font-size: ${t.f(1)};
   font-weight: 300;
 `
 
@@ -47,7 +47,7 @@ export const Description = styled.div`
 export const ProjectTitle = styled.div`
   font-family: ${t.ff.serif};
   color: ${t.c.white};
-  font-size: 1.4rem;
+  font-size: ${t.f(1.5)};
   position: absolute;
   top: 36%;
   right: 0;
@@ -62,8 +62,7 @@ export const ProjectContainer = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin: 2rem;
-  margin-top: -80px;
+  margin-top: -60px;
   justify-content: center;
 `
 
@@ -71,7 +70,7 @@ export const Project = styled.div`
   position: relative;
   text-align: center;
   background-color: white;
-  margin: 2rem;
+  margin: 1rem;
 
   &::after {
     width: 100%;
