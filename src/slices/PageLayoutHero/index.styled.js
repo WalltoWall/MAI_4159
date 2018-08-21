@@ -92,24 +92,26 @@ export const HeadlineWrapper = styled.div`
 
 export const Description = styled.div`
   color: ${t.c.darkgrey1};
-  width: 300px;
+  width: auto;
   text-align: center;
 
   ${t.mq.l} {
     color: ${t.c.white};
     text-align: left;
+    width: 300px;
   }
 `
 export const DescriptionWrapper = styled.div`
   font-family: ${t.ff.sans2};
   line-height: ${t.lh.copy};
   font-weight: 300;
-  width: 30%;
+  width: 100%;
   display: block;
   padding: 0 3rem;
   background-color: ${t.c.white};
 
   ${t.mq.l} {
     background-color: ${t.c.darkgrey1};
+    width: 30%;
   }
 `
