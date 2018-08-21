@@ -27,9 +27,9 @@ export const PageLayoutHero = ({ data }) => (
           dangerouslySetInnerHTML={{ __html: get(data, 'primary.description.html') }}
         />
     </Container>
-      <Images>
-      {get(data, 'items', []).map(renderItem)}
-     </Images>
+      <Text
+        dangerouslySetInnerHTML={{ __html: get(data, 'title1.text.html') }}
+      />
   </div>
 )
 

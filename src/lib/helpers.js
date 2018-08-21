@@ -12,3 +12,13 @@ export const nodes = connection => {
   )
   return connection.edges.map(edge => edge.node)
 }
+
+// Returns true if rawPath is a child of rawCurrentPath, false otherwise.
+
+const _sanitizePath = path => path.replace(/(^\/|\/$)/g, '')
+
+export const isPathActive = (rawCurrentPath, rawPath) => {
+  const currentPath = _sanitizePath(rawCurrentPath)
+  const path = _sanitizePath(rawPath)
+  return path.length > 0 && currentPath.startsWith(path)
+}

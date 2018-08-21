@@ -23,6 +23,23 @@ export const HomeLink = styled(Link)`
 
 export const LogoIcon = styled.img`
 	width: 70px;
-	display: inline-block;
-	margin: 0 2rem;
+  display: inline-block;
+  padding-bottom: 24px;
 `
+
+export const NavWrapper = styled.ul`
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  margin-left: 1.2rem;
+`
+
+export const NavList = styled.li`
+  color: pink;
+  list-style-type: none;
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+  font-weight: 600;
+`
+
