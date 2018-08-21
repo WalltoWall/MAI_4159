@@ -55,7 +55,7 @@ const render = ({ children }) => queryData => (
     </Helmet>
     <Header siteTitle={queryData.site.siteMetadata.title} />
     <Container>
-      {process.env.NODE_ENV === 'development' && <DevRefreshButton />}
+      {/* {process.env.NODE_ENV === 'development' && <DevRefreshButton />} */}
       {children}
     </Container>
   </>

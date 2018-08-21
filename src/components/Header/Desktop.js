@@ -4,15 +4,13 @@ import { get } from 'lodash'
 import classnames from 'classnames'
 import { isPathActive } from 'lib/helpers'
 import { Link } from '../Link'
-
-
 import {
   Container,
   linkActiveClassName,
   NavList,
   NavArrow,
   navItemClassName,
-} from './NavItem.styled'
+} from './Desktop.styled'
 
 
 const getLinkProps = () => ({ href, location: { pathname } }) => ({
@@ -25,7 +23,11 @@ const getLinkProps = () => ({ href, location: { pathname } }) => ({
 const renderLink = item => (
   <Container>
     <NavArrow/>
-    <Link key={get(item, 'id')} to={get(item, 'primary.link.url')} getProps={getLinkProps()}>
+    <Link 
+      key={get(item, 'id')} 
+      to={get(item, 'primary.link.url')} 
+      getProps={getLinkProps()}
+    >
       {get(item, 'primary.name')}
     </Link>
   </Container>

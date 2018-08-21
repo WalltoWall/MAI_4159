@@ -34,6 +34,10 @@ export const NavWrapper = styled.div`
   top: 0;
   left: 0;
   z-index: 30;
+  display:none;
+  ${t.mq.l} {
+    display: block;
+  }
 `
 
 export const NavList = styled.ul`
