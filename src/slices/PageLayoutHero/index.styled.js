@@ -17,13 +17,13 @@ export const Headline = styled.div`
   font-family: ${t.ff.sans};
   text-transform: uppercase;
   font-weight: 700;
-  font-size: ${t.f(5)};
-  letter-spacing: 2px;
+  font-size: ${t.f(6)};
+  letter-spacing: 3px;
   margin: 0;
 `
 
 export const ImageContainer = styled.div`
-  width: 60rem;
+  width: 70%;
   position: relative;
   -webkit-clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
   clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
@@ -60,11 +60,14 @@ export const HeadlineWrapper = styled.div`
 
 export const Description = styled.div`
   color: white;
+  width: 300px;
+`
+export const DescriptionWrapper = styled.div`
   font-family: ${t.ff.sans2};
   line-height: ${t.lh.copy};
   font-weight: 300;
-  position: absolute;
-  right: 0;
-  margin-right: 3rem;
-  width: 350px;
+  width: 30%;
+  display: block;
+  padding: 0 5rem;
+  background-color: ${t.c.darkgrey1};
 `

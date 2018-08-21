@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 
-import { Gradient, Container, HeadlineWrapper, Headline, ImageContainer, Image, Description } from './index.styled'
+import { Gradient, Container, HeadlineWrapper, Headline, ImageContainer, Image, Description, DescriptionWrapper } from './index.styled'
 
 
 export const PageLayoutHero = ({ data }) => (
@@ -17,9 +17,11 @@ export const PageLayoutHero = ({ data }) => (
           dangerouslySetInnerHTML={{ __html: get(data, 'primary.title1.html') }}
         />
       </HeadlineWrapper>
-      <Description
+      <DescriptionWrapper>
+        <Description
           dangerouslySetInnerHTML={{ __html: get(data, 'primary.description.html') }}
         />
+      </DescriptionWrapper>
     </Container>
   </div>
 )
