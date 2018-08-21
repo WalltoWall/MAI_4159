@@ -2,7 +2,6 @@ import React from 'react'
 import logoicon from 'assets/logo-yellow.svg'
 import { Desktop } from 'components/Header/Desktop'
 
-import { Container, LogoLink, LogoIcon, NavWrapper } from './index.styled'
 import { Container } from './index.styled'
 import { LogoLink, LogoIcon, NavWrapper } from './NavItem.styled'
 
@@ -16,5 +15,4 @@ import { LogoLink, LogoIcon, NavWrapper } from './NavItem.styled'
     </NavWrapper>
   </Container>
 )
-
 
