@@ -16,8 +16,9 @@ const Button = styled(Link)`
 	width: 200px;
 	text-align: center;
 	text-transform: uppercase;
-	font-size: 1.2rem;
+	font-size: ${t.f(2)};
 	margin: 0 auto;
+	transition: background-color 200ms;
 `
 
 export default Button
