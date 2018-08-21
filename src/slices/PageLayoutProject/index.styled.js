@@ -29,9 +29,8 @@ export const Headline = styled.div`
 
 export const Image = styled.img`
   display: block;
-  width: 600px;
-  height: 450px;
-  margin: 2rem;
+  width: 500px;
+  height: 400px;
   transition: all 2ms;
 `
 
@@ -59,19 +58,23 @@ export const ProjectTitle = styled.div`
 export const ProjectContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
   flex-wrap: wrap;
+  margin: 2rem;
+  margin-top: -80px;
+  justify-content: center;
 `
 
 export const Project = styled.div`
   position: relative;
   text-align: center;
+  background-color: white;
+  margin: 2rem;
 
   &:hover {
+    border-bottom: 10px solid #ddd33d;
 
     ${Image} {
-      opacity: 0.5;
-      border-bottom: 10px solid #ddd33d;
+      opacity: 0.6;
     }
 
     ${ProjectTitle} {
