@@ -5,7 +5,7 @@ export const Container = styled.div`
   background-color: ${t.c.lightgrey2};
   margin: 0 auto;
   display: block;
-  padding: ${t.s(0)};
+  padding: 1rem 1rem 4rem 1rem;
   ${t.mq.l} {
     min-height: 50vh;
   }
@@ -21,8 +21,11 @@ export const Headline = styled.div`
   color: ${t.c.darkgrey2};
   font-family: ${t.ff.serif};
   text-align: center;
-  font-size: ${t.f(1)};
+  font-size: ${t.f(0)};
   font-weight: 300;
+  ${t.mq.l} {
+    font-size: ${t.f(1)};
+  }
 `
 
 export const ImageContainer = styled.div`
@@ -46,18 +49,20 @@ export const Image = styled.img`
 
 export const Description = styled.div`
   text-align: center;
-  width: 500px;
-  margin: 2rem auto;
+  max-width: 500px;
+  margin: -1rem auto 2rem auto;
   font-family: ${t.ff.sans2};
   font-weight: 300;
   line-height: ${t.lh.copy};
-  margin-top: -2rem;
+  ${t.mq.l} {
+    font-size: ${t.f(0)};
+  }
 `
 
 export const ProjectTitle = styled.div`
   font-family: ${t.ff.serif};
   color: ${t.c.white};
-  font-size: ${t.f(1)};
+  font-size: ${t.f(0)};
   position: absolute;
   top: 30%;
   right: 0;
