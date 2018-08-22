@@ -8,6 +8,7 @@ import { Layout } from 'components/Layout'
 import { PageLayoutHero } from 'slices/PageLayoutHero'
 import { PageLayoutProject } from 'slices/PageLayoutProject'
 import { PageLayoutSplitPanels } from 'slices/PageLayoutSplitPanels'
+import { PageLayoutCards } from 'slices/PageLayoutCards'
 
 const PageTemplate = ({ data }) => (
   <>
@@ -21,6 +22,7 @@ const PageTemplate = ({ data }) => (
           PageLayoutHero,
           PageLayoutProject,
           PageLayoutSplitPanels,
+          PageLayoutCards,
         }}
         page={get(data, 'prismicPage')}
         rootData={data}
@@ -46,5 +48,6 @@ export const query = graphql`
     ...PageLayoutHero
     ...PageLayoutProject
     ...PageLayoutSplitPanels
+    ...PageLayoutCards
   }
 `

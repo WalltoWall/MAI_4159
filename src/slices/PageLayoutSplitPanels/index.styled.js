@@ -89,5 +89,6 @@ export const ImageContainer = styled.div`
     order: 2;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 3% 100%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 3% 100%);
+    margin-bottom: -2rem;
   }
 `
