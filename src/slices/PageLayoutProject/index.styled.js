@@ -17,14 +17,15 @@ export const Text = styled.p`
   font-size: 1rem;
 `
 
-export const Headline = styled.div`
+export const Headline = styled.h1`
   color: ${t.c.darkgrey2};
   font-family: ${t.ff.serif};
   text-align: center;
-  font-size: ${t.f(0)};
+  font-size: ${t.f(5)};
   font-weight: 300;
+  margin-bottom: 0;
   ${t.mq.l} {
-    font-size: ${t.f(1)};
+    font-size: ${t.f(6)};
   }
 `
 
@@ -50,8 +51,9 @@ export const Image = styled.img`
 export const Description = styled.div`
   text-align: center;
   max-width: 500px;
-  margin: -1rem auto 2rem auto;
+  margin: 0 auto 2rem auto;
   font-family: ${t.ff.sans2};
+  color: ${t.c.darkgrey1};
   font-weight: 300;
   line-height: ${t.lh.copy};
   ${t.mq.l} {
@@ -59,22 +61,24 @@ export const Description = styled.div`
   }
 `
 
-export const ProjectTitle = styled.div`
+export const ProjectTitle = styled.h2`
   font-family: ${t.ff.serif};
   color: ${t.c.white};
-  font-size: ${t.f(0)};
+  font-size: ${t.f(3)};
   position: absolute;
-  top: 30%;
+  top: 38%;
   right: 0;
   left: 0;
   font-weight: 400;
   max-width: 200px;
+  display: block;
   margin: 0 auto;
+  z-index: 99;
   transition: color 200ms;
 
   ${t.mq.m} {
-    font-size: ${t.f(1.5)};
-    top: 36%;
+    font-size: ${t.f(4)};
+    top: 40%;
   }
 `
 

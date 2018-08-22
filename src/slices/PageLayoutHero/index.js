@@ -4,7 +4,6 @@ import { get } from 'lodash'
 
 import { Gradient, Container, HeadlineWrapper, Headline, ImageContainer, Image, Description, DescriptionWrapper } from './index.styled'
 
-
 export const PageLayoutHero = ({ data }) => (
   <div>
     <Container>
@@ -13,9 +12,7 @@ export const PageLayoutHero = ({ data }) => (
         <Image src={get(data, 'primary.image.url')} />
       </ImageContainer>
       <HeadlineWrapper>
-        <Headline
-          dangerouslySetInnerHTML={{ __html: get(data, 'primary.title1.html') }}
-        />
+        <Headline>{get(data, 'primary.title1.text')}</Headline>
       </HeadlineWrapper>
       <DescriptionWrapper>
         <Description
@@ -38,7 +35,7 @@ export const query = graphql`
                 url
               }
               title1 {
-                html
+                text
               }
               description {
                 html
