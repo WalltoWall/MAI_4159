@@ -6,31 +6,34 @@ import { stripUnit } from 'polished'
 import HamburgerMenu from 'react-hamburger-menu'
 
 import { Container } from './index.styled'
-import { LogoLink, LogoIcon, NavWrapper } from './Desktop.styled'
-import { HamburgerMenuContainer } from './Mobile.styled'
+import { LogoLink, NavWrapper} from './Desktop.styled'
+import { HamburgerMenuContainer, StyledMobile } from './Mobile.styled'
 import t from 'theme'
 
  export const Header = () => (
   <Toggle>
-      {({on, toggle}) => (
-        <Container>
-          <NavWrapper>
+      {({on: mobileNavOn, toggle: toggleMobileNav}) => (
+        <>
+          <Container>
             <LogoLink to="/">
-              <LogoIcon src={logoicon} />
-            </LogoLink> 
-            <Desktop />
-          </NavWrapper>        
-          <HamburgerMenuContainer>
-            <HamburgerMenu 
-              color={t.c.white}
-              height={stripUnit(t.s(0.5)) * 16}
-              isOpen={on}
-              menuClicked={toggle}
-              strokeWidth={3}
-              width={stripUnit(t.s(1)) * 16}
-            />
-          </HamburgerMenuContainer>
-        </Container>
+              <img src={logoicon} />
+            </LogoLink>
+            <NavWrapper>
+              <Desktop />
+            </NavWrapper>        
+            <HamburgerMenuContainer>
+              <HamburgerMenu 
+                color={t.c.white}
+                height={stripUnit(t.s(0.5)) * 16}
+                isOpen={mobileNavOn}
+                menuClicked={toggleMobileNav}
+                strokeWidth={3}
+                width={stripUnit(t.s(1)) * 16}
+              />
+            </HamburgerMenuContainer>
+          </Container>
+          <StyledMobile isOpen={mobileNavOn} toggle={toggleMobileNav} />
+        </>
       )}
   </Toggle>
 )

@@ -17,6 +17,26 @@ export const Container = styled.li`
   }
 `
 export const LogoLink = styled(Link)`
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 20px;
+  margin: 0 0 0 -25px;
+  width: 60px;
+  ${t.mq.l} {
+    width: 95px;
+    left: 0;
+    margin: 1rem 0 0 1.2rem;
+    padding-left: 1.4rem;
+  }
+`
+
+export const LogoIcon = styled.img`
+  display: block;
+  padding-bottom: 3rem;
+`
+
+export const MobileLogoLink = styled(Link)`
   color: inherit;
   text-decoration: none;
   display: block;
@@ -24,14 +44,9 @@ export const LogoLink = styled(Link)`
   padding-left: 1.4rem;
 `
 
-export const LogoIcon = styled.img`
-	width: 70px;
-  display: inline-block;
-`
-
 export const NavWrapper = styled.div`
   position: absolute;
-  top: 0;
+  top: 5rem;
   left: 0;
   z-index: 30;
   display:none;
@@ -39,7 +54,6 @@ export const NavWrapper = styled.div`
     display: block;
   }
 `
-
 export const NavList = styled.ul`
   color: {white};
   list-style-type: none;
