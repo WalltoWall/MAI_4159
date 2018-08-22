@@ -3,8 +3,8 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 
 import { Container, Headline, Image, Description, Project, ProjectContainer, ProjectTitle, ImageContainer } from './index.styled'
-import Button from 'components/Button.js'
-import { Link } from 'components/Link.js'
+import Button from 'components/Button'
+import { Link } from 'components/Link'
 
 export const PageLayoutProject = ({ data }) => (
   <Container>
@@ -15,14 +15,12 @@ export const PageLayoutProject = ({ data }) => (
             <ImageContainer>
               <Image src={get(item, 'project_image1.url')} />
             </ImageContainer>
-            <ProjectTitle dangerouslySetInnerHTML={{ __html: get(item, 'project_title1.html')}} />
+            <ProjectTitle>{get(item, 'project_title1.text')}</ProjectTitle>
           </Project>
         </Link>
       ))}
     </ProjectContainer>
-    <Headline
-      dangerouslySetInnerHTML={{ __html: get(data, 'primary.title1.html') }}
-    />
+    <Headline>{get(data, 'primary.title1.text')}</Headline>
     <Description
       dangerouslySetInnerHTML={{ __html: get(data, 'primary.description.html') }}
     />
@@ -39,7 +37,7 @@ export const query = graphql`
             id
             primary {
               title1 {
-                html
+                text
               }
               description {
                 html
@@ -47,7 +45,7 @@ export const query = graphql`
             }
             items {
               project_title1 {
-                html
+                text
               }
               project_image1 {
                 url

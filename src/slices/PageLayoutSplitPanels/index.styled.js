@@ -1,5 +1,6 @@
 import styled from 'react-emotion'
 import t from 'theme'
+import Button from 'components/Button'
 
 export const Container = styled.div`
   align-items: center;
@@ -7,22 +8,28 @@ export const Container = styled.div`
   flex-wrap: wrap;
   background-color: ${t.c.lightgrey2};
   position: relative;
-  overflow: hidden;
  `
 
-export const Headline = styled.div`
+export const Headline = styled.h2`
   color: ${t.c.darkgrey2};
   font-family: ${t.ff.serif};
-  font-size: ${t.f(3)};
-  margin: 0;
-  width: 50%;
+  font-size: ${t.f(5)};
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  ${t.mq.m} {
+    font-size: ${t.f(6)};
+  }
+  ${t.mq.l} {
+    text-align: left;
+  }
 `
 
 export const Image = styled.img`
-  width: 55%;
-  order: 2;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 3% 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 3% 100%);
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 `
 
 export const Description = styled.div`
@@ -31,17 +38,56 @@ export const Description = styled.div`
   line-height: ${t.lh.copy};
   font-weight: 300;
   max-width: 450px;
-  margin-top: -10px;
+  margin: 0 auto 2rem auto;
+  text-align: center;
+  ${t.mq.l} {
+    text-align: left;
+    margin: 0 auto 2rem 0;
+  }
 `
 
 export const SplitPanelWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 400px;
+  flex-wrap: wrap;
 `
 
 export const DescriptionWrapper = styled.div`
-  width: 45%;
+  width: 100%;
   padding: 4rem;
+  order: 2;
+  ${t.mq.l} {
+    width: 45%;
+    order: 1;
+  }
+`
+
+export const ServicesButton = styled(Button)`
+  float: none;
+  ${t.mq.l} {
+    float: left;
+  }
+`
+
+export const ImageContainer = styled.div`
+  width: 100%;
+  order: 1;
+  -webkit-clip-path: none;
+  clip-path: none;
+  overflow: hidden;
+  .gatsby-image-outer-wrapper,
+  .gatsby-image-wrapper {
+    height: 100%;
+    img {
+      object-position: center 20% !important;
+    }
+  }
+  height: 400px;
+  ${t.mq.l} {
+    width: 55%;
+    order: 2;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 3% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 3% 100%);
+  }
 `

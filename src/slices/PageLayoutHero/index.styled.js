@@ -19,19 +19,19 @@ export const Container = styled.div`
   }
  `
 
-export const Headline = styled.div`
+export const Headline = styled.h1`
   color: ${t.c.yellow};
   font-family: ${t.ff.sans};
   text-transform: uppercase;
-  font-weight: 700;
-  font-size: ${t.f(3)};
+  font-weight: 600;
+  font-size: ${t.f(6)};
   letter-spacing: 3px;
   text-align: center;
   margin: 0;
-  margin-bottom: -2rem;
+
   ${t.mq.l} {
     text-align: left;
-    font-size: ${t.f(6)};
+    font-size: ${t.f(10)};
   }
 `
 
