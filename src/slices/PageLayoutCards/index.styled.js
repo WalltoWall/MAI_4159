@@ -71,6 +71,7 @@ export const CardContainer = styled.div`
   align-items: center;
   flex-wrap: wrap;
   margin-top: 0;
+  margin-bottom: 1rem;
   justify-content: center;
 `
 

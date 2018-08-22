@@ -4,6 +4,7 @@ import { get } from 'lodash'
 
 import { Container, Headline, Image, Description, Card, ImageWrapper, CardContainer, CardTitle, ImageContainer, TimeStamp, Wrapper, SecondaryLink } from './index.styled'
 import { Link } from 'components/Link'
+import Button from 'components/Button'
 
 export const PageLayoutCards = ({ data }) => (
   <Container>
@@ -31,6 +32,7 @@ export const PageLayoutCards = ({ data }) => (
           </Card>
       ))}
     </CardContainer>
+    <Button to="/">more news</Button>
   </Container>
 )
 
