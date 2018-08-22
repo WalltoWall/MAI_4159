@@ -15,10 +15,14 @@ export const Headline = styled.h2`
   font-family: ${t.ff.serif};
   font-size: ${t.f(5)};
   font-weight: 400;
-  width: 50%;
+  margin-top: 0;
   margin-bottom: 0;
-  ${t.mq.l} {
+  text-align: center;
+  ${t.mq.m} {
     font-size: ${t.f(6)};
+  }
+  ${t.mq.l} {
+    text-align: left;
   }
 `
 
@@ -34,7 +38,12 @@ export const Description = styled.div`
   line-height: ${t.lh.copy};
   font-weight: 300;
   max-width: 450px;
-  margin: 0 auto 2rem 0;
+  margin: 0 auto 2rem auto;
+  text-align: center;
+  ${t.mq.l} {
+    text-align: left;
+    margin: 0 auto 2rem 0;
+  }
 `
 
 export const SplitPanelWrapper = styled.div`
@@ -55,7 +64,10 @@ export const DescriptionWrapper = styled.div`
 `
 
 export const ServicesButton = styled(Button)`
-  float: left;
+  float: none;
+  ${t.mq.l} {
+    float: left;
+  }
 `
 
 export const ImageContainer = styled.div`

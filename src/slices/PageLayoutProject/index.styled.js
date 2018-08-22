@@ -24,7 +24,7 @@ export const Headline = styled.h1`
   font-size: ${t.f(5)};
   font-weight: 300;
   margin-bottom: 0;
-  ${t.mq.l} {
+  ${t.mq.m} {
     font-size: ${t.f(6)};
   }
 `
