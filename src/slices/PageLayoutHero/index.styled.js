@@ -39,8 +39,8 @@ export const ImageContainer = styled.div`
   width: 100%;
   position: relative;
   overflow: hidden;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
   .gatsby-image-outer-wrapper,
   .gatsby-image-wrapper {
     height: 100%;
@@ -82,10 +82,12 @@ export const HeadlineWrapper = styled.div`
   position: relative;
   display: block;
   width: 100%;
+  margin-top: 1rem;
 
   ${t.mq.l} {
     position: absolute;
     margin-left: 2rem;
+    margin-top: 0;
     width: auto;
   }
 `

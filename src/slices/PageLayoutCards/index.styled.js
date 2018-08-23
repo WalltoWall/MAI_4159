@@ -103,6 +103,10 @@ export const Wrapper = styled.div`
 
 export const ImageWrapper = styled.div`
   height: 300px;
+  display: none;
+  ${t.mq.m} {
+    display: block;
+  }
 `
 
 export const SecondaryLink = styled(Link)`

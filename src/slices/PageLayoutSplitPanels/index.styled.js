@@ -96,6 +96,10 @@ export const ImageContainer = styled.div`
 `
 
 export const Content = styled.div`
-  max-width: 600px;
-  float: right;
+  max-width: none;
+  float: none;
+  ${t.mq.l} {
+    float: right;
+    max-width: 600px;
+  }
 `
