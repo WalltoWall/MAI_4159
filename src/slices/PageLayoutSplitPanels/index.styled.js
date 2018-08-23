@@ -8,6 +8,8 @@ export const Container = styled.div`
   flex-wrap: wrap;
   background-color: ${t.c.lightgrey2};
   position: relative;
+  display: block;
+  margin: 0 auto;
  `
 
 export const Headline = styled.h2`
@@ -91,4 +93,9 @@ export const ImageContainer = styled.div`
     clip-path: polygon(0 0, 100% 0, 100% 100%, 3% 100%);
     margin-bottom: -2rem;
   }
+`
+
+export const Content = styled.div`
+  max-width: 600px;
+  float: right;
 `

@@ -16,7 +16,7 @@ import t from 'theme'
         <>
           <Container>
             <LogoLink to="/">
-              <img src={logoicon} />
+              <img src={logoicon} alt=""/>
             </LogoLink>
             <NavWrapper>
               <Desktop />

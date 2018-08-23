@@ -1,6 +1,5 @@
 import styled from 'react-emotion'
 import { Mobile } from 'components/Header/Mobile'
-import { css } from 'emotion'
 import { transparentize } from 'polished'
 import t from 'theme'
 
