@@ -6,6 +6,7 @@ import { injectGlobal } from 'emotion'
 import { get } from 'lodash'
 
 import { Header } from 'components/Header'
+import { Footer } from 'components/Footer'
 import { Container } from './index.styled'
 
 import 'modern-normalize'
@@ -58,6 +59,7 @@ const render = ({ children }) => queryData => (
       {/* {process.env.NODE_ENV === 'development' && <DevRefreshButton />} */}
       {children}
     </Container>
+    <Footer />
   </>
 )
 
