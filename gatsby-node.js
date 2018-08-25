@@ -21,24 +21,40 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allPrismicProject {
+        edges {
+          node {
+            id
+            uid
+          }
+        }
+      }
     }
   `)
 
-  if (result.data.allPrismicPage)
-    result.data.allPrismicPage.edges.forEach(({ node }) => {
+  const createPrismicPage = (result, createType) => {
+    result.edges.forEach(({ node }) => {
       if (node.uid.startsWith('_')) {
         console.log(
           `Skipping createPage for ${node.uid} (reason: uid starts with '_')`
         )
         return
       }
-
       createPage({
         path: node.uid === 'home' ? '/' : node.uid,
-        component: path.resolve(`./src/templates/page.js`),
+        component: path.resolve('./src/templates/' + createType + '.js'),
         context: {
           id: node.id,
         },
       })
     })
+  }
+  if (result.data.allPrismicPage) {
+    let page = result.data.allPrismicPage
+    createPrismicPage(page, "page")
+  }
+  if (result.data.allPrismicProject) {
+    let project = result.data.allPrismicProject
+    createPrismicPage(project, "project")
+  }
 }
