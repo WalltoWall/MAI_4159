@@ -33,9 +33,9 @@ const render = () => queryData => {
             {menuList.map(
               (item, index) => (
               <>
-                <StyledLink to="/"
+                <StyledLink
                   key={get(item, 'id')}
-                  to={get(item, 'primary.link.url')} 
+                  to={get(item, 'primary.link.url', '/')} 
                 >
                   {get(item, 'primary.name')}
                 </StyledLink>
