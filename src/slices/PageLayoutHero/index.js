@@ -2,24 +2,25 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 
-import { Container, Text, Images, ImageContainer, Image } from './index.styled'
-
-const renderItem = item => (
-  <ImageContainer>
-    <Image src={get(item, 'image.url')} />
-  </ImageContainer>
-)
+import { Gradient, Container, HeadlineWrapper, Headline, ImageContainer, Image, Description, DescriptionWrapper } from './index.styled'
 
 export const PageLayoutHero = ({ data }) => (
-  <Container>
-    <Text
-      dangerouslySetInnerHTML={{ __html: get(data, 'primary.text.html') }}
-      textColor={get(data, 'primary.text_color')}
-    />
-    <Images>
-      {get(data, 'items', []).map(renderItem)}
-    </Images>
-  </Container>
+  <div>
+    <Container>
+      <ImageContainer>
+        <Gradient />
+        <Image src={get(data, 'primary.image.url')} />
+      </ImageContainer>
+      <HeadlineWrapper>
+        <Headline>{get(data, 'primary.title1.text')}</Headline>
+      </HeadlineWrapper>
+      <DescriptionWrapper>
+        <Description
+          dangerouslySetInnerHTML={{ __html: get(data, 'primary.description.html') }}
+        />
+      </DescriptionWrapper>
+    </Container>
+  </div>
 )
 
 export const query = graphql`
@@ -33,13 +34,11 @@ export const query = graphql`
               image {
                 url
               }
-              text {
-                html
+              title1 {
+                text
               }
-            }
-            items {
-              image {
-                url
+              description {
+                html
               }
             }
           }
@@ -48,3 +47,4 @@ export const query = graphql`
     }
   }
 `
+

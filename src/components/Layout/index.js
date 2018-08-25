@@ -4,16 +4,15 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { injectGlobal } from 'emotion'
 import { get } from 'lodash'
-
-import t from 'theme'
-import { DevRefreshButton } from 'components/DevRefreshButton'
+import {DevRefreshButton} from 'components/DevRefreshButton'
 import { Header } from 'components/Header'
+import { Footer } from 'components/Footer'
 import { Container } from './index.styled'
 
 import 'modern-normalize'
 
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Abhaya+Libre|Barlow+Condensed|Lato');
+  @import url('https://fonts.googleapis.com/css?family=Abhaya+Libre:400|Barlow+Condensed:700,600,400|Lato:300,400');
 
   * {
     box-sizing: border-box;
@@ -21,6 +20,7 @@ injectGlobal`
 
   html {
     -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
   }
 
   body {
@@ -59,6 +59,7 @@ const render = ({ children }) => queryData => (
       {process.env.NODE_ENV === 'development' && <DevRefreshButton />}
       {children}
     </Container>
+    <Footer />
   </>
 )
 
