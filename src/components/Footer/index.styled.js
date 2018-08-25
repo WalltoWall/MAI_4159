@@ -64,7 +64,7 @@ export const StyledLink = styled(Link)`
   }
 `
 export const LinkSeparator = styled.span`
-  color: ${t.c.masonyellow};
+  color: ${t.c.yellow};
   padding: 0 ${t.s(0)};
 `
 export const CopyrightContent = styled.div`

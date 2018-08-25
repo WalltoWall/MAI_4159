@@ -15,8 +15,8 @@ export const HamburgerMenuContainer = styled.div`
 `
 
 export const StyledMobile = styled(Mobile)`
-  box-shadow: 0 4px 24px ${transparentize(0.75, t.c.masonyellow)},
-    0 1px 0 ${transparentize(0.9, t.c.masonyellow)};
+  box-shadow: 0 4px 24px ${transparentize(0.75, t.c.yellow)},
+    0 1px 0 ${transparentize(0.9, t.c.yellow)};
   left: 0;
   position: absolute;
   right: 0;
@@ -30,7 +30,7 @@ export const StyledMobile = styled(Mobile)`
 `
 export const Container = styled.div`
   background-color: blue;
-  color: ${t.c.masonyellow};
+  color: ${t.c.yellow};
   display: flex;
   flex-direction: column;
   justify-content: center;

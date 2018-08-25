@@ -32,8 +32,8 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  const createPrismicPage = (result, createType) => {
-    result.edges.forEach(({ node }) => {
+  const createPrismicPage = (pages, templateFileName) => {
+    pages.edges.forEach(({ node }) => {
       if (node.uid.startsWith('_')) {
         console.log(
           `Skipping createPage for ${node.uid} (reason: uid starts with '_')`
@@ -42,7 +42,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
       createPage({
         path: node.uid === 'home' ? '/' : node.uid,
-        component: path.resolve('./src/templates/' + createType + '.js'),
+        component: path.resolve('./src/templates/' + templateFileName + '.js'),
         context: {
           id: node.id,
         },
@@ -50,11 +50,11 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   }
   if (result.data.allPrismicPage) {
-    let page = result.data.allPrismicPage
-    createPrismicPage(page, "page")
+    let results = result.data.allPrismicPage
+    createPrismicPage(results, "page")
   }
   if (result.data.allPrismicProject) {
-    let project = result.data.allPrismicProject
-    createPrismicPage(project, "project")
+    let results = result.data.allPrismicProject
+    createPrismicPage(results, "project")
   }
 }

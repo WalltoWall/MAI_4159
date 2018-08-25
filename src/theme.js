@@ -13,7 +13,6 @@ const theme = {
     yellow: '#ddd33d',
     lightgrey1: '#e7e4db',
     lightgrey2: '#f6f4f2',
-    masonyellow: '#ddd33d'
   },
   lineHeights: {
     solid: 1,

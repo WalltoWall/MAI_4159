@@ -73,7 +73,7 @@ export const navItemClassName = css`
 
 export const linkActiveClassName = css`
   border-bottom-color: ${t.c.white};
-  color: ${t.c.masonyellow};
+  color: ${t.c.yellow};
   &:before {
     content: svg(url)
   }
