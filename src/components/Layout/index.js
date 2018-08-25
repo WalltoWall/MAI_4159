@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { injectGlobal } from 'emotion'
 import { get } from 'lodash'
-
+import {DevRefreshButton} from 'components/DevRefreshButton'
 import { Header } from 'components/Header'
 import { Footer } from 'components/Footer'
 import { Container } from './index.styled'
@@ -56,7 +56,7 @@ const render = ({ children }) => queryData => (
     </Helmet>
     <Header siteTitle={queryData.site.siteMetadata.title} />
     <Container>
-      {/* {process.env.NODE_ENV === 'development' && <DevRefreshButton />} */}
+      {process.env.NODE_ENV === 'development' && <DevRefreshButton />}
       {children}
     </Container>
     <Footer />
