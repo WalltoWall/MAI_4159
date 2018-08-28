@@ -32,6 +32,7 @@ const theme = {
     l: '60rem',
     x: '78rem',
     xx: '90rem',
+    xxx: '95rem',
   },
   radius: ssv(s => (typeof s === 'number' ? ms(s / 2) + 'rem' : s)),
   spacing: ssv(s => (typeof s === 'number' ? ms(s) + 'rem' : s)),

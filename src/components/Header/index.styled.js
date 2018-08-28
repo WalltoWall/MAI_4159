@@ -5,7 +5,7 @@ import t from 'theme'
 export const Container = styled.div`
   background: ${t.c.darkgrey2};
   color: ${t.c.white};
-  postition: fixed;
+  position: relative;
   top: 0;
 `
 

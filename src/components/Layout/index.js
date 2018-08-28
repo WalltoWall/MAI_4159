@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { injectGlobal } from 'emotion'
+import t from 'theme'
 import { get } from 'lodash'
 import {DevRefreshButton} from 'components/DevRefreshButton'
 import { Header } from 'components/Header'
@@ -25,8 +26,13 @@ injectGlobal`
 
   body {
     overflow-x: hidden;
-    margin: 0;
+    width: 100%;
+    margin: 0 auto;
     padding: 0;
+    background-color: #e4e4e4;
+    ${t.mq.xxx} {
+      width: 70%;
+    }
   }
 
   a {
