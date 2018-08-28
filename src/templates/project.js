@@ -4,10 +4,7 @@ import MapToComponents from 'react-map-to-components'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Layout } from 'components/Layout'
-import { ProjectBodyHero } from 'slices/ProjectBodyHero'
-import { ProjectBodyCategories } from 'slices/ProjectBodyCategories'
-
-
+import {ProjectLayoutHero} from 'slices/ProjectLayoutHero'
 const ProjectTemplate = ({ data }) => (
   <>
     <Helmet title={get(data, 'prismicProject.data.title.text')} />
@@ -15,10 +12,9 @@ const ProjectTemplate = ({ data }) => (
       <MapToComponents
         getKey={x => x.id}
         getType={x => x.__typename.replace(/^Prismic/, '')}
-        list={get(data, 'prismicProject.data.body')}
+        list={get(data, 'prismicProject.data.layout')}
         map={{
-          ProjectBodyHero,
-          ProjectBodyCategories,
+          ProjectLayoutHero,
         }}
         page={get(data, 'prismicProject')}
         rootData={data}
@@ -36,12 +32,11 @@ export const query = graphql`
         title {
           text
         }
-        body {
+        layout {
           __typename
         }
       }
     }
-    ...ProjectBodyHero
-    ...ProjectBodyCategories
+    ...ProjectLayoutHero
   }
 `
