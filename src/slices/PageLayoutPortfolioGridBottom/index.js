@@ -5,24 +5,21 @@ import {
   Container, 
   Grid, 
   StyledLink, 
-  GridTitle,
-  GridOverlay,
+  GridTitle
 } from './index.styled'
 
 const renderGrid = (data) => (
-  <>
   <Grid background={data.image.url}>
     <GridTitle>{data.title.text}</GridTitle>
-    <GridOverlay/>
   </Grid>
-  </>
 )
 
-export const PageLayoutPortfolioGridTop = ({ data }) => {
+export const PageLayoutPortfolioGridBottom = ({ data }) => {
     let projects = data.items  
     // disallow even number of grid items
-    if ((projects.length % 2) == 1) {
-      projects = projects.dropRight
+    let multitudeOfThree = projects.length % 3
+    if (multitudeOfThree !== 0) {
+      projects = projects.dropRight(multitudeOfThree)
     }
     
   return (
@@ -39,11 +36,11 @@ export const PageLayoutPortfolioGridTop = ({ data }) => {
   )
 }
  export const query = graphql`
-  fragment PageLayoutPortfolioGridTop on Query {
+  fragment PageLayoutPortfolioGridBottom on Query {
     prismicPage(id: { eq: $id }) {
       data {
         layout {
-          ... on PrismicPageLayoutPortfolioGridTop {
+          ... on PrismicPageLayoutPortfolioGridBottom {
             id
             items {
               project {

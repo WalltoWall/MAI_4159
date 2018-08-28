@@ -9,48 +9,28 @@ export const Container = styled.div`
 `
 export const StyledLink = styled(Link)`
   display: inline-block;
-  width: 100%;
+  width: 50%;
   ${t.mq.l} {
-    width: 50%;
+    width: 33.3333%;
   }
 `
 export const Grid = styled.div`
-  position: relative;  
+  position: relative;
   background-image: url(${p => p.background ? p.background : 'none'});
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 75%;
+  padding-top: 60%;
  `
-
-export const GridOverlay = styled.div`
-  position: absolute;
-  top:0;
-  width:100%;
-  height:100%;
-  background-color: black;
-  opacity:0.5;
-  z-index:2;
-  &:hover {
-    opacity:1;
-  }
-`
-
 export const GridTitle = styled.h1`
   position: absolute;
-  top: 40%;
-  font-size: ${t.f(4)};
+  top: 35%;
+  font-size: ${t.f(1)};
   color: ${t.c.darkgrey1};
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
   font-weight: 700;
-  z-index:3;
   ${t.mq.l} {
-    font-size: ${t.f(5)}; 
-  }
-
-  ${Grid}:hover & {
-    color: white !important;
-    top: 40%;
+    font-size: ${t.f(5)};
   }
 `
