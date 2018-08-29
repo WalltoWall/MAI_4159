@@ -23,14 +23,43 @@ export const Grid = styled.div`
   justify-content: center;
   padding-top: 60%;
  `
+ export const GridOverlay = styled.div`
+  position: absolute;
+  top:0;
+  width:100%;
+  height:100%;
+  background-color: ${t.c.white};
+  opacity:0;
+  z-index:2;
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  
+  ${Grid}:hover & {
+    opacity:0.8;
+    border-bottom: 1rem solid ${t.c.yellow};
+  }
+`
+
 export const GridTitle = styled.h1`
   position: absolute;
+  opacity: 0;
   top: 35%;
   font-size: ${t.f(1)};
   color: ${t.c.darkgrey1};
   letter-spacing: 0.1rem;
   font-weight: 700;
+  z-index:3;
+  -webkit-transition: opacity .2s ease-in;
+  -moz-transition: opacity .2s ease-in;
+  -o-transition: opacity .2s ease-in;
+  transition: opacity .2s ease-in;
+  
   ${t.mq.l} {
     font-size: ${t.f(5)};
+  }
+  ${Grid}:hover & {
+    opacity: 1;
   }
 `

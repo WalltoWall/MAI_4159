@@ -5,12 +5,14 @@ import {
   Container, 
   Grid, 
   StyledLink, 
-  GridTitle
+  GridTitle,
+  GridOverlay,
 } from './index.styled'
 
 const renderGrid = (data) => (
   <Grid background={data.image.url}>
     <GridTitle>{data.title.text}</GridTitle>
+    <GridOverlay/>
   </Grid>
 )
 

@@ -29,28 +29,38 @@ export const GridOverlay = styled.div`
   top:0;
   width:100%;
   height:100%;
-  background-color: black;
-  opacity:0.5;
+  background-color: ${t.c.white};
+  opacity:0;
   z-index:2;
-  &:hover {
-    opacity:1;
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  
+  ${Grid}:hover & {
+    opacity:0.8;
+    border-bottom: 1rem solid ${t.c.yellow};
   }
 `
 
-export const GridTitle = styled.h1`
+export const GridTitle = styled.h1`  
   position: absolute;
+  opacity: 0;
   top: 40%;
   font-size: ${t.f(4)};
   color: ${t.c.darkgrey1};
   letter-spacing: 0.2rem;
   font-weight: 700;
   z-index:3;
+  -webkit-transition: opacity .2s ease-in;
+  -moz-transition: opacity .2s ease-in;
+  -o-transition: opacity .2s ease-in;
+  transition: opacity .2s ease-in;
+  
   ${t.mq.l} {
     font-size: ${t.f(5)}; 
   }
-
   ${Grid}:hover & {
-    color: white !important;
-    top: 40%;
+    opacity: 1;
   }
 `
