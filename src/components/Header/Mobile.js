@@ -1,7 +1,7 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { get } from 'lodash'
-import { Container, List } from './Mobile.styled'
+import { Container} from './Mobile.styled'
 import { MobileNavItem } from './MobileNavItem.js'
 
 const renderLink = toggleMobileNav => item => (
@@ -16,9 +16,7 @@ const renderLink = toggleMobileNav => item => (
 
 const render = ({ isOpen, toggle, ...props }) => queryData => (
   <Container isOpen={isOpen} {...props}>
-    <List>
-        {get(queryData, 'prismicNavigation.data.primary', []).map(renderLink(toggle))}    
-    </List>
+    {get(queryData, 'prismicNavigation.data.primary', []).map(renderLink(toggle))}    
   </Container>
 )
 

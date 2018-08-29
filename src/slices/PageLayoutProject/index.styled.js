@@ -73,7 +73,7 @@ export const ProjectTitle = styled.h2`
   max-width: 200px;
   display: block;
   margin: 0 auto;
-  z-index: 99;
+  z-index: 5;
   transition: color 200ms;
 
   ${t.mq.m} {

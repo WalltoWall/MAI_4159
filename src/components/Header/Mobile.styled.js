@@ -6,7 +6,7 @@ import t from 'theme'
 export const HamburgerMenuContainer = styled.div`
   cursor: pointer;
   position: absolute;
-  z-index: 30;
+  z-index: 7;
   right: 1.5rem;
   top: 1.5rem;
   ${t.mq.l} {
@@ -22,14 +22,15 @@ export const StyledMobile = styled(Mobile)`
   right: 0;
   right: 0;
   top: 0;
-  z-index: 2;
-
+  z-index: 6;
+  height: 100vh;
+  overflow-y: hidden;
   ${t.mq.l} {
     display: none;
   }
 `
 export const Container = styled.div`
-  background-color: blue;
+  background-color: ${t.c.darkgrey2};
   color: ${t.c.yellow};
   display: flex;
   flex-direction: column;
@@ -42,9 +43,4 @@ export const Container = styled.div`
   transition-property: transform;
   transition-duration: ${t.t};
   transform: translateY(${p => (p.isOpen ? 0 : '-110%')});
-`
-
-export const List = styled.ul`
-  margin: ${t.s(0)} 0 0;
-  padding: 0;
 `
