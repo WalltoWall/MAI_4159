@@ -45,7 +45,7 @@ export const Grid = styled.div`
 export const GridTitle = styled.h1`
   position: absolute;
   opacity: 0;
-  top: 35%;
+  top: 30%;
   font-size: ${t.f(1)};
   color: ${t.c.darkgrey1};
   letter-spacing: 0.1rem;
