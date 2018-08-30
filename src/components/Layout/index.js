@@ -30,9 +30,6 @@ injectGlobal`
     margin: 0 auto;
     padding: 0;
     background-color: #e4e4e4;
-    ${t.mq.xxx} {
-      width: 70%;
-    }
   }
 
   a {

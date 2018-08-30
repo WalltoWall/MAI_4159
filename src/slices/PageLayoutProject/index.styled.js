@@ -46,6 +46,10 @@ export const Image = styled.img`
   height: 100%;
   width: 100%;
   object-fit: cover;
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
 `
 
 export const Description = styled.div`
@@ -74,7 +78,10 @@ export const ProjectTitle = styled.h2`
   display: block;
   margin: 0 auto;
   z-index: 5;
-  transition: color 200ms;
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
 
   ${t.mq.m} {
     font-size: ${t.f(4)};
@@ -119,7 +126,7 @@ export const Project = styled.div`
     }
 
     ${Image} {
-      opacity: 0.4;
+      opacity: 0.2;
     }
 
     ${ProjectTitle} {

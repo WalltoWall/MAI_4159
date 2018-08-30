@@ -96,6 +96,7 @@ export const Description = styled.div`
   color: ${t.c.white};
   width: auto;
   text-align: center;
+  
 
   ${t.mq.l} {
     text-align: left;
