@@ -1,10 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-import { Container } from './index.styled'
+import { Container, Image, Content } from './index.styled'
 export const ProjectLayoutFullImage = ({ data }) => (
   <Container>
-    Hello World
+    <Content>
+      <Image src={get(data, 'primary.image.url')}/>
+      <p>{get(data, 'primary.caption.text')}</p>
+    </Content>
   </Container>
 )
  export const query = graphql`
@@ -14,6 +17,14 @@ export const ProjectLayoutFullImage = ({ data }) => (
         layout {
           ... on PrismicProjectLayoutFullImage {
             id
+            primary {
+              image {
+                url
+              }
+              caption {
+                text
+              }
+            }
           }
         }
       }

@@ -17,8 +17,11 @@ export const LeftColumn = styled.div`
   width: 100%;
   padding: 0 1rem;
   ${t.mq.l} {
-    width: 35%;  
+    width: 45%;  
     padding: 0 2rem 0 5rem;
+  }
+  ${t.mq.x} {
+    width: 40%;  
   }
 `
 
@@ -26,8 +29,11 @@ export const RightColumn = styled.div`
   width: 100%;
   padding: 0 1rem; 
   ${t.mq.l} {
-    width: 35%;  
+    width: 45%;  
     padding: 0 5rem 0 2rem; 
+  }
+  ${t.mq.x} {
+    width: 40%;  
   }
   h2 {
     font-size: 1.2rem;
