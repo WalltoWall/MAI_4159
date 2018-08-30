@@ -2,7 +2,7 @@ import styled from 'react-emotion'
 import {css} from 'emotion'
 import t from 'theme'
 export const Container = styled.div`
- height: 750px;
+ height: 850px;
  display: flex;
  overflow: hidden;
  position: relative;
@@ -132,5 +132,11 @@ export const InfoLine = styled.hr`
   margin: 0;
   ${t.mq.m} {    
     width: 50%;
+  }
+  ${t.mq.l} {    
+    width: 40%;
+  }
+  ${t.mq.x} {    
+    width: 30%;
   }
 `
