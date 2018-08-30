@@ -6,16 +6,14 @@ export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  padding-bottom: 2rem;
   height: auto;
-  background-color: ${t.c.white};
+  background-color: ${t.c.darkgrey1};
   position: relative;
   overflow: hidden;
 
   ${t.mq.l} {
     height: 800px;
-    background-color: ${t.c.darkgrey1};
-    padding-bottom: 0;
+    background-color: ${t.c.white};
   }
  `
 
@@ -28,10 +26,16 @@ export const Headline = styled.h1`
   letter-spacing: 3px;
   text-align: center;
   margin: 0;
+      -webkit-transform: rotate(7deg);
+      -ms-transform: rotate(7deg);
+      transform: rotate(7deg);
 
   ${t.mq.l} {
     text-align: left;
     font-size: ${t.f(10)};
+      -webkit-transform: none;
+      -ms-transform: none;
+      transform: none;
   }
 `
 
@@ -39,23 +43,12 @@ export const ImageContainer = styled.div`
   width: 100%;
   position: relative;
   overflow: hidden;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
   .gatsby-image-outer-wrapper,
   .gatsby-image-wrapper {
     height: 100%;
     img {
       object-position: center 20% !important;
     }
-  }
-  ${t.mq.l} {
-    width: 60%;
-    height: 800px;
-    -webkit-clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
-    clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
-  }
-  ${t.mq.x} {
-    width: 70%;
   }
 `
 
@@ -69,7 +62,7 @@ export const Gradient = styled.div`
   display: none;
   position: absolute;
   background-image: linear-gradient(to left, transparent 0%, black 100%);
-  height: 800px;
+  height: 100%;
   width: 100%;
   opacity: 0.5;
 
@@ -82,23 +75,29 @@ export const HeadlineWrapper = styled.div`
   position: relative;
   display: block;
   width: 100%;
-  margin-top: 1rem;
+  background-color: ${t.c.darkgrey1};
+  padding: 2rem;
+      -webkit-transform: rotate(-7deg) translate(0,-50px) scale(1.2);
+      -ms-transform: rotate(-7deg) translate(0,-50px) scale(1.2);
+      transform: rotate(-7deg) translate(0,-50px) scale(1.2);
 
   ${t.mq.l} {
     position: absolute;
     margin-left: 2rem;
-    margin-top: 0;
     width: auto;
+    background-color: transparent;
+      -webkit-transform: none;
+      -ms-transform: none;
+      transform: none;
   }
 `
 
 export const Description = styled.div`
-  color: ${t.c.darkgrey1};
+  color: ${t.c.white};
   width: auto;
   text-align: center;
 
   ${t.mq.l} {
-    color: ${t.c.white};
     text-align: left;
     width: 300px;
   }
@@ -109,11 +108,35 @@ export const DescriptionWrapper = styled.div`
   font-weight: 300;
   width: 100%;
   display: block;
-  padding: 0 3rem;
-  background-color: ${t.c.white};
+  padding: 0 3rem 2rem 3rem;
 
   ${t.mq.l} {
-    background-color: ${t.c.darkgrey1};
-    width: 30%;
+      -webkit-transform: rotate(3deg);
+      -ms-transform: rotate(3deg);
+      transform: rotate(3deg) translate(30px, 350px);
+    padding: 0 3rem;
+  }
+`
+
+export const Overlay = styled.div`
+  display: block;
+  position: initial;
+  height: 100%;
+  width: 100%;
+  background-color: ${t.c.darkgrey1};
+  -webkit-transform: rotate(0);
+  -ms-transform: rotate(0);
+  transform: rotate(0);
+  overflow: hidden;
+  ${t.mq.l} {
+    position: absolute;
+    display: block;
+      -webkit-transform: rotate(-3deg);
+      -ms-transform: rotate(-3deg);
+      transform: rotate(-3deg);
+    width: 40%;
+    height: 120%;
+    top: -50px;
+    right: -50px;
   }
 `
