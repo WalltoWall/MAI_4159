@@ -1,12 +1,19 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-import { Overlay, ImageContainer, Image } from './index.styled'
+import {MobileNavOverlay} from 'components/Header/Mobile.styled'
+import { 
+  ClipOverlay, 
+  ImageContainer, 
+  Image, 
+} from './index.styled'
+
 export const PageLayoutSubPageHero = ({ data }) => (
   
     <ImageContainer>
       <Image src={get(data, 'primary.image.url')} />
-      <Overlay />
+      <ClipOverlay />
+      <MobileNavOverlay />
     </ImageContainer>
 )
  export const query = graphql`
