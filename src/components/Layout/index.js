@@ -29,7 +29,10 @@ injectGlobal`
     width: 100%;
     margin: 0 auto;
     padding: 0;
-    background-color: #e4e4e4;
+    background-color: ${t.c.lightgrey1};
+    ${t.mq.xxx} {
+      width: 70%;
+    }
   }
 
   a {
