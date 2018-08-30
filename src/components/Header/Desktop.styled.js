@@ -21,13 +21,12 @@ export const LogoLink = styled(Link)`
   z-index: 2;
   left: 50%;
   top: 20px;
-  margin: 0 0 0 -25px;
+  margin: 0 0 0 -29px;
   width: 60px;
   ${t.mq.l} {
-    width: 95px;
+    width: 65px;
     left: 0;
-    margin: 1rem 0 0 1.2rem;
-    padding-left: 1.4rem;
+    margin: 1rem 0 0 3rem;
   }
 `
 
@@ -36,17 +35,10 @@ export const LogoIcon = styled.img`
   padding-bottom: 3rem;
 `
 
-export const MobileLogoLink = styled(Link)`
-  color: inherit;
-  text-decoration: none;
-  display: block;
-  margin: 24px 0 0 1.2rem;
-  padding-left: 1.4rem;
-`
-
 export const NavWrapper = styled.div`
   position: absolute;
   top: 5rem;
+  margin-left: 0.5rem;
   left: 0;
   z-index: 30;
   display:none;
