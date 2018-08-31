@@ -21,7 +21,7 @@ const getLinkProps = () => ({ href, location: { pathname } }) => ({
 })
 
 const renderLink = item => (
-  <Container>
+  <Container key={item.id}>
     <NavArrow/>
     <Link 
       key={get(item, 'id')} 

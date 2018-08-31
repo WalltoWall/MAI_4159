@@ -51,8 +51,7 @@ export const PageLayoutPortfolioGridTop = ({ data }) => {
                   data {
                     title {
                       text
-                    }
-                    category_type
+                    }                
                     image {
                       url
                     }

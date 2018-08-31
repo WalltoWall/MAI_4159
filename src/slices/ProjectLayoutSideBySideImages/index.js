@@ -7,7 +7,10 @@ export const ProjectLayoutSideBySideImages = ({ data }) => (
     <Content>
       {get(data, 'items').map(
           (item) => (  
-            <Image src={item.image.url}/>
+            <Image 
+              key={item.image.url}
+              src={item.image.url}
+            />
           )  
       )}
       <p>{get(data, 'primary.caption.text')}</p>

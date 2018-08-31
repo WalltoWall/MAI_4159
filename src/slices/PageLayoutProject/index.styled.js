@@ -98,7 +98,7 @@ export const Overlay = styled.div`
   left: 0;
   background-color: black;
   z-index: 0;
-  opacity: 0.3;
+  opacity: 0.4;
   -webkit-transition: all .2s ease-in;
   -moz-transition: all .2s ease-in;
   -o-transition: all .2s ease-in;
