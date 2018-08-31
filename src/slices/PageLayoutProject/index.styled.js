@@ -31,7 +31,7 @@ export const Headline = styled.h1`
     font-size: ${t.f(5)};
     width: 100%;
     margin-top: -24px;
-    z-index: 1;
+    z-index: 2;
   }
 `
 
@@ -108,6 +108,20 @@ export const ProjectContainer = styled.div`
   max-width: 67rem;
 `
 
+export const Overlay = styled.div`
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1;
+  opacity: 0.3;
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+`
+
 export const Project = styled.div`
   position: relative;
   text-align: center;
@@ -151,16 +165,16 @@ export const Project = styled.div`
     ${ProjectTitle} {
       color: ${t.c.darkgrey1};
     }
+
+    ${Overlay} {
+      opacity: 0;
+    }
   }
 
   ${t.mq.m} {
     height: ${t.s(9)};
     width: ${t.s(10)};
   }
-`
-
-export const Overlay = styled.div`
-  
 `
 
 
