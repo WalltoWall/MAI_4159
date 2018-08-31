@@ -109,7 +109,7 @@ export const DescriptionWrapper = styled.div`
   font-weight: 300;
   width: 100%;
   display: block;
-  padding: 0 3rem 2rem 3rem;
+  padding: 0 3rem;
 
   ${t.mq.l} {
       -webkit-transform: rotate(3deg);
@@ -127,7 +127,7 @@ export const Overlay = styled.div`
   background-color: ${t.c.darkgrey1};
   -webkit-transform: rotate(0);
   -ms-transform: rotate(0);
-  transform: rotate(0);
+  transform: rotate(0) translate(0, -50px);
   overflow: hidden;
   ${t.mq.l} {
     position: absolute;

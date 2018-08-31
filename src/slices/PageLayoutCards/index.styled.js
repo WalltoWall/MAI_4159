@@ -6,9 +6,10 @@ export const Container = styled.div`
   background-color: ${t.c.lightgrey1};
   margin: 0 auto;
   display: block;
-  padding: 6rem 1rem 4rem 1rem;
+  padding: 2rem 1rem 4rem 1rem;
   ${t.mq.l} {
     min-height: 50vh;
+    padding-top: 6rem;
   }
  `
 

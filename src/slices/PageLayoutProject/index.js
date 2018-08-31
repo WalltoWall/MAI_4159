@@ -22,7 +22,7 @@ export const PageLayoutProject = ({ data }) => (
     <Description
       dangerouslySetInnerHTML={{ __html: get(data, 'primary.description.html') }}
     />
-    <Button to="/">see our work</Button>
+    <Button to="/portfolio/">see our work</Button>
   </Container>
 )
 
