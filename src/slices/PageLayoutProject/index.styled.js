@@ -5,9 +5,10 @@ export const Container = styled.div`
   background-color: ${t.c.lightgrey3};
   margin: 0 auto;
   display: block;
+  padding: 2rem;
   ${t.mq.l} {
     min-height: 50vh;
-    margin-top: -50px;
+    margin-top: -80px;
   }
  `
 
@@ -18,33 +19,22 @@ export const Text = styled.p`
 `
 
 export const Headline = styled.h1`
-  color: ${t.c.white};
+  color: ${t.c.darkgrey1};
   font-family: ${t.ff.sans};
   font-size: ${t.f(4)};
   font-weight: 600;
-  margin-bottom: 0;
-  text-align: center;
+  margin: 0 auto;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  text-align: left;
-  ${t.mq.m} {
+  text-align: center;
+  display: block;
+  z-index: 2;
+  width: 100%;
+  ${t.mq.l} {
     font-size: ${t.f(5)};
-    width: 100%;
-    margin-top: -24px;
-    z-index: 2;
-  }
-`
-
-export const ImageContainer = styled.div`
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-
-  .gatsby-image-outer-wrapper,
-  .gatsby-image-wrapper {
-    height: 100%;
+    margin-top: -60px;
+    text-align: left;
+    color: ${t.c.white};
   }
 `
 
@@ -75,13 +65,10 @@ export const Description = styled.div`
 export const ProjectTitle = styled.h2`
   font-family: ${t.ff.sans};
   color: ${t.c.white};
-  font-size: ${t.f(2)};
-  position: absolute;
+  font-size: ${t.f(2.5)};
+  position: relative;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  top: 38%;
-  right: 0;
-  left: 0;
   font-weight: 600;
   max-width: 200px;
   display: block;
@@ -91,12 +78,6 @@ export const ProjectTitle = styled.h2`
   -moz-transition: all .2s ease-in;
   -o-transition: all .2s ease-in;
   transition: all .2s ease-in;
-
-  ${t.mq.m} {
-    font-size: ${t.f(3)};
-    top: 40%;
-    line-height: 2.2rem;
-  }
 `
 
 export const ProjectContainer = styled.div`
@@ -113,8 +94,10 @@ export const Overlay = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
   background-color: black;
-  z-index: 1;
+  z-index: 0;
   opacity: 0.3;
   -webkit-transition: all .2s ease-in;
   -moz-transition: all .2s ease-in;
@@ -126,23 +109,35 @@ export const Project = styled.div`
   position: relative;
   text-align: center;
   background-color: ${t.c.white};
-  margin: 1rem;
-  height: ${t.s(8)};
-  width: ${t.s(9)};
+  display: block;
+  margin: 1rem 0;
+  min-height: ${t.s(8)};
+  min-width: ${t.s(8)};
+  width: 100%;
   overflow: hidden;
   -webkit-transition: all .2s ease-in;
   -moz-transition: all .2s ease-in;
   -o-transition: all .2s ease-in;
   transition: all .2s ease-in;
+  background-image: url(${p => p.background ? p.background : 'none'});
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &::after {
     width: 100%;
-    height: 10px;
+    height: 1rem;
     background-color: ${t.c.yellow};
     position: absolute;
     bottom: 0;
     content: '';
     display: none;
+    z-index: 4;
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
   }
 
   &:first-child {
@@ -167,13 +162,14 @@ export const Project = styled.div`
     }
 
     ${Overlay} {
-      opacity: 0;
+      background-color: white;
+      opacity: 0.8;
     }
   }
 
   ${t.mq.m} {
-    height: ${t.s(9)};
-    width: ${t.s(10)};
+    width: 49%;
+    min-height: ${t.s(9)};
   }
 `
 
