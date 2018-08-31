@@ -50,8 +50,7 @@ export const PageLayoutPortfolioGridBottom = ({ data }) => {
                   data {
                     title {
                       text
-                    }
-                    category_type
+                    }                    
                     image {
                       url
                     }

@@ -41,7 +41,7 @@ const render = () => queryData => {
                 </StyledLink>
                 {
                   menuLength !== (index + 1) && 
-                  <LinkSeparator>|</LinkSeparator>
+                  <LinkSeparator key={get(item, 'id') + index}>|</LinkSeparator>
                 }
               </>
               )

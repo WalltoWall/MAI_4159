@@ -13,7 +13,6 @@ import {
   InfoBlurb,
   InfoLine,
 } from './index.styled'
-import { HTMLContent } from 'components/HTMLContent'
 
 export const ProjectLayoutHero = ({ data }) => (
     <Container>
@@ -77,5 +76,4 @@ export const ProjectLayoutHero = ({ data }) => (
       }
     }
   }
-`        
-// <HTMLContent html={get(data, 'primary.awards.html')} />
+`
