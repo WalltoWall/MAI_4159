@@ -1,12 +1,12 @@
 import styled from 'react-emotion'
 import t from 'theme'
- export const Container = styled.div`
+export const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   background-color: white;
- `
+`
 export const Content = styled.div`
   text-align: center;
   p {
@@ -24,8 +24,6 @@ export const Content = styled.div`
 `
 
 export const Image = styled.img`
-  width: 100%;
+  width: 98%;
   object-fit: cover;
-  ${t.mq.l} {
-  }
 `
