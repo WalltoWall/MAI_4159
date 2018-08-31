@@ -31,7 +31,7 @@ injectGlobal`
     padding: 0;
     background-color: ${t.c.lightgrey1};
     ${t.mq.xxx} {
-      width: 70%;
+      max-width: 70%;
     }
   }
 
