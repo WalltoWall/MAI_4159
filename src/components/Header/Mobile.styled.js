@@ -44,3 +44,16 @@ export const Container = styled.div`
   transition-duration: ${t.t};
   transform: translateY(${p => (p.isOpen ? 0 : '-110%')});
 `
+
+export const MobileNavOverlay = styled.div`
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+  position: absolute;
+  top: 0;
+  height: 100px;
+  width: 100%;
+  opacity: 0.5;
+  ${t.mq.l} {
+    display: none;
+  }
+`
