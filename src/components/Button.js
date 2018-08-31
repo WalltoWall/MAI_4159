@@ -18,6 +18,10 @@ const Button = styled(Link)`
 	font-size: ${t.f(2)};
 	margin: 0 auto;
 	transition: background-color 200ms;
+
+	&:hover {
+		background-color: ${t.c.darkyellow};
+	}
 `
 
 export default Button

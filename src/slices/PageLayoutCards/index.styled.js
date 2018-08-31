@@ -6,7 +6,7 @@ export const Container = styled.div`
   background-color: ${t.c.lightgrey1};
   margin: 0 auto;
   display: block;
-  padding: 4rem 1rem 4rem 1rem;
+  padding: 6rem 1rem 4rem 1rem;
   ${t.mq.l} {
     min-height: 50vh;
   }
@@ -19,14 +19,19 @@ export const Text = styled.p`
 `
 
 export const Headline = styled.h1`
-  color: ${t.c.darkgrey2};
-  font-family: ${t.ff.serif};
-  text-align: center;
-  font-size: ${t.f(5)};
-  font-weight: 300;
+  color: ${t.c.darkgrey1};
+  font-family: ${t.ff.sans};
+  font-size: ${t.f(4)};
+  font-weight: 600;
   margin-bottom: 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
   ${t.mq.m} {
-    font-size: ${t.f(6)};
+    font-size: ${t.f(5)};
+    width: 100%;
+    margin-top: -24px;
+    z-index: 1;
   }
 `
 
@@ -50,7 +55,7 @@ export const Description = styled.div`
   line-height: ${t.lh.copy};
   font-weight: 300;
   text-align: left;
-  font-size: ${t.f(1)};
+  font-size: 1rem;
 `
 
 export const CardTitle = styled.h3`

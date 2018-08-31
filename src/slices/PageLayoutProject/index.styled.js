@@ -2,12 +2,12 @@ import styled from 'react-emotion'
 import t from 'theme'
 
 export const Container = styled.div`
-  background-color: ${t.c.lightgrey2};
+  background-color: ${t.c.lightgrey3};
   margin: 0 auto;
   display: block;
-  padding: 1rem 1rem 4rem 1rem;
   ${t.mq.l} {
     min-height: 50vh;
+    margin-top: -50px;
   }
  `
 
@@ -18,14 +18,20 @@ export const Text = styled.p`
 `
 
 export const Headline = styled.h1`
-  color: ${t.c.darkgrey2};
-  font-family: ${t.ff.serif};
-  text-align: center;
-  font-size: ${t.f(5)};
-  font-weight: 300;
+  color: ${t.c.white};
+  font-family: ${t.ff.sans};
+  font-size: ${t.f(4)};
+  font-weight: 600;
   margin-bottom: 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-align: left;
   ${t.mq.m} {
-    font-size: ${t.f(6)};
+    font-size: ${t.f(5)};
+    width: 100%;
+    margin-top: -24px;
+    z-index: 2;
   }
 `
 
@@ -46,6 +52,10 @@ export const Image = styled.img`
   height: 100%;
   width: 100%;
   object-fit: cover;
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
 `
 
 export const Description = styled.div`
@@ -56,29 +66,36 @@ export const Description = styled.div`
   color: ${t.c.darkgrey1};
   font-weight: 300;
   line-height: ${t.lh.copy};
+  display: none;
   ${t.mq.l} {
     font-size: ${t.f(0)};
   }
 `
 
 export const ProjectTitle = styled.h2`
-  font-family: ${t.ff.serif};
+  font-family: ${t.ff.sans};
   color: ${t.c.white};
-  font-size: ${t.f(3)};
+  font-size: ${t.f(2)};
   position: absolute;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
   top: 38%;
   right: 0;
   left: 0;
-  font-weight: 400;
+  font-weight: 600;
   max-width: 200px;
   display: block;
   margin: 0 auto;
   z-index: 5;
-  transition: color 200ms;
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
 
   ${t.mq.m} {
-    font-size: ${t.f(4)};
+    font-size: ${t.f(3)};
     top: 40%;
+    line-height: 2.2rem;
   }
 `
 
@@ -86,22 +103,37 @@ export const ProjectContainer = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 0;
-  justify-content: center;
+  margin: 0 auto 2rem auto;
+  justify-content: space-between;
+  max-width: 67rem;
+`
 
-  ${t.mq.l} {
-    margin-top: -60px;
-  }
+export const Overlay = styled.div`
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1;
+  opacity: 0.3;
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
 `
 
 export const Project = styled.div`
   position: relative;
   text-align: center;
-  background-color: white;
+  background-color: ${t.c.white};
   margin: 1rem;
   height: ${t.s(8)};
   width: ${t.s(9)};
   overflow: hidden;
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
 
   &::after {
     width: 100%;
@@ -113,17 +145,29 @@ export const Project = styled.div`
     display: none;
   }
 
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
   &:hover {
     &::after {
       display: block;
     }
 
     ${Image} {
-      opacity: 0.4;
+      opacity: 0.2;
     }
 
     ${ProjectTitle} {
       color: ${t.c.darkgrey1};
+    }
+
+    ${Overlay} {
+      opacity: 0;
     }
   }
 

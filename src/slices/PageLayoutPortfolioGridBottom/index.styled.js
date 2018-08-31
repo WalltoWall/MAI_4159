@@ -50,6 +50,7 @@ export const GridTitle = styled.h1`
   color: ${t.c.darkgrey1};
   letter-spacing: 0.1rem;
   font-weight: 700;
+  text-transform: uppercase;
   z-index:3;
   -webkit-transition: opacity .2s ease-in;
   -moz-transition: opacity .2s ease-in;

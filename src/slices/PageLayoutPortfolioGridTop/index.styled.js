@@ -52,6 +52,7 @@ export const GridTitle = styled.h1`
   letter-spacing: 0.2rem;
   font-weight: 700;
   z-index:3;
+  text-transform: uppercase;
   -webkit-transition: opacity .2s ease-in;
   -moz-transition: opacity .2s ease-in;
   -o-transition: opacity .2s ease-in;
