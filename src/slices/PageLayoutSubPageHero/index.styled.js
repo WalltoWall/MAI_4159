@@ -3,7 +3,7 @@ import t from 'theme'
 
 export const ImageContainer = styled.div`
   position: relative;
-  height: 400px;
+  height: 300px;
   overflow: hidden;
 `
 export const Image = styled.img`
@@ -52,7 +52,7 @@ export const ClipOverlay = styled.div`
     background-color: ${t.c.darkgrey1};
     top: -50px;
     left: -50px;
-    height: 120%;
+    height: 140%;
     width: 25%;
   }
 `
