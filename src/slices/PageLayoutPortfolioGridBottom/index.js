@@ -7,6 +7,7 @@ import {
   StyledLink, 
   GridTitle,
   GridOverlay,
+  Bar,
 } from './index.styled'
 
 const renderGrid = (data) => (
@@ -26,6 +27,9 @@ export const PageLayoutPortfolioGridBottom = ({ data }) => {
     
   return (
     <Container>
+      <Bar>
+        <span>Projects A-Z</span>
+      </Bar>
       {projects.map(
         (item) => (  
           <StyledLink to={(get(item, 'project.url'))}>

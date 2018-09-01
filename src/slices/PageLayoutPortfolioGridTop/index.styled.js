@@ -29,8 +29,8 @@ export const GridOverlay = styled.div`
   top:0;
   width:100%;
   height:100%;
-  background-color: ${t.c.white};
-  opacity:0;
+  background-color: ${t.c.black};
+  opacity:0.5;
   z-index:2;
   -webkit-transition: all .2s ease-in;
   -moz-transition: all .2s ease-in;
@@ -38,30 +38,26 @@ export const GridOverlay = styled.div`
   transition: all .2s ease-in;
   
   ${Grid}:hover & {
-    opacity:0.8;
+    opacity:0.7;
+    background-color: ${t.c.white};
     border-bottom: 1rem solid ${t.c.yellow};
   }
 `
 
 export const GridTitle = styled.h1`  
   position: absolute;
-  opacity: 0;
   top: 40%;
   font-size: ${t.f(4)};
-  color: ${t.c.darkgrey1};
+  color: ${t.c.white};
   letter-spacing: 0.2rem;
   font-weight: 700;
   z-index:3;
   text-transform: uppercase;
-  -webkit-transition: opacity .2s ease-in;
-  -moz-transition: opacity .2s ease-in;
-  -o-transition: opacity .2s ease-in;
-  transition: opacity .2s ease-in;
-  
+
   ${t.mq.l} {
     font-size: ${t.f(5)}; 
   }
   ${Grid}:hover & {
-    opacity: 1;
+    color: ${t.c.darkgrey1};
   }
 `
