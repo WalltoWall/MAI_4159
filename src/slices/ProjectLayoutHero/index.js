@@ -24,19 +24,15 @@ export const ProjectLayoutHero = ({ data }) => (
         </Header>
         <InfoLine/>
         <div className={InfoBlurb}>
+          <h3>project type</h3>
+          <p>{get(data, 'primary.project_type.text')}</p>
+        </div>
+        <InfoLine/>
+        <div className={InfoBlurb}>
           <h3>year completed</h3>
           <p>{get(data, 'primary.year_completed.text')}</p>
         </div>
         <InfoLine/>
-        <div className={InfoBlurb}>
-          <h3>awards</h3>
-          <p>{get(data, 'primary.awards.text')}</p>
-        </div>
-        <InfoLine/>
-        <div className={InfoBlurb}>
-          <h3>documents</h3>
-          <p>{get(data, 'primary.awards.text')}</p>
-        </div>
       </Content> 
       <ClipOverlay />
       <MobileNavOverlay/>
@@ -48,12 +44,7 @@ export const ProjectLayoutHero = ({ data }) => (
       data {
         layout {
           ... on PrismicProjectLayoutHero {
-            id
-            items {
-              documents {
-                text
-              }
-            }
+            id          
             primary {
               image {
                 url
@@ -67,7 +58,7 @@ export const ProjectLayoutHero = ({ data }) => (
               year_completed {
                 text
               }
-              awards {
+              project_type {
                 text
               }
             }

@@ -9,42 +9,40 @@ import {
   StyledHtmlClassName,
 } from './index.styled'
 
-export const ProjectLayoutSummary = ({ data }) => (
+export const ProjectLayoutSideBySideText = ({ data }) => (
   <Container>
     <LeftColumn>
-      <HTMLContent 
-        html={get(data, 'primary.introduction.html')} 
+      <HTMLContent
+        html={get(data, 'primary.left_text.html')}
         className={StyledHtmlClassName}
       />
     </LeftColumn>
     <RightColumn>
-      <h2>Project Details</h2>
-      <HTMLContent 
-        html={get(data, 'primary.details.html')} 
+      <HTMLContent
+        html={get(data, 'primary.right_text.html')}
         className={StyledHtmlClassName}
       />
     </RightColumn>
   </Container>
 )
- export const query = graphql`
-  fragment ProjectLayoutSummary on Query {
+export const query = graphql`
+  fragment ProjectLayoutSideBySideText on Query {
     prismicProject(id: { eq: $id }) {
       data {
         layout {
-          ... on PrismicProjectLayoutSummary {
+          ... on PrismicProjectLayoutSideBySideText {
             id
             primary {
-              introduction {
-                html                
+              left_text {
+                html
               }
-              details {
-                html                
+              right_text {
+                html
               }
-            }        
+            }
           }
         }
       }
     }
   }
 `
-

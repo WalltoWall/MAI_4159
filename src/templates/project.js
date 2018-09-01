@@ -5,7 +5,8 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Layout } from 'components/Layout'
 import {ProjectLayoutHero} from 'slices/ProjectLayoutHero'
-import {ProjectLayoutSummary} from 'slices/ProjectLayoutSummary'
+import {ProjectLayoutSlice} from 'slices/ProjectLayoutSummary'
+import {ProjectLayoutSideBySideText} from 'slices/ProjectLayoutSideBySideText'
 import {ProjectLayoutFullImage} from 'slices/ProjectLayoutFullImage'
 import {ProjectLayoutSideBySideImages} from 'slices/ProjectLayoutSideBySideImages'
 import {ProjectLayoutCallToAction} from 'slices/ProjectLayoutCallToAction'
@@ -21,11 +22,12 @@ const ProjectTemplate = ({ data }) => (
         list={get(data, 'prismicProject.data.layout')}
         map={{
           ProjectLayoutHero,
-          ProjectLayoutSummary,
           ProjectLayoutFullImage,
           ProjectLayoutSideBySideImages,
           ProjectLayoutCallToAction,
           ProjectLayoutFeatureList,
+          ProjectLayoutSlice,
+          ProjectLayoutSideBySideText
         }}
         page={get(data, 'prismicProject')}
         rootData={data}
@@ -49,10 +51,11 @@ export const query = graphql`
       }
     }
     ...ProjectLayoutHero
-    ...ProjectLayoutSummary
+    ...ProjectLayoutSlice
     ...ProjectLayoutFullImage
     ...ProjectLayoutSideBySideImages
     ...ProjectLayoutCallToAction
     ...ProjectLayoutFeatureList
+    ...ProjectLayoutSideBySideText
   }
 `

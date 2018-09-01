@@ -1,5 +1,5 @@
 import styled from 'react-emotion'
-import {css} from 'emotion'
+import { css } from 'emotion'
 import t from 'theme'
 
 export const Container = styled.div`
@@ -17,23 +17,23 @@ export const LeftColumn = styled.div`
   width: 100%;
   padding: 0 1rem;
   ${t.mq.l} {
-    width: 45%;  
+    width: 45%;
     padding: 0 2rem 0 5rem;
   }
   ${t.mq.x} {
-    width: 40%;  
+    width: 40%;
   }
 `
 
 export const RightColumn = styled.div`
   width: 100%;
-  padding: 0 1rem; 
+  padding: 0 1rem;
   ${t.mq.l} {
-    width: 45%;  
-    padding: 0 5rem 0 2rem; 
+    width: 45%;
+    padding: 0 5rem 0 2rem;
   }
   ${t.mq.x} {
-    width: 40%;  
+    width: 40%;
   }
   h2 {
     font-size: 1.2rem;
