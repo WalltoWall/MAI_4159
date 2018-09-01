@@ -1,6 +1,5 @@
 import styled from 'react-emotion'
 import { css } from 'emotion'
-import { Link } from '../Link'
 import t from 'theme'
 import { ReactComponent as HoverArrowSVG } from 'assets/hov_arrow.svg'
 

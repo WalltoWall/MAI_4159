@@ -1,6 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
+import { isPathActive } from 'lib/helpers'
+
 import { Toggle } from 'react-powerplug'
 import {
   Desktop,
@@ -14,6 +16,12 @@ export class PageLayoutCategoriesBar extends React.Component {
   constructor(props) {
     super(props)
   }
+  getLinkProps = () => ({ href, location: { pathname } }) => ({
+    className: classnames(
+      navItemClassName,
+      isPathActive(pathname, href) && linkActiveClassName,
+    ),
+  })
 
   componentDidMount() {}
 
@@ -41,6 +49,7 @@ export class PageLayoutCategoriesBar extends React.Component {
                   <StyledLink
                     key={get(item, 'name.text')}
                     to={get(item, 'url.url', '/')}
+                    getProps={this.getLinkProps()}
                   >
                     {get(item, 'name.text')}
                   </StyledLink>
