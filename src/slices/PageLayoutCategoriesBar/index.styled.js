@@ -49,6 +49,8 @@ export const StyledLink = styled(Link)`
     z-index: 2;
     padding: 0 1rem;
     margin: 0 2rem;
+    font-family: ${t.ff.sans2};
+    letter-spacing: 0.1rem;
     -webkit-transition: color .2s ease-in;
     -moz-transition: color .2s ease-in;
     -o-transition: color .2s ease-in;
