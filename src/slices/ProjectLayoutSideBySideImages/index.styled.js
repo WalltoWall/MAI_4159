@@ -2,12 +2,15 @@ import styled from 'react-emotion'
 import t from 'theme'
 
 export const Container = styled.div`
-  padding: 3rem 0;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   background-color: white;
+  padding-bottom: 2rem;
+  ${t.mq.l} {
+    padding: 5rem 0 3rem 0;
+  }
 `
 export const Content = styled.div`
   text-align: center;

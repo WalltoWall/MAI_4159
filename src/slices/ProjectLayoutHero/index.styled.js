@@ -20,7 +20,7 @@ export const Content = styled.div`
   width: 100%;
   padding: 0 2rem 2rem 2rem;
   ${t.mq.l} {
-    padding: 0 2rem 2.5rem 3rem;
+    padding: 0 2rem 3rem 3.5rem;
     width: 50%;
   }
   ${t.mq.x} {
@@ -78,7 +78,7 @@ export const Header = styled.div`
     width: 80%;
   }
   ${t.mq.x} {
-    width: 55%;
+    width: 65%;
   }
 `
 export const Title = styled.h1`
@@ -88,12 +88,13 @@ export const Title = styled.h1`
   font-family: ${t.ff.sans};
   letter-spacing: 0.2rem;
   ${t.mq.l} {
-    font-size: ${t.f(7)};
+    font-size: ${t.f(8)};
   }
 `
 
 export const SubTitle = styled.h2`
-  font-size: ${t.f(1)};
+  font-size: ${t.f(3)};
+  letter-spacing: 0.1rem;
   color: ${t.c.white};
   font-weight: 400;
   font-family: ${t.ff.sans2};
@@ -104,7 +105,7 @@ export const InfoBlurb = css`
   width: 100%;
   margin-bottom: -6px;
   h3 {
-    font-size: ${t.f(-2)};
+    font-size: ${t.f(0)};
     color: ${t.c.yellow};
     font-family: ${t.ff.sans2};
     text-transform: uppercase;
@@ -113,7 +114,7 @@ export const InfoBlurb = css`
 
   p {
     font-family: ${t.ff.serif};
-    font-size: ${t.f(-1)};
+    font-size: ${t.f(0)};
     font-weight: 600;
     color: ${t.c.white};
   }
@@ -121,7 +122,7 @@ export const InfoBlurb = css`
     width: 60%;
   }
   ${t.mq.x} {
-    width: 40%;
+    width: 50%;
   }
 `
 

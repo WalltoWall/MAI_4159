@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { isPathActive } from 'lib/helpers'
-
+import classnames from 'classnames'
 import { Toggle } from 'react-powerplug'
 import {
   Desktop,
@@ -10,6 +10,8 @@ import {
   StyledLink,
   FilterBox,
   CurrentFilter,
+  navItemClassName,
+  linkActiveClassName,
 } from './index.styled'
 
 export class PageLayoutCategoriesBar extends React.Component {
