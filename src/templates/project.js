@@ -5,7 +5,6 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Layout } from 'components/Layout'
 import {ProjectLayoutHero} from 'slices/ProjectLayoutHero'
-import {ProjectLayoutSummary} from 'slices/ProjectLayoutSummary'
 import {ProjectLayoutFullImage} from 'slices/ProjectLayoutFullImage'
 import {ProjectLayoutSideBySideImages} from 'slices/ProjectLayoutSideBySideImages'
 import {ProjectLayoutCallToAction} from 'slices/ProjectLayoutCallToAction'
@@ -21,7 +20,6 @@ const ProjectTemplate = ({ data }) => (
         list={get(data, 'prismicProject.data.layout')}
         map={{
           ProjectLayoutHero,
-          ProjectLayoutSummary,
           ProjectLayoutFullImage,
           ProjectLayoutSideBySideImages,
           ProjectLayoutCallToAction,
@@ -49,7 +47,6 @@ export const query = graphql`
       }
     }
     ...ProjectLayoutHero
-    ...ProjectLayoutSummary
     ...ProjectLayoutFullImage
     ...ProjectLayoutSideBySideImages
     ...ProjectLayoutCallToAction
