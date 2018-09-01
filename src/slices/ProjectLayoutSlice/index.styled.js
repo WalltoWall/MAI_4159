@@ -15,16 +15,18 @@ export const Container = styled.div`
 export const Content = styled.div`
   width: 70%;
   padding: 0 1rem;
+  font-family: ${t.ff.sans2};
 `
 export const StyledHtmlClassName = css`
   h2 {
     font-size: ${t.f(5)};
     font-family: ${t.ff.serif};
-    font-weight: 600;
+    font-weight: 400;
     color: ${t.c.darkgrey1};
   }
   p {
     color: ${t.c.darkgrey2};
-    font-size: ${t.f(2)};
+    font-size: ${t.f(1)};
+    line-height: 2rem;
   }
 `
