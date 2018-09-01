@@ -49,8 +49,9 @@ export const GridTitle = styled.h1`
   font-size: ${t.f(1)};
   color: ${t.c.darkgrey1};
   letter-spacing: 0.1rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
+  text-align: center;
   z-index:3;
   -webkit-transition: opacity .2s ease-in;
   -moz-transition: opacity .2s ease-in;
@@ -58,7 +59,8 @@ export const GridTitle = styled.h1`
   transition: opacity .2s ease-in;
   
   ${t.mq.l} {
-    font-size: ${t.f(5)};
+    font-size: ${t.f(4)};
+    top: 40%;
   }
   ${Grid}:hover & {
     opacity: 1;

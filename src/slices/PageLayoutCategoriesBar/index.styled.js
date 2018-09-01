@@ -26,9 +26,9 @@ export const StyledLink = styled(Link)`
     }
 `
 
-export const navItemClassName = css`
+export const categoryClassName = css`
   display: block;
-  margin: 0 2rem;
+  margin: 0 1rem;
 `
 
 export const linkActiveClassName = css`

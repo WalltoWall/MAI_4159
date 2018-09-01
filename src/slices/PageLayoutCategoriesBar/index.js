@@ -1,13 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-import { Container, StyledLink, navItemClassName, linkActiveClassName } from './index.styled'
+import { Container, StyledLink, categoryClassName, linkActiveClassName } from './index.styled'
 import classnames from 'classnames'
 import { isPathActive } from 'lib/helpers'
 
 const getLinkProps = () => ({ href, location: { pathname } }) => ({
   className: classnames(
-    navItemClassName,
+    categoryClassName,
     isPathActive(pathname, href) && linkActiveClassName,
   ),
 })
@@ -16,7 +16,6 @@ export const PageLayoutCategoriesBar = ({data}) => (
   <Container>
     {get(data, 'items', []).map(item => (
       <StyledLink
-        key={get(item, 'name.text')}
         to={get(item, 'url1.url', '/')}
         getProps={getLinkProps()}
         >
