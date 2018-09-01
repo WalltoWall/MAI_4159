@@ -38,6 +38,10 @@ export const Grid = styled.div`
   
   ${Grid}:hover & {
     opacity:0.8;
+    border-bottom: 0.6rem solid ${t.c.yellow};
+  }
+
+  ${t.mq.l} {
     border-bottom: 1rem solid ${t.c.yellow};
   }
 `
