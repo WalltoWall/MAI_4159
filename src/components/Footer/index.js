@@ -12,12 +12,12 @@ import {
   LinkContainer,
   StyledLink,
   LinkSeparator,
-  CopyrightContent
+  CopyrightContent,
 } from './index.styled'
 
 const render = () => queryData => {
-  const menuList = get(queryData, 'prismicNavigation.data.primary');
-  const menuLength = menuList.length;
+  const menuList = get(queryData, 'prismicNavigation.data.primary')
+  const menuLength = menuList.length
 
   return (
     <Container>
@@ -26,31 +26,31 @@ const render = () => queryData => {
           <FooterLogo src={logo} />
         </Link>
         <BrandContent>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam
         </BrandContent>
         <MenuContainer>
           <LinkContainer>
-            {menuList.map(
-              (item, index) => (
+            {menuList.map((item, index) => (
               <>
                 <StyledLink
                   key={get(item, 'id')}
-                  to={get(item, 'primary.link.url', '/')} 
+                  to={get(item, 'primary.link.url', '/')}
                 >
                   {get(item, 'primary.name')}
                 </StyledLink>
-                {
-                  menuLength !== (index + 1) && 
+                {menuLength !== index + 1 && (
                   <LinkSeparator key={get(item, 'id') + index}>|</LinkSeparator>
-                }
+                )}
               </>
-              )
-            )}
+            ))}
           </LinkContainer>
           <CopyrightContent>
-            © 2074 Sed ut porttitor purus. Quisque ligula lectus. Proin vitae diam ipsum.
+            © 2074 Sed ut porttitor purus. Quisque ligula lectus. Proin vitae
+            diam ipsum.
           </CopyrightContent>
-          </MenuContainer>
+        </MenuContainer>
       </Content>
     </Container>
   )
@@ -78,5 +78,3 @@ export const Footer = () => (
     render={render()}
   />
 )
-
-

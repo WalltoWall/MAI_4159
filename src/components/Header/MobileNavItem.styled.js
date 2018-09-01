@@ -23,7 +23,7 @@ export const NavArrow = styled(HoverArrowSVG)`
   margin-left: -1.5rem;
   transition: transform ${t.t};
   transform: translateY(5%);
-  display:inline-block;
+  display: inline-block;
   opacity: 0;
 
   ${Container}:hover & {

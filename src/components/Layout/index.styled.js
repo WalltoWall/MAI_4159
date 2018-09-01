@@ -10,7 +10,7 @@ export const Container = styled.div`
   ${t.mq.l} {
     min-height: 50vh;
   }
- `
+`
 
 export const Text = styled.p`
   color: ${t.c.darkgrey2};

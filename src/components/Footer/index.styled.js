@@ -17,7 +17,7 @@ export const Content = styled.div`
   flex-direction: column;
   ${t.mq.l} {
     flex-direction: row;
-  } 
+  }
 `
 export const FooterLogo = styled.img`
   margin-top: -${t.s(3.8)};
@@ -49,18 +49,18 @@ export const MenuContainer = styled.div`
 `
 export const LinkContainer = styled.div`
   padding: 1rem 2.5rem;
-  background-color: #00000061;  
+  background-color: #00000061;
   ${t.mq.l} {
     padding: inherit;
     background: none;
   }
 `
 export const StyledLink = styled(Link)`
-  display:inline-block;
+  display: inline-block;
   line-height: 2rem;
   ${t.mq.l} {
     line-height: inherit;
-    display: inline;  
+    display: inline;
   }
 `
 export const LinkSeparator = styled.span`
@@ -73,7 +73,7 @@ export const CopyrightContent = styled.div`
   font-size: 1rem;
   font-weight: 500;
   ${t.mq.l} {
-   font-size: 0.7rem;
-   padding: 1rem 0 0 0;
+    font-size: 0.7rem;
+    padding: 1rem 0 0 0;
   }
 `

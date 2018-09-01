@@ -4,11 +4,13 @@ import MapToComponents from 'react-map-to-components'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Layout } from 'components/Layout'
-import {ProjectLayoutHero} from 'slices/ProjectLayoutHero'
-import {ProjectLayoutFullImage} from 'slices/ProjectLayoutFullImage'
-import {ProjectLayoutSideBySideImages} from 'slices/ProjectLayoutSideBySideImages'
-import {ProjectLayoutCallToAction} from 'slices/ProjectLayoutCallToAction'
-import {ProjectLayoutFeatureList} from 'slices/ProjectLayoutFeatureList'
+import { ProjectLayoutHero } from 'slices/ProjectLayoutHero'
+import { ProjectLayoutSlice } from 'slices/ProjectLayoutSlice'
+import { ProjectLayoutSideBySideText } from 'slices/ProjectLayoutSideBySideText'
+import { ProjectLayoutFullImage } from 'slices/ProjectLayoutFullImage'
+import { ProjectLayoutSideBySideImages } from 'slices/ProjectLayoutSideBySideImages'
+import { ProjectLayoutCallToAction } from 'slices/ProjectLayoutCallToAction'
+import { ProjectLayoutFeatureList } from 'slices/ProjectLayoutFeatureList'
 
 const ProjectTemplate = ({ data }) => (
   <>
@@ -24,6 +26,8 @@ const ProjectTemplate = ({ data }) => (
           ProjectLayoutSideBySideImages,
           ProjectLayoutCallToAction,
           ProjectLayoutFeatureList,
+          ProjectLayoutSlice,
+          ProjectLayoutSideBySideText,
         }}
         page={get(data, 'prismicProject')}
         rootData={data}
@@ -47,9 +51,11 @@ export const query = graphql`
       }
     }
     ...ProjectLayoutHero
+    ...ProjectLayoutSlice
     ...ProjectLayoutFullImage
     ...ProjectLayoutSideBySideImages
     ...ProjectLayoutCallToAction
     ...ProjectLayoutFeatureList
+    ...ProjectLayoutSideBySideText
   }
 `

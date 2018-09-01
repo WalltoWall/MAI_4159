@@ -14,7 +14,7 @@ import {
 const getLinkProps = () => ({ href, location: { pathname } }) => ({
   className: classnames(
     StyledLinkClassName,
-    isPathActive(pathname, href) && linkActiveClassName,
+    isPathActive(pathname, href) && linkActiveClassName
   ),
 })
 
@@ -25,16 +25,12 @@ export const MobileNavItem = ({
   ...props
 }) => (
   <Toggle>
-    {({ on, set, toggle }) => (      
+    {({ on, set, toggle }) => (
       <Container>
-        <NavArrow/>
-        <Link
-          to={to}
-          getProps={getLinkProps(on)}
-          onClick={toggleMobileNav}
-        >
+        <NavArrow />
+        <Link to={to} getProps={getLinkProps(on)} onClick={toggleMobileNav}>
           {name}
-        </Link>      
+        </Link>
       </Container>
     )}
   </Toggle>

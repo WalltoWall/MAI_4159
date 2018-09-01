@@ -15,7 +15,7 @@ export const Container = styled.div`
     height: 800px;
     background-color: ${t.c.white};
   }
- `
+`
 
 export const Headline = styled.h1`
   color: ${t.c.yellow};
@@ -26,16 +26,16 @@ export const Headline = styled.h1`
   letter-spacing: 3px;
   text-align: center;
   margin: 0;
-      -webkit-transform: rotate(7deg);
-      -ms-transform: rotate(7deg);
-      transform: rotate(7deg);
+  -webkit-transform: rotate(7deg);
+  -ms-transform: rotate(7deg);
+  transform: rotate(7deg);
 
   ${t.mq.l} {
     text-align: left;
     font-size: ${t.f(10)};
-      -webkit-transform: none;
-      -ms-transform: none;
-      transform: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
   }
 `
 
@@ -77,18 +77,18 @@ export const HeadlineWrapper = styled.div`
   width: 100%;
   background-color: ${t.c.darkgrey1};
   padding: 2rem;
-      -webkit-transform: rotate(-7deg) translate(0,-50px) scale(1.2);
-      -ms-transform: rotate(-7deg) translate(0,-50px) scale(1.2);
-      transform: rotate(-7deg) translate(0,-50px) scale(1.2);
+  -webkit-transform: rotate(-7deg) translate(0, -50px) scale(1.2);
+  -ms-transform: rotate(-7deg) translate(0, -50px) scale(1.2);
+  transform: rotate(-7deg) translate(0, -50px) scale(1.2);
 
   ${t.mq.l} {
     position: absolute;
     margin-left: 2rem;
     width: auto;
     background-color: transparent;
-      -webkit-transform: none;
-      -ms-transform: none;
-      transform: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
   }
 `
 
@@ -96,7 +96,6 @@ export const Description = styled.div`
   color: ${t.c.white};
   width: auto;
   text-align: center;
-  
 
   ${t.mq.l} {
     text-align: left;
@@ -112,9 +111,9 @@ export const DescriptionWrapper = styled.div`
   padding: 0 3rem;
 
   ${t.mq.l} {
-      -webkit-transform: rotate(3deg);
-      -ms-transform: rotate(3deg);
-      transform: rotate(3deg) translate(30px, 350px);
+    -webkit-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg) translate(30px, 350px);
     padding: 0 3rem;
   }
 `
@@ -132,9 +131,9 @@ export const Overlay = styled.div`
   ${t.mq.l} {
     position: absolute;
     display: block;
-      -webkit-transform: rotate(-3deg);
-      -ms-transform: rotate(-3deg);
-      transform: rotate(-3deg);
+    -webkit-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
     width: 40%;
     height: 120%;
     top: -50px;

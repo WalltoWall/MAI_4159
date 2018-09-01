@@ -43,19 +43,19 @@ export const Grid = styled.div`
 `
 export const GridOverlay = styled.div`
   position: absolute;
-  top:0;
-  width:100%;
-  height:100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
   background-color: ${t.c.white};
-  opacity:0;
-  z-index:2;
-  -webkit-transition: all .2s ease-in;
-  -moz-transition: all .2s ease-in;
-  -o-transition: all .2s ease-in;
-  transition: all .2s ease-in;
+  opacity: 0;
+  z-index: 2;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 
   ${Grid}:hover & {
-    opacity:0.8;
+    opacity: 0.8;
     border-bottom: 1rem solid ${t.c.yellow};
   }
 `
@@ -67,14 +67,14 @@ export const Title = styled.div`
   font-size: ${t.f(4)};
   color: ${t.c.darkgrey1};
   font-weight: 700;
-  z-index:3;
-  -webkit-transition: opacity .2s ease-in;
-  -moz-transition: opacity .2s ease-in;
-  -o-transition: opacity .2s ease-in;
-  transition: opacity .2s ease-in;
+  z-index: 3;
+  -webkit-transition: opacity 0.2s ease-in;
+  -moz-transition: opacity 0.2s ease-in;
+  -o-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
 
   ${t.mq.l} {
-    font-size: ${t.f(2)}; 
+    font-size: ${t.f(2)};
   }
   ${Grid}:hover & {
     opacity: 1;

@@ -1,38 +1,29 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-import { Container, Content, CtaHeaderClassName } from './index.styled'
-import Button from 'components/Button'
 import { HTMLContent } from 'components/HTMLContent'
+import { Container, Content, StyledHtmlClassName } from './index.styled'
 
-export const ProjectLayoutCallToAction = ({ data }) => (
+export const ProjectLayoutSlice = ({ data }) => (
   <Container>
     <Content>
       <HTMLContent
         html={get(data, 'primary.text.html')}
-        className={CtaHeaderClassName}
+        className={StyledHtmlClassName}
       />
     </Content>
-    <Button to={get(data, 'primary.button_link.url')}>
-      {get(data, 'primary.button_text')}
-    </Button>
   </Container>
 )
-
 export const query = graphql`
-  fragment ProjectLayoutCallToAction on Query {
+  fragment ProjectLayoutSlice on Query {
     prismicProject(id: { eq: $id }) {
       data {
         layout {
-          ... on PrismicProjectLayoutCallToAction {
+          ... on PrismicProjectLayoutSlice {
             id
             primary {
               text {
                 html
-              }
-              button_text
-              button_link {
-                url
               }
             }
           }

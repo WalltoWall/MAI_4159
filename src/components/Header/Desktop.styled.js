@@ -41,7 +41,7 @@ export const NavWrapper = styled.div`
   margin-left: 0.5rem;
   left: 0;
   z-index: 30;
-  display:none;
+  display: none;
   ${t.mq.l} {
     display: block;
   }
@@ -69,7 +69,7 @@ export const linkActiveClassName = css`
   border-bottom-color: ${t.c.white};
   color: ${t.c.yellow};
   &:before {
-    content: svg(url)
+    content: svg(url);
   }
 `
 
@@ -82,7 +82,7 @@ export const NavArrow = styled(HoverArrowSVG)`
   transition: transform ${t.t};
   transform: translateY(5%);
   z-index: 1;
-  display:inline-block;
+  display: inline-block;
   opacity: 0;
 
   ${Container}:hover & {

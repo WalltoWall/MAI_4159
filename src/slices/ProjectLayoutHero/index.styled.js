@@ -1,13 +1,13 @@
 import styled from 'react-emotion'
-import {css} from 'emotion'
+import { css } from 'emotion'
 import t from 'theme'
 export const Container = styled.div`
- height: 850px;
- display: flex;
- overflow: hidden;
- position: relative;
- flex-direction: column;
- ${t.mq.l} {
+  height: 850px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  ${t.mq.l} {
     flex-direction: row;
   }
 `
@@ -15,7 +15,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   z-index: 2;
   padding-bottom: 1rem;
-  position:absolute;
+  position: absolute;
   bottom: 0;
   width: 100%;
   padding: 0 2rem 2rem 2rem;
@@ -32,7 +32,6 @@ export const Image = styled.img`
   width: 100%;
   object-fit: cover;
   ${t.mq.m} {
-    
   }
   ${t.mq.l} {
     margin-left: 20%;
@@ -50,19 +49,19 @@ export const ClipOverlay = styled.div`
   -ms-transform: rotate(-5deg);
   transform: rotate(-5deg);
   z-index: 1;
-  ${t.mq.m} {    
+  ${t.mq.m} {
     top: 50%;
     left: -5%;
     height: 60%;
     width: 120%;
   }
-  ${t.mq.l} {    
+  ${t.mq.l} {
     top: -10%;
     left: -10%;
     height: 120%;
     width: 45%;
   }
-  ${t.mq.x} {    
+  ${t.mq.x} {
     width: 40%;
   }
 `
@@ -111,7 +110,7 @@ export const InfoBlurb = css`
     text-transform: uppercase;
     margin-bottom: -0.7rem;
   }
-  
+
   p {
     font-family: ${t.ff.serif};
     font-size: ${t.f(-1)};
@@ -130,13 +129,13 @@ export const InfoLine = styled.hr`
   border-color: ${t.c.lightgrey};
   width: 100%;
   margin: 0;
-  ${t.mq.m} {    
+  ${t.mq.m} {
     width: 50%;
   }
-  ${t.mq.l} {    
+  ${t.mq.l} {
     width: 40%;
   }
-  ${t.mq.x} {    
+  ${t.mq.x} {
     width: 30%;
   }
 `

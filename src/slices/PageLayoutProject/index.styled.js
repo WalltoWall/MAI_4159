@@ -10,7 +10,7 @@ export const Container = styled.div`
     min-height: 50vh;
     margin-top: -80px;
   }
- `
+`
 
 export const Text = styled.p`
   color: ${t.c.darkgrey2};
@@ -42,10 +42,10 @@ export const Image = styled.img`
   height: 100%;
   width: 100%;
   object-fit: cover;
-  -webkit-transition: all .2s ease-in;
-  -moz-transition: all .2s ease-in;
-  -o-transition: all .2s ease-in;
-  transition: all .2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 `
 
 export const Description = styled.div`
@@ -74,10 +74,10 @@ export const ProjectTitle = styled.h2`
   display: block;
   margin: 0 auto;
   z-index: 5;
-  -webkit-transition: all .2s ease-in;
-  -moz-transition: all .2s ease-in;
-  -o-transition: all .2s ease-in;
-  transition: all .2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 `
 
 export const ProjectContainer = styled.div`
@@ -99,10 +99,10 @@ export const Overlay = styled.div`
   background-color: black;
   z-index: 0;
   opacity: 0.4;
-  -webkit-transition: all .2s ease-in;
-  -moz-transition: all .2s ease-in;
-  -o-transition: all .2s ease-in;
-  transition: all .2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 `
 
 export const Project = styled.div`
@@ -115,11 +115,11 @@ export const Project = styled.div`
   min-width: ${t.s(8)};
   width: 100%;
   overflow: hidden;
-  -webkit-transition: all .2s ease-in;
-  -moz-transition: all .2s ease-in;
-  -o-transition: all .2s ease-in;
-  transition: all .2s ease-in;
-  background-image: url(${p => p.background ? p.background : 'none'});
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  background-image: url(${p => (p.background ? p.background : 'none')});
   background-size: cover;
   display: flex;
   align-items: center;
@@ -134,10 +134,10 @@ export const Project = styled.div`
     content: '';
     display: none;
     z-index: 4;
-    -webkit-transition: all .2s ease-in;
-    -moz-transition: all .2s ease-in;
-    -o-transition: all .2s ease-in;
-    transition: all .2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
   }
 
   &:first-child {
@@ -172,5 +172,3 @@ export const Project = styled.div`
     min-height: ${t.s(9)};
   }
 `
-
-

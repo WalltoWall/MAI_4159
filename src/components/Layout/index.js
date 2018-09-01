@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import { injectGlobal } from 'emotion'
 import t from 'theme'
 import { get } from 'lodash'
-import {DevRefreshButton} from 'components/DevRefreshButton'
+import { DevRefreshButton } from 'components/DevRefreshButton'
 import { Header } from 'components/Header'
 import { Footer } from 'components/Footer'
 import { Container } from './index.styled'
@@ -29,7 +29,7 @@ injectGlobal`
     width: 100%;
     margin: 0 auto;
     padding: 0;
-    background-color: ${t.c.darkgrey3};
+    background-color: ${t.c.lightgrey2};
     max-width: 100rem;
   }
 

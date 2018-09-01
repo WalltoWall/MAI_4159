@@ -34,4 +34,3 @@ export const Image = styled.img`
     padding: 0 0.7rem;
   }
 `
-

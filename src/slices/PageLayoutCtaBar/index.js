@@ -4,17 +4,11 @@ import { get } from 'lodash'
 import { Container, Title, Content } from './index.styled'
 import Button from 'components/Button'
 
-export const PageLayoutCtaBar = ({data}) => (
+export const PageLayoutCtaBar = ({ data }) => (
   <Container>
-    <Title>
-      {get(data, 'primary.title1.text')}
-    </Title>
-    <Content>
-      {get(data, 'primary.text.text')}
-    </Content>
-    <Button to={get(data, 'primary.button.url')}>
-      contact us
-    </Button>
+    <Title>{get(data, 'primary.title1.text')}</Title>
+    <Content>{get(data, 'primary.text.text')}</Content>
+    <Button to={get(data, 'primary.button.url')}>contact us</Button>
   </Container>
 )
 
