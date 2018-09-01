@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
+
 import { 
   Gradient, 
   Container, 
@@ -12,6 +13,7 @@ import {
   DescriptionWrapper,
   Overlay
 } from './index.styled'
+
 
 export const PageLayoutHero = ({ data }) => (
   <div>
