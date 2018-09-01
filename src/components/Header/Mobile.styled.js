@@ -46,8 +46,12 @@ export const Container = styled.div`
 `
 
 export const MobileNavOverlay = styled.div`
-  background: rgb(0,0,0);
-  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
   position: absolute;
   top: 0;
   height: 100px;

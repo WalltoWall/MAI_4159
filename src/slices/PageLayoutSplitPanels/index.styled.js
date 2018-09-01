@@ -10,7 +10,7 @@ export const Container = styled.div`
   position: relative;
   display: block;
   margin: 0 auto;
- `
+`
 
 export const Headline = styled.h2`
   color: ${t.c.darkgrey2};

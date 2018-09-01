@@ -51,10 +51,10 @@ exports.createPages = async ({ graphql, actions }) => {
   }
   if (result.data.allPrismicPage) {
     let results = result.data.allPrismicPage
-    createPrismicPage(results, "page")
+    createPrismicPage(results, 'page')
   }
   if (result.data.allPrismicProject) {
     let results = result.data.allPrismicProject
-    createPrismicPage(results, "project")
+    createPrismicPage(results, 'project')
   }
 }

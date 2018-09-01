@@ -1,8 +1,7 @@
-
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-import { 
+import {
   Container,
   FeatureName,
   Grid,
@@ -13,39 +12,36 @@ import {
 } from './index.styled'
 
 export const ProjectLayoutFeatureList = ({ data }) => {
-  const featuredType = get(data,'primary.feature_type')
+  const featuredType = get(data, 'primary.feature_type')
   const projects = get(data, 'items')
 
   return (
     <Container>
       <FeatureName>{featuredType}</FeatureName>
       <Content>
-        {projects.map(
-          (project) => (
-            renderFeatureGrid({
-              key: get(project, 'projects.document[0].uid'),
-              img: get(project, 'projects.document[0].data.image.url'),
-              title: get(project, 'projects.document[0].data.title.text'),
-              url: get(project, 'projects.url')
-            })
-          )
+        {projects.map(project =>
+          renderFeatureGrid({
+            key: get(project, 'projects.document[0].uid'),
+            img: get(project, 'projects.document[0].data.image.url'),
+            title: get(project, 'projects.document[0].data.title.text'),
+            url: get(project, 'projects.url'),
+          })
         )}
       </Content>
     </Container>
   )
 }
 
-const renderFeatureGrid = ({key, img, title, url}) => (
-  <> 
+const renderFeatureGrid = ({ key, img, title, url }) => (
+  <>
     <StyledLink to={url} key={key}>
       <Grid url={img}>
         <Title>{title}</Title>
-        <GridOverlay/>
-      </Grid>     
+        <GridOverlay />
+      </Grid>
     </StyledLink>
   </>
 )
-
 
 export const query = graphql`
   fragment ProjectLayoutFeatureList on Query {
@@ -56,7 +52,7 @@ export const query = graphql`
             id
             items {
               projects {
-                document {                  
+                document {
                   data {
                     title {
                       text
@@ -68,11 +64,11 @@ export const query = graphql`
                   uid
                 }
                 url
-              }  
+              }
             }
             primary {
-              feature_type              
-            }        
+              feature_type
+            }
           }
         }
       }

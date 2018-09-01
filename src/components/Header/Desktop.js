@@ -12,20 +12,19 @@ import {
   navItemClassName,
 } from './Desktop.styled'
 
-
 const getLinkProps = () => ({ href, location: { pathname } }) => ({
   className: classnames(
     navItemClassName,
-    isPathActive(pathname, href) && linkActiveClassName,
+    isPathActive(pathname, href) && linkActiveClassName
   ),
 })
 
 const renderLink = item => (
   <Container key={item.id}>
-    <NavArrow/>
-    <Link 
-      key={get(item, 'id')} 
-      to={get(item, 'primary.link.url')} 
+    <NavArrow />
+    <Link
+      key={get(item, 'id')}
+      to={get(item, 'primary.link.url')}
       getProps={getLinkProps()}
     >
       {get(item, 'primary.name')}
@@ -39,7 +38,7 @@ const render = () => queryData => (
   </NavList>
 )
 
-export const Desktop = (props) => (
+export const Desktop = props => (
   <StaticQuery
     query={graphql`
       query {

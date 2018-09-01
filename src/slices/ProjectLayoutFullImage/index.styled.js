@@ -18,12 +18,12 @@ export const Content = styled.div`
     }
   }
   ${t.mq.l} {
-    width: 60%;
+    width: 75%;
     margin-top: -3rem;
   }
 `
 
 export const Image = styled.img`
-  width: 98%;
+  width: 100%;
   object-fit: cover;
 `

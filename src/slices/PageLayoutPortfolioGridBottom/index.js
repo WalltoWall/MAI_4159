@@ -2,46 +2,43 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get, dropRight } from 'lodash'
 import {
-  Container, 
-  Grid, 
-  StyledLink, 
+  Container,
+  Grid,
+  StyledLink,
   GridTitle,
   GridOverlay,
   Bar,
 } from './index.styled'
 
-const renderGrid = (data) => (
+const renderGrid = data => (
   <Grid background={data.image.url}>
     <GridTitle>{data.title.text}</GridTitle>
-    <GridOverlay/>
+    <GridOverlay />
   </Grid>
 )
 
 export const PageLayoutPortfolioGridBottom = ({ data }) => {
-    let projects = data.items  
-    // disallow even number of grid items
-    let multitudeOfThree = projects.length % 3
-    if (multitudeOfThree !== 0) {
-      projects = projects.dropRight(multitudeOfThree)
-    }
-    
+  let projects = data.items
+  // disallow even number of grid items
+  let multitudeOfThree = projects.length % 3
+  if (multitudeOfThree !== 0) {
+    projects = projects.dropRight(multitudeOfThree)
+  }
+
   return (
     <Container>
       <Bar>
         <span>Projects A-Z</span>
       </Bar>
-      {projects.map(
-        (item) => (  
-          <StyledLink to={(get(item, 'project.url'))}>
-            {renderGrid(get(item, 'project.document[0].data'))}
-          </StyledLink> 
-        )  
-      )}
+      {projects.map(item => (
+        <StyledLink to={get(item, 'project.url')}>
+          {renderGrid(get(item, 'project.document[0].data'))}
+        </StyledLink>
+      ))}
     </Container>
-    
   )
 }
- export const query = graphql`
+export const query = graphql`
   fragment PageLayoutPortfolioGridBottom on Query {
     prismicPage(id: { eq: $id }) {
       data {
@@ -54,7 +51,7 @@ export const PageLayoutPortfolioGridBottom = ({ data }) => {
                   data {
                     title {
                       text
-                    }                    
+                    }
                     image {
                       url
                     }

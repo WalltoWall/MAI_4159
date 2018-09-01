@@ -1,5 +1,5 @@
 import styled from 'react-emotion'
-import {css} from 'emotion'
+import { css } from 'emotion'
 import t from 'theme'
 
 export const Container = styled.div`
@@ -22,7 +22,7 @@ export const CtaHeaderClassName = css`
   p {
     font-family: ${t.ff.sans2};
   }
-` 
+`
 
 export const Content = styled.div`
   color: ${t.c.white};

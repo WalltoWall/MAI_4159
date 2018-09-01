@@ -5,12 +5,12 @@ import { Container, Content, CtaHeaderClassName } from './index.styled'
 import Button from 'components/Button'
 import { HTMLContent } from 'components/HTMLContent'
 
-export const ProjectLayoutCallToAction = ({data}) => (
+export const ProjectLayoutCallToAction = ({ data }) => (
   <Container>
     <Content>
-      <HTMLContent 
-        html={get(data, 'primary.text.html')}  
-        className={CtaHeaderClassName}     
+      <HTMLContent
+        html={get(data, 'primary.text.html')}
+        className={CtaHeaderClassName}
       />
     </Content>
     <Button to={get(data, 'primary.button_link.url')}>
@@ -30,7 +30,7 @@ export const query = graphql`
               text {
                 html
               }
-              button_text 
+              button_text
               button_link {
                 url
               }

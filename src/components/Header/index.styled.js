@@ -13,4 +13,3 @@ export const Content = styled.div`
   max-width: ${t.ms.l};
   padding: ${t.s(1)} ${t.s(0)};
 `
-

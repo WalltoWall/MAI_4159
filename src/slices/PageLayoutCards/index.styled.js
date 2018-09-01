@@ -11,7 +11,7 @@ export const Container = styled.div`
     min-height: 50vh;
     padding-top: 6rem;
   }
- `
+`
 
 export const Text = styled.p`
   color: ${t.c.darkgrey2};
@@ -124,6 +124,3 @@ export const SecondaryLink = styled(Link)`
   text-transform: uppercase;
   float: left;
 `
-
-
-

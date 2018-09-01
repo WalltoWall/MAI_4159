@@ -15,7 +15,7 @@ export const Title = styled.h2`
   text-transform: uppercase;
   font-size: ${t.s(2)};
   color: ${t.c.white};
-` 
+`
 
 export const Content = styled.div`
   color: ${t.c.white};

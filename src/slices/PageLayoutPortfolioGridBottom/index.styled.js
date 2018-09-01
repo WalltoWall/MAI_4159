@@ -28,28 +28,28 @@ export const StyledLink = styled(Link)`
 `
 export const Grid = styled.div`
   position: relative;
-  background-image: url(${p => p.background ? p.background : 'none'});
+  background-image: url(${p => (p.background ? p.background : 'none')});
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 60%;
- `
- export const GridOverlay = styled.div`
+`
+export const GridOverlay = styled.div`
   position: absolute;
-  top:0;
-  width:100%;
-  height:100%;
-  opacity:0.5;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
   background-color: ${t.c.black};
-  z-index:2;
-  -webkit-transition: all .2s ease-in;
-  -moz-transition: all .2s ease-in;
-  -o-transition: all .2s ease-in;
-  transition: all .2s ease-in;
-  
+  z-index: 2;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+
   ${Grid}:hover & {
-    opacity:0.7;
+    opacity: 0.7;
     border-bottom: 1rem solid ${t.c.yellow};
     background-color: ${t.c.white};
   }
@@ -63,11 +63,11 @@ export const GridTitle = styled.h1`
   letter-spacing: 0.1rem;
   font-weight: 700;
   text-transform: uppercase;
-  z-index:3;
-  -webkit-transition: opacity .2s ease-in;
-  -moz-transition: opacity .2s ease-in;
-  -o-transition: opacity .2s ease-in;
-  transition: opacity .2s ease-in;
+  z-index: 3;
+  -webkit-transition: opacity 0.2s ease-in;
+  -moz-transition: opacity 0.2s ease-in;
+  -o-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
   ${t.mq.m} {
     font-size: ${t.f(3)};
   }
