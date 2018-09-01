@@ -57,8 +57,8 @@ export const Grid = styled.div`
 
 export const GridTitle = styled.h1`
   position: absolute;
-  top: 30%;
-  font-size: ${t.f(1)};
+  top: 35%;
+  font-size: ${t.f(0)};
   color: ${t.c.white};
   letter-spacing: 0.1rem;
   font-weight: 700;
@@ -68,7 +68,9 @@ export const GridTitle = styled.h1`
   -moz-transition: opacity .2s ease-in;
   -o-transition: opacity .2s ease-in;
   transition: opacity .2s ease-in;
-  
+  ${t.mq.m} {
+    font-size: ${t.f(3)};
+  }
   ${t.mq.l} {
     font-size: ${t.f(5)};
   }
