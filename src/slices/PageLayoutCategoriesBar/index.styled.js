@@ -51,8 +51,6 @@ export const StyledLink = styled(Link)`
     z-index: 2;
     padding: 0 1rem;
     margin: 0 2rem;
-    font-family: ${t.ff.sans2};
-    letter-spacing: 0.1rem;
     -webkit-transition: color .2s ease-in;
     -moz-transition: color .2s ease-in;
     -o-transition: color .2s ease-in;
@@ -87,5 +85,4 @@ export const NavArrow = styled(HoverArrowSVG)`
   display: inline-block;
   margin-left: 10px;
   top: 3px;
->>>>>>> 8feb4d5cf6e403d36a570359c6db8a6beaae7c81
 `

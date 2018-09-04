@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-import classnames from 'classnames'
 import { isPathActive } from 'lib/helpers'
 import classnames from 'classnames'
 import { Toggle } from 'react-powerplug'
@@ -13,10 +12,6 @@ import {
   CurrentFilter,
   navItemClassName,
   linkActiveClassName,
-} from './index.styled'
-
-export class PageLayoutCategoriesBar extends React.Component {
-=======
   NavArrow,
 } from './index.styled'
 
@@ -50,7 +45,7 @@ export class PageLayoutCategoriesBar extends React.Component {
           {categories.map(item => (
             <StyledLink
               key={get(item, 'name.text')}
-              to={get(item, 'url1.url', '/')}
+              to={get(item, 'url.url', '/')}
             >
               {get(item, 'name.text')}
             </StyledLink>
@@ -66,7 +61,7 @@ export class PageLayoutCategoriesBar extends React.Component {
                 {categories.map(item => (
                   <StyledLink
                     key={get(item, 'name.text')}
-                    to={get(item, 'url1.url', '/')}
+                    to={get(item, 'url.url', '/')}
                     getProps={this.getLinkProps()}
                     onClick={(e) => this.updateCurrentFilter(e, get(item, 'name.text'))}
                   >

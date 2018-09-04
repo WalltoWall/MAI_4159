@@ -2,17 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 
-export const ProjectLayoutSlice = ({ data }) => (
-  <Container variation={get(data, 'primary.variation')}>
-    <Content>
-      <HTMLContent
-        html={get(data, 'primary.text.html')}
-        className={StyledHtmlClassName}
-      />
-    </Content>
-  </Container>
-)
-
 import { Basic } from './Basic'
 import { ProjectDetails } from './ProjectDetails'
 
@@ -35,7 +24,6 @@ export const query = graphql`
           ... on PrismicProjectLayoutSlice {
             id
             primary {
-              variation
               text {
                 html
               }

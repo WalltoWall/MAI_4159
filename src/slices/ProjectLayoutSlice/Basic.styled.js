@@ -23,11 +23,13 @@ export const StyledHtmlClassName = css`
   h2 {
     font-size: ${t.f(4)};
     font-family: ${t.ff.serif};
-    font-weight: 600;
+    font-weight: 400;
     color: ${t.c.darkgrey1};
   }
   p {
     color: ${t.c.darkgrey2};
     font-size: ${t.f(1)};
+    font-family: ${t.ff.sans2};
+    line-height: ${t.lh.copy};
   }
 `

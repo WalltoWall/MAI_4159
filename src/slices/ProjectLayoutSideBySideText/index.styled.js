@@ -45,6 +45,9 @@ export const RightColumn = styled.div`
 `
 
 export const StyledHtmlClassName = css`
+font-family: ${t.ff.sans2};
+color: ${t.c.darkgrey2};
+
   h1 {
     font-size: ${t.f(5)};
     text-transform: uppercase;
