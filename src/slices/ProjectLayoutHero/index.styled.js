@@ -106,7 +106,11 @@ export const InfoBlurb = css`
   width: 100%;
   margin-bottom: -6px;
   h3 {
+<<<<<<< HEAD
     font-size: ${t.f(0)};
+=======
+    font-size: ${t.f(-1)};
+>>>>>>> b740186a53985770f4c417a663cd7404a5285498
     color: ${t.c.yellow};
     font-family: ${t.ff.sans2};
     text-transform: uppercase;

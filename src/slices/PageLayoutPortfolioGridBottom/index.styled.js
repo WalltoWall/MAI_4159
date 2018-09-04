@@ -49,11 +49,6 @@ export const GridOverlay = styled.div`
   transition: all 0.2s ease-in;
 
   ${Grid}:hover & {
-    opacity:0.8;
-    border-bottom: 0.6rem solid ${t.c.yellow};
-  }
-
-  ${t.mq.l} {
     opacity: 0.7;
     border-bottom: 1rem solid ${t.c.yellow};
     background-color: ${t.c.white};
@@ -66,20 +61,18 @@ export const GridTitle = styled.h1`
   font-size: ${t.f(0)};
   color: ${t.c.white};
   letter-spacing: 0.1rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  text-align: center;
-  z-index:3;
-  -webkit-transition: opacity .2s ease-in;
-  -moz-transition: opacity .2s ease-in;
-  -o-transition: opacity .2s ease-in;
-  transition: opacity .2s ease-in;
+  z-index: 3;
+  -webkit-transition: opacity 0.2s ease-in;
+  -moz-transition: opacity 0.2s ease-in;
+  -o-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
   ${t.mq.m} {
     font-size: ${t.f(3)};
   }
   ${t.mq.l} {
-    font-size: ${t.f(4)};
-    top: 40%;
+    font-size: ${t.f(5)};
   }
   ${Grid}:hover & {
     color: ${t.c.darkgrey1};

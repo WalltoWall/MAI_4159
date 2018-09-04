@@ -18,8 +18,8 @@ export const Title = styled.h1`
   position: absolute;
   text-transform: uppercase;
   left: 50%;
-  margin-left: -136px;
-  top: 50%;
+  margin-left: -177px;
+  top: 45%;
   margin-top: -50px;
   ${t.mq.l} {
     bottom: -5%;
@@ -39,7 +39,7 @@ export const ClipOverlay = styled.div`
   overflow: hidden;
   ${t.mq.t} {
     bottom: -10%;
-    height: 15%;
+    height: 17%;
     width: 120%;
     left: -10%;
   }
