@@ -12,12 +12,22 @@ import {
   CurrentFilter,
   navItemClassName,
   linkActiveClassName,
+  NavArrow,
 } from './index.styled'
 
 export class PageLayoutCategoriesBar extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {currentFilter: "All Projects"}
   }
+
+  updateCurrentFilter = (e, name) => {
+    e.stopPropagation()
+    this.setState({
+      currentFilter: name
+    })    
+  }
+
   getLinkProps = () => ({ href, location: { pathname } }) => ({
     className: classnames(
       navItemClassName,
@@ -43,15 +53,17 @@ export class PageLayoutCategoriesBar extends React.Component {
         </Desktop>
         <Toggle>
           {({ on, toggle }) => (
-            <Mobile>
+            <Mobile>          
               <span>Filter: </span>
-              <CurrentFilter onClick={toggle}>active filter name</CurrentFilter>
+              <CurrentFilter onClick={toggle}>{this.state.currentFilter}</CurrentFilter>
+              <NavArrow active={on}/>
               <FilterBox isOpen={on}>
                 {categories.map(item => (
                   <StyledLink
                     key={get(item, 'name.text')}
                     to={get(item, 'url.url', '/')}
                     getProps={this.getLinkProps()}
+                    onClick={(e) => this.updateCurrentFilter(e, get(item, 'name.text'))}
                   >
                     {get(item, 'name.text')}
                   </StyledLink>
