@@ -8,16 +8,23 @@ export const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   background-color: ${t.c.darkgrey2};
-  padding: 5rem 0 5rem 0;
+  padding: 3rem 0;
+  ${t.mq.l} {
+    padding: 5rem 0;
+  }
 `
 
 export const CtaHeaderClassName = css`
   h2 {
     font-family: ${t.ff.sans};
     text-transform: uppercase;
-    font-size: ${t.s(2.5)};
+    font-size: ${t.s(2)};
     color: ${t.c.white};
     font-weight: 600;
+    letter-spacing: 0.1rem;
+    ${t.mq.l} {
+      ${t.s(3)};
+     }
   }
   p {
     font-family: ${t.ff.sans2};

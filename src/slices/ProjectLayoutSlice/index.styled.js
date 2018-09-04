@@ -31,7 +31,7 @@ export const Content = styled.div`
   padding: 0;
   font-family: ${t.ff.sans2};
   ${t.mq.m} {
-    width: 70%;
+    width: 60%;
   }
 `
 export const StyledHtmlClassName = css`
@@ -39,7 +39,7 @@ export const StyledHtmlClassName = css`
     font-family: ${t.ff.sans};
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.1rem;
     font-size: ${t.f(4)};
     color: ${t.c.darkgrey1};
   }

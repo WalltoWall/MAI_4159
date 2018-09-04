@@ -21,7 +21,7 @@ export const LeftColumn = styled.div`
     padding: 0 2rem 0 5rem;
   }
   ${t.mq.x} {
-    width: 40%;
+    width: 35%;
   }
 `
 
@@ -33,7 +33,7 @@ export const RightColumn = styled.div`
     padding: 0 5rem 0 2rem;
   }
   ${t.mq.x} {
-    width: 40%;
+    width: 35%;
   }
   h2 {
     font-size: 1.2rem;
