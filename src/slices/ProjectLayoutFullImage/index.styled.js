@@ -13,6 +13,7 @@ export const Content = styled.div`
     font-family: ${t.ff.sans2};
     color: ${t.c.darkgrey2};
     padding: 0 2rem;
+    line-height: 1.4rem;
     ${t.mq.l} {
       padding: 0 6rem;
     }

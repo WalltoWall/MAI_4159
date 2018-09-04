@@ -26,13 +26,14 @@ export const FooterLogo = styled.img`
 `
 export const BrandContent = styled.div`
   color: ${t.c.darkgrey2};
-  width: 75%;
+  font-family: ${t.ff.sans2};
+  width: 70%;
   padding: 1rem 0;
   font-size: 0.9rem;
   font-weight: 500;
   text-align: center;
   ${t.mq.l} {
-    padding-left: 2.3rem;
+    padding-left: 2.5rem;
     width: 100%;
     text-align: left;
     margin-top: -1.2rem;
@@ -58,6 +59,7 @@ export const LinkContainer = styled.div`
 export const StyledLink = styled(Link)`
   display: inline-block;
   line-height: 2rem;
+  font-family: ${t.ff.sans2};
   ${t.mq.l} {
     line-height: inherit;
     display: inline;
@@ -69,11 +71,12 @@ export const LinkSeparator = styled.span`
 `
 export const CopyrightContent = styled.div`
   color: ${t.c.darkgrey2};
+  font-family: ${t.ff.sans2};
   padding: 1rem 2rem 0 2rem;
   font-size: 1rem;
   font-weight: 500;
   ${t.mq.l} {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     padding: 1rem 0 0 0;
   }
 `

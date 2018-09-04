@@ -5,7 +5,7 @@ import { HTMLContent } from 'components/HTMLContent'
 import { Container, Content, StyledHtmlClassName } from './index.styled'
 
 export const ProjectLayoutSlice = ({ data }) => (
-  <Container>
+  <Container variation={get(data, 'primary.variation')}>
     <Content>
       <HTMLContent
         html={get(data, 'primary.text.html')}
@@ -22,6 +22,7 @@ export const query = graphql`
           ... on PrismicProjectLayoutSlice {
             id
             primary {
+              variation
               text {
                 html
               }
