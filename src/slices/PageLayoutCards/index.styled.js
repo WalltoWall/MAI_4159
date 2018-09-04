@@ -52,9 +52,9 @@ export const Image = styled.img`
 
 export const Description = styled.div`
   font-family: ${t.ff.sans2};
-  color: ${t.c.darkgrey1};
+  color: ${t.c.darkgrey2};
   line-height: ${t.lh.copy};
-  font-weight: 300;
+  font-weight: 400;
   text-align: left;
   font-size: 1rem;
 `

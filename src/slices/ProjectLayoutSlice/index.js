@@ -24,6 +24,7 @@ export const query = graphql`
           ... on PrismicProjectLayoutSlice {
             id
             primary {
+              variation
               text {
                 html
               }

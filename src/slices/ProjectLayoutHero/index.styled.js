@@ -99,23 +99,25 @@ export const SubTitle = styled.h2`
   font-weight: 400;
   font-family: ${t.ff.sans2};
   margin: -${t.s(2)} 0 1.2rem 0;
+  letter-spacing: 0.2rem;
 `
 
 export const InfoBlurb = css`
   width: 100%;
   margin-bottom: -6px;
   h3 {
-    font-size: ${t.f(0)};
+    font-size: ${t.f(-1)};
     color: ${t.c.yellow};
     font-family: ${t.ff.sans2};
     text-transform: uppercase;
     margin-bottom: -0.7rem;
+    letter-spacing: 0.1rem;
   }
 
   p {
     font-family: ${t.ff.serif};
     font-size: ${t.f(0)};
-    font-weight: 600;
+    font-weight: 400;
     color: ${t.c.white};
   }
   ${t.mq.l} {

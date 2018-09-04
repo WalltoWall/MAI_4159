@@ -47,11 +47,13 @@ export const NavWrapper = styled.div`
   }
 `
 export const NavList = styled.ul`
-  color: {white};
+  color: ${t.c.white};
+  font-family: ${t.ff.sans2};
+  letter-spacing: 0.1rem;
   list-style-type: none;
   font-size: 1.1rem;
   line-height: 2rem;
-  font-weight: 600;
+  font-weight: 700;
 `
 
 export const navItemClassName = css`

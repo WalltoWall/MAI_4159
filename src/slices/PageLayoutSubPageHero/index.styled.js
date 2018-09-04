@@ -3,7 +3,7 @@ import t from 'theme'
 
 export const ImageContainer = styled.div`
   position: relative;
-  height: 400px;
+  height: 300px;
   overflow: hidden;
 `
 export const Image = styled.img`
@@ -18,8 +18,8 @@ export const Title = styled.h1`
   position: absolute;
   text-transform: uppercase;
   left: 50%;
-  margin-left: -136px;
-  top: 50%;
+  margin-left: -177px;
+  top: 45%;
   margin-top: -50px;
   ${t.mq.l} {
     bottom: -5%;
@@ -39,7 +39,7 @@ export const ClipOverlay = styled.div`
   overflow: hidden;
   ${t.mq.t} {
     bottom: -10%;
-    height: 15%;
+    height: 17%;
     width: 120%;
     left: -10%;
   }
@@ -52,7 +52,7 @@ export const ClipOverlay = styled.div`
     background-color: ${t.c.darkgrey1};
     top: -50px;
     left: -50px;
-    height: 120%;
+    height: 140%;
     width: 25%;
   }
 `

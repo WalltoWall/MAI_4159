@@ -10,6 +10,7 @@ import {
   Content,
   StyledLink,
 } from './index.styled'
+import Button from 'components/Button'
 
 export const ProjectLayoutFeatureList = ({ data }) => {
   const featuredType = get(data, 'primary.feature_type')
@@ -28,6 +29,7 @@ export const ProjectLayoutFeatureList = ({ data }) => {
           })
         )}
       </Content>
+      <Button to="/all-projects/">view projects</Button>
     </Container>
   )
 }

@@ -10,15 +10,15 @@ export const Container = styled.div`
 export const StyledLinkClassName = css`
   color: ${t.c.white};
   display: inline-block;
-  padding: 0.6rem 0;
+  padding: 1rem 0;
   font-size: 2rem;
   font-weight: 700;
   font-family: ${t.ff.sans2};
-  letter-spacing: 4px;
+  letter-spacing: 0.2rem;
 `
 export const NavArrow = styled(HoverArrowSVG)`
   position: absolute;
-  top: 1rem;
+  top: 1.4rem;
   height: 1.3rem;
   margin-left: -1.5rem;
   transition: transform ${t.t};

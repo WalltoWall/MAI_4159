@@ -14,6 +14,7 @@ export const FeatureName = styled.h2`
   text-transform: uppercase;
   font-weight: 600;
   color: ${t.c.darkgrey1};
+  letter-spacing: 0.1rem;
   margin-top: 0;
 `
 export const Content = styled.div`
@@ -21,11 +22,20 @@ export const Content = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  ${t.mq.l} {
+    width: 75%;
+  }
 `
 
 export const StyledLink = styled(Link)`
   display: inline-block;
   width: 100%;
+  max-width: 400px;
+  ${t.mq.m} {
+    width: 50%;
+  }
   ${t.mq.l} {
     width: 30%;
   }
@@ -64,9 +74,12 @@ export const Title = styled.div`
   position: absolute;
   opacity: 0;
   top: 45%;
-  font-size: ${t.f(4)};
+  font-size: ${t.f(2)};
+  font-family: ${t.ff.sans};
+  text-transform: uppercase;
+  font-weight: 600;
   color: ${t.c.darkgrey1};
-  font-weight: 700;
+  letter-spacing: 0.1rem;
   z-index: 3;
   -webkit-transition: opacity 0.2s ease-in;
   -moz-transition: opacity 0.2s ease-in;
@@ -74,7 +87,7 @@ export const Title = styled.div`
   transition: opacity 0.2s ease-in;
 
   ${t.mq.l} {
-    font-size: ${t.f(2)};
+    font-size: ${t.f(3)};
   }
   ${Grid}:hover & {
     opacity: 1;

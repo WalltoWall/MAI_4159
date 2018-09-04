@@ -28,7 +28,7 @@ const render = () => queryData => {
         <BrandContent>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam
+          minim veniam.
         </BrandContent>
         <MenuContainer>
           <LinkContainer>
@@ -47,7 +47,7 @@ const render = () => queryData => {
             ))}
           </LinkContainer>
           <CopyrightContent>
-            © 2074 Sed ut porttitor purus. Quisque ligula lectus. Proin vitae
+            © 2018 Sed ut porttitor purus. Quisque ligula lectus. Proin vitae
             diam ipsum.
           </CopyrightContent>
         </MenuContainer>

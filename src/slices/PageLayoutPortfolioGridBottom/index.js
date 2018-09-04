@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get, dropRight } from 'lodash'
+import { get } from 'lodash'
 import {
   Container,
   Grid,

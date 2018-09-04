@@ -10,13 +10,13 @@ const Button = styled(Link)`
   font-weight: 600;
   letter-spacing: 1px;
   padding: ${p => (p.small ? t.s(-2, -0) : t.s(-1, 2))};
-  font-size: ${p => (p.small ? t.f(-1) : t.f(0.5))};
+  font-size: ${p => (p.small ? t.f(-1) : t.f(0))};
   display: block;
-  width: 200px;
+  width: ${p => (p.small ? '150px' : '220px')};
   text-align: center;
   text-transform: uppercase;
   font-size: ${t.f(2)};
-  margin: 0 auto;
+  margin: 1rem auto 0 auto;
   transition: background-color 200ms;
 
   &:hover {

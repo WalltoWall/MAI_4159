@@ -37,10 +37,10 @@ export const Image = styled.img`
 `
 
 export const Description = styled.div`
-  color: ${t.c.darkgrey1};
+  color: ${t.c.darkgrey2};
   font-family: ${t.ff.sans2};
   line-height: ${t.lh.copy};
-  font-weight: 300;
+  font-weight: 400;
   max-width: 450px;
   margin: 0 auto 2rem auto;
   text-align: center;
