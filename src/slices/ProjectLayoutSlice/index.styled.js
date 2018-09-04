@@ -23,7 +23,7 @@ export const Container = styled.div`
   flex-wrap: wrap;
   padding: 3rem 0;
   ${t.mq.l} {
-    padding: 5rem 0;
+    padding: 6rem 0;
   }
 `
 export const Content = styled.div`
