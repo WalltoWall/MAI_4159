@@ -2,6 +2,7 @@ import styled from 'react-emotion'
 import { Link } from 'components/Link'
 import { css } from 'emotion'
 import t from 'theme'
+import { ReactComponent as HoverArrowSVG } from 'assets/hov_arrow.svg'
 
 export const Desktop = styled.div`
   position: relative;
@@ -38,11 +39,12 @@ export const FilterBox = styled.div`
 `
 
 export const CurrentFilter = styled.h2`
+  font-size: ${t.f(1.5)};
   display: inline-block;
   margin: 0;
-  font-size: ${t.f(1)};
   color: ${t.c.yellow};
   text-align: center;
+  cursor: pointer;
 `
 
 export const StyledLink = styled(Link)`
@@ -63,8 +65,27 @@ export const StyledLink = styled(Link)`
 export const navItemClassName = css`
   display: block;
   margin: 0 2rem;
+  color: ${t.c.white};
+  font-size: ${t.f(1.5)};
+  padding: 0.4rem 0;
+  font-weight: 600;
+  font-family: ${t.ff.sans2};
+  letter-spacing: 3px;
 `
 
 export const linkActiveClassName = css`
   color: ${t.c.yellow};
+`
+
+
+export const NavArrow = styled(HoverArrowSVG)`
+  flex-shrink: 0;
+  height: 1.2rem;
+  transform: ${p => p.active ? 'rotate(90deg)' : 'rotate(0deg)'};
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin-left: 10px;
+  top: 3px;
+>>>>>>> 8feb4d5cf6e403d36a570359c6db8a6beaae7c81
 `

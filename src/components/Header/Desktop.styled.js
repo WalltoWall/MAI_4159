@@ -26,7 +26,7 @@ export const LogoLink = styled(Link)`
   ${t.mq.l} {
     width: 65px;
     left: 0;
-    margin: 1rem 0 0 3rem;
+    margin: 1rem 0 0 3.5rem;
   }
 `
 
@@ -38,7 +38,7 @@ export const LogoIcon = styled.img`
 export const NavWrapper = styled.div`
   position: absolute;
   top: 5rem;
-  margin-left: 0.5rem;
+  margin-left: 1rem;
   left: 0;
   z-index: 30;
   display: none;

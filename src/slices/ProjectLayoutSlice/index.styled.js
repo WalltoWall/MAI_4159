@@ -66,5 +66,3 @@ export const StyledHtmlClassName = css`
     line-height: ${t.lh.copy};
   }
 `
-
-
