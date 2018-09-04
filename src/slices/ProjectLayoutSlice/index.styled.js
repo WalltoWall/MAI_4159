@@ -55,20 +55,15 @@ export const StyledHtmlClassName = css`
   p {
     color: ${t.c.darkgrey2};
     font-size: ${t.f(0)};
-    line-height: 1.8rem;
+    line-height: ${t.lh.copy};
     ${t.mq.m} {
-      font-size: ${t.f(1)};
-      line-height: 2rem;
+      font-size: ${t.f(0)};
     }
   }
   ul {
     color: ${t.c.darkgrey2};
     font-size: ${t.f(0)};
-    line-height: 1.8rem;
-    ${t.mq.m } {
-      font-size: ${t.f(1)};
-      line-height: 2rem;
-    }
+    line-height: ${t.lh.copy};
   }
 `
 

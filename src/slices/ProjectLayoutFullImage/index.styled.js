@@ -14,7 +14,7 @@ export const Content = styled.div`
     color: ${t.c.darkgrey2};
     padding: 0 2rem;
     font-size: ${t.f(0)};
-    line-height: 1.6rem;
+    line-height: ${t.lh.copy};
   }
   ${t.mq.l} {
     width: 70%;
