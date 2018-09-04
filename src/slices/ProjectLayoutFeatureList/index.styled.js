@@ -32,6 +32,10 @@ export const Content = styled.div`
 export const StyledLink = styled(Link)`
   display: inline-block;
   width: 100%;
+  max-width: 400px;
+  ${t.mq.m} {
+    width: 50%;
+  }
   ${t.mq.l} {
     width: 30%;
   }
