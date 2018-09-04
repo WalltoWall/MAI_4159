@@ -40,11 +40,8 @@ export const StyledHtmlClassName = css`
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.2rem;
-    font-size: ${t.f(3)};
+    font-size: ${t.f(4)};
     color: ${t.c.darkgrey1};
-    ${t.mq.l} {
-      font-size: ${t.f(4)};
-     }
   }
   h2 {
     font-size: ${t.f(4)};

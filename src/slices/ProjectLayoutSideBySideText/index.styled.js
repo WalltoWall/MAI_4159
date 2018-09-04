@@ -7,7 +7,7 @@ export const Container = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   background-color: ${t.c.lightgrey2};
-  padding: 3rem 0;
+  padding: 3rem 2rem;
   ${t.mq.l} {
     padding: 5rem 0;
   }
@@ -15,7 +15,7 @@ export const Container = styled.div`
 
 export const LeftColumn = styled.div`
   width: 100%;
-  padding: 0 1rem;
+  padding: 1rem;
   ${t.mq.l} {
     width: 45%;
     padding: 0 2rem 0 5rem;
@@ -27,7 +27,7 @@ export const LeftColumn = styled.div`
 
 export const RightColumn = styled.div`
   width: 100%;
-  padding: 0 1rem;
+  padding: 1rem;
   ${t.mq.l} {
     width: 45%;
     padding: 0 5rem 0 2rem;
@@ -57,11 +57,11 @@ export const StyledHtmlClassName = css`
     letter-spacing: 0.2rem;
     font-size: ${t.f(4)};
     color: ${t.c.darkgrey1};
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
   }
   p {
     color: ${t.c.darkgrey2};
     font-family: ${t.ff.sans2};
-    line-height: 0.8rem;
+    line-height: 1.4rem;
   }
 `
