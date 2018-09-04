@@ -6,10 +6,10 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: ${t.c.lightgrey3};
+  background-color: ${t.c.lightgrey2};
   padding: 3rem 0;
   ${t.mq.l} {
-    padding: 7rem 0;
+    padding: 5rem 0;
   }
 `
 
@@ -50,13 +50,18 @@ export const RightColumn = styled.div`
 `
 
 export const StyledHtmlClassName = css`
-  h2 {
-    font-size: 1.5rem;
-    font-family: ${t.ff.serif};
+  h1 {
+    font-family: ${t.ff.sans};
+    text-transform: uppercase;
     font-weight: 600;
+    letter-spacing: 0.2rem;
+    font-size: ${t.f(4)};
     color: ${t.c.darkgrey1};
+    margin-bottom: 1.2rem;
   }
   p {
     color: ${t.c.darkgrey2};
+    font-family: ${t.ff.sans2};
+    line-height: 0.8rem;
   }
 `

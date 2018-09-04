@@ -23,13 +23,16 @@ export const Container = styled.div`
   flex-wrap: wrap;
   padding: 3rem 0;
   ${t.mq.l} {
-    padding: 7rem 0;
+    padding: 5rem 0;
   }
 `
 export const Content = styled.div`
-  width: 70%;
-  padding: 0 1rem;
+  width: 80%;
+  padding: 0;
   font-family: ${t.ff.sans2};
+  ${t.mq.m} {
+    width: 70%;
+  }
 `
 export const StyledHtmlClassName = css`
   h1 {
@@ -37,22 +40,38 @@ export const StyledHtmlClassName = css`
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.2rem;
-    font-size: ${t.f(4)};
+    font-size: ${t.f(3)};
     color: ${t.c.darkgrey1};
+    ${t.mq.l} {
+      font-size: ${t.f(4)};
+     }
   }
   h2 {
-    font-size: ${t.f(5)};
+    font-size: ${t.f(4)};
     font-family: ${t.ff.serif};
     font-weight: 400;
     color: ${t.c.darkgrey1};
+    ${t.mq.l} {
+      font-size: ${t.f(5)};
+    }
   }
   p {
     color: ${t.c.darkgrey2};
-    font-size: ${t.f(1)};
-    line-height: 2rem;
+    font-size: ${t.f(0)};
+    line-height: 1.8rem;
+    ${t.mq.m} {
+      font-size: ${t.f(1)};
+      line-height: 2rem;
+    }
   }
   ul {
     color: ${t.c.darkgrey2};
+    font-size: ${t.f(0)};
+    line-height: 1.8rem;
+    ${t.mq.m } {
+      font-size: ${t.f(1)};
+      line-height: 2rem;
+    }
   }
 `
 
