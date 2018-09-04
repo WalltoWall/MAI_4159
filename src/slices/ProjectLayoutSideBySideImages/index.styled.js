@@ -23,7 +23,7 @@ export const Content = styled.div`
     }
   }
   ${t.mq.l} {
-    width: 60%;
+    width: 76%;
   }
 `
 
