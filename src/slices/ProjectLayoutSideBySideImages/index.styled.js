@@ -27,7 +27,7 @@ export const Content = styled.div`
     }
   }
   ${t.mq.l} {
-    width: 70%;
+    width: 71%;
   }
 `
 

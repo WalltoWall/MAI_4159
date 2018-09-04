@@ -16,7 +16,7 @@ export const Content = styled.div`
   width:80%;
   ${t.mq.l} {
     padding: 0 1rem;
-    width: 70%;
+    width: 65%;
   }
 `
 export const StyledHtmlClassName = css`

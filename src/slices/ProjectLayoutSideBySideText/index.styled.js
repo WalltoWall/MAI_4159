@@ -18,7 +18,7 @@ export const LeftColumn = styled.div`
   padding: 1rem;
   ${t.mq.l} {
     width: 45%;
-    padding: 0 2rem 0 12rem;
+    padding: 0 2rem 0 3.5rem;
   }
   ${t.mq.x} {
     width: 35%;
