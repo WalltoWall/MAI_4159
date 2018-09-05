@@ -29,6 +29,7 @@ export const Headline = styled.h1`
   -webkit-transform: rotate(7deg);
   -ms-transform: rotate(7deg);
   transform: rotate(7deg);
+  display: inline-block;
 
   ${t.mq.l} {
     text-align: left;
