@@ -39,7 +39,7 @@ export class PageLayoutHero extends React.Component {
             <Image src={get(data, 'primary.image.url')} />
           </ImageContainer>
           <HeadlineWrapper>
-            <Headline>We re</Headline><Headline>{this.state.TitleSlide}</Headline>                        
+            <Headline>We are Mason</Headline>                        
           </HeadlineWrapper>
           <Overlay>
             <DescriptionWrapper>
