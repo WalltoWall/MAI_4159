@@ -19,6 +19,8 @@ import {
 import { Link } from 'components/Link'
 import Button from 'components/Button'
 
+const date = new Date();
+
 export const PageLayoutCards = ({ data }) => (
   <Container>
     <Headline>{get(data, 'primary.title1.text')}</Headline>
@@ -33,7 +35,7 @@ export const PageLayoutCards = ({ data }) => (
             </ImageContainer>
           </ImageWrapper>
           <Wrapper>
-            <TimeStamp>{get(item, 'date')}</TimeStamp>
+            <TimeStamp>{date.toDateString(get(item, 'date'))}</TimeStamp>
             <CardTitle>{get(item, 'title1.text')}</CardTitle>
             <Description
               dangerouslySetInnerHTML={{
