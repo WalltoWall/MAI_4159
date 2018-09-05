@@ -115,6 +115,10 @@ export const Subhead = styled.h2`
   font-size: ${t.s(2)};
   color: ${t.c.darkgrey1};
   letter-spacing: 0.1rem;
+  text-align: center;
+  ${t.mq.l} {
+    text-align: left;
+  }
 `
 
 export const Description = styled.div`
@@ -148,13 +152,20 @@ export const StyledHtmlClassName = css`
     font-family: ${t.ff.sans2};
     font-size: ${t.f(0)};
     margin-bottom: 0.6rem;
+    text-align: center;
+    ${t.mq.l} {
+      text-align: left;
+    }
   }
 `
 
 export const StyledLink = styled(Link)`
   display: block;
   overflow: hidden;
-  width: 20%;
+  width: 100%;
+  ${t.mq.l} {
+    width: 20%;
+  }
 `
 
 export const Grid = styled.div`
@@ -198,6 +209,7 @@ export const RelatedProjects = styled.div`
   justify-content: center;
   width: 100%;
   margin: 0 auto;
+  flex-wrap: wrap;
 `
 
 
