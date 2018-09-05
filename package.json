@@ -18,6 +18,7 @@
     "gatsby-plugin-emotion": "next",
     "gatsby-plugin-lodash": "^3.0.1-beta.2",
     "gatsby-plugin-manifest": "^1.0.27",
+    "gatsby-plugin-netlify": "^2.0.0-rc.1",
     "gatsby-plugin-offline": "^1.0.18",
     "gatsby-plugin-react-helmet": "^3.0.0-beta.4",
     "gatsby-plugin-sharp": "^2.0.0-beta.5",
@@ -35,7 +36,8 @@
     "react-hamburger-menu": "^1.1.1",
     "react-helmet": "^5.2.0",
     "react-map-to-components": "^0.1.4",
-    "react-powerplug": "^1.0.0-rc.0"
+    "react-powerplug": "^1.0.0-rc.0",
+    "react-spring": "5.3.8"
   },
   "scripts": {
     "build": "gatsby build",
