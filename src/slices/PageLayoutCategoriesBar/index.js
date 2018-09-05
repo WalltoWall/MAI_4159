@@ -18,7 +18,7 @@ import {
 export class PageLayoutCategoriesBar extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {currentFilter: "All Projects"}
+    this.state = {currentFilter: "Select Filter"}
   }
 
   updateCurrentFilter = (e, name) => {
