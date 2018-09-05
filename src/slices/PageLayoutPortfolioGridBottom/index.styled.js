@@ -13,10 +13,11 @@ export const Bar = styled.div`
   display: flex;
   justify-content: center;
   padding: ${t.s(1)} 0;
-  color: ${t.c.white};
+  color: ${t.c.lightgrey1};
   font-size: ${t.f(1)};
   font-weight: 700;
   width: 100%;
+  text-transform: uppercase;
 `
 
 export const StyledLink = styled(Link)`
