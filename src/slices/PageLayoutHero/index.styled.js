@@ -17,78 +17,96 @@ export const Container = styled.div`
   }
 `
 
-export const Headline = styled.h1`
-  color: ${t.c.yellow};
+export const HeadlineWrapper = styled.div`
   font-family: ${t.ff.sans};
   text-transform: uppercase;
-  font-weight: 600;
-  font-size: ${t.f(6)};
-  letter-spacing: 3px;
   text-align: center;
-  margin: 0;
-  -webkit-transform: rotate(7deg);
-  -ms-transform: rotate(7deg);
-  transform: rotate(7deg);
+  position: relative;
+  font-weight: 600;
+  display: block;
+  width: 100%;
+  background-color: ${t.c.darkgrey1};
+  padding: 2rem;
+  -webkit-transform: rotate(-7deg) translate(0, -50px) scale(1.2);
+  -ms-transform: rotate(-7deg) translate(0, -50px) scale(1.2);
+  transform: rotate(-7deg) translate(0, -50px) scale(1.2);
 
   ${t.mq.l} {
-    text-align: left;
-    font-size: ${t.f(10)};
+    position: absolute;
+    margin-left: 2rem;
+    width: auto;
+    background-color: transparent;
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
   }
 `
-const bounce = keyframes`
-  from, 20%, 53%, 80%, to {
-    transform: translate3d(0,0,0);
+export const RotatedContainer = styled.div`
+  -webkit-transform: rotate(7deg);
+  -ms-transform: rotate(7deg);
+  transform: rotate(7deg);
+  ${t.mq.l} {
+    text-align: left;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+`
+export const Headline = styled.h1`
+  color: ${t.c.yellow};
+  font-size: ${t.f(6)};
+  letter-spacing: 3px;
+  margin: 0;
+  span {
+    &:nth-child(1) {
+      color: ${t.c.white};
+    }
+  }
+  ${t.mq.l} {
+    font-size: ${t.f(10)};
+  }
+`
+const topToBottom = keyframes`
+  0% {
+    transform: translate(0, -104px);
+    opacity: 0.6;
   }
 
-  40%, 43% {
-    transform: translate3d(0, -30px, 0);
+  10% {
+    transform: translate(0, -104px);
+    opacity: 1;
   }
 
-  70% {
-    transform: translate3d(0, -15px, 0);
-  }
-
-  90% {
-    transform: translate3d(0,-4px,0);
+  20% {
+    transform: translate(0, -80px);
+    opacity: 0;
   }
 `
 
 export const SlidingVertical = styled.div`
   display: in-line;
-  text-indent: 18px;
-  @keyframes topToBottom
-    {
-      0% {
-        top: 0%;
-        opacity: 1;
-      }
-      100% {
-        top: 100%;
-        opacity: 1;
-      }
-    }
+  text-indent: 114px;
   span {
     font-size: ${t.f(6)};
-    animation: topToBottom 10s linear 0s infinite;
+    letter-spacing: 3px;
+    color: ${t.c.white};
+    animation: ${topToBottom} 15s linear 0s infinite;
     opacity: 0;
     position: absolute;
     &:nth-child(2) {
-      animation-delay: 2.5s;
+      animation-delay: 3s;
     }
     &:nth-child(3) {
-      animation-delay: 5s;
+      animation-delay: 6s;
     }
     &:nth-child(4) {
-      animation-delay: 7.5s;
-    }
-    &:nth-child(4) {
-      animation-delay: 10s;
+      animation-delay: 9s;
     }
     &:nth-child(5) {
-      animation-delay: 12.5s;
+      animation-delay: 12s;
+    }
+    ${t.mq.l} {
+      font-size: ${t.f(10)};
     }
   }
 `
@@ -124,28 +142,6 @@ export const Gradient = styled.div`
     display: block;
   }
 `
-
-export const HeadlineWrapper = styled.div`
-  position: relative;
-  display: block;
-  width: 100%;
-  background-color: ${t.c.darkgrey1};
-  padding: 2rem;
-  -webkit-transform: rotate(-7deg) translate(0, -50px) scale(1.2);
-  -ms-transform: rotate(-7deg) translate(0, -50px) scale(1.2);
-  transform: rotate(-7deg) translate(0, -50px) scale(1.2);
-
-  ${t.mq.l} {
-    position: absolute;
-    margin-left: 2rem;
-    width: auto;
-    background-color: transparent;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-  }
-`
-
 export const Description = styled.div`
   color: ${t.c.white};
   width: auto;

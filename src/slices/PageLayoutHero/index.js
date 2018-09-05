@@ -14,6 +14,7 @@ import {
   DescriptionWrapper,
   Overlay,
   SlidingVertical,
+  RotatedContainer,
 } from './index.styled'
 import { Title } from '../PageLayoutServices/index.styled';
 
@@ -32,14 +33,19 @@ export class PageLayoutHero extends React.Component {
             <Image src={get(data, 'primary.image.url')} />
           </ImageContainer>
           <HeadlineWrapper>
-            <Headline>We re</Headline>                        
-            <SlidingVertical>
-              <span>Imagine</span>
-              <span>Make</span>
-              <span>Build</span>
-              <span>Design</span>
-              <span>Think</span>
-            </SlidingVertical>
+            <RotatedContainer>
+              <Headline>
+                <span>We </span>
+                <span>re</span>            
+              </Headline>                        
+              <SlidingVertical>
+                <span>Imagine</span>
+                <span>Make</span>
+                <span>Build</span>
+                <span>Design</span>
+                <span>Think</span>
+              </SlidingVertical>          
+            </RotatedContainer>
           </HeadlineWrapper>
           <Overlay>
             <DescriptionWrapper>
