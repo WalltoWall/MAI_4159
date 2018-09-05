@@ -36,8 +36,6 @@ module.exports = {
         linkResolver: () => doc => (doc.uid === 'home' ? '/' : `/${doc.uid}/`),
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-netlify',
-    'gatsby-plugin-netlify-cache',
+    'gatsby-transformer-sharp'
   ],
 }

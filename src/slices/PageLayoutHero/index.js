@@ -15,6 +15,7 @@ import {
   Overlay,
   SlidingVertical,
   RotatedContainer,
+  SubHeadline,
 } from './index.styled'
 import { Title } from '../PageLayoutServices/index.styled';
 
@@ -48,6 +49,7 @@ export class PageLayoutHero extends React.Component {
               </SlidingVertical>          
             </RotatedContainer>
           </HeadlineWrapper>
+          <SubHeadline> Hawai'i's Future</SubHeadline>
           <Overlay>
             <DescriptionWrapper>
               <Description

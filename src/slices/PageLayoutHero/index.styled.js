@@ -52,7 +52,7 @@ export const RotatedContainer = styled.div`
     transform: none;
   }
 `
-export const Headline = styled.h1`
+export const Headline = styled.div`
   color: ${t.c.yellow};
   font-size: ${t.f(6)};
   letter-spacing: 3px;
@@ -69,6 +69,10 @@ export const Headline = styled.h1`
   h1 {
     font-size: ${t.f(5)};
     margin: 0;
+    ${t.mq.m} {
+      margin-top: 10px;
+      font-size: ${t.f(8)};
+    }
     ${t.mq.l} {
       display: none;
     }
@@ -77,26 +81,57 @@ export const Headline = styled.h1`
     font-size: ${t.f(10)};
   }
 `
+
+export const SubHeadline = styled.span`
+  display: none;
+  font-family: ${t.ff.sans2};
+  position: absolute;
+  left: 22%;
+  font-weight: 600;
+  letter-spacing: 2px;
+  top: 56%;
+  font-size: ${t.f(3.5)};
+  color: white;
+  text-transform: uppercase;
+  ${t.mq.l} {
+    left: 25%;
+    display: block;
+  }
+  ${t.mq.x} {
+    left: 17.6%;
+    display: block;
+  }
+`
 const topToBottom = keyframes`
   0% {
-    transform: translate(0, -104px);
-    opacity: 0.6;
+    transform: translate(0, -84px);
+    opacity: 0;
   }
 
-  10% {
+  5% {
     transform: translate(0, -104px);
     opacity: 1;
   }
 
+  10%, 12% {
+    transform: translate(0, -104px);x
+    opacity: 1;
+  }
+
+  15% {
+    transform: translate(0, -124px);
+    opacity: 0.8;
+  }
+
   20% {
-    transform: translate(0, -80px);
-    opacity: 0;
+    transform: translate(0, -144px);
+    opacity: 0
   }
 `
 
 export const SlidingVertical = styled.div`
   display: none;
-  text-indent: 230px;
+  text-indent: 215px;
   span {
     font-size: ${t.f(6)};
     letter-spacing: 3px;
@@ -160,10 +195,12 @@ export const Description = styled.div`
   color: ${t.c.white};
   width: auto;
   text-align: center;
+  font-family: ${t.ff.serif};
+  font-size: ${t.s(0.5)};
 
   ${t.mq.l} {
     text-align: left;
-    width: 300px;
+    width: 320px;
   }
 `
 export const DescriptionWrapper = styled.div`
