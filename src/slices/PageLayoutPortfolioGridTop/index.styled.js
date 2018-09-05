@@ -47,7 +47,7 @@ export const GridOverlay = styled.div`
 export const GridTitle = styled.h1`
   position: absolute;
   top: 40%;
-  font-size: ${t.f(4)};
+  font-size: ${t.f(3)};
   font-family: ${t.ff.sans};
   color: ${t.c.darkgrey1};
   letter-spacing: 0.1rem;

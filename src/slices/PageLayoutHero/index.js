@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get, forEach, delay } from 'lodash'
 import { Transition, animated } from 'react-spring'
-
+import { MobileNavOverlay } from 'components/Header/Mobile.styled'
 import {
   Gradient,
   Container,
@@ -25,8 +25,6 @@ export class PageLayoutHero extends React.Component {
       TitleSlide: "think",
     }
   }
-
-
 
   componentDidMount() {
   }
@@ -51,7 +49,8 @@ export class PageLayoutHero extends React.Component {
                 }}
               />
             </DescriptionWrapper>
-          </Overlay>      
+          </Overlay>
+          <MobileNavOverlay/>      
         </Container>
       </div>
     )
