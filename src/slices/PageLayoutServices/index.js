@@ -17,6 +17,7 @@ import {
   GridOverlay,
   StyledLink,
   ProjectTitle,
+  Subtitle,
 } from './index.styled'
 
 import Button from 'components/Button'
@@ -40,7 +41,7 @@ export const PageLayoutServices = ({ data }) => {
           />
         </TextWrapper>
       </ContentContainer>
-      <Title>Related projects</Title>
+      <Subtitle>Related projects</Subtitle>
       <RelatedProjects>
           {projects.map(project =>
             renderFeatureGrid({

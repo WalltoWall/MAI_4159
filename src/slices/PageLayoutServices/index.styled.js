@@ -50,6 +50,16 @@ export const Title = styled.h2`
   text-align: center;
 `
 
+export const Subtitle = styled.h2`
+  font-family: ${t.ff.sans};
+  text-transform: uppercase;
+  font-size: ${t.s(2)};
+  color: ${t.c.darkgrey1};
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  text-align: center;
+`
+
 export const Content = styled.div`
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.sans2};
