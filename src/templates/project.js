@@ -4,9 +4,13 @@ import MapToComponents from 'react-map-to-components'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Layout } from 'components/Layout'
-import { ProjectBodyHero } from 'slices/ProjectBodyHero'
-import { ProjectBodyCategories } from 'slices/ProjectBodyCategories'
-
+import { ProjectLayoutHero } from 'slices/ProjectLayoutHero'
+import { ProjectLayoutSlice } from 'slices/ProjectLayoutSlice'
+import { ProjectLayoutSideBySideText } from 'slices/ProjectLayoutSideBySideText'
+import { ProjectLayoutFullImage } from 'slices/ProjectLayoutFullImage'
+import { ProjectLayoutSideBySideImages } from 'slices/ProjectLayoutSideBySideImages'
+import { ProjectLayoutCallToAction } from 'slices/ProjectLayoutCallToAction'
+import { ProjectLayoutFeatureList } from 'slices/ProjectLayoutFeatureList'
 
 const ProjectTemplate = ({ data }) => (
   <>
@@ -15,10 +19,15 @@ const ProjectTemplate = ({ data }) => (
       <MapToComponents
         getKey={x => x.id}
         getType={x => x.__typename.replace(/^Prismic/, '')}
-        list={get(data, 'prismicProject.data.body')}
+        list={get(data, 'prismicProject.data.layout')}
         map={{
-          ProjectBodyHero,
-          ProjectBodyCategories,
+          ProjectLayoutHero,
+          ProjectLayoutFullImage,
+          ProjectLayoutSideBySideImages,
+          ProjectLayoutCallToAction,
+          ProjectLayoutFeatureList,
+          ProjectLayoutSlice,
+          ProjectLayoutSideBySideText,
         }}
         page={get(data, 'prismicProject')}
         rootData={data}
@@ -36,12 +45,17 @@ export const query = graphql`
         title {
           text
         }
-        body {
+        layout {
           __typename
         }
       }
     }
-    ...ProjectBodyHero
-    ...ProjectBodyCategories
+    ...ProjectLayoutHero
+    ...ProjectLayoutSlice
+    ...ProjectLayoutFullImage
+    ...ProjectLayoutSideBySideImages
+    ...ProjectLayoutCallToAction
+    ...ProjectLayoutFeatureList
+    ...ProjectLayoutSideBySideText
   }
 `

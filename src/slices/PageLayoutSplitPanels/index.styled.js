@@ -6,22 +6,24 @@ export const Container = styled.div`
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  background-color: ${t.c.lightgrey2};
+  background-color: ${t.c.white};
   position: relative;
   display: block;
   margin: 0 auto;
- `
+`
 
 export const Headline = styled.h2`
   color: ${t.c.darkgrey2};
-  font-family: ${t.ff.serif};
-  font-size: ${t.f(5)};
-  font-weight: 400;
+  font-family: ${t.ff.sans};
+  font-size: ${t.f(4)};
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   ${t.mq.m} {
-    font-size: ${t.f(6)};
+    font-size: ${t.f(5)};
   }
   ${t.mq.l} {
     text-align: left;
@@ -35,10 +37,10 @@ export const Image = styled.img`
 `
 
 export const Description = styled.div`
-  color: ${t.c.darkgrey1};
+  color: ${t.c.darkgrey2};
   font-family: ${t.ff.sans2};
   line-height: ${t.lh.copy};
-  font-weight: 300;
+  font-weight: 400;
   max-width: 450px;
   margin: 0 auto 2rem auto;
   text-align: center;
@@ -91,7 +93,6 @@ export const ImageContainer = styled.div`
     order: 2;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 3% 100%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 3% 100%);
-    margin-bottom: -2rem;
   }
 `
 

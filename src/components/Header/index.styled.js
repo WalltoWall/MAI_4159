@@ -1,11 +1,10 @@
 import styled from 'react-emotion'
-
 import t from 'theme'
 
 export const Container = styled.div`
   background: ${t.c.darkgrey2};
   color: ${t.c.white};
-  postition: fixed;
+  position: relative;
   top: 0;
 `
 
@@ -14,4 +13,3 @@ export const Content = styled.div`
   max-width: ${t.ms.l};
   padding: ${t.s(1)} ${t.s(0)};
 `
-

@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { injectGlobal } from 'emotion'
+import t from 'theme'
 import { get } from 'lodash'
-import {DevRefreshButton} from 'components/DevRefreshButton'
+import { DevRefreshButton } from 'components/DevRefreshButton'
 import { Header } from 'components/Header'
 import { Footer } from 'components/Footer'
 import { Container } from './index.styled'
@@ -26,8 +27,11 @@ injectGlobal`
 
   body {
     overflow-x: hidden;
-    margin: 0;
+    width: 100%;
+    margin: 0 auto;
     padding: 0;
+    background-color: ${t.c.lightgrey2};
+    max-width: 100rem;
   }
 
   a {

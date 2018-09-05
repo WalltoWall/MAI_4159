@@ -1,17 +1,20 @@
 import React from 'react'
 import { Toggle } from 'react-powerplug'
 import classnames from 'classnames'
-
+import { Link } from '../Link'
 import { isPathActive } from 'lib/helpers'
-import { Link } from 'components/Link'
+
 import {
   Container,
   linkActiveClassName,
+  StyledLinkClassName,
+  NavArrow,
 } from './MobileNavItem.styled'
 
 const getLinkProps = () => ({ href, location: { pathname } }) => ({
   className: classnames(
-    isPathActive(pathname, href) && linkActiveClassName,
+    StyledLinkClassName,
+    isPathActive(pathname, href) && linkActiveClassName
   ),
 })
 
@@ -24,11 +27,8 @@ export const MobileNavItem = ({
   <Toggle>
     {({ on, set, toggle }) => (
       <Container>
-        <Link
-          to={to}
-          getProps={getLinkProps(on)}
-          onClick={toggleMobileNav}
-        >
+        <NavArrow />
+        <Link to={to} getProps={getLinkProps(on)} onClick={toggleMobileNav}>
           {name}
         </Link>
       </Container>
