@@ -21,15 +21,19 @@ export const Desktop = styled.div`
 
 export const Mobile = styled.div`
   background-color: ${t.c.darkgrey2};
+  font-family: ${t.ff.sans2};
   padding: ${t.s(1)} 0;
+  letter-spacing: 0.05rem;
   text-align: center;
   ${t.mq.l} {
     display: none;
   }
   span {
-    font-size: ${t.f(1)};
-    color: ${t.c.white};
+    font-size: ${t.f(0.5)};
+    color: ${t.c.lightgrey1};
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
   }
 `
 export const FilterBox = styled.div`
@@ -58,7 +62,7 @@ export const StyledLink = styled(Link)`
     -o-transition: color .2s ease-in;
     transition: color .2s ease-in;
     &:hover {
-        color: ${t.c.darkyellow};
+        color: ${t.c.yellow};
     }
 `
 
@@ -67,10 +71,17 @@ export const navItemClassName = css`
   margin: 0 2rem;
   color: ${t.c.white};
   font-size: ${t.f(1.5)};
-  padding: 0.4rem 0;
+  padding: 0.6rem 0;
   font-weight: 600;
   font-family: ${t.ff.sans2};
-  letter-spacing: 3px;
+  letter-spacing: 0.1rem;
+    -webkit-transition: color .2s ease-in;
+    -moz-transition: color .2s ease-in;
+    -o-transition: color .2s ease-in;
+    transition: color .2s ease-in;
+  &:hover {
+    color: ${t.c.yellow};
+  }
 `
 
 export const linkActiveClassName = css`
