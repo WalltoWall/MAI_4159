@@ -6,7 +6,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: ${t.c.lightgrey2};
+  background-color: ${t.c.lightgrey1};
   padding: 3rem 2rem;
   ${t.mq.l} {
     padding: 5rem 0;

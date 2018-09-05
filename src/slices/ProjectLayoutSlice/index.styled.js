@@ -11,7 +11,7 @@ const backgroundChooser = ({ variation }) => {
 
     default:
       return `
-        background-color: ${t.c.lightgrey3};
+        background-color: ${t.c.lightgrey1};
       `
   }
 }

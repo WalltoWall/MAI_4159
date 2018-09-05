@@ -3,7 +3,7 @@ import t from 'theme'
 import { Link } from 'components/Link'
 
 export const Container = styled.div`
-  background: ${t.c.lightgrey3};
+  background: ${t.c.lightgrey1};
   text-align: center;
   padding: 4rem 0 6rem 0;
 `
