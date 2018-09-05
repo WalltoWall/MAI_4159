@@ -120,15 +120,11 @@ export const RelatedProjects = styled.div`
 `
 
 export const StyledHtmlClassName = css`
-  ul {
-    list-style: none;
-    list-style-type: none;
-    li {
-      color: ${t.c.darkgrey2};
-      font-family: ${t.ff.sans2};
-      font-size: ${t.f(0)};
-      list-style: none;
-    }
+  p {
+    color: ${t.c.darkgrey2};
+    font-family: ${t.ff.sans2};
+    font-size: ${t.f(0)};
+    margin-bottom: 0.6rem;
   }
 `
 

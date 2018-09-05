@@ -18,6 +18,7 @@ import {
 import Button from 'components/Button'
 
 export const PageLayoutServices = ({ data }) => (
+
   <Container photo_orientation={get(data, 'primary.photo_orientation')}>
     <Title>{get(data, 'primary.title1.text')}</Title>
     <Content>{get(data, 'primary.text.text')}</Content>
@@ -30,6 +31,7 @@ export const PageLayoutServices = ({ data }) => (
         <HTMLContent
           html={get(data, 'primary.description.html')}
           className={StyledHtmlClassName}
+          id="list"
         />
       </TextWrapper>
     </ContentContainer>
