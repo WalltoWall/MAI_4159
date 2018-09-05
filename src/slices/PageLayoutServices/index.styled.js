@@ -1,6 +1,7 @@
 import styled from 'react-emotion'
 import t from 'theme'
 import { css } from 'emotion'
+import { Link } from 'components/Link'
 
 const photoOrientation = ({ photo_orientation }) => {
   switch (photo_orientation) {
@@ -115,8 +116,20 @@ export const Description = styled.div`
   display: block;
 `
 
-export const RelatedProjects = styled.div`
-  display:block
+export const ProjectTitle = styled.div`
+  font-family: ${t.ff.sans};
+  text-transform: uppercase;
+  font-size: ${t.s(1)};
+  color: ${t.c.darkgrey1};
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  z-index: 3;
 `
 
 export const StyledHtmlClassName = css`
@@ -127,4 +140,56 @@ export const StyledHtmlClassName = css`
     margin-bottom: 0.6rem;
   }
 `
+
+export const StyledLink = styled(Link)`
+  display: block;
+  overflow: hidden;
+  width: 20%;
+`
+
+export const Grid = styled.div`
+  background-image: url(${p => p.url});
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem 1.2rem;
+  min-height: 200px;
+
+  &:hover {
+    ${ProjectTitle} {
+      opacity: 1;
+    }
+  }
+`
+export const GridOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: ${t.c.white};
+  opacity: 0;
+  z-index: 2;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+
+  ${Grid}:hover & {
+    opacity: 0.8;
+    border-bottom: 1rem solid ${t.c.yellow};
+  }
+`
+
+export const RelatedProjects = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+`
+
+
+
 
