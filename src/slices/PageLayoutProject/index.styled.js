@@ -2,7 +2,7 @@ import styled from 'react-emotion'
 import t from 'theme'
 
 export const Container = styled.div`
-  background-color: ${t.c.lightgrey3};
+  background-color: ${t.c.lightgrey1};
   margin: 0 auto;
   display: block;
   padding: 2rem;

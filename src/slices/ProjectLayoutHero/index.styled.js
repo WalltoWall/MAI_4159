@@ -2,13 +2,14 @@ import styled from 'react-emotion'
 import { css } from 'emotion'
 import t from 'theme'
 export const Container = styled.div`
-  height: 850px;
+  height: 600px;
   display: flex;
   overflow: hidden;
   position: relative;
   flex-direction: column;
   ${t.mq.l} {
     flex-direction: row;
+    height: 850px;
   }
 `
 
@@ -50,7 +51,6 @@ export const ClipOverlay = styled.div`
   transform: rotate(-5deg);
   z-index: 1;
   ${t.mq.m} {
-    top: 50%;
     left: -5%;
     height: 60%;
     width: 120%;
@@ -106,7 +106,7 @@ export const InfoBlurb = css`
   width: 100%;
   margin-bottom: -6px;
   h3 {
-    font-size: ${t.f(-1)};
+    font-size: ${t.f(0)};
     color: ${t.c.yellow};
     font-family: ${t.ff.sans2};
     text-transform: uppercase;

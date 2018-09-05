@@ -15,9 +15,16 @@ export const Title = styled.h2`
   text-transform: uppercase;
   font-size: ${t.s(2)};
   color: ${t.c.white};
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  ${t.mq.l} {
+    ${t.s(3)};
+  }
 `
 
 export const Content = styled.div`
+  font-family: ${t.ff.sans2};
+  line-height: ${t.lh.copy};
   color: ${t.c.white};
   width: 80%;
   text-align: center;
