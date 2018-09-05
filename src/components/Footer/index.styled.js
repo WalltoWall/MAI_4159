@@ -33,7 +33,7 @@ export const BrandContent = styled.div`
   font-weight: 500;
   text-align: center;
   ${t.mq.l} {
-    padding-left: 2.5rem;
+    padding: 0 5rem 0 2.5rem;
     width: 100%;
     text-align: left;
     margin-top: -1.2rem;
@@ -77,6 +77,6 @@ export const CopyrightContent = styled.div`
   font-weight: 500;
   ${t.mq.l} {
     font-size: 0.8rem;
-    padding: 1rem 0 0 0;
+    padding: 0.4rem 0 0 0;
   }
 `
