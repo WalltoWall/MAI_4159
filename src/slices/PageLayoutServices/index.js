@@ -17,7 +17,7 @@ import {
 import Button from 'components/Button'
 
 export const PageLayoutServices = ({ data }) => (
-  <Container backgroundColor={get(data, 'primary.photo_orientation')}>
+  <Container photo_orientation={get(data, 'primary.photo_orientation')}>
     <Title>{get(data, 'primary.title1.text')}</Title>
     <Content>{get(data, 'primary.text.text')}</Content>
     <ContentContainer>

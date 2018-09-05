@@ -19,12 +19,12 @@ const backgroundColor = ({ photo_orientation }) => {
   switch (photo_orientation) {
     case 'Left':
       return `
-        background-color: ${t.c.darkgrey2};
+        background-color: ${t.c.lightgrey1};
       `
 
     default:
       return `
-        background-color: ${t.c.lightgrey2};
+        background-color: ${t.c.white};
       `
   }
 }
@@ -34,7 +34,6 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: ${t.c.lightgrey1};
   padding: 2rem 2rem 5rem 2rem;
   ${backgroundColor};
 `
