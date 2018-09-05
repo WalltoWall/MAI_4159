@@ -14,15 +14,25 @@ export const Title = styled.h2`
   font-family: ${t.ff.sans};
   text-transform: uppercase;
   font-size: ${t.s(2)};
-  color: ${t.c.black};
+  color: ${t.c.darkgrey1};
+  letter-spacing: 2px;
 `
 
 export const Content = styled.div`
-  color: ${t.c.black};
+  color: ${t.c.darkgrey1};
   width: 80%;
   text-align: center;
   margin: -1rem 0 1rem 0;
   ${t.mq.l} {
-    width: 40%;
+    width: 60%;
+  }
+`
+export const Image = styled.img`
+  width: 100%;
+  padding: 0rem;
+  object-fit: cover;
+  ${t.mq.l} {
+    width: 50%;
+    padding: 0 0.7rem;
   }
 `

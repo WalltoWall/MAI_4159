@@ -18,7 +18,7 @@ import {
 export class PageLayoutCategoriesBar extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {currentFilter: "All Projects"}
+    this.state = {currentFilter: "Select Filter"}
   }
 
   updateCurrentFilter = (e, name) => {
@@ -59,7 +59,7 @@ export class PageLayoutCategoriesBar extends React.Component {
                 {categories.map(item => (
                   <StyledLink
                     key={get(item, 'name.text')}
-                    to={get(item, 'url.url', '/')}
+                    to={get(item, 'url1.url', '/')}
                     getProps={this.getLinkProps()}
                     onClick={(e) => this.updateCurrentFilter(e, get(item, 'name.text'))}
                   >
