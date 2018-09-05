@@ -58,8 +58,19 @@ export const Headline = styled.h1`
   letter-spacing: 3px;
   margin: 0;
   span {
+    display: none;
     &:nth-child(1) {
       color: ${t.c.white};
+    }
+    ${t.mq.l} {
+      display: inline;
+    }
+  }
+  h1 {
+    font-size: ${t.f(5)};
+    margin: 0;
+    ${t.mq.l} {
+      display: none;
     }
   }
   ${t.mq.l} {
@@ -84,8 +95,8 @@ const topToBottom = keyframes`
 `
 
 export const SlidingVertical = styled.div`
-  display: in-line;
-  text-indent: 114px;
+  display: none;
+  text-indent: 230px;
   span {
     font-size: ${t.f(6)};
     letter-spacing: 3px;
@@ -106,8 +117,11 @@ export const SlidingVertical = styled.div`
       animation-delay: 12s;
     }
     ${t.mq.l} {
-      font-size: ${t.f(10)};
+      font-size: ${t.f(10)};    
     }
+  }
+  ${t.mq.l} {
+    display: inline;
   }
 `
 
