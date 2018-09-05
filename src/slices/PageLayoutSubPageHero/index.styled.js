@@ -15,20 +15,26 @@ export const Image = styled.img`
 `
 export const Title = styled.h1`
   color: ${t.c.yellow};
-  font-size: ${t.f(9)};
+  font-size: ${t.f(7)};
   font-family: ${t.ff.sans};
   position: absolute;
   text-transform: uppercase;
+  text-align: center;
   left: 50%;
-  margin-left: -177px;
-  top: 45%;
-  margin-top: -50px;
+  bottom: 25%;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  transform: translate(-50%,50%);
   ${t.mq.l} {
-    bottom: -5%;
-    left: 26%;
-    margin-left: 0;
-    top: inherit;
+    font-size: ${t.f(9)};
+  }
+  ${t.mq.l} {
+    bottom: -20%;
+    left: 15%;
+    margin-left: 2rem;
     margin-top: 0;
+    font-size: ${t.f(9)};
+    transform: translate(50%,-50%);
   }
 `
 
