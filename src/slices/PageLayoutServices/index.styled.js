@@ -1,5 +1,6 @@
 import styled from 'react-emotion'
 import t from 'theme'
+import { css } from 'emotion'
 
 const photoOrientation = ({ photo_orientation }) => {
   switch (photo_orientation) {
@@ -117,3 +118,17 @@ export const Description = styled.div`
 export const RelatedProjects = styled.div`
   display:block
 `
+
+export const StyledHtmlClassName = css`
+  ul {
+    list-style: none;
+    list-style-type: none;
+    li {
+      color: ${t.c.darkgrey2};
+      font-family: ${t.ff.sans2};
+      font-size: ${t.f(0)};
+      list-style: none;
+    }
+  }
+`
+

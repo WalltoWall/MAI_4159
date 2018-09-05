@@ -12,6 +12,7 @@ import {
   TextWrapper,
   Subhead,
   RelatedProjects,
+  StyledHtmlClassName,
 } from './index.styled'
 
 import Button from 'components/Button'
@@ -27,11 +28,17 @@ export const PageLayoutServices = ({ data }) => (
       <TextWrapper>
         <Subhead>Services</Subhead>
         <HTMLContent
-          html={get(data, 'primary.description.text')}
+          html={get(data, 'primary.description.html')}
+          className={StyledHtmlClassName}
         />
       </TextWrapper>
     </ContentContainer>
     <RelatedProjects>
+      {get(data, 'items', []).map(item => (
+          <ImageWrapper>
+              <Image src={get(data, 'related_projects.image.url')} />
+          </ImageWrapper>
+      ))}
     </RelatedProjects>
     <Button to="/portfolio/">see more</Button>
   </Container>
@@ -55,12 +62,23 @@ export const query = graphql`
                 url
               }
               description {
-                text
+                html
               }
               photo_orientation
             }
             items {
               related_projects {
+                document {
+                  data {
+                    title {
+                      text
+                    }
+                    image {
+                      url
+                    }
+                  }
+                  uid
+                }
                 url
               }
             }
