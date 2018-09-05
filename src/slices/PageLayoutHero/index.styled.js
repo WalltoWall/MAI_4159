@@ -69,12 +69,37 @@ export const Headline = styled.div`
   h1 {
     font-size: ${t.f(5)};
     margin: 0;
+    ${t.mq.m} {
+      margin-top: 10px;
+      font-size: ${t.f(8)};
+    }
     ${t.mq.l} {
       display: none;
     }
   }
   ${t.mq.l} {
     font-size: ${t.f(10)};
+  }
+`
+
+export const SubHeadline = styled.span`
+  display: none;
+  font-family: ${t.ff.sans2};
+  position: absolute;
+  left: 22%;
+  font-weight: 600;
+  letter-spacing: 2px;
+  top: 56%;
+  font-size: ${t.f(3.5)};
+  color: white;
+  text-transform: uppercase;
+  ${t.mq.l} {
+    left: 25%;
+    display: block;
+  }
+  ${t.mq.x} {
+    left: 17.6%;
+    display: block;
   }
 `
 const topToBottom = keyframes`

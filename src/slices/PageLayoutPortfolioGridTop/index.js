@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get } from 'lodash'
+import { get, dropRight } from 'lodash'
 import {
   Container,
   Grid,
@@ -21,9 +21,9 @@ const renderGrid = data => (
 export const PageLayoutPortfolioGridTop = ({ data }) => {
   let projects = data.items
   // disallow even number of grid items
-  if (projects.length % 2 === 1) {
-    projects = projects.dropRight
-  }
+  // if (projects.length % 2 === 1) {
+  //   projects = projects.dropRight()
+  // }
 
   return (
     <Container>

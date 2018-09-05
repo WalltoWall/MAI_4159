@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get } from 'lodash'
+import { get, dropRight } from 'lodash'
 import {
   Container,
   Grid,
@@ -20,16 +20,13 @@ const renderGrid = data => (
 export const PageLayoutPortfolioGridBottom = ({ data }) => {
   let projects = data.items
   // disallow even number of grid items
-  let multitudeOfThree = projects.length % 3
-  if (multitudeOfThree !== 0) {
-    projects = projects.dropRight(multitudeOfThree)
-  }
+  // let multitudeOfThree = projects.length % 3
+  // if (multitudeOfThree !== 0) {
+  //   projects = projects.dropRight(multitudeOfThree)
+  // }
 
   return (
     <Container>
-      <Bar>
-        <span>Projects A-Z</span>
-      </Bar>
       {projects.map(item => (
         <StyledLink to={get(item, 'project.url')}>
           {renderGrid(get(item, 'project.document[0].data'))}
