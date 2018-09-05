@@ -1,9 +1,9 @@
 import styled from 'react-emotion'
 import t from 'theme'
 
-const orientation = ({ photo_orientation }) => {
+const photoOrientation = ({ photo_orientation }) => {
   switch (photo_orientation) {
-    case 'left':
+    case 'Left':
       return `
         order: 1;
       `
@@ -15,6 +15,20 @@ const orientation = ({ photo_orientation }) => {
   }
 }
 
+const backgroundColor = ({ photo_orientation }) => {
+  switch (photo_orientation) {
+    case 'Left':
+      return `
+        background-color: ${t.c.darkgrey2};
+      `
+
+    default:
+      return `
+        background-color: ${t.c.lightgrey2};
+      `
+  }
+}
+
 export const Container = styled.div`
   display: flex;
   align-items: center;
@@ -22,6 +36,7 @@ export const Container = styled.div`
   flex-direction: column;
   background-color: ${t.c.lightgrey1};
   padding: 2rem 2rem 5rem 2rem;
+  ${backgroundColor};
 `
 
 export const Title = styled.h2`
@@ -65,10 +80,11 @@ export const ImageWrapper = styled.div`
   max-height: 500px;
   overflow: hidden;
   width: 100%;
-  order: 0;
+  order: 1;
+  display: block;
   ${t.mq.l} {
     width: 50%;
-    ${orientation};
+    ${photoOrientation};
   }
 `
 
@@ -78,8 +94,8 @@ export const TextWrapper = styled.div`
   ${t.mq.l} {
     width: 40%;
     margin: 0 2rem;
-    ${orientation};
-  }`
+  }
+`
 
 export const Subhead = styled.h2`
   font-family: ${t.ff.sans};

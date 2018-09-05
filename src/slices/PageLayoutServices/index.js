@@ -17,11 +17,11 @@ import {
 import Button from 'components/Button'
 
 export const PageLayoutServices = ({ data }) => (
-  <Container>
+  <Container backgroundColor={get(data, 'primary.photo_orientation')}>
     <Title>{get(data, 'primary.title1.text')}</Title>
     <Content>{get(data, 'primary.text.text')}</Content>
     <ContentContainer>
-      <ImageWrapper>
+      <ImageWrapper photo_orientation={get(data, 'primary.photo_orientation')}>
         <Image src={get(data, 'primary.image.url')} />
       </ImageWrapper>
       <TextWrapper>
