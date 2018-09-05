@@ -19,7 +19,7 @@ const ProjectTemplate = ({ data }) => (
       <MapToComponents
         getKey={x => x.id}
         getType={x => x.__typename.replace(/^Prismic/, '')}
-        list={get(data, 'prismicProject.data.layout')}
+        list={get(data, 'prismicProject.data.layout') || []}
         map={{
           ProjectLayoutHero,
           ProjectLayoutFullImage,
