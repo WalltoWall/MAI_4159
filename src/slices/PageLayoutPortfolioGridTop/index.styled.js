@@ -36,7 +36,6 @@ export const GridOverlay = styled.div`
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
-
   ${Grid}:hover & {
     opacity: 0.7;
     background-color: ${t.c.white};
@@ -56,7 +55,6 @@ export const GridTitle = styled.h1`
   letter-spacing: 0.2rem;
   z-index: 3;
   text-transform: uppercase;
-
   ${t.mq.l} {
     font-size: ${t.f(5)};
   }

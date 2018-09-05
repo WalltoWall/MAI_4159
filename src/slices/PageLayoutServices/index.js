@@ -1,15 +1,39 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-import { Container, Title, Content, Image } from './index.styled'
+import { HTMLContent } from 'components/HTMLContent'
+import { 
+  Container,
+  Title,
+  Content,
+  Image,
+  ContentContainer,
+  ImageWrapper, 
+  TextWrapper,
+  Subhead,
+  RelatedProjects,
+} from './index.styled'
+
 import Button from 'components/Button'
 
 export const PageLayoutServices = ({ data }) => (
   <Container>
     <Title>{get(data, 'primary.title1.text')}</Title>
     <Content>{get(data, 'primary.text.text')}</Content>
-    <Image src={get(data, 'primary.image.url')} />
-    <Button to="/">just a button</Button>
+    <ContentContainer>
+      <ImageWrapper>
+        <Image src={get(data, 'primary.image.url')} />
+      </ImageWrapper>
+      <TextWrapper>
+        <Subhead>Services</Subhead>
+        <HTMLContent
+          html={get(data, 'primary.description.text')}
+        />
+      </TextWrapper>
+    </ContentContainer>
+    <RelatedProjects>
+    </RelatedProjects>
+    <Button to="/portfolio/">see more</Button>
   </Container>
 )
 
@@ -31,8 +55,9 @@ export const query = graphql`
                 url
               }
               description {
-                html
+                text
               }
+              photo_orientation
             }
             items {
               related_projects {
