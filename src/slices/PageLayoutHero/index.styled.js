@@ -52,7 +52,7 @@ export const RotatedContainer = styled.div`
     transform: none;
   }
 `
-export const Headline = styled.h1`
+export const Headline = styled.div`
   color: ${t.c.yellow};
   font-size: ${t.f(6)};
   letter-spacing: 3px;
@@ -79,24 +79,34 @@ export const Headline = styled.h1`
 `
 const topToBottom = keyframes`
   0% {
-    transform: translate(0, -104px);
-    opacity: 0.6;
+    transform: translate(0, -84px);
+    opacity: 0;
   }
 
-  10% {
+  5% {
     transform: translate(0, -104px);
     opacity: 1;
   }
 
+  10%, 12% {
+    transform: translate(0, -104px);x
+    opacity: 1;
+  }
+
+  15% {
+    transform: translate(0, -124px);
+    opacity: 0.8;
+  }
+
   20% {
-    transform: translate(0, -80px);
-    opacity: 0;
+    transform: translate(0, -144px);
+    opacity: 0
   }
 `
 
 export const SlidingVertical = styled.div`
   display: none;
-  text-indent: 230px;
+  text-indent: 215px;
   span {
     font-size: ${t.f(6)};
     letter-spacing: 3px;
