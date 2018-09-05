@@ -134,11 +134,11 @@ export const ProjectTitle = styled.div`
   font-family: ${t.ff.sans};
   text-transform: uppercase;
   font-size: ${t.s(1)};
-  color: ${t.c.darkgrey1};
+  color: ${t.c.white};
   letter-spacing: 0.1rem;
   font-weight: 600;
   text-align: center;
-  opacity: 0;
+  opacity: 1;
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
@@ -180,7 +180,7 @@ export const Grid = styled.div`
 
   &:hover {
     ${ProjectTitle} {
-      opacity: 1;
+      color: ${t.c.darkgrey1};
     }
   }
 `
@@ -189,8 +189,8 @@ export const GridOverlay = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: ${t.c.white};
-  opacity: 0;
+  background-color: ${t.c.black};
+  opacity: 0.4;
   z-index: 2;
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
@@ -200,6 +200,7 @@ export const GridOverlay = styled.div`
   ${Grid}:hover & {
     opacity: 0.8;
     border-bottom: 1rem solid ${t.c.yellow};
+    background-color: ${t.c.white};
   }
 `
 
