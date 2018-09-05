@@ -36,7 +36,8 @@ export class PageLayoutHero extends React.Component {
             <RotatedContainer>
               <Headline>
                 <span>We </span>
-                <span>re</span>            
+                <span>re</span>
+                <h1>we are mason</h1>
               </Headline>                        
               <SlidingVertical>
                 <span>Imagine</span>
