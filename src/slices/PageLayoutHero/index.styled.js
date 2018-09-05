@@ -195,10 +195,12 @@ export const Description = styled.div`
   color: ${t.c.white};
   width: auto;
   text-align: center;
+  font-family: ${t.ff.serif};
+  font-size: ${t.s(0.5)};
 
   ${t.mq.l} {
     text-align: left;
-    width: 300px;
+    width: 320px;
   }
 `
 export const DescriptionWrapper = styled.div`
