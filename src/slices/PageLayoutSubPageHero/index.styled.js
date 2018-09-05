@@ -26,9 +26,12 @@ export const Title = styled.h1`
   letter-spacing: 0.1rem;
   transform: translate(-50%,50%);
   ${t.mq.l} {
+    font-size: ${t.f(9)};
+  }
+  ${t.mq.l} {
     bottom: -20%;
     left: 15%;
-    margin-left: 0;
+    margin-left: 2rem;
     margin-top: 0;
     font-size: ${t.f(9)};
     transform: translate(50%,-50%);
