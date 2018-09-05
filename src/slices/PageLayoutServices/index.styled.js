@@ -212,6 +212,3 @@ export const RelatedProjects = styled.div`
   flex-wrap: wrap;
 `
 
-
-
-
