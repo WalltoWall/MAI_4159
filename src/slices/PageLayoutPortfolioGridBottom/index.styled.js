@@ -13,10 +13,11 @@ export const Bar = styled.div`
   display: flex;
   justify-content: center;
   padding: ${t.s(1)} 0;
-  color: ${t.c.white};
+  color: ${t.c.lightgrey1};
   font-size: ${t.f(1)};
   font-weight: 700;
   width: 100%;
+  text-transform: uppercase;
 `
 
 export const StyledLink = styled(Link)`
@@ -58,10 +59,10 @@ export const GridOverlay = styled.div`
 export const GridTitle = styled.h1`
   position: absolute;
   top: 35%;
-  font-size: ${t.f(0)};
+  font-size: ${t.f(1)};
   color: ${t.c.white};
   letter-spacing: 0.1rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   z-index: 3;
   -webkit-transition: opacity 0.2s ease-in;
@@ -69,10 +70,7 @@ export const GridTitle = styled.h1`
   -o-transition: opacity 0.2s ease-in;
   transition: opacity 0.2s ease-in;
   ${t.mq.m} {
-    font-size: ${t.f(3)};
-  }
-  ${t.mq.l} {
-    font-size: ${t.f(5)};
+    font-size: ${t.f(4)};
   }
   ${Grid}:hover & {
     color: ${t.c.darkgrey1};

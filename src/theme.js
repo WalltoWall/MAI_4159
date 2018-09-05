@@ -12,9 +12,8 @@ const theme = {
     darkgrey2: '#646e6a',
     yellow: '#ddd33d',
     darkyellow: '#c3b822',
-    lightgrey1: '#e7e4db',
-    lightgrey2: '#f6f4f2',
-    lightgrey3: '#E6E5E2',
+    lightgrey1: '#f6f4f2',
+    lightgrey2: '#e6e5e2',
   },
   lineHeights: {
     solid: 1,

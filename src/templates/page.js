@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Helmet from 'react-helmet'
 import MapToComponents from 'react-map-to-components'
@@ -23,7 +24,7 @@ const PageTemplate = ({ data }) => (
       <MapToComponents
         getKey={x => x.id}
         getType={x => x.__typename.replace(/^Prismic/, '')}
-        list={get(data, 'prismicPage.data.layout')}
+        list={get(data, 'prismicPage.data.layout') || []}
         map={{
           PageLayoutHero,
           PageLayoutProject,

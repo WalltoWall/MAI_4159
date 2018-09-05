@@ -11,7 +11,7 @@ const backgroundChooser = ({ variation }) => {
 
     default:
       return `
-        background-color: ${t.c.lightgrey3};
+        background-color: ${t.c.lightgrey1};
       `
   }
 }
@@ -23,7 +23,7 @@ export const Container = styled.div`
   flex-wrap: wrap;
   padding: 3rem 0;
   ${t.mq.l} {
-    padding: 5rem 0;
+    padding: 6rem 0;
   }
 `
 export const Content = styled.div`
@@ -66,5 +66,3 @@ export const StyledHtmlClassName = css`
     line-height: ${t.lh.copy};
   }
 `
-
-
