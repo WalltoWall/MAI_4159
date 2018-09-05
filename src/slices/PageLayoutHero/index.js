@@ -13,20 +13,14 @@ import {
   Description,
   DescriptionWrapper,
   Overlay,
+  SlidingVertical,
+  RotatedContainer,
 } from './index.styled'
 import { Title } from '../PageLayoutServices/index.styled';
-
 
 export class PageLayoutHero extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      index: 0,
-      TitleSlide: "think",
-    }
-  }
-
-  componentDidMount() {
   }
 
   render() {
@@ -39,7 +33,19 @@ export class PageLayoutHero extends React.Component {
             <Image src={get(data, 'primary.image.url')} />
           </ImageContainer>
           <HeadlineWrapper>
-            <Headline>We are Mason</Headline>                        
+            <RotatedContainer>
+              <Headline>
+                <span>We </span>
+                <span>re</span>            
+              </Headline>                        
+              <SlidingVertical>
+                <span>Imagine</span>
+                <span>Make</span>
+                <span>Build</span>
+                <span>Design</span>
+                <span>Think</span>
+              </SlidingVertical>          
+            </RotatedContainer>
           </HeadlineWrapper>
           <Overlay>
             <DescriptionWrapper>
@@ -50,8 +56,8 @@ export class PageLayoutHero extends React.Component {
               />
             </DescriptionWrapper>
           </Overlay>
-          <MobileNavOverlay/>      
-        </Container>
+          <MobileNavOverlay/>              
+        </Container>      
       </div>
     )
   }
