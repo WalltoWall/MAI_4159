@@ -29,12 +29,11 @@ export const Title = styled.h1`
     font-size: ${t.f(9)};
   }
   ${t.mq.l} {
-    bottom: -20%;
-    left: 15%;
-    margin-left: 2rem;
-    margin-top: 0;
+    bottom: -10%;
+    left: 420px;
+    margin-top: -20px;
     font-size: ${t.f(9)};
-    transform: translate(50%,-50%);
+    transform: none;
   }
 `
 
