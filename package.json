@@ -35,7 +35,10 @@
     "react-hamburger-menu": "^1.1.1",
     "react-helmet": "^5.2.0",
     "react-map-to-components": "^0.1.4",
-    "react-powerplug": "^1.0.0-rc.0"
+    "react-powerplug": "^1.0.0-rc.0",
+    "typeface-abhaya-libre": "^0.0.54",
+    "typeface-barlow-condensed": "^0.0.54",
+    "typeface-lato": "^0.0.54"
   },
   "scripts": {
     "build": "gatsby build",
