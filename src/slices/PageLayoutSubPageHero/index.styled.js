@@ -15,20 +15,22 @@ export const Image = styled.img`
 `
 export const Title = styled.h1`
   color: ${t.c.yellow};
-  font-size: ${t.f(9)};
+  font-size: ${t.f(8)};
   font-family: ${t.ff.sans};
   position: absolute;
   text-transform: uppercase;
-  left: 50%;
-  margin-left: -177px;
-  top: 45%;
+  left: 10%;
+  bottom: 10%;
   margin-top: -50px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
   ${t.mq.l} {
     bottom: -5%;
     left: 26%;
     margin-left: 0;
     top: inherit;
     margin-top: 0;
+    font-size: ${t.f(9)};
   }
 `
 
