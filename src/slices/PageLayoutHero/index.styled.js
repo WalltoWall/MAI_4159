@@ -1,4 +1,4 @@
-import styled from 'react-emotion'
+import styled, { keyframes } from 'react-emotion'
 import t from 'theme'
 
 export const Container = styled.div`
@@ -36,6 +36,60 @@ export const Headline = styled.h1`
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
+  }
+`
+const bounce = keyframes`
+  from, 20%, 53%, 80%, to {
+    transform: translate3d(0,0,0);
+  }
+
+  40%, 43% {
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    transform: translate3d(0,-4px,0);
+  }
+`
+
+export const SlidingVertical = styled.div`
+  display: in-line;
+  text-indent: 18px;
+  @keyframes topToBottom
+    {
+      0% {
+        top: 0%;
+        opacity: 1;
+      }
+      100% {
+        top: 100%;
+        opacity: 1;
+      }
+    }
+  span {
+    font-size: ${t.f(6)};
+    animation: topToBottom 10s linear 0s infinite;
+    opacity: 0;
+    position: absolute;
+    &:nth-child(2) {
+      animation-delay: 2.5s;
+    }
+    &:nth-child(3) {
+      animation-delay: 5s;
+    }
+    &:nth-child(4) {
+      animation-delay: 7.5s;
+    }
+    &:nth-child(4) {
+      animation-delay: 10s;
+    }
+    &:nth-child(5) {
+      animation-delay: 12.5s;
+    }
   }
 `
 
