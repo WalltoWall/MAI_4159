@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get, forEach, delay } from 'lodash'
-import { Transition, animated } from 'react-spring'
+import { get } from 'lodash'
 import { MobileNavOverlay } from 'components/Header/Mobile.styled'
 import {
   Gradient,

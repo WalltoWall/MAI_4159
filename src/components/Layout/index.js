@@ -30,8 +30,6 @@ injectGlobal`
     width: 100%;
     margin: 0 auto;
     padding: 0;
-    background-color: ${t.c.lightgrey2};
-    max-width: 100rem;
   }
 
   a {
