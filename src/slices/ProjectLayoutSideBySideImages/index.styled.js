@@ -14,6 +14,7 @@ export const Container = styled.div`
 `
 export const Content = styled.div`
   text-align: center;
+
   p {
     font-family: ${t.ff.sans2};
     color: ${t.c.darkgrey2};
@@ -31,10 +32,11 @@ export const Content = styled.div`
   }
 `
 
-export const Image = styled.img`
+export const ImageContainer = styled.div`
   width: 100%;
   padding: 0rem;
   object-fit: cover;
+  display: inline-block;
   ${t.mq.l} {
     width: 50%;
     padding: 0 0.7rem;
