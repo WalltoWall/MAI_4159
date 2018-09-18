@@ -1,7 +1,6 @@
 import styled from 'react-emotion'
 import t from 'theme'
 import { css } from 'emotion'
-import { Link } from 'components/Link'
 
 const photoOrientation = ({ photo_orientation }) => {
   switch (photo_orientation) {
@@ -36,7 +35,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 2rem 2rem 5rem 2rem;
+  padding: 2rem;
   ${backgroundColor};
 `
 
@@ -44,16 +43,6 @@ export const Title = styled.h2`
   font-family: ${t.ff.sans};
   text-transform: uppercase;
   font-size: ${t.s(3)};
-  color: ${t.c.darkgrey1};
-  letter-spacing: 0.1rem;
-  font-weight: 600;
-  text-align: center;
-`
-
-export const Subtitle = styled.h2`
-  font-family: ${t.ff.sans};
-  text-transform: uppercase;
-  font-size: ${t.s(2)};
   color: ${t.c.darkgrey1};
   letter-spacing: 0.1rem;
   font-weight: 600;
@@ -159,57 +148,4 @@ export const StyledHtmlClassName = css`
   }
 `
 
-export const StyledLink = styled(Link)`
-  display: block;
-  overflow: hidden;
-  width: 100%;
-  ${t.mq.l} {
-    width: 20%;
-  }
-`
-
-export const Grid = styled.div`
-  background-image: url(${p => p.url});
-  background-size: cover;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0.5rem 1.2rem;
-  min-height: 200px;
-
-  &:hover {
-    ${ProjectTitle} {
-      color: ${t.c.darkgrey1};
-    }
-  }
-`
-export const GridOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: ${t.c.black};
-  opacity: 0.4;
-  z-index: 2;
-  -webkit-transition: all 0.2s ease-in;
-  -moz-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-
-  ${Grid}:hover & {
-    opacity: 0.8;
-    border-bottom: 1rem solid ${t.c.yellow};
-    background-color: ${t.c.white};
-  }
-`
-
-export const RelatedProjects = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 0 auto;
-  flex-wrap: wrap;
-`
 
