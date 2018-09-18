@@ -17,7 +17,7 @@ export const PageLayoutFeatureList = ({ data }) => {
   const projects = get(data, 'items')
 
   return (
-    <Container>
+    <Container background_color={get(data, 'primary.background_color')}>
       <FeatureName>{featuredType}</FeatureName>
       <Content>
         {projects.map(project =>
@@ -70,6 +70,7 @@ export const query = graphql`
             }
             primary {
               feature_type
+              background_color
             }
           }
         }

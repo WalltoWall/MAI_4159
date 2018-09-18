@@ -2,10 +2,24 @@ import styled from 'react-emotion'
 import t from 'theme'
 import { Link } from 'components/Link'
 
+const backgroundColor = ({ background_color }) => {
+  switch (background_color) {
+    case 'Grey':
+      return `
+        background-color: ${t.c.lightgrey1};
+      `
+
+    default:
+      return `
+        background-color: ${t.c.white};
+      `
+  }
+}
+
 export const Container = styled.div`
-  background: ${t.c.lightgrey1};
   text-align: center;
   padding: 4rem 0 6rem 0;
+  ${backgroundColor};
 `
 
 export const FeatureName = styled.h2`
@@ -37,7 +51,7 @@ export const StyledLink = styled(Link)`
     width: 50%;
   }
   ${t.mq.l} {
-    width: 30%;
+    width: 25%;
   }
 `
 
