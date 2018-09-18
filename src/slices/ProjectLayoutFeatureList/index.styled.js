@@ -21,42 +21,59 @@ export const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   width: 90%;
   margin: 0 auto;
+  height: ${t.s(11)};
+
+  ${t.mq.m} {
+    height: ${t.s(6.5)};
+  }
   ${t.mq.l} {
+    height: ${t.s(7)};
     width: 75%;
   }
+  ${t.mq.x} {
+    height: ${t.s(7)};    
+    width: 85%;
+  } 
+  ${t.mq.xx} {
+    height: ${t.s(10)};    
+    width: 90%;
+  }  
 `
-
-export const StyledLink = styled(Link)`
-  display: inline-block;
-  width: 100%;
-  max-width: 400px;
-  ${t.mq.m} {
-    width: 50%;
-  }
-  ${t.mq.l} {
-    width: 30%;
-  }
-`
-
-export const Grid = styled.div`
-  background-image: url(${p => p.url});
-  background-size: cover;
+export const StyledLink = styled(Link)`     
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 75%;
+  display: block;
   margin: 0.5rem 1.2rem;
+  width: 100%;    
+  ${t.mq.m} {
+    width: 27%;
+  }
 `
-export const GridOverlay = styled.div`
+
+export const ImageContainer = styled.div`  
+  height: 100%;
   position: absolute;
   top: 0;
+  width: 100%;  
+  .gatsby-image-outer-wrapper {        
+    height: 100%;
+  }
+  .gatsby-image-wrapper {        
+    height: 100%;
+  }
+`
+export const OverlayContainer = styled.div`
+  text-align: center;
+  margin: auto 0;    
+`
+
+export const GridOverlay = styled.div`    
+  position: absolute;
   width: 100%;
   height: 100%;
-  background-color: ${t.c.white};
+  background-color: ${t.c.white};  
   opacity: 0;
   z-index: 2;
   -webkit-transition: all 0.2s ease-in;
@@ -64,16 +81,20 @@ export const GridOverlay = styled.div`
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 
-  ${Grid}:hover & {
+  ${StyledLink}:hover & {
     opacity: 0.8;
     border-bottom: 1rem solid ${t.c.yellow};
   }
 `
 
-export const Title = styled.div`
-  position: absolute;
-  opacity: 0;
-  top: 45%;
+export const Title = styled.p`     
+  position: absolute;   
+  top: 0;
+  bottom: 0;  
+  height: 16%;
+  margin: auto;
+  width: 100%;
+  opacity: 0;  
   font-size: ${t.f(2)};
   font-family: ${t.ff.sans};
   text-transform: uppercase;
@@ -89,7 +110,10 @@ export const Title = styled.div`
   ${t.mq.l} {
     font-size: ${t.f(3)};
   }
-  ${Grid}:hover & {
+  ${t.mq.x} {
+    font-size: ${t.f(6)};
+  }
+  ${StyledLink}:hover & {
     opacity: 1;
   }
 `

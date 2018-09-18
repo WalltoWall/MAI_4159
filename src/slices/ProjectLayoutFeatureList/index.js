@@ -1,16 +1,38 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
+import { Image } from 'components/Image'
+import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
   FeatureName,
-  Grid,
   GridOverlay,
   Title,
   Content,
   StyledLink,
+  ImageContainer,
+  OverlayContainer,
 } from './index.styled'
 import Button from 'components/Button'
+
+const renderFeatureGrid = ({ url, key, img, alt, title}) => (
+  <>
+    <StyledLink to={url} key={key}>
+      <ImageContainer>
+        <Image
+          alt={alt}     
+          fluid={img} 
+          fadeIn={false}
+        />
+      </ImageContainer>
+      <OverlayContainer>
+        <Title>{title}</Title>
+        <GridOverlay />
+      </OverlayContainer>    
+    </StyledLink>
+    
+  </>
+)
 
 export const ProjectLayoutFeatureList = ({ data }) => {
   const featuredType = get(data, 'primary.feature_type')
@@ -22,10 +44,11 @@ export const ProjectLayoutFeatureList = ({ data }) => {
       <Content>
         {projects.map(project =>
           renderFeatureGrid({
-            key: get(project, 'projects.document[0].uid'),
-            img: get(project, 'projects.document[0].data.image.url'),
-            title: get(project, 'projects.document[0].data.title.text'),
-            url: get(project, 'projects.url'),
+            url: get(project, 'projects.url'),            
+            key: get(project, 'projects.document[0].uid'),            
+            img: get(project, 'projects.document[0].data.image.localFile.childImageSharp.fluid'),
+            alt: get(project, 'projects.document[0].data.image.alt'),
+            title: get(project, 'projects.document[0].data.title.text')                        
           })
         )}
       </Content>
@@ -33,17 +56,6 @@ export const ProjectLayoutFeatureList = ({ data }) => {
     </Container>
   )
 }
-
-const renderFeatureGrid = ({ key, img, title, url }) => (
-  <>
-    <StyledLink to={url} key={key}>
-      <Grid url={img}>
-        <Title>{title}</Title>
-        <GridOverlay />
-      </Grid>
-    </StyledLink>
-  </>
-)
 
 export const query = graphql`
   fragment ProjectLayoutFeatureList on Query {
@@ -59,8 +71,15 @@ export const query = graphql`
                     title {
                       text
                     }
-                    image {
-                      url
+                    image {                
+                      alt
+                      localFile {
+                        childImageSharp {
+                          fluid(maxWidth: 500, quality: 90) {
+                            ...GatsbyImageSharpFluid_withWebp_noBase64
+                          }
+                        }
+                      }
                     }
                   }
                   uid
