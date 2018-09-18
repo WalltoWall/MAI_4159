@@ -22,7 +22,7 @@ export const Content = styled.div`
   }
 `
 
-export const Image = styled.img`
+export const ImageContainer = styled.div`
   width: 100%;
   object-fit: cover;
 `

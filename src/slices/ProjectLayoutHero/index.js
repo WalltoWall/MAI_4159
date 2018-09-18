@@ -1,10 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
+import { Image } from 'components/Image'
 import { MobileNavOverlay } from 'components/Header/Mobile.styled'
+import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
-  Image,
+  ImageContainer,
   Content,
   Title,
   Header,
@@ -16,7 +18,13 @@ import {
 
 export const ProjectLayoutHero = ({ data }) => (
   <Container>
-    <Image src={get(data, 'primary.image.url')} />
+    <ImageContainer>
+      <Image         
+        alt={getUnlessEmptyString(data, 'primary.image.alt')}     
+        fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')} 
+        fadeIn={false}        
+      />
+    </ImageContainer>
     <Content>
       <Header>
         <Title>{get(data, 'primary.project_title.text')}</Title>
@@ -46,8 +54,15 @@ export const query = graphql`
           ... on PrismicProjectLayoutHero {
             id
             primary {
-              image {
-                url
+              image {                
+                alt
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 2000, quality: 90) {
+                      ...GatsbyImageSharpFluid_withWebp_noBase64
+                    }
+                  }
+                }
               }
               project_title {
                 text

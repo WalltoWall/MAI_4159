@@ -1,11 +1,20 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-import { Container, Image, Content } from './index.styled'
+import { Image } from 'components/Image'
+import { Container, ImageContainer, Content } from './index.styled'
+import { getUnlessEmptyString } from 'helpers'
+
 export const ProjectLayoutFullImage = ({ data }) => (
   <Container>
     <Content>
-      <Image src={get(data, 'primary.image.url')} />
+      <ImageContainer>
+        <Image 
+          alt={getUnlessEmptyString(data, 'primary.image.alt')}     
+          fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')} 
+          fadeIn={false}  
+        />
+      </ImageContainer>
       <p>{get(data, 'primary.caption.text')}</p>
     </Content>
   </Container>
@@ -18,8 +27,15 @@ export const query = graphql`
           ... on PrismicProjectLayoutFullImage {
             id
             primary {
-              image {
-                url
+              image {                
+                alt
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 2000, quality: 90) {
+                      ...GatsbyImageSharpFluid_withWebp_noBase64
+                    }
+                  }
+                }
               }
               caption {
                 text
