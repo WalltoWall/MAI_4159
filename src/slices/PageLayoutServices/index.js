@@ -11,20 +11,10 @@ import {
   ImageWrapper, 
   TextWrapper,
   Subhead,
-  RelatedProjects,
   StyledHtmlClassName,
-  Grid,
-  GridOverlay,
-  StyledLink,
-  ProjectTitle,
-  Subtitle,
 } from './index.styled'
 
-import Button from 'components/Button'
-
 export const PageLayoutServices = ({ data }) => {
-  const projects = get(data, 'items')
-
   return (
     <Container photo_orientation={get(data, 'primary.photo_orientation')}>
       <Title>{get(data, 'primary.title1.text')}</Title>
@@ -41,30 +31,9 @@ export const PageLayoutServices = ({ data }) => {
           />
         </TextWrapper>
       </ContentContainer>
-      <Subtitle>Related projects</Subtitle>
-      <RelatedProjects>
-          {projects.map(project =>
-            renderFeatureGrid({
-              key: get(project, 'related_projects.document[0].uid'),
-              img: get(project, 'related_projects.document[0].data.image.url'),
-              title: get(project, 'related_projects.document[0].data.title.text'),
-              url: get(project, 'related_projects.url'),
-            })
-          )}
-      </RelatedProjects>
-      <Button to="/portfolio/">see more</Button>
     </Container>
   )
 }
-
-const renderFeatureGrid = ({ key, img, title, url }) => (
-    <StyledLink to={url} key={key}>
-      <Grid url={img}>
-        <ProjectTitle>{title}</ProjectTitle>
-        <GridOverlay />
-      </Grid>
-    </StyledLink>
-)
 
 export const query = graphql`
   fragment PageLayoutServices on Query {
@@ -87,22 +56,6 @@ export const query = graphql`
                 html
               }
               photo_orientation
-            }
-            items {
-              related_projects {
-                document {
-                  data {
-                    title {
-                      text
-                    }
-                    image {
-                      url
-                    }
-                  }
-                  uid
-                }
-                url
-              }
             }
           }
         }

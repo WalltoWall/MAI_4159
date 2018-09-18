@@ -16,6 +16,7 @@ import { PageLayoutPortfolioGridTop } from 'slices/PageLayoutPortfolioGridTop'
 import { PageLayoutPortfolioGridBottom } from 'slices/PageLayoutPortfolioGridBottom'
 import { PageLayoutCtaBar } from 'slices/PageLayoutCtaBar'
 import { PageLayoutServices } from 'slices/PageLayoutServices'
+import { PageLayoutFeatureList } from 'slices/PageLayoutFeatureList'
 
 const PageTemplate = ({ data }) => (
   <>
@@ -36,6 +37,7 @@ const PageTemplate = ({ data }) => (
           PageLayoutPortfolioGridBottom,
           PageLayoutCtaBar,
           PageLayoutServices,
+          PageLayoutFeatureList,
         }}
         page={get(data, 'prismicPage')}
         rootData={data}
@@ -68,5 +70,6 @@ export const query = graphql`
     ...PageLayoutPortfolioGridBottom
     ...PageLayoutCtaBar
     ...PageLayoutServices
+    ...PageLayoutFeatureList
   }
 `
