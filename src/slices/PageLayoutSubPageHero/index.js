@@ -1,21 +1,27 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get } from 'lodash'
+import { get, isEmpty } from 'lodash'
+import { Image } from 'components/Image'
 import { MobileNavOverlay } from 'components/Header/Mobile.styled'
-import { ClipOverlay, ImageContainer, Image, Title } from './index.styled'
+import { getUnlessEmptyString } from 'helpers'
+import { ClipOverlay, ImageContainer, Title } from './index.styled'
 
-export const PageLayoutSubPageHero = ({ data }) => {
-  const titleText = get(data, 'primary.title1.text')
-  const imageUrl = get(data, 'primary.image.url')
-  return (
-    <ImageContainer>
-      <Image src={imageUrl} />
-      <ClipOverlay />
-      {titleText && <Title>{titleText}</Title>}
-      <MobileNavOverlay />
-    </ImageContainer>
-  )
-}
+export const PageLayoutSubPageHero = ({ data }) => (
+  <ImageContainer>
+    <Image 
+      alt={getUnlessEmptyString(get(data, 'primary.image.data'))}
+      fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
+      fadeIn={false}
+    />
+    <ClipOverlay />
+    {
+      !isEmpty(get(data, 'primary.title1.text')) && 
+      <Title>{get(data, 'primary.title1.text')}</Title>
+    }
+    <MobileNavOverlay />
+  </ImageContainer>
+)
+
 
 export const query = graphql`
   fragment PageLayoutSubPageHero on Query {
@@ -28,8 +34,15 @@ export const query = graphql`
               title1 {
                 text
               }
-              image {
-                url
+              image {    
+                alt                            
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 2000, quality: 90) {
+                      ...GatsbyImageSharpFluid_withWebp_noBase64
+                    }
+                  }
+                }
               }
             }
           }

@@ -6,12 +6,12 @@ export const ImageContainer = styled.div`
   height: 300px;
   overflow: hidden;
   background-color: ${t.c.darkgrey1};
-`
-export const Image = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  opacity: 0.4;
+  .gatsby-image-outer-wrapper {
+    height: 100%;
+  }
+  .gatsby-image-wrapper {
+    height: 100%;
+  }
 `
 export const Title = styled.h1`
   color: ${t.c.yellow};
