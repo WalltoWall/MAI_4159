@@ -27,6 +27,7 @@ export const HeadlineWrapper = styled.div`
   width: 100%;
   background-color: ${t.c.darkgrey1};
   padding: 2rem;
+  z-index: 2;
   -webkit-transform: rotate(-7deg) translate(0, -50px) scale(1.2);
   -ms-transform: rotate(-7deg) translate(0, -50px) scale(1.2);
   transform: rotate(-7deg) translate(0, -50px) scale(1.2);
@@ -93,6 +94,7 @@ export const SubHeadline = styled.span`
   font-size: ${t.f(3.5)};
   color: white;
   text-transform: uppercase;
+  z-index: 2;
   ${t.mq.l} {
     left: 25%;
     display: block;
@@ -177,6 +179,7 @@ export const Gradient = styled.div`
   height: 100%;
   width: 100%;
   opacity: 0.5;
+  z-index: 1;
 
   ${t.mq.l} {
     display: block;
