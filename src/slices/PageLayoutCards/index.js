@@ -1,11 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { Image } from 'components/Image'
+import { getUnlessEmptyString } from 'helpers'
 import { get } from 'lodash'
 
 import {
   Container,
   Headline,
-  Image,
   Description,
   Card,
   ImageWrapper,
@@ -30,7 +31,11 @@ export const PageLayoutCards = ({ data }) => (
           <ImageWrapper>
             <ImageContainer>
               <Link to={get(item, 'link.url')}>
-                <Image src={get(item, 'image.url')} />
+                <Image 
+                  alt={getUnlessEmptyString(item, 'image.alt')}     
+                  fluid={get(item, 'image.localFile.childImageSharp.fluid')} 
+                  fadeIn={false}   
+                />
               </Link>
             </ImageContainer>
           </ImageWrapper>
@@ -64,8 +69,15 @@ export const query = graphql`
               }
             }
             items {
-              image {
-                url
+              image {                
+                alt
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 700, quality: 90) {
+                      ...GatsbyImageSharpFluid_withWebp_noBase64
+                    }
+                  }
+                }
               }
               date
               title1 {

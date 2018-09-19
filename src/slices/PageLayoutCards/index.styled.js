@@ -44,12 +44,6 @@ export const ImageContainer = styled.div`
   top: 0;
 `
 
-export const Image = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-`
-
 export const Description = styled.div`
   font-family: ${t.ff.sans2};
   color: ${t.c.darkgrey2};
