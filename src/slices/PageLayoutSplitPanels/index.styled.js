@@ -30,12 +30,6 @@ export const Headline = styled.h2`
   }
 `
 
-export const Image = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-`
-
 export const Description = styled.div`
   color: ${t.c.darkgrey2};
   font-family: ${t.ff.sans2};
@@ -74,6 +68,7 @@ export const ServicesButton = styled(Button)`
   }
 `
 
+// sadly, we won't be can't use clip-path because its not supported by ie or edge
 export const ImageContainer = styled.div`
   width: 100%;
   order: 1;
@@ -82,10 +77,7 @@ export const ImageContainer = styled.div`
   overflow: hidden;
   .gatsby-image-outer-wrapper,
   .gatsby-image-wrapper {
-    height: 100%;
-    img {
-      object-position: center 20% !important;
-    }
+    height: 100%;    
   }
   height: 400px;
   ${t.mq.l} {
@@ -95,6 +87,7 @@ export const ImageContainer = styled.div`
     clip-path: polygon(0 0, 100% 0, 100% 100%, 3% 100%);
   }
 `
+
 
 export const Content = styled.div`
   max-width: none;
