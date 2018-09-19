@@ -1,6 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
+import { Image } from 'components/Image'
+import { getUnlessEmptyString } from 'helpers'
 
 import {
   Container,
@@ -19,7 +21,12 @@ export const PageLayoutProjectBoxes = ({ data }) => (
     <ProjectContainer>
       <Headline>{get(data, 'primary.title1.text')}</Headline>
       {get(data, 'items', []).map(item => (
-        <Project background={get(item, 'project_image1.url')}>
+        <Project>
+          <Image
+            alt={getUnlessEmptyString(item, 'project_image1.alt')}     
+            fluid={get(item, 'project_image1.localFile.childImageSharp.fluid')} 
+            fadeIn={false}  
+          />
           <Link to={get(item, 'project_link.url')}>
             <ProjectTitle>{get(item, 'project_title1.text')}</ProjectTitle>
             <Overlay />
@@ -57,7 +64,15 @@ export const query = graphql`
               }
               project_image1 {
                 url
-              }
+                alt
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 2000, quality: 90) {
+                      ...GatsbyImageSharpFluid_withWebp_noBase64
+                    }
+                  }
+                }
+              }          
               project_link {
                 url
               }
