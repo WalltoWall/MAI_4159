@@ -39,6 +39,7 @@
     "react-helmet": "^5.2.0",
     "react-map-to-components": "^0.1.4",
     "react-powerplug": "^1.0.0-rc.0",
+    "react-responsive-carousel": "^3.1.42",
     "react-spring": "5.3.8",
     "typeface-abhaya-libre": "^0.0.54",
     "typeface-barlow-condensed": "^0.0.54",
