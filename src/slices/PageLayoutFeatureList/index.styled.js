@@ -8,6 +8,7 @@ const backgroundColor = ({ background_color }) => {
       return `
         background-color: ${t.c.lightgrey1};
       `
+
     default:
       return `
         background-color: ${t.c.white};
@@ -54,7 +55,9 @@ export const StyledLink = styled(Link)`
   }
 `
 
-export const Grid = styled.div`   
+export const Grid = styled.div`
+  background-image: url(${p => p.url});
+  background-size: cover;
   position: relative;
   display: flex;
   align-items: center;
