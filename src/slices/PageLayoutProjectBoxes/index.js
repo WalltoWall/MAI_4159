@@ -5,7 +5,7 @@ import { Image } from 'components/Image'
 import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
-  Grid,
+  ImageContainer,
   GridOverlay,
   Title,
   Content,
@@ -14,11 +14,9 @@ import {
 } from './index.styled'
 import Button from 'components/Button'
 
-const renderFeatureGrid = ({ alt, key, img, title, url }) => {
-  console.log("xxxxxxxxxxxxxxxx", img)
- return (   
+const renderFeatureGrid = ({ alt, key, img, title, url }) => (
   <StyledLink to={url} key={key}>
-    <Grid>
+    <ImageContainer>
       <Image        
         fluid={img}
         alt={alt} 
@@ -26,10 +24,10 @@ const renderFeatureGrid = ({ alt, key, img, title, url }) => {
       />
       <Title>{title}</Title>
       <GridOverlay />
-    </Grid>
+    </ImageContainer>
   </StyledLink>  
 )
- }
+
 export const PageLayoutProjectBoxes = ({ data }) => {
   const projects = get(data, 'items')
 

@@ -14,6 +14,19 @@ export const Content = styled.div`
   }
 `
 
+export const ImageContainer = styled.div`  
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;  
+  .gatsby-image-outer-wrapper {        
+    height: 100%;
+  }
+  .gatsby-image-wrapper {        
+    height: 100%;
+  }
+`
+
 export const Container = styled.div`
   background-color: ${t.c.lightgrey1};
   margin: 0 auto;
@@ -24,13 +37,19 @@ export const Container = styled.div`
   }
 `
 
+export const OverlayContainer = styled.div`
+  text-align: center;
+  margin: auto 0;    
+`
+
 export const StyledLink = styled(Link)`     
   position: relative;
   display: block;
   margin: 0.5rem 1.2rem;
-  width: 100%;    
+  width: 100%;
+  height: 350px;    
   ${t.mq.m} {
-    width: 40%;
+    width: 45%;
   }
 `
 
@@ -71,105 +90,6 @@ export const Description = styled.div`
   }
 `
 
-export const ProjectTitle = styled.h2`
-  font-family: ${t.ff.sans};
-  color: ${t.c.white};
-  font-size: ${t.f(2.5)};
-  position: relative;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  font-weight: 600;
-  max-width: 200px;
-  display: block;
-  margin: 0 auto;
-  z-index: 5;
-  -webkit-transition: all 0.2s ease-in;
-  -moz-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-`
-
-export const ProjectContainer = styled.div`
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 0 auto 2rem auto;
-  justify-content: space-between;
-  max-width: 67rem;
-`
-
-export const Project = styled.div`
-  position: relative;
-  text-align: center;
-  background-color: ${t.c.white};
-  display: block;
-  margin: 1rem 0;
-  min-height: ${t.s(8)};
-  min-width: ${t.s(8)};
-  width: 100%;
-  overflow: hidden;
-  -webkit-transition: all 0.2s ease-in;
-  -moz-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-  background-image: url(${p => (p.background ? p.background : 'none')});
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &::after {
-    width: 100%;
-    height: 1rem;
-    background-color: ${t.c.yellow};
-    position: absolute;
-    bottom: 0;
-    content: '';
-    display: none;
-    z-index: 4;
-    -webkit-transition: all 0.2s ease-in;
-    -moz-transition: all 0.2s ease-in;
-    -o-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in;
-  }
-
-  &:first-child {
-    margin-left: 0;
-  }
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  &:hover {
-    &::after {
-      display: block;
-    }
-
-    ${Image} {
-      opacity: 0.2;
-    }
-
-    ${ProjectTitle} {
-      color: ${t.c.darkgrey1};
-    }
-  }
-
-  ${t.mq.m} {
-    width: 49%;
-    min-height: ${t.s(9)};
-  }
-`
-
-export const Grid = styled.div`   
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 75%;
-  margin: 0.5rem 1.2rem;
-`
-
 export const GridOverlay = styled.div`    
   position: absolute;
   width: 100%;
@@ -193,7 +113,8 @@ export const GridOverlay = styled.div`
 export const Title = styled.p`     
   position: absolute;   
   top: 0;
-  bottom: 0;  
+  bottom: 0; 
+  left: 20%;
   height: 16%;
   margin: auto;
   width: 100%;
@@ -214,7 +135,7 @@ export const Title = styled.p`
     font-size: ${t.f(3)};
   }
   ${t.mq.x} {
-    font-size: ${t.f(6)};
+    font-size: ${t.f(5)};
   }
   ${StyledLink}:hover & {
     opacity: 1;

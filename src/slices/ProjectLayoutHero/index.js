@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Image } from 'components/Image'
 import { MobileNavOverlay } from 'components/Header/Mobile.styled'
+import { Carousel } from 'react-responsive-carousel';
 import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
@@ -18,13 +19,15 @@ import {
 
 export const ProjectLayoutHero = ({ data }) => (
   <Container>
-    <ImageContainer>
+    {get(data, 'items').map(item => (
+      <ImageContainer>
       <Image         
-        alt={getUnlessEmptyString(data, 'primary.image.alt')}     
-        fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')} 
+        alt={getUnlessEmptyString(item, 'image.alt')}     
+        fluid={get(item, 'image.localFile.childImageSharp.fluid')} 
         fadeIn={false}        
       />
     </ImageContainer>
+    ))}
     <Content>
       <Header>
         <Title>{get(data, 'primary.project_title.text')}</Title>
@@ -54,16 +57,6 @@ export const query = graphql`
           ... on PrismicProjectLayoutHero {
             id
             primary {
-              image {                
-                alt
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 2000, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp_noBase64
-                    }
-                  }
-                }
-              }
               project_title {
                 text
               }
@@ -75,6 +68,18 @@ export const query = graphql`
               }
               project_type {
                 text
+              }
+            }
+            items {              
+              image {                
+                alt
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 2000, quality: 90) {
+                      ...GatsbyImageSharpFluid_withWebp_noBase64
+                    }
+                  }
+                }              
               }
             }
           }

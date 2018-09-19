@@ -59,7 +59,6 @@ export const ImageContainer = styled.div`
   .gatsby-image-wrapper {
     height: 100%;
   }
-
 `
 
 export const ClipOverlay = styled.div`
@@ -152,7 +151,6 @@ export const InfoBlurb = css`
     margin-bottom: -0.7rem;
     letter-spacing: 0.1rem;
   }
-
   p {
     font-family: ${t.ff.serif};
     font-size: ${t.f(0)};
