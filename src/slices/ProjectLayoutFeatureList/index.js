@@ -47,7 +47,7 @@ export const ProjectLayoutFeatureList = ({ data }) => {
             url: get(project, 'projects.url'),            
             key: get(project, 'projects.document[0].uid'),            
             img: get(project, 'projects.document[0].data.image.localFile.childImageSharp.fluid'),
-            alt: get(project, 'projects.document[0].data.image.alt'),
+            alt: getUnlessEmptyString(get(project, 'projects.document[0].data.image.alt')),
             title: get(project, 'projects.document[0].data.title.text')                        
           })
         )}

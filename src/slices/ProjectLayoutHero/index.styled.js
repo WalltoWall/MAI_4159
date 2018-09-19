@@ -2,14 +2,21 @@ import styled from 'react-emotion'
 import { css } from 'emotion'
 import t from 'theme'
 export const Container = styled.div`
-  height: 600px;
+  min-height: ${t.s(10.5)};
   display: flex;
   overflow: hidden;
   position: relative;
-  flex-direction: column;
+  flex-direction: column; 
+  ${t.mq.t} {
+    flex-direction: row;
+    height: ${t.s(10.5)};
+  }
   ${t.mq.l} {
     flex-direction: row;
-    height: 850px;
+    height: ${t.s(11.5)};
+  }
+  ${t.mq.xx} {
+    height: ${t.s(12.5)};
   }
 `
 
@@ -31,12 +38,28 @@ export const Content = styled.div`
 
 export const ImageContainer = styled.div`
   width: 100%;
-  object-fit: cover;
-  ${t.mq.m} {
+  height: 100%;
+  ${t.mq.t} {    
+    padding-bottom: 60%;
+  }
+  ${t.mq.s} {    
+    padding-bottom: 28%;
   }
   ${t.mq.l} {
     margin-left: 20%;
+    padding-bottom: 0;
   }
+  ${t.mq.xx} {
+    margin-left: 27%;
+  }
+  
+  .gatsby-image-outer-wrapper {
+    height: 100%;
+  }
+  .gatsby-image-wrapper {
+    height: 100%;
+  }
+
 `
 
 export const ClipOverlay = styled.div`
@@ -49,20 +72,36 @@ export const ClipOverlay = styled.div`
   -webkit-transform: rotate(-5deg);
   -ms-transform: rotate(-5deg);
   transform: rotate(-5deg);
-  z-index: 1;
+  z-index: -1;
+  ${t.mq.t} {
+    left: -13%;
+    height: 116%;
+    width: 134%;
+    top: -4%;
+  }
   ${t.mq.m} {
-    left: -5%;
-    height: 60%;
-    width: 120%;
+    left: -13%;
+    height: 116%;
+    width: 134%;
+    top: -4%;
   }
   ${t.mq.l} {
-    top: -10%;
+    top: -250%;
     left: -10%;
-    height: 120%;
-    width: 45%;
+    height: 370%;
+    width: 82%;
   }
   ${t.mq.x} {
-    width: 40%;
+    top: -250%;
+    left: -14%;
+    height: 370%;
+    width: 66%;
+  }
+  ${t.mq.xx} {
+    top: -250%;
+    left: -18%;
+    height: 370%;
+    width: 66%;
   }
 `
 export const Header = styled.div`

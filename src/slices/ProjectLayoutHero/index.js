@@ -41,8 +41,8 @@ export const ProjectLayoutHero = ({ data }) => (
         <p>{get(data, 'primary.year_completed.text')}</p>
       </div>
       <InfoLine />
+      <ClipOverlay />
     </Content>
-    <ClipOverlay />
     <MobileNavOverlay />
   </Container>
 )
