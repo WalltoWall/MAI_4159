@@ -14,7 +14,7 @@ import {
 import Button from 'components/Button'
 import { Link } from 'components/Link'
 
-export const PageLayoutProject = ({ data }) => (
+export const PageLayoutProjectBoxes = ({ data }) => (
   <Container>
     <ProjectContainer>
       <Headline>{get(data, 'primary.title1.text')}</Headline>
@@ -37,11 +37,11 @@ export const PageLayoutProject = ({ data }) => (
 )
 
 export const query = graphql`
-  fragment PageLayoutProject on Query {
+  fragment PageLayoutProjectBoxes on Query {
     prismicPage(id: { eq: $id }) {
       data {
         layout {
-          ... on PrismicPageLayoutProject {
+          ... on PrismicPageLayoutProjectBoxes {
             id
             primary {
               title1 {

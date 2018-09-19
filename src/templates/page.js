@@ -7,7 +7,7 @@ import { get } from 'lodash'
 
 import { Layout } from 'components/Layout'
 import { PageLayoutHero } from 'slices/PageLayoutHero'
-import { PageLayoutProject } from 'slices/PageLayoutProject'
+import { PageLayoutProjectBoxes } from 'slices/PageLayoutProjectBoxes'
 import { PageLayoutSplitPanels } from 'slices/PageLayoutSplitPanels'
 import { PageLayoutCards } from 'slices/PageLayoutCards'
 import { PageLayoutCategoriesBar } from 'slices/PageLayoutCategoriesBar'
@@ -29,7 +29,7 @@ const PageTemplate = ({ data }) => (
         list={get(data, 'prismicPage.data.layout') || []}
         map={{
           PageLayoutHero,
-          PageLayoutProject,
+          PageLayoutProjectBoxes,
           PageLayoutSplitPanels,
           PageLayoutCards,
           PageLayoutCategoriesBar,
@@ -63,7 +63,7 @@ export const query = graphql`
       }
     }
     ...PageLayoutHero
-    ...PageLayoutProject
+    ...PageLayoutProjectBoxes
     ...PageLayoutSplitPanels
     ...PageLayoutCards
     ...PageLayoutSubPageHero
