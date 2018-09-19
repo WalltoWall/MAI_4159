@@ -3,25 +3,37 @@ import t from 'theme'
 import { Link } from 'components/Link'
 
 export const Container = styled.div`
+  font-family: ${t.ff.sans};
+  text-align: center;
   display: flex;
   flex-wrap: wrap;
-  font-family: ${t.ff.sans};
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  margin: 0 auto;
 `
 export const StyledLink = styled(Link)`
-  display: inline-block;
+  position: relative;
+  display: block;
   width: 100%;
-  ${t.mq.l} {
-    width: 50%;
+  overflow: hidden;
+  padding-top: 60%;
+  ${t.mq.l} {    
+    width: 50%;    
+    padding-top: 35%;
   }
 `
-export const Grid = styled.div`
-  position: relative;
-  background-image: url(${p => (p.background ? p.background : 'none')});
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 75%;
+export const ImageContainer = styled.div`
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  .gatsby-image-outer-wrapper {        
+    height: 100%;
+  }
+  .gatsby-image-wrapper {        
+    height: 100%;
+  }
 `
 
 export const GridOverlay = styled.div`
@@ -36,30 +48,32 @@ export const GridOverlay = styled.div`
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
-  ${Grid}:hover & {
+  
+  ${StyledLink}:hover & {
     opacity: 0.7;
     background-color: ${t.c.white};
     border-bottom: 1rem solid ${t.c.yellow};
   }
 `
 
-export const GridTitle = styled.h1`
-  position: absolute;
-  top: 40%;
+export const Title = styled.h1`
+  position: absolute;  
+  display: inline;
+  z-index: 3;
+  top: 35%;
+  left: 0;  
+  right: 0;
   font-size: ${t.f(3)};
-  font-family: ${t.ff.sans};
-  color: ${t.c.darkgrey1};
-  letter-spacing: 0.1rem;
+  font-family: ${t.ff.sans};  
   font-weight: 600;
-  text-align: center;
   color: ${t.c.white};
   letter-spacing: 0.2rem;
-  z-index: 3;
   text-transform: uppercase;
+  
   ${t.mq.l} {
     font-size: ${t.f(5)};
   }
-  ${Grid}:hover & {
+  ${StyledLink}:hover & {
     color: ${t.c.darkgrey1};
   }
 `
