@@ -16,22 +16,19 @@ import {
 import Button from 'components/Button'
 
 const renderFeatureGrid = ({ url, key, img, alt, title}) => (
-  <>
-    <StyledLink to={url} key={key}>
-      <ImageContainer>
-        <Image
-          alt={alt}     
-          fluid={img} 
-          fadeIn={false}
-        />
-      </ImageContainer>
-      <OverlayContainer>
-        <Title>{title}</Title>
-        <GridOverlay />
-      </OverlayContainer>    
-    </StyledLink>
-    
-  </>
+  <StyledLink to={url} key={key}>
+    <ImageContainer>
+      <Image
+        alt={alt}     
+        fluid={img} 
+        fadeIn={false}
+      />
+    </ImageContainer>
+    <OverlayContainer>
+      <Title>{title}</Title>
+      <GridOverlay />
+    </OverlayContainer>    
+  </StyledLink>
 )
 
 export const ProjectLayoutFeatureList = ({ data }) => {
