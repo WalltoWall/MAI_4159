@@ -37,9 +37,24 @@ export const Container = styled.div`
   }
 `
 
-export const OverlayContainer = styled.div`
+export const Title = styled.p`     
   text-align: center;
-  margin: auto 0;    
+  margin: auto;
+  width: 100%;
+  opacity: 1;
+  font-size: ${t.f(2)};
+  font-family: ${t.ff.sans};
+  text-transform: uppercase;
+  font-weight: 600;
+  color: ${t.c.darkgrey1};
+  letter-spacing: 0.1rem;
+
+  ${t.mq.l} {
+    font-size: ${t.f(3)};
+  }
+  ${t.mq.x} {
+    font-size: ${t.f(4)};
+  }
 `
 
 export const StyledLink = styled(Link)`     
@@ -50,6 +65,34 @@ export const StyledLink = styled(Link)`
   height: 350px;    
   ${t.mq.m} {
     width: 45%;
+  }
+
+  &:hover {
+    ${Title} {
+      position: absolute;
+      top: 40%;
+      left: 0;
+    }
+  }
+`
+
+export const OverlayContainer = styled.div`
+  position: absolute;
+  display: flex;
+  height: 70px;
+  padding: 1rem;
+  width: 100%;
+  bottom: 0;
+  background-color: ${t.c.white};
+  opacity: 0.8;   
+  z-index: 5;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  ${StyledLink}:hover & {
+    height: 100%;
+    border-bottom: 1rem solid ${t.c.yellow};
   }
 `
 
@@ -90,54 +133,4 @@ export const Description = styled.div`
   }
 `
 
-export const GridOverlay = styled.div`    
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left; 0;
-  background-color: ${t.c.white};  
-  opacity: 0;
-  z-index: 2;
-  -webkit-transition: all 0.2s ease-in;
-  -moz-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
 
-  ${StyledLink}:hover & {
-    opacity: 0.8;
-    border-bottom: 1rem solid ${t.c.yellow};
-  }
-`
-
-export const Title = styled.p`     
-  position: absolute;   
-  top: 0;
-  bottom: 0; 
-  left: 20%;
-  height: 16%;
-  margin: auto;
-  width: 100%;
-  opacity: 0;  
-  font-size: ${t.f(2)};
-  font-family: ${t.ff.sans};
-  text-transform: uppercase;
-  font-weight: 600;
-  color: ${t.c.darkgrey1};
-  letter-spacing: 0.1rem;
-  z-index: 3;
-  -webkit-transition: opacity 0.2s ease-in;
-  -moz-transition: opacity 0.2s ease-in;
-  -o-transition: opacity 0.2s ease-in;
-  transition: opacity 0.2s ease-in;
-
-  ${t.mq.l} {
-    font-size: ${t.f(3)};
-  }
-  ${t.mq.x} {
-    font-size: ${t.f(5)};
-  }
-  ${StyledLink}:hover & {
-    opacity: 1;
-  }
-`

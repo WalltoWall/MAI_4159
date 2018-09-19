@@ -6,7 +6,7 @@ import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
   ImageContainer,
-  GridOverlay,
+  OverlayContainer,
   Title,
   Content,
   StyledLink,
@@ -22,9 +22,10 @@ const renderFeatureGrid = ({ alt, key, img, title, url }) => (
         alt={alt} 
         fadeIn={false}         
       />
-      <Title>{title}</Title>
-      <GridOverlay />
     </ImageContainer>
+    <OverlayContainer>
+      <Title>{title}</Title>
+    </OverlayContainer>
   </StyledLink>  
 )
 
