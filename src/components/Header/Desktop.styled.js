@@ -18,7 +18,7 @@ export const Container = styled.li`
 `
 export const LogoLink = styled(Link)`
   position: absolute;
-  z-index: 2;
+  z-index: 4;
   left: 50%;
   top: 20px;
   margin: 0 0 0 -29px;
