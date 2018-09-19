@@ -86,10 +86,9 @@ export const TitleWrapper = styled.div`
     ${t.mq.l} {
       display: block;
       position: absolute;
-      margin-left: 3rem;
       top: 0;
       right: 0;
-      width: 70%;
+      width: 72%;
       height: 100%;
     }
 `
