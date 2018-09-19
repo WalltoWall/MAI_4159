@@ -1,5 +1,18 @@
 import styled from 'react-emotion'
 import t from 'theme'
+import { Link } from 'components/Link'
+
+export const Content = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  ${t.mq.l} {
+    width: 75%;
+  }
+`
 
 export const Container = styled.div`
   background-color: ${t.c.lightgrey1};
@@ -8,7 +21,16 @@ export const Container = styled.div`
   padding: 2rem;
   ${t.mq.l} {
     min-height: 50vh;
-    margin-top: -80px;
+  }
+`
+
+export const StyledLink = styled(Link)`     
+  position: relative;
+  display: block;
+  margin: 0.5rem 1.2rem;
+  width: 100%;    
+  ${t.mq.m} {
+    width: 40%;
   }
 `
 
@@ -32,20 +54,7 @@ export const Headline = styled.h1`
   width: 100%;
   ${t.mq.l} {
     font-size: ${t.f(5)};
-    margin-top: -60px;
-    text-align: left;
-    color: ${t.c.white};
   }
-`
-
-export const Image = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  -webkit-transition: all 0.2s ease-in;
-  -moz-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
 `
 
 export const Description = styled.div`
@@ -87,22 +96,6 @@ export const ProjectContainer = styled.div`
   margin: 0 auto 2rem auto;
   justify-content: space-between;
   max-width: 67rem;
-`
-
-export const Overlay = styled.div`
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: black;
-  z-index: 0;
-  opacity: 0.4;
-  -webkit-transition: all 0.2s ease-in;
-  -moz-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
 `
 
 export const Project = styled.div`
@@ -160,15 +153,70 @@ export const Project = styled.div`
     ${ProjectTitle} {
       color: ${t.c.darkgrey1};
     }
-
-    ${Overlay} {
-      background-color: white;
-      opacity: 0.8;
-    }
   }
 
   ${t.mq.m} {
     width: 49%;
     min-height: ${t.s(9)};
+  }
+`
+
+export const Grid = styled.div`   
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 75%;
+  margin: 0.5rem 1.2rem;
+`
+
+export const GridOverlay = styled.div`    
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left; 0;
+  background-color: ${t.c.white};  
+  opacity: 0;
+  z-index: 2;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+
+  ${StyledLink}:hover & {
+    opacity: 0.8;
+    border-bottom: 1rem solid ${t.c.yellow};
+  }
+`
+
+export const Title = styled.p`     
+  position: absolute;   
+  top: 0;
+  bottom: 0;  
+  height: 16%;
+  margin: auto;
+  width: 100%;
+  opacity: 0;  
+  font-size: ${t.f(2)};
+  font-family: ${t.ff.sans};
+  text-transform: uppercase;
+  font-weight: 600;
+  color: ${t.c.darkgrey1};
+  letter-spacing: 0.1rem;
+  z-index: 3;
+  -webkit-transition: opacity 0.2s ease-in;
+  -moz-transition: opacity 0.2s ease-in;
+  -o-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+
+  ${t.mq.l} {
+    font-size: ${t.f(3)};
+  }
+  ${t.mq.x} {
+    font-size: ${t.f(6)};
+  }
+  ${StyledLink}:hover & {
+    opacity: 1;
   }
 `
