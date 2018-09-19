@@ -8,7 +8,7 @@ import {
   StyledHtmlClassName,
 } from './index.styled'
 
-export const PageLayoutSlice = ({ data }) => {  
+export const PageLayoutTextBlock = ({ data }) => {  
   return (
     <Container background_color={get(data, 'primary.background_color')}>
       <Content>
@@ -22,11 +22,11 @@ export const PageLayoutSlice = ({ data }) => {
 }
 
 export const query = graphql`
-  fragment PageLayoutSlice on Query {
+  fragment PageLayoutTextBlock on Query {
     prismicPage(id: { eq: $id }) {
       data {
         layout {
-          ... on PrismicPageLayoutSlice {
+          ... on PrismicPageLayoutTextBlock {
             id
             primary {
               content {
