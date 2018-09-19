@@ -54,6 +54,16 @@ export const StyledHtmlClassName = css`
   p {
     color: ${t.c.darkgrey2};
     font-family: ${t.ff.sans2};
-    line-height: 1.4rem;
+    line-height: ${t.lh.copy};
+  }
+  ul {
+    li {
+      color: ${t.c.darkgrey2};
+      font-family: ${t.ff.sans2};
+      line-height: ${t.lh.copy};
+    }
+  }
+  a {
+    color: ${t.c.yellow};
   }
 `

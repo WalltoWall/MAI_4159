@@ -30,7 +30,7 @@ export const Title = styled.h1`
   }
   ${t.mq.l} {
     bottom: -10%;
-    left: 420px;
+    left: 0;
     margin-top: -20px;
     font-size: ${t.f(9)};
     transform: none;
@@ -79,4 +79,16 @@ export const MobileOverlay = styled.div`
   ${t.mq.l} {
     display: none;
   }
+`
+
+export const TitleWrapper = styled.div`
+  width: 100%;
+    ${t.mq.l} {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 72%;
+      height: 100%;
+    }
 `
