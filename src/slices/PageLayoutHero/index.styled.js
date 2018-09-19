@@ -166,17 +166,8 @@ export const ImageContainer = styled.div`
   overflow: hidden;
   .gatsby-image-outer-wrapper,
   .gatsby-image-wrapper {
-    height: 100%;
-    img {
-      object-position: center 20% !important;
-    }
+    height: 100%;    
   }
-`
-
-export const Image = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
 `
 
 export const Gradient = styled.div`
