@@ -1,6 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
+import { Image } from 'components/Image'
+import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
   FeatureName,
@@ -12,6 +14,22 @@ import {
 } from './index.styled'
 import Button from 'components/Button'
 
+const renderFeatureGrid = ({ alt, key, img, title, url }) => {
+  console.log("xxxxxxxxxxxxxxxx", img)
+ return (   
+  <StyledLink to={url} key={key}>
+    <Grid>
+      <Image        
+        fluid={img}
+        alt={alt} 
+        fadeIn={false}         
+      />
+      <Title>{title}</Title>
+      <GridOverlay />
+    </Grid>
+  </StyledLink>  
+)
+ }
 export const PageLayoutFeatureList = ({ data }) => {
   const featuredType = get(data, 'primary.feature_type')
   const projects = get(data, 'items')
@@ -23,7 +41,8 @@ export const PageLayoutFeatureList = ({ data }) => {
         {projects.map(project =>
           renderFeatureGrid({
             key: get(project, 'projects.document[0].uid'),
-            img: get(project, 'projects.document[0].data.image.url'),
+            alt: getUnlessEmptyString(get(project, 'projects.document[0].data.image.alt')),
+            img: get(project, 'projects.document[0].data.image.localFile.childImageSharp.fluid'),
             title: get(project, 'projects.document[0].data.title.text'),
             url: get(project, 'projects.url'),
           })
@@ -33,17 +52,6 @@ export const PageLayoutFeatureList = ({ data }) => {
     </Container>
   )
 }
-
-const renderFeatureGrid = ({ key, img, title, url }) => (
-  <>
-    <StyledLink to={url} key={key}>
-      <Grid url={img}>
-        <Title>{title}</Title>
-        <GridOverlay />
-      </Grid>
-    </StyledLink>
-  </>
-)
 
 export const query = graphql`
   fragment PageLayoutFeatureList on Query {
@@ -59,8 +67,15 @@ export const query = graphql`
                     title {
                       text
                     }
-                    image {
-                      url
+                    image {                
+                      alt
+                      localFile {
+                        childImageSharp {
+                          fluid(maxWidth: 500, quality: 90) {
+                            ...GatsbyImageSharpFluid_withWebp_noBase64
+                          }
+                        }
+                      }
                     }
                   }
                   uid
