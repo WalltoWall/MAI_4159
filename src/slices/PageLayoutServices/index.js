@@ -2,11 +2,12 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { HTMLContent } from 'components/HTMLContent'
+import { Image } from 'components/Image'
+import { getUnlessEmptyString } from 'helpers'
 import { 
   Container,
   Title,
-  Content,
-  Image,
+  Content,  
   ContentContainer,
   ImageWrapper, 
   TextWrapper,
@@ -21,7 +22,11 @@ export const PageLayoutServices = ({ data }) => {
       <Content>{get(data, 'primary.text.text')}</Content>
       <ContentContainer>
         <ImageWrapper photo_orientation={get(data, 'primary.photo_orientation')}>
-          <Image src={get(data, 'primary.image.url')} />
+          <Image 
+            alt={getUnlessEmptyString(data, 'primary.image.alt')}     
+            fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')} 
+            fadeIn={false}   
+          />
         </ImageWrapper>
         <TextWrapper>
           <Subhead>Services</Subhead>
@@ -49,8 +54,15 @@ export const query = graphql`
               text {
                 text
               }
-              image {
-                url
+              image {                
+                alt
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 700, quality: 90) {
+                      ...GatsbyImageSharpFluid_withWebp_noBase64
+                    }
+                  }
+                }
               }
               description {
                 html

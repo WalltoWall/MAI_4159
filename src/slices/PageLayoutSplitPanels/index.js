@@ -1,11 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-
+import { Image } from 'components/Image'
+import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
-  Headline,
-  Image,
+  Headline,  
   Description,
   DescriptionWrapper,
   SplitPanelWrapper,
@@ -21,7 +21,12 @@ export const PageLayoutSplitPanels = ({ data }) => (
       <Link to={get(item, 'link.url')}>
         <SplitPanelWrapper>
           <ImageContainer>
-            <Image src={get(item, 'image.url')} />
+            <Image               
+              key = {get(item, 'title1')}
+              fluid = {get(item, 'image.localFile.childImageSharp.fluid')}
+              alt = {getUnlessEmptyString(get(item, 'image.alt'))}                                      
+              fadeIn= {false}      
+            />
           </ImageContainer>
           <DescriptionWrapper>
             <Content>
@@ -48,8 +53,15 @@ export const query = graphql`
           ... on PrismicPageLayoutSplitPanels {
             id
             items {
-              image {
-                url
+              image {                
+                alt
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 500, quality: 90) {
+                      ...GatsbyImageSharpFluid_withWebp_noBase64
+                    }
+                  }
+                }
               }
               title1 {
                 text
