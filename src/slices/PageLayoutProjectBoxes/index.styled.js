@@ -70,7 +70,7 @@ export const StyledLink = styled(Link)`
   &:hover {
     ${Title} {
       position: absolute;
-      top: 40%;
+      top: 45%;
       left: 0;
     }
   }
