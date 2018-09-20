@@ -7,8 +7,8 @@ export const Content = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
+  margin: 2rem auto;
   ${t.mq.l} {
     width: 75%;
   }
@@ -31,7 +31,7 @@ export const Container = styled.div`
   background-color: ${t.c.lightgrey1};
   margin: 0 auto;
   display: block;
-  padding: 2rem;
+  padding: 4rem 0;
   ${t.mq.l} {
     min-height: 50vh;
   }
@@ -62,9 +62,10 @@ export const StyledLink = styled(Link)`
   display: block;
   margin: 0.5rem 1.2rem;
   width: 100%;
-  height: 350px;    
+  height: 20rem;    
   ${t.mq.m} {
     width: 45%;
+    height: 28rem;
   }
 
   &:hover {
