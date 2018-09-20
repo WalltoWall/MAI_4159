@@ -1,20 +1,27 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get, dropRight } from 'lodash'
+import { Image } from 'components/Image'
+import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
-  Grid,
-  StyledLink,
-  GridTitle,
+  ImageContainer,
+  StyledLink,  
+  Title,
   GridOverlay,
 } from './index.styled'
 
 const renderGrid = data => (
   <>
-    <Grid background={data.image.url}>
-      <GridTitle>{data.title.text}</GridTitle>
-      <GridOverlay />
-    </Grid>
+    <ImageContainer>
+      <Image 
+        alt={getUnlessEmptyString(data.image.alt)}
+        fluid={data.image.localFile.childImageSharp.fluid}
+        fadeIn={false}
+      />
+    </ImageContainer>    
+    <Title>{data.title.text}</Title>
+    <GridOverlay />    
   </>
 )
 
@@ -49,8 +56,15 @@ export const query = graphql`
                     title {
                       text
                     }
-                    image {
-                      url
+                    image {                
+                      alt
+                      localFile {
+                        childImageSharp {
+                          fluid(maxWidth: 1000, quality: 90) {
+                            ...GatsbyImageSharpFluid_withWebp_noBase64
+                          }
+                        }
+                      }
                     }
                   }
                 }

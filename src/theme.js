@@ -30,7 +30,7 @@ const theme = {
     t: '20rem',
     s: '30rem',
     m: '48rem',
-    l: '60rem',
+    l: '78rem',
     x: '78rem',
     xx: '90rem',
     xxx: '100rem',

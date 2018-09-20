@@ -37,11 +37,9 @@ export const PageLayoutHero = ({data}) => (
             <h1>we are mason</h1>
           </Headline>                        
           <SlidingVertical>
-            <span>Imagine</span>
-            <span>Make</span>
-            <span>Build</span>
-            <span>Design</span>
-            <span>Think</span>
+            {get(data, 'items').map(item => (
+              <span>{item.rotating_text}</span>  
+            ))}            
           </SlidingVertical>          
         </RotatedContainer>
       </HeadlineWrapper>
@@ -59,7 +57,6 @@ export const PageLayoutHero = ({data}) => (
     </Container>      
   </>
 )
-  
 
 export const query = graphql`
   fragment PageLayoutHero on Query {
@@ -85,6 +82,9 @@ export const query = graphql`
               description {
                 html
               }
+            }
+            items {
+              rotating_text                              
             }
           }
         }

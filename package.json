@@ -30,6 +30,7 @@
     "invariant": "^2.2.4",
     "lodash": "^4.17.10",
     "modern-normalize": "^0.5.0",
+    "nuka-carousel": "^4.3.11",
     "polished": "^1.9.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",

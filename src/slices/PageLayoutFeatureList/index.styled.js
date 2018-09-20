@@ -8,6 +8,7 @@ const backgroundColor = ({ background_color }) => {
       return `
         background-color: ${t.c.lightgrey1};
       `
+
     default:
       return `
         background-color: ${t.c.white};
@@ -73,7 +74,13 @@ export const Title = styled.p`
   }
 `
 
+<<<<<<< HEAD
 export const StyledLink = styled(Link)`     
+=======
+export const Grid = styled.div`
+  background-image: url(${p => p.url});
+  background-size: cover;
+>>>>>>> 9105194800bac174d51a874ee44d712e2dd4f43b
   position: relative;
   display: block;
   margin: 1rem;
@@ -134,6 +141,7 @@ export const Headline = styled.h1`
   ${t.mq.l} {
     font-size: ${t.f(5)};
   }
+<<<<<<< HEAD
 `
 
 export const Description = styled.div`
@@ -148,4 +156,6 @@ export const Description = styled.div`
   ${t.mq.l} {
     font-size: ${t.f(0)};
   }
+=======
+>>>>>>> 9105194800bac174d51a874ee44d712e2dd4f43b
 `

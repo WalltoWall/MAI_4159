@@ -1,20 +1,28 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get, dropRight } from 'lodash'
+import { Image } from 'components/Image'
+import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
-  Grid,
+  ImageContainer,
   StyledLink,
-  GridTitle,
   GridOverlay,
-  Bar,
+  Title
 } from './index.styled'
 
 const renderGrid = data => (
-  <Grid background={data.image.url}>
-    <GridTitle>{data.title.text}</GridTitle>
-    <GridOverlay />
-  </Grid>
+  <>
+  <ImageContainer>
+    <Image 
+      alt={data.image.alt}
+      fluid={data.image.localFile.childImageSharp.fluid}
+      fadeIn={false}
+    />
+  </ImageContainer>
+  <Title>{data.title.text}</Title>
+  <GridOverlay />
+  </>
 )
 
 export const PageLayoutPortfolioGridBottom = ({ data }) => {
@@ -26,12 +34,12 @@ export const PageLayoutPortfolioGridBottom = ({ data }) => {
   // }
 
   return (
-    <Container>
+    <Container>      
       {projects.map(item => (
         <StyledLink to={get(item, 'project.url')}>
           {renderGrid(get(item, 'project.document[0].data'))}
         </StyledLink>
-      ))}
+      ))}      
     </Container>
   )
 }
@@ -49,8 +57,15 @@ export const query = graphql`
                     title {
                       text
                     }
-                    image {
-                      url
+                    image {                
+                      alt
+                      localFile {
+                        childImageSharp {
+                          fluid(maxWidth: 500, quality: 90) {
+                            ...GatsbyImageSharpFluid_withWebp_noBase64
+                          }
+                        }
+                      }
                     }
                   }
                 }
