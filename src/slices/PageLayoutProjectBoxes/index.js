@@ -3,45 +3,53 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Image } from 'components/Image'
 import { getUnlessEmptyString } from 'helpers'
-
 import {
   Container,
+  ImageContainer,
+  OverlayContainer,
+  Title,
+  Content,
+  StyledLink,
   Headline,
-  Description,
-  Project,
-  ProjectContainer,
-  ProjectTitle,
-  Overlay,
 } from './index.styled'
 import Button from 'components/Button'
-import { Link } from 'components/Link'
 
-export const PageLayoutProjectBoxes = ({ data }) => (
-  <Container>
-    <ProjectContainer>
-      <Headline>{get(data, 'primary.title1.text')}</Headline>
-      {get(data, 'items', []).map(item => (
-        <Project>
-          <Image
-            alt={getUnlessEmptyString(item, 'project_image1.alt')}     
-            fluid={get(item, 'project_image1.localFile.childImageSharp.fluid')} 
-            fadeIn={false}  
-          />
-          <Link to={get(item, 'project_link.url')}>
-            <ProjectTitle>{get(item, 'project_title1.text')}</ProjectTitle>
-            <Overlay />
-          </Link>
-        </Project>
-      ))}
-    </ProjectContainer>
-    <Description
-      dangerouslySetInnerHTML={{
-        __html: get(data, 'primary.description.html'),
-      }}
-    />
-    <Button to="/portfolio/">see our work</Button>
-  </Container>
+const renderFeatureGrid = ({ alt, key, img, title, url }) => (
+  <StyledLink to={url} key={key}>
+    <ImageContainer>
+      <Image        
+        fluid={img}
+        alt={alt} 
+        fadeIn={false}         
+      />
+    </ImageContainer>
+    <OverlayContainer>
+      <Title>{title}</Title>
+    </OverlayContainer>
+  </StyledLink>  
 )
+
+export const PageLayoutProjectBoxes = ({ data }) => {
+  const projects = get(data, 'items')
+
+  return (
+    <Container>
+    <Headline>{get(data, 'primary.title1.text')}</Headline>
+      <Content>
+        {projects.map(project =>
+          renderFeatureGrid({
+            key: get(project, 'projects.document[0].uid'),
+            alt: getUnlessEmptyString(get(project, 'projects.document[0].data.image.alt')),
+            img: get(project, 'projects.document[0].data.image.localFile.childImageSharp.fluid'),
+            title: get(project, 'projects.document[0].data.title.text'),
+            url: get(project, 'projects.url'),
+          })
+        )}
+      </Content>
+      <Button to="/all-projects/">see our work</Button>
+    </Container>
+  )
+}
 
 export const query = graphql`
   fragment PageLayoutProjectBoxes on Query {
@@ -50,31 +58,32 @@ export const query = graphql`
         layout {
           ... on PrismicPageLayoutProjectBoxes {
             id
+            items {
+              projects {
+                document {
+                  data {
+                    title {
+                      text
+                    }
+                    image {                
+                      alt
+                      localFile {
+                        childImageSharp {
+                          fluid(maxWidth: 500, quality: 90) {
+                            ...GatsbyImageSharpFluid_withWebp_noBase64
+                          }
+                        }
+                      }
+                    }
+                  }
+                  uid
+                }
+                url
+              }
+            }
             primary {
               title1 {
                 text
-              }
-              description {
-                html
-              }
-            }
-            items {
-              project_title1 {
-                text
-              }
-              project_image1 {
-                url
-                alt
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 2000, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp_noBase64
-                    }
-                  }
-                }
-              }          
-              project_link {
-                url
               }
             }
           }
@@ -83,3 +92,5 @@ export const query = graphql`
     }
   }
 `
+
+

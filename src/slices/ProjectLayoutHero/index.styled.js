@@ -74,15 +74,6 @@ export const ImageContainer = styled.div`
   .gatsby-image-wrapper {
     height: 100%;
   }
-
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-
-  }
-
 `
 
 export const ClipOverlay = styled.div`

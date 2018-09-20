@@ -22,6 +22,18 @@ export const Container = styled.div`
   ${backgroundColor};
 `
 
+export const Content = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2rem auto;
+  ${t.mq.l} {
+    width: 75%;
+  }
+`
+
 export const FeatureName = styled.h2`
   font-size: ${t.s(2.5)};
   font-family: ${t.ff.sans};
@@ -31,79 +43,110 @@ export const FeatureName = styled.h2`
   letter-spacing: 0.1rem;
   margin-top: 0;
 `
-export const Content = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  margin: 0 auto;
-  ${t.mq.l} {
-    width: 75%;
-  }
-`
 
-export const StyledLink = styled(Link)`
-  display: inline-block;
-  width: 100%;
-  max-width: 400px;
-  ${t.mq.m} {
-    width: 50%;
-  }
-  ${t.mq.l} {
-    width: 25%;
-  }
-`
-
-export const Grid = styled.div`
-  background-image: url(${p => p.url});
-  background-size: cover;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 75%;
-  margin: 0.5rem 1.2rem;
-`
-export const GridOverlay = styled.div`
+export const ImageContainer = styled.div`  
+  height: 100%;
   position: absolute;
   top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: ${t.c.white};
-  opacity: 0;
-  z-index: 2;
-  -webkit-transition: all 0.2s ease-in;
-  -moz-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-
-  ${Grid}:hover & {
-    opacity: 0.8;
-    border-bottom: 1rem solid ${t.c.yellow};
+  width: 100%;  
+  .gatsby-image-outer-wrapper {        
+    height: 100%;
+  }
+  .gatsby-image-wrapper {        
+    height: 100%;
   }
 `
 
-export const Title = styled.div`
-  position: absolute;
-  opacity: 0;
-  top: 45%;
-  font-size: ${t.f(2)};
+export const Title = styled.p`     
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  opacity: 1;
+  font-size: ${t.f(1)};
   font-family: ${t.ff.sans};
   text-transform: uppercase;
   font-weight: 600;
   color: ${t.c.darkgrey1};
   letter-spacing: 0.1rem;
-  z-index: 3;
-  -webkit-transition: opacity 0.2s ease-in;
-  -moz-transition: opacity 0.2s ease-in;
-  -o-transition: opacity 0.2s ease-in;
-  transition: opacity 0.2s ease-in;
 
   ${t.mq.l} {
-    font-size: ${t.f(3)};
+    font-size: ${t.f(2)};
   }
-  ${Grid}:hover & {
-    opacity: 1;
+`
+
+export const StyledLink = styled(Link)`     
+  position: relative;
+  display: block;
+  margin: 1rem;
+  width: 100%;
+  height: 14rem; 
+  min-width: 300px;
+  max-width: 400px;   
+  ${t.mq.m} {
+    width: 42%;
+    height: 15rem;
+  }
+    ${t.mq.l} {
+    width: 22%;
+    height: 15rem;
+  }
+
+  &:hover {
+    ${Title} {
+      position: absolute;
+      top: 45%;
+      left: 0;
+    }
+  }
+`
+
+export const OverlayContainer = styled.div`
+  position: absolute;
+  display: flex;
+  padding: 1rem;
+  height: 50px;
+  width: 100%;
+  bottom: 0;
+  background-color: ${t.c.white};
+  opacity: 0.8;   
+  z-index: 5;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  ${StyledLink}:hover & {
+    height: 100%;
+    border-bottom: 1rem solid ${t.c.yellow};
+  }
+`
+
+export const Headline = styled.h1`
+  color: ${t.c.darkgrey1};
+  font-family: ${t.ff.sans};
+  font-size: ${t.f(4)};
+  font-weight: 600;
+  margin: 0 auto;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  display: block;
+  z-index: 2;
+  width: 100%;
+  ${t.mq.l} {
+    font-size: ${t.f(5)};
+  }
+`
+
+export const Description = styled.div`
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
+  font-family: ${t.ff.sans2};
+  color: ${t.c.darkgrey1};
+  font-weight: 300;
+  line-height: ${t.lh.copy};
+  display: none;
+  ${t.mq.l} {
+    font-size: ${t.f(0)};
   }
 `

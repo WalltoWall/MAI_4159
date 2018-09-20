@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Image } from 'components/Image'
 import { MobileNavOverlay } from 'components/Header/Mobile.styled'
-
 import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
@@ -98,8 +97,7 @@ export const query = graphql`
               }
             }
             items {              
-              image {      
-                url          
+              image {                
                 alt
                 localFile {
                   childImageSharp {

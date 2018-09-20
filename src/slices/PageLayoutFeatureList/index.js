@@ -4,13 +4,29 @@ import { get } from 'lodash'
 import {
   Container,
   FeatureName,
-  Grid,
-  GridOverlay,
   Title,
   Content,
   StyledLink,
+  ImageContainer,
+  OverlayContainer,
 } from './index.styled'
 import Button from 'components/Button'
+
+const renderFeatureGrid = ({ alt, key, img, title, url }) => ( 
+  <StyledLink to={url} key={key}>
+    <ImageContainer>
+      <Image        
+        fluid={img}
+        alt={alt} 
+        fadeIn={false}         
+      />
+    </ImageContainer>
+    <OverlayContainer>
+      <Title>{title}</Title>
+    </OverlayContainer>
+  </StyledLink>  
+)
+
 
 export const PageLayoutFeatureList = ({ data }) => {
   const featuredType = get(data, 'primary.feature_type')
