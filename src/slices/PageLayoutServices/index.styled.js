@@ -68,12 +68,12 @@ export const Image = styled.img`
 
 export const ContentContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
   margin: 2rem auto;
   ${t.mq.l} {
-    width: 80%;
+    width: 75%;
   }
 `
 export const ImageWrapper = styled.div`
