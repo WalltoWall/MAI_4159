@@ -8,7 +8,7 @@ import {
   ImageContainer,
   StyledLink,  
   Title,
-  GridOverlay,
+  OverlayContainer,
 } from './index.styled'
 
 const renderGrid = data => (
@@ -19,9 +19,10 @@ const renderGrid = data => (
         fluid={data.image.localFile.childImageSharp.fluid}
         fadeIn={false}
       />
-    </ImageContainer>    
-    <Title>{data.title.text}</Title>
-    <GridOverlay />    
+    </ImageContainer> 
+    <OverlayContainer>   
+      <Title>{data.title.text}</Title>
+    </OverlayContainer>    
   </>
 )
 
