@@ -8,7 +8,6 @@ const backgroundColor = ({ background_color }) => {
       return `
         background-color: ${t.c.lightgrey1};
       `
-
     default:
       return `
         background-color: ${t.c.white};
