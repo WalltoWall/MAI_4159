@@ -78,7 +78,9 @@ export const StyledLink = styled(Link)`
   display: block;
   margin: 1rem;
   width: 100%;
-  height: 12rem;    
+  height: 14rem; 
+  min-width: 300px;
+  max-width: 400px;   
   ${t.mq.m} {
     width: 42%;
     height: 15rem;
