@@ -6,30 +6,30 @@ import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
   FeatureName,
-  Grid,
-  GridOverlay,
   Title,
   Content,
   StyledLink,
+  ImageContainer,
+  OverlayContainer,
 } from './index.styled'
 import Button from 'components/Button'
 
-const renderFeatureGrid = ({ alt, key, img, title, url }) => {
-  console.log("xxxxxxxxxxxxxxxx", img)
- return (   
+const renderFeatureGrid = ({ alt, key, img, title, url }) => ( 
   <StyledLink to={url} key={key}>
-    <Grid>
+    <ImageContainer>
       <Image        
         fluid={img}
         alt={alt} 
         fadeIn={false}         
       />
+    </ImageContainer>
+    <OverlayContainer>
       <Title>{title}</Title>
-      <GridOverlay />
-    </Grid>
+    </OverlayContainer>
   </StyledLink>  
 )
- }
+
+
 export const PageLayoutFeatureList = ({ data }) => {
   const featuredType = get(data, 'primary.feature_type')
   const projects = get(data, 'items')
