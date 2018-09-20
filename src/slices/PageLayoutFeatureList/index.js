@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
+import { Image } from 'components/Image'
 import {
   Container,
   FeatureName,
@@ -12,7 +13,6 @@ import {
 } from './index.styled'
 import Button from 'components/Button'
 
-<<<<<<< HEAD
 const renderFeatureGrid = ({ alt, key, img, title, url }) => ( 
   <StyledLink to={url} key={key}>
     <ImageContainer>
@@ -28,9 +28,6 @@ const renderFeatureGrid = ({ alt, key, img, title, url }) => (
   </StyledLink>  
 )
 
-
-=======
->>>>>>> 9105194800bac174d51a874ee44d712e2dd4f43b
 export const PageLayoutFeatureList = ({ data }) => {
   const featuredType = get(data, 'primary.feature_type')
   const projects = get(data, 'items')
@@ -52,17 +49,6 @@ export const PageLayoutFeatureList = ({ data }) => {
     </Container>
   )
 }
-
-const renderFeatureGrid = ({ key, img, title, url }) => (
-  <>
-    <StyledLink to={url} key={key}>
-      <Grid url={img}>
-        <Title>{title}</Title>
-        <GridOverlay />
-      </Grid>
-    </StyledLink>
-  </>
-)
 
 export const query = graphql`
   fragment PageLayoutFeatureList on Query {

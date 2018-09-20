@@ -13,7 +13,6 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
-
   ${t.mq.l} {
     flex-direction: row;        
   }
@@ -58,7 +57,6 @@ export const StyledCarousel = styled(Carousel)`
       display: block;
     }
   }
-
   ${t.mq.l} {
     width: 75% !important;
   }
@@ -74,18 +72,6 @@ export const ImageContainer = styled.div`
   .gatsby-image-wrapper {
     height: 100%;
   }
-<<<<<<< HEAD
-=======
-
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-
-  }
-
->>>>>>> 9105194800bac174d51a874ee44d712e2dd4f43b
 `
 
 export const ClipOverlay = styled.div`
@@ -160,7 +146,6 @@ export const SubTitle = styled.h2`
 `
 
 export const InfoContainer = styled.div`
-
 `
 export const InfoBlurb = css`  
   margin-bottom: -6px;

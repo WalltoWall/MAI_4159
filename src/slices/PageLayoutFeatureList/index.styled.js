@@ -74,13 +74,7 @@ export const Title = styled.p`
   }
 `
 
-<<<<<<< HEAD
 export const StyledLink = styled(Link)`     
-=======
-export const Grid = styled.div`
-  background-image: url(${p => p.url});
-  background-size: cover;
->>>>>>> 9105194800bac174d51a874ee44d712e2dd4f43b
   position: relative;
   display: block;
   margin: 1rem;
@@ -96,7 +90,6 @@ export const Grid = styled.div`
     width: 22%;
     height: 15rem;
   }
-
   &:hover {
     ${Title} {
       position: absolute;
@@ -141,21 +134,4 @@ export const Headline = styled.h1`
   ${t.mq.l} {
     font-size: ${t.f(5)};
   }
-<<<<<<< HEAD
-`
-
-export const Description = styled.div`
-  text-align: center;
-  max-width: 500px;
-  margin: 0 auto 2rem auto;
-  font-family: ${t.ff.sans2};
-  color: ${t.c.darkgrey1};
-  font-weight: 300;
-  line-height: ${t.lh.copy};
-  display: none;
-  ${t.mq.l} {
-    font-size: ${t.f(0)};
-  }
-=======
->>>>>>> 9105194800bac174d51a874ee44d712e2dd4f43b
 `

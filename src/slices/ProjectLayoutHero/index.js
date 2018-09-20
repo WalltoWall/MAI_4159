@@ -3,11 +3,6 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Image } from 'components/Image'
 import { MobileNavOverlay } from 'components/Header/Mobile.styled'
-<<<<<<< HEAD
-import { Carousel } from 'react-responsive-carousel';
-=======
-
->>>>>>> 9105194800bac174d51a874ee44d712e2dd4f43b
 import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
@@ -24,40 +19,6 @@ import {
   ContentContainer,
 } from './index.styled'
 
-<<<<<<< HEAD
-export const ProjectLayoutHero = ({ data }) => (
-  <Container>
-    {get(data, 'items').map(item => (
-      <ImageContainer>
-      <Image         
-        alt={getUnlessEmptyString(item, 'image.alt')}     
-        fluid={get(item, 'image.localFile.childImageSharp.fluid')} 
-        fadeIn={false}        
-      />
-    </ImageContainer>
-    ))}
-    <Content>
-      <Header>
-        <Title>{get(data, 'primary.project_title.text')}</Title>
-        <SubTitle>{get(data, 'primary.project_subtitle.text')}</SubTitle>
-      </Header>
-      <InfoLine />
-      <div className={InfoBlurb}>
-        <h3>project type</h3>
-        <p>{get(data, 'primary.project_type.text')}</p>
-      </div>
-      <InfoLine />
-      <div className={InfoBlurb}>
-        <h3>year completed</h3>
-        <p>{get(data, 'primary.year_completed.text')}</p>
-      </div>
-      <InfoLine />
-      <ClipOverlay />
-    </Content>
-    <MobileNavOverlay />
-  </Container>
-)
-=======
 export class ProjectLayoutHero extends React.Component {
   constructor(props) {
     super(props)
@@ -114,7 +75,6 @@ export class ProjectLayoutHero extends React.Component {
     )
   }
 }
->>>>>>> 9105194800bac174d51a874ee44d712e2dd4f43b
 export const query = graphql`
   fragment ProjectLayoutHero on Query {
     prismicProject(id: { eq: $id }) {
@@ -137,12 +97,7 @@ export const query = graphql`
               }
             }
             items {              
-<<<<<<< HEAD
               image {                
-=======
-              image {      
-                url          
->>>>>>> 9105194800bac174d51a874ee44d712e2dd4f43b
                 alt
                 localFile {
                   childImageSharp {
