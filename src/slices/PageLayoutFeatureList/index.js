@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Image } from 'components/Image'
+import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
   FeatureName,
@@ -28,6 +29,7 @@ const renderFeatureGrid = ({ alt, key, img, title, url }) => (
   </StyledLink>  
 )
 
+
 export const PageLayoutFeatureList = ({ data }) => {
   const featuredType = get(data, 'primary.feature_type')
   const projects = get(data, 'items')
@@ -39,7 +41,8 @@ export const PageLayoutFeatureList = ({ data }) => {
         {projects.map(project =>
           renderFeatureGrid({
             key: get(project, 'projects.document[0].uid'),
-            img: get(project, 'projects.document[0].data.image.url'),
+            alt: getUnlessEmptyString(get(project, 'projects.document[0].data.image.alt')),
+            img: get(project, 'projects.document[0].data.image.localFile.childImageSharp.fluid'),
             title: get(project, 'projects.document[0].data.title.text'),
             url: get(project, 'projects.url'),
           })
@@ -64,8 +67,15 @@ export const query = graphql`
                     title {
                       text
                     }
-                    image {
-                      url
+                    image {                
+                      alt
+                      localFile {
+                        childImageSharp {
+                          fluid(maxWidth: 500, quality: 90) {
+                            ...GatsbyImageSharpFluid_withWebp_noBase64
+                          }
+                        }
+                      }
                     }
                   }
                   uid

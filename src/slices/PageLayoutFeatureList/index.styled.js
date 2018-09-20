@@ -8,7 +8,6 @@ const backgroundColor = ({ background_color }) => {
       return `
         background-color: ${t.c.lightgrey1};
       `
-
     default:
       return `
         background-color: ${t.c.white};
@@ -68,7 +67,6 @@ export const Title = styled.p`
   font-weight: 600;
   color: ${t.c.darkgrey1};
   letter-spacing: 0.1rem;
-
   ${t.mq.l} {
     font-size: ${t.f(2)};
   }
@@ -133,5 +131,19 @@ export const Headline = styled.h1`
   width: 100%;
   ${t.mq.l} {
     font-size: ${t.f(5)};
+  }
+`
+
+export const Description = styled.div`
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
+  font-family: ${t.ff.sans2};
+  color: ${t.c.darkgrey1};
+  font-weight: 300;
+  line-height: ${t.lh.copy};
+  display: none;
+  ${t.mq.l} {
+    font-size: ${t.f(0)};
   }
 `
