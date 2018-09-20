@@ -1,63 +1,86 @@
 import styled from 'react-emotion'
 import { css } from 'emotion'
+import Carousel from 'nuka-carousel';
 import t from 'theme'
+
+
 export const Container = styled.div`
-  min-height: ${t.s(10.5)};
+  
   display: flex;
   overflow: hidden;
   position: relative;
-  flex-direction: column; 
-  ${t.mq.t} {
-    flex-direction: row;
-    height: ${t.s(10.5)};
-  }
+  flex-direction: column-reverse; 
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
   ${t.mq.l} {
-    flex-direction: row;
-    height: ${t.s(11.5)};
+    flex-direction: row;        
   }
-  ${t.mq.xx} {
-    height: ${t.s(12.5)};
+`
+
+export const ContentContainer = styled.div`
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  ${t.mq.l} {    
+    width: 25%;
   }
 `
 
 export const Content = styled.div`
   z-index: 2;
   padding-bottom: 1rem;
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   padding: 0 2rem 2rem 2rem;
   ${t.mq.l} {
-    padding: 0 2rem 3rem 3.5rem;
-    width: 50%;
+    padding: 0 2rem 3rem 3.5rem;    
   }
-  ${t.mq.x} {
-    width: 50%;
+  ${t.mq.x} {    
   }
 `
+export const StyledCarousel = styled(Carousel)`
+  height: 100% !important;
+  width: 100% !important;
+  .slider-control-centerleft {
+    display:none;
+  }
+  .slider-control-centerright {
+    display:none;
+  }
+  
+  .slider-control-bottomcenter {
+    display: none;
+    ${t.mq.m} {
+      display: block;
+    }
+  }
 
+  ${t.mq.l} {
+    width: 75% !important;
+  }
+  
+`
 export const ImageContainer = styled.div`
   width: 100%;
   height: 100%;
-  ${t.mq.t} {    
-    padding-bottom: 60%;
-  }
-  ${t.mq.s} {    
-    padding-bottom: 28%;
-  }
-  ${t.mq.l} {
-    margin-left: 20%;
-    padding-bottom: 0;
-  }
-  ${t.mq.xx} {
-    margin-left: 27%;
-  }
   
   .gatsby-image-outer-wrapper {
     height: 100%;
   }
   .gatsby-image-wrapper {
     height: 100%;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
   }
 
 `
@@ -75,9 +98,9 @@ export const ClipOverlay = styled.div`
   z-index: -1;
   ${t.mq.t} {
     left: -13%;
-    height: 116%;
+    height: 133%;
     width: 134%;
-    top: -4%;
+    top: -10%;
   }
   ${t.mq.m} {
     left: -13%;
@@ -87,37 +110,23 @@ export const ClipOverlay = styled.div`
   }
   ${t.mq.l} {
     top: -250%;
-    left: -10%;
+    left: -37%;
     height: 370%;
-    width: 82%;
+    width: 135%;
   }
   ${t.mq.x} {
-    top: -250%;
-    left: -14%;
-    height: 370%;
-    width: 66%;
-  }
-  ${t.mq.xx} {
-    top: -250%;
-    left: -18%;
-    height: 370%;
-    width: 66%;
-  }
+    top: -266%;
+    left: -24%;
+    height: 387%;
+    width: 133%;
+  } 
 `
 export const Header = styled.div`
   width: 100%;
   text-align: center;
   text-transform: uppercase;
-  ${t.mq.s} {
-    padding: 0 100px;
-  }
   ${t.mq.l} {
-    padding: 0px;
     text-align: left;
-    width: 80%;
-  }
-  ${t.mq.x} {
-    width: 65%;
   }
 `
 export const Title = styled.h1`
@@ -127,7 +136,13 @@ export const Title = styled.h1`
   font-family: ${t.ff.sans};
   letter-spacing: 0.2rem;
   ${t.mq.l} {
-    font-size: ${t.f(8)};
+    font-size: ${t.f(5)};
+  }
+  ${t.mq.x} {
+    font-size: ${t.f(6)};
+  }
+  ${t.mq.xxx} {
+    font-size: ${t.f(9)};
   }
 `
 
@@ -141,8 +156,10 @@ export const SubTitle = styled.h2`
   letter-spacing: 0.2rem;
 `
 
-export const InfoBlurb = css`
-  width: 100%;
+export const InfoContainer = styled.div`
+
+`
+export const InfoBlurb = css`  
   margin-bottom: -6px;
   h3 {
     font-size: ${t.f(0)};
@@ -152,19 +169,12 @@ export const InfoBlurb = css`
     margin-bottom: -0.7rem;
     letter-spacing: 0.1rem;
   }
-
   p {
     font-family: ${t.ff.serif};
     font-size: ${t.f(0)};
     font-weight: 400;
     color: ${t.c.white};
-  }
-  ${t.mq.l} {
-    width: 60%;
-  }
-  ${t.mq.x} {
-    width: 50%;
-  }
+  }  
 `
 
 export const InfoLine = styled.hr`

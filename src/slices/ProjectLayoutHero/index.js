@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Image } from 'components/Image'
 import { MobileNavOverlay } from 'components/Header/Mobile.styled'
-import { Carousel } from 'react-responsive-carousel';
+
 import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
@@ -13,42 +13,69 @@ import {
   Header,
   SubTitle,
   ClipOverlay,
+  InfoContainer,
   InfoBlurb,
   InfoLine,
+  StyledCarousel,
+  ContentContainer,
 } from './index.styled'
 
-export const ProjectLayoutHero = ({ data }) => (
-  <Container>
-    {get(data, 'items').map(item => (
-      <ImageContainer>
-      <Image         
-        alt={getUnlessEmptyString(item, 'image.alt')}     
-        fluid={get(item, 'image.localFile.childImageSharp.fluid')} 
-        fadeIn={false}        
-      />
-    </ImageContainer>
-    ))}
-    <Content>
-      <Header>
-        <Title>{get(data, 'primary.project_title.text')}</Title>
-        <SubTitle>{get(data, 'primary.project_subtitle.text')}</SubTitle>
-      </Header>
-      <InfoLine />
-      <div className={InfoBlurb}>
-        <h3>project type</h3>
-        <p>{get(data, 'primary.project_type.text')}</p>
-      </div>
-      <InfoLine />
-      <div className={InfoBlurb}>
-        <h3>year completed</h3>
-        <p>{get(data, 'primary.year_completed.text')}</p>
-      </div>
-      <InfoLine />
-      <ClipOverlay />
-    </Content>
-    <MobileNavOverlay />
-  </Container>
-)
+export class ProjectLayoutHero extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      window.dispatchEvent(new Event('resize'))
+    }, 0)
+  }
+  
+  render() {
+    return (
+      <Container>
+        <ContentContainer>
+          <Content>
+            <Header>
+              <Title>{get(this.props.data, 'primary.project_title.text')}</Title>
+              <SubTitle>{get(this.props.data, 'primary.project_subtitle.text')}</SubTitle>
+            </Header>
+            <InfoContainer>
+              <InfoLine />
+              <div className={InfoBlurb}>
+                <h3>project type</h3>
+                <p>{get(this.props.data, 'primary.project_type.text')}</p>
+              </div>
+              <InfoLine />
+              <div className={InfoBlurb}>
+                <h3>year completed</h3>
+                <p>{get(this.props.data, 'primary.year_completed.text')}</p>
+              </div>
+              <InfoLine />
+            </InfoContainer>
+            <ClipOverlay />
+          </Content>
+        </ContentContainer>
+        <StyledCarousel
+          autoplay={false}
+          frameOverflow="show"
+          heightMode='first'
+        >
+          {get(this.props.data, 'items').map(item => (  
+            <ImageContainer key={getUnlessEmptyString(item, 'image.alt')}>
+              <Image         
+                alt={getUnlessEmptyString(item, 'image.alt')}     
+                fluid={get(item, 'image.localFile.childImageSharp.fluid')} 
+                fadeIn={false}        
+              />      
+            </ImageContainer>      
+          ))}
+        </StyledCarousel>
+        <MobileNavOverlay />
+      </Container>
+    )
+  }
+}
 export const query = graphql`
   fragment ProjectLayoutHero on Query {
     prismicProject(id: { eq: $id }) {
@@ -71,7 +98,8 @@ export const query = graphql`
               }
             }
             items {              
-              image {                
+              image {      
+                url          
                 alt
                 localFile {
                   childImageSharp {
