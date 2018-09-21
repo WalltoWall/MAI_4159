@@ -67,7 +67,6 @@ export const Title = styled.p`
   font-weight: 600;
   color: ${t.c.darkgrey1};
   letter-spacing: 0.1rem;
-
   ${t.mq.l} {
     font-size: ${t.f(2)};
   }
@@ -89,7 +88,6 @@ export const StyledLink = styled(Link)`
     width: 22%;
     height: 15rem;
   }
-
   &:hover {
     ${Title} {
       position: absolute;
@@ -109,10 +107,10 @@ export const OverlayContainer = styled.div`
   background-color: ${t.c.white};
   opacity: 0.8;   
   z-index: 5;
-  -webkit-transition: all 0.2s ease-in;
-  -moz-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
   ${StyledLink}:hover & {
     height: 100%;
     border-bottom: 1rem solid ${t.c.yellow};
@@ -133,19 +131,5 @@ export const Headline = styled.h1`
   width: 100%;
   ${t.mq.l} {
     font-size: ${t.f(5)};
-  }
-`
-
-export const Description = styled.div`
-  text-align: center;
-  max-width: 500px;
-  margin: 0 auto 2rem auto;
-  font-family: ${t.ff.sans2};
-  color: ${t.c.darkgrey1};
-  font-weight: 300;
-  line-height: ${t.lh.copy};
-  display: none;
-  ${t.mq.l} {
-    font-size: ${t.f(0)};
   }
 `

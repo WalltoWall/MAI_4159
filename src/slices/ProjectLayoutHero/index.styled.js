@@ -13,7 +13,6 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
-
   ${t.mq.l} {
     flex-direction: row;        
   }
@@ -58,7 +57,6 @@ export const StyledCarousel = styled(Carousel)`
       display: block;
     }
   }
-
   ${t.mq.l} {
     width: 75% !important;
   }
@@ -148,7 +146,6 @@ export const SubTitle = styled.h2`
 `
 
 export const InfoContainer = styled.div`
-
 `
 export const InfoBlurb = css`  
   margin-bottom: -6px;

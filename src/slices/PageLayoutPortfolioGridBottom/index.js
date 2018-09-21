@@ -1,14 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get, dropRight } from 'lodash'
+import { get } from 'lodash'
 import { Image } from 'components/Image'
-import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
   ImageContainer,
   StyledLink,
-  GridOverlay,
-  Title
+  Title,
+  OverlayContainer,
 } from './index.styled'
 
 const renderGrid = data => (
@@ -20,8 +19,9 @@ const renderGrid = data => (
       fadeIn={false}
     />
   </ImageContainer>
-  <Title>{data.title.text}</Title>
-  <GridOverlay />
+  <OverlayContainer> 
+    <Title>{data.title.text}</Title>
+  </OverlayContainer>
   </>
 )
 

@@ -12,6 +12,26 @@ export const Container = styled.div`
   width: 100%;
   margin: 0 auto;
 `
+
+export const Title = styled.h1`
+  color: ${t.c.darkgrey1};
+  font-family: ${t.ff.sans};
+  font-size: ${t.f(2)};
+  text-align: center;
+  position: absolute;
+  font-weight: 600;
+  margin: 0 auto;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  display: block;
+  z-index: 2;
+  width: 100%;
+  ${t.mq.l} {
+    font-size: ${t.f(4)};
+  }
+`
+
 export const StyledLink = styled(Link)`
   position: relative;
   display: block;
@@ -21,6 +41,11 @@ export const StyledLink = styled(Link)`
   ${t.mq.l} {    
     width: 50%;    
     padding-top: 35%;
+  }
+  &:hover {
+    ${Title} {
+      top: 45%;
+    }
   }
 `
 export const ImageContainer = styled.div`
@@ -36,44 +61,25 @@ export const ImageContainer = styled.div`
   }
 `
 
-export const GridOverlay = styled.div`
+export const OverlayContainer = styled.div`
   position: absolute;
-  top: 0;
+  display: flex;
+  padding: 1rem;
+  height: 50px;
   width: 100%;
-  height: 100%;
-  background-color: ${t.c.black};
-  opacity: 0.5;
-  z-index: 2;
-  -webkit-transition: all 0.2s ease-in;
-  -moz-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-  
+  bottom: 0;
+  background-color: ${t.c.white};
+  opacity: 0.8;   
+  z-index: 5;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
   ${StyledLink}:hover & {
-    opacity: 0.7;
-    background-color: ${t.c.white};
+    height: 100%;
     border-bottom: 1rem solid ${t.c.yellow};
   }
-`
-
-export const Title = styled.h1`
-  position: absolute;  
-  display: inline;
-  z-index: 3;
-  top: 35%;
-  left: 0;  
-  right: 0;
-  font-size: ${t.f(3)};
-  font-family: ${t.ff.sans};  
-  font-weight: 600;
-  color: ${t.c.white};
-  letter-spacing: 0.2rem;
-  text-transform: uppercase;
-  
-  ${t.mq.l} {
-    font-size: ${t.f(5)};
-  }
-  ${StyledLink}:hover & {
-    color: ${t.c.darkgrey1};
+  ${t.mq.l} {    
+    height: 70px;
   }
 `
