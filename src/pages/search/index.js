@@ -23,7 +23,7 @@ const renderResult = item => (
 )
 
 
-const initResultView = (query, queryType) => (  
+const initResultView = (query, queryType, render) => (  
   <StyledHTMLContent>
     {query ? (
       <>
@@ -33,11 +33,14 @@ const initResultView = (query, queryType) => (
         </p>
       </>
     ) : (
+    render &&  
+    (
       <>
         <h2>Search</h2>
         <p>Enter a search term in the search field above.</p>
       </>
-    )}
+    ))
+    }
   </StyledHTMLContent>  
 )
 
@@ -73,7 +76,7 @@ const SearchProject = ({ data }) => {
                     <Content>
                       {
                         isEmpty(results) ? 
-                        initResultView(query,'Projects') : 
+                        initResultView(query,'Projects', true) : 
                         renderSearchResult({query, 'queryType':'Projects', results})
                       }
                     </Content>
@@ -92,7 +95,7 @@ const SearchProject = ({ data }) => {
                     <Content>
                       {
                         isEmpty(results) ? 
-                        initResultView(query, 'Pages') : 
+                        initResultView(query, 'Pages', false) : 
                         renderSearchResult({query, 'queryType':'Pages', results})
                       }
                     </Content>
