@@ -1,7 +1,5 @@
 import styled from 'react-emotion'
-import { css } from 'emotion'
 import t from 'theme'
-
 
 export const Container = styled.div`
   
@@ -110,12 +108,12 @@ export const Title = styled.h1`
     font-size: ${t.f(6)};
   }
   ${t.mq.xxx} {
-    font-size: ${t.f(9)};
+    font-size: ${t.f(7)};
   }
 `
 
 export const SubTitle = styled.h2`
-  font-size: ${t.f(3)};
+  font-size: ${t.f(1)};
   letter-spacing: 0.1rem;
   color: ${t.c.white};
   font-weight: 400;
@@ -125,36 +123,10 @@ export const SubTitle = styled.h2`
 `
 
 export const InfoContainer = styled.div`
-`
-export const InfoBlurb = css`  
-  margin-bottom: -6px;
-  h3 {
-    font-size: ${t.f(0)};
-    color: ${t.c.yellow};
     font-family: ${t.ff.sans2};
-    text-transform: uppercase;
-    margin-bottom: -0.7rem;
-    letter-spacing: 0.1rem;
-  }
-  p {
-    font-family: ${t.ff.serif};
     font-size: ${t.f(0)};
     font-weight: 400;
     color: ${t.c.white};
-  }  
+    line-height: ${t.lh.copy};
 `
 
-export const InfoLine = styled.hr`
-  border-color: ${t.c.lightgrey};
-  width: 100%;
-  margin: 0;
-  ${t.mq.m} {
-    width: 50%;
-  }
-  ${t.mq.l} {
-    width: 40%;
-  }
-  ${t.mq.x} {
-    width: 30%;
-  }
-`

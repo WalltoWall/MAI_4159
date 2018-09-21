@@ -13,8 +13,6 @@ import {
   SubTitle,
   ClipOverlay,
   InfoContainer,
-  InfoBlurb,
-  InfoLine,
   ContentContainer,
 } from './index.styled'
 
@@ -23,21 +21,11 @@ export const PageLayoutLargeSubpageHero = ({data}) => (
         <ContentContainer>
           <Content>
             <Header>
-              <Title>{get(data, 'primary.project_title.text')}</Title>
-              <SubTitle>{get(data, 'primary.project_subtitle.text')}</SubTitle>
+              <SubTitle>Featured news</SubTitle>
+              <Title>{get(data, 'primary.article_title.text')}</Title>
             </Header>
             <InfoContainer>
-              <InfoLine />
-              <div className={InfoBlurb}>
-                <h3>project type</h3>
-                <p>{get(data, 'primary.project_type.text')}</p>
-              </div>
-              <InfoLine />
-              <div className={InfoBlurb}>
-                <h3>year completed</h3>
-                <p>{get(data, 'primary.year_completed.text')}</p>
-              </div>
-              <InfoLine />
+                <p>{get(data, 'primary.article_summary.text')}</p>
             </InfoContainer>
             <ClipOverlay />
           </Content>
@@ -61,16 +49,10 @@ export const query = graphql`
           ... on PrismicPageLayoutLargeSubpageHero {
             id
             primary {
-              project_title {
+              article_title {
                 text
               }
-              project_subtitle {
-                text
-              }
-              year_completed {
-                text
-              }
-              project_type {
+              article_summary {
                 text
               }
               image {                
