@@ -62,6 +62,3 @@ export const StyledLink = styled(Link)`
     height: 28rem;
   }
 `
-
-
-
