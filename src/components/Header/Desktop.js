@@ -3,6 +3,10 @@ import { StaticQuery, graphql } from 'gatsby'
 import { get } from 'lodash'
 import classnames from 'classnames'
 import { isPathActive } from 'lib/helpers'
+import { ModalConsumer } from 'controllers/ModalContext'
+import { searchModal } from 'components/Modal/searchModal'
+
+
 import { Link } from '../Link'
 import {
   Container,
@@ -10,6 +14,7 @@ import {
   NavList,
   NavArrow,
   navItemClassName,
+  SearchButtonIcon,
 } from './Desktop.styled'
 
 const getLinkProps = () => ({ href, location: { pathname } }) => ({
@@ -35,6 +40,13 @@ const renderLink = item => (
 const render = () => queryData => (
   <NavList>
     {get(queryData, 'prismicNavigation.data.primary', []).map(renderLink)}
+    <ModalConsumer>
+      {({ showModal }) => (
+        <a onClick={event => {event.preventDefault(); showModal(searchModal) }}>
+          <SearchButtonIcon />          
+        </a>        
+      )}
+    </ModalConsumer>
   </NavList>
 )
 

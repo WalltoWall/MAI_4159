@@ -2,6 +2,7 @@ import styled from 'react-emotion'
 import { css } from 'emotion'
 import t from 'theme'
 import { ReactComponent as HoverArrowSVG } from 'assets/hov_arrow.svg'
+import { ReactComponent as AssetIconSearchSVG } from 'assets/icon-search.svg'
 import { Link } from '../Link'
 
 export const Container = styled.li`
@@ -40,7 +41,7 @@ export const NavWrapper = styled.div`
   top: 5rem;
   margin-left: 1rem;
   left: 0;
-  z-index: 30;
+  z-index: 5;
   display: none;
   ${t.mq.l} {
     display: block;
@@ -90,4 +91,11 @@ export const NavArrow = styled(HoverArrowSVG)`
     display: inline-block;
     transform: translate(${t.s(-4)}, 5%);
   }
+`
+
+export const SearchButtonIcon = styled(AssetIconSearchSVG)`
+  cursor: pointer;
+  height: ${t.s(0)};
+  transform: translate(-10%, -5%);
+  width: ${t.s(0)};
 `

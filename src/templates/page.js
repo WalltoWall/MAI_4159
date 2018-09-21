@@ -19,6 +19,7 @@ import { PageLayoutServices } from 'slices/PageLayoutServices'
 import { PageLayoutFeatureList } from 'slices/PageLayoutFeatureList'
 import { PageLayoutTextBlock } from 'slices/PageLayoutTextBlock'
 
+
 const PageTemplate = ({ data }) => (
   <>
     <Helmet title={get(data, 'prismicPage.data.title.text')} />
