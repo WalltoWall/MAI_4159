@@ -3,9 +3,16 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Image } from 'components/Image'
 import { getUnlessEmptyString } from 'helpers'
-import { Content, Container, ImageContainer, StyledLink } from './index.styled'
+import { 
+  Content,
+  Container,
+  ImageContainer,
+  StyledLink,
+  PostTitle,
+  PostContent,
+} from './index.styled'
 
-const renderFeatureGrid = ({ alt, key, img, title, url }) => (
+const renderFeatureGrid = ({ alt, key, img, title, url, content }) => (
   <StyledLink to={url} key={key}>
     <ImageContainer>
       <Image        
@@ -14,7 +21,9 @@ const renderFeatureGrid = ({ alt, key, img, title, url }) => (
         fadeIn={false}         
       />
     </ImageContainer>
-  </StyledLink>  
+    <PostTitle>{title}</PostTitle> 
+    <PostContent>{content}</PostContent>
+  </StyledLink> 
 )
 
 export const PageLayoutNewsSection = ({ data }) => {
@@ -28,8 +37,9 @@ export const PageLayoutNewsSection = ({ data }) => {
             key: get(project, 'news_post.document[0].uid'),
             alt: getUnlessEmptyString(get(project, 'news_post.document[0].data.image.alt')),
             img: get(project, 'news_post.document[0].data.image.localFile.childImageSharp.fluid'),
-            title: get(project, 'news_post.document[0].data.title.text'),
+            title: get(project, 'news_post.document[0].data.article_title.text'),
             url: get(project, 'news_post.url'),
+            content: get(project, 'news_post.document[0].data.article_content1.text'),
           })
         )}
       </Content>
@@ -49,7 +59,10 @@ export const query = graphql`
               news_post {
                 document {
                   data {
-                    title {
+                    article_title {
+                      text
+                    }
+                    article_content1 {
                       text
                     }
                     image {                
