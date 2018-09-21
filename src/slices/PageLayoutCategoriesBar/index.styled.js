@@ -62,7 +62,12 @@ export const StyledLink = styled(Link)`
     -o-transition: color .2s ease-in;
     transition: color .2s ease-in;
     &:hover {
-        color: ${t.c.yellow};
+      color: ${t.c.yellow};
+    }
+    &:last-child {
+      border-left: 1px solid white;
+      padding-left: 3rem;
+      margin-left: 0;
     }
 `
 
