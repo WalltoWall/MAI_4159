@@ -9,7 +9,7 @@ import { Layout } from 'components/Layout'
 import { SearchBar } from 'components/SearchBar'
 import { SearchResults } from 'components/SearchResults'
 import { Result as SearchResult } from 'components/SearchResults/Result'
-import { Container, Content, StyledHTMLContent } from './_index.styled'
+import { Container, ContentWrapper, Content, StyledHTMLContent } from './_index.styled'
 
 const renderResult = item => (
   <SearchResult
@@ -21,7 +21,6 @@ const renderResult = item => (
     excerpt={item.excerpt}
   />
 )
-
 
 const initResultView = (query, queryType, render) => (  
   <StyledHTMLContent>
@@ -56,7 +55,7 @@ const SearchProject = ({ data }) => {
     <Layout>
       <Location>
         {({ location }) => (
-          <>               
+          <Container>                 
             <SearchBar
               query={getLocationQuery(location)}
               onSubmit={({ query }) => {
@@ -72,7 +71,7 @@ const SearchProject = ({ data }) => {
             >
               {({ query, results }) => (
                 <>                
-                  <Container hasResults={isEmpty(results)}>
+                  <ContentWrapper hasResults={isEmpty(results)}>
                     <Content>
                       {
                         isEmpty(results) ? 
@@ -80,7 +79,7 @@ const SearchProject = ({ data }) => {
                         renderSearchResult({query, 'queryType':'Projects', results})
                       }
                     </Content>
-                  </Container>
+                  </ContentWrapper>
                 </>
               )}        
             </Lunr>
@@ -91,7 +90,7 @@ const SearchProject = ({ data }) => {
             >
               {({ query, results }) => (
                 <>                
-                  <Container hasResults={isEmpty(results)}>
+                  <ContentWrapper hasResults={isEmpty(results)}>
                     <Content>
                       {
                         isEmpty(results) ? 
@@ -99,11 +98,11 @@ const SearchProject = ({ data }) => {
                         renderSearchResult({query, 'queryType':'Pages', results})
                       }
                     </Content>
-                  </Container>
+                  </ContentWrapper>
                 </>
               )}        
             </Lunr>
-          </>
+          </Container>
         )} 
       </Location>
     </Layout>
