@@ -8,11 +8,16 @@ import { DevRefreshButton } from 'components/DevRefreshButton'
 import { Header } from 'components/Header'
 import { Footer } from 'components/Footer'
 import { Container } from './index.styled'
-
+import { ModalRoot } from 'components/ModalRoot'
+import { ModalProvider, ModalConsumer } from 'controllers/ModalContext'
 import 'modern-normalize'
 import 'typeface-abhaya-libre'
 import 'typeface-barlow-condensed'
 import 'typeface-lato'
+
+// temporarily disable hot loader error for dev
+import {setConfig} from 'react-hot-loader'
+setConfig({logLevel: 'no-errors-please'})
 
 injectGlobal`
   * {
@@ -56,12 +61,21 @@ const render = ({ children }) => queryData => (
     >
       <html lang="en" />
     </Helmet>
-    <Header siteTitle={queryData.site.siteMetadata.title} />
-    <Container>
-      {process.env.NODE_ENV === 'development' && <DevRefreshButton />}
-      {children}
-    </Container>
-    <Footer />
+    <ModalProvider>
+      <ModalConsumer>
+        {({ showModal, hideModal }) => (
+          <>
+            <ModalRoot />
+            <Header siteTitle={queryData.site.siteMetadata.title} />
+            <Container>
+              {process.env.NODE_ENV === 'development' && <DevRefreshButton />}
+              {children}
+            </Container>
+            <Footer />        
+          </>
+        )}
+      </ModalConsumer>
+    </ModalProvider>
   </>
 )
 
