@@ -2,7 +2,7 @@ import styled from 'react-emotion'
 import t from '../theme'
 import { Link } from './Link'
 
-const Button = styled(Link)`
+export const Button = styled(Link)`
   background-color: ${t.c.yellow};
   color: white;
   cursor: pointer;
@@ -24,4 +24,4 @@ const Button = styled(Link)`
   }
 `
 
-export default Button
+

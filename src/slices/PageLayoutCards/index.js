@@ -18,7 +18,7 @@ import {
   SecondaryLink,
 } from './index.styled'
 import { Link } from 'components/Link'
-import Button from 'components/Button'
+import {Button} from 'components/Button'
 
 const date = new Date();
 

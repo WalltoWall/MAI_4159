@@ -56,9 +56,8 @@ export class ProjectLayoutHero extends React.Component {
           </Content>
         </ContentContainer>
         <StyledCarousel
-          autoplay={false}
-          frameOverflow="show"
-          heightMode='first'
+          autoplay={true}
+          frameOverflow="show"        
         >
           {get(this.props.data, 'items').map(item => (  
             <ImageContainer key={getUnlessEmptyString(item, 'image.alt')}>

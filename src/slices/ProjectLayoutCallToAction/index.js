@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Container, Content, CtaHeaderClassName } from './index.styled'
-import Button from 'components/Button'
+import {Button} from 'components/Button'
 import { HTMLContent } from 'components/HTMLContent'
 
 export const ProjectLayoutCallToAction = ({ data }) => (
