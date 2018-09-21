@@ -12,7 +12,7 @@ import {
   ImageContainer,
   OverlayContainer,
 } from './index.styled'
-import Button from 'components/Button'
+import {Button} from 'components/Button'
 
 const renderFeatureGrid = ({ alt, key, img, title, url }) => ( 
   <StyledLink to={url} key={key}>

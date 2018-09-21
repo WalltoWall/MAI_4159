@@ -1,6 +1,6 @@
 import styled from 'react-emotion'
 import t from 'theme'
-import Button from 'components/Button'
+import {Button} from 'components/Button'
 
 export const Container = styled.div`
   align-items: center;
