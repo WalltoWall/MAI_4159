@@ -10,6 +10,8 @@ import {
   StyledLink,
   PostTitle,
   PostContent,
+  ReadMore,
+  ContentContainer,
 } from './index.styled'
 
 const renderFeatureGrid = ({ alt, key, img, title, url, content }) => (
@@ -21,8 +23,11 @@ const renderFeatureGrid = ({ alt, key, img, title, url, content }) => (
         fadeIn={false}         
       />
     </ImageContainer>
-    <PostTitle>{title}</PostTitle> 
-    <PostContent>{content}</PostContent>
+    <ContentContainer>
+      <PostTitle>{title}</PostTitle> 
+      <PostContent>{content}</PostContent>
+      <ReadMore to={url}>Read more</ReadMore>
+    </ContentContainer>
   </StyledLink> 
 )
 
@@ -32,14 +37,14 @@ export const PageLayoutNewsSection = ({ data }) => {
   return (
     <Container>
       <Content>
-        {news_post.map(project =>
+        {news_post.map(news_post =>
           renderFeatureGrid({
-            key: get(project, 'news_post.document[0].uid'),
-            alt: getUnlessEmptyString(get(project, 'news_post.document[0].data.image.alt')),
-            img: get(project, 'news_post.document[0].data.image.localFile.childImageSharp.fluid'),
-            title: get(project, 'news_post.document[0].data.article_title.text'),
-            url: get(project, 'news_post.url'),
-            content: get(project, 'news_post.document[0].data.article_content1.text'),
+            key: get(news_post, 'news_post.document[0].uid'),
+            alt: getUnlessEmptyString(get(news_post, 'news_post.document[0].data.image.alt')),
+            img: get(news_post, 'news_post.document[0].data.image.localFile.childImageSharp.fluid'),
+            title: get(news_post, 'news_post.document[0].data.article_title.text'),
+            url: get(news_post, 'news_post.url'),
+            content: get(news_post, 'news_post.document[0].data.article_content1.text'),
           })
         )}
       </Content>

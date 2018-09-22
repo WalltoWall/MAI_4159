@@ -40,12 +40,14 @@ export const PostTitle = styled.div`
   display: block;
   width: 100%;
   font-size: ${t.f(2)};
+  margin-bottom: 1rem;
 `
 
 export const PostContent = styled.div`
   color: ${t.c.darkgrey2};
   font-family: ${t.ff.sans2};
   display: block;
+  margin-bottom: 1rem;
   width: 100%;
 `
 
@@ -59,6 +61,21 @@ export const StyledLink = styled(Link)`
   height: 20rem;    
   ${t.mq.m} {
     width: 30%;
-    height: 28rem;
+    height: 30rem;
   }
 `
+export const ReadMore = styled(Link)`
+  font-family: ${t.ff.sans2};
+  font-size: ${t.f(-1)};
+  text-transform: uppercase;
+  &:hover {
+    color: ${t.c.yellow};
+  }
+`
+
+export const ContentContainer = styled.div`
+  padding: 1rem;
+  background-color: ${t.c.lightgrey2};
+`
+
+

@@ -42,7 +42,7 @@ const render = () => queryData => (
     {get(queryData, 'prismicNavigation.data.primary', []).map(renderLink)}
     <ModalConsumer>
       {({ showModal }) => (
-        <a onClick={event => {event.preventDefault(); showModal(searchModal) }}>
+        <a href="/" onClick={event => {event.preventDefault(); showModal(searchModal) }}>
           <SearchButtonIcon />          
         </a>        
       )}
