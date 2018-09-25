@@ -12,9 +12,10 @@ import {
   PostContent,
   ReadMore,
   ContentContainer,
+  PostDate,
 } from './index.styled'
 
-const renderFeatureGrid = ({ alt, key, img, title, url, content }) => (
+const renderFeatureGrid = ({ alt, key, img, title, url, content, date }) => (
   <StyledLink to={url} key={key}>
     <ImageContainer>
       <Image        
@@ -24,6 +25,7 @@ const renderFeatureGrid = ({ alt, key, img, title, url, content }) => (
       />
     </ImageContainer>
     <ContentContainer>
+      <PostDate>{date}</PostDate>
       <PostTitle>{title}</PostTitle> 
       <PostContent>{content}</PostContent>
       <ReadMore to={url}>Read more</ReadMore>
@@ -42,6 +44,7 @@ export const PageLayoutNewsSection = ({ data }) => {
             key: get(news_post, 'news_post.document[0].uid'),
             alt: getUnlessEmptyString(get(news_post, 'news_post.document[0].data.image.alt')),
             img: get(news_post, 'news_post.document[0].data.image.localFile.childImageSharp.fluid'),
+            date: get(news_post, 'news_post.document[0].data.date'),
             title: get(news_post, 'news_post.document[0].data.article_title.text'),
             url: get(news_post, 'news_post.url'),
             content: get(news_post, 'news_post.document[0].data.article_content1.text'),
@@ -64,6 +67,7 @@ export const query = graphql`
               news_post {
                 document {
                   data {
+                    date
                     article_title {
                       text
                     }

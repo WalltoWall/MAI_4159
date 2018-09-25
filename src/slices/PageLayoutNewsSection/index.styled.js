@@ -6,7 +6,7 @@ export const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: top;
   width: 100%;
   margin: 2rem auto;
   ${t.mq.l} {
@@ -32,6 +32,14 @@ export const Container = styled.div`
   ${t.mq.l} {
     min-height: 50vh;
   }
+`
+
+export const PostDate = styled.div`
+  color: ${t.c.darkgrey2};
+  font-family: ${t.ff.sans2};
+  display: block;
+  margin-bottom: 1rem;
+  width: 100%;
 `
 
 export const PostTitle = styled.div`
@@ -61,7 +69,7 @@ export const StyledLink = styled(Link)`
   height: 20rem;    
   ${t.mq.m} {
     width: 30%;
-    height: 30rem;
+    height: auto;
   }
 `
 export const ReadMore = styled(Link)`
