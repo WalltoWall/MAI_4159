@@ -9,7 +9,6 @@ import { Layout } from 'components/Layout'
 import { PageLayoutHero } from 'slices/PageLayoutHero'
 import { PageLayoutProjectBoxes } from 'slices/PageLayoutProjectBoxes'
 import { PageLayoutSplitPanels } from 'slices/PageLayoutSplitPanels'
-import { PageLayoutCards } from 'slices/PageLayoutCards'
 import { PageLayoutCategoriesBar } from 'slices/PageLayoutCategoriesBar'
 import { PageLayoutSubPageHero } from 'slices/PageLayoutSubPageHero'
 import { PageLayoutPortfolioGridTop } from 'slices/PageLayoutPortfolioGridTop'
@@ -34,7 +33,6 @@ const PageTemplate = ({ data }) => (
           PageLayoutHero,
           PageLayoutProjectBoxes,
           PageLayoutSplitPanels,
-          PageLayoutCards,
           PageLayoutCategoriesBar,
           PageLayoutSubPageHero,
           PageLayoutPortfolioGridTop,
@@ -70,7 +68,6 @@ export const query = graphql`
     ...PageLayoutHero
     ...PageLayoutProjectBoxes
     ...PageLayoutSplitPanels
-    ...PageLayoutCards
     ...PageLayoutSubPageHero
     ...PageLayoutCategoriesBar
     ...PageLayoutPortfolioGridTop

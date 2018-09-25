@@ -13,7 +13,7 @@ export const Container = styled.div`
 `
 
 export const Headline = styled.h2`
-  color: ${t.c.darkgrey2};
+  color: ${t.c.darkgrey1};
   font-family: ${t.ff.sans};
   font-size: ${t.f(4)};
   font-weight: 600;

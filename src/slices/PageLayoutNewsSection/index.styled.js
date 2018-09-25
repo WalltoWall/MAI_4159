@@ -98,3 +98,18 @@ export const ReadMoreWrapper = styled.div`
   align-items: center;
 `
 
+export const Headline = styled.h2`
+  color: ${t.c.darkgrey1};
+  font-family: ${t.ff.sans};
+  font-size: ${t.f(4)};
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  ${t.mq.m} {
+    font-size: ${t.f(5)};
+  }
+`
+

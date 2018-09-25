@@ -16,6 +16,7 @@ import {
   PostDate,
   ArrowWrapper,
   ReadMoreWrapper,
+  Headline,
 } from './index.styled'
 
 const renderFeatureGrid = ({ alt, key, img, title, url, content, date }) => (
@@ -45,6 +46,7 @@ export const PageLayoutNewsSection = ({ data }) => {
 
   return (
     <Container>
+      <Headline>{get(data, 'primary.title1.text')}</Headline>
       <Content>
         {news_post.map(news_post =>
           renderFeatureGrid({
@@ -70,6 +72,11 @@ export const query = graphql`
         layout {
           ... on PrismicPageLayoutNewsSection {
             id
+            primary {
+              title1 {
+                text
+              }
+            }
             items {
               news_post {
                 document {
