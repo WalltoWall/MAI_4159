@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Image } from 'components/Image'
+import arrow from 'assets/yellow-arrow.svg'
 import { getUnlessEmptyString } from 'helpers'
 import { 
   Content,
@@ -13,6 +14,8 @@ import {
   ReadMore,
   ContentContainer,
   PostDate,
+  ArrowWrapper,
+  ReadMoreWrapper,
 } from './index.styled'
 
 const renderFeatureGrid = ({ alt, key, img, title, url, content, date }) => (
@@ -28,13 +31,17 @@ const renderFeatureGrid = ({ alt, key, img, title, url, content, date }) => (
       <PostDate>{date}</PostDate>
       <PostTitle>{title}</PostTitle> 
       <PostContent>{content}</PostContent>
-      <ReadMore to={url}>Read more</ReadMore>
+      <ReadMoreWrapper>
+        <ReadMore to={url}>Read more</ReadMore>
+        <ArrowWrapper src={arrow} />
+      </ReadMoreWrapper>
     </ContentContainer>
   </StyledLink> 
 )
 
 export const PageLayoutNewsSection = ({ data }) => {
-  const news_post = get(data, 'items')
+  const news_post = get(data, 'items');
+  const date = new Date();
 
   return (
     <Container>
@@ -44,7 +51,7 @@ export const PageLayoutNewsSection = ({ data }) => {
             key: get(news_post, 'news_post.document[0].uid'),
             alt: getUnlessEmptyString(get(news_post, 'news_post.document[0].data.image.alt')),
             img: get(news_post, 'news_post.document[0].data.image.localFile.childImageSharp.fluid'),
-            date: get(news_post, 'news_post.document[0].data.date'),
+            date: date.toDateString(get(news_post, 'news_post.document[0].data.date')),
             title: get(news_post, 'news_post.document[0].data.article_title.text'),
             url: get(news_post, 'news_post.url'),
             content: get(news_post, 'news_post.document[0].data.article_content1.text'),

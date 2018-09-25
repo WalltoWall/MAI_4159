@@ -24,6 +24,12 @@ export const ImageContainer = styled.div`
   }
 `
 
+export const ArrowWrapper = styled.img`
+  display: inline-block;
+  width: 8px;
+  margin: 0 0.8rem;
+`
+
 export const Container = styled.div`
   background-color: ${t.c.lightgrey1};
   margin: 0 auto;
@@ -54,6 +60,7 @@ export const PostTitle = styled.div`
 export const PostContent = styled.div`
   color: ${t.c.darkgrey2};
   font-family: ${t.ff.sans2};
+  line-height: ${t.lh.copy};
   display: block;
   margin-bottom: 1rem;
   width: 100%;
@@ -76,9 +83,9 @@ export const ReadMore = styled(Link)`
   font-family: ${t.ff.sans2};
   font-size: ${t.f(-1)};
   text-transform: uppercase;
-  &:hover {
-    color: ${t.c.yellow};
-  }
+  letter-spacing: 0.05rem;
+  display: inline-block;
+  margin: 0;
 `
 
 export const ContentContainer = styled.div`
@@ -86,4 +93,8 @@ export const ContentContainer = styled.div`
   background-color: ${t.c.lightgrey2};
 `
 
+export const ReadMoreWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`
 
