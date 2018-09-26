@@ -14,6 +14,7 @@ import {
   ClipOverlay,
   InfoContainer,
   ContentContainer,
+  StyledLink,
 } from './index.styled'
 
 const text_truncate = function(str, length, ending) {
@@ -33,7 +34,6 @@ const text_truncate = function(str, length, ending) {
 console.log(text_truncate('We are doing JS string exercises'));
 
 export const PageLayoutLargeSubpageHero = ({ data }) => ( 
-
       <Container>
         <ContentContainer>
           <Content>
@@ -44,6 +44,7 @@ export const PageLayoutLargeSubpageHero = ({ data }) => (
             <InfoContainer>
                 <p>{text_truncate(get(data, 'primary.featured_post.document[0].data.article_content1.text'))}</p>
             </InfoContainer>
+            <StyledLink to={get(data, 'primary.featured_post.url')}>read more</StyledLink>
             <ClipOverlay />
           </Content>
         </ContentContainer>

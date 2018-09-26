@@ -1,8 +1,8 @@
 import styled from 'react-emotion'
 import t from 'theme'
+import { Link } from 'components/Link'
 
 export const Container = styled.div`
-  
   display: flex;
   overflow: hidden;
   position: relative;
@@ -132,6 +132,19 @@ export const InfoContainer = styled.div`
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
+  ${t.mq.l} {
+    text-align: left;
+  } 
+`
+
+export const StyledLink = styled(Link)`
+  font-family: ${t.ff.sans2};
+  font-size: ${t.f(-1)};
+  color: ${t.c.white};
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  display: block;
   ${t.mq.l} {
     text-align: left;
   } 
