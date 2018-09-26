@@ -55,7 +55,7 @@ export const ImageContainer = styled.div`
 export const ClipOverlay = styled.div`
   position: absolute;
   background-color: ${t.c.darkgrey1};
-  top: 50%;
+  top: -20%;
   left: -5%;
   height: 65%;
   width: 120%;
@@ -67,13 +67,12 @@ export const ClipOverlay = styled.div`
     left: -13%;
     height: 133%;
     width: 134%;
-    top: -10%;
+    top: -30%;
   }
   ${t.mq.m} {
     left: -13%;
     height: 116%;
     width: 134%;
-    top: -4%;
   }
   ${t.mq.l} {
     top: -250%;
@@ -102,7 +101,7 @@ export const Title = styled.h1`
   font-weight: 600;
   font-family: ${t.ff.sans};
   letter-spacing: 0.2rem;
-  margin: 0;
+  margin:
   ${t.mq.l} {
     font-size: ${t.f(5)};
   }
@@ -125,14 +124,16 @@ export const SubTitle = styled.h2`
 `
 
 export const InfoContainer = styled.div`
-    font-family: ${t.ff.sans2};
-    font-size: ${t.f(0)};
-    font-weight: 400;
-    color: ${t.c.white};
-    line-height: ${t.lh.copy};
-    display: none;
-    ${t.mq.m} {
-      display: block;
-    }
+  font-family: ${t.ff.sans2};
+  font-size: ${t.f(0)};
+  font-weight: 400;
+  color: ${t.c.white};
+  line-height: ${t.lh.copy};
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  ${t.mq.l} {
+    text-align: left;
+  } 
 `
 
