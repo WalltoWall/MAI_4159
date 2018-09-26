@@ -6,21 +6,28 @@ export const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: top;
+  align-items: flex-start;
   width: 100%;
-  margin: 2rem auto;
+  margin: 0 auto;
   ${t.mq.l} {
     width: 75%;
+    justify-content: flex-start;
+    align-content: flex-start;
+    margin: 2rem auto;
   }
 `
 
 export const ImageContainer = styled.div`  
+  display: none;
   width: 100%;  
   .gatsby-image-outer-wrapper {        
     height: 100%;
   }
   .gatsby-image-wrapper {        
     height: 100%;
+  }
+  ${t.mq.s} {
+    display: block;
   }
 `
 
@@ -33,11 +40,14 @@ export const ArrowWrapper = styled.img`
 export const Container = styled.div`
   background-color: ${t.c.lightgrey1};
   margin: 0 auto;
-  display: block;
-  padding: 4rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+  align-items: left;
   ${t.mq.l} {
-    min-height: 50vh;
-  }
+    align-items: left;
+    padding: 4rem 0;
+  } 
 `
 
 export const PostDate = styled.div`
@@ -71,12 +81,12 @@ export const StyledLink = styled(Link)`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin: 0.5rem 1.2rem;
-  width: 100%;
-  height: 20rem;    
+  margin: 1rem;
+  width: 100%; 
   ${t.mq.m} {
     width: 30%;
     height: auto;
+    margin: 1rem 1rem 2rem 1rem;
   }
 `
 export const ReadMore = styled(Link)`
@@ -107,6 +117,7 @@ export const Headline = styled.h2`
   margin-bottom: 0;
   text-align: center;
   text-transform: uppercase;
+  width: 100%;
   letter-spacing: 1px;
   ${t.mq.m} {
     font-size: ${t.f(5)};
