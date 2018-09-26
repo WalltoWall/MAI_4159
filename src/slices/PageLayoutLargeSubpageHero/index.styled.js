@@ -101,7 +101,7 @@ export const Title = styled.h1`
   font-weight: 600;
   font-family: ${t.ff.sans};
   letter-spacing: 0.2rem;
-  margin:
+  margin: 0;
   ${t.mq.l} {
     font-size: ${t.f(5)};
   }
