@@ -19,6 +19,7 @@ import { PageLayoutFeatureList } from 'slices/PageLayoutFeatureList'
 import { PageLayoutTextBlock } from 'slices/PageLayoutTextBlock'
 import { PageLayoutLargeSubpageHero } from 'slices/PageLayoutLargeSubpageHero'
 import { PageLayoutNewsSection } from 'slices/PageLayoutNewsSection'
+import { PageLayoutAnchor } from 'slices/PageLayoutAnchor'
 
 
 const PageTemplate = ({ data }) => (
@@ -43,6 +44,7 @@ const PageTemplate = ({ data }) => (
           PageLayoutTextBlock,
           PageLayoutLargeSubpageHero,
           PageLayoutNewsSection,
+          PageLayoutAnchor,
         }}
         page={get(data, 'prismicPage')}
         rootData={data}
@@ -78,5 +80,6 @@ export const query = graphql`
     ...PageLayoutTextBlock
     ...PageLayoutLargeSubpageHero
     ...PageLayoutNewsSection
+    ...PageLayoutAnchor
   }
 `

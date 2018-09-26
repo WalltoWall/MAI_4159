@@ -99,7 +99,7 @@ export const ReadMore = styled(Link)`
 `
 
 export const ContentContainer = styled.div`
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: ${t.c.lightgrey2};
 `
 

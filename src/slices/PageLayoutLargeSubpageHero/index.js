@@ -16,6 +16,22 @@ import {
   ContentContainer,
 } from './index.styled'
 
+const text_truncate = function(str, length, ending) {
+    if (length == null) {
+      length = 160;
+    }
+    if (ending == null) {
+      ending = '...';
+    }
+    if (str.length > length) {
+      return str.substring(0, length - ending.length) + ending;
+    } else {
+      return str;
+    }
+  };
+
+console.log(text_truncate('We are doing JS string exercises'));
+
 export const PageLayoutLargeSubpageHero = ({data}) => (   
       <Container>
         <ContentContainer>
@@ -25,7 +41,7 @@ export const PageLayoutLargeSubpageHero = ({data}) => (
               <Title>{get(data, 'primary.article_title.text')}</Title>
             </Header>
             <InfoContainer>
-                <p>{get(data, 'primary.article_summary.text')}</p>
+                <p>{text_truncate(get(data, 'primary.article_summary.text'))}</p>
             </InfoContainer>
             <ClipOverlay />
           </Content>

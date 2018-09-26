@@ -32,8 +32,9 @@ export const Content = styled.div`
   bottom: 0;
   width: 100%;
   padding: 0 2rem 2rem 2rem;
+  background-color: ${t.c.darkgrey1};
   ${t.mq.l} {
-    padding: 0 2rem 3rem 3.5rem;    
+    padding: 0 0 3rem 3.5rem;    
   }
   ${t.mq.x} {    
   }
@@ -81,10 +82,10 @@ export const ClipOverlay = styled.div`
     width: 135%;
   }
   ${t.mq.x} {
-    top: -266%;
-    left: -24%;
-    height: 387%;
-    width: 133%;
+    top: -400%;
+    left: -50%;
+    height: 600%;
+    width: 180%;
   } 
 `
 export const Header = styled.div`
@@ -101,6 +102,7 @@ export const Title = styled.h1`
   font-weight: 600;
   font-family: ${t.ff.sans};
   letter-spacing: 0.2rem;
+  margin: 0;
   ${t.mq.l} {
     font-size: ${t.f(5)};
   }
@@ -128,5 +130,9 @@ export const InfoContainer = styled.div`
     font-weight: 400;
     color: ${t.c.white};
     line-height: ${t.lh.copy};
+    display: none;
+    ${t.mq.m} {
+      display: block;
+    }
 `
 
