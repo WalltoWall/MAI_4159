@@ -3,7 +3,7 @@ import t from 'theme'
 
 export const ImageContainer = styled.div`
   position: relative;
-  height: 300px;
+  height: 310px;
   overflow: hidden;
   background-color: ${t.c.darkgrey1};
   .gatsby-image-outer-wrapper {
