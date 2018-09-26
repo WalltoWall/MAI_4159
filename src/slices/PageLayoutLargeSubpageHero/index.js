@@ -32,24 +32,25 @@ const text_truncate = function(str, length, ending) {
 
 console.log(text_truncate('We are doing JS string exercises'));
 
-export const PageLayoutLargeSubpageHero = ({data}) => (   
+export const PageLayoutLargeSubpageHero = ({ data }) => ( 
+
       <Container>
         <ContentContainer>
           <Content>
             <Header>
               <SubTitle>Featured news</SubTitle>
-              <Title>{get(data, 'primary.article_title.text')}</Title>
+              <Title>{get(data, 'primary.featured_post.document[0].data.article_title.text')}</Title>
             </Header>
             <InfoContainer>
-                <p>{text_truncate(get(data, 'primary.article_summary.text'))}</p>
+                <p>{text_truncate(get(data, 'primary.featured_post.document[0].data.article_content1.text'))}</p>
             </InfoContainer>
             <ClipOverlay />
           </Content>
         </ContentContainer>
         <ImageContainer>
            <Image 
-            alt={getUnlessEmptyString(data, 'primary.image.alt')}     
-            fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')} 
+            alt={getUnlessEmptyString(data, 'primary.featured_post.document[0].data.image.alt')}     
+            fluid={get(data, 'primary.featured_post.document[0].data.image.localFile.childImageSharp.fluid')} 
             fadeIn={false}        
           />
         </ImageContainer>
@@ -65,21 +66,30 @@ export const query = graphql`
           ... on PrismicPageLayoutLargeSubpageHero {
             id
             primary {
-              article_title {
-                text
-              }
-              article_summary {
-                text
-              }
-              image {                
-                alt
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 2000, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp_noBase64
+              featured_post {
+                document {
+                  data {
+                    date
+                    article_title {
+                      text
+                    }
+                    article_content1 {
+                      text
+                    }
+                    image {                
+                      alt
+                      localFile {
+                        childImageSharp {
+                          fluid(maxWidth: 500, quality: 90) {
+                            ...GatsbyImageSharpFluid_withWebp_noBase64
+                          }
+                        }
+                      }
                     }
                   }
-                }              
+                  uid
+                }
+                url
               }
             }
           }
