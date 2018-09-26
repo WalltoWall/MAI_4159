@@ -33,7 +33,7 @@ const text_truncate = function(str, length, ending) {
 
 console.log(text_truncate('We are doing JS string exercises'));
 
-export const PageLayoutLargeSubpageHero = ({ data }) => ( 
+export const PageLayoutNewsPageHero = ({ data }) => ( 
       <Container>
         <ContentContainer>
           <Content>
@@ -60,11 +60,11 @@ export const PageLayoutLargeSubpageHero = ({ data }) => (
     )
 
 export const query = graphql`
-  fragment PageLayoutLargeSubpageHero on Query {
+  fragment PageLayoutNewsPageHero on Query {
     prismicPage(id: { eq: $id }) {
       data {
         layout {
-          ... on PrismicPageLayoutLargeSubpageHero {
+          ... on PrismicPageLayoutNewsPageHero {
             id
             primary {
               featured_post {
