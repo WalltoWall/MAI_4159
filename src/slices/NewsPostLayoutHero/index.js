@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-import { MobileNavOverlay } from 'components/Header/Mobile.styled'
 import { getUnlessEmptyString } from 'helpers'
 import { Image } from 'components/Image'
 import {

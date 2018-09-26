@@ -17,28 +17,12 @@ export const Container = styled.div`
   }
 `
 
-export const HeadlineWrapper = styled.div`
-  font-family: ${t.ff.sans};
-  text-transform: uppercase;
-  text-align: center;
-  position: relative;
-  font-weight: 600;
-  display: block;
+export const ImageContainer = styled.div`
   width: 100%;
-  background-color: ${t.c.darkgrey1};
-  padding: 2rem;
-  z-index: 2;
-  -webkit-transform: rotate(-7deg) translate(0, -50px) scale(1.2);
-  -ms-transform: rotate(-7deg) translate(0, -50px) scale(1.2);
-  transform: rotate(-7deg) translate(0, -50px) scale(1.2);
-
-  ${t.mq.l} {
-    position: absolute;
-    margin-left: 2rem;
-    width: auto;
-    background-color: transparent;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
+  position: relative;
+  overflow: hidden;
+  .gatsby-image-outer-wrapper,
+  .gatsby-image-wrapper {
+    height: 100%;    
   }
 `
