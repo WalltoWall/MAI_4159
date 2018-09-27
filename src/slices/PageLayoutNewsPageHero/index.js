@@ -31,8 +31,6 @@ const text_truncate = function(str, length, ending) {
     }
   };
 
-console.log(text_truncate('We are doing JS string exercises'));
-
 export const PageLayoutNewsPageHero = ({ data }) => ( 
       <Container>
         <ContentContainer>

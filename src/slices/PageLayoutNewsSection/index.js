@@ -63,7 +63,7 @@ export const PageLayoutNewsSection = ({ data }) => {
           )}
         </Content>
       </Container>
-      <Button to={get(data, 'primary.button.url')}>See more</Button>
+      <Button to={get(data, 'primary.button.url')}>view more news</Button>
     </SectionContainer>
   )
 }
