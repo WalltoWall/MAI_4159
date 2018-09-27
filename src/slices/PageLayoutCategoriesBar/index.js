@@ -14,6 +14,7 @@ import {
   linkActiveClassName,
   NavArrow,
 } from './index.styled'
+import { PageLayoutAnchor } from 'slices/PageLayoutAnchor'
 
 export class PageLayoutCategoriesBar extends React.Component {
   constructor(props) {
@@ -45,7 +46,7 @@ export class PageLayoutCategoriesBar extends React.Component {
               key={get(item, 'name.text')}
               to={get(item, 'url1.url', '/')}
             >
-              {get(item, 'name.text')}
+            {get(item, 'name.text')}
             </StyledLink>
           ))}
         </Desktop>
@@ -64,6 +65,7 @@ export class PageLayoutCategoriesBar extends React.Component {
                     onClick={(e) => this.updateCurrentFilter(e, get(item, 'name.text'))}
                   >
                     {get(item, 'name.text')}
+                  }
                   </StyledLink>
                 ))}
               </FilterBox>

@@ -9,7 +9,6 @@ import { Layout } from 'components/Layout'
 import { PageLayoutHero } from 'slices/PageLayoutHero'
 import { PageLayoutProjectBoxes } from 'slices/PageLayoutProjectBoxes'
 import { PageLayoutSplitPanels } from 'slices/PageLayoutSplitPanels'
-import { PageLayoutCards } from 'slices/PageLayoutCards'
 import { PageLayoutCategoriesBar } from 'slices/PageLayoutCategoriesBar'
 import { PageLayoutSubPageHero } from 'slices/PageLayoutSubPageHero'
 import { PageLayoutPortfolioGridTop } from 'slices/PageLayoutPortfolioGridTop'
@@ -18,7 +17,9 @@ import { PageLayoutCtaBar } from 'slices/PageLayoutCtaBar'
 import { PageLayoutServices } from 'slices/PageLayoutServices'
 import { PageLayoutFeatureList } from 'slices/PageLayoutFeatureList'
 import { PageLayoutTextBlock } from 'slices/PageLayoutTextBlock'
-import { PageLayoutLargeSubpageHero } from 'slices/PageLayoutLargeSubpageHero'
+import { PageLayoutNewsPageHero } from 'slices/PageLayoutNewsPageHero'
+import { PageLayoutNewsSection } from 'slices/PageLayoutNewsSection'
+import { PageLayoutAnchor } from 'slices/PageLayoutAnchor'
 
 
 const PageTemplate = ({ data }) => (
@@ -33,7 +34,6 @@ const PageTemplate = ({ data }) => (
           PageLayoutHero,
           PageLayoutProjectBoxes,
           PageLayoutSplitPanels,
-          PageLayoutCards,
           PageLayoutCategoriesBar,
           PageLayoutSubPageHero,
           PageLayoutPortfolioGridTop,
@@ -42,7 +42,9 @@ const PageTemplate = ({ data }) => (
           PageLayoutServices,
           PageLayoutFeatureList,
           PageLayoutTextBlock,
-          PageLayoutLargeSubpageHero
+          PageLayoutNewsPageHero,
+          PageLayoutNewsSection,
+          PageLayoutAnchor,
         }}
         page={get(data, 'prismicPage')}
         rootData={data}
@@ -68,7 +70,6 @@ export const query = graphql`
     ...PageLayoutHero
     ...PageLayoutProjectBoxes
     ...PageLayoutSplitPanels
-    ...PageLayoutCards
     ...PageLayoutSubPageHero
     ...PageLayoutCategoriesBar
     ...PageLayoutPortfolioGridTop
@@ -77,6 +78,8 @@ export const query = graphql`
     ...PageLayoutServices
     ...PageLayoutFeatureList
     ...PageLayoutTextBlock
-    ...PageLayoutLargeSubpageHero
+    ...PageLayoutNewsPageHero
+    ...PageLayoutNewsSection
+    ...PageLayoutAnchor
   }
 `

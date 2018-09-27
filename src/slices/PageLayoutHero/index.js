@@ -19,7 +19,6 @@ import {
 } from './index.styled'
 
 export const PageLayoutHero = ({data}) => (    
-  <>
     <Container>
       <ImageContainer>
         <Gradient />
@@ -55,7 +54,6 @@ export const PageLayoutHero = ({data}) => (
       </Overlay>
       <MobileNavOverlay/>              
     </Container>      
-  </>
 )
 
 export const query = graphql`

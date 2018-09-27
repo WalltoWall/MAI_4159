@@ -1,8 +1,8 @@
 import styled from 'react-emotion'
 import t from 'theme'
+import { Link } from 'components/Link'
 
 export const Container = styled.div`
-  
   display: flex;
   overflow: hidden;
   position: relative;
@@ -32,8 +32,9 @@ export const Content = styled.div`
   bottom: 0;
   width: 100%;
   padding: 0 2rem 2rem 2rem;
+  background-color: ${t.c.darkgrey1};
   ${t.mq.l} {
-    padding: 0 2rem 3rem 3.5rem;    
+    padding: 0 0 3rem 3.5rem;    
   }
   ${t.mq.x} {    
   }
@@ -54,7 +55,7 @@ export const ImageContainer = styled.div`
 export const ClipOverlay = styled.div`
   position: absolute;
   background-color: ${t.c.darkgrey1};
-  top: 50%;
+  top: -20%;
   left: -5%;
   height: 65%;
   width: 120%;
@@ -66,13 +67,12 @@ export const ClipOverlay = styled.div`
     left: -13%;
     height: 133%;
     width: 134%;
-    top: -10%;
+    top: -30%;
   }
   ${t.mq.m} {
     left: -13%;
     height: 116%;
     width: 134%;
-    top: -4%;
   }
   ${t.mq.l} {
     top: -250%;
@@ -81,10 +81,10 @@ export const ClipOverlay = styled.div`
     width: 135%;
   }
   ${t.mq.x} {
-    top: -266%;
-    left: -24%;
-    height: 387%;
-    width: 133%;
+    top: -400%;
+    left: -50%;
+    height: 600%;
+    width: 180%;
   } 
 `
 export const Header = styled.div`
@@ -101,6 +101,7 @@ export const Title = styled.h1`
   font-weight: 600;
   font-family: ${t.ff.sans};
   letter-spacing: 0.2rem;
+  margin: 0;
   ${t.mq.l} {
     font-size: ${t.f(5)};
   }
@@ -123,10 +124,29 @@ export const SubTitle = styled.h2`
 `
 
 export const InfoContainer = styled.div`
-    font-family: ${t.ff.sans2};
-    font-size: ${t.f(0)};
-    font-weight: 400;
-    color: ${t.c.white};
-    line-height: ${t.lh.copy};
+  font-family: ${t.ff.sans2};
+  font-size: ${t.f(0)};
+  font-weight: 400;
+  color: ${t.c.white};
+  line-height: ${t.lh.copy};
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  ${t.mq.l} {
+    text-align: left;
+  } 
+`
+
+export const StyledLink = styled(Link)`
+  font-family: ${t.ff.sans2};
+  font-size: ${t.f(-1)};
+  color: ${t.c.white};
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  display: block;
+  ${t.mq.l} {
+    text-align: left;
+  } 
 `
 

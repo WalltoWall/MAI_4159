@@ -29,6 +29,14 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allPrismicNewsPost {
+        edges {
+          node {
+            id
+            uid
+          }
+        }
+      }
     }
   `)
 
@@ -56,5 +64,9 @@ exports.createPages = async ({ graphql, actions }) => {
   if (result.data.allPrismicProject) {
     let results = result.data.allPrismicProject
     createPrismicPage(results, 'project')
+  }
+  if (result.data.allPrismicNewsPost) {
+    let results = result.data.allPrismicNewsPost
+    createPrismicPage(results, 'news_post')
   }
 }
