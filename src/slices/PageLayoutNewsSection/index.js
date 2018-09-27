@@ -4,6 +4,7 @@ import { get } from 'lodash'
 import { Image } from 'components/Image'
 import arrow from 'assets/yellow-arrow.svg'
 import { getUnlessEmptyString } from 'helpers'
+import { Button } from 'components/Button'
 import { 
   Content,
   Container,
@@ -17,6 +18,7 @@ import {
   ArrowWrapper,
   ReadMoreWrapper,
   Headline,
+  SectionContainer,
 } from './index.styled'
 
 const renderFeatureGrid = ({ alt, key, img, title, url, content, date }) => (
@@ -44,22 +46,25 @@ export const PageLayoutNewsSection = ({ data }) => {
   const news_post = get(data, 'items');
 
   return (
-    <Container>
-      <Headline>{get(data, 'primary.title1.text')}</Headline>
-      <Content>
-        {news_post.map(news_post =>
-          renderFeatureGrid({
-            key: get(news_post, 'news_post.document[0].uid'),
-            alt: getUnlessEmptyString(get(news_post, 'news_post.document[0].data.image.alt')),
-            img: get(news_post, 'news_post.document[0].data.image.localFile.childImageSharp.fluid'),
-            date: get(news_post, 'news_post.document[0].data.date'),
-            title: get(news_post, 'news_post.document[0].data.article_title.text'),
-            url: get(news_post, 'news_post.url'),
-            content: get(news_post, 'news_post.document[0].data.article_content1.text'),
-          })
-        )}
-      </Content>
-    </Container>
+    <SectionContainer>
+    <Headline>{get(data, 'primary.title1.text')}</Headline>
+      <Container>
+        <Content>
+          {news_post.map(news_post =>
+            renderFeatureGrid({
+              key: get(news_post, 'news_post.document[0].uid'),
+              alt: getUnlessEmptyString(get(news_post, 'news_post.document[0].data.image.alt')),
+              img: get(news_post, 'news_post.document[0].data.image.localFile.childImageSharp.fluid'),
+              date: get(news_post, 'news_post.document[0].data.date'),
+              title: get(news_post, 'news_post.document[0].data.article_title.text'),
+              url: get(news_post, 'news_post.url'),
+              content: get(news_post, 'news_post.document[0].data.article_content1.text'),
+            })
+          )}
+        </Content>
+      </Container>
+      <Button to={get(data, 'primary.button.url')}>See more</Button>
+    </SectionContainer>
   )
 }
 
@@ -74,6 +79,9 @@ export const query = graphql`
             primary {
               title1 {
                 text
+              }
+              button {
+                url
               }
             }
             items {

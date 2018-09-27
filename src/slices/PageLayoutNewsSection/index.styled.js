@@ -13,7 +13,7 @@ export const Content = styled.div`
     width: 75%;
     justify-content: flex-start;
     align-content: flex-start;
-    margin: 2rem auto;
+    margin-top: 2rem;
   }
 `
 
@@ -37,16 +37,23 @@ export const ArrowWrapper = styled.img`
   margin: 0 0.8rem;
 `
 
-export const Container = styled.div`
+export const SectionContainer = styled.div`
   background-color: ${t.c.lightgrey1};
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
   padding: 2rem 0;
   align-items: left;
   ${t.mq.l} {
-    align-items: left;
     padding: 4rem 0;
+  } 
+`
+
+export const Container = styled.div`
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: left;
+  ${t.mq.l} {
+    align-items: left;
   } 
 `
 
@@ -117,7 +124,6 @@ export const Headline = styled.h2`
   margin-bottom: 0;
   text-align: center;
   text-transform: uppercase;
-  width: 100%;
   letter-spacing: 1px;
   ${t.mq.m} {
     font-size: ${t.f(5)};
