@@ -49,9 +49,7 @@ const renderSearchResult = ({query, queryType, results}) => (
   </SearchResults>
 )
 
-const SearchProject = ({ data }) => {
-  console.log("xxxxxx")
-  return (
+const SearchProject = ({ data }) => (
     <Layout>
       <Location>
         {({ location }) => (
@@ -106,7 +104,7 @@ const SearchProject = ({ data }) => {
         )} 
       </Location>
     </Layout>
-  )}
+  )
   
 
 export default SearchProject

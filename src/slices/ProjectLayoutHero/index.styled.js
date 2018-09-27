@@ -59,8 +59,7 @@ export const StyledCarousel = styled(Carousel)`
   }
   ${t.mq.l} {
     width: 75% !important;
-  }
-  
+  }  
 `
 export const ImageContainer = styled.div`
   width: 100%;
