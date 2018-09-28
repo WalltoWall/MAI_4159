@@ -24,7 +24,7 @@ export const CtaHeaderClassName = css`
     letter-spacing: 0.1rem;
     ${t.mq.l} {
       ${t.s(3)};
-     }
+    }
   }
   p {
     font-family: ${t.ff.sans2};

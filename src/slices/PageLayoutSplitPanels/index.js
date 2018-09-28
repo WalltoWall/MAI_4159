@@ -5,7 +5,7 @@ import { Image } from 'components/Image'
 import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
-  Headline,  
+  Headline,
   Description,
   DescriptionWrapper,
   SplitPanelWrapper,
@@ -21,11 +21,11 @@ export const PageLayoutSplitPanels = ({ data }) => (
       <Link to={get(item, 'link.url')}>
         <SplitPanelWrapper>
           <ImageContainer>
-            <Image               
-              key = {get(item, 'title1')}
-              fluid = {get(item, 'image.localFile.childImageSharp.fluid')}
-              alt = {getUnlessEmptyString(get(item, 'image.alt'))}                                      
-              fadeIn= {false}      
+            <Image
+              key={get(item, 'title1')}
+              fluid={get(item, 'image.localFile.childImageSharp.fluid')}
+              alt={getUnlessEmptyString(get(item, 'image.alt'))}
+              fadeIn={false}
             />
           </ImageContainer>
           <DescriptionWrapper>
@@ -53,7 +53,7 @@ export const query = graphql`
           ... on PrismicPageLayoutSplitPanels {
             id
             items {
-              image {                
+              image {
                 alt
                 localFile {
                   childImageSharp {

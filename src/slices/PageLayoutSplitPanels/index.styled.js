@@ -1,6 +1,6 @@
 import styled from 'react-emotion'
 import t from 'theme'
-import {Button} from 'components/Button'
+import { Button } from 'components/Button'
 
 export const Container = styled.div`
   align-items: center;
@@ -77,7 +77,7 @@ export const ImageContainer = styled.div`
   overflow: hidden;
   .gatsby-image-outer-wrapper,
   .gatsby-image-wrapper {
-    height: 100%;    
+    height: 100%;
   }
   height: 400px;
   ${t.mq.l} {
@@ -87,7 +87,6 @@ export const ImageContainer = styled.div`
     clip-path: polygon(0 0, 100% 0, 100% 100%, 3% 100%);
   }
 `
-
 
 export const Content = styled.div`
   max-width: none;

@@ -12,16 +12,16 @@ import {
 
 const renderGrid = data => (
   <>
-  <ImageContainer>
-    <Image 
-      alt={data.image.alt}
-      fluid={data.image.localFile.childImageSharp.fluid}
-      fadeIn={false}
-    />
-  </ImageContainer>
-  <OverlayContainer> 
-    <Title>{data.title.text}</Title>
-  </OverlayContainer>
+    <ImageContainer>
+      <Image
+        alt={data.image.alt}
+        fluid={data.image.localFile.childImageSharp.fluid}
+        fadeIn={false}
+      />
+    </ImageContainer>
+    <OverlayContainer>
+      <Title>{data.title.text}</Title>
+    </OverlayContainer>
   </>
 )
 
@@ -34,12 +34,12 @@ export const PageLayoutPortfolioGridBottom = ({ data }) => {
   // }
 
   return (
-    <Container>      
+    <Container>
       {projects.map(item => (
         <StyledLink to={get(item, 'project.url')}>
           {renderGrid(get(item, 'project.document[0].data'))}
         </StyledLink>
-      ))}      
+      ))}
     </Container>
   )
 }
@@ -57,7 +57,7 @@ export const query = graphql`
                     title {
                       text
                     }
-                    image {                
+                    image {
                       alt
                       localFile {
                         childImageSharp {

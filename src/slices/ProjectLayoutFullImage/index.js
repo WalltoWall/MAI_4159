@@ -9,10 +9,10 @@ export const ProjectLayoutFullImage = ({ data }) => (
   <Container>
     <Content>
       <ImageContainer>
-        <Image 
-          alt={getUnlessEmptyString(data, 'primary.image.alt')}     
-          fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')} 
-          fadeIn={false}  
+        <Image
+          alt={getUnlessEmptyString(data, 'primary.image.alt')}
+          fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
+          fadeIn={false}
         />
       </ImageContainer>
       <p>{get(data, 'primary.caption.text')}</p>
@@ -27,7 +27,7 @@ export const query = graphql`
           ... on PrismicProjectLayoutFullImage {
             id
             primary {
-              image {                
+              image {
                 alt
                 localFile {
                   childImageSharp {

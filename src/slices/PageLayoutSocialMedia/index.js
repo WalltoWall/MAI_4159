@@ -7,7 +7,6 @@ import {
   Container,
   Content,
   ImageContainer,
-  Title,
 } from './index.styled'
 
 export const PageLayoutSocialMedia = ({ data }) => (

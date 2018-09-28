@@ -17,13 +17,13 @@ export const Content = styled.div`
   }
 `
 
-export const ImageContainer = styled.div`  
+export const ImageContainer = styled.div`
   display: none;
-  width: 100%;  
-  .gatsby-image-outer-wrapper {        
+  width: 100%;
+  .gatsby-image-outer-wrapper {
     height: 100%;
   }
-  .gatsby-image-wrapper {        
+  .gatsby-image-wrapper {
     height: 100%;
   }
   ${t.mq.s} {
@@ -44,7 +44,7 @@ export const SectionContainer = styled.div`
   align-items: left;
   ${t.mq.l} {
     padding: 4rem 0;
-  } 
+  }
 `
 
 export const Container = styled.div`
@@ -54,7 +54,7 @@ export const Container = styled.div`
   align-items: left;
   ${t.mq.l} {
     align-items: left;
-  } 
+  }
 `
 
 export const PostDate = styled.div`
@@ -83,13 +83,13 @@ export const PostContent = styled.div`
   width: 100%;
 `
 
-export const StyledLink = styled(Link)`     
+export const StyledLink = styled(Link)`
   position: relative;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   margin: 1rem;
-  width: 100%; 
+  width: 100%;
   ${t.mq.m} {
     width: 30%;
     height: auto;
@@ -129,4 +129,3 @@ export const Headline = styled.h2`
     font-size: ${t.f(5)};
   }
 `
-

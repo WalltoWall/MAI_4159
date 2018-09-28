@@ -39,7 +39,7 @@ export const SearchBar = ({ query = '', onSubmit = noop }) => (
             <SearchButton
               type="submit"
               ariaLabel="Search"
-              disabled={isSubmitting}              
+              disabled={isSubmitting}
             >
               <SearchButtonIcon />
             </SearchButton>

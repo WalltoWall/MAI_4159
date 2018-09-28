@@ -5,7 +5,7 @@ import { Image } from 'components/Image'
 import arrow from 'assets/yellow-arrow.svg'
 import { getUnlessEmptyString } from 'helpers'
 import { Button } from 'components/Button'
-import { 
+import {
   Content,
   Container,
   ImageContainer,
@@ -24,41 +24,48 @@ import {
 const renderFeatureGrid = ({ alt, key, img, title, url, content, date }) => (
   <StyledLink to={url} key={key}>
     <ImageContainer>
-      <Image        
-        fluid={img}
-        alt={alt} 
-        fadeIn={false}         
-      />
+      <Image fluid={img} alt={alt} fadeIn={false} />
     </ImageContainer>
     <ContentContainer>
       <PostDate>{date}</PostDate>
-      <PostTitle>{title}</PostTitle> 
+      <PostTitle>{title}</PostTitle>
       <PostContent>{content}</PostContent>
       <ReadMoreWrapper>
         <ReadMore to={url}>Read more</ReadMore>
         <ArrowWrapper src={arrow} />
       </ReadMoreWrapper>
     </ContentContainer>
-  </StyledLink> 
+  </StyledLink>
 )
 
 export const PageLayoutNewsSection = ({ data }) => {
-  const news_post = get(data, 'items');
+  const news_post = get(data, 'items')
 
   return (
     <SectionContainer>
-    <Headline>{get(data, 'primary.title1.text')}</Headline>
+      <Headline>{get(data, 'primary.title1.text')}</Headline>
       <Container>
         <Content>
           {news_post.map(news_post =>
             renderFeatureGrid({
               key: get(news_post, 'news_post.document[0].uid'),
-              alt: getUnlessEmptyString(get(news_post, 'news_post.document[0].data.image.alt')),
-              img: get(news_post, 'news_post.document[0].data.image.localFile.childImageSharp.fluid'),
+              alt: getUnlessEmptyString(
+                get(news_post, 'news_post.document[0].data.image.alt')
+              ),
+              img: get(
+                news_post,
+                'news_post.document[0].data.image.localFile.childImageSharp.fluid'
+              ),
               date: get(news_post, 'news_post.document[0].data.date'),
-              title: get(news_post, 'news_post.document[0].data.article_title.text'),
+              title: get(
+                news_post,
+                'news_post.document[0].data.article_title.text'
+              ),
               url: get(news_post, 'news_post.url'),
-              content: get(news_post, 'news_post.document[0].data.article_content1.text'),
+              content: get(
+                news_post,
+                'news_post.document[0].data.article_content1.text'
+              ),
             })
           )}
         </Content>
@@ -67,7 +74,6 @@ export const PageLayoutNewsSection = ({ data }) => {
     </SectionContainer>
   )
 }
-
 
 export const query = graphql`
   fragment PageLayoutNewsSection on Query {
@@ -95,7 +101,7 @@ export const query = graphql`
                     article_content1 {
                       text
                     }
-                    image {                
+                    image {
                       alt
                       localFile {
                         childImageSharp {

@@ -29,15 +29,19 @@ export class ProjectLayoutHero extends React.Component {
       window.dispatchEvent(new Event('resize'))
     }, 0)
   }
-  
+
   render() {
     return (
       <Container>
         <ContentContainer>
           <Content>
             <Header>
-              <Title>{get(this.props.data, 'primary.project_title.text')}</Title>
-              <SubTitle>{get(this.props.data, 'primary.project_subtitle.text')}</SubTitle>
+              <Title>
+                {get(this.props.data, 'primary.project_title.text')}
+              </Title>
+              <SubTitle>
+                {get(this.props.data, 'primary.project_subtitle.text')}
+              </SubTitle>
             </Header>
             <InfoContainer>
               <InfoLine />
@@ -55,18 +59,15 @@ export class ProjectLayoutHero extends React.Component {
             <ClipOverlay />
           </Content>
         </ContentContainer>
-        <StyledCarousel
-          autoplay={true}
-          frameOverflow="show"        
-        >
-          {get(this.props.data, 'items').map(item => (  
+        <StyledCarousel autoplay={true} frameOverflow="show">
+          {get(this.props.data, 'items').map(item => (
             <ImageContainer key={getUnlessEmptyString(item, 'image.alt')}>
-              <Image         
-                alt={getUnlessEmptyString(item, 'image.alt')}     
-                fluid={get(item, 'image.localFile.childImageSharp.fluid')} 
-                fadeIn={false}        
-              />      
-            </ImageContainer>      
+              <Image
+                alt={getUnlessEmptyString(item, 'image.alt')}
+                fluid={get(item, 'image.localFile.childImageSharp.fluid')}
+                fadeIn={false}
+              />
+            </ImageContainer>
           ))}
         </StyledCarousel>
         <MobileNavOverlay />
@@ -95,8 +96,8 @@ export const query = graphql`
                 text
               }
             }
-            items {              
-              image {                
+            items {
+              image {
                 alt
                 localFile {
                   childImageSharp {
@@ -104,7 +105,7 @@ export const query = graphql`
                       ...GatsbyImageSharpFluid_withWebp_noBase64
                     }
                   }
-                }              
+                }
               }
             }
           }

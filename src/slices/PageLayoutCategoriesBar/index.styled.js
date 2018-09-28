@@ -52,23 +52,23 @@ export const CurrentFilter = styled.h2`
 `
 
 export const StyledLink = styled(Link)`
-    z-index: 2;
-    padding: 0 1rem;
-    margin: 0 2rem;
-    font-family: ${t.ff.sans2};
-    letter-spacing: 0.1rem;
-    -webkit-transition: color .2s ease-in;
-    -moz-transition: color .2s ease-in;
-    -o-transition: color .2s ease-in;
-    transition: color .2s ease-in;
-    &:hover {
-      color: ${t.c.yellow};
-    }
-    &:last-child {
-      border-left: 1px solid white;
-      padding-left: 3rem;
-      margin-left: 0;
-    }
+  z-index: 2;
+  padding: 0 1rem;
+  margin: 0 2rem;
+  font-family: ${t.ff.sans2};
+  letter-spacing: 0.1rem;
+  -webkit-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -o-transition: color 0.2s ease-in;
+  transition: color 0.2s ease-in;
+  &:hover {
+    color: ${t.c.yellow};
+  }
+  &:last-child {
+    border-left: 1px solid white;
+    padding-left: 3rem;
+    margin-left: 0;
+  }
 `
 
 export const navItemClassName = css`
@@ -80,10 +80,10 @@ export const navItemClassName = css`
   font-weight: 600;
   font-family: ${t.ff.sans2};
   letter-spacing: 0.1rem;
-    -webkit-transition: color .2s ease-in;
-    -moz-transition: color .2s ease-in;
-    -o-transition: color .2s ease-in;
-    transition: color .2s ease-in;
+  -webkit-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -o-transition: color 0.2s ease-in;
+  transition: color 0.2s ease-in;
   &:hover {
     color: ${t.c.yellow};
   }
@@ -96,7 +96,7 @@ export const linkActiveClassName = css`
 export const NavArrow = styled(HoverArrowSVG)`
   flex-shrink: 0;
   height: 1.2rem;
-  transform: ${p => p.active ? 'rotate(90deg)' : 'rotate(0deg)'};
+  transform: ${p => (p.active ? 'rotate(90deg)' : 'rotate(0deg)')};
   position: relative;
   z-index: 1;
   display: inline-block;

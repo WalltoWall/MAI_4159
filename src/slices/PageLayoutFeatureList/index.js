@@ -12,23 +12,18 @@ import {
   ImageContainer,
   OverlayContainer,
 } from './index.styled'
-import {Button} from 'components/Button'
+import { Button } from 'components/Button'
 
-const renderFeatureGrid = ({ alt, key, img, title, url }) => ( 
+const renderFeatureGrid = ({ alt, key, img, title, url }) => (
   <StyledLink to={url} key={key}>
     <ImageContainer>
-      <Image        
-        fluid={img}
-        alt={alt} 
-        fadeIn={false}         
-      />
+      <Image fluid={img} alt={alt} fadeIn={false} />
     </ImageContainer>
     <OverlayContainer>
       <Title>{title}</Title>
     </OverlayContainer>
-  </StyledLink>  
+  </StyledLink>
 )
-
 
 export const PageLayoutFeatureList = ({ data }) => {
   const featuredType = get(data, 'primary.feature_type')
@@ -41,8 +36,13 @@ export const PageLayoutFeatureList = ({ data }) => {
         {projects.map(project =>
           renderFeatureGrid({
             key: get(project, 'projects.document[0].uid'),
-            alt: getUnlessEmptyString(get(project, 'projects.document[0].data.image.alt')),
-            img: get(project, 'projects.document[0].data.image.localFile.childImageSharp.fluid'),
+            alt: getUnlessEmptyString(
+              get(project, 'projects.document[0].data.image.alt')
+            ),
+            img: get(
+              project,
+              'projects.document[0].data.image.localFile.childImageSharp.fluid'
+            ),
             title: get(project, 'projects.document[0].data.title.text'),
             url: get(project, 'projects.url'),
           })
@@ -67,7 +67,7 @@ export const query = graphql`
                     title {
                       text
                     }
-                    image {                
+                    image {
                       alt
                       localFile {
                         childImageSharp {

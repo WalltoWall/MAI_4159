@@ -38,7 +38,6 @@ export const RightColumn = styled.div`
   ${t.mq.x} {
     width: 35%;
   }
-  
 `
 
 export const StyledHtmlClassName = css`

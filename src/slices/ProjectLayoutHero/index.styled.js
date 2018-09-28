@@ -1,29 +1,27 @@
 import styled from 'react-emotion'
 import { css } from 'emotion'
-import Carousel from 'nuka-carousel';
+import Carousel from 'nuka-carousel'
 import t from 'theme'
 
-
 export const Container = styled.div`
-  
   display: flex;
   overflow: hidden;
   position: relative;
-  flex-direction: column-reverse; 
+  flex-direction: column-reverse;
   justify-content: center;
   width: 100%;
   height: 100%;
   ${t.mq.l} {
-    flex-direction: row;        
+    flex-direction: row;
   }
 `
 
 export const ContentContainer = styled.div`
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: flex-end;
   width: 100%;
-  ${t.mq.l} {    
+  ${t.mq.l} {
     width: 25%;
   }
 `
@@ -36,21 +34,21 @@ export const Content = styled.div`
   width: 100%;
   padding: 0 2rem 2rem 2rem;
   ${t.mq.l} {
-    padding: 0 2rem 3rem 3.5rem;    
+    padding: 0 2rem 3rem 3.5rem;
   }
-  ${t.mq.x} {    
+  ${t.mq.x} {
   }
 `
 export const StyledCarousel = styled(Carousel)`
   height: 100% !important;
   width: 100% !important;
   .slider-control-centerleft {
-    display:none;
+    display: none;
   }
   .slider-control-centerright {
-    display:none;
+    display: none;
   }
-  
+
   .slider-control-bottomcenter {
     display: none;
     ${t.mq.m} {
@@ -60,12 +58,11 @@ export const StyledCarousel = styled(Carousel)`
   ${t.mq.l} {
     width: 75% !important;
   }
-  
 `
 export const ImageContainer = styled.div`
   width: 100%;
   height: 100%;
-  
+
   .gatsby-image-outer-wrapper {
     height: 100%;
   }
@@ -108,7 +105,7 @@ export const ClipOverlay = styled.div`
     left: -24%;
     height: 387%;
     width: 133%;
-  } 
+  }
 `
 export const Header = styled.div`
   width: 100%;
@@ -145,9 +142,8 @@ export const SubTitle = styled.h2`
   letter-spacing: 0.2rem;
 `
 
-export const InfoContainer = styled.div`
-`
-export const InfoBlurb = css`  
+export const InfoContainer = styled.div``
+export const InfoBlurb = css`
   margin-bottom: -6px;
   h3 {
     font-size: ${t.f(0)};
@@ -162,7 +158,7 @@ export const InfoBlurb = css`
     font-size: ${t.f(0)};
     font-weight: 400;
     color: ${t.c.white};
-  }  
+  }
 `
 
 export const InfoLine = styled.hr`

@@ -16,7 +16,6 @@ export class ModalProvider extends React.Component {
   }
 
   showModal = (component, props = {}) => {
-    console.log("click!!!!!")
     this.setState({
       component,
       props,

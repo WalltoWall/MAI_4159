@@ -41,10 +41,10 @@ export const SearchQuery = styled.input`
 `
 
 const StyledButton = styled(Link)`
-  display: flex;  
+  display: flex;
   align-items: center;
   border: 0;
-  cursor: pointer;  
+  cursor: pointer;
   padding: ${t.s(-2, 0)};
   min-width: 0;
   background-color: ${t.c.yellow};

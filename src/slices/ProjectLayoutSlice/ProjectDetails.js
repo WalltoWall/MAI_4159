@@ -1,9 +1,13 @@
 import React from 'react'
 import { get } from 'lodash'
 import { HTMLContent } from 'components/HTMLContent'
-import { Container, Content, StyledHtmlClassName } from './ProjectDetails.styled'
+import {
+  Container,
+  Content,
+  StyledHtmlClassName,
+} from './ProjectDetails.styled'
 
-export const ProjectDetails = props => ( 
+export const ProjectDetails = props => (
   <Container>
     <Content>
       <HTMLContent
@@ -13,5 +17,3 @@ export const ProjectDetails = props => (
     </Content>
   </Container>
 )
-
-

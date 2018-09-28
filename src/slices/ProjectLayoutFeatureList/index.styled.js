@@ -30,20 +30,20 @@ export const FeatureName = styled.h2`
   margin-top: 0;
 `
 
-export const ImageContainer = styled.div`  
+export const ImageContainer = styled.div`
   height: 100%;
   position: absolute;
   top: 0;
-  width: 100%;  
-  .gatsby-image-outer-wrapper {        
+  width: 100%;
+  .gatsby-image-outer-wrapper {
     height: 100%;
   }
-  .gatsby-image-wrapper {        
+  .gatsby-image-wrapper {
     height: 100%;
   }
 `
 
-export const Title = styled.p`     
+export const Title = styled.p`
   text-align: center;
   margin: auto;
   width: 100%;
@@ -59,19 +59,19 @@ export const Title = styled.p`
   }
 `
 
-export const StyledLink = styled(Link)`     
+export const StyledLink = styled(Link)`
   position: relative;
   display: block;
   margin: 1rem;
   width: 100%;
-  height: 14rem; 
+  height: 14rem;
   min-width: 300px;
-  max-width: 400px;   
+  max-width: 400px;
   ${t.mq.m} {
     width: 42%;
     height: 15rem;
   }
-    ${t.mq.l} {
+  ${t.mq.l} {
     width: 22%;
     height: 15rem;
   }
@@ -92,7 +92,7 @@ export const OverlayContainer = styled.div`
   width: 100%;
   bottom: 0;
   background-color: ${t.c.white};
-  opacity: 0.8;   
+  opacity: 0.8;
   z-index: 5;
   -webkit-transition: all 0.1s ease-in;
   -moz-transition: all 0.1s ease-in;

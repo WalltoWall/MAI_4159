@@ -6,21 +6,21 @@ export const Container = styled.div`
   display: flex;
   overflow: hidden;
   position: relative;
-  flex-direction: column-reverse; 
+  flex-direction: column-reverse;
   justify-content: center;
   width: 100%;
   height: 100%;
   ${t.mq.l} {
-    flex-direction: row;        
+    flex-direction: row;
   }
 `
 
 export const ContentContainer = styled.div`
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: flex-end;
   width: 100%;
-  ${t.mq.l} {    
+  ${t.mq.l} {
     width: 25%;
   }
 `
@@ -34,16 +34,15 @@ export const Content = styled.div`
   padding: 0 2rem 2rem 2rem;
   background-color: ${t.c.darkgrey1};
   ${t.mq.l} {
-    padding: 0 0 3rem 3.5rem;    
+    padding: 0 0 3rem 3.5rem;
   }
-  ${t.mq.x} {    
+  ${t.mq.x} {
   }
-  
 `
 export const ImageContainer = styled.div`
   width: 100%;
   height: 100%;
-  
+
   .gatsby-image-outer-wrapper {
     height: 100%;
   }
@@ -85,7 +84,7 @@ export const ClipOverlay = styled.div`
     left: -50%;
     height: 600%;
     width: 180%;
-  } 
+  }
 `
 export const Header = styled.div`
   width: 100%;
@@ -134,7 +133,7 @@ export const InfoContainer = styled.div`
   margin: 0 auto;
   ${t.mq.l} {
     text-align: left;
-  } 
+  }
 `
 
 export const StyledLink = styled(Link)`
@@ -147,6 +146,5 @@ export const StyledLink = styled(Link)`
   display: block;
   ${t.mq.l} {
     text-align: left;
-  } 
+  }
 `
-

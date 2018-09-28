@@ -10,10 +10,10 @@ export const ProjectLayoutSideBySideImages = ({ data }) => (
     <Content>
       {get(data, 'items').map(item => (
         <ImageContainer>
-          <Image      
+          <Image
             key={getUnlessEmptyString(data, 'primary.image.alt')}
-            alt={getUnlessEmptyString(data, 'primary.image.alt')}     
-            fluid={get(item, 'image.localFile.childImageSharp.fluid')} 
+            alt={getUnlessEmptyString(data, 'primary.image.alt')}
+            fluid={get(item, 'image.localFile.childImageSharp.fluid')}
             fadeIn={false}
           />
         </ImageContainer>
@@ -29,8 +29,8 @@ export const query = graphql`
         layout {
           ... on PrismicProjectLayoutSideBySideImages {
             id
-            items {              
-              image {                
+            items {
+              image {
                 alt
                 localFile {
                   childImageSharp {

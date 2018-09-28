@@ -17,8 +17,8 @@ import 'typeface-lato'
 
 
 // temporarily disable hot loader error for dev
-import {setConfig} from 'react-hot-loader'
-setConfig({logLevel: 'no-errors-please'})
+import { setConfig } from 'react-hot-loader'
+setConfig({ logLevel: 'no-errors-please' })
 
 injectGlobal`
   * {
@@ -72,7 +72,7 @@ const render = ({ children }) => queryData => (
               {process.env.NODE_ENV === 'development' && <DevRefreshButton />}
               {children}
             </Container>
-            <Footer />        
+            <Footer />
           </>
         )}
       </ModalConsumer>

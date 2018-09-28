@@ -10,7 +10,7 @@ const map = {
   ProjectDetails,
 }
 
-export const ProjectLayoutSlice = props => {  
+export const ProjectLayoutSlice = props => {
   const Comp = get(map, get(props, 'data.primary.variation'))
   if (!Comp) return null
   return <Comp {...props} />

@@ -1,4 +1,3 @@
-
 import React from 'react'
 import Helmet from 'react-helmet'
 import MapToComponents from 'react-map-to-components'
@@ -19,10 +18,10 @@ import { PageLayoutFeatureList } from 'slices/PageLayoutFeatureList'
 import { PageLayoutTextBlock } from 'slices/PageLayoutTextBlock'
 import { PageLayoutNewsPageHero } from 'slices/PageLayoutNewsPageHero'
 import { PageLayoutNewsSection } from 'slices/PageLayoutNewsSection'
+import { PageLayoutAnchorsMenu } from 'slices/PageLayoutAnchorsMenu'
 import { PageLayoutAnchor } from 'slices/PageLayoutAnchor'
 import { PageLayoutInfoBlock } from 'slices/PageLayoutInfoBlock'
 import { PageLayoutSocialMedia } from 'slices/PageLayoutSocialMedia'
-
 
 const PageTemplate = ({ data }) => (
   <>
@@ -49,6 +48,7 @@ const PageTemplate = ({ data }) => (
           PageLayoutAnchor,
           PageLayoutInfoBlock,
           PageLayoutSocialMedia,
+          PageLayoutAnchorsMenu,
         }}
         page={get(data, 'prismicPage')}
         rootData={data}
@@ -87,5 +87,6 @@ export const query = graphql`
     ...PageLayoutAnchor
     ...PageLayoutInfoBlock
     ...PageLayoutSocialMedia
+    ...PageLayoutAnchorsMenu
   }
 `
