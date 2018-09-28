@@ -15,15 +15,15 @@ export const PageLayoutInfoBlock = ({ data }) => (
     <Container>
        {get(data, 'items', []).map(item => (
           <Content>
-            <Title>{get(item, 'title1.text')}</Title>
-            <Info>{get(item, 'info1.text')}</Info>
             <ImageContainer>
               <Image
-                fluid={get(item, 'image.localFile.childImageSharp.fluid')} 
-                alt={getUnlessEmptyString(data, 'items.image.alt')}     
+                fluid={get(item, 'icon.localFile.childImageSharp.fluid')} 
+                alt={getUnlessEmptyString(data, 'icon.image.alt')}     
                 fadeIn={false}    
               />
             </ImageContainer>
+            <Title>{get(item, 'title1.text')}</Title>
+            <Info>{get(item, 'info1.text')}</Info>
           </Content>
         ))}
     </Container>
@@ -37,7 +37,7 @@ export const query = graphql`
           ... on PrismicPageLayoutInfoBlock {
             id
             items {
-              image {                
+              icon {                
                 alt
                 localFile {
                   childImageSharp {
