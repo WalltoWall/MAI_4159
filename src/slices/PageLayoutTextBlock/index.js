@@ -7,7 +7,7 @@ import { Container, Content, StyledHtmlClassName } from './index.styled'
 export const PageLayoutTextBlock = ({ data }) => {
   return (
     <Container background_color={get(data, 'primary.background_color')}>
-      <Content>
+      <Content align_text={get(data, 'primary.align_text')}>
         <HTMLContent
           html={get(data, 'primary.content.html')}
           className={StyledHtmlClassName}
@@ -29,6 +29,7 @@ export const query = graphql`
                 html
               }
               background_color
+              align_text
             }
           }
         }

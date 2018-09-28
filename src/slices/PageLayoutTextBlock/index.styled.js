@@ -2,6 +2,7 @@ import styled from 'react-emotion'
 import { css } from 'emotion'
 import t from 'theme'
 
+
 const backgroundChooser = ({ background_color }) => {
   switch (background_color) {
     case 'white':
@@ -12,6 +13,20 @@ const backgroundChooser = ({ background_color }) => {
     default:
       return `
         background-color: ${t.c.lightgrey1};
+      `
+  }
+}
+
+const textAlignment = ({ align_text }) => {
+  switch (align_text) {
+    case 'center':
+      return `
+        text-align: center;
+      `
+
+    default:
+      return `
+        text-align: left;
       `
   }
 }
@@ -27,8 +42,12 @@ export const Content = styled.div`
   width: 80%;
   padding: 0;
   font-family: ${t.ff.sans2};
+  ${textAlignment};
   ${t.mq.m} {
     width: 60%;
+  }
+  ${t.mq.l} {
+    width: 50%;
   }
 `
 export const StyledHtmlClassName = css`
@@ -39,7 +58,12 @@ export const StyledHtmlClassName = css`
     font-family: ${t.ff.sans};
     font-weight: 600;
     color: ${t.c.darkgrey1};
-    text-align: center;
+  }
+  h2 {
+    font-size: ${t.f(4)};
+    font-family: ${t.ff.serif};
+    font-weight: 600;
+    color: ${t.c.darkgrey1};
   }
   ul {
     li {
@@ -54,7 +78,6 @@ export const StyledHtmlClassName = css`
     font-family: ${t.ff.sans2};
     font-weight: 400;
     color: ${t.c.darkgrey2};
-    text-align: center;
   }
   img {
     display: block;
