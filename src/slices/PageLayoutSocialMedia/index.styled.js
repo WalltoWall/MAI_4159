@@ -1,0 +1,47 @@
+import styled from 'react-emotion'
+import t from 'theme'
+
+export const Content = styled.div`
+  margin: 1.5rem;
+  overflow: hidden;
+`
+
+export const ImageContainer = styled.a`  
+  width: 50px;
+  display: block;
+  margin: 1rem auto;
+  .gatsby-image-outer-wrapper {        
+    height: 100%;
+  }
+  .gatsby-image-wrapper {        
+    height: 100%;
+  }
+  ${t.mq.m} {
+    width: 60px;
+  }
+`
+
+export const Container = styled.div`
+  margin: 0 auto;
+  padding: 4rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 400px;
+  justify-content: center;
+`
+
+export const Title = styled.div`
+  color: ${t.c.darkgrey1};
+  font-family: ${t.ff.sans};
+  text-transform: uppercase;
+  font-size: ${t.f(4)};
+  margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  ${t.mq.m} {
+    text-align: left;
+    font-size: ${t.f(5)};
+  }
+`

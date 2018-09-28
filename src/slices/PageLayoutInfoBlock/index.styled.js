@@ -6,6 +6,7 @@ export const Content = styled.div`
   width: 100%;
   margin: 2rem;
   border-right: none;
+  overflow: hidden;
   ${t.mq.m} {
     width: 40%;
   }
@@ -45,7 +46,7 @@ export const Container = styled.div`
     width: 90%;
   }
   ${t.mq.l} {
-    width: 70%;
+    width: 60%;
     justify-content: space-around;
   }
 `
@@ -54,13 +55,14 @@ export const Title = styled.div`
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.sans};
   text-transform: uppercase;
-  font-size: ${t.f(5)};
+  font-size: ${t.f(4)};
   margin-bottom: 1rem;
   font-weight: 600;
   letter-spacing: 0.1rem;
   text-align: center;
   ${t.mq.m} {
     text-align: left;
+    font-size: ${t.f(5)};
   }
 `
 
@@ -70,7 +72,7 @@ export const StyledHtmlClassName = css`
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.1rem;
-    font-size: ${t.f(2)};
+    font-size: ${t.f(1.5)};
     color: ${t.c.darkgrey2};
     text-align: center;
     ${t.mq.m} {
