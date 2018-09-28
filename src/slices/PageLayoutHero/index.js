@@ -18,42 +18,42 @@ import {
   SubHeadline,
 } from './index.styled'
 
-export const PageLayoutHero = ({data}) => (    
-    <Container>
-      <ImageContainer>
-        <Gradient />
-        <Image 
-          alt={getUnlessEmptyString(data, 'primary.image.alt')}     
-          fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')} 
-          fadeIn={false}        
+export const PageLayoutHero = ({ data }) => (
+  <Container>
+    <ImageContainer>
+      <Gradient />
+      <Image
+        alt={getUnlessEmptyString(data, 'primary.image.alt')}
+        fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
+        fadeIn={false}
+      />
+    </ImageContainer>
+    <HeadlineWrapper>
+      <RotatedContainer>
+        <Headline>
+          <span>We </span>
+          <span>re</span>
+          <h1>we are mason</h1>
+        </Headline>
+        <SlidingVertical>
+          {get(data, 'items').map(item => (
+            <span>{item.rotating_text}</span>
+          ))}
+        </SlidingVertical>
+      </RotatedContainer>
+    </HeadlineWrapper>
+    <SubHeadline> Hawai'i's Future</SubHeadline>
+    <Overlay>
+      <DescriptionWrapper>
+        <Description
+          dangerouslySetInnerHTML={{
+            __html: get(data, 'primary.description.html'),
+          }}
         />
-      </ImageContainer>
-      <HeadlineWrapper>
-        <RotatedContainer>
-          <Headline>
-            <span>We </span>
-            <span>re</span>
-            <h1>we are mason</h1>
-          </Headline>                        
-          <SlidingVertical>
-            {get(data, 'items').map(item => (
-              <span>{item.rotating_text}</span>  
-            ))}            
-          </SlidingVertical>          
-        </RotatedContainer>
-      </HeadlineWrapper>
-      <SubHeadline> Hawai'i's Future</SubHeadline>
-      <Overlay>
-        <DescriptionWrapper>
-          <Description
-            dangerouslySetInnerHTML={{
-              __html: get(data, 'primary.description.html'),
-            }}
-          />
-        </DescriptionWrapper>
-      </Overlay>
-      <MobileNavOverlay/>              
-    </Container>      
+      </DescriptionWrapper>
+    </Overlay>
+    <MobileNavOverlay />
+  </Container>
 )
 
 export const query = graphql`
@@ -64,7 +64,7 @@ export const query = graphql`
           ... on PrismicPageLayoutHero {
             id
             primary {
-              image {                
+              image {
                 alt
                 localFile {
                   childImageSharp {
@@ -82,7 +82,7 @@ export const query = graphql`
               }
             }
             items {
-              rotating_text                              
+              rotating_text
             }
           }
         }

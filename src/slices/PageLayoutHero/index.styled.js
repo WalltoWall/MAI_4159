@@ -154,7 +154,7 @@ export const SlidingVertical = styled.div`
       animation-delay: 12s;
     }
     ${t.mq.l} {
-      font-size: ${t.f(10)};    
+      font-size: ${t.f(10)};
     }
   }
   ${t.mq.l} {
@@ -168,7 +168,7 @@ export const ImageContainer = styled.div`
   overflow: hidden;
   .gatsby-image-outer-wrapper,
   .gatsby-image-wrapper {
-    height: 100%;    
+    height: 100%;
   }
 `
 

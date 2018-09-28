@@ -4,12 +4,12 @@ import { get } from 'lodash'
 import { HTMLContent } from 'components/HTMLContent'
 import { Image } from 'components/Image'
 import { getUnlessEmptyString } from 'helpers'
-import { 
+import {
   Container,
   Title,
-  Content,  
+  Content,
   ContentContainer,
-  ImageWrapper, 
+  ImageWrapper,
   TextWrapper,
   Subhead,
   StyledHtmlClassName,
@@ -21,11 +21,13 @@ export const PageLayoutServices = ({ data }) => {
       <Title>{get(data, 'primary.title1.text')}</Title>
       <Content>{get(data, 'primary.text.text')}</Content>
       <ContentContainer>
-        <ImageWrapper photo_orientation={get(data, 'primary.photo_orientation')}>
-          <Image 
-            alt={getUnlessEmptyString(data, 'primary.image.alt')}     
-            fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')} 
-            fadeIn={false}   
+        <ImageWrapper
+          photo_orientation={get(data, 'primary.photo_orientation')}
+        >
+          <Image
+            alt={getUnlessEmptyString(data, 'primary.image.alt')}
+            fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
+            fadeIn={false}
           />
         </ImageWrapper>
         <TextWrapper>
@@ -54,7 +56,7 @@ export const query = graphql`
               text {
                 text
               }
-              image {                
+              image {
                 alt
                 localFile {
                   childImageSharp {

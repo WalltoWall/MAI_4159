@@ -24,7 +24,7 @@ export const Title = styled.h1`
   bottom: 25%;
   font-weight: 600;
   letter-spacing: 0.1rem;
-  transform: translate(-50%,50%);
+  transform: translate(-50%, 50%);
   ${t.mq.l} {
     font-size: ${t.f(9)};
   }
@@ -83,12 +83,12 @@ export const MobileOverlay = styled.div`
 
 export const TitleWrapper = styled.div`
   width: 100%;
-    ${t.mq.l} {
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 72%;
-      height: 100%;
-    }
+  ${t.mq.l} {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 72%;
+    height: 100%;
+  }
 `

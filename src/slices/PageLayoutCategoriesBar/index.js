@@ -19,21 +19,21 @@ import { PageLayoutAnchor } from 'slices/PageLayoutAnchor'
 export class PageLayoutCategoriesBar extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {currentFilter: "Select Filter"}
+    this.state = { currentFilter: 'Select Filter' }
   }
 
   updateCurrentFilter = (e, name) => {
     e.stopPropagation()
     this.setState({
-      currentFilter: name
-    })    
+      currentFilter: name,
+    })
   }
 
   getLinkProps = () => ({ href, location: { pathname } }) => ({
     className: classnames(
       navItemClassName,
-      isPathActive(pathname, href) && linkActiveClassName,
-    )
+      isPathActive(pathname, href) && linkActiveClassName
+    ),
   })
 
   render() {
@@ -46,26 +46,29 @@ export class PageLayoutCategoriesBar extends React.Component {
               key={get(item, 'name.text')}
               to={get(item, 'url1.url', '/')}
             >
-            {get(item, 'name.text')}
+              {get(item, 'name.text')}
             </StyledLink>
           ))}
         </Desktop>
         <Toggle>
           {({ on, toggle }) => (
-            <Mobile>          
+            <Mobile>
               <span>Filter: </span>
-              <CurrentFilter onClick={toggle}>{this.state.currentFilter}</CurrentFilter>
-              <NavArrow active={on}/>
+              <CurrentFilter onClick={toggle}>
+                {this.state.currentFilter}
+              </CurrentFilter>
+              <NavArrow active={on} />
               <FilterBox isOpen={on}>
                 {categories.map(item => (
                   <StyledLink
                     key={get(item, 'name.text')}
                     to={get(item, 'url1.url', '/')}
                     getProps={this.getLinkProps()}
-                    onClick={(e) => this.updateCurrentFilter(e, get(item, 'name.text'))}
+                    onClick={e =>
+                      this.updateCurrentFilter(e, get(item, 'name.text'))
+                    }
                   >
                     {get(item, 'name.text')}
-                  }
                   </StyledLink>
                 ))}
               </FilterBox>

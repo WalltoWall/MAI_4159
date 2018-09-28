@@ -6,7 +6,6 @@ import { isPathActive } from 'lib/helpers'
 import { ModalConsumer } from 'controllers/ModalContext'
 import { searchModal } from 'components/Modal/searchModal'
 
-
 import { Link } from '../Link'
 import {
   Container,
@@ -42,9 +41,15 @@ const render = () => queryData => (
     {get(queryData, 'prismicNavigation.data.primary', []).map(renderLink)}
     <ModalConsumer>
       {({ showModal }) => (
-        <a href="/" onClick={event => {event.preventDefault(); showModal(searchModal) }}>
-          <SearchButtonIcon />          
-        </a>        
+        <a
+          href="/"
+          onClick={event => {
+            event.preventDefault()
+            showModal(searchModal)
+          }}
+        >
+          <SearchButtonIcon />
+        </a>
       )}
     </ModalConsumer>
   </NavList>

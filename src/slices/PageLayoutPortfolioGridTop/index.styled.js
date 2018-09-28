@@ -38,8 +38,8 @@ export const StyledLink = styled(Link)`
   width: 100%;
   overflow: hidden;
   padding-top: 60%;
-  ${t.mq.l} {    
-    width: 50%;    
+  ${t.mq.l} {
+    width: 50%;
     padding-top: 35%;
   }
   &:hover {
@@ -53,10 +53,10 @@ export const ImageContainer = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
-  .gatsby-image-outer-wrapper {        
+  .gatsby-image-outer-wrapper {
     height: 100%;
   }
-  .gatsby-image-wrapper {        
+  .gatsby-image-wrapper {
     height: 100%;
   }
 `
@@ -69,7 +69,7 @@ export const OverlayContainer = styled.div`
   width: 100%;
   bottom: 0;
   background-color: ${t.c.white};
-  opacity: 0.8;   
+  opacity: 0.8;
   z-index: 5;
   -webkit-transition: all 0.1s ease-in;
   -moz-transition: all 0.1s ease-in;
@@ -79,7 +79,7 @@ export const OverlayContainer = styled.div`
     height: 100%;
     border-bottom: 1rem solid ${t.c.yellow};
   }
-  ${t.mq.l} {    
+  ${t.mq.l} {
     height: 70px;
   }
 `

@@ -6,7 +6,7 @@ import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
   ImageContainer,
-  StyledLink,  
+  StyledLink,
   Title,
   OverlayContainer,
 } from './index.styled'
@@ -14,15 +14,15 @@ import {
 const renderGrid = data => (
   <>
     <ImageContainer>
-      <Image 
+      <Image
         alt={getUnlessEmptyString(data.image.alt)}
         fluid={data.image.localFile.childImageSharp.fluid}
         fadeIn={false}
       />
-    </ImageContainer> 
-    <OverlayContainer>   
+    </ImageContainer>
+    <OverlayContainer>
       <Title>{data.title.text}</Title>
-    </OverlayContainer>    
+    </OverlayContainer>
   </>
 )
 
@@ -57,7 +57,7 @@ export const query = graphql`
                     title {
                       text
                     }
-                    image {                
+                    image {
                       alt
                       localFile {
                         childImageSharp {

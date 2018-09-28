@@ -87,7 +87,6 @@ export default class HeaderSlideshow extends React.Component {
   }
 }
 
-
 // export const fragment = graphql`
 //   fragment HeaderSlideshow on RootQueryType {
 //     file(relativePath: { eq: "customPages/home.yml" }) {

@@ -14,15 +14,15 @@ export const Content = styled.div`
   }
 `
 
-export const ImageContainer = styled.div`  
+export const ImageContainer = styled.div`
   height: 100%;
   position: absolute;
   top: 0;
-  width: 100%;  
-  .gatsby-image-outer-wrapper {        
+  width: 100%;
+  .gatsby-image-outer-wrapper {
     height: 100%;
   }
-  .gatsby-image-wrapper {        
+  .gatsby-image-wrapper {
     height: 100%;
   }
 `
@@ -37,7 +37,7 @@ export const Container = styled.div`
   }
 `
 
-export const Title = styled.p`     
+export const Title = styled.p`
   text-align: center;
   margin: auto;
   width: 100%;
@@ -57,12 +57,12 @@ export const Title = styled.p`
   }
 `
 
-export const StyledLink = styled(Link)`     
+export const StyledLink = styled(Link)`
   position: relative;
   display: block;
   margin: 0.5rem 1.2rem;
   width: 100%;
-  height: 20rem;    
+  height: 20rem;
   ${t.mq.m} {
     width: 45%;
     height: 28rem;
@@ -85,7 +85,7 @@ export const OverlayContainer = styled.div`
   width: 100%;
   bottom: 0;
   background-color: ${t.c.white};
-  opacity: 0.8;   
+  opacity: 0.8;
   z-index: 5;
   -webkit-transition: all 0.1s ease-in;
   -moz-transition: all 0.1s ease-in;
@@ -119,5 +119,3 @@ export const Headline = styled.h1`
     font-size: ${t.f(5)};
   }
 `
-
-

@@ -3,7 +3,7 @@ import { get } from 'lodash'
 import { HTMLContent } from 'components/HTMLContent'
 import { Container, Content, StyledHtmlClassName } from './Basic.styled'
 
-export const Basic = props => ( 
+export const Basic = props => (
   <Container>
     <Content>
       <HTMLContent
@@ -13,5 +13,3 @@ export const Basic = props => (
     </Content>
   </Container>
 )
-
-

@@ -6,7 +6,7 @@ export const SearchResults = ({ children, query, queryType, ...props }) => (
   <Container>
     <StyledHTMLContent>
       <h3>Results for {queryType}</h3>
-      <p>        
+      <p>
         Showing {children.length} result
         {children.length !== 1 && 's'} for <strong>{query}</strong>
       </p>

@@ -13,7 +13,7 @@ export const Container = styled.div`
   }
 `
 export const Content = styled.div`
-  width:80%;
+  width: 80%;
   ${t.mq.l} {
     padding: 0 1rem;
     width: 65%;

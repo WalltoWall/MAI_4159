@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Container, Title, Content } from './index.styled'
-import {Button} from 'components/Button'
+import { Button } from 'components/Button'
 
 export const PageLayoutCtaBar = ({ data }) => (
   <Container>

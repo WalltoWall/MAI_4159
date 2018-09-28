@@ -18,44 +18,64 @@ import {
 } from './index.styled'
 
 const text_truncate = function(str, length, ending) {
-    if (length == null) {
-      length = 160;
-    }
-    if (ending == null) {
-      ending = '...';
-    }
-    if (str.length > length) {
-      return str.substring(0, length - ending.length) + ending;
-    } else {
-      return str;
-    }
-  };
+  if (length == null) {
+    length = 160
+  }
+  if (ending == null) {
+    ending = '...'
+  }
+  if (str.length > length) {
+    return str.substring(0, length - ending.length) + ending
+  } else {
+    return str
+  }
+}
 
-export const PageLayoutNewsPageHero = ({ data }) => ( 
-      <Container>
-        <ContentContainer>
-          <Content>
-            <Header>
-              <SubTitle>Featured news</SubTitle>
-              <Title>{get(data, 'primary.featured_post.document[0].data.article_title.text')}</Title>
-            </Header>
-            <InfoContainer>
-                <p>{text_truncate(get(data, 'primary.featured_post.document[0].data.article_content1.text'))}</p>
-            </InfoContainer>
-            <StyledLink to={get(data, 'primary.featured_post.url')}>read more</StyledLink>
-            <ClipOverlay />
-          </Content>
-        </ContentContainer>
-        <ImageContainer>
-           <Image 
-            alt={getUnlessEmptyString(data, 'primary.featured_post.document[0].data.image.alt')}     
-            fluid={get(data, 'primary.featured_post.document[0].data.image.localFile.childImageSharp.fluid')} 
-            fadeIn={false}        
-          />
-        </ImageContainer>
-        <MobileNavOverlay />
-      </Container>
-    )
+export const PageLayoutNewsPageHero = ({ data }) => (
+  <Container>
+    <ContentContainer>
+      <Content>
+        <Header>
+          <SubTitle>Featured news</SubTitle>
+          <Title>
+            {get(
+              data,
+              'primary.featured_post.document[0].data.article_title.text'
+            )}
+          </Title>
+        </Header>
+        <InfoContainer>
+          <p>
+            {text_truncate(
+              get(
+                data,
+                'primary.featured_post.document[0].data.article_content1.text'
+              )
+            )}
+          </p>
+        </InfoContainer>
+        <StyledLink to={get(data, 'primary.featured_post.url')}>
+          read more
+        </StyledLink>
+        <ClipOverlay />
+      </Content>
+    </ContentContainer>
+    <ImageContainer>
+      <Image
+        alt={getUnlessEmptyString(
+          data,
+          'primary.featured_post.document[0].data.image.alt'
+        )}
+        fluid={get(
+          data,
+          'primary.featured_post.document[0].data.image.localFile.childImageSharp.fluid'
+        )}
+        fadeIn={false}
+      />
+    </ImageContainer>
+    <MobileNavOverlay />
+  </Container>
+)
 
 export const query = graphql`
   fragment PageLayoutNewsPageHero on Query {
@@ -75,7 +95,7 @@ export const query = graphql`
                     article_content1 {
                       text
                     }
-                    image {                
+                    image {
                       alt
                       localFile {
                         childImageSharp {

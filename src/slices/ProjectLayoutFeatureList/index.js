@@ -12,20 +12,16 @@ import {
   ImageContainer,
   OverlayContainer,
 } from './index.styled'
-import {Button} from 'components/Button'
+import { Button } from 'components/Button'
 
-const renderFeatureGrid = ({ url, key, img, alt, title}) => (
+const renderFeatureGrid = ({ url, key, img, alt, title }) => (
   <StyledLink to={url} key={key}>
     <ImageContainer>
-      <Image
-        alt={alt}     
-        fluid={img} 
-        fadeIn={false}
-      />
+      <Image alt={alt} fluid={img} fadeIn={false} />
     </ImageContainer>
     <OverlayContainer>
       <Title>{title}</Title>
-    </OverlayContainer>    
+    </OverlayContainer>
   </StyledLink>
 )
 
@@ -39,11 +35,16 @@ export const ProjectLayoutFeatureList = ({ data }) => {
       <Content>
         {projects.map(project =>
           renderFeatureGrid({
-            url: get(project, 'projects.url'),            
-            key: get(project, 'projects.document[0].uid'),            
-            img: get(project, 'projects.document[0].data.image.localFile.childImageSharp.fluid'),
-            alt: getUnlessEmptyString(get(project, 'projects.document[0].data.image.alt')),
-            title: get(project, 'projects.document[0].data.title.text')                        
+            url: get(project, 'projects.url'),
+            key: get(project, 'projects.document[0].uid'),
+            img: get(
+              project,
+              'projects.document[0].data.image.localFile.childImageSharp.fluid'
+            ),
+            alt: getUnlessEmptyString(
+              get(project, 'projects.document[0].data.image.alt')
+            ),
+            title: get(project, 'projects.document[0].data.title.text'),
           })
         )}
       </Content>
@@ -66,7 +67,7 @@ export const query = graphql`
                     title {
                       text
                     }
-                    image {                
+                    image {
                       alt
                       localFile {
                         childImageSharp {

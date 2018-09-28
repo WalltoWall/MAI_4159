@@ -23,5 +23,3 @@ export const Button = styled(Link)`
     background-color: ${t.c.darkyellow};
   }
 `
-
-

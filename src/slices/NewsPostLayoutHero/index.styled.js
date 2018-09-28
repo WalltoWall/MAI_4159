@@ -23,6 +23,6 @@ export const ImageContainer = styled.div`
   overflow: hidden;
   .gatsby-image-outer-wrapper,
   .gatsby-image-wrapper {
-    height: 100%;    
+    height: 100%;
   }
 `
