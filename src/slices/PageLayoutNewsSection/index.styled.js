@@ -1,7 +1,6 @@
 import styled from 'react-emotion'
 import t from 'theme'
 import { Link } from 'components/Link'
-import { Button } from 'components/Button'
 
 export const Content = styled.div`
   display: flex;
