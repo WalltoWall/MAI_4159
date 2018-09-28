@@ -1,23 +1,37 @@
 import styled from 'react-emotion'
+import { css } from 'emotion'
 import t from 'theme'
 
 export const Content = styled.div`
-  width: 20%;
-  margin-right: 2rem;
-  border-right: 1px dotted #646e6a;
-  &:last-child {
-    border-right: none;
+  width: 100%;
+  margin: 2rem;
+  border-right: none;
+  ${t.mq.m} {
+    width: 40%;
+  }
+  ${t.mq.l} {
+    width: 20%;
+    border-right: 1px dotted #646e6a;
+    margin: 2rem 0;
+    &:last-child {
+      border-right: none;
+      width: 30%;
+    }
   }
 `
 
 export const ImageContainer = styled.div`  
-  width: 100px;
-  margin: 0;
+  width: 80px;
+  margin: 1rem auto;
   .gatsby-image-outer-wrapper {        
     height: 100%;
   }
   .gatsby-image-wrapper {        
     height: 100%;
+  }
+  ${t.mq.m} {
+    width: 60px;
+    margin: 0 0 2rem 0;
   }
 `
 
@@ -27,29 +41,50 @@ export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  ${t.mq.m} {
+    width: 90%;
+  }
   ${t.mq.l} {
-    width: 60%;
+    width: 70%;
+    justify-content: space-around;
   }
 `
 
 export const Title = styled.div`
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.sans};
-  display: block;
   text-transform: uppercase;
   font-size: ${t.f(5)};
   margin-bottom: 1rem;
   font-weight: 600;
   letter-spacing: 0.1rem;
+  text-align: center;
+  ${t.mq.m} {
+    text-align: left;
+  }
 `
 
-export const Info = styled.div`
-  color: ${t.c.darkgrey2};
-  font-family: ${t.ff.sans};
-  display: block;
-  font-size: ${t.f(2)};
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.1rem;
+export const StyledHtmlClassName = css`
+  h2 {
+    font-family: ${t.ff.sans};
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    font-size: ${t.f(2)};
+    color: ${t.c.darkgrey2};
+    text-align: center;
+    ${t.mq.m} {
+      text-align: left;
+     }
+  }
+  p {
+    color: ${t.c.darkgrey2};
+    font-size: ${t.f(0)};
+    line-height: ${t.lh.copy};
+    text-align: center;
+    ${t.mq.m} {
+      font-size: ${t.f(0)};
+      text-align: left;
+    }
+  }
 `

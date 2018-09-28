@@ -2,13 +2,14 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Image } from 'components/Image'
+import { HTMLContent } from 'components/HTMLContent'
 import { getUnlessEmptyString } from 'helpers'
 import { 
   Container,
   Content,
   ImageContainer,
   Title,
-  Info
+  StyledHtmlClassName,
 } from './index.styled'
 
 export const PageLayoutInfoBlock = ({ data }) => (
@@ -23,7 +24,10 @@ export const PageLayoutInfoBlock = ({ data }) => (
               />
             </ImageContainer>
             <Title>{get(item, 'title1.text')}</Title>
-            <Info>{get(item, 'info1.text')}</Info>
+            <HTMLContent
+              html={get(item, 'info1.html')}
+              className={StyledHtmlClassName}
+            />
           </Content>
         ))}
     </Container>
@@ -51,7 +55,7 @@ export const query = graphql`
                 text
               }
               info1 {
-                text
+                html
               }
             }
           }
