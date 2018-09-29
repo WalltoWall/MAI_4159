@@ -84,4 +84,24 @@ export const StyledHtmlClassName = css`
     width: 100%;
     margin: 1rem;
   }
+  a {
+    background-color: ${t.c.yellow};
+    color: white;
+    cursor: pointer;
+    font-family: ${t.ff.sans};
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: ${t.f(2)};
+    width: 220px;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    margin: 1rem auto;
+    display: block;
+    &:hover {
+     background-color: ${t.c.darkyellow};
+     text-decoration: none;
+     transition: background-color 200ms;
+    }
+  }
 `

@@ -22,6 +22,7 @@ import { PageLayoutAnchorsMenu } from 'slices/PageLayoutAnchorsMenu'
 import { PageLayoutAnchor } from 'slices/PageLayoutAnchor'
 import { PageLayoutInfoBlock } from 'slices/PageLayoutInfoBlock'
 import { PageLayoutSocialMedia } from 'slices/PageLayoutSocialMedia'
+import { PageLayoutTextExpandable } from 'slices/PageLayoutTextExpandable'
 
 const PageTemplate = ({ data }) => (
   <>
@@ -49,6 +50,7 @@ const PageTemplate = ({ data }) => (
           PageLayoutInfoBlock,
           PageLayoutSocialMedia,
           PageLayoutAnchorsMenu,
+          PageLayoutTextExpandable,
         }}
         page={get(data, 'prismicPage')}
         rootData={data}
@@ -88,5 +90,6 @@ export const query = graphql`
     ...PageLayoutInfoBlock
     ...PageLayoutSocialMedia
     ...PageLayoutAnchorsMenu
+    ...PageLayoutTextExpandable
   }
 `
