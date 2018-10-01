@@ -9,16 +9,13 @@ import {
   Intro,
   Text,
   StyledExpandButton,
-  Desktop,
   ContentWrapper,
   StyledExpand,
 } from './index.styled'
 
 
-
-// Show all highlights and hide text in Expand.
 const renderContent = (data, on, toggle) => (
-  <Desktop>
+  <div>
     {get(data, 'primary.text.text') && (
       <>
       <ContentWrapper>
@@ -34,19 +31,19 @@ const renderContent = (data, on, toggle) => (
       </StyledExpand>
       </>
     )}
-  </Desktop>
+  </div>
 )
 
 export const PageLayoutTextExpandable = ({ data }) => (
-  <Container>
-    <Toggle>
-      {({ on, toggle }) => (
-        <>
-          {renderContent(data, on, toggle)}
-        </>
-      )}
-    </Toggle>
-  </Container>
+    <Container>
+      <Toggle>
+        {({ on, toggle }) => (
+          <>
+            {renderContent(data, on, toggle)}
+          </>
+        )}
+      </Toggle>
+    </Container>
 )
 
 export const fragment = graphql`

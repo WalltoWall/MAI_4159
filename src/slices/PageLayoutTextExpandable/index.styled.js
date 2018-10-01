@@ -7,9 +7,8 @@ import Expand from 'react-expand-animated'
 
 export const Container = styled.div`
   margin: 0 auto;
-  padding: ${t.s(3, 0)};
+  padding: 1rem;
   position: relative;
-  width: 60%;
   background-color: ${t.c.white};
 `
 
@@ -37,18 +36,19 @@ export const Highlights = styled.div`
 `
 
 export const Text = styled(HTMLContent)`
-  margin-top: ${t.s(1)};
+  margin-top: ${t.s(2)};
   text-align: center;
+
+  p {
+    font-family: ${t.ff.sans2};
+    color: ${t.c.darkgrey2};
+    line-height: 0.4rem;
+  }
 `
 
 export const StyledExpandButton = styled(ExpandButton)`
   display: inline-block;
   margin: 0.2rem 0.8rem;
-`
-
-
-export const Desktop = styled.div`
-    display: block;
 `
 
 export const ContentWrapper = styled.div`
