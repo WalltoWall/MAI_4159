@@ -3,37 +3,29 @@ import styled from 'react-emotion'
 import t from 'theme'
 import { ExpandButton } from 'components/ExpandButton'
 import { HTMLContent } from 'components/HTMLContent'
+import Expand from 'react-expand-animated'
 
 export const Container = styled.div`
-  background-color: ${t.c.white};
   margin: 0 auto;
-  max-width: ${t.ms.xx};
   padding: ${t.s(3, 0)};
   position: relative;
-  width: 100%;
+  width: 60%;
+  background-color: ${t.c.white};
 `
 
 export const Content = styled.div`
+  display: flex;
   margin: 0 auto;
-  max-width: ${t.ms.m};
-  position: relative;
-  ${Container} + ${Container} & {
-    &::before {
-      border-top: 1px solid ${t.c.tanLight};
-      content: '';
-      display: block;
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: -${t.s(3)};
-    }
-  }
 `
 
 export const Intro = styled(HTMLContent)`
   h1 {
-    font-family: ${t.ff.sans2};
-    font-size: ${t.s(2)};
+    font-family: ${t.ff.sans};
+    font-size: ${t.s(1)};
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: ${t.c.darkgrey2};
   }
 `
 
@@ -44,56 +36,28 @@ export const Highlights = styled.div`
   }
 `
 
-export const Highlight = styled.div`
-  margin-bottom: ${t.s(1)};
-  ${t.mq.s} {
-    flex: 1 1 0px;
-    margin-bottom: 0;
-    margin-right: ${t.s(2)};
-    &:nth-child(2n):last-child {
-      flex: 0 1 calc((100% * 2 / 3) - ${t.s(2)} / 2);
-    }
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-  &:last-child {
-    margin-bottom: 0;
-  }
-`
-
-export const HighlightText = styled(HTMLContent)`
-  margin-bottom: ${t.s(-2)};
-  &:last-child {
-    margin-bottom: 0;
-  }
-  .large {
-    line-height: 1;
-  }
-`
-
-export const HighlightFootnote = styled(HTMLContent)`
-  font-size: 80%;
-`
-
 export const Text = styled(HTMLContent)`
   margin-top: ${t.s(1)};
+  text-align: center;
 `
 
 export const StyledExpandButton = styled(ExpandButton)`
-  margin-top: ${t.s(1)};
   display: inline-block;
+  margin: 0.2rem 0.8rem;
 `
 
-export const Mobile = styled.div`
-  ${t.mq.m} {
-    display: none;
-  }
-`
 
 export const Desktop = styled.div`
-  display: none;
-  ${t.mq.m} {
     display: block;
-  }
+`
+
+export const ContentWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+`
+
+export const StyledExpand = styled(Expand)`
+  width: 100%;
+  display: block;
 `
