@@ -76,8 +76,7 @@ export const query = graphql`
     ...PageLayoutHero
     ...PageLayoutProjectBoxes
     ...PageLayoutSplitPanels
-    ...PageLayoutSubPageHero
-    ...PageLayoutCategoriesBar
+    ...PageLayoutSubPageHero    
     ...PageLayoutPortfolioGridTop
     ...PageLayoutPortfolioGridBottom
     ...PageLayoutCtaBar

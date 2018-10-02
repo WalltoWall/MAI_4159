@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, StaticQuery } from 'gatsby'
 import { get } from 'lodash'
 import classnames from 'classnames'
 import { isPathActive } from 'lib/helpers'
@@ -16,7 +16,7 @@ import {
 } from './index.styled'
 import { PageLayoutAnchor } from 'slices/PageLayoutAnchor'
 
-export class PageLayoutCategoriesBar extends React.Component {
+export class CategoriesBar extends React.Component {
   constructor(props) {
     super(props)
     this.state = { currentFilter: 'Select Filter' }
@@ -37,19 +37,29 @@ export class PageLayoutCategoriesBar extends React.Component {
   })
 
   render() {
-    const categories = get(this.props, 'data.items')
+    const categories = get(this.props, 'data.prismicNavigation.data.link_list')
+    console.log("im catgeoriewasdf ", categories)
     return (
       <>
+
+
+
         <Desktop>
           {categories.map(item => (
             <StyledLink
-              key={get(item, 'name.text')}
-              to={get(item, 'url1.url', '/')}
+              key={get(item, 'name')}
+              to={get(item, 'link.url', '/')}
             >
-              {get(item, 'name.text')}
+              {get(item, 'name')}
             </StyledLink>
           ))}
         </Desktop>
+
+
+
+
+
+
         <Toggle>
           {({ on, toggle }) => (
             <Mobile>
@@ -61,14 +71,14 @@ export class PageLayoutCategoriesBar extends React.Component {
               <FilterBox isOpen={on}>
                 {categories.map(item => (
                   <StyledLink
-                    key={get(item, 'name.text')}
-                    to={get(item, 'url1.url', '/')}
+                    key={get(item, 'name')}
+                    to={get(item, 'link.url', '/')}
                     getProps={this.getLinkProps()}
                     onClick={e =>
-                      this.updateCurrentFilter(e, get(item, 'name.text'))
+                      this.updateCurrentFilter(e, get(item, 'name'))
                     }
                   >
-                    {get(item, 'name.text')}
+                    {get(item, 'name')}
                   </StyledLink>
                 ))}
               </FilterBox>
@@ -80,24 +90,28 @@ export class PageLayoutCategoriesBar extends React.Component {
   }
 }
 
-export const query = graphql`
-  fragment PageLayoutCategoriesBar on Query {
-    prismicPage(id: { eq: $id }) {
-      data {
-        layout {
-          ... on PrismicPageLayoutCategoriesBar {
-            id
-            items {
-              name {
-                text
-              }
-              url1 {
+const render = () => queryData => (
+  <CategoriesBar data={queryData}/>
+)
+
+
+export const PageLayoutCategoriesBar = props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        prismicNavigation {
+          data {
+            link_list {              
+              name
+              link {
                 url
-              }
+              }              
             }
           }
         }
       }
-    }
-  }
-`
+    `}
+    render={render()}
+  />
+)
+
