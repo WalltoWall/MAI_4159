@@ -1,7 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-import { StyledAnchor, Desktop } from './index.styled'
+import { Toggle } from 'react-powerplug'
+
+import { 
+  StyledAnchorContainer, 
+  StyledAnchor, 
+  Desktop, 
+  Mobile,
+  FilterMenu,
+  NavArrow
+} from './index.styled'
 
 export const PageLayoutAnchorsMenu = ({ data }) => (
   <>
@@ -15,6 +24,32 @@ export const PageLayoutAnchorsMenu = ({ data }) => (
         </StyledAnchor>
       ))}
     </Desktop>
+    <Mobile>
+      <Toggle initial={false}>
+        {({toggle, on}) => (
+          <>
+            <FilterMenu              
+              onClick={toggle}
+            >            
+              Select Service Type
+            </FilterMenu>
+            <NavArrow active={on} />
+            <StyledAnchorContainer
+              isOpen={on}
+            >                          
+              {get(data, 'items').map(item => (        
+                <StyledAnchor 
+                  key={get(item, 'menu_name')} 
+                  href={'#' + get(item, 'anchor_text')}
+                >
+                  {get(item, 'menu_name')}
+                </StyledAnchor>
+              ))}
+            </StyledAnchorContainer>
+          </>
+        )}
+      </Toggle>
+    </Mobile>
   </>
 )
 

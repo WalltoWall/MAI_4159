@@ -53,7 +53,7 @@ export const fragment = graphql`
         layout {
           ... on PrismicPageLayoutTextExpandable {
             id
-            primary {
+            items {
               intro {
                 text
                 html
