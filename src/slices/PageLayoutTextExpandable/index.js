@@ -14,23 +14,23 @@ import {
 } from './index.styled'
 
 
-const renderContent = (data, on, toggle) => (
+const renderContent = ( data, on, toggle ) => (
   <div>
-    {get(data, 'primary.text.text') && (
+    {get(data, 'items', []).map(item => (
       <>
       <ContentWrapper>
         <Content>
-          {get(data, 'primary.intro.text') && (
-            <Intro html={get(data, 'primary.intro.html')} />
+          {get(item, 'intro.text') && (
+            <Intro html={get(item, 'intro.html')} />
           )}
           <StyledExpandButton isExpanded={on} onClick={toggle} />
          </Content>
       </ContentWrapper>
       <StyledExpand open={on}>
-        <Text html={get(data, 'primary.text.html')} />
+        <Text html={get(item, 'text.html')} />
       </StyledExpand>
       </>
-    )}
+    ))}
   </div>
 )
 
@@ -53,7 +53,7 @@ export const fragment = graphql`
         layout {
           ... on PrismicPageLayoutTextExpandable {
             id
-            primary {
+            items {
               intro {
                 text
                 html

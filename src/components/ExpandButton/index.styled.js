@@ -6,6 +6,9 @@ import { ReactComponent as AssetIconArrowDownSVG } from 'assets/yellow-arrow.svg
 export const Container = styled.a`
   align-items: center;
   display: inline-flex;
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 export const IconContainer = styled.div`
