@@ -9,8 +9,9 @@ import {
   Intro,
   Text,
   StyledExpandButton,
-  ContentWrapper,
+  Category,
   StyledExpand,
+  Title,
 } from './index.styled'
 
 
@@ -18,14 +19,14 @@ const renderContent = ( data, on, toggle ) => (
   <div>
     {get(data, 'items', []).map(item => (
       <>
-      <ContentWrapper>
+      <Category>
         <Content>
           {get(item, 'intro.text') && (
             <Intro html={get(item, 'intro.html')} />
           )}
           <StyledExpandButton isExpanded={on} onClick={toggle} />
          </Content>
-      </ContentWrapper>
+      </Category>
       <StyledExpand open={on}>
         <Text html={get(item, 'text.html')} />
       </StyledExpand>
@@ -36,6 +37,7 @@ const renderContent = ( data, on, toggle ) => (
 
 export const PageLayoutTextExpandable = ({ data }) => (
     <Container>
+    <Title>{get(data, 'primary.title1.text')}</Title>
       <Toggle>
         {({ on, toggle }) => (
           <>
@@ -53,6 +55,11 @@ export const fragment = graphql`
         layout {
           ... on PrismicPageLayoutTextExpandable {
             id
+            primary {
+              title1 {
+                text
+              }
+            }
             items {
               intro {
                 text
