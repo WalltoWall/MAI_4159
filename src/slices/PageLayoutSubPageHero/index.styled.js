@@ -51,8 +51,8 @@ export const ClipOverlay = styled.div`
     left: -10%;
   }
   ${t.mq.s} {
-    bottom: -15%;
-    height: 26%;
+    bottom: -17%;
+    height: 35%;
   }
   ${t.mq.l} {
     display: block;

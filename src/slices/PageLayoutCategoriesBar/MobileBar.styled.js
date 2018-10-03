@@ -4,22 +4,7 @@ import { css } from 'emotion'
 import t from 'theme'
 import { ReactComponent as HoverArrowSVG } from 'assets/hov_arrow.svg'
 
-export const Desktop = styled.div`
-  position: relative;
-  background-color: ${t.c.darkgrey2};
-  display: none;
-  justify-content: center;
-  padding: ${t.s(1)} 0;
-  color: ${t.c.white};
-  font-size: ${t.f(1)};
-  font-weight: 700;
-  z-index: 2;
-  ${t.mq.l} {
-    display: flex;
-  }
-`
-
-export const Mobile = styled.div`
+export const MobileContainer = styled.div`
   background-color: ${t.c.darkgrey2};
   font-family: ${t.ff.sans2};
   padding: ${t.s(1)} 0;
@@ -36,10 +21,13 @@ export const Mobile = styled.div`
     letter-spacing: 0.2rem;
   }
 `
-export const FilterBox = styled.div`
+
+export const MobileFilterContainer = styled.div`
   display: ${p => (p.isOpen ? 'flex' : 'none')};
   flex-direction: column;
-  padding-top: 1rem;
+  padding: 1rem;
+  margin: 2rem 0 -1.5rem 0;  
+  background-color: ${t.c.lightgrey3};
 `
 
 export const CurrentFilter = styled.h2`
@@ -49,26 +37,26 @@ export const CurrentFilter = styled.h2`
   color: ${t.c.yellow};
   text-align: center;
   cursor: pointer;
+  padding-left: 10px;
 `
 
 export const StyledLink = styled(Link)`
   z-index: 2;
-  padding: 0 1rem;
-  margin: 0 2rem;
+  padding: 0;
+  margin: 0 1rem;
   font-family: ${t.ff.sans2};
   letter-spacing: 0.1rem;
+  color: white;
   -webkit-transition: color 0.2s ease-in;
   -moz-transition: color 0.2s ease-in;
   -o-transition: color 0.2s ease-in;
   transition: color 0.2s ease-in;
-  &:hover {
-    color: ${t.c.yellow};
-  }
-  &:last-child {
-    border-left: 1px solid white;
-    padding-left: 3rem;
-    margin-left: 0;
-  }
+  
+  &:hover {    
+    ${t.mq.l} {
+      color: ${t.c.yellow};
+    }  
+  }  
 `
 
 export const navItemClassName = css`
@@ -80,13 +68,7 @@ export const navItemClassName = css`
   font-weight: 600;
   font-family: ${t.ff.sans2};
   letter-spacing: 0.1rem;
-  -webkit-transition: color 0.2s ease-in;
-  -moz-transition: color 0.2s ease-in;
-  -o-transition: color 0.2s ease-in;
-  transition: color 0.2s ease-in;
-  &:hover {
-    color: ${t.c.yellow};
-  }
+  cursor: pointer;
 `
 
 export const linkActiveClassName = css`
@@ -97,9 +79,18 @@ export const NavArrow = styled(HoverArrowSVG)`
   flex-shrink: 0;
   height: 1.2rem;
   transform: ${p => (p.active ? 'rotate(90deg)' : 'rotate(0deg)')};
-  position: relative;
+  position: absolute;
   z-index: 1;
   display: inline-block;
   margin-left: 10px;
   top: 3px;
+  right: 2rem;
+`
+
+export const SubFilterContainer = styled.div`
+  display: ${p => (p.isOpen ? 'block' : 'none')};
+  background-color: ${t.c.lightgrey4};
+  padding: 0.5rem 0;
+  width: 110%;
+  margin-left: -5%;
 `
