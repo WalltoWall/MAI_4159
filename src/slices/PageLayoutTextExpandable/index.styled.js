@@ -36,7 +36,7 @@ export const Highlights = styled.div`
 `
 
 export const Text = styled(HTMLContent)`
-  margin-top: ${t.s(2)};
+  margin: 1rem auto 2rem auto;
   text-align: center;
 
   p {
