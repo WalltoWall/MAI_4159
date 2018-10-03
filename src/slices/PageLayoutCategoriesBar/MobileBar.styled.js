@@ -4,23 +4,7 @@ import { css } from 'emotion'
 import t from 'theme'
 import { ReactComponent as HoverArrowSVG } from 'assets/hov_arrow.svg'
 
-export const Desktop = styled.div`
-  position: relative;
-  background-color: ${t.c.darkgrey2};
-  display: none;
-  height: ${t.s(3.5)};
-  justify-content: center;
-  align-items: center;  
-  color: ${t.c.white};
-  font-size: ${t.f(1)};
-  font-weight: 700;
-  z-index: 2;
-  ${t.mq.l} {
-    display: flex;
-  }
-`
-
-export const Mobile = styled.div`
+export const MobileContainer = styled.div`
   background-color: ${t.c.darkgrey2};
   font-family: ${t.ff.sans2};
   padding: ${t.s(1)} 0;
@@ -36,15 +20,6 @@ export const Mobile = styled.div`
     text-transform: uppercase;
     letter-spacing: 0.2rem;
   }
-`
-
-export const FilterContainer = styled.div`
-  position: relative;
-  padding: 0 15px;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
 `
 
 export const MobileFilterContainer = styled.div`
@@ -64,24 +39,6 @@ export const CurrentFilter = styled.h2`
   cursor: pointer;
   padding-left: 10px;
 `
-export const StyledLinkContainer = styled.div`  
-  background-color: ${t.c.lightgrey3};
-  position: absolute;    
-  display: none;
-  flex-direction: column;
-  top: 54px;
-  width: 125%;
-  justify-content: center;
-  align-items: center;
-  height: 230px;
-  left: -25px;
-  :hover {
-    display: flex;
-  }
-  ${FilterContainer}:hover & {
-    display: flex;
-  }
-`
 
 export const StyledLink = styled(Link)`
   z-index: 2;
@@ -100,23 +57,6 @@ export const StyledLink = styled(Link)`
       color: ${t.c.yellow};
     }  
   }  
-`
-
-export const NestedStyledLink = styled(Link)`
-  z-index: 2;
-  padding: 12px 0;
-  width: 100%;
-  text-align: center;
-  font-family: ${t.ff.sans2};
-  letter-spacing: 0.1rem;
-  -webkit-transition: background-color 0.2s ease-in;
-  -moz-transition: background-color 0.2s ease-in;
-  -o-transition: background-color 0.2s ease-in;
-  transition: background-color 0.2s ease-in;
-  
-  &:hover {
-    background-color: ${t.c.lightgrey4};    
-  }
 `
 
 export const navItemClassName = css`
@@ -145,19 +85,6 @@ export const NavArrow = styled(HoverArrowSVG)`
   margin-left: 10px;
   top: 3px;
   right: 2rem;
-  ${FilterContainer}:hover & {
-    ${t.mq.l} {
-      transform: rotate(90deg);
-      right: 2rem;
-    }    
-  }  
-`
-
-export const VerticalLine = styled.div`
-  color: ${t.c.yellow};
-  font-size: ${t.f(3)};
-  font-weight: 400;
-  margin-top: -5px;
 `
 
 export const SubFilterContainer = styled.div`

@@ -24,7 +24,7 @@ import { PageLayoutInfoBlock } from 'slices/PageLayoutInfoBlock'
 import { PageLayoutSocialMedia } from 'slices/PageLayoutSocialMedia'
 import { PageLayoutTextExpandable } from 'slices/PageLayoutTextExpandable'
 
-const PageTemplate = ({ data }) => (
+const PageTemplate = ({ data, location }) => (
   <>
     <Helmet title={get(data, 'prismicPage.data.title.text')} />
     <Layout>
@@ -54,6 +54,7 @@ const PageTemplate = ({ data }) => (
         }}
         page={get(data, 'prismicPage')}
         rootData={data}
+        location={location}
       />
     </Layout>
   </>
