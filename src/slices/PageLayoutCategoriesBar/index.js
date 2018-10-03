@@ -3,31 +3,73 @@ import { graphql, StaticQuery } from 'gatsby'
 import { get } from 'lodash'
 import classnames from 'classnames'
 import { isPathActive } from 'lib/helpers'
-import { Toggle } from 'react-powerplug'
+
 import {
   Desktop,
   Mobile,
   StyledLink,
-  FilterBox,
+  MobileFilterContainer,
+  FilterContainer,
   CurrentFilter,
   navItemClassName,
   linkActiveClassName,
   NavArrow,
+  StyledLinkContainer,
+  VerticalLine,
+  NestedStyledLink,
+  SubFilterContainer,
 } from './index.styled'
-import { PageLayoutAnchor } from 'slices/PageLayoutAnchor'
 
 export class CategoriesBar extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { currentFilter: 'Select Filter' }
+    this.state = { 
+      filterLabel: "",
+      filterOpen: false,
+      subFilterOpen: false, 
+    }
   }
 
-  updateCurrentFilter = (e, name) => {
+  
+
+  componentDidMount () {
+    if (typeof window !== 'undefined') {      
+      const currentPath = window.location.pathname
+
+  
+
+      this.setState({
+        filterLabel: currentPath,   
+      })
+      console.log(currentPath)
+    } else {
+      this.setState({
+        filterLabel: "Select",   
+      })
+    }
+  }
+
+  updateFilterLabel = (e, name) => {
     e.stopPropagation()
     this.setState({
-      currentFilter: name,
+      filterLabel: name,
     })
   }
+
+  toggleFilter = (e) => {
+    e.stopPropagation()
+    this.setState({
+      filterOpen: !this.state.filterOpen
+    })
+  }
+
+  toggleSubFilter = (e) => {
+    e.stopPropagation()
+    this.setState({
+      subFilterOpen: !this.state.subFilterOpen
+    })
+  }
+
 
   getLinkProps = () => ({ href, location: { pathname } }) => ({
     className: classnames(
@@ -38,53 +80,97 @@ export class CategoriesBar extends React.Component {
 
   render() {
     const categories = get(this.props, 'data.prismicNavigation.data.link_list')
-    console.log("im catgeoriewasdf ", categories)
     return (
       <>
-
-
-
         <Desktop>
-          {categories.map(item => (
-            <StyledLink
-              key={get(item, 'name')}
-              to={get(item, 'link.url', '/')}
-            >
-              {get(item, 'name')}
-            </StyledLink>
-          ))}
+          <StyledLink 
+            to={'/featured-projects/'}                 
+            onClick={e => this.updateFilterLabel(e, 'Select')}
+          >
+            Featured</StyledLink>                   
+          <VerticalLine>|</VerticalLine>
+          <FilterContainer>
+            <span>Building Use:</span>
+            <CurrentFilter>
+              {this.state.FilterLabel}
+            </CurrentFilter>
+            <NavArrow />
+            <StyledLinkContainer>
+            {categories.map(item => (
+              <NestedStyledLink
+                key={get(item, 'name')}
+                to={get(item, 'link.url', '/')}
+                onClick={e =>
+                  this.updateFilterLabel(e, get(item, 'name'))
+                }
+              >
+                {get(item, 'name')}
+              </NestedStyledLink>
+            ))}  
+            </StyledLinkContainer>
+          </FilterContainer>          
+          <VerticalLine>|</VerticalLine>
+          <StyledLink 
+            to={'/featured-projects/'}
+            onClick={e => this.updateFilterLabel(e, 'Select')}
+          >
+            Historical Research</StyledLink>
         </Desktop>
 
-
-
-
-
-
-        <Toggle>
-          {({ on, toggle }) => (
-            <Mobile>
-              <span>Filter: </span>
-              <CurrentFilter onClick={toggle}>
-                {this.state.currentFilter}
-              </CurrentFilter>
-              <NavArrow active={on} />
-              <FilterBox isOpen={on}>
-                {categories.map(item => (
-                  <StyledLink
-                    key={get(item, 'name')}
-                    to={get(item, 'link.url', '/')}
-                    getProps={this.getLinkProps()}
-                    onClick={e =>
-                      this.updateCurrentFilter(e, get(item, 'name'))
-                    }
-                  >
-                    {get(item, 'name')}
-                  </StyledLink>
-                ))}
-              </FilterBox>
-            </Mobile>
-          )}
-        </Toggle>
+        <Mobile>
+          <div style={{position: "relative"}}>
+            <span>Filter: </span>
+            <CurrentFilter 
+              onClick={e => this.toggleFilter(e)}
+            >
+              {this.state.filterLabel}
+            </CurrentFilter>
+            <NavArrow style={{right: '3rem', top: '3px'}}active={this.state.filterOpen} />
+          </div>
+          <MobileFilterContainer isOpen={this.state.filterOpen}>
+            <StyledLink 
+              to={'/featured-projects/'}     
+              getProps={this.getLinkProps()}            
+              onClick={e => this.updateFilterLabel(e, 'Featured')}
+            >
+              Featured
+            </StyledLink>
+            <div style={{position: "relative"}}>
+              <p 
+                className={navItemClassName}
+                style={{display: "inline-block"}}            
+                onClick={e => this.toggleSubFilter(e)}
+              >
+                Building Use
+              </p>
+              <NavArrow style={{top: '12px'}}active={this.state.subFilterOpen} 
+              />
+            </div>
+            <SubFilterContainer
+              isOpen={this.state.subFilterOpen}
+            >
+              {categories.map(item => (
+                <StyledLink
+                  key={get(item, 'name')}
+                  to={get(item, 'link.url', '/')}
+                  getProps={this.getLinkProps()}
+                  onClick={e =>
+                    this.updateFilterLabel(e, get(item, 'name'))
+                  }
+                >
+                  {get(item, 'name')}
+                </StyledLink>
+              ))}
+            </SubFilterContainer>
+            <StyledLink 
+              to={'/featured-projects/'}
+              getProps={this.getLinkProps()}
+              onClick={e => this.updateFilterLabel(e, 'Historic Research')}
+            >
+              Historical Research
+            </StyledLink>
+          </MobileFilterContainer>
+        </Mobile>        
       </>
     )
   }
