@@ -29,6 +29,10 @@ export class MobileBar extends React.Component {
       return head(initialLabel)
     }      
   }
+  closeAllFilters = (e) => {
+    this.toggleFilter(e)
+    this.toggleSubFilter(e)
+  } 
 
   toggleFilter = (e) => {
     e.stopPropagation()
@@ -69,7 +73,8 @@ export class MobileBar extends React.Component {
           <MobileFilterContainer isOpen={this.state.filterOpen}>
             <StyledLink 
               to={'/featured-projects/'}     
-              getProps={this.getLinkProps()}                          
+              getProps={this.getLinkProps()}
+              onClick={e => this.toggleFilter(e)}                          
             >
               Featured
             </StyledLink>
@@ -93,7 +98,10 @@ export class MobileBar extends React.Component {
                 <StyledLink
                   key={get(item, 'name')}
                   to={get(item, 'link.url', '/')}
-                  getProps={this.getLinkProps()}                  
+                  getProps={this.getLinkProps()}
+                  onClick={e => 
+                    this.closeAllFilters(e)                    
+                  }                
                 >
                   {get(item, 'name')}
                 </StyledLink>
@@ -102,6 +110,7 @@ export class MobileBar extends React.Component {
             <StyledLink 
               to={'/featured-projects/'}
               getProps={this.getLinkProps()}              
+              onClick={e => this.toggleFilter(e)}                          
             >
               Historical Research
             </StyledLink>
