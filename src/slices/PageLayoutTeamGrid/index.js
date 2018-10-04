@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get, isString } from 'lodash'
 import { Image } from 'components/Image'
-import { Value } from 'react-powerplug'
+import { Value, Toggle } from 'react-powerplug'
 import { getUnlessEmptyString } from 'helpers'
 import { 
   GridContainer, 
@@ -11,8 +11,10 @@ import {
   Title, 
   OverlayContainer,
   QuoteBlock,
+  BottomQuoteBlock,
   Overlay,
   FilterBarContainer,
+  CurrentFilter,
   Filter,
 } from './index.styled'
 
@@ -21,36 +23,64 @@ const getActiveState = (currentFilter, targetFilter) => {
   return currentFilter === targetFilter
 }
 
-const RoleFilterBar = ({filters, setFilter}) => (
-  <FilterBarContainer>
-    {filters.map((filter) => (
+const RoleFilterBar = ({filters, setFilter, currentFilter}) => (
+  <Toggle>
+    {({toggle, on}) => (
       <>
-        <Filter
-          onClick={e => setFilter(filter.role_filter)}
+        <CurrentFilter
+          onClick={() => toggle()}
         >
-          {filter.role_filter}
-        </Filter>
+          {currentFilter}
+        </CurrentFilter>
+        <FilterBarContainer isOpen={on}>
+          {filters.map((filter) => (
+            <>
+              <Filter
+                onClick={e => {
+                  setFilter(filter.role_filter)
+                  toggle()
+                }}             
+              >
+                {filter.role_filter}
+              </Filter>
+            </>
+          ))}
+        </FilterBarContainer>
       </>
-    ))}
-  </FilterBarContainer>
+    )}
+  </Toggle>
 )
 
 const renderQuoteBlock = (i, data, list) => {
-  console.log(data.primary.top_quote.html)
-  console.log(data.primary.middle_quote.html)
-  console.log(data.primary.bottom_quote.html)
-  console.log("arr length is   ", list.length)
-  let context  
-  if (i === 2 || i === 10) context = "desktop"
-  if (i === 0 || i === 7) context = "mobile"
-  if (i === list.length - 1) context = "desktop"
-  
-  console.log(context);
+  let context=""
+  switch (i) {
+    case 0:
+      context="mobileTop"
+      break;
+    case 6:
+      context="mobileMiddle"
+      break;
+    case 2:
+      context="desktopTop"
+      break;
+    case 10:
+      context="desktopMiddle"
+      break;
+    case list.length - 1:
+      context="bottomEnd"    
+      break;
+    default:
+  } 
+
   if (isString(context)) {    
     return (
-      <QuoteBlock context={context}>
-        <span> {context}some quote here blah blah blah blalh</span>
-      </QuoteBlock>
+      <>  
+        {context === "mobileTop" && (<QuoteBlock html={get(data, 'primary.top_quote.html')} context={"mobile"} align={"right"}/>)}
+        {context === "mobileMiddle" && (<QuoteBlock html={get(data, 'primary.middle_quote.html')} context={"mobile"} align={"left"}/>)}
+        {context === "desktopTop" && (<QuoteBlock html={get(data, 'primary.top_quote.html')} context={"desktop"} align={"right"}/>)}
+        {context === "desktopMiddle" && (<QuoteBlock html={get(data, 'primary.middle_quote.html')} context={"desktop"} align={"left"}/>)}
+        {context === "bottomEnd" && (<BottomQuoteBlock html={get(data, 'primary.middle_quote.html')}/>)}
+      </>
     )
   }  
 }
@@ -78,10 +108,7 @@ export const PageLayoutTeamGrid = ({ data, rootData }) => {
     <Value initial="All">
       {({value: currentFilter, set: setFilter}) => (
         <>
-          <RoleFilterBar 
-            setFilter={setFilter} 
-            filters={roleFilters}
-          />
+          <RoleFilterBar setFilter={setFilter} filters={roleFilters} currentFilter={currentFilter} />          
           <GridContainer>
             {teamMembers.map((member, i, list) => (
               <>
