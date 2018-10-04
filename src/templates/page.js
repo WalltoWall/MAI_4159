@@ -23,6 +23,7 @@ import { PageLayoutAnchor } from 'slices/PageLayoutAnchor'
 import { PageLayoutInfoBlock } from 'slices/PageLayoutInfoBlock'
 import { PageLayoutSocialMedia } from 'slices/PageLayoutSocialMedia'
 import { PageLayoutTextExpandable } from 'slices/PageLayoutTextExpandable'
+import { PageLayoutTeamGrid } from 'slices/PageLayoutTeamGrid'
 
 const PageTemplate = ({ data, location }) => (
   <>
@@ -51,6 +52,7 @@ const PageTemplate = ({ data, location }) => (
           PageLayoutSocialMedia,
           PageLayoutAnchorsMenu,
           PageLayoutTextExpandable,
+          PageLayoutTeamGrid,
         }}
         page={get(data, 'prismicPage')}
         rootData={data}
@@ -77,7 +79,7 @@ export const query = graphql`
     ...PageLayoutHero
     ...PageLayoutProjectBoxes
     ...PageLayoutSplitPanels
-    ...PageLayoutSubPageHero    
+    ...PageLayoutSubPageHero
     ...PageLayoutPortfolioGridTop
     ...PageLayoutPortfolioGridBottom
     ...PageLayoutCtaBar
@@ -91,5 +93,6 @@ export const query = graphql`
     ...PageLayoutSocialMedia
     ...PageLayoutAnchorsMenu
     ...PageLayoutTextExpandable
+    ...PageLayoutTeamGrid
   }
 `
