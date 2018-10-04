@@ -35,10 +35,16 @@ const RoleFilterBar = ({filters, setFilter}) => (
   </FilterBarContainer>
 )
 
-const renderQuoteBlock = (i) => {
+const renderQuoteBlock = (i, data, list) => {
+  console.log(data.primary.top_quote.html)
+  console.log(data.primary.middle_quote.html)
+  console.log(data.primary.bottom_quote.html)
+  console.log("arr length is   ", list.length)
   let context  
   if (i === 2 || i === 10) context = "desktop"
   if (i === 0 || i === 7) context = "mobile"
+  if (i === list.length - 1) context = "desktop"
+  
   console.log(context);
   if (isString(context)) {    
     return (
@@ -67,7 +73,7 @@ const renderGrid = (data, currentFilter) => (
 
 export const PageLayoutTeamGrid = ({ data, rootData }) => {
   let roleFilters = get(rootData, "prismicPage.data.role_filters")
-  let teamMembers = data.items
+  let teamMembers = data.items 
   return (
     <Value initial="All">
       {({value: currentFilter, set: setFilter}) => (
@@ -77,12 +83,12 @@ export const PageLayoutTeamGrid = ({ data, rootData }) => {
             filters={roleFilters}
           />
           <GridContainer>
-            {teamMembers.map((member, i) => (
+            {teamMembers.map((member, i, list) => (
               <>
                 <StyledLink>
                   {renderGrid(get(member, 'team_member.document[0].data'), currentFilter)}        
                 </StyledLink>          
-                {renderQuoteBlock(i)}          
+                {renderQuoteBlock(i, data, list)}          
               </>
             ))}
           </GridContainer>
@@ -102,6 +108,17 @@ export const query = graphql`
         layout {
           ... on PrismicPageLayoutTeamGrid {
             id
+            primary {
+              top_quote {
+                html
+              }
+              middle_quote {
+                html
+              }
+              bottom_quote {
+                html
+              }
+            }
             items {
               team_member {
                 url
