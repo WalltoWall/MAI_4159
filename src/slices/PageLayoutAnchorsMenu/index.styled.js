@@ -8,7 +8,7 @@ export const StyledAnchor = styled.a`
   padding: 0rem 1rem;
   margin: 0 2rem;
   font-family: ${t.ff.sans2};
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.05rem;
   -webkit-transition: color 0.2s ease-in;
   -moz-transition: color 0.2s ease-in;
   -o-transition: color 0.2s ease-in;
@@ -21,11 +21,6 @@ export const StyledAnchor = styled.a`
   ${t.mq.l} {
     width: auto;
     padding: 0rem 1rem;
-    &:last-child {
-      border-left: 1px solid white;
-      padding-left: 3rem;
-      margin-left: 0;
-    }
     :hover {     
       background: none;    
     }

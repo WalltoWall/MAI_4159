@@ -26,6 +26,8 @@ export const SubFilterContainer = styled.div`
   height: 100%;
   justify-content: center;
   align-items: center;
+  font-family: ${t.ff.sans2};
+  letter-spacing: 0.05rem;
 `
 
 export const CurrentFilter = styled.h2`
@@ -61,7 +63,7 @@ export const StyledLink = styled(Link)`
   padding: 0;
   margin: 0 1rem;
   font-family: ${t.ff.sans2};
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.05rem;
   color: white;
   -webkit-transition: color 0.2s ease-in;
   -moz-transition: color 0.2s ease-in;
@@ -81,7 +83,7 @@ export const NestedStyledLink = styled(Link)`
   width: 100%;
   text-align: center;
   font-family: ${t.ff.sans2};
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.05rem;
   -webkit-transition: background-color 0.2s ease-in;
   -moz-transition: background-color 0.2s ease-in;
   -o-transition: background-color 0.2s ease-in;
@@ -95,13 +97,13 @@ export const NestedStyledLink = styled(Link)`
 
 export const NavArrow = styled(HoverArrowSVG)`
   flex-shrink: 0;
-  height: 1.2rem;
+  height: 1rem;
   transform: ${p => (p.active ? 'rotate(90deg)' : 'rotate(0deg)')};
   position: relative;
   z-index: 1;
   display: inline-block;
-  margin-left: 26px;
-  top: 2px;
+  margin-left: 20px;
+  top: 0;
   right: 8px;
 
   ${SubFilterContainer}:hover & {    
