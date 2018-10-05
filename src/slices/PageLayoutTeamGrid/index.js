@@ -11,7 +11,7 @@ import {
   ImageContainer,
   TitleContainer,
   Title,
-  OverlayContainer,     
+  OverlayContainer,
   Overlay,
   FilterBarContainer,
   CurrentFilter,
@@ -29,9 +29,10 @@ const RoleFilterBar = ({ filters, setFilter, currentFilter }) => (
     {({ toggle, on }) => (
       <>
         <div style={{ position: 'relative' }}>
-          <CurrentFilter onClick={() => toggle()}>{currentFilter}</CurrentFilter>
-          <NavArrow active={on}
-          />
+          <CurrentFilter onClick={() => toggle()}>
+            {currentFilter}
+          </CurrentFilter>
+          <NavArrow active={on} />
         </div>
         <FilterBarContainer isOpen={on}>
           {filters.map(filter => (
@@ -67,7 +68,7 @@ const renderGrid = (data, currentFilter) => (
         <Title>{data.job_title}</Title>
       </TitleContainer>
       <Overlay isActive={getActiveState(currentFilter, data.department)} />
-    </OverlayContainer>    
+    </OverlayContainer>
   </>
 )
 
@@ -89,10 +90,15 @@ export const PageLayoutTeamGrid = ({ data, rootData }) => {
                 <StyledLink
                   to={get(member, 'team_member.url')}
                   onClick={e => {
-                    if (!getActiveState(currentFilter, get(member, 'team_member.document[0].data.department'))) {
+                    if (
+                      !getActiveState(
+                        currentFilter,
+                        get(member, 'team_member.document[0].data.department')
+                      )
+                    ) {
                       e.preventDefault()
-                    }                    
-                  }} 
+                    }
+                  }}
                 >
                   {renderGrid(
                     get(member, 'team_member.document[0].data'),
