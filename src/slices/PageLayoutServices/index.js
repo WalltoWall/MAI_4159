@@ -8,36 +8,40 @@ import {
   Container,
   Title,
   Content,
-  ContentContainer,
   ImageWrapper,
   TextWrapper,
+  ImageContainer,
   Subhead,
   StyledHtmlClassName,
 } from './index.styled'
 
 export const PageLayoutServices = ({ data }) => {
   return (
-    <Container photo_orientation={get(data, 'primary.photo_orientation')}>
+    <Container background_color={get(data, 'primary.background_color')}>
       <Title>{get(data, 'primary.title1.text')}</Title>
       <Content>{get(data, 'primary.text.text')}</Content>
-      <ContentContainer>
-        <ImageWrapper
-          photo_orientation={get(data, 'primary.photo_orientation')}
-        >
+      <ImageContainer>
+        <ImageWrapper>
           <Image
-            alt={getUnlessEmptyString(data, 'primary.image.alt')}
-            fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
+            alt={getUnlessEmptyString(data, 'primary.left_image.alt')}
+            fluid={get(data, 'primary.left_image.localFile.childImageSharp.fluid')}
             fadeIn={false}
           />
         </ImageWrapper>
-        <TextWrapper>
-          <Subhead>Services</Subhead>
-          <HTMLContent
-            html={get(data, 'primary.description.html')}
-            className={StyledHtmlClassName}
+         <ImageWrapper>
+          <Image
+            alt={getUnlessEmptyString(data, 'primary.right_image.alt')}
+            fluid={get(data, 'primary.right_image.localFile.childImageSharp.fluid')}
+            fadeIn={false}
           />
-        </TextWrapper>
-      </ContentContainer>
+        </ImageWrapper>
+      </ImageContainer>
+      <TextWrapper>
+        <HTMLContent
+          html={get(data, 'primary.description.html')}
+          className={StyledHtmlClassName}
+        />
+      </TextWrapper>
     </Container>
   )
 }
@@ -56,7 +60,17 @@ export const query = graphql`
               text {
                 text
               }
-              image {
+              left_image {
+                alt
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 700, quality: 90) {
+                      ...GatsbyImageSharpFluid_withWebp_noBase64
+                    }
+                  }
+                }
+              }
+              right_image {
                 alt
                 localFile {
                   childImageSharp {
@@ -69,7 +83,7 @@ export const query = graphql`
               description {
                 html
               }
-              photo_orientation
+              background_color
             }
           }
         }
