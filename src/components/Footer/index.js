@@ -33,7 +33,7 @@ const render = () => queryData => {
         <MenuContainer>
           <LinkContainer>
             {menuList.map((item, index) => (
-              <>
+              <React.Fragment key={index + get(item, 'id')}>
                 <StyledLink
                   key={get(item, 'id')}
                   to={get(item, 'primary.link.url', '/')}
@@ -43,7 +43,7 @@ const render = () => queryData => {
                 {menuLength !== index + 1 && (
                   <LinkSeparator key={get(item, 'id') + index}>|</LinkSeparator>
                 )}
-              </>
+              </React.Fragment>
             ))}
           </LinkContainer>
           <CopyrightContent>
