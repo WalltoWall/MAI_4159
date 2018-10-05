@@ -18,6 +18,7 @@ export const Content = styled.div`
 `
 
 export const Intro = styled(HTMLContent)`
+  cursor: pointer;
   h1 {
     font-family: ${t.ff.sans};
     font-size: ${t.s(1)};
