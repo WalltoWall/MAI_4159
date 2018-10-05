@@ -34,7 +34,7 @@ export const BrandContent = styled.div`
   text-align: center;
   ${t.mq.l} {
     padding: 0 5rem 0 2.5rem;
-    width: 100%;
+    width: 40%;
     text-align: left;
     margin-top: -1.2rem;
   }
