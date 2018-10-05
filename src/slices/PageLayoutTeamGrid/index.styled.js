@@ -1,13 +1,13 @@
 import styled from 'react-emotion'
-import { css } from 'emotion'
 import t from 'theme'
 import { Link } from 'components/Link'
-import { HTMLContent } from 'components/HTMLContent'
+import { ReactComponent as HoverArrowSVG } from 'assets/hov_arrow.svg'
 
 export const GridContainer = styled.div`
   display: flex; 
   align-items: center;
   flex-wrap: wrap;  
+  overflow: hidden;
 `
 
 export const StyledLink = styled(Link)`  
@@ -15,9 +15,12 @@ export const StyledLink = styled(Link)`
   justify-content: center;
   position: relative;
   width: 50%;
-  height: 300px;  
+  height: 200px; 
+  overflow: hidden;    
+  
   ${t.mq.l} {
     width: 25%;
+    height: 300px; 
   }
 `
 
@@ -55,80 +58,14 @@ export const Title = styled.h1`
   
 `
 
-export const QuoteBlock = styled(HTMLContent)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: ${t.c.yellow};
-  position: relative;
-  width: 50%;
-  height: 300px;  
-  display: ${p => p.context === "mobile" ? "flex" : "none"};
-
-  align-items: ${p => p.align === "left" ? "flex-start" : "flex-end"};
-
-  p {
-    width: 100%;
-    text-align: ${p => p.align === "right" ? "right" : "left"};
-    padding: 0 ${t.s(0.5)};
-    ${t.mq.l} {
-      width: 70%;    
-      padding-right: ${p => p.align === "right" ? t.s(3) : "0"};
-      padding-left: ${p => p.align === "left" ? t.s(3) : "0"};
-    }
-  }
-
-
-
-  ${t.mq.l} {
-    width: 25%;
-    display: ${p => p.context === "desktop" ? "flex" : "none"};
-  }
-`
-
-export const BottomQuoteBlock = styled(HTMLContent)`
-  display: flex;
-  background: ${t.c.yellow};
-  flex-direction: column;
-  justify-content: center;
-  text-align: right;
-  align-items: flex-end;
-  position: relative;
-  width: 50%;
-  height: 300px;    
-  p {
-    width: 100%;    
-    padding-right: ${t.s(3)};
-    ${t.mq.l} {
-      width: 70%;    
-    }
-  }
-  ${t.mq.l} {
-    width: 25%;    
-  }
-`
-
-
-export const DesktopQuote = styled.div`  
-  display: none;
-  ${t.mq.l} {
-    display: block;
-  }
-`
-
-export const MobileQuote = styled.div`
-  display: block;
-  ${t.mq.l} {
-   display: none;   
-  }
-`
-
 export const FilterBarContainer = styled.div`
   display: ${p => p.isOpen ? "flex" : "none"};
   justify-content: center;
   padding: ${t.s(1)};
   flex-direction: column;
   align-items: center;
+  background-color: ${t.c.darkgrey2};
+  color: white;
   ${t.mq.l} {
     display: flex;
     flex-direction: row;
@@ -140,20 +77,27 @@ export const CurrentFilter = styled.div`
   ${t.mq.l} {
     display: none;
   }
+  background-color: ${t.c.darkgrey2};
   font-size: ${t.f(2)};
+  font-weight: 700;
   text-align: center;
   padding: ${t.s(1)} 0;
+  color: ${t.c.yellow};
 `
-
-// export const FilterBarContainer = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   padding: ${t.s(1)};
-  
-//   ${t.mq.l} {
-//     display: none;   
-//   }
-// `
+export const NavArrow = styled(HoverArrowSVG)`
+  flex-shrink: 0;
+  height: 1.2rem;
+  transform: ${p => (p.active ? 'rotate(90deg)' : 'rotate(0deg)')};
+  position: absolute;
+  z-index: 1;
+  display: inline-block;
+  margin-left: 10px;  
+  right: 4rem;
+  top: 26px;
+  ${t.mq.l} {
+    display: none;
+  }
+`
 
 export const Filter = styled.div`
   font-size: ${t.f(2)};
