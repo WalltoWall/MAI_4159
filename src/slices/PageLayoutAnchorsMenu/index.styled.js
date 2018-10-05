@@ -8,7 +8,7 @@ export const StyledAnchor = styled.a`
   padding: 0rem 1rem;
   margin: 0 2rem;
   font-family: ${t.ff.sans2};
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.1rem;
   -webkit-transition: color 0.2s ease-in;
   -moz-transition: color 0.2s ease-in;
   -o-transition: color 0.2s ease-in;

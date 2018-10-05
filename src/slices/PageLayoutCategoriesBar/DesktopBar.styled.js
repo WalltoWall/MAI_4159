@@ -27,7 +27,7 @@ export const SubFilterContainer = styled.div`
   justify-content: center;
   align-items: center;
   font-family: ${t.ff.sans2};
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.1rem;
 `
 
 export const CurrentFilter = styled.h2`
@@ -63,7 +63,7 @@ export const StyledLink = styled(Link)`
   padding: 0;
   margin: 0 1rem;
   font-family: ${t.ff.sans2};
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.1rem;
   color: white;
   -webkit-transition: color 0.2s ease-in;
   -moz-transition: color 0.2s ease-in;
@@ -83,7 +83,7 @@ export const NestedStyledLink = styled(Link)`
   width: 100%;
   text-align: center;
   font-family: ${t.ff.sans2};
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.1rem;
   -webkit-transition: background-color 0.2s ease-in;
   -moz-transition: background-color 0.2s ease-in;
   -o-transition: background-color 0.2s ease-in;
