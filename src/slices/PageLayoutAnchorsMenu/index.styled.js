@@ -21,11 +21,6 @@ export const StyledAnchor = styled.a`
   ${t.mq.l} {
     width: auto;
     padding: 0rem 1rem;
-    &:last-child {
-      border-left: 1px solid white;
-      padding-left: 3rem;
-      margin-left: 0;
-    }
     :hover {     
       background: none;    
     }

@@ -26,6 +26,8 @@ export const SubFilterContainer = styled.div`
   height: 100%;
   justify-content: center;
   align-items: center;
+  font-family: ${t.ff.sans2};
+  letter-spacing: 0.1rem;
 `
 
 export const CurrentFilter = styled.h2`
@@ -95,13 +97,13 @@ export const NestedStyledLink = styled(Link)`
 
 export const NavArrow = styled(HoverArrowSVG)`
   flex-shrink: 0;
-  height: 1.2rem;
+  height: 1rem;
   transform: ${p => (p.active ? 'rotate(90deg)' : 'rotate(0deg)')};
   position: relative;
   z-index: 1;
   display: inline-block;
-  margin-left: 26px;
-  top: 2px;
+  margin-left: 20px;
+  top: 0;
   right: 8px;
 
   ${SubFilterContainer}:hover & {    

@@ -96,6 +96,7 @@ export const NavArrow = styled(HoverArrowSVG)`
 export const SearchButtonIcon = styled(AssetIconSearchSVG)`
   cursor: pointer;
   height: ${t.s(0)};
+  margin: 0.8rem 0;
   transform: translate(-10%, -5%);
   width: ${t.s(0)};
 `
