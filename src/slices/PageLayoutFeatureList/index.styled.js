@@ -4,7 +4,11 @@ import { Link } from 'components/Link'
 
 const backgroundColor = ({ background_color }) => {
   switch (background_color) {
-    case 'Grey':
+    case 'Dark Grey':
+      return `
+        background-color: ${t.c.lightgrey2};
+      `
+    case 'Light Grey':
       return `
         background-color: ${t.c.lightgrey1};
       `

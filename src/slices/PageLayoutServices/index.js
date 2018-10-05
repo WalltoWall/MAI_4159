@@ -9,10 +9,11 @@ import {
   Title,
   Content,
   ImageWrapper,
-  TextWrapper,
+  ImageDescription,
   ImageContainer,
-  Subhead,
   StyledHtmlClassName,
+  TextWrapper,
+  TextBlock,
 } from './index.styled'
 
 export const PageLayoutServices = ({ data }) => {
@@ -36,11 +37,21 @@ export const PageLayoutServices = ({ data }) => {
           />
         </ImageWrapper>
       </ImageContainer>
+      <ImageDescription>{get(data, 'primary.description.text')}
+      </ImageDescription>
       <TextWrapper>
+        <TextBlock>
+          <HTMLContent
+            html={get(data, 'primary.left_text_block.html')}
+            className={StyledHtmlClassName}
+          />
+        </TextBlock>
+        <TextBlock>
         <HTMLContent
-          html={get(data, 'primary.description.html')}
+          html={get(data, 'primary.right_text_block.html')}
           className={StyledHtmlClassName}
         />
+        </TextBlock>
       </TextWrapper>
     </Container>
   )
@@ -54,6 +65,7 @@ export const query = graphql`
           ... on PrismicPageLayoutServices {
             id
             primary {
+              background_color
               title1 {
                 text
               }
@@ -81,9 +93,14 @@ export const query = graphql`
                 }
               }
               description {
+                text
+              }
+              left_text_block {
                 html
               }
-              background_color
+              right_text_block {
+                html
+              }
             }
           }
         }

@@ -4,14 +4,14 @@ import { css } from 'emotion'
 
 const backgroundColor = ({ background_color }) => {
   switch (background_color) {
-    case 'Grey':
+    case 'Dark Grey':
       return `
-        background-color: ${t.c.lightgrey1};
+        background-color: ${t.c.lightgrey2};
       `
 
     default:
       return `
-        background-color: ${t.c.white};
+        background-color: ${t.c.lightgrey1};
       `
   }
 }
@@ -53,23 +53,28 @@ export const Image = styled.img`
 export const ImageWrapper = styled.div`
   max-height: 500px;
   overflow: hidden;
-  width: 49%;
+  width: 100%;
   display: block;
+   ${t.mq.m} {
+    width: 49%;
+  }
 `
 
-export const TextWrapper = styled.div`
-  width: 60%;
+export const ImageDescription = styled.div`
+  width: 100%;
   margin: 0 auto;
-`
-
-export const Subhead = styled.h2`
-  font-family: ${t.ff.sans};
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: ${t.s(2)};
-  color: ${t.c.darkgrey1};
-  letter-spacing: 0.1rem;
+  color: ${t.c.darkgrey2};
+  font-family: ${t.ff.sans2};
+  line-height: ${t.lh.copy};
+  font-size: ${t.f(0)};
+  margin-bottom: 0.6rem;
   text-align: center;
+  ${t.mq.m} {
+    width: 80%;
+  }
+  ${t.mq.l} {
+    width: 60%;
+  }
 `
 
 export const Description = styled.div`
@@ -109,11 +114,40 @@ export const ProjectTitle = styled.div`
 `
 
 export const StyledHtmlClassName = css`
+  h2 {
+    color: ${t.c.darkgrey1};
+    font-family: ${t.ff.sans2};
+    font-size: ${t.f(2)};
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
   p {
-    color: ${t.c.darkgrey2};
+    color: ${t.c.darkgrey1};
     font-family: ${t.ff.sans2};
     font-size: ${t.f(0)};
     margin-bottom: 0.6rem;
-    text-align: center;
+    text-align: left;
+  }
+`
+export const TextWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 3rem auto;
+  justify-content: space-between;
+  ${t.mq.m} {
+    width: 90%;
+  }
+  ${t.mq.l} {
+    width: 60%;
+  }
+`
+
+export const TextBlock = styled.div`
+  width: 100%;
+  margin: 1rem auto;
+  ${t.mq.m} {
+    width: 45%;
   }
 `
