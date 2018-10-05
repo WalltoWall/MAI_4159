@@ -5,7 +5,7 @@ import { ReactComponent as HoverArrowSVG } from 'assets/hov_arrow.svg'
 export const StyledAnchor = styled.a`
   font-color: black;
   z-index: 2;
-  padding: 0 1rem;
+  padding: 0rem 1rem;
   margin: 0 2rem;
   font-family: ${t.ff.sans2};
   letter-spacing: 0.1rem;
@@ -13,14 +13,21 @@ export const StyledAnchor = styled.a`
   -moz-transition: color 0.2s ease-in;
   -o-transition: color 0.2s ease-in;
   transition: color 0.2s ease-in;
+  width: 100%;
   &:hover {
-    color: ${t.c.yellow};
+    color: ${t.c.yellow};    
+    background-color: ${t.c.lightgrey3};    
   }
   ${t.mq.l} {
+    width: auto;
+    padding: 0rem 1rem;
     &:last-child {
       border-left: 1px solid white;
       padding-left: 3rem;
       margin-left: 0;
+    }
+    :hover {     
+      background: none;    
     }
   }  
 `
@@ -74,7 +81,7 @@ export const NavArrow = styled(HoverArrowSVG)`
 
 export const StyledAnchorContainer = styled.div`  
   display: ${p => p.isOpen ? 'flex' : 'none'};
-  
+  width: 100%;  
   flex-direction: column;
   align-items: center;
   justify-content: center;  

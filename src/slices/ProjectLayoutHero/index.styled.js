@@ -39,9 +39,44 @@ export const Content = styled.div`
   ${t.mq.x} {
   }
 `
+
+export const CarouselContainer = styled.div`
+  height: ${t.s(8.5)};
+  width: 100%;
+  overflow: hidden;
+
+  ${t.mq.s} {
+    height: ${t.s(9.5)};
+  }
+  ${t.mq.l} {
+    height: ${t.s(11)};
+  }
+  ${t.mq.xx} {
+    height: ${t.s(12)};
+  }
+  img {
+    object-fit: cover;
+    height: 100% !important;
+    width: 100%;
+    margin-bottom: 0;
+  }
+  ${t.mq.l} {
+    width: 75% !important;
+  }
+`
+
 export const StyledCarousel = styled(Carousel)`
-  height: 100% !important;
+  height: 100% !important;  
   width: 100% !important;
+  .slider-frame {
+    height: 100% !important;
+  }
+  .slider-list {
+    height: 100% !important;  
+  }
+  .slider-slide {
+    height: 100% !important;
+  }
   .slider-control-centerleft {
     display: none;
   }
@@ -54,10 +89,7 @@ export const StyledCarousel = styled(Carousel)`
     ${t.mq.m} {
       display: block;
     }
-  }
-  ${t.mq.l} {
-    width: 75% !important;
-  }
+  }  
 `
 export const ImageContainer = styled.div`
   width: 100%;
@@ -90,9 +122,9 @@ export const ClipOverlay = styled.div`
   }
   ${t.mq.m} {
     left: -13%;
-    height: 116%;
+    height: 143%;
     width: 134%;
-    top: -4%;
+    top: -18%;
   }
   ${t.mq.l} {
     top: -250%;

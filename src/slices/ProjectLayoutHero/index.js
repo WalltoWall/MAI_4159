@@ -15,6 +15,7 @@ import {
   InfoContainer,
   InfoBlurb,
   InfoLine,
+  CarouselContainer,
   StyledCarousel,
   ContentContainer,
 } from './index.styled'
@@ -59,17 +60,19 @@ export class ProjectLayoutHero extends React.Component {
             <ClipOverlay />
           </Content>
         </ContentContainer>
-        <StyledCarousel autoplay={true} frameOverflow="show">
-          {get(this.props.data, 'items').map(item => (
-            <ImageContainer key={getUnlessEmptyString(item, 'image.alt')}>
-              <Image
-                alt={getUnlessEmptyString(item, 'image.alt')}
-                fluid={get(item, 'image.localFile.childImageSharp.fluid')}
-                fadeIn={false}
-              />
-            </ImageContainer>
-          ))}
-        </StyledCarousel>
+        <CarouselContainer>
+          <StyledCarousel autoplay={true} frameOverflow="show">
+            {get(this.props.data, 'items').map(item => (
+              <ImageContainer key={getUnlessEmptyString(item, 'image.alt')}>
+                <Image
+                  alt={getUnlessEmptyString(item, 'image.alt')}
+                  fluid={get(item, 'image.localFile.childImageSharp.fluid')}
+                  fadeIn={false}
+                />
+              </ImageContainer>
+            ))}
+          </StyledCarousel>
+        </CarouselContainer>
         <MobileNavOverlay />
       </Container>
     )
