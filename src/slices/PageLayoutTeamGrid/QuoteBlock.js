@@ -3,8 +3,6 @@ import { get, isString } from 'lodash'
 import { 
   QuoteContainer,
   Quote, 
-  BottomQuoteContainer,
-  BottomQuoteBlock, 
   ClipOverlay,
   ClipContainer,
 } 
@@ -16,13 +14,13 @@ export const QuoteBlock = ({ index, data, list }) => {
     case 0:
       context = 'mobileTop'
       break
-    case 6:
+    case 8:
       context = 'mobileMiddle'
       break
     case 2:
       context = 'desktopTop'
       break
-    case 10:
+    case 6:
       context = 'desktopMiddle'
       break
     case list.length - 1:
@@ -80,12 +78,15 @@ export const QuoteBlock = ({ index, data, list }) => {
           </QuoteContainer>
         )}
         {context === 'bottomEnd' && (
-          <BottomQuoteContainer>
-            <BottomQuoteBlock html={get(data, 'primary.middle_quote.html')} />
+          <QuoteContainer bottom={true} >
+            <Quote 
+              html={get(data, 'primary.middle_quote.html')} 
+              align={'right'}               
+            />
             <ClipContainer align={'right'}> 
               <ClipOverlay align={'right'}/>
             </ClipContainer> 
-          </BottomQuoteContainer>
+          </QuoteContainer>
         )}
       </>
     )

@@ -9,6 +9,7 @@ import {
   GridContainer,
   StyledLink,
   ImageContainer,
+  TitleContainer,
   Title,
   OverlayContainer,     
   Overlay,
@@ -51,7 +52,7 @@ const RoleFilterBar = ({ filters, setFilter, currentFilter }) => (
   </Toggle>
 )
 
-const renderGrid = (data, currentFilter, index, list) => (
+const renderGrid = (data, currentFilter) => (
   <>
     <ImageContainer>
       <Image
@@ -61,7 +62,10 @@ const renderGrid = (data, currentFilter, index, list) => (
       />
     </ImageContainer>
     <OverlayContainer>
-      <Title>{data.name}</Title>
+      <TitleContainer isActive={getActiveState(currentFilter, data.department)}>
+        <Title>{data.name}</Title>
+        <Title>{data.job_title}</Title>
+      </TitleContainer>
       <Overlay isActive={getActiveState(currentFilter, data.department)} />
     </OverlayContainer>    
   </>
@@ -82,7 +86,14 @@ export const PageLayoutTeamGrid = ({ data, rootData }) => {
           <GridContainer>
             {teamMembers.map((member, i, list) => (
               <>
-                <StyledLink>
+                <StyledLink
+                  to={get(member, 'team_member.url')}
+                  onClick={e => {
+                    if (!getActiveState(currentFilter, get(member, 'team_member.document[0].data.department'))) {
+                      e.preventDefault()
+                    }                    
+                  }} 
+                >
                   {renderGrid(
                     get(member, 'team_member.document[0].data'),
                     currentFilter,
