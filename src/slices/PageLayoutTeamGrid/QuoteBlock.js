@@ -80,7 +80,7 @@ export const QuoteBlock = ({ index, data, list }) => {
         {context === 'bottomEnd' && (
           <QuoteContainer bottom={true} >
             <Quote 
-              html={get(data, 'primary.middle_quote.html')} 
+              html={get(data, 'primary.bottom_quote.html')} 
               align={'right'}               
             />
             <ClipContainer align={'right'}> 
