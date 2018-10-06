@@ -36,9 +36,7 @@ export const query = graphql`
           ... on PrismicTeamMemberLayoutHero {
             id
             primary {
-              title1 {
-                text
-              }
+              title1
               image {
                 alt
                 localFile {
