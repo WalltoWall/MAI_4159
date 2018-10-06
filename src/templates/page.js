@@ -41,7 +41,7 @@ const PageTemplate = ({ data, location }) => (
           PageLayoutPortfolioGridTop,
           PageLayoutPortfolioGridBottom,
           PageLayoutCtaBar,
-          PageLayoutServices,
+          PageLayoutServices,          
           PageLayoutTextBlock,
           PageLayoutNewsPageHero,
           PageLayoutNewsSection,

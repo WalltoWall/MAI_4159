@@ -14,13 +14,15 @@ export const StyledLink = styled(Link)`
   display: flex;
   justify-content: center;
   position: relative;
-  width: 50%;
-  height: 200px; 
-  overflow: hidden;    
+  width: 50%;  
+  height: ${t.s(7.5)};  
   
+  ${t.mq.s} { 
+    height: ${t.s(9)}; 
+  }
+
   ${t.mq.l} {
-    width: 25%;
-    height: 300px; 
+    width: 25%;  
   }
 `
 
@@ -50,21 +52,56 @@ export const Overlay = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
+  z-index: 5;
   background-color: black; 
-  opacity: ${p => p.isActive ? 0 : .8};
+  opacity: ${p => p.isActive ? 0 : .5};
+  cursor: ${p => p.isActive ? "pointer" : "not-allowed"};
 `
 
-export const Title = styled.h1`
+export const TitleContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  transition: opacity ${t.t} ease-in-out;
+  opacity: 0.8;
+  padding: ${t.s(0.2)} 0;
   
+  ${t.mq.l} {
+    opacity: 0;
+    padding: ${t.s(0)} 0;
+  }
+  ${StyledLink}:hover & {
+    opacity: ${p => p.isActive ? 0.8 : 0};
+  }
+   
+`
+export const Title = styled.h1`
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: ${t.c.darkgrey1};
+  padding: 0;
+  margin: 0;
+  ${t.mq.s} {
+    font-size: ${t.f(1)};
+  }
+  ${t.mq.l} {
+    font-size: ${t.f(1.5)};
+  }
 `
 
 export const FilterBarContainer = styled.div`
   display: ${p => p.isOpen ? "flex" : "none"};
+  position: sticky;
+  top: 0;
+  z-index: 99;
   justify-content: center;
   padding: ${t.s(1)};
   flex-direction: column;
   align-items: center;
-  background-color: ${t.c.darkgrey2};
+  background-color: ${t.c.lightgrey3};
   color: white;
   ${t.mq.l} {
     display: flex;
@@ -99,8 +136,20 @@ export const NavArrow = styled(HoverArrowSVG)`
   }
 `
 
-export const Filter = styled.div`
-  font-size: ${t.f(2)};
-  margin: 0 ${t.s(1)};
+export const Filter = styled.div`  
+  font-size: ${t.f(1.5)};
+  font-weight: 600;
+  &:first-child {
+    margin-top: 0;
+  }
   cursor: pointer;
+  padding: ${t.s(-2)} 0;
+  ${t.mq.l} {
+    padding: 0;
+    margin: 0 ${t.s(1)};
+  }
+  transition: color ${t.t};
+  :hover {
+    color: ${t.c.yellow};
+  }
 `

@@ -15,36 +15,39 @@ import {
 } from './index.styled'
 
 
-const renderContent = ( data, on, toggle ) => (
-  <div>
-    {get(data, 'items', []).map(item => (
+const renderContent = ( data, index ) => (
+  <Toggle
+    key={data.text.text + index}
+  >
+    {({toggle, on}) => (
       <>
-      <Category>
-        <Content>
-          {get(item, 'intro.text') && (
-            <Intro html={get(item, 'intro.html')} />
-          )}
-          <StyledExpandButton isExpanded={on} onClick={toggle} />
-         </Content>
-      </Category>
-      <StyledExpand open={on}>
-        <Text html={get(item, 'text.html')} />
-      </StyledExpand>
+        <Category>
+          <Content>
+            {get(data, 'intro.text') && (
+              <Intro 
+                html={get(data, 'intro.html')} 
+                onClick={toggle}
+              />
+            )}
+            <StyledExpandButton 
+              isExpanded={on} 
+              onClick={toggle} />
+          </Content>
+        </Category>
+        <StyledExpand open={on}>
+          <Text html={get(data, 'text.html')} />
+        </StyledExpand>
       </>
-    ))}
-  </div>
+    )}
+  </Toggle> 
 )
 
 export const PageLayoutTextExpandable = ({ data }) => (
     <Container>
-    <Title>{get(data, 'primary.title1.text')}</Title>
-      <Toggle>
-        {({ on, toggle }) => (
-          <>
-            {renderContent(data, on, toggle)}
-          </>
-        )}
-      </Toggle>
+    <Title>{get(data, 'primary.title1.text')}</Title>    
+      {get(data, 'items', []).map((item, index) => (          
+        renderContent(item, index)              
+      ))}
     </Container>
 )
 

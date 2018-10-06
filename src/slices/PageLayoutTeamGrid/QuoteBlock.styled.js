@@ -3,19 +3,31 @@ import t from 'theme'
 import { HTMLContent } from 'components/HTMLContent'
 
 export const QuoteContainer = styled.div`
+  display: ${p => (
+    (p.context === "mobile" || p.bottom) 
+    ? "flex" 
+    : "none")
+  };
   position: relative;
+  justify-content: flex-end;
   width: 50%;
-  height: 200px;   
-  
+  height: ${t.s(7.5)};    
+  flex-grow: ${p => p.bottom ?  "2" : "inherit"};
+
+  ${t.mq.s} { 
+    height: ${t.s(9)}; 
+  }
   ${t.mq.l} {
-    width: 25%;   
-    height: 300px;  
+    width: 25%;       
   }
-  display: ${p => p.context === "mobile" ? "flex" : "none"};
+
   ${t.mq.l} {    
-    display: ${p => p.context === "desktop" ? "flex" : "none"};
-  }
-  // overflow-y: hidden;
+    ${p => (     
+      (p.context === "desktop" || p.bottom) 
+      ? "display: flex" 
+      : "display: none"     
+    )       
+  };
 `
 
 export const Quote = styled(HTMLContent)`
@@ -27,44 +39,24 @@ export const Quote = styled(HTMLContent)`
   z-index: 5;
   align-items: ${p => p.align === "left" ? "flex-start" : "flex-end"};
   p {
+    font-size: ${t.f(-1)};
+    &:first-child {
+      color: ${t.c.darkgrey1};      
+    }
+    &:last-child {
+      color: ${t.c.darkgrey2};      
+    }    
     z-index: 5;
     width: 100%;
     text-align: ${p => p.align === "right" ? "right" : "left"};
     padding: 0 ${t.s(0.5)};
-    ${t.mq.l} {
+    ${t.mq.s} {
+      font-size: ${t.f(1)};      
+    }
+    ${t.mq.l} {      
       width: 70%;    
       padding-right: ${p => p.align === "right" ? t.s(3) : "0"};
       padding-left: ${p => p.align === "left" ? t.s(3) : "0"};
-    }
-  }
-`
-
-export const BottomQuoteContainer = styled.div`
-  position: relative;
-  display: flex;
-  background: ${t.c.yellow};
-  flex-direction: column;
-  justify-content: center;  
-  align-items: flex-end;
-  position: relative;
-  flex-grow: 2;
-  height: 200px;      
-  width: 50%;
-  ${t.mq.l} {
-    height: 300px;
-  }
-`
-export const BottomQuoteBlock = styled(HTMLContent)`   
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  p {
-    z-index: 5;
-    width: 100%;    
-    padding-right: ${t.s(3)};
-    ${t.mq.l} {
-      width: 50%;    
     }
   }
 `

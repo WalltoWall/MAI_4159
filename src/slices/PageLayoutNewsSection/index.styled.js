@@ -87,13 +87,13 @@ export const StyledLink = styled(Link)`
   position: relative;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  margin: 1rem;
+  flex-wrap: wrap;  
   width: 100%;
+  padding: 1rem;
   ${t.mq.m} {
-    width: 30%;
+    width: 33.333333%;
     height: auto;
-    margin: 1rem 1rem 2rem 1rem;
+    padding: 1rem 1rem 2rem 1rem;
   }
 `
 export const ReadMore = styled(Link)`
