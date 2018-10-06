@@ -12,11 +12,29 @@ import {
   ImageDescription,
   ImageContainer,
   StyledHtmlClassName,
+  StyledLink,
   TextWrapper,
   TextBlock,
+  Project,
+  OverlayContainer,
+  ProjectImage,
 } from './index.styled'
 
+const renderFeatureGrid = ({ alt, key, img, title, url }) => (
+  <StyledLink to={url} key={key}>
+    <ProjectImage>
+      <Image fluid={img} alt={alt} fadeIn={false} />
+    </ProjectImage>
+    <OverlayContainer>
+      <Title>{title}</Title>
+    </OverlayContainer>
+  </StyledLink>
+)
+
 export const PageLayoutServices = ({ data }) => {
+  const projects = get(data, 'items')
+  const serviceName = get(data, 'primary.title1.text')
+
   return (
     <Container background_color={get(data, 'primary.background_color')}>
       <Title>{get(data, 'primary.title1.text')}</Title>
@@ -53,6 +71,25 @@ export const PageLayoutServices = ({ data }) => {
         />
         </TextBlock>
       </TextWrapper>
+      <div>
+        <h2>{serviceName} Work</h2>
+          <Project>
+            {projects.map(project =>
+                renderFeatureGrid({
+                  key: get(project, 'projects.document[0].uid'),
+                  alt: getUnlessEmptyString(
+                    get(project, 'projects.document[0].data.image.alt')
+                  ),
+                  img: get(
+                    project,
+                    'projects.document[0].data.image.localFile.childImageSharp.fluid'
+                  ),
+                  title: get(project, 'projects.document[0].data.title.text'),
+                  url: get(project, 'projects.url'),
+                })
+              )}
+          </Project>
+      </div>
     </Container>
   )
 }
@@ -100,6 +137,29 @@ export const query = graphql`
               }
               right_text_block {
                 html
+              }
+            }
+            items {
+              projects {
+                document {
+                  data {
+                    title {
+                      text
+                    }
+                    image {
+                      alt
+                      localFile {
+                        childImageSharp {
+                          fluid(maxWidth: 500, quality: 90) {
+                            ...GatsbyImageSharpFluid_withWebp_noBase64
+                          }
+                        }
+                      }
+                    }
+                  }
+                  uid
+                }
+                url
               }
             }
           }

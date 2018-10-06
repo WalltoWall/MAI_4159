@@ -1,6 +1,7 @@
 import styled from 'react-emotion'
 import t from 'theme'
 import { css } from 'emotion'
+import { Link } from 'components/Link'
 
 const backgroundColor = ({ background_color }) => {
   switch (background_color) {
@@ -34,9 +35,9 @@ export const Title = styled.h2`
 
 export const Content = styled.div`
   color: ${t.c.darkgrey1};
-  font-family: ${t.ff.sans2};
+  font-family: ${t.ff.serif};
   line-height: ${t.lh.copy};
-  font-size: ${t.s(1)};
+  font-size: ${t.s(1.5)};
   width: 100%;
   text-align: center;
   margin: -1rem auto 1rem auto;
@@ -149,5 +150,61 @@ export const TextBlock = styled.div`
   margin: 1rem auto;
   ${t.mq.m} {
     width: 45%;
+  }
+`
+
+export const StyledLink = styled(Link)`
+  position: relative;
+  display: block;
+  margin: 1rem;
+  width: 100%;
+  height: 14rem;
+  min-width: 300px;
+  max-width: 400px;
+  ${t.mq.m} {
+    width: 42%;
+    height: 15rem;
+  }
+  ${t.mq.l} {
+    width: 22%;
+    height: 15rem;
+  }
+`
+
+export const Project = styled.div`
+  width: 50%;
+`
+
+export const OverlayContainer = styled.div`
+  position: absolute;
+  display: flex;
+  height: 70px;
+  padding: 1rem;
+  width: 100%;
+  bottom: 0;
+  background-color: ${t.c.white};
+  opacity: 0.8;
+  z-index: 5;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -o-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  ${StyledLink}:hover & {
+    height: 100%;
+    border-bottom: 1rem solid ${t.c.yellow};
+  }
+`
+
+
+export const ProjectImage = styled.div`
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  .gatsby-image-outer-wrapper {
+    height: 100%;
+  }
+  .gatsby-image-wrapper {
+    height: 100%;
   }
 `
