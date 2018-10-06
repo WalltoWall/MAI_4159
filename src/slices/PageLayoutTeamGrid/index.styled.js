@@ -52,7 +52,7 @@ export const Overlay = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 5;
+  z-index: 3;
   background-color: black; 
   opacity: ${p => p.isActive ? 0 : .5};
   cursor: ${p => p.isActive ? "pointer" : "not-allowed"};
