@@ -49,6 +49,8 @@ export const Mobile = styled.div`
   padding: ${t.s(1)} 0;
   color: ${t.c.white};
   font-size: ${t.f(1)};
+  font-family: ${t.ff.sans2};
+  letter-spacing: 0.1rem;
   font-weight: 700;
   z-index: 2;
   ${t.mq.l} {

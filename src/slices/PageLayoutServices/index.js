@@ -15,9 +15,11 @@ import {
   StyledLink,
   TextWrapper,
   TextBlock,
-  Project,
+  Projects,
   OverlayContainer,
   ProjectImage,
+  SectionTitle,
+  ProjectTitle,
 } from './index.styled'
 
 const renderFeatureGrid = ({ alt, key, img, title, url }) => (
@@ -26,7 +28,7 @@ const renderFeatureGrid = ({ alt, key, img, title, url }) => (
       <Image fluid={img} alt={alt} fadeIn={false} />
     </ProjectImage>
     <OverlayContainer>
-      <Title>{title}</Title>
+      <ProjectTitle>{title}</ProjectTitle>
     </OverlayContainer>
   </StyledLink>
 )
@@ -55,8 +57,7 @@ export const PageLayoutServices = ({ data }) => {
           />
         </ImageWrapper>
       </ImageContainer>
-      <ImageDescription>{get(data, 'primary.description.text')}
-      </ImageDescription>
+      <ImageDescription>{get(data, 'primary.description.text')}</ImageDescription>
       <TextWrapper>
         <TextBlock>
           <HTMLContent
@@ -71,25 +72,23 @@ export const PageLayoutServices = ({ data }) => {
         />
         </TextBlock>
       </TextWrapper>
-      <div>
-        <h2>{serviceName} Work</h2>
-          <Project>
-            {projects.map(project =>
-                renderFeatureGrid({
-                  key: get(project, 'projects.document[0].uid'),
-                  alt: getUnlessEmptyString(
-                    get(project, 'projects.document[0].data.image.alt')
-                  ),
-                  img: get(
-                    project,
-                    'projects.document[0].data.image.localFile.childImageSharp.fluid'
-                  ),
-                  title: get(project, 'projects.document[0].data.title.text'),
-                  url: get(project, 'projects.url'),
-                })
-              )}
-          </Project>
-      </div>
+      <SectionTitle>{serviceName} Work</SectionTitle>
+        <Projects>
+          {projects.map(project =>
+            renderFeatureGrid({
+              key: get(project, 'projects.document[0].uid'),
+              alt: getUnlessEmptyString(
+                get(project, 'projects.document[0].data.image.alt')
+              ),
+              img: get(
+               project,
+                'projects.document[0].data.image.localFile.childImageSharp.fluid'
+                ),
+              title: get(project, 'projects.document[0].data.title.text'),
+              url: get(project, 'projects.url'),
+            })
+          )}
+      </Projects>
     </Container>
   )
 }

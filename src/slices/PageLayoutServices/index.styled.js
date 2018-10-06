@@ -19,30 +19,50 @@ const backgroundColor = ({ background_color }) => {
 
 export const Container = styled.div`
   flex-direction: column;
-  padding: 2rem;
+  padding: 2rem 0 0 0;
   ${backgroundColor};
+  ${t.mq.l} {
+    padding-bottom: 6rem;
+  }
 `
 
 export const Title = styled.h2`
   font-family: ${t.ff.sans};
   text-transform: uppercase;
-  font-size: ${t.s(3)};
+  font-size: ${t.s(2)};
   color: ${t.c.darkgrey1};
   letter-spacing: 0.1rem;
   font-weight: 600;
   text-align: center;
+  ${t.mq.l} {
+    font-size: ${t.s(3)};
+  }
+`
+
+
+export const ProjectTitle = styled.div`
+  font-family: ${t.ff.sans};
+  text-transform: uppercase;
+  font-size: ${t.s(0.8)};
+  color: ${t.c.darkgrey1};
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 auto;
 `
 
 export const Content = styled.div`
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.serif};
   line-height: ${t.lh.copy};
-  font-size: ${t.s(1.5)};
+  font-size: ${t.s(1)};
   width: 100%;
   text-align: center;
+  padding: 0 2rem 0 2rem;
   margin: -1rem auto 1rem auto;
   ${t.mq.l} {
     width: 60%;
+    font-size: ${t.s(1.5)};
   }
 `
 export const Image = styled.img`
@@ -69,6 +89,7 @@ export const ImageDescription = styled.div`
   line-height: ${t.lh.copy};
   font-size: ${t.f(0)};
   margin-bottom: 0.6rem;
+  padding: 0 2rem 0 2rem;
   text-align: center;
   ${t.mq.m} {
     width: 80%;
@@ -98,20 +119,15 @@ export const ImageContainer = styled.div`
   }
 `
 
-export const ProjectTitle = styled.div`
-  font-family: ${t.ff.sans};
+export const SectionTitle = styled.div`
+  color: ${t.c.darkgrey1};
+  font-family: ${t.ff.sans2};
+  font-size: ${t.f(2)};
+  font-weight: 700;
   text-transform: uppercase;
-  font-size: ${t.s(1)};
-  color: ${t.c.white};
   letter-spacing: 0.1rem;
-  font-weight: 600;
   text-align: center;
-  opacity: 1;
-  -webkit-transition: all 0.2s ease-in;
-  -moz-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-  z-index: 3;
+  margin-bottom: 1rem;
 `
 
 export const StyledHtmlClassName = css`
@@ -137,6 +153,7 @@ export const TextWrapper = styled.div`
   width: 100%;
   margin: 3rem auto;
   justify-content: space-between;
+  padding: 0 2rem 0 2rem;
   ${t.mq.m} {
     width: 90%;
   }
@@ -156,31 +173,39 @@ export const TextBlock = styled.div`
 export const StyledLink = styled(Link)`
   position: relative;
   display: block;
-  margin: 1rem;
   width: 100%;
   height: 14rem;
   min-width: 300px;
   max-width: 400px;
   ${t.mq.m} {
-    width: 42%;
+    width: 50%;
     height: 15rem;
+    margin: 1rem 0;
   }
   ${t.mq.l} {
-    width: 22%;
+    width: 23%;
     height: 15rem;
+    margin: 0 0.5%;
   }
 `
 
-export const Project = styled.div`
-  width: 50%;
+export const Projects = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-around;
+  ${t.mq.l} {
+    width: 75%;
+  }
 `
 
 export const OverlayContainer = styled.div`
   position: absolute;
   display: flex;
-  height: 70px;
   padding: 1rem;
   width: 100%;
+  height: 20%;
   bottom: 0;
   background-color: ${t.c.white};
   opacity: 0.8;
