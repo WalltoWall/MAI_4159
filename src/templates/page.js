@@ -15,7 +15,6 @@ import { PageLayoutPortfolioGridBottom } from 'slices/PageLayoutPortfolioGridBot
 import { PageLayoutCtaBar } from 'slices/PageLayoutCtaBar'
 import { PageLayoutServices } from 'slices/PageLayoutServices'
 import { PageLayoutTextBlock } from 'slices/PageLayoutTextBlock'
-import { PageLayoutNewsPageHero } from 'slices/PageLayoutNewsPageHero'
 import { PageLayoutNewsSection } from 'slices/PageLayoutNewsSection'
 import { PageLayoutAnchorsMenu } from 'slices/PageLayoutAnchorsMenu'
 import { PageLayoutAnchor } from 'slices/PageLayoutAnchor'
@@ -42,8 +41,7 @@ const PageTemplate = ({ data, location }) => (
           PageLayoutPortfolioGridBottom,
           PageLayoutCtaBar,
           PageLayoutServices,          
-          PageLayoutTextBlock,
-          PageLayoutNewsPageHero,
+          PageLayoutTextBlock,          
           PageLayoutNewsSection,
           PageLayoutAnchor,
           PageLayoutInfoBlock,
@@ -83,7 +81,6 @@ export const query = graphql`
     ...PageLayoutCtaBar
     ...PageLayoutServices    
     ...PageLayoutTextBlock
-    ...PageLayoutNewsPageHero
     ...PageLayoutNewsSection
     ...PageLayoutAnchor
     ...PageLayoutInfoBlock
