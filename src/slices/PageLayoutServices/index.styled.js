@@ -19,11 +19,8 @@ const backgroundColor = ({ background_color }) => {
 
 export const Container = styled.div`
   flex-direction: column;
-  padding: 2rem 0 0 0;
+  padding: 2rem 0 6rem 0;
   ${backgroundColor};
-  ${t.mq.l} {
-    padding-bottom: 6rem;
-  }
 `
 
 export const Title = styled.h2`
@@ -40,15 +37,20 @@ export const Title = styled.h2`
 `
 
 
-export const ProjectTitle = styled.div`
-  font-family: ${t.ff.sans};
-  text-transform: uppercase;
-  font-size: ${t.s(0.8)};
+export const ProjectTitle = styled.p`
   color: ${t.c.darkgrey1};
-  letter-spacing: 0.1rem;
-  font-weight: 600;
+  font-family: ${t.ff.sans};
+  font-size: ${t.f(2)};
   text-align: center;
+  position: absolute;
+  font-weight: 600;
   margin: 0 auto;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  display: block;
+  z-index: 2;
+  width: 100%;
 `
 
 export const Content = styled.div`
@@ -187,6 +189,11 @@ export const StyledLink = styled(Link)`
     height: 15rem;
     margin: 0 0.5%;
   }
+  &:hover {
+    ${ProjectTitle} {
+      top: 45%;
+    }
+  }
 `
 
 export const Projects = styled.div`
@@ -194,6 +201,7 @@ export const Projects = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
+  padding-bottom: 1rem;
   justify-content: space-around;
   ${t.mq.l} {
     width: 75%;
@@ -203,9 +211,9 @@ export const Projects = styled.div`
 export const OverlayContainer = styled.div`
   position: absolute;
   display: flex;
-  padding: 1rem;
-  width: 100%;
+  padding: 0.8rem 0;
   height: 20%;
+  width: 100%;
   bottom: 0;
   background-color: ${t.c.white};
   opacity: 0.8;

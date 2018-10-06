@@ -21,6 +21,7 @@ import {
   SectionTitle,
   ProjectTitle,
 } from './index.styled'
+import { Button }from 'components/Button'
 
 const renderFeatureGrid = ({ alt, key, img, title, url }) => (
   <StyledLink to={url} key={key}>
@@ -89,6 +90,7 @@ export const PageLayoutServices = ({ data }) => {
             })
           )}
       </Projects>
+      <Button to="/featured-projects/">view more work</Button>
     </Container>
   )
 }
