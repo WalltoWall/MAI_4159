@@ -84,15 +84,24 @@ export const StyledLink = styled(Link)`
 
 export const StyledLinkedinIcon = styled(LinkedinIcon)`
   fill: ${t.c.yellow};
+  transition: fill 200ms;
   :hover {
-    fill: black;
+    fill: ${t.c.darkyellow};
   }  
 `
 
 export const StyledInstagramIcon = styled(InstagramIcon)`
   fill: ${t.c.yellow};  
+  transition: fill 200ms;
+  :hover {
+    fill: ${t.c.darkyellow};
+  }  
 `
 
 export const StyledTwitterIcon = styled(TwitterIcon)`
   fill: ${t.c.yellow};  
+  transition: fill 200ms;
+  :hover {
+    fill: ${t.c.darkyellow};
+  }  
 `
