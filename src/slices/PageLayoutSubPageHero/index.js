@@ -1,31 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get, isEmpty } from 'lodash'
-import { Image } from 'components/Image'
-import { MobileNavOverlay } from 'components/Header/Mobile.styled'
-import { getUnlessEmptyString } from 'helpers'
-import {
-  ClipOverlay,
-  ImageContainer,
-  Title,
-  TitleWrapper,
-} from './index.styled'
+import { Hero } from 'components/Hero'
 
 export const PageLayoutSubPageHero = ({ data }) => (
-  <ImageContainer>
-    <Image
-      alt={getUnlessEmptyString(get(data, 'primary.image.data'))}
-      fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
-      fadeIn={false}
-    />
-    <ClipOverlay />
-    {!isEmpty(get(data, 'primary.title1.text')) && (
-      <TitleWrapper>
-        <Title>{get(data, 'primary.title1.text')}</Title>
-      </TitleWrapper>
-    )}
-    <MobileNavOverlay />
-  </ImageContainer>
+  <Hero data={data}/>
 )
 
 export const query = graphql`

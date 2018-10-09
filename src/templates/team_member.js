@@ -5,6 +5,11 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Layout } from 'components/Layout'
 import { TeamMemberLayoutHero } from 'slices/TeamMemberLayoutHero'
+import { TeamMemberLayoutBioSummary } from 'slices/TeamMemberLayoutBioSummary'
+import { TeamMemberLayoutTextBlock } from 'slices/TeamMemberLayoutTextBlock'
+import { TeamMemberLayoutSideBySideText } from 'slices/TeamMemberLayoutSideBySideText'
+import { TeamMemberLayoutFeaturedList } from 'slices/TeamMemberLayoutFeaturedList'
+import { TeamMemberLayoutCtaBar } from "slices/TeamMemberLayoutCtaBar"
 
 const TeamMemberTemplate = ({ data }) => (
   <>
@@ -16,6 +21,11 @@ const TeamMemberTemplate = ({ data }) => (
         list={get(data, 'prismicTeamMember.data.layout') || []}
         map={{
           TeamMemberLayoutHero,
+          TeamMemberLayoutBioSummary,
+          TeamMemberLayoutTextBlock,
+          TeamMemberLayoutSideBySideText,
+          TeamMemberLayoutFeaturedList,
+          TeamMemberLayoutCtaBar,
         }}
         page={get(data, 'prismicTeamMember')}
         rootData={data}
@@ -37,5 +47,10 @@ export const query = graphql`
       }
     }
     ...TeamMemberLayoutHero
+    ...TeamMemberLayoutBioSummary
+    ...TeamMemberLayoutTextBlock
+    ...TeamMemberLayoutSideBySideText
+    ...TeamMemberLayoutFeaturedList
+    ...TeamMemberLayoutCtaBar
   }
 `

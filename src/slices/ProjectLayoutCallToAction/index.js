@@ -1,22 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-import { Container, Content, CtaHeaderClassName } from './index.styled'
-import { Button } from 'components/Button'
-import { HTMLContent } from 'components/HTMLContent'
+import { CtaBar } from 'components/CtaBar'
 
 export const ProjectLayoutCallToAction = ({ data }) => (
-  <Container>
-    <Content>
-      <HTMLContent
-        html={get(data, 'primary.text.html')}
-        className={CtaHeaderClassName}
-      />
-    </Content>
-    <Button to={get(data, 'primary.button_link.url')}>
-      {get(data, 'primary.button_text')}
-    </Button>
-  </Container>
+  <CtaBar 
+    title=""
+    content={get(data, 'primary.text.html')}
+    buttonUrl={get(data, 'primary.button_link.url')}
+    buttonText={get(data, 'primary.button_text')}
+    background={"dark"}
+  />
 )
 
 export const query = graphql`
