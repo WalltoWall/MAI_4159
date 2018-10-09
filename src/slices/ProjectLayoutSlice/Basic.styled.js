@@ -21,15 +21,21 @@ export const Content = styled.div`
 `
 export const StyledHtmlClassName = css`
   h2 {
-    font-size: ${t.f(4)};
+    font-size: ${t.f(3)};
     font-family: ${t.ff.serif};
     font-weight: 400;
     color: ${t.c.darkgrey1};
+    ${t.mq.l} {
+      font-size: ${t.f(4)};
+    }
   }
   p {
     color: ${t.c.darkgrey2};
-    font-size: ${t.f(1)};
+    font-size: ${t.f(0)};
     font-family: ${t.ff.sans2};
     line-height: ${t.lh.copy};
+    ${t.mq.l} {
+      font-size: ${t.f(1)};
+    }
   }
 `

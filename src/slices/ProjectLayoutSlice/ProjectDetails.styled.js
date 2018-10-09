@@ -32,7 +32,10 @@ export const StyledHtmlClassName = css`
     li {
       color: ${t.c.darkgrey2};
       font-family: ${t.ff.sans2};
-      font-size: ${t.f(1)};
+      font-size: ${t.f(0)};
+      ${t.mq.l} {
+        font-size: ${t.f(1)};
+      }
     }
   }
 `
