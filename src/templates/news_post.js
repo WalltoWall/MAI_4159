@@ -9,7 +9,7 @@ import { NewsPostLayoutTextBlock } from 'slices/NewsPostLayoutTextBlock'
 import { NewsPostLayoutSideBySideImages } from 'slices/NewsPostLayoutSideBySideImages'
 
 const NewsPostTemplate = ({ data }) => (
-  <>
+  <div>
     <Helmet title={get(data, 'prismicNewsPost.data.title.text')} />
     <Layout>
       <MapToComponents
@@ -25,7 +25,7 @@ const NewsPostTemplate = ({ data }) => (
         rootData={data}
       />
     </Layout>
-  </>
+  </div>
 )
 
 export default NewsPostTemplate

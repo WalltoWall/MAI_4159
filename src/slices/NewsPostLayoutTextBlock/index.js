@@ -16,6 +16,7 @@ export const query = graphql`
           ... on PrismicNewsPostLayoutTextBlock {
             id
             primary {
+              background_color
               content {
                 html
               }

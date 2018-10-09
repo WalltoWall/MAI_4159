@@ -5,14 +5,14 @@ import t from 'theme'
 
 const backgroundChooser = ({ background_color }) => {
   switch (background_color) {
-    case 'white':
+    case 'Grey':
       return `
-        background-color: ${t.c.white};
+        background-color: ${t.c.lightgrey1};
       `
 
     default:
       return `
-        background-color: ${t.c.lightgrey1};
+        background-color: ${t.c.white};
       `
   }
 }
