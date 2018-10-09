@@ -5,6 +5,8 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Layout } from 'components/Layout'
 import { NewsPostLayoutHero } from 'slices/NewsPostLayoutHero'
+import { NewsPostLayoutArticleContent } from 'slices/NewsPostLayoutArticleContent'
+import { NewsPostLayoutSideBySideImages } from 'slices/NewsPostLayoutSideBySideImages'
 
 const NewsPostTemplate = ({ data }) => (
   <>
@@ -16,6 +18,8 @@ const NewsPostTemplate = ({ data }) => (
         list={get(data, 'prismicNewsPost.data.layout') || []}
         map={{
           NewsPostLayoutHero,
+          NewsPostLayoutArticleContent,
+          NewsPostLayoutSideBySideImages,
         }}
         page={get(data, 'prismicNewsPost')}
         rootData={data}
@@ -39,5 +43,7 @@ export const query = graphql`
       }
     }
     ...NewsPostLayoutHero
+    ...NewsPostLayoutArticleContent
+    ...NewsPostLayoutSideBySideImages
   }
 `
