@@ -18,16 +18,13 @@ export const Content = styled.div`
 `
 
 export const ImageContainer = styled.div`
-  display: none;
+  display: block;
   width: 100%;
   .gatsby-image-outer-wrapper {
     height: 100%;
   }
   .gatsby-image-wrapper {
     height: 100%;
-  }
-  ${t.mq.s} {
-    display: block;
   }
 `
 
@@ -40,11 +37,8 @@ export const ArrowWrapper = styled.img`
 export const SectionContainer = styled.div`
   background-color: ${t.c.lightgrey2};
   margin: 0 auto;
-  padding: 0 0 4rem 0;
+  padding: 4rem 0 0 0;
   align-items: left;
-  ${t.mq.l} {
-    padding-bottom: 6rem;
-  }
 `
 
 export const Container = styled.div`
@@ -92,7 +86,7 @@ export const StyledLink = styled(Link)`
   width: 100%;
   padding: 1rem;
   ${t.mq.m} {
-    width: 33.333333%;
+    width: 50%;
     height: auto;
     padding: 1rem 1rem 2rem 1rem;
   }

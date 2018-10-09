@@ -4,7 +4,6 @@ import { get } from 'lodash'
 import { Image } from 'components/Image'
 import arrow from 'assets/yellow-arrow.svg'
 import { getUnlessEmptyString } from 'helpers'
-import { Button } from 'components/Button'
 import {
   Content,
   Container,
@@ -23,7 +22,7 @@ import {
 
 const text_truncate = function(str, length, ending) { 
   if (length == null) { 
-    length = 100  
+    length = 160  
   } 
   if (ending == null) { 
     ending = '...'  
@@ -52,58 +51,49 @@ const renderFeatureGrid = ({ alt, key, img, title, url, content, date }) => (
   </StyledLink>
 )
 
-export const PageLayoutNewsSection = ({ data }) => {
-  const news_post = get(data, 'items')
+export const PageLayoutFeaturedNews = ({ data }) => {
+  const featured_news_post = get(data, 'items')
 
   return (
     <SectionContainer>
-      <Headline>{get(data, 'primary.title1.text')}</Headline>
+    <Headline>Featured News</Headline>
       <Container>
         <Content>
-          {news_post.map(news_post =>
+          {featured_news_post.map(featured_news_post =>
             renderFeatureGrid({
-              key: get(news_post, 'news_post.document[0].uid'),
+              key: get(featured_news_post, 'featured_news_post.document[0].uid'),
               alt: getUnlessEmptyString(
-                get(news_post, 'news_post.document[0].data.image.alt')
+                get(featured_news_post, 'featured_news_post.document[0].data.image.alt')
               ),
               img: get(
-                news_post,
-                'news_post.document[0].data.image.localFile.childImageSharp.fluid'
+                featured_news_post,
+                'featured_news_post.document[0].data.image.localFile.childImageSharp.fluid'
               ),
-              date: get(news_post, 'news_post.document[0].data.date'),
+              date: get(featured_news_post, 'featured_news_post.document[0].data.date'),
               title: get(
-                news_post,
-                'news_post.document[0].data.article_title.text'
+                featured_news_post,
+                'featured_news_post.document[0].data.article_title.text'
               ),
-              url: get(news_post, 'news_post.url'),
-              content: text_truncate(get(news_post, 
-                'news_post.document[0].data.article_content1.text')),
+              url: get(featured_news_post, 'featured_news_post.url'),
+              content: text_truncate(get(featured_news_post, 
+                'featured_news_post.document[0].data.article_content1.text')),
             })
           )}
         </Content>
       </Container>
-      <Button to={get(data, 'primary.button.url')}>view more news</Button>
     </SectionContainer>
   )
 }
 
 export const query = graphql`
-  fragment PageLayoutNewsSection on Query {
+  fragment PageLayoutFeaturedNews on Query {
     prismicPage(id: { eq: $id }) {
       data {
         layout {
-          ... on PrismicPageLayoutNewsSection {
+          ... on PrismicPageLayoutFeaturedNews {
             id
-            primary {
-              title1 {
-                text
-              }
-              button {
-                url
-              }
-            }
             items {
-              news_post {
+              featured_news_post {
                 document {
                   data {
                     date

@@ -59,6 +59,7 @@ export const Content = styled.div`
   line-height: ${t.lh.copy};
   font-size: ${t.s(1)};
   width: 100%;
+  font-weight: 600;
   text-align: center;
   padding: 0 2rem 0 2rem;
   margin: -1rem auto 1rem auto;
