@@ -60,7 +60,7 @@ export const StyledHtmlClassName = css`
     color: ${t.c.darkgrey1};
   }
   h2 {
-    font-size: ${t.f(4)};
+    font-size: ${t.f(3)};
     font-family: ${t.ff.serif};
     font-weight: 600;
     color: ${t.c.darkgrey1};
@@ -70,6 +70,7 @@ export const StyledHtmlClassName = css`
       color: ${t.c.darkgrey2};
       font-family: ${t.ff.sans2};
       font-size: ${t.f(0)};
+      line-height: ${t.lh.copy};
     }
   }
   p {

@@ -1,27 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get } from 'lodash'
-import { Container, Content, ImageContainer } from './index.styled'
-import { getUnlessEmptyString } from 'helpers'
-import { Image } from 'components/Image'
+import { SideBySideImages } from 'components/SideBySideImages'
 
-export const NewsPostLayoutSideBySideImages = ({ data }) => (
-  <Container>
-    <Content>
-      {get(data, 'items').map(item => (
-        <ImageContainer>
-          <Image
-            key={getUnlessEmptyString(data, 'primary.image1.alt')}
-            alt={getUnlessEmptyString(data, 'primary.image1.alt')}
-            fluid={get(item, 'image1.localFile.childImageSharp.fluid')}
-            fadeIn={false}
-          />
-        </ImageContainer>
-      ))}
-      <p>{get(data, 'primary.caption.text')}</p>
-    </Content>
-  </Container>
-)
+export const NewsPostLayoutSideBySideImages = ({ data }) => {
+  return (
+    <SideBySideImages data={data}/>
+  )
+}
+
 export const query = graphql`
   fragment NewsPostLayoutSideBySideImages on Query {
     prismicNewsPost(id: { eq: $id }) {

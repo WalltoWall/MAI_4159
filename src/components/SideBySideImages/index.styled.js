@@ -19,12 +19,13 @@ export const Content = styled.div`
     font-family: ${t.ff.sans2};
     color: ${t.c.darkgrey2};
     padding: 0 2rem;
-    font-size: ${t.f(0)};
-    line-height: 1.6rem;
+    font-size: ${t.f(-1)};
+    line-height: ${t.lh.copy};
     width: 100%;
     margin: 1rem auto;
     ${t.mq.l} {
       width: 80%;
+      font-size: ${t.f(0)};
     }
   }
   ${t.mq.l} {

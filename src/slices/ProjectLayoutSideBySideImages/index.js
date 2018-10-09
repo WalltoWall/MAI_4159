@@ -1,27 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get } from 'lodash'
-import { Container, Content, ImageContainer } from './index.styled'
-import { getUnlessEmptyString } from 'helpers'
-import { Image } from 'components/Image'
+import { SideBySideImages } from 'components/SideBySideImages'
 
-export const ProjectLayoutSideBySideImages = ({ data }) => (
-  <Container>
-    <Content>
-      {get(data, 'items').map(item => (
-        <ImageContainer>
-          <Image
-            key={getUnlessEmptyString(data, 'primary.image.alt')}
-            alt={getUnlessEmptyString(data, 'primary.image.alt')}
-            fluid={get(item, 'image.localFile.childImageSharp.fluid')}
-            fadeIn={false}
-          />
-        </ImageContainer>
-      ))}
-      <p>{get(data, 'primary.caption.text')}</p>
-    </Content>
-  </Container>
-)
+export const ProjectLayoutSideBySideImages = ({ data }) => {
+  return (
+    <SideBySideImages data={data}/>
+  )
+}
+
 export const query = graphql`
   fragment ProjectLayoutSideBySideImages on Query {
     prismicProject(id: { eq: $id }) {
@@ -30,7 +16,7 @@ export const query = graphql`
           ... on PrismicProjectLayoutSideBySideImages {
             id
             items {
-              image {
+              image1 {
                 alt
                 localFile {
                   childImageSharp {
