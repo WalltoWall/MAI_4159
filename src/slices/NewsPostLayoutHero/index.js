@@ -1,20 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get } from 'lodash'
-import { getUnlessEmptyString } from 'helpers'
-import { Image } from 'components/Image'
-import { Container, ImageContainer } from './index.styled'
+import { Hero } from 'components/Hero'
 
 export const NewsPostLayoutHero = ({ data }) => (
-  <Container>
-    <ImageContainer>
-      <Image
-        alt={getUnlessEmptyString(data, 'primary.image.alt')}
-        fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
-        fadeIn={false}
-      />
-    </ImageContainer>
-  </Container>
+  <Hero data={data}/>
 )
 
 export const query = graphql`
@@ -25,6 +14,9 @@ export const query = graphql`
           ... on PrismicNewsPostLayoutHero {
             id
             primary {
+              title1 {
+                text
+              }
               image {
                 alt
                 localFile {
