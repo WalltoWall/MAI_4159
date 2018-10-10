@@ -62,7 +62,7 @@ export const PostDate = styled.div`
 export const PostTitle = styled.div`
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.serif};
-  font-weight: 700;
+  font-weight: 400;
   display: block;
   width: 100%;
   font-size: ${t.f(2.5)};

@@ -194,7 +194,8 @@ export const InfoBlurb = css`
 `
 
 export const InfoLine = styled.hr`
-  border-color: ${t.c.lightgrey};
+  border-color: ${t.c.lightgrey2};
+  opacity: 0.6;
   width: 100%;
   margin: 0;
   ${t.mq.m} {

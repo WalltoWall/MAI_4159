@@ -58,14 +58,15 @@ export const Content = styled.div`
   font-family: ${t.ff.serif};
   line-height: ${t.lh.copy};
   font-size: ${t.s(1)};
+  font-weight: 400;
   width: 100%;
-  font-weight: 600;
   text-align: center;
   padding: 0 2rem 0 2rem;
-  margin: -1rem auto 1rem auto;
+  margin: -1rem auto 3rem auto;
   ${t.mq.l} {
     width: 60%;
     font-size: ${t.s(1.5)};
+    margin: -1rem auto 6rem auto;
   }
 `
 export const Image = styled.img`
@@ -130,7 +131,7 @@ export const SectionTitle = styled.div`
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   text-align: center;
-  margin-bottom: 1rem;
+  margin: 4rem 0 2rem 0;
 `
 
 export const StyledHtmlClassName = css`
@@ -154,7 +155,7 @@ export const TextWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  margin: 3rem auto;
+  margin: 5rem auto;
   justify-content: space-between;
   padding: 0 2rem 0 2rem;
   ${t.mq.m} {

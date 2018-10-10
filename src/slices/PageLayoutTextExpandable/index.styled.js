@@ -49,7 +49,7 @@ export const Text = styled(HTMLContent)`
 
 export const StyledExpandButton = styled(ExpandButton)`
   display: inline-block;
-  margin: 0.2rem 0.8rem;
+  margin: 0 0 0 0.3rem;
 `
 
 export const Category = styled.div`
