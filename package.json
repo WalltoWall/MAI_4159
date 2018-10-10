@@ -44,6 +44,7 @@
     "react-map-to-components": "^0.1.4",
     "react-modal": "^3.5.1",
     "react-powerplug": "^1.0.0-rc.0",
+    "react-typekit": "^1.1.3",
     "truncate": "^2.0.1",
     "typeface-abhaya-libre": "^0.0.54",
     "typeface-barlow-condensed": "^0.0.54",

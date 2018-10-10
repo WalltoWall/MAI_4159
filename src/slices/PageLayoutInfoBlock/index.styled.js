@@ -6,7 +6,7 @@ export const Content = styled.div`
   width: 100%;
   margin: 2rem;
   border-right: none;
-  overflow: hidden;
+  overflow-wrap: break-word;
   ${t.mq.m} {
     width: 40%;
   }
@@ -46,8 +46,11 @@ export const Container = styled.div`
     width: 90%;
   }
   ${t.mq.l} {
-    width: 60%;
+    width: 65%;
     justify-content: space-around;
+  }
+  ${t.mq.xl} {
+    width: 60%;
   }
 `
 
@@ -58,7 +61,7 @@ export const Title = styled.div`
   font-size: ${t.f(4)};
   margin-bottom: 1rem;
   font-weight: 600;
-  letter-spacing: 0.1rem;
+  letter-spacing: ${t.ls.heading};
   text-align: center;
   ${t.mq.m} {
     text-align: left;
@@ -71,7 +74,7 @@ export const StyledHtmlClassName = css`
     font-family: ${t.ff.sans};
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: 0.1rem;
+    letter-spacing: ${t.ls.button};
     font-size: ${t.f(1.5)};
     color: ${t.c.darkgrey2};
     text-align: center;
@@ -81,6 +84,7 @@ export const StyledHtmlClassName = css`
   }
   p {
     color: ${t.c.darkgrey2};
+    font-family: ${t.ff.sans2};
     font-size: ${t.f(0)};
     line-height: ${t.lh.copy};
     text-align: center;

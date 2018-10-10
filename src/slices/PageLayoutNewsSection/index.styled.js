@@ -40,7 +40,7 @@ export const ArrowWrapper = styled.img`
 export const SectionContainer = styled.div`
   background-color: ${t.c.lightgrey2};
   margin: 0 auto;
-  padding: 0 0 4rem 0;
+  padding: 4rem 0 4rem 0;
   align-items: left;
   ${t.mq.l} {
     padding-bottom: 6rem;
@@ -68,7 +68,7 @@ export const PostDate = styled.div`
 export const PostTitle = styled.div`
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.serif};
-  font-weight: 700;
+  font-weight: 400;
   display: block;
   width: 100%;
   font-size: ${t.f(2.5)};
@@ -126,7 +126,7 @@ export const Headline = styled.h2`
   margin-bottom: 0;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: ${t.ls.heading};
   ${t.mq.m} {
     font-size: ${t.f(5)};
   }

@@ -62,7 +62,7 @@ export const StyledHtmlClassName = css`
   h2 {
     font-size: ${t.f(3)};
     font-family: ${t.ff.serif};
-    font-weight: 600;
+    font-weight: 400;
     color: ${t.c.darkgrey1};
   }
   ul {
@@ -93,11 +93,11 @@ export const StyledHtmlClassName = css`
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-    font-size: ${t.f(2)};
+    font-size: ${t.f(3)};
     width: 220px;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 0 0.1rem 0;
     text-align: center;
-    margin: 1rem auto;
+    margin: 0 auto;
     display: block;
     &:hover {
      background-color: ${t.c.darkyellow};

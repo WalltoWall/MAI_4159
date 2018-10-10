@@ -47,7 +47,7 @@ export const Title = styled.p`
   text-transform: uppercase;
   font-weight: 600;
   color: ${t.c.darkgrey1};
-  letter-spacing: 0.1rem;
+  letter-spacing: ${t.ls.heading};
 
   ${t.mq.l} {
     font-size: ${t.f(3)};
@@ -80,7 +80,7 @@ export const StyledLink = styled(Link)`
 export const OverlayContainer = styled.div`
   position: absolute;
   display: flex;
-  height: 70px;
+  height: 60px;
   padding: 1rem;
   width: 100%;
   bottom: 0;
@@ -110,7 +110,7 @@ export const Headline = styled.h1`
   font-weight: 600;
   margin: 0 auto;
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
+  letter-spacing: ${t.ls.heading};
   text-align: center;
   display: block;
   z-index: 2;

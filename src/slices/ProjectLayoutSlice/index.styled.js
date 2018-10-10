@@ -54,7 +54,7 @@ export const StyledHtmlClassName = css`
   }
   p {
     color: ${t.c.darkgrey2};
-    font-size: ${t.f(0)};
+    font-size: ${t.f(-1)};
     line-height: ${t.lh.copy};
     ${t.mq.m} {
       font-size: ${t.f(0)};

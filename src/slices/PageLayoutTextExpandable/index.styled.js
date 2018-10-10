@@ -23,7 +23,7 @@ export const Intro = styled(HTMLContent)`
     font-family: ${t.ff.sans};
     font-size: ${t.s(1)};
     font-weight: 600;
-    letter-spacing: 0.1rem;
+    letter-spacing: ${t.ls.button};
     text-transform: uppercase;
     color: ${t.c.darkgrey2};
   }
@@ -49,7 +49,7 @@ export const Text = styled(HTMLContent)`
 
 export const StyledExpandButton = styled(ExpandButton)`
   display: inline-block;
-  margin: 0.2rem 0.8rem;
+  margin: 0 0 0 0.3rem;
 `
 
 export const Category = styled.div`
@@ -73,7 +73,7 @@ export const Title = styled.div`
   margin-bottom: 1rem;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
+  letter-spacing: ${t.ls.heading};
   ${t.mq.m} {
     font-size: ${t.f(5)};
   }

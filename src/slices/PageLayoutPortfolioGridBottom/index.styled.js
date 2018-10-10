@@ -22,7 +22,7 @@ export const Title = styled.h1`
   font-weight: 600;
   margin: 0 auto;
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
+  letter-spacing: ${t.ls.heading};
   text-align: center;
   display: block;
   z-index: 2;

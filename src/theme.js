@@ -23,9 +23,13 @@ const theme = {
     copy: 1.5,
   },
   fontFamilies: {
-    sans: '"Barlow Condensed", Helvetica, sans-serif',
-    serif: '"Abhaya Libre", "Times New Roman", serif',
-    sans2: '"Lato", Helvetica, sans-serif',
+    sans: '"Din Condensed", "Barlow Condensed", Helvetica, sans-serif',
+    serif: '"Essonnes", "Abhaya Libre", "Times New Roman", serif',
+    sans2: '"Quasimoda", "Lato", Helvetica, sans-serif',
+  },
+  letterSpacing: {
+    heading: '0.2rem',
+    button: '0.1rem',
   },
   fontSize: s => ms(s / 2) + 'rem',
   mediaSizes: {
@@ -57,5 +61,6 @@ theme.ms = theme.mediaSizes
 theme.r = theme.radius
 theme.s = theme.spacing
 theme.t = theme.transition
+theme.ls = theme.letterSpacing
 
 export default theme
