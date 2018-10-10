@@ -14,6 +14,7 @@ import 'modern-normalize'
 import 'typeface-abhaya-libre'
 import 'typeface-barlow-condensed'
 import 'typeface-lato'
+import Typekit from 'react-typekit';
 
 
 // temporarily disable hot loader error for dev
@@ -61,6 +62,7 @@ const render = ({ children }) => queryData => (
       ]}
     >
       <html lang="en" />
+      <Typekit kitId="air2qxr" />
     </Helmet>
     <ModalProvider>
       <ModalConsumer>

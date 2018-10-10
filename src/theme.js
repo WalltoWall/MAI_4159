@@ -23,9 +23,9 @@ const theme = {
     copy: 1.5,
   },
   fontFamilies: {
-    sans: '"Barlow Condensed", Helvetica, sans-serif',
-    serif: '"Abhaya Libre", "Times New Roman", serif',
-    sans2: '"Lato", Helvetica, sans-serif',
+    sans: '"Din Condensed", "Barlow Condensed", Helvetica, sans-serif',
+    serif: '"Essonnes", "Abhaya Libre", "Times New Roman", serif',
+    sans2: '"Quasimoda", "Lato", Helvetica, sans-serif',
   },
   fontSize: s => ms(s / 2) + 'rem',
   mediaSizes: {
