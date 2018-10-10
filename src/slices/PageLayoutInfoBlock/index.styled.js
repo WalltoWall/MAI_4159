@@ -21,21 +21,6 @@ export const Content = styled.div`
   }
 `
 
-export const ImageContainer = styled.div`  
-  width: 80px;
-  margin: 1rem auto;
-  .gatsby-image-outer-wrapper {        
-    height: 100%;
-  }
-  .gatsby-image-wrapper {        
-    height: 100%;
-  }
-  ${t.mq.m} {
-    width: 60px;
-    margin: 0 0 2rem 0;
-  }
-`
-
 export const Container = styled.div`
   margin: 0 auto;
   padding: 4rem 0;

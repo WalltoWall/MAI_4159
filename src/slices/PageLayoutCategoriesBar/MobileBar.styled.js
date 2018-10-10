@@ -28,7 +28,7 @@ export const MobileFilterContainer = styled.div`
   padding: 1rem;
   margin: 1.2rem 0 -1.5rem 0;  
   background-color: ${t.c.lightgrey3};
-  z-index: 2;
+  z-index: 99;
   position: absolute;
   width: 100%;
 `
