@@ -4,16 +4,19 @@ import t from 'theme'
 
 export const Content = styled.div`
   width: 100%;
-  margin: 2rem;
+  margin: 1rem 2rem;
+  padding-bottom: 1.5rem;
   border-right: none;
+  border-bottom: 1px dotted #646e6a;
   overflow-wrap: break-word;
-  ${t.mq.m} {
-    width: 40%;
+  ${t.mq.s} {
+    width: 35%;
   }
   ${t.mq.l} {
     width: 20%;
     border-right: 1px dotted #646e6a;
-    margin: 2rem 0;
+    border-bottom: none;
+    margin: 1.5rem 0;
     &:last-child {
       border-right: none;
       width: 30%;
@@ -26,9 +29,10 @@ export const Container = styled.div`
   padding: 4rem 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
   ${t.mq.m} {
-    width: 90%;
+    width: 70%;
   }
   ${t.mq.l} {
     width: 65%;
@@ -49,8 +53,10 @@ export const Title = styled.div`
   letter-spacing: ${t.ls.heading};
   text-align: center;
   ${t.mq.m} {
-    text-align: left;
     font-size: ${t.f(5)};
+  }
+  ${t.mq.l} {
+    text-align: left;
   }
 `
 
@@ -63,7 +69,7 @@ export const StyledHtmlClassName = css`
     font-size: ${t.f(1.5)};
     color: ${t.c.darkgrey2};
     text-align: center;
-    ${t.mq.m} {
+    ${t.mq.l} {
       text-align: left;
      }
   }
@@ -75,6 +81,8 @@ export const StyledHtmlClassName = css`
     text-align: center;
     ${t.mq.m} {
       font-size: ${t.f(0)};
+    }
+    ${t.mq.l} {
       text-align: left;
     }
   }
