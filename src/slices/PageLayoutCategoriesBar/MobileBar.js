@@ -11,6 +11,7 @@ import {
   linkActiveClassName,
   NavArrow,
   SubFilterContainer,
+  Filter,
 } from './MobileBar.styled'
 
 export class MobileBar extends React.Component {
@@ -58,7 +59,7 @@ export class MobileBar extends React.Component {
   render() {
     return (
       <MobileContainer>
-        <div style={{ position: 'relative' }}>
+        <Filter style={{ position: 'relative' }}>
           <span>Filter: </span>
           <CurrentFilter onClick={e => this.toggleFilter(e)}>
             {this.getFilterName(this.props.location.pathname)}
@@ -67,7 +68,7 @@ export class MobileBar extends React.Component {
             style={{ right: '3rem', top: '3px' }}
             active={this.state.filterOpen}
           />
-        </div>
+        </Filter>
         <MobileFilterContainer isOpen={this.state.filterOpen}>
           <StyledLink
             to={'/featured-projects/'}

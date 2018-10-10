@@ -43,6 +43,7 @@ export const Container = styled.div`
   transition-property: transform;
   transition-duration: ${t.t};
   transform: translateY(${p => (p.isOpen ? 0 : '-110%')});
+  z-index: 999;
 `
 
 export const MobileNavOverlay = styled.div`
