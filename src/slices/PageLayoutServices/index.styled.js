@@ -28,7 +28,7 @@ export const Title = styled.h2`
   text-transform: uppercase;
   font-size: ${t.s(2)};
   color: ${t.c.darkgrey1};
-  letter-spacing: 0.1rem;
+  letter-spacing: ${t.ls.heading};
   font-weight: 600;
   text-align: center;
   ${t.mq.l} {
@@ -46,7 +46,7 @@ export const ProjectTitle = styled.p`
   font-weight: 600;
   margin: 0 auto;
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
+  letter-spacing: ${t.ls.heading};
   text-align: center;
   display: block;
   z-index: 2;
@@ -64,7 +64,7 @@ export const Content = styled.div`
   padding: 0 2rem 0 2rem;
   margin: -1rem auto 3rem auto;
   ${t.mq.l} {
-    width: 60%;
+    width: 70%;
     font-size: ${t.s(1.5)};
     margin: -1rem auto 6rem auto;
   }
@@ -185,14 +185,13 @@ export const TextBlock = styled.div`
 export const StyledLink = styled(Link)`
   position: relative;
   display: block;
-  width: 100%;
+  width: 50%;
+  margin: 0;
   height: 14rem;
-  min-width: 300px;
   max-width: 400px;
   ${t.mq.m} {
-    width: 50%;
-    height: 15rem;
-    margin: 1rem 0;
+    width: 45%;
+    margin: 1rem;
   }
   ${t.mq.l} {
     width: 23%;
@@ -213,8 +212,12 @@ export const Projects = styled.div`
   margin: 0 auto;
   padding-bottom: 1rem;
   justify-content: space-around;
+  ${t.mq.m} {
+    justify-content: center;
+  }
   ${t.mq.l} {
     width: 75%;
+    margin: 1rem auto;
   }
 `
 
