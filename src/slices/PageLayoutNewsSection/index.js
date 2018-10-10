@@ -21,9 +21,9 @@ import {
   SectionContainer,
 } from './index.styled'
 
-const text_truncate = function(str, length, ending) { 
+const characterLimit = function(str, length, ending) { 
   if (length == null) { 
-    length = 100  
+    length = 85  
   } 
   if (ending == null) { 
     ending = '...'  
@@ -76,7 +76,7 @@ export const PageLayoutNewsSection = ({ data }) => {
                 'news_post.document[0].data.article_title.text'
               ),
               url: get(news_post, 'news_post.url'),
-              content: text_truncate(get(news_post, 
+              content: characterLimit(get(news_post, 
                 'news_post.document[0].data.article_content1.text')),
             })
           )}

@@ -89,7 +89,7 @@ export const ImageDescription = styled.div`
   width: 100%;
   margin: 0 auto;
   color: ${t.c.darkgrey2};
-  font-family: ${t.ff.sans2};
+  font-family: ${t.ff.serif};
   line-height: ${t.lh.copy};
   font-size: ${t.f(0)};
   margin-bottom: 0.6rem;
@@ -149,6 +149,14 @@ export const StyledHtmlClassName = css`
     font-size: ${t.f(0)};
     margin-bottom: 0.6rem;
     text-align: left;
+  }
+  ul {
+    li {
+      color: ${t.c.darkgrey1};
+      font-family: ${t.ff.sans2};
+      font-size: ${t.f(0)};
+      line-height: 1.8rem;
+    }
   }
 `
 export const TextWrapper = styled.div`

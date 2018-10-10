@@ -8,7 +8,7 @@ export const Button = styled(Link)`
   cursor: pointer;
   font-family: ${t.ff.sans};
   font-weight: 600;
-  letter-spacing: 0.1rem;
+  letter-spacing: ${t.ls.button};
   padding: 1rem 0 0.5rem 0;
   font-size: ${p => (p.small ? t.f(-1) : t.f(0))};
   display: block;

@@ -22,7 +22,7 @@ export const Title = styled.h1`
   font-weight: 600;
   margin: 0 auto;
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
+  letter-spacing: ${t.ls.heading};
   text-align: center;
   display: block;
   z-index: 2;
@@ -80,6 +80,6 @@ export const OverlayContainer = styled.div`
     border-bottom: 1rem solid ${t.c.yellow};
   }
   ${t.mq.l} {
-    height: 70px;
+    height: 60px;
   }
 `

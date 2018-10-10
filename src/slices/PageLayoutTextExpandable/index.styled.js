@@ -23,7 +23,7 @@ export const Intro = styled(HTMLContent)`
     font-family: ${t.ff.sans};
     font-size: ${t.s(1)};
     font-weight: 600;
-    letter-spacing: 0.1rem;
+    letter-spacing: ${t.ls.button};
     text-transform: uppercase;
     color: ${t.c.darkgrey2};
   }
@@ -73,7 +73,7 @@ export const Title = styled.div`
   margin-bottom: 1rem;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
+  letter-spacing: ${t.ls.heading};
   ${t.mq.m} {
     font-size: ${t.f(5)};
   }

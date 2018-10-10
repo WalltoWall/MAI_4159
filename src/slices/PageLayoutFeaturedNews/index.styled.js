@@ -13,7 +13,7 @@ export const Content = styled.div`
     width: 75%;
     justify-content: flex-start;
     align-content: flex-start;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 `
 
@@ -120,7 +120,7 @@ export const Headline = styled.h2`
   margin-bottom: 0;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: ${t.ls.heading};
   ${t.mq.m} {
     font-size: ${t.f(5)};
   }

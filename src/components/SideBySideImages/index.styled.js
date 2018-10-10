@@ -16,7 +16,7 @@ export const Content = styled.div`
   text-align: center;
 
   p {
-    font-family: ${t.ff.sans2};
+    font-family: ${t.ff.serif};
     color: ${t.c.darkgrey2};
     padding: 0 2rem;
     font-size: ${t.f(-1)};
