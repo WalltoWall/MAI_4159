@@ -101,7 +101,7 @@ export const FilterBarContainer = styled.div`
   padding: ${t.s(1)};
   flex-direction: column;
   align-items: center;
-  background-color: ${t.c.lightgrey3};
+  background-color: ${t.c.darkgrey2};
   color: white;
   ${t.mq.l} {
     display: flex;
@@ -111,11 +111,13 @@ export const FilterBarContainer = styled.div`
 
 export const CurrentFilter = styled.div`
   cursor: pointer; 
+  font-family: ${t.ff.sans2};
   ${t.mq.l} {
     display: none;
   }
   background-color: ${t.c.darkgrey2};
-  font-size: ${t.f(2)};
+  font-size: ${t.f(1)};
+  letter-spacing: 0.1rem;
   font-weight: 700;
   text-align: center;
   padding: ${t.s(1)} 0;
@@ -137,8 +139,10 @@ export const NavArrow = styled(HoverArrowSVG)`
 `
 
 export const Filter = styled.div`  
-  font-size: ${t.f(1.5)};
-  font-weight: 600;
+  font-size: ${t.f(1)};
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  font-family: ${t.ff.sans2};
   &:first-child {
     margin-top: 0;
   }
@@ -151,5 +155,32 @@ export const Filter = styled.div`
   transition: color ${t.t};
   :hover {
     color: ${t.c.yellow};
+  }
+`
+
+export const FilterContainer = styled.div`
+  z-index: 99;
+`
+
+export const ClipOverlay = styled.div`
+  position: absolute;
+  background-color: ${t.c.darkgrey2};
+  -webkit-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  transform: rotate(85deg);
+  overflow: hidden;
+  z-index: 0;
+  top: -65px;
+  height: 800px;
+  width: 100px;
+  left: 45%;
+  ${t.mq.m} {
+    top: -320px;
+    height: 1400px;
+    width: 200px;
+    left: 45%;
+  }
+  ${t.mq.l} {
+    display: none;
   }
 `

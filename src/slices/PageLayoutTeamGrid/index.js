@@ -17,6 +17,8 @@ import {
   CurrentFilter,
   Filter,
   NavArrow,
+  ClipOverlay,
+  FilterContainer,
 } from './index.styled'
 
 const getActiveState = (currentFilter, targetFilter) => {
@@ -28,12 +30,12 @@ const RoleFilterBar = ({ filters, setFilter, currentFilter }) => (
   <Toggle>
     {({ toggle, on }) => (
       <>
-        <div style={{ position: 'relative' }}>
+        <FilterContainer style={{ position: 'relative' }}>
           <CurrentFilter onClick={() => toggle()}>
             {currentFilter}
           </CurrentFilter>
           <NavArrow active={on} />
-        </div>
+        </FilterContainer>
         <FilterBarContainer isOpen={on}>
           {filters.map(filter => (
             <>
@@ -84,6 +86,7 @@ export const PageLayoutTeamGrid = ({ data, rootData }) => {
             filters={roleFilters}
             currentFilter={currentFilter}
           />
+          <ClipOverlay />   
           <GridContainer>
             {teamMembers.map((member, i, list) => (
               <>
