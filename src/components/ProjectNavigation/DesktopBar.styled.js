@@ -126,6 +126,6 @@ export const SubCategoryContainer = styled.div`
 `
 
 export const Filter = styled.p`
-  margin: 0 ${t.s(4)};
+  margin: 0 ${t.s(2)};
   cursor: pointer;
 `

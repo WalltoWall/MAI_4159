@@ -13,24 +13,7 @@ import {
 } from './index.styled'
 
 export const PageLayoutInfoBlock = ({ data }) => (
-    <Container>
-       {get(data, 'items', []).map(item => (
-          <Content>
-            <ImageContainer>
-              <Image
-                fluid={get(item, 'icon.localFile.childImageSharp.fluid')} 
-                alt={getUnlessEmptyString(data, 'icon.image.alt')}     
-                fadeIn={false}    
-              />
-            </ImageContainer>
-            <Title>{get(item, 'title1.text')}</Title>
-            <HTMLContent
-              html={get(item, 'info1.html')}
-              className={StyledHtmlClassName}
-            />
-          </Content>
-        ))}
-    </Container>
+    <h1>hello world</h1>
 )
 
 export const query = graphql`
@@ -39,25 +22,7 @@ export const query = graphql`
       data {
         layout {
           ... on PrismicPageLayoutInfoBlock {
-            id
-            items {
-              icon {                
-                alt
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 2000, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp_noBase64
-                    }
-                  }
-                }              
-              }
-              title1 {
-                text
-              }
-              info1 {
-                html
-              }
-            }
+            id            
           }
         }
       }
