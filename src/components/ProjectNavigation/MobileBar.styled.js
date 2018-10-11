@@ -22,7 +22,7 @@ export const MobileContainer = styled.div`
   }
 `
 
-export const MobileFilterContainer = styled.div`
+export const PrimaryFilterContainer = styled.div`
   display: ${p => (p.isOpen ? 'flex' : 'none')};
   flex-direction: column;
   padding: 1rem;
@@ -93,4 +93,28 @@ export const SubFilterContainer = styled.div`
   padding: 0.5rem 0;
   width: 110%;
   margin-left: -5%;
+`
+
+export const SubFilterChildContainer = styled.div`
+  display: ${p => p.isOpen ? "none" : "flex"};  
+  width: 100%;
+  align-items: center;
+  background-color: ${t.c.lightgrey3};
+  margin: ${t.s(1)} 0 -${t.s(1)} 0;
+  flex-wrap: wrap;
+  ${t.mq.l} {
+    display: none;
+  }
+`
+
+export const Filter = styled.div`
+  color: white;
+  width: 50%;
+  font-family: ${t.ff.sans};
+  font-size: ${t.f(1)};
+  margin: 0;
+  padding: 7px 0;
+  cursor: pointer;
+  border: 1px solid ${t.c.lightgrey4};  
+  background-color: ${p=> p.isActive ? t.c.lightgrey4 : "none"};  
 `

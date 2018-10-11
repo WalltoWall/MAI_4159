@@ -67,23 +67,22 @@ export const DesktopBar = ({location, categories, filters, setFilter, currentFil
      {filters.length > 1 && (
       <SubCategoryContainer>
           <Filter
-            onClick={(e) => 
-              setFilter("All")
-            }
+            onClick={(e) => setFilter("All")}
+            isActive={currentFilter === "All"}
           >
             All
           </Filter>          
-        {filters.map(filter => (          
+        {filters.map((filter, index) => (          
           <Filter
-            onClick={(e) => 
-              setFilter(trim(filter))
-            }
+            onClick={(e) => setFilter(trim(filter))}
+            isActive={currentFilter === trim(filter)}
+            key={filter + index}
           >
             {trim(filter)}
           </Filter>          
         ))}      
       </SubCategoryContainer>      
-    )}
+      )}
     </>
   ) 
 }

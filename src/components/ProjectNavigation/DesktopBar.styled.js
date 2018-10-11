@@ -119,13 +119,21 @@ export const VerticalLine = styled.div`
 
 
 export const SubCategoryContainer = styled.div`
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   height: ${t.s(3)};
+  background-color: ${t.c.lightgrey4};
+  ${t.mq.l} {
+    display: flex;
+  }
 `
 
 export const Filter = styled.p`
   margin: 0 ${t.s(2)};
   cursor: pointer;
+  color: ${p=> p.isActive ? t.c.yellow : "white"};
+  font-family: ${t.ff.sans2};
+  font-size: ${t.f(1)};
+  font-weight: 600;
 `

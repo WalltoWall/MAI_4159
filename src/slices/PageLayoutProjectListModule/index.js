@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get, split, trim } from 'lodash'
+import { get, split } from 'lodash'
 import { ProjectNavigation } from 'components/ProjectNavigation'
 import { Image } from 'components/Image'
 import { getUnlessEmptyString } from 'helpers'
@@ -32,8 +32,9 @@ export const PortfolioGrid = ({ data, currentFilter, setFilter }) => {
   let projects = data.items
   return (
     <Container>
-      {projects.map(item => (
+      {projects.map((item, index) => (
         <StyledLink 
+          key={get(item, 'project.url') + index}
           to={get(item, 'project.url')}
           twoInRow={
             (get(item, 'position') === "Top") ||

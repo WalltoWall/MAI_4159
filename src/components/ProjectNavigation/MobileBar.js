@@ -5,12 +5,14 @@ import { isPathActive } from 'lib/helpers'
 import {
   MobileContainer,
   StyledLink,
-  MobileFilterContainer,
+  PrimaryFilterContainer,
   CurrentFilter,
   navItemClassName,
   linkActiveClassName,
   NavArrow,
   SubFilterContainer,
+  SubFilterChildContainer,
+  Filter,
 } from './MobileBar.styled'
 
 export class MobileBar extends React.Component {
@@ -68,7 +70,7 @@ export class MobileBar extends React.Component {
             active={this.state.filterOpen}
           />
         </div>
-        <MobileFilterContainer isOpen={this.state.filterOpen}>
+        <PrimaryFilterContainer isOpen={this.state.filterOpen}>
           <StyledLink
             to={'/featured-projects/'}
             getProps={this.getLinkProps()}
@@ -108,7 +110,28 @@ export class MobileBar extends React.Component {
           >
             Historical Research
           </StyledLink>
-        </MobileFilterContainer>
+        </PrimaryFilterContainer>
+        {this.props.filters.length > 1 && (
+          <SubFilterChildContainer
+            isOpen={this.state.filterOpen}
+          >
+              <Filter
+                onClick={(e) => this.props.setFilter("All")}
+                isActive={this.props.currentFilter === "All"}
+              >
+                All
+              </Filter>          
+            {this.props.filters.map((filter,index) => (          
+              <Filter
+                onClick={(e) => this.props.setFilter(trim(filter))}
+                isActive={this.props.currentFilter === trim(filter)}
+                key={index + filter}
+              >
+                {trim(filter)}
+              </Filter>          
+            ))}      
+          </SubFilterChildContainer>      
+        )}
       </MobileContainer>
     )
   }
