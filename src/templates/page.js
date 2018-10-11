@@ -8,10 +8,7 @@ import { Layout } from 'components/Layout'
 import { PageLayoutHero } from 'slices/PageLayoutHero'
 import { PageLayoutProjectBoxes } from 'slices/PageLayoutProjectBoxes'
 import { PageLayoutSplitPanels } from 'slices/PageLayoutSplitPanels'
-import { PageLayoutCategoriesBar } from 'slices/PageLayoutCategoriesBar'
 import { PageLayoutSubPageHero } from 'slices/PageLayoutSubPageHero'
-import { PageLayoutPortfolioGridTop } from 'slices/PageLayoutPortfolioGridTop'
-import { PageLayoutPortfolioGridBottom } from 'slices/PageLayoutPortfolioGridBottom'
 import { PageLayoutCtaBar } from 'slices/PageLayoutCtaBar'
 import { PageLayoutServices } from 'slices/PageLayoutServices'
 import { PageLayoutTextBlock } from 'slices/PageLayoutTextBlock'
@@ -37,11 +34,8 @@ const PageTemplate = ({ data, location }) => (
         map={{
           PageLayoutHero,
           PageLayoutProjectBoxes,
-          PageLayoutSplitPanels,
-          PageLayoutCategoriesBar,
-          PageLayoutSubPageHero,
-          PageLayoutPortfolioGridTop,
-          PageLayoutPortfolioGridBottom,
+          PageLayoutSplitPanels,          
+          PageLayoutSubPageHero,          
           PageLayoutCtaBar,
           PageLayoutServices,          
           PageLayoutTextBlock,
@@ -82,8 +76,6 @@ export const query = graphql`
     ...PageLayoutProjectBoxes
     ...PageLayoutSplitPanels
     ...PageLayoutSubPageHero
-    ...PageLayoutPortfolioGridTop
-    ...PageLayoutPortfolioGridBottom
     ...PageLayoutCtaBar
     ...PageLayoutServices
     ...PageLayoutTextBlock
@@ -95,8 +87,7 @@ export const query = graphql`
     ...PageLayoutTextExpandable
     ...PageLayoutTeamGrid
     ...PageLayoutFeaturedNews
-    ...PageLayoutGoogleMap
-    ...PageLayoutCategoriesBar
+    ...PageLayoutGoogleMap    
     ...PageLayoutProjectListModule
   }
 `

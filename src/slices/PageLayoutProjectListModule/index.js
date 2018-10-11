@@ -35,9 +35,14 @@ export const PortfolioGrid = ({ data, currentFilter, setFilter }) => {
       {projects.map(item => (
         <StyledLink 
           to={get(item, 'project.url')}
-          position={get(item, 'position')}          
-          subcategory={get(item, 'project.document[0].data.project_sub_type')}
-          
+          twoInRow={
+            (get(item, 'position') === "Top") ||
+            (currentFilter !== "All")
+          }          
+          show={
+            (currentFilter === get(item, 'project.document[0].data.sub_category')) ||
+            (currentFilter === "All")            
+          }
         >
           {renderGrid(get(item, 'project.document[0].data'))}
         </StyledLink>
@@ -49,25 +54,25 @@ export const PortfolioGrid = ({ data, currentFilter, setFilter }) => {
 export const PageLayoutProjectListModule = ({data, location}) => {
   let filters = get(data, "primary.category_filters.text")
   filters = split(filters, ",")
-    return(
-      <Value initial="All">
-        {({ value: currentFilter, set: setFilter }) => (
-          <>
-            <ProjectNavigation 
-              location={location}
-              filters={filters}
-              setFilter={setFilter} 
-              currentFilter={currentFilter}
-            />
-            <PortfolioGrid 
-              data={data} 
-              setFilter={setFilter} 
-              currentFilter={currentFilter}               
-            />            
-          </>
-        )}
-      </Value>
-     )
+  return(
+    <Value initial="All">
+      {({ value: currentFilter, set: setFilter }) => (
+        <>
+          <ProjectNavigation 
+            location={location}
+            filters={filters}
+            setFilter={setFilter} 
+            currentFilter={currentFilter}
+          />
+          <PortfolioGrid 
+            data={data} 
+            setFilter={setFilter} 
+            currentFilter={currentFilter}               
+          />            
+        </>
+      )}
+    </Value>
+  )
 }       
     
 export const query = graphql`
@@ -93,8 +98,8 @@ export const query = graphql`
                     }
                     project_type {
                       text
-                    }
-                    project_sub_type
+                    }                    
+                    sub_category
                     image {
                       localFile {
                         childImageSharp {

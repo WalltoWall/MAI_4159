@@ -34,13 +34,13 @@ export const Title = styled.h1`
 
 export const StyledLink = styled(Link)`
   position: relative;
-  display: block;
+  display: ${p => p.show ? "block" : "none"};
   width: 100%;
   overflow: hidden;
   padding-top: 60%;
   ${t.mq.l} {
-    width: ${p=> p.position === "Top" ? '50%' : '33.333%'};
-    padding-top: ${p=> p.position === "Top" ? '35%' : '20%'};    
+    width: ${p=> p.twoInRow ? '50%' : '33.333%'};
+    padding-top: ${p=> p.twoInRow ? '35%' : '20%'};    
   }
   &:hover {
     ${Title} {

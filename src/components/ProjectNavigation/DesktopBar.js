@@ -1,7 +1,6 @@
 import React from 'react'
 import { 
-  get, 
-  isEmpty, 
+  get,  
   trim, 
   split, 
   startCase, 
@@ -22,8 +21,7 @@ import {
 } from './DesktopBar.styled'
 
 export const DesktopBar = ({location, categories, filters, setFilter, currentFilter})  => {  
-  console.log("whatsappp? ", filters)
-  
+    
   const getFilterName = (path) => {     
     let initialLabel = split(startCase(trim(path, "/")), " ")    
     if (initialLabel.length > 1) {        
@@ -66,8 +64,15 @@ export const DesktopBar = ({location, categories, filters, setFilter, currentFil
         Historical Research
       </StyledLink>        
     </DesktopContainer>    
-     {!isEmpty(filters) && (
+     {filters.length > 1 && (
       <SubCategoryContainer>
+          <Filter
+            onClick={(e) => 
+              setFilter("All")
+            }
+          >
+            All
+          </Filter>          
         {filters.map(filter => (          
           <Filter
             onClick={(e) => 
