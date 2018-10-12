@@ -27,7 +27,7 @@ const maxWidthChooser = ({ size }) => {
 
 export const overlayClassName = css`
   animation: ${fadeIn} ${t.t};
-  background-color: ${transparentize(0.3, 'white')};
+  background-color: ${transparentize(0.1, 'white')};
   position: fixed;
   top: 0;
   left: 0;
@@ -38,9 +38,6 @@ export const overlayClassName = css`
 
 export const Container = styled(Modal)`
   -webkit-overflow-scrolling: touch;
-  box-shadow: 0 8px 24px ${transparentize(0.5, t.c.black)},
-    0 1px 4px ${transparentize(0, t.c.black)};
-  border-radius: ${t.r(-2)};
   color: ${t.c.black};
   font-family: ${t.ff.sans};
   font-size: ${t.f(0)};
@@ -51,13 +48,12 @@ export const Container = styled(Modal)`
   outline: none;
   overflow: auto;
   position: absolute;
-  top: 20%;
+  top: 40%;
   transform: translate(-50%, -20%);
   width: 100%;
 `
 
-export const Content = styled.div`
-  background-color: ${t.c.white};
+export const Content = styled.div`  
   background-position: center top;
   background-size: 100%, ${t.s(8)};
   height: 100%;

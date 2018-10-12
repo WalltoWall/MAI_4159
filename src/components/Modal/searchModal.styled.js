@@ -9,6 +9,9 @@ export const Header = styled(HTMLContent)`
   margin-bottom: ${t.s(2)};
 
   h2 {
+    text-transform: uppercase;
+    text-align: center;
+    color: ${t.c.darkgrey1};
     font-size: ${t.f(6)};
     margin-bottom: ${t.s(-4)};
   }

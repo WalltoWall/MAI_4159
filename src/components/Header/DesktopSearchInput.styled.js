@@ -11,15 +11,19 @@ export const Container = styled.li`
 
 export const Form = styled.form`
   display: flex;
+  input {
+    padding: ${t.s(0)};
+  }
+  width: 70%;
+  margin: 0 auto;
+  // box-shadow: 0 8px 24px ${transparentize(0.9, t.c.lightgrey4)},
+  // 0 2px 4px ${transparentize(0, t.c.lightgrey4)};
 `
 
 export const SearchQuery = styled.input`
   -webkit-appearance: none;
   background-color: ${transparentize(0.35, t.c.white)};
   border: 0;
-  border-radius: 10rem;
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
   color: ${t.c.black};
   flex-grow: 1;
   font-size: ${t.f(-1)};
@@ -50,10 +54,7 @@ export const SearchQuery = styled.input`
 export const SearchButton = styled.button`
   -webkit-appearance: none;
   align-items: center;
-  background-color: ${transparentize(0.35, t.c.white)};
-  border-radius: 10rem;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
+  background-color: ${transparentize(0.35, t.c.darkgrey1)};
   border: 0;
   border: 0;
   cursor: pointer;

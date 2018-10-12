@@ -9,7 +9,7 @@ import { Header } from './searchModal.styled'
 export const searchModal = ({ hideModal, ...props }) => (
   <Modal hideModal={hideModal} {...props}>
     <Header>
-      <h2>search</h2>
+      <h2>Search</h2>
       <DesktopSearchInput
         onSubmit={({ query }) =>
           navigate(`/search${query ? `?${qs.stringify({ query })}` : ''}`)
