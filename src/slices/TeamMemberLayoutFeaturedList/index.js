@@ -6,7 +6,6 @@ import { Image } from 'components/Image'
 import { Link } from 'components/Link'
 
 export const TeamMemberLayoutFeaturedList = ({ data }) => {
-  console.log("sss", data)
   return (
   <Container>
     {get(data, "items").map(item => (

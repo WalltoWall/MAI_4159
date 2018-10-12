@@ -6,14 +6,15 @@ import {
   Container,
 } from './index.styled'
 
-export const PageLayoutGoogleMap = ({ data }) => {
-    console.log("map api  ", process.env.GATSBY_GOOGLE_API_KEY)
+export const PageLayoutGoogleMap = ({ data }) => {    
     return (
     <>        
         <GoogleMapComponent 
             isMarkerShown
             containerElement={<Container />}
-            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3&key=${process.env.GATSBY_GOOGLE_API_KEY}&libraries=geometry`}
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
+              process.env.GATSBY_GOOGLE_API_KEY
+            }`}
             loadingElement={<div style={{ height: `100%` }} />}            
             mapElement={<div style={{ height: `100%` }} />}
         />
