@@ -43,11 +43,17 @@ export class MobileBar extends React.Component {
     })
   }
 
-  toggleSubFilter = e => {
+  toggleSubFilter = (e, fromParent) => {    
     e.stopPropagation()
-    this.setState({
-      subFilterOpen: !this.state.subFilterOpen,
-    })
+    if (fromParent) {      
+      this.setState({
+        subFilterOpen: false,
+      })
+    } else {
+      this.setState({
+        subFilterOpen: !this.state.subFilterOpen,
+      })
+    }    
   }
 
   getLinkProps = () => ({ href, location: { pathname } }) => ({
@@ -62,7 +68,12 @@ export class MobileBar extends React.Component {
       <MobileContainer>
         <div style={{ position: 'relative' }}>
           <span>Filter: </span>
-          <CurrentFilter onClick={e => this.toggleFilter(e)}>
+          <CurrentFilter 
+            onClick={e => {
+              this.toggleFilter(e)
+              this.toggleSubFilter(e, true)
+            }}
+          >
             {this.getFilterName(this.props.location.pathname)}
           </CurrentFilter>
           <NavArrow
@@ -82,7 +93,7 @@ export class MobileBar extends React.Component {
             <p
               className={navItemClassName}
               style={{ display: 'inline-block' }}
-              onClick={e => this.toggleSubFilter(e)}
+              onClick={e => this.toggleSubFilter(e, false)}
             >
               Building Use
             </p>
