@@ -6,27 +6,39 @@ export const Content = styled.div`
   width: 100%;
   margin: 1rem 2rem;
   padding-bottom: 1.5rem;
-  border-right: none;
+  border-left: none;
   border-bottom: 1px dotted #646e6a;
   overflow-wrap: break-word;
+  &:last-child {
+    border-bottom: none;
+  }
   ${t.mq.s} {
     width: 35%;
+    &:last-child {
+     border-bottom: 1px dotted #646e6a;
+    }
   }
   ${t.mq.l} {
-    width: 20%;
-    border-right: 1px dotted #646e6a;
+    width: 22%;
+    border-left: 1px dotted #646e6a;
     border-bottom: none;
     margin: 1.5rem 0;
-    &:last-child {
+    height: 100px;
+    padding: 0 1.5rem;
+    &:first-child {
       border-right: none;
+    }
+    &:last-child {
       width: 30%;
+      height: auto;
+      border-bottom: 0;
     }
   }
 `
 
 export const Container = styled.div`
   margin: 0 auto;
-  padding: 4rem 0;
+  padding: 2rem 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -37,6 +49,7 @@ export const Container = styled.div`
   ${t.mq.l} {
     width: 65%;
     justify-content: space-around;
+    padding: 4rem 0;
   }
   ${t.mq.xl} {
     width: 60%;
