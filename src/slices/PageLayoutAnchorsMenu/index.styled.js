@@ -6,7 +6,7 @@ export const StyledAnchor = styled.a`
   font-color: black;
   z-index: 2;
   padding: 0rem 1rem;
-  margin: 0 2rem;
+  margin: 0 1rem;
   font-family: ${t.ff.sans2};
   letter-spacing: 0.1rem;
   -webkit-transition: color 0.2s ease-in;
@@ -85,5 +85,27 @@ export const StyledAnchorContainer = styled.div`
   margin-top: 15px;
   a {
     padding: 5px 0;
+  }
+`
+
+export const ClipOverlay = styled.div`
+  position: absolute;
+  background-color: ${t.c.darkgrey2};
+  -webkit-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  transform: rotate(85deg);
+  overflow: hidden;
+  z-index: -1;
+  top: -415px;
+  height: 800px;
+  width: 100px;
+  left: 45%;
+  ${t.mq.m} {
+    top: -680px;
+    height: 1400px;
+    width: 200px;
+  }
+  ${t.mq.l} {
+    display: none;
   }
 `

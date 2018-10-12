@@ -6,7 +6,7 @@ import t from 'theme'
 export const HamburgerMenuContainer = styled.div`
   cursor: pointer;
   position: absolute;
-  z-index: 7;
+  z-index: 1000;
   right: 1.5rem;
   top: 1.5rem;
   ${t.mq.l} {
@@ -22,7 +22,7 @@ export const StyledMobile = styled(Mobile)`
   right: 0;
   right: 0;
   top: 0;
-  z-index: 6;
+  z-index: 999;
   height: 100vh;
   overflow-y: hidden;
   ${t.mq.l} {

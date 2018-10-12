@@ -9,7 +9,8 @@ import {
   Desktop, 
   Mobile,
   FilterMenu,
-  NavArrow
+  NavArrow,
+  ClipOverlay,
 } from './index.styled'
 
 export const PageLayoutAnchorsMenu = ({ data }) => (
@@ -49,6 +50,7 @@ export const PageLayoutAnchorsMenu = ({ data }) => (
           </>
         )}
       </Toggle>
+      <ClipOverlay /> 
     </Mobile>
   </>
 )
