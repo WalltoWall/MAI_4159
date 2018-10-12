@@ -72,10 +72,10 @@ export const OverlayContainer = styled.div`
   background-color: ${t.c.white};
   opacity: 0.8;
   z-index: 5;
-  -webkit-transition: all 0.1s ease-in;
-  -moz-transition: all 0.1s ease-in;
-  -o-transition: all 0.1s ease-in;
-  transition: all 0.1s ease-in;
+  -webkit-transition: all 60ms ease-in;
+  -moz-transition: all 60ms ease-in;
+  -o-transition: all 60ms ease-in;
+  transition: all 60ms ease-in;
   ${StyledLink}:hover & {
     height: 100%;
     border-bottom: 1rem solid ${t.c.yellow};
