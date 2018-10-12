@@ -53,6 +53,11 @@ export const Container = styled(Modal)`
   top: 0;
   transform: translate(-50%, -0%);
   width: 100%;
+  animation: 150ms ease-in slidein;
+  @keyframes slidein {
+    from { transform: translate(-50%, -${t.s(7)});}
+    to   { transform: translate(-50%, 0); }
+  };
 `
 
 export const Content = styled.div`  
