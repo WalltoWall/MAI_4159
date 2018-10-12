@@ -159,7 +159,7 @@ export const Filter = styled.div`
 `
 
 export const FilterContainer = styled.div`
-  z-index: 99;
+  z-index: 5;
 `
 
 export const ClipOverlay = styled.div`
