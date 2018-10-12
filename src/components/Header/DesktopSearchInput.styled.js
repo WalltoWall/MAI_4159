@@ -19,9 +19,6 @@ export const Form = styled.form`
   }
   width: 80%;
   margin: 0 auto;
-
-  // box-shadow: 0 8px 24px ${transparentize(0.9, t.c.lightgrey4)},
-  // 0 2px 4px ${transparentize(0, t.c.lightgrey4)};
 `
 
 export const SearchQuery = styled.input`

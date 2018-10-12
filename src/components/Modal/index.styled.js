@@ -64,7 +64,7 @@ export const Content = styled.div`
   margin: 0 auto;
 
   ${t.mq.m} {
-    padding: ${t.s(2)};
+    padding: ${t.s(3.5)};
   }
   ${t.mq.l} {
     width: 50%;
@@ -83,6 +83,7 @@ export const CloseButton = styled.button`
   ${t.mq.l} {
     top: 15%; 
   }
+  z-index: 10;
 `
 
 export const CloseIcon = styled(AssetIconCloseXSVG)`
