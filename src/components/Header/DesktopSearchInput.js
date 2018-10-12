@@ -31,7 +31,7 @@ export const DesktopSearchInput = ({ initialQuery = '', onSubmit = noop }) => (
             name="query"
             onChange={handleChange}
             onBlur={handleBlur}
-            placeholder="Search&hellip;"
+            placeholder="Search"
             value={values.query}
           />
           <SearchButton

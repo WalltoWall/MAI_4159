@@ -12,21 +12,27 @@ export const Container = styled.li`
 export const Form = styled.form`
   display: flex;
   input {
-    padding: ${t.s(0)};
+    padding: 0;    
+    ::placeholder {
+      color: ${t.c.lightgrey4};
+    }
   }
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
+
   // box-shadow: 0 8px 24px ${transparentize(0.9, t.c.lightgrey4)},
   // 0 2px 4px ${transparentize(0, t.c.lightgrey4)};
 `
 
 export const SearchQuery = styled.input`
   -webkit-appearance: none;
-  background-color: ${transparentize(0.35, t.c.white)};
-  border: 0;
-  color: ${t.c.black};
+  background: none;
+  border: none;
+  border-bottom: 1px solid ${t.c.lightgrey4};
+  color: ${t.c.lightgrey4};
   flex-grow: 1;
-  font-size: ${t.f(-1)};
+  font-size: ${t.f(4)};
+  text-transform: uppercase;
   font-weight: inherit;
   outline: 0;
   padding: ${t.s(-5, -1)};
@@ -34,11 +40,11 @@ export const SearchQuery = styled.input`
   transition-property: background-color, width;
   width: ${t.s(4.5)};
 
-  ${Container}:hover &,
-  &:focus,
-  &:hover {
-    background-color: ${t.c.white};
-  }
+  // ${Container}:hover &,
+  // &:focus,
+  // &:hover {
+  //   background-color: ${t.c.white};
+  // }
 
   ${t.mq.x} {
     &:focus {
@@ -54,36 +60,31 @@ export const SearchQuery = styled.input`
 export const SearchButton = styled.button`
   -webkit-appearance: none;
   align-items: center;
-  background-color: ${transparentize(0.35, t.c.darkgrey1)};
   border: 0;
-  border: 0;
+  border-bottom: 1px solid ${t.c.lightgrey4};
   cursor: pointer;
   display: flex;
   min-width: 0;
   padding: ${t.s(-2.5, -1)};
   transition: background-color ${t.t};
+  background: none;
 
-  ${Container}:hover &,
-  ${SearchQuery}:focus + & {
-    background-color: ${t.c.black};
-  }
 `
 
 export const SearchButtonIcon = styled(AssetIconSearchSVG)`
-  height: ${t.s(-0.5)};
-  transform: translateY(-5%);
-  width: ${t.s(-0.5)};
+  height: ${t.s(1.5)};  
+  width: ${t.s(1.5)};
 
-  ${Container}:hover &,
-  ${SearchButton}:focus &,
-  ${SearchQuery}:focus + ${SearchButton} & {
-    path {
-      fill: ${t.c.white};
-    }
-  }
+  // ${Container}:hover &,
+  // ${SearchButton}:focus &,
+  // ${SearchQuery}:focus + ${SearchButton} & {
+  //   path {
+  //     fill: ${t.c.white};
+  //   }
+  // }
 
   path {
-    fill: ${t.c.black};
+    fill: ${t.c.yellow};
     transition: fill ${t.t};
   }
 `
