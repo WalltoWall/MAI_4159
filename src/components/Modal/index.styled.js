@@ -27,8 +27,9 @@ const maxWidthChooser = ({ size }) => {
 
 export const overlayClassName = css`
   animation: ${fadeIn} ${t.t};
-  background-color: ${transparentize(0.3, 'white')};
+  background: none;
   position: fixed;
+  height: 100%;  
   top: 0;
   left: 0;
   right: 0;
@@ -38,34 +39,35 @@ export const overlayClassName = css`
 
 export const Container = styled(Modal)`
   -webkit-overflow-scrolling: touch;
-  box-shadow: 0 8px 24px ${transparentize(0.5, t.c.black)},
-    0 1px 4px ${transparentize(0, t.c.black)};
-  border-radius: ${t.r(-2)};
+  background-color: ${transparentize(0.1, 'white')};  
+  border-bottom: 4px solid ${t.c.yellow};
   color: ${t.c.black};
   font-family: ${t.ff.sans};
   font-size: ${t.f(0)};
   left: 50%;
   line-height: ${t.lh.copy};
   max-height: 100%;
-  max-width: ${maxWidthChooser};
   outline: none;
   overflow: auto;
   position: absolute;
-  top: 20%;
-  transform: translate(-50%, -20%);
+  top: 0;
+  transform: translate(-50%, -0%);
   width: 100%;
 `
 
-export const Content = styled.div`
-  background-color: ${t.c.white};
+export const Content = styled.div`  
   background-position: center top;
   background-size: 100%, ${t.s(8)};
   height: 100%;
-  padding: ${t.s(1)};
-  width: 100%;
+  padding: ${t.s(3.5)} 0;
+  width: 70%;
+  margin: 0 auto;
 
   ${t.mq.m} {
-    padding: ${t.s(2)};
+    padding: ${t.s(3.5)} 0;
+  }
+  ${t.mq.l} {
+    width: 50%;
   }
 `
 
@@ -76,8 +78,12 @@ export const CloseButton = styled.button`
   cursor: pointer;
   padding: ${t.s(1)};
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 1%;
+  top: 25%; 
+  ${t.mq.l} {
+    top: 25%; 
+  }
+  z-index: 10;
 `
 
 export const CloseIcon = styled(AssetIconCloseXSVG)`
@@ -85,7 +91,7 @@ export const CloseIcon = styled(AssetIconCloseXSVG)`
   height: ${t.s(0.5)};
   transform: translateZ(0);
   transition: transform ${t.t};
-  width: ${t.s(0.5)};
+  width: ${t.s(0.5)};  
 
   ${CloseButton}:hover & {
     transform: scale(1.1) translateZ(0);
@@ -96,7 +102,7 @@ export const CloseIcon = styled(AssetIconCloseXSVG)`
   }
 
   path {
-    stroke: ${t.c.black};
+    stroke: ${t.c.darkgrey1};
     stroke-miterlimit: 10;
     stroke-width: 2px;
   }

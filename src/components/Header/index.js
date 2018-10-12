@@ -4,10 +4,10 @@ import { Desktop } from 'components/Header/Desktop'
 import { Toggle } from 'react-powerplug'
 import { stripUnit } from 'polished'
 import HamburgerMenu from 'react-hamburger-menu'
-
 import { Container } from './index.styled'
 import { LogoLink, NavWrapper } from './Desktop.styled'
 import { HamburgerMenuContainer, StyledMobile } from './Mobile.styled'
+
 import t from 'theme'
 
 export const Header = () => (

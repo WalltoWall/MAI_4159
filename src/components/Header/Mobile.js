@@ -1,8 +1,10 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { get } from 'lodash'
-import { Container } from './Mobile.styled'
+import { Container, MobileSearchIcon, SearchButtonIcon, SearchNavItem } from './Mobile.styled'
 import { MobileNavItem } from './MobileNavItem.js'
+import { ModalConsumer } from 'controllers/ModalContext'
+import { searchModal } from 'components/Modal/searchModal'
 
 const renderLink = toggleMobileNav => item => (
   <MobileNavItem
@@ -18,6 +20,24 @@ const render = ({ isOpen, toggle, ...props }) => queryData => (
     {get(queryData, 'prismicNavigation.data.primary', []).map(
       renderLink(toggle)
     )}
+    <SearchNavItem>      
+      <MobileSearchIcon>
+        <ModalConsumer>
+          {({ showModal }) => (
+            <a
+              href="/"
+              onClick={event => {
+                event.preventDefault()
+                showModal(searchModal)
+                toggle()
+              }}
+            > Search
+              <SearchButtonIcon />
+            </a>
+          )}
+        </ModalConsumer>
+      </MobileSearchIcon>
+    </SearchNavItem>
   </Container>
 )
 

@@ -2,6 +2,7 @@ import styled from 'react-emotion'
 import { Mobile } from 'components/Header/Mobile'
 import { transparentize } from 'polished'
 import t from 'theme'
+import { ReactComponent as AssetIconSearchSVG } from 'assets/icon-search.svg'
 
 export const HamburgerMenuContainer = styled.div`
   cursor: pointer;
@@ -61,4 +62,27 @@ export const MobileNavOverlay = styled.div`
   ${t.mq.l} {
     display: none;
   }
+`
+
+export const SearchNavItem = styled.div`  
+  background-color: ${t.c.lightgrey3}; 
+  margin: ${t.s(0)} 0;
+  padding: ${t.s(1)} 0;
+  color: ${t.c.white};
+  font-size: ${t.f(3)};
+  font-family: ${t.ff.sans2};
+`
+
+export const MobileSearchIcon = styled.div`   
+  z-index: 5;
+  display: block;
+  ${t.mq.l} {
+    display: none;
+  }
+`
+export const SearchButtonIcon = styled(AssetIconSearchSVG)`
+  cursor: pointer;
+  height: ${t.s(1)}; 
+  transform: translate(60%, 10%);
+  width: ${t.s(1)};  
 `

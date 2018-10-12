@@ -8,10 +8,7 @@ import { Layout } from 'components/Layout'
 import { PageLayoutHero } from 'slices/PageLayoutHero'
 import { PageLayoutProjectBoxes } from 'slices/PageLayoutProjectBoxes'
 import { PageLayoutSplitPanels } from 'slices/PageLayoutSplitPanels'
-import { PageLayoutCategoriesBar } from 'slices/PageLayoutCategoriesBar'
 import { PageLayoutSubPageHero } from 'slices/PageLayoutSubPageHero'
-import { PageLayoutPortfolioGridTop } from 'slices/PageLayoutPortfolioGridTop'
-import { PageLayoutPortfolioGridBottom } from 'slices/PageLayoutPortfolioGridBottom'
 import { PageLayoutCtaBar } from 'slices/PageLayoutCtaBar'
 import { PageLayoutServices } from 'slices/PageLayoutServices'
 import { PageLayoutTextBlock } from 'slices/PageLayoutTextBlock'
@@ -24,6 +21,7 @@ import { PageLayoutTextExpandable } from 'slices/PageLayoutTextExpandable'
 import { PageLayoutTeamGrid } from 'slices/PageLayoutTeamGrid'
 import { PageLayoutFeaturedNews } from 'slices/PageLayoutFeaturedNews'
 import { PageLayoutGoogleMap } from 'slices/PageLayoutGoogleMap'
+import { PageLayoutProjectListModule } from 'slices/PageLayoutProjectListModule'
 
 const PageTemplate = ({ data, location }) => (
   <>
@@ -36,11 +34,8 @@ const PageTemplate = ({ data, location }) => (
         map={{
           PageLayoutHero,
           PageLayoutProjectBoxes,
-          PageLayoutSplitPanels,
-          PageLayoutCategoriesBar,
-          PageLayoutSubPageHero,
-          PageLayoutPortfolioGridTop,
-          PageLayoutPortfolioGridBottom,
+          PageLayoutSplitPanels,          
+          PageLayoutSubPageHero,          
           PageLayoutCtaBar,
           PageLayoutServices,          
           PageLayoutTextBlock,
@@ -53,6 +48,7 @@ const PageTemplate = ({ data, location }) => (
           PageLayoutTeamGrid,
           PageLayoutFeaturedNews,
           PageLayoutGoogleMap,
+          PageLayoutProjectListModule,
         }}
         page={get(data, 'prismicPage')}
         rootData={data}
@@ -80,8 +76,6 @@ export const query = graphql`
     ...PageLayoutProjectBoxes
     ...PageLayoutSplitPanels
     ...PageLayoutSubPageHero
-    ...PageLayoutPortfolioGridTop
-    ...PageLayoutPortfolioGridBottom
     ...PageLayoutCtaBar
     ...PageLayoutServices
     ...PageLayoutTextBlock
@@ -93,6 +87,7 @@ export const query = graphql`
     ...PageLayoutTextExpandable
     ...PageLayoutTeamGrid
     ...PageLayoutFeaturedNews
-    ...PageLayoutGoogleMap
+    ...PageLayoutGoogleMap    
+    ...PageLayoutProjectListModule
   }
 `

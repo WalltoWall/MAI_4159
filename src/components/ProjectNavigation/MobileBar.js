@@ -5,12 +5,13 @@ import { isPathActive } from 'lib/helpers'
 import {
   MobileContainer,
   StyledLink,
-  MobileFilterContainer,
+  PrimaryFilterContainer,
   CurrentFilter,
   navItemClassName,
   linkActiveClassName,
   NavArrow,
   SubFilterContainer,
+  SubFilterChildContainer,
   Filter,
 } from './MobileBar.styled'
 
@@ -42,11 +43,17 @@ export class MobileBar extends React.Component {
     })
   }
 
-  toggleSubFilter = e => {
+  toggleSubFilter = (e, fromParent) => {    
     e.stopPropagation()
-    this.setState({
-      subFilterOpen: !this.state.subFilterOpen,
-    })
+    if (fromParent) {      
+      this.setState({
+        subFilterOpen: false,
+      })
+    } else {
+      this.setState({
+        subFilterOpen: !this.state.subFilterOpen,
+      })
+    }    
   }
 
   getLinkProps = () => ({ href, location: { pathname } }) => ({
@@ -61,15 +68,25 @@ export class MobileBar extends React.Component {
       <MobileContainer>
         <Filter style={{ position: 'relative' }}>
           <span>Filter: </span>
-          <CurrentFilter onClick={e => this.toggleFilter(e)}>
+          <CurrentFilter 
+            onClick={e => {
+              this.toggleFilter(e)
+              this.toggleSubFilter(e, true)
+            }}
+          >
             {this.getFilterName(this.props.location.pathname)}
           </CurrentFilter>
           <NavArrow
             style={{ right: '3rem', top: '3px' }}
             active={this.state.filterOpen}
           />
+<<<<<<< HEAD:src/slices/PageLayoutCategoriesBar/MobileBar.js
         </Filter>
         <MobileFilterContainer isOpen={this.state.filterOpen}>
+=======
+        </div>
+        <PrimaryFilterContainer isOpen={this.state.filterOpen}>
+>>>>>>> d2ffe5d11a83ee0d13a324ef760f4f225d175147:src/components/ProjectNavigation/MobileBar.js
           <StyledLink
             to={'/featured-projects/'}
             getProps={this.getLinkProps()}
@@ -81,7 +98,7 @@ export class MobileBar extends React.Component {
             <p
               className={navItemClassName}
               style={{ display: 'inline-block' }}
-              onClick={e => this.toggleSubFilter(e)}
+              onClick={e => this.toggleSubFilter(e, false)}
             >
               Building Use
             </p>
@@ -109,7 +126,28 @@ export class MobileBar extends React.Component {
           >
             Historical Research
           </StyledLink>
-        </MobileFilterContainer>
+        </PrimaryFilterContainer>
+        {this.props.filters.length > 1 && (
+          <SubFilterChildContainer
+            isOpen={this.state.filterOpen}
+          >
+              <Filter
+                onClick={(e) => this.props.setFilter("All")}
+                isActive={this.props.currentFilter === "All"}
+              >
+                All
+              </Filter>          
+            {this.props.filters.map((filter,index) => (          
+              <Filter
+                onClick={(e) => this.props.setFilter(trim(filter))}
+                isActive={this.props.currentFilter === trim(filter)}
+                key={index + filter}
+              >
+                {trim(filter)}
+              </Filter>          
+            ))}      
+          </SubFilterChildContainer>      
+        )}
       </MobileContainer>
     )
   }
