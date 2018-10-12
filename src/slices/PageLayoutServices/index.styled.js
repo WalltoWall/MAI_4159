@@ -189,6 +189,11 @@ export const StyledLink = styled(Link)`
   margin: 0;
   height: 14rem;
   max-width: 400px;
+  &:hover {
+    ${ProjectTitle} {
+      top: 45%;
+    }
+  }
   ${t.mq.m} {
     width: 45%;
     margin: 1rem;
@@ -198,11 +203,7 @@ export const StyledLink = styled(Link)`
     height: 15rem;
     margin: 0 0.5%;
   }
-  &:hover {
-    ${ProjectTitle} {
-      top: 45%;
-    }
-  }
+
 `
 
 export const Projects = styled.div`

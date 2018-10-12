@@ -1,19 +1,26 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-import { Image } from 'components/Image'
 import { HTMLContent } from 'components/HTMLContent'
-import { getUnlessEmptyString } from 'helpers'
 import { 
   Container,
   Content,
-  ImageContainer,
   Title,
   StyledHtmlClassName,
 } from './index.styled'
 
 export const PageLayoutInfoBlock = ({ data }) => (
-    <h1>hello world</h1>
+    <Container>
+       {get(data, 'items', []).map(item => (
+          <Content>
+            <Title>{get(item, 'title1.text')}</Title>
+            <HTMLContent
+              html={get(item, 'info1.html')}
+              className={StyledHtmlClassName}
+            />
+          </Content>
+        ))}
+    </Container>
 )
 
 export const query = graphql`
@@ -22,7 +29,15 @@ export const query = graphql`
       data {
         layout {
           ... on PrismicPageLayoutInfoBlock {
-            id            
+            id
+            items {
+              title1 {
+                text
+              }
+              info1 {
+                html
+              }
+            }
           }
         }
       }

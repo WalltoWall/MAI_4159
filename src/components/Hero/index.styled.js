@@ -7,6 +7,7 @@ export const ImageContainer = styled.div`
   max-height: 350px;
   overflow: hidden;
   background-color: ${t.c.darkgrey1};
+  z-index: 0;
   .gatsby-image-outer-wrapper {
     height: 100%;
   }
@@ -40,7 +41,7 @@ export const Title = styled.h1`
 
 export const ClipOverlay = styled.div`
   position: absolute;
-  background-color: ${t.c.darkgrey2};
+  background-color: ${t.c.lightgrey2};
   -webkit-transform: rotate(-5deg);
   -ms-transform: rotate(-5deg);
   transform: rotate(-5deg);

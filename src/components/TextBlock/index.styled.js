@@ -7,7 +7,7 @@ const backgroundChooser = ({ background_color }) => {
   switch (background_color) {
     case 'Grey':
       return `
-        background-color: ${t.c.lightgrey1};
+        background-color: ${t.c.lightgrey2};
       `
 
     default:
