@@ -26,11 +26,8 @@ export const PrimaryFilterContainer = styled.div`
   display: ${p => (p.isOpen ? 'flex' : 'none')};
   flex-direction: column;
   padding: 1rem;
-  margin: 1.2rem 0 -1.5rem 0;  
+  margin: 2rem 0 -1.5rem 0;  
   background-color: ${t.c.lightgrey3};
-  z-index: 99;
-  position: absolute;
-  width: 100%;
 `
 
 export const CurrentFilter = styled.h2`
@@ -98,26 +95,6 @@ export const SubFilterContainer = styled.div`
   margin-left: -5%;
 `
 
-export const ClipOverlay = styled.div`
-  position: absolute;
-  background-color: ${t.c.darkgrey2};
-  -webkit-transform: rotate(-5deg);
-  -ms-transform: rotate(-5deg);
-  transform: rotate(85deg);
-  overflow: hidden;
-  z-index: 0;
-  top: -65px;
-  height: 800px;
-  width: 100px;
-  left: 45%;
-  ${t.mq.m} {
-    top: -320px;
-    height: 1400px;
-    width: 200px;
-    left: 45%;
-  }
-`
-
 export const SubFilterChildContainer = styled.div`
   display: ${p => p.isOpen ? "none" : "flex"};  
   width: 100%;
@@ -131,7 +108,6 @@ export const SubFilterChildContainer = styled.div`
 `
 
 export const Filter = styled.div`
-  z-index: 1;
   color: white;
   width: 50%;
   font-family: ${t.ff.sans};

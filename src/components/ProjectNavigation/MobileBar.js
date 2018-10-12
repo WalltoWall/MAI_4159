@@ -66,7 +66,7 @@ export class MobileBar extends React.Component {
   render() {
     return (
       <MobileContainer>
-        <Filter style={{ position: 'relative' }}>
+        <div style={{ position: 'relative' }}>
           <span>Filter: </span>
           <CurrentFilter 
             onClick={e => {
@@ -80,13 +80,8 @@ export class MobileBar extends React.Component {
             style={{ right: '3rem', top: '3px' }}
             active={this.state.filterOpen}
           />
-<<<<<<< HEAD:src/slices/PageLayoutCategoriesBar/MobileBar.js
-        </Filter>
-        <MobileFilterContainer isOpen={this.state.filterOpen}>
-=======
         </div>
         <PrimaryFilterContainer isOpen={this.state.filterOpen}>
->>>>>>> d2ffe5d11a83ee0d13a324ef760f4f225d175147:src/components/ProjectNavigation/MobileBar.js
           <StyledLink
             to={'/featured-projects/'}
             getProps={this.getLinkProps()}
