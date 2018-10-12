@@ -59,12 +59,12 @@ export const Content = styled.div`
   background-position: center top;
   background-size: 100%, ${t.s(8)};
   height: 100%;
-  padding: ${t.s(1)};
+  padding: ${t.s(3.5)} 0;
   width: 70%;
   margin: 0 auto;
 
   ${t.mq.m} {
-    padding: ${t.s(3.5)};
+    padding: ${t.s(3.5)} 0;
   }
   ${t.mq.l} {
     width: 50%;
@@ -79,9 +79,9 @@ export const CloseButton = styled.button`
   padding: ${t.s(1)};
   position: absolute;
   right: 1%;
-  top: 10%; 
+  top: 25%; 
   ${t.mq.l} {
-    top: 15%; 
+    top: 25%; 
   }
   z-index: 10;
 `

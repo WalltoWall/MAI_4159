@@ -28,7 +28,7 @@ export const SearchQuery = styled.input`
   border-bottom: 1px solid ${t.c.lightgrey4};
   color: ${t.c.lightgrey4};
   flex-grow: 1;
-  font-size: ${t.f(4)};
+  font-size: ${t.f(2)};
   text-transform: uppercase;
   font-weight: inherit;
   outline: 0;
@@ -42,7 +42,9 @@ export const SearchQuery = styled.input`
   // &:hover {
   //   background-color: ${t.c.white};
   // }
-
+  ${t.mq.l} {
+    font-size: ${t.f(4)};
+  }
   ${t.mq.x} {
     &:focus {
       width: ${t.s(5.5)};
