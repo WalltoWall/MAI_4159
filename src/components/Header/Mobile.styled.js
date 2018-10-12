@@ -7,7 +7,7 @@ import { ReactComponent as AssetIconSearchSVG } from 'assets/icon-search.svg'
 export const HamburgerMenuContainer = styled.div`
   cursor: pointer;
   position: absolute;
-  z-index: 5;
+  z-index: 10;
   right: 1.5rem;
   top: 1.5rem;
   ${t.mq.l} {
