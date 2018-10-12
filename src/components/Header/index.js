@@ -4,10 +4,11 @@ import { Desktop } from 'components/Header/Desktop'
 import { Toggle } from 'react-powerplug'
 import { stripUnit } from 'polished'
 import HamburgerMenu from 'react-hamburger-menu'
-
-import { Container } from './index.styled'
+import { Container, MobileSearchIcon, SearchButtonIcon } from './index.styled'
 import { LogoLink, NavWrapper } from './Desktop.styled'
 import { HamburgerMenuContainer, StyledMobile } from './Mobile.styled'
+import { ModalConsumer } from 'controllers/ModalContext'
+import { searchModal } from 'components/Modal/searchModal'
 import t from 'theme'
 
 export const Header = () => (
@@ -21,6 +22,21 @@ export const Header = () => (
           <NavWrapper>
             <Desktop />
           </NavWrapper>
+          <MobileSearchIcon>
+            <ModalConsumer>
+              {({ showModal }) => (
+                <a
+                  href="/"
+                  onClick={event => {
+                    event.preventDefault()
+                    showModal(searchModal)
+                  }}
+                >
+                  <SearchButtonIcon />
+                </a>
+              )}
+            </ModalConsumer>
+          </MobileSearchIcon>
           <HamburgerMenuContainer>
             <HamburgerMenu
               color={t.c.white}
