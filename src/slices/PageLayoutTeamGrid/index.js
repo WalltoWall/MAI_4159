@@ -17,7 +17,6 @@ import {
   CurrentFilter,
   Filter,
   NavArrow,
-  ClipOverlay,
   FilterContainer,
 } from './index.styled'
 
@@ -86,7 +85,6 @@ export const PageLayoutTeamGrid = ({ data, rootData }) => {
             filters={roleFilters}
             currentFilter={currentFilter}
           />
-          <ClipOverlay />   
           <GridContainer>
             {teamMembers.map((member, i, list) => (
               <>

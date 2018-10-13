@@ -87,25 +87,3 @@ export const StyledAnchorContainer = styled.div`
     padding: 5px 0;
   }
 `
-
-export const ClipOverlay = styled.div`
-  position: absolute;
-  background-color: ${t.c.darkgrey2};
-  -webkit-transform: rotate(-5deg);
-  -ms-transform: rotate(-5deg);
-  transform: rotate(85deg);
-  overflow: hidden;
-  z-index: -1;
-  top: -415px;
-  height: 800px;
-  width: 100px;
-  left: 45%;
-  ${t.mq.m} {
-    top: -680px;
-    height: 1400px;
-    width: 200px;
-  }
-  ${t.mq.l} {
-    display: none;
-  }
-`

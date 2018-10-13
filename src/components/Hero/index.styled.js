@@ -1,6 +1,21 @@
 import styled from 'react-emotion'
 import t from 'theme'
 
+const backgroundColor = ({ has_filter }) => {
+  switch (has_filter) {
+    case 'Yes':
+      return `
+        background-color: ${t.c.darkgrey2};
+      `
+
+    default:
+      return `
+        background-color: ${t.c.lightgrey2};
+      `
+  }
+}
+
+
 export const ImageContainer = styled.div`
   position: relative;
   height: ${t.s(9)};
@@ -41,7 +56,7 @@ export const Title = styled.h1`
 
 export const ClipOverlay = styled.div`
   position: absolute;
-  background-color: ${t.c.lightgrey2};
+  ${backgroundColor};
   -webkit-transform: rotate(-5deg);
   -ms-transform: rotate(-5deg);
   transform: rotate(-5deg);

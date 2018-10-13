@@ -11,7 +11,6 @@ export const CategoriesBar= ({data, location}) => {
     <>
       <DesktopBar location={location} categories={categories}/>
       <MobileBar location={location} categories={categories} />   
-      <ClipOverlay />     
     </>
   )
 }

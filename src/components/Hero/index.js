@@ -17,7 +17,7 @@ export const Hero = ({ data }) => (
       fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
       fadeIn={false}
     />
-    <ClipOverlay />
+    <ClipOverlay has_filter={get(data, 'primary.has_filter')}/>
     {!isEmpty(get(data, 'primary.title1.text')) && (
       <TitleWrapper>
         <Title>{get(data, 'primary.title1.text')}</Title>
