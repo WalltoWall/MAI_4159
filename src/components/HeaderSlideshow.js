@@ -18,7 +18,7 @@ const Gradient = styled.div`
 const HeadersContainer = styled.div`
   position: relative;
   z-index: -1;
-`
+` 
 
 const zIndexChooser = ({ isPrevious, isCurrent }) => {
   if (isPrevious) return 2
