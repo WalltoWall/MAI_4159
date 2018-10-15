@@ -90,7 +90,7 @@ export const SubHeadline = styled.span`
   left: 22%;
   font-weight: 600;
   letter-spacing: 2px;
-  top: 56%;
+  top: 55%;
   font-size: ${t.f(3.5)};
   color: white;
   text-transform: uppercase;
@@ -101,6 +101,10 @@ export const SubHeadline = styled.span`
   }
   ${t.mq.x} {
     left: 17.6%;
+    display: block;
+  }
+  ${t.mq.xx} {
+    left: 11.2%;
     display: block;
   }
 `
@@ -135,6 +139,7 @@ export const SlidingVertical = styled.div`
   display: none;
   text-indent: 215px;
   span {
+    margin-left: -${t.s(1)};
     font-size: ${t.f(6)};
     letter-spacing: 3px;
     color: ${t.c.white};
@@ -142,16 +147,16 @@ export const SlidingVertical = styled.div`
     opacity: 0;
     position: absolute;
     &:nth-child(2) {
-      animation-delay: 3s;
+      animation-delay: 2.5s;
     }
     &:nth-child(3) {
-      animation-delay: 6s;
+      animation-delay: 5s;
     }
     &:nth-child(4) {
-      animation-delay: 9s;
+      animation-delay: 7.5s;
     }
     &:nth-child(5) {
-      animation-delay: 12s;
+      animation-delay: 10s;
     }
     ${t.mq.l} {
       font-size: ${t.f(10)};
