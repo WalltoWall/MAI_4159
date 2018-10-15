@@ -153,6 +153,7 @@ export const Filter = styled.div`
     margin: 0 ${t.s(1)};
   }
   transition: color ${t.t};
+  color: ${p => p.isActive ? t.c.yellow : t.c.white};
   :hover {
     color: ${t.c.yellow};
   }
