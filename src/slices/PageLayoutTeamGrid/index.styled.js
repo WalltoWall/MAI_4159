@@ -67,7 +67,7 @@ export const TitleContainer = styled.div`
   background-color: white;
   transition: opacity ${t.t} ease-in-out;
   opacity: 0.8;
-  padding: ${t.s(0.2)} 0;
+  padding: ${t.s(0.2)} ${t.s(1)};
   
   ${t.mq.l} {
     opacity: 0;
@@ -80,15 +80,29 @@ export const TitleContainer = styled.div`
 `
 export const Title = styled.h1`
   text-transform: uppercase;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: ${t.c.darkgrey1};
-  padding: 0;
+  padding: 0 0 5px 0;
   margin: 0;
   ${t.mq.s} {
     font-size: ${t.f(1)};
   }
   ${t.mq.l} {
-    font-size: ${t.f(1.5)};
+    font-size: ${t.f(1)};
+  }
+`
+
+export const SubTitle = styled.div`
+  text-transform: uppercase;
+  font-size: ${t.f(-3)};
+  color: ${t.c.darkgrey1};
+  padding: 2px 0;
+  margin: 0;
+  ${t.mq.s} {
+    font-size: ${t.f(-1)};
+  }
+  ${t.mq.l} {
+    font-size: ${t.f(-0.5)};
   }
 `
 

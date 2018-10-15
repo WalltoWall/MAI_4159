@@ -11,6 +11,7 @@ import {
   ImageContainer,
   TitleContainer,
   Title,
+  SubTitle,
   OverlayContainer,
   Overlay,
   FilterBarContainer,
@@ -63,15 +64,16 @@ const renderGrid = (data, currentFilter) => (
   <>
     <ImageContainer>
       <Image
-        alt={getUnlessEmptyString(data.photo.alt)}
-        fluid={data.photo.localFile.childImageSharp.fluid}
+        alt={getUnlessEmptyString(get(data, "photo.alt"))}
+        fluid={get(data, "photo.localFile.childImageSharp.fluid")}
         fadeIn={false}
       />
     </ImageContainer>
     <OverlayContainer>
       <TitleContainer isActive={getActiveState(currentFilter, data.department)}>
         <Title>{data.name}</Title>
-        <Title>{data.job_title}</Title>
+        <SubTitle>{data.affiliation}</SubTitle>
+        <SubTitle>{data.job_title}</SubTitle>
       </TitleContainer>
       <Overlay isActive={getActiveState(currentFilter, data.department)} />
     </OverlayContainer>
@@ -151,6 +153,7 @@ export const query = graphql`
                 document {
                   data {
                     name
+                    affiliation
                     job_title
                     department
                     photo {
