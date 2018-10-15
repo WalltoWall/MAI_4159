@@ -34,7 +34,7 @@ export const CurrentFilter = styled.h2`
   font-size: ${t.f(1.5)};
   display: inline-block;
   margin: 0;
-  color: ${t.c.yellow};
+  color: ${p => p.defaultColor ? t.c.white : t.c.yellow};
   text-align: center;
   cursor: pointer;
   padding-left: 10px;
@@ -69,7 +69,7 @@ export const StyledLink = styled(Link)`
   -moz-transition: color 0.2s ease-in;
   -o-transition: color 0.2s ease-in;
   transition: color 0.2s ease-in;
-  
+  color: ${p => p.isActive ? t.c.yellow : t.c.white };
   &:hover {    
     ${t.mq.l} {
       color: ${t.c.yellow};

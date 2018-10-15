@@ -21,7 +21,6 @@ import {
 } from './DesktopBar.styled'
 
 export const DesktopBar = ({location, categories, filters, setFilter, currentFilter})  => {  
-    
   const getFilterName = (path) => {     
     let initialLabel = split(startCase(trim(path, "/")), " ")    
     if (initialLabel.length > 1) {        
@@ -38,13 +37,18 @@ export const DesktopBar = ({location, categories, filters, setFilter, currentFil
   return (
     <>
     <DesktopContainer>
-      <StyledLink to={'/featured-projects/'}>
+      <StyledLink 
+        to={'/featured-projects/'}
+        isActive={location.pathname === "/featured-projects/"}  
+      >
         Featured
       </StyledLink>                   
       <VerticalLine>|</VerticalLine>
       <SubFilterContainer>
         <span>Building Use:</span>
-        <CurrentFilter>
+        <CurrentFilter
+          defaultColor={getFilterName(location.pathname) === "Select"}
+        >
           {getFilterName(location.pathname)}
         </CurrentFilter>
         <NavArrow/>
@@ -60,7 +64,7 @@ export const DesktopBar = ({location, categories, filters, setFilter, currentFil
         </StyledLinkContainer>
       </SubFilterContainer>          
       <VerticalLine>|</VerticalLine>
-      <StyledLink to={'/featured-projects/'}>
+      <StyledLink to={'/historic-research/'}>
         Historical Research
       </StyledLink>        
     </DesktopContainer>    

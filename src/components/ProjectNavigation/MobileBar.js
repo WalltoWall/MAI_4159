@@ -115,7 +115,7 @@ export class MobileBar extends React.Component {
             ))}
           </SubFilterContainer>
           <StyledLink
-            to={'/featured-projects/'}
+            to={'/historic-research/'}
             getProps={this.getLinkProps()}
             onClick={e => this.toggleFilter(e)}
           >
