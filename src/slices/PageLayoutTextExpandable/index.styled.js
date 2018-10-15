@@ -7,14 +7,20 @@ import Expand from 'react-expand-animated'
 
 export const Container = styled.div`
   margin: 0 auto;
-  padding: 4rem;
+  padding: 2rem;
   position: relative;
   background-color: ${t.c.white};
+  ${t.mq.m} {
+    padding: 4rem;
+  }
 `
 
 export const Content = styled.div`
   display: flex;
-  margin: 1rem auto;
+  margin: 1rem 0;
+  ${t.mq.m} {
+    margin: 1rem auto;
+  }
 `
 
 export const Intro = styled(HTMLContent)`
@@ -43,20 +49,28 @@ export const Text = styled(HTMLContent)`
   p {
     font-family: ${t.ff.sans2};
     color: ${t.c.darkgrey2};
-    line-height: 0.4rem;
+    line-height: ${t.lh.copy};
+    text-align: left;
+
+    ${t.mq.m} {
+      text-align: center;
+    }
   }
 `
 
 export const StyledExpandButton = styled(ExpandButton)`
-  display: inline-block;
-  margin: 0 0 0 0.3rem;
+  display: block;
+  margin: 0 0 0 1rem;
+  ${t.mq.m} {
+    margin: 0 0 0 0.3rem;
+  }
 `
 
 export const Category = styled.div`
   display: flex;
   margin: 0 atuo;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
 `
 
 export const StyledExpand = styled(Expand)`

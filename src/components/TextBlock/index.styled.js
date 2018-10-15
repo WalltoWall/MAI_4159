@@ -106,3 +106,8 @@ export const StyledHtmlClassName = css`
     }
   }
 `
+
+export const Headline =  styled.div`
+  display: block;
+  font-size: 2rem;
+`
