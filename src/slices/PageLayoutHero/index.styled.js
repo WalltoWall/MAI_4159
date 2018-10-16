@@ -31,11 +31,11 @@ export const HeadlineWrapper = styled.div`
   -webkit-transform: rotate(-7deg) translate(0, -50px) scale(1.2);
   -ms-transform: rotate(-7deg) translate(0, -50px) scale(1.2);
   transform: rotate(-7deg) translate(0, -50px) scale(1.2);
-
   ${t.mq.l} {
     position: absolute;
     margin-left: 2rem;
     width: auto;
+    z-index: 1;
     background-color: transparent;
     -webkit-transform: none;
     -ms-transform: none;
