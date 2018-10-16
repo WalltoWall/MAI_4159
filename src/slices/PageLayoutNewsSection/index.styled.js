@@ -96,6 +96,16 @@ export const StyledLink = styled(Link)`
     height: auto;
     padding: 1rem 1rem 2rem 1rem;
   }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }      
+    to {
+      opacity: 1;
+    }
+  };
+  animation: fadeIn .5s ease-in;
 `
 export const ReadMore = styled(Link)`
   font-family: ${t.ff.sans2};
