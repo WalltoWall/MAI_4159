@@ -6,13 +6,23 @@ import { ReactComponent as LinkedinIcon} from 'assets/linkedin_icon.svg'
 import { Link } from 'components/Link'
 
 export const Container = styled.div`
+  width: 100%;
+  background-color: white;
+  padding: ${t.s(3)} 0 ${t.s(2)} 0;
+  ${t.mq.l} {
+    padding: ${t.s(6)} 0 0 0;
+    margin-bottom: -${t.s(2)};
+  }    
+`
+
+export const Content = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding: ${t.s(4)} ${t.s(1)};
+  width: 90%;
+  margin: 0 auto;
   ${t.mq.l} {
-    padding: ${t.s(4)} ${t.s(5)};
+    width: 60%;
   }
 `
 
@@ -26,18 +36,18 @@ export const ImageContainer = styled.div`
     height: 100%;
   }
   ${t.mq.l} {
-    width: 35%;    
-    padding: 0 ${t.s(5)} 0 0;
+    width: 50%;    
+    padding-right: ${t.s(2)};
   }
 `
 
-export const Content = styled.div`
+
+export const Column = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;    
   ${t.mq.l} {    
-    width: 35%;
-    padding: 0 0 0 ${t.s(2)};
+    width: 50%;
   }
   h2 {
     font-family: ${t.ff.sans};
@@ -54,9 +64,11 @@ export const Content = styled.div`
     margin: 0;
   }
   p {
-    font-family: ${t.ff.sans};
+    font-family: ${t.ff.sans2};
     color: ${t.c.darkgrey1};
-    font-size: ${t.f(3)};
+    font-weight: 300;
+    font-size: ${t.f(1.5)};
+    line-height: ${t.s(1.5)};
     ${t.mq.l} {         
       padding: 0 ${t.s(4)} 0 0;
     } 
@@ -78,7 +90,7 @@ export const SocialContainer = styled.div`
 
 export const StyledLink = styled(Link)`
   display: block;  
-  width: 25%;
+  width: 20%;
   height: 100%;
 `
 

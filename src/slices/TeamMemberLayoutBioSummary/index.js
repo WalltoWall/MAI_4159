@@ -7,6 +7,7 @@ import {
   Container, 
   ImageContainer, 
   Content, 
+  Column,
   SocialContainer, 
   StyledLinkedinIcon,
   StyledInstagramIcon,
@@ -43,23 +44,25 @@ export const renderSocial = (item) => {
 export const TeamMemberLayoutBioSummary = ({ data }) => {
   return (
     <Container>
-      <ImageContainer>
-        <Image
-          alt={get(data, "primary.image.alt")}
-          fluid={get(data, "primary.image.localFile.childImageSharp.fluid")}
-          fadeIn={false}
-        />
-      </ImageContainer>
       <Content>
-        <h2>{get(data, "primary.name1")}</h2>
-        <h3>{get(data, "primary.position")}</h3>
-        <p>{get(data, "primary.quote.text")}</p>
-        <span>{get(data, "primary.email")}</span>
-        <SocialContainer>
-          {get(data, "items").map(item => (            
-            renderSocial(item)                        
-          ))}
-        </SocialContainer>
+        <ImageContainer>
+          <Image
+            alt={get(data, "primary.image.alt")}
+            fluid={get(data, "primary.image.localFile.childImageSharp.fluid")}
+            fadeIn={false}
+          />
+        </ImageContainer>
+        <Column>
+          <h2>{get(data, "primary.name1")}</h2>
+          <h3>{get(data, "primary.position")}</h3>
+          <p>{get(data, "primary.quote.text")}</p>
+          <span>{get(data, "primary.email")}</span>
+          <SocialContainer>
+            {get(data, "items").map(item => (            
+              renderSocial(item)                        
+            ))}
+          </SocialContainer>
+        </Column>
       </Content>
     </Container>
   )
