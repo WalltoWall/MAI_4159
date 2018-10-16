@@ -73,6 +73,7 @@ export const PageLayoutServices = ({ data }) => {
                 ),
               title: get(project, 'projects.document[0].data.title.text'),
               url: get(project, 'projects.url'),
+              largeImages: false,
             })
           )}
       </Projects>

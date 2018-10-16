@@ -30,6 +30,7 @@ export const PageLayoutProjectBoxes = ({ data }) => {
             ),
             title: get(project, 'projects.document[0].data.title.text'),
             url: get(project, 'projects.url'),
+            largeImages: true,
           })
         )}
       </Content>

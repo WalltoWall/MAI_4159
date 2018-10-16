@@ -20,30 +20,27 @@ export const Title = styled.p`
   margin: auto;
   width: 100%;
   opacity: 1;
-  font-size: ${t.f(2)};
+  font-size: ${p=> p.largeImages ? '1.6rem' : '0.9rem'};
   font-family: ${t.ff.sans};
   text-transform: uppercase;
   font-weight: 600;
   color: ${t.c.darkgrey1};
-  letter-spacing: ${t.ls.heading};
+  letter-spacing: ${p=> p.largeImages ? '0.2rem' : '0.1rem'};
 
   ${t.mq.l} {
-    font-size: ${t.f(3)};
-  }
-  ${t.mq.x} {
-    font-size: ${t.f(3)};
+    font-size: ${p=> p.largeImages ? '2rem' : '1.4rem'};
   }
 `
 
 export const StyledLink = styled(Link)`
   position: relative;
   display: block;
-  margin: 0.5rem 1.2rem;
-  width: 100%;
-  height: 20rem;
+  margin: ${p=> p.largeImages ? '0.5rem 1.2rem' : '0'};
+  width: ${p=> p.largeImages ? '100%' : '50%'};
+  height: ${p=> p.largeImages ? '20rem' : '10rem'};
   ${t.mq.m} {
-    width: 45%;
-    height: 28rem;
+    width: ${p=> p.largeImages ? '45%' : '23%'};
+    height: ${p=> p.largeImages ? '28rem' : '12rem'};
   }
 
   &:hover {
@@ -58,8 +55,9 @@ export const StyledLink = styled(Link)`
 export const OverlayContainer = styled.div`
   position: absolute;
   display: flex;
-  height: 50px;
-  padding: 1rem;
+  flex-wrap: wrap;
+  height: ${p=> p.largeImages ? '50px' : '35px'};
+  padding: ${p=> p.largeImages ? '1rem' : '0.5rem'};
   width: 100%;
   bottom: 0;
   background-color: ${t.c.white};
@@ -70,7 +68,7 @@ export const OverlayContainer = styled.div`
   -o-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
   ${t.mq.m} {
-    height: 55px;
+    ${p=> p.largeImages ? '55px' : '40px'};
   }
   ${StyledLink}:hover & {
     height: 100%;

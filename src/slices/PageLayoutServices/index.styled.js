@@ -1,7 +1,6 @@
 import styled from 'react-emotion'
 import t from 'theme'
 import { css } from 'emotion'
-import { Link } from 'components/Link'
 
 const backgroundColor = ({ background_color }) => {
   switch (background_color) {
@@ -173,17 +172,10 @@ export const Projects = styled.div`
   padding-bottom: 1rem;
   justify-content: space-around;
   ${t.mq.m} {
-    justify-content: center;
+    justify-content: space-between;
   }
   ${t.mq.l} {
     width: 75%;
     margin: 1rem auto;
-  }
-`
-
-export const Project = styled.div`  
-  ${t.mq.m} {
-    width: 20%;
-    height: 28rem;
   }
 `
