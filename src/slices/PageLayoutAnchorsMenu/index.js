@@ -9,7 +9,7 @@ import {
   Desktop, 
   Mobile,
   FilterMenu,
-  NavArrow
+  NavArrow,
 } from './index.styled'
 
 export const PageLayoutAnchorsMenu = ({ data }) => (

@@ -3,12 +3,12 @@ import styled from 'react-emotion'
 import t from 'theme'
 
 export const Content = styled.div`
-  margin: 1.5rem;
+  margin: 0.5rem;
   overflow: hidden;
 `
 
 export const ImageContainer = styled.a`  
-  width: 50px;
+  width: 30px;
   display: block;
   margin: 1rem auto;
   .gatsby-image-outer-wrapper {        
@@ -17,18 +17,15 @@ export const ImageContainer = styled.a`
   .gatsby-image-wrapper {        
     height: 100%;
   }
-  ${t.mq.m} {
-    width: 60px;
-  }
 `
 
 export const Container = styled.div`
   margin: 0 auto;
-  padding: 4rem 0;
+  padding: 2rem 0 4rem 0;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
   justify-content: center;
 `
 

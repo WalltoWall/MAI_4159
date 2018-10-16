@@ -176,26 +176,3 @@ export const Filter = styled.div`
 export const FilterContainer = styled.div`
   z-index: 5;
 `
-
-export const ClipOverlay = styled.div`
-  position: absolute;
-  background-color: ${t.c.darkgrey2};
-  -webkit-transform: rotate(-5deg);
-  -ms-transform: rotate(-5deg);
-  transform: rotate(85deg);
-  overflow: hidden;
-  z-index: 0;
-  top: -65px;
-  height: 800px;
-  width: 100px;
-  left: 45%;
-  ${t.mq.m} {
-    top: -320px;
-    height: 1400px;
-    width: 200px;
-    left: 45%;
-  }
-  ${t.mq.l} {
-    display: none;
-  }
-`

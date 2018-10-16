@@ -17,6 +17,7 @@ export const query = graphql`
               title1 {
                 text
               }
+              has_filter
               image {
                 alt
                 localFile {

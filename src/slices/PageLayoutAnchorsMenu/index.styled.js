@@ -6,7 +6,7 @@ export const StyledAnchor = styled.a`
   font-color: black;
   z-index: 2;
   padding: 0rem 1rem;
-  margin: 0 2rem;
+  margin: 0 1rem;
   font-family: ${t.ff.sans2};
   letter-spacing: 0.1rem;
   -webkit-transition: color 0.2s ease-in;
