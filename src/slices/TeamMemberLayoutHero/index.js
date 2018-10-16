@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { Hero } from 'components/Hero'
 
 export const TeamMemberLayoutHero = ({ data }) => (
-  <Hero data={data}/>
+  <Hero whitebg="true" data={data}/>
 )
 
 export const query = graphql`

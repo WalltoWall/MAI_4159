@@ -10,14 +10,17 @@ import {
   TitleWrapper,
 } from './index.styled'
 
-export const Hero = ({ data }) => (
+export const Hero = ({ data, whitebg }) => (
   <ImageContainer>
     <Image
       alt={getUnlessEmptyString(get(data, 'primary.image.data'))}
       fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
       fadeIn={false}
     />
-    <ClipOverlay has_filter={get(data, 'primary.has_filter')}/>
+    <ClipOverlay 
+      has_filter={get(data, 'primary.has_filter')} 
+      whitebg={whitebg ? true : false}
+    />
     {!isEmpty(get(data, 'primary.title1.text')) && (
       <TitleWrapper>
         <Title>{get(data, 'primary.title1.text')}</Title>
