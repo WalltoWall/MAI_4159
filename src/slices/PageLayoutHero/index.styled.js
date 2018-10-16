@@ -27,7 +27,7 @@ export const HeadlineWrapper = styled.div`
   width: 100%;
   background-color: ${t.c.darkgrey1};
   padding: 2rem;
-  z-index: 2;
+  z-index: 0;
   -webkit-transform: rotate(-7deg) translate(0, -50px) scale(1.2);
   -ms-transform: rotate(-7deg) translate(0, -50px) scale(1.2);
   transform: rotate(-7deg) translate(0, -50px) scale(1.2);

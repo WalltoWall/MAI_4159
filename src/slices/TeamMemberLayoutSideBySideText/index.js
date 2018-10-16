@@ -13,10 +13,10 @@ export const query = graphql`
           ... on PrismicTeamMemberLayoutSideBySideText {
             id
             primary {
-              left_text {
+              qualifications {
                 html
               }
-              right_text {
+              experience {
                 html
               }
             }
