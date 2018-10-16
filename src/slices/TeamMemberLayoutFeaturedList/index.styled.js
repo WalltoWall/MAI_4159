@@ -1,13 +1,27 @@
 import styled from 'react-emotion'
 import t from 'theme'
-import { Link } from 'components/Link'
+
+export const ListTitle = styled.div`
+  background-color: ${t.c.lightgrey2};
+  padding: ${t.s(3)} 0 ${t.s(2)} 0;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: ${t.ff.sans};
+  font-size: ${t.f(1.5)};
+  letter-spacing: 1px;
+  color: ${t.c.darkgrey1};  
+  ${t.mq.s} {
+    font-size: ${t.f(3)};
+  }
+`
 
 export const Container = styled.div`
   width: 100%;
   display: flex;
   background-color: ${t.c.white};
   flex-direction: column;
-  padding-top: ${t.s(2)};
+  justify-content: center;
   ${t.mq.l} {
     flex-direction: row;
   }  
@@ -15,6 +29,9 @@ export const Container = styled.div`
 
 export const GridContainer = styled.div`
   width: 100%;  
+  ${t.mq.l} {
+    width: 33.333%;  
+  }  
 `
 
 export const ImageContainer = styled.div`  

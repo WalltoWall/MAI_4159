@@ -1,12 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Container, GridContainer, ImageContainer, Content } from './index.styled'
-import { get } from 'lodash'
+import { ListTitle, Container, GridContainer, ImageContainer, Content } from './index.styled'
+import { get, split } from 'lodash'
 import { Image } from 'components/Image'
 import { Link } from 'components/Link'
 
-export const TeamMemberLayoutFeaturedList = ({ data }) => {
+export const TeamMemberLayoutFeaturedList = ({ data, rootData }) => {  
   return (
+    <>
+    <ListTitle>
+      {split(get(rootData, "prismicTeamMember.data.title"), " ")[0]}'s Featured Projects
+    </ListTitle>
   <Container>
     {get(data, "items").map(item => (
       <GridContainer>
@@ -38,6 +42,7 @@ export const TeamMemberLayoutFeaturedList = ({ data }) => {
       
     ))}    
   </Container>
+  </>
   )
 }
 export const query = graphql`
