@@ -4,18 +4,19 @@ import { get } from 'lodash'
 import { MobileNavOverlay } from 'components/Header/Mobile.styled'
 import { Image } from 'components/Image'
 import { getUnlessEmptyString } from 'helpers'
+import { HTMLContent } from 'components/HTMLContent'
 import {
   Gradient,
   Container,
   HeadlineWrapper,
   Headline,
   ImageContainer,
-  Description,
   DescriptionWrapper,
   Overlay,
   SlidingVertical,
   RotatedContainer,
   SubHeadline,
+  StyledHtmlClassName,
 } from './index.styled'
 
 export const PageLayoutHero = ({ data }) => (
@@ -45,10 +46,9 @@ export const PageLayoutHero = ({ data }) => (
     <SubHeadline> Hawai'i's Future</SubHeadline>
     <Overlay>
       <DescriptionWrapper>
-        <Description
-          dangerouslySetInnerHTML={{
-            __html: get(data, 'primary.description.html'),
-          }}
+        <HTMLContent
+          html={get(data, 'primary.description.html')}
+          className={StyledHtmlClassName}
         />
       </DescriptionWrapper>
     </Overlay>

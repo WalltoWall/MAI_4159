@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'react-emotion'
 import t from 'theme'
+import { css } from 'emotion'
 
 export const Container = styled.div`
   align-items: center;
@@ -88,7 +89,7 @@ export const SubHeadline = styled.span`
   font-family: ${t.ff.sans2};
   position: absolute;
   left: 22%;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 2px;
   top: 55%;
   font-size: ${t.f(3.5)};
@@ -96,16 +97,14 @@ export const SubHeadline = styled.span`
   text-transform: uppercase;
   z-index: 2;
   ${t.mq.l} {
-    left: 25%;
+    left: 240px;
     display: block;
   }
   ${t.mq.x} {
-    left: 17.6%;
-    display: block;
+    left: 250px;
   }
   ${t.mq.xx} {
-    left: 11.2%;
-    display: block;
+    left: 260px;
   }
 `
 const topToBottom = keyframes`
@@ -190,18 +189,7 @@ export const Gradient = styled.div`
     display: block;
   }
 `
-export const Description = styled.div`
-  color: ${t.c.white};
-  width: auto;
-  text-align: center;
-  font-family: ${t.ff.serif};
-  font-size: ${t.s(0.5)};
 
-  ${t.mq.l} {
-    text-align: left;
-    width: 320px;
-  }
-`
 export const DescriptionWrapper = styled.div`
   font-family: ${t.ff.sans2};
   line-height: ${t.lh.copy};
@@ -238,5 +226,32 @@ export const Overlay = styled.div`
     height: 120%;
     top: -50px;
     right: -50px;
+  }
+`
+
+export const StyledHtmlClassName = css`
+  h2 {
+    font-size: ${t.f(4)};
+    font-family: ${t.ff.serif};
+    font-weight: 400;
+    color: ${t.c.lightgrey1};
+    text-align: center;
+    ${t.mq.l} {
+      font-size: ${t.f(5)};
+      text-align: left;
+      width: 320px;
+      margin-bottom: 0.5rem;
+    }
+  }
+  p {
+    color: ${t.c.white};
+    width: auto;
+    text-align: center;
+    font-family: ${t.ff.sans2};
+    font-size: ${t.s(0.5)};
+    ${t.mq.l} {
+      text-align: left;
+      width: 320px;
+    }
   }
 `
