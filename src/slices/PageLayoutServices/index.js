@@ -12,27 +12,13 @@ import {
   ImageDescription,
   ImageContainer,
   StyledHtmlClassName,
-  StyledLink,
   TextWrapper,
   TextBlock,
   Projects,
-  OverlayContainer,
-  ProjectImage,
   SectionTitle,
-  ProjectTitle,
 } from './index.styled'
 import { Button }from 'components/Button'
-
-const renderFeatureGrid = ({ alt, key, img, title, url }) => (
-  <StyledLink to={url} key={key}>
-    <ProjectImage>
-      <Image fluid={img} alt={alt} fadeIn={false} />
-    </ProjectImage>
-    <OverlayContainer>
-      <ProjectTitle>{title}</ProjectTitle>
-    </OverlayContainer>
-  </StyledLink>
-)
+import { RenderGrid } from 'components/RenderGrid'
 
 export const PageLayoutServices = ({ data }) => {
   const projects = get(data, 'items')
@@ -76,7 +62,7 @@ export const PageLayoutServices = ({ data }) => {
       <SectionTitle>{serviceName} Work</SectionTitle>
         <Projects>
           {projects.map(project =>
-            renderFeatureGrid({
+            RenderGrid({
               key: get(project, 'projects.document[0].uid'),
               alt: getUnlessEmptyString(
                 get(project, 'projects.document[0].data.image.alt')
@@ -87,6 +73,7 @@ export const PageLayoutServices = ({ data }) => {
                 ),
               title: get(project, 'projects.document[0].data.title.text'),
               url: get(project, 'projects.url'),
+              largeImages: false,
             })
           )}
       </Projects>

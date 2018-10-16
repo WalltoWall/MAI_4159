@@ -5,25 +5,11 @@ import { Image } from 'components/Image'
 import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
-  ImageContainer,
-  OverlayContainer,
-  Title,
   Content,
-  StyledLink,
   Headline,
 } from './index.styled'
 import { Button } from 'components/Button'
-
-const renderFeatureGrid = ({ alt, key, img, title, url }) => (
-  <StyledLink to={url} key={key}>
-    <ImageContainer>
-      <Image fluid={img} alt={alt} fadeIn={false} />
-    </ImageContainer>
-    <OverlayContainer>
-      <Title>{title}</Title>
-    </OverlayContainer>
-  </StyledLink>
-)
+import { RenderGrid } from 'components/RenderGrid'
 
 export const PageLayoutProjectBoxes = ({ data }) => {
   const projects = get(data, 'items')
@@ -33,7 +19,7 @@ export const PageLayoutProjectBoxes = ({ data }) => {
       <Headline>{get(data, 'primary.title1.text')}</Headline>
       <Content>
         {projects.map(project =>
-          renderFeatureGrid({
+          RenderGrid({
             key: get(project, 'projects.document[0].uid'),
             alt: getUnlessEmptyString(
               get(project, 'projects.document[0].data.image.alt')
@@ -44,6 +30,7 @@ export const PageLayoutProjectBoxes = ({ data }) => {
             ),
             title: get(project, 'projects.document[0].data.title.text'),
             url: get(project, 'projects.url'),
+            largeImages: true,
           })
         )}
       </Content>
