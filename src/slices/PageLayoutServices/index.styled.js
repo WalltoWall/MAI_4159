@@ -36,23 +36,6 @@ export const Title = styled.h2`
   }
 `
 
-
-export const ProjectTitle = styled.p`
-  color: ${t.c.darkgrey1};
-  font-family: ${t.ff.sans};
-  font-size: ${t.f(2)};
-  text-align: center;
-  position: absolute;
-  font-weight: 600;
-  margin: 0 auto;
-  text-transform: uppercase;
-  letter-spacing: ${t.ls.heading};
-  text-align: center;
-  display: block;
-  z-index: 2;
-  width: 100%;
-`
-
 export const Content = styled.div`
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.serif};
@@ -182,30 +165,6 @@ export const TextBlock = styled.div`
   }
 `
 
-export const StyledLink = styled(Link)`
-  position: relative;
-  display: block;
-  width: 50%;
-  margin: 0;
-  height: 14rem;
-  max-width: 400px;
-  &:hover {
-    ${ProjectTitle} {
-      top: 45%;
-    }
-  }
-  ${t.mq.m} {
-    width: 45%;
-    margin: 1rem;
-  }
-  ${t.mq.l} {
-    width: 23%;
-    height: 15rem;
-    margin: 0 0.5%;
-  }
-
-`
-
 export const Projects = styled.div`
   width: 100%;
   display: flex;
@@ -222,36 +181,9 @@ export const Projects = styled.div`
   }
 `
 
-export const OverlayContainer = styled.div`
-  position: absolute;
-  display: flex;
-  padding: 0.8rem 0;
-  height: 20%;
-  width: 100%;
-  bottom: 0;
-  background-color: ${t.c.white};
-  opacity: 0.8;
-  z-index: 5;
-  -webkit-transition: all 0.1s ease-in;
-  -moz-transition: all 0.1s ease-in;
-  -o-transition: all 0.1s ease-in;
-  transition: all 0.1s ease-in;
-  ${StyledLink}:hover & {
-    height: 100%;
-    border-bottom: 1rem solid ${t.c.yellow};
-  }
-`
-
-
-export const ProjectImage = styled.div`
-  height: 100%;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  .gatsby-image-outer-wrapper {
-    height: 100%;
-  }
-  .gatsby-image-wrapper {
-    height: 100%;
+export const Project = styled.div`  
+  ${t.mq.m} {
+    width: 20%;
+    height: 28rem;
   }
 `
