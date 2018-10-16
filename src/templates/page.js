@@ -81,6 +81,7 @@ export const query = graphql`
     ...PageLayoutTextBlock    
     ...PageLayoutAnchor
     ...PageLayoutInfoBlock
+    ...PageLayoutNewsSection
     ...PageLayoutSocialMedia
     ...PageLayoutAnchorsMenu
     ...PageLayoutTextExpandable

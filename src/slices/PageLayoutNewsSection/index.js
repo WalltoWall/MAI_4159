@@ -19,7 +19,66 @@ import {
   ReadMoreWrapper,
   SectionContainer,
   ButtonContainer,
+  Headline,
 } from './index.styled'
+
+
+export const PageLayoutNewsSection = ({data}) => (
+  <StaticQuery
+    query={graphql`
+      query {
+        allPrismicNewsPost {
+          edges {
+            node {
+              data {                
+                date
+                article_title {
+                  text
+                }
+                article_content1 {
+                  text
+                }
+                image {
+                  alt
+                  localFile {
+                    childImageSharp {
+                      fluid(maxWidth: 500, quality: 90) {
+                        ...GatsbyImageSharpFluid_withWebp_noBase64
+                      }
+                    }
+                  }
+                }
+              }
+              uid
+            }
+          }
+        }
+      }
+    `}
+    render={render(data)}
+  />
+)
+
+
+const render = (data) => queryData => {    
+  const newsPosts = get(queryData, 'allPrismicNewsPost.edges').sort((a,b) => {    
+    return new Date(get(b, "node.data.date")) - new Date(get(a, "node.data.date"))
+  })
+  return (   
+    <SectionContainer>
+      {get(data, "primary.title1.text") && (
+        <Headline>
+          {get(data, "primary.title1.text")}
+        </Headline>
+      )}      
+      <Container>
+        <Content>
+          <GridList newsPosts={newsPosts}/>    
+        </Content>
+      </Container>      
+    </SectionContainer>
+  )
+}
 
 class GridList extends React.Component {
   constructor(props) {
@@ -89,53 +148,21 @@ class GridList extends React.Component {
   }
 }
 
-const render = () => queryData => {  
-  const newsPosts = get(queryData, 'allPrismicNewsPost.edges').sort((a,b) => {    
-    return new Date(get(b, "node.data.date")) - new Date(get(a, "node.data.date"))
-  })
-  return (   
-    <SectionContainer>   
-      <Container>
-        <Content>
-          <GridList newsPosts={newsPosts}/>    
-        </Content>
-      </Container>      
-    </SectionContainer>
-  )
-}
-
-export const PageLayoutNewsSection = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        allPrismicNewsPost {
-          edges {
-            node {
-              data {                
-                date
-                article_title {
-                  text
-                }
-                article_content1 {
-                  text
-                }
-                image {
-                  alt
-                  localFile {
-                    childImageSharp {
-                      fluid(maxWidth: 500, quality: 90) {
-                        ...GatsbyImageSharpFluid_withWebp_noBase64
-                      }
-                    }
-                  }
-                }
-              }
-              uid
-            }
+export const query = graphql`
+  fragment PageLayoutNewsSection on Query {
+    prismicPage(id: { eq: $id }) {
+      data {
+        layout {
+          ... on PrismicPageLayoutNewsSection {
+            id
+            primary {
+              title1 {
+                text
+              }             
+            }          
           }
         }
       }
-    `}
-    render={render()}
-  />
-)
+    }
+  }
+`
