@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, StaticQuery } from 'gatsby'
 import { get } from 'lodash'
 import { Image } from 'components/Image'
 import arrow from 'assets/yellow-arrow.svg'
@@ -17,121 +17,125 @@ import {
   PostDate,
   ArrowWrapper,
   ReadMoreWrapper,
-  Headline,
   SectionContainer,
+  ButtonContainer,
 } from './index.styled'
 
-const characterLimit = function(str, length, ending) { 
-  if (length == null) { 
-    length = 85  
-  } 
-  if (ending == null) { 
-    ending = '...'  
-  } 
-  if (str.length > length) {  
-    return str.substring(0, length - ending.length) + ending  
-  } else {  
-    return str  
-  } 
+class GridList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: this.props.newsPosts,
+      visible: 3      
+    };    
+  }
+
+  loadMore = () => {
+    this.setState((prev) => {      
+      return {visible: prev.visible + 3};
+    });
+  }
+ 
+  characterLimit = (str, length, ending) => { 
+    if (length == null) { 
+      length = 85  
+    } 
+    if (ending == null) { 
+      ending = '...'  
+    } 
+    if (str.length > length) {  
+      return str.substring(0, length - ending.length) + ending  
+    } else {  
+      return str  
+    } 
+  }
+
+  render() {
+    return (
+      <>    
+        {this.state.items.slice(0, this.state.visible).map((news_post, index) => {
+            return (
+              <StyledLink to={"/" + get(news_post, 'node.uid')} key={get(news_post, 'node.uid') + index}>
+                <ImageContainer>
+                  <Image 
+                    fluid={get(news_post, 'node.data.image.localFile.childImageSharp.fluid')} 
+                    alt={getUnlessEmptyString(get(news_post, 'node.data.image.alt'))} 
+                    fadeIn={false} 
+                  />
+                </ImageContainer>
+                <ContentContainer>
+                  <PostDate>{get(news_post, 'node.data.date')}</PostDate>
+                  <PostTitle>{get(news_post,'node.data.article_title.text')}</PostTitle>
+                  <PostContent>{this.characterLimit(get(news_post, 'node.data.article_content1.text'))}</PostContent>
+                  <ReadMoreWrapper>
+                    <ReadMore to={get(news_post, 'node.uid')}>Read more</ReadMore>
+                    <ArrowWrapper src={arrow} />
+                  </ReadMoreWrapper>
+                </ContentContainer>
+              </StyledLink>
+            );
+          })}
+          {this.state.visible < this.state.items.length &&
+          <ButtonContainer>
+            <Button
+              onClick={this.loadMore}                             
+            >
+              Load more
+            </Button>
+          </ButtonContainer>
+        }
+      </>
+    );
+  }
 }
 
-const renderFeatureGrid = ({ alt, key, img, title, url, content, date }) => (
-  <StyledLink to={url} key={key}>
-    <ImageContainer>
-      <Image fluid={img} alt={alt} fadeIn={false} />
-    </ImageContainer>
-    <ContentContainer>
-      <PostDate>{date}</PostDate>
-      <PostTitle>{title}</PostTitle>
-      <PostContent>{content}</PostContent>
-      <ReadMoreWrapper>
-        <ReadMore to={url}>Read more</ReadMore>
-        <ArrowWrapper src={arrow} />
-      </ReadMoreWrapper>
-    </ContentContainer>
-  </StyledLink>
-)
-
-export const PageLayoutNewsSection = ({ data }) => {
-  const news_post = get(data, 'items')
-
-  return (
-    <SectionContainer>
-      <Headline>{get(data, 'primary.title1.text')}</Headline>
+const render = () => queryData => {  
+  const newsPosts = get(queryData, 'allPrismicNewsPost.edges').sort((a,b) => {    
+    return new Date(get(b, "node.data.date")) - new Date(get(a, "node.data.date"))
+  })
+  return (   
+    <SectionContainer>   
       <Container>
         <Content>
-          {news_post.map(news_post =>
-            renderFeatureGrid({
-              key: get(news_post, 'news_post.document[0].uid'),
-              alt: getUnlessEmptyString(
-                get(news_post, 'news_post.document[0].data.image.alt')
-              ),
-              img: get(
-                news_post,
-                'news_post.document[0].data.image.localFile.childImageSharp.fluid'
-              ),
-              date: get(news_post, 'news_post.document[0].data.date'),
-              title: get(
-                news_post,
-                'news_post.document[0].data.article_title.text'
-              ),
-              url: get(news_post, 'news_post.url'),
-              content: characterLimit(get(news_post, 
-                'news_post.document[0].data.article_content1.text')),
-            })
-          )}
+          <GridList newsPosts={newsPosts}/>    
         </Content>
-      </Container>
-      <Button to={get(data, 'primary.button.url')}>view more news</Button>
+      </Container>      
     </SectionContainer>
   )
 }
 
-export const query = graphql`
-  fragment PageLayoutNewsSection on Query {
-    prismicPage(id: { eq: $id }) {
-      data {
-        layout {
-          ... on PrismicPageLayoutNewsSection {
-            id
-            primary {
-              title1 {
-                text
-              }
-              button {
-                url
-              }
-            }
-            items {
-              news_post {
-                document {
-                  data {
-                    date
-                    article_title {
-                      text
-                    }
-                    article_content1 {
-                      text
-                    }
-                    image {
-                      alt
-                      localFile {
-                        childImageSharp {
-                          fluid(maxWidth: 500, quality: 90) {
-                            ...GatsbyImageSharpFluid_withWebp_noBase64
-                          }
-                        }
+export const PageLayoutNewsSection = () => (
+  <StaticQuery
+    query={graphql`
+      query {
+        allPrismicNewsPost {
+          edges {
+            node {
+              data {                
+                date
+                article_title {
+                  text
+                }
+                article_content1 {
+                  text
+                }
+                image {
+                  alt
+                  localFile {
+                    childImageSharp {
+                      fluid(maxWidth: 500, quality: 90) {
+                        ...GatsbyImageSharpFluid_withWebp_noBase64
                       }
                     }
                   }
-                  uid
                 }
-                url
               }
+              uid
             }
           }
         }
       }
-    }
-  }
-`
+    `}
+    render={render()}
+  />
+)

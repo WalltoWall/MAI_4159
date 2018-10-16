@@ -131,3 +131,6 @@ export const Headline = styled.h2`
     font-size: ${t.f(5)};
   }
 `
+export const ButtonContainer = styled.div`
+  width: 100%;
+`

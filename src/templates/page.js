@@ -78,8 +78,7 @@ export const query = graphql`
     ...PageLayoutSubPageHero
     ...PageLayoutCtaBar
     ...PageLayoutServices
-    ...PageLayoutTextBlock
-    ...PageLayoutNewsSection
+    ...PageLayoutTextBlock    
     ...PageLayoutAnchor
     ...PageLayoutInfoBlock
     ...PageLayoutSocialMedia
