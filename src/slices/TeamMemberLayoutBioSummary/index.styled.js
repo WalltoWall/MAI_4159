@@ -11,7 +11,7 @@ export const Container = styled.div`
   padding: ${t.s(3)} 0 ${t.s(2)} 0;
   ${t.mq.l} {
     padding: ${t.s(6)} 0 0 0;
-    margin-bottom: -${t.s(2)};
+    margin-bottom: -${t.s(3)};
   }    
 `
 
@@ -27,7 +27,7 @@ export const Content = styled.div`
 `
 
 export const ImageContainer = styled.div`
-  height: ${t.s(9)};  
+  height: ${t.s(8)};  
   width: 100%;
   .gatsby-image-outer-wrapper {
     height: 100%;
@@ -38,6 +38,7 @@ export const ImageContainer = styled.div`
   ${t.mq.l} {
     width: 50%;    
     padding-right: ${t.s(2)};
+    height: ${t.s(9.5)};  
   }
 `
 
@@ -66,26 +67,32 @@ export const Column = styled.div`
   p {
     font-family: ${t.ff.sans2};
     color: ${t.c.darkgrey1};
-    font-weight: 300;
-    font-size: ${t.f(1.5)};
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: ${t.f(2)};
     line-height: ${t.s(1.5)};
     ${t.mq.l} {         
       padding: 0 ${t.s(4)} 0 0;
     } 
   }
   span {
-    font-family: ${t.ff.sans};
+    font-family: ${t.ff.sans2};
     color: ${t.c.darkgrey2};
-    font-size: ${t.f(2)};
+    font-size: ${t.f(1)};
+    font-weight: 400;
   }
 `
 
 export const SocialContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
-  width: 25%;  
+  width: 40%;  
   height: 100%;  
   margin-top: ${t.s(2)};
+  // margin-bottom: ${t.s(4)};
+  ${t.mq.s} {
+    width: 25%;  
+  }
 `
 
 export const StyledLink = styled(Link)`

@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { ListTitle, Container, GridContainer, ImageContainer, Content } from './index.styled'
+import { ListTitle, Container, GridContainer, DetailContainer, ImageContainer, Content, StyledHR } from './index.styled'
 import { get, split } from 'lodash'
 import { Image } from 'components/Image'
 import { Link } from 'components/Link'
@@ -27,16 +27,16 @@ export const TeamMemberLayoutFeaturedList = ({ data, rootData }) => {
           <h2>
             {get(item, "project.document[0].data.title.text")}  
           </h2>          
-          <hr align="left"/>
-          <div>
+          <StyledHR/>
+          <DetailContainer>
             <span>Project Type</span>
             <p>{get(item, "project.document[0].data.project_type.text")}</p>
-          </div>
-          <hr align="left"/>
-          <div>
+          </DetailContainer>
+          <StyledHR/>
+          <DetailContainer>
             <span>Year Completed</span>
             <p>{get(item, "project.document[0].data.year_completed")}</p>
-          </div>
+          </DetailContainer>
         </Content>
       </GridContainer>      
       

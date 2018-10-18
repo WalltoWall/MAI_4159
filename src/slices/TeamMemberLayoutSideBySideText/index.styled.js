@@ -7,7 +7,7 @@ export const Container = styled.div`
   background-color: ${t.c.lightgrey2};
   padding: ${t.s(3)} 0 ${t.s(3)} 0;
   ${t.mq.l} {
-    padding: ${t.s(5)} 0 ${t.s(4)} 0;
+    padding: ${t.s(5.5)} 0 ${t.s(4)} 0;
   }
 `
 
@@ -33,6 +33,7 @@ export const Column = styled.div`
   }  
   p {
     margin: 5px 0 0 0;
+    color: ${t.c.darkgrey2};
     ${t.mq.l} {         
       padding: 0 ${t.s(4)} 0 0;
     } 
