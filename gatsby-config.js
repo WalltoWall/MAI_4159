@@ -47,6 +47,14 @@ module.exports = {
     'gatsby-plugin-svgr',
     'gatsby-plugin-sharp',
     {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        showSpinner: false,
+        trickle: false,
+        minimum: 0.4,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-emotion',
       options: {
         autoLabel: process.env.NODE_ENV === 'development',
