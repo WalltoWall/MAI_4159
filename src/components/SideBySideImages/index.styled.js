@@ -9,7 +9,7 @@ export const Container = styled.div`
   align-items: center;
   background-color: white;
   ${t.mq.l} {
-    padding: 3rem 0;
+    padding: 1rem 0;
   }
 `
 export const Content = styled.div`
@@ -29,7 +29,7 @@ export const Content = styled.div`
     }
   }
   ${t.mq.l} {
-    width: 71%;
+    width: 70%;
   }
 `
 

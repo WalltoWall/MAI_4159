@@ -36,7 +36,7 @@ export const Container = styled.div`
   justify-content: center;
   ${backgroundChooser};
   flex-wrap: wrap;
-  padding: 3rem 0;
+  padding: 4rem 0;
 `
 export const Content = styled.div`
   width: 80%;

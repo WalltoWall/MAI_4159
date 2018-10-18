@@ -10,7 +10,7 @@ export const Container = styled.div`
   background-color: white;
   padding: ${t.s(3)} 0 ${t.s(2)} 0;
   ${t.mq.l} {
-    padding: ${t.s(6)} 0 0 0;
+    padding: ${t.s(5)} 0 0 0;
     margin-bottom: -${t.s(2)};
   }    
 `
@@ -52,19 +52,21 @@ export const Column = styled.div`
   h2 {
     font-family: ${t.ff.sans};
     color: ${t.c.darkgrey1};
-    font-size: ${t.f(5)};
+    font-size: ${t.f(4)};
+    letter-spacing: ${t.ls.button};
     text-transform: uppercase;  
     margin: ${t.s(0)} 0 0 0;
   }
   h3 {
     font-family: ${t.ff.sans};
-    font-size: ${t.f(5)};
+    font-size: ${t.f(4)};
+    letter-spacing: ${t.ls.button};
     color: ${t.c.darkgrey2};
     text-transform: uppercase;  
     margin: 0;
   }
   p {
-    font-family: ${t.ff.sans2};
+    font-family: ${t.ff.serif};
     color: ${t.c.darkgrey1};
     font-weight: 300;
     font-size: ${t.f(1.5)};
@@ -74,9 +76,9 @@ export const Column = styled.div`
     } 
   }
   span {
-    font-family: ${t.ff.sans};
+    font-family: ${t.ff.sans2};
     color: ${t.c.darkgrey2};
-    font-size: ${t.f(2)};
+    font-size: ${t.f(1)};
   }
 `
 
