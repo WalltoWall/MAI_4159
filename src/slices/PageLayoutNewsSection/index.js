@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Image } from 'components/Image'
 import arrow from 'assets/yellow-arrow.svg'
@@ -22,49 +22,12 @@ import {
   Headline,
 } from './index.styled'
 
-
-export const PageLayoutNewsSection = ({data}) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        allPrismicNewsPost {
-          edges {
-            node {
-              data {                
-                date
-                article_title {
-                  text
-                }
-                article_content1 {
-                  text
-                }
-                image {
-                  alt
-                  localFile {
-                    childImageSharp {
-                      fluid(maxWidth: 500, quality: 90) {
-                        ...GatsbyImageSharpFluid_withWebp_noBase64
-                      }
-                    }
-                  }
-                }
-              }
-              uid
-            }
-          }
-        }
-      }
-    `}
-    render={render(data)}
-  />
-)
-
-
-const render = (data) => queryData => {    
-  const newsPosts = get(queryData, 'allPrismicNewsPost.edges').sort((a,b) => {    
+export const PageLayoutNewsSection = ({data, rootData}) => {
+  const newsPosts = get(rootData, 'allPrismicNewsPost.edges').sort((a,b) => {    
     return new Date(get(b, "node.data.date")) - new Date(get(a, "node.data.date"))
   })
-  return (   
+
+  return (
     <SectionContainer>
       {get(data, "primary.title1.text") && (
         <Headline>
@@ -79,6 +42,7 @@ const render = (data) => queryData => {
     </SectionContainer>
   )
 }
+
 
 class GridList extends React.Component {
   constructor(props) {
@@ -161,6 +125,32 @@ export const query = graphql`
               }             
             }          
           }
+        }
+      }
+    }
+    allPrismicNewsPost {
+      edges {
+        node {
+          data {                
+            date
+            article_title {
+              text
+            }
+            article_content1 {
+              text
+            }
+            image {
+              alt
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 500, quality: 90) {
+                    ...GatsbyImageSharpFluid_withWebp_noBase64
+                  }
+                }
+              }
+            }
+          }
+          uid
         }
       }
     }
