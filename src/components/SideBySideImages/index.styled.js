@@ -2,7 +2,7 @@ import styled from 'react-emotion'
 import t from 'theme'
 
 export const Container = styled.div`
-  padding: 0 0 3rem 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -38,8 +38,16 @@ export const ImageContainer = styled.div`
   padding: 0rem;
   object-fit: cover;
   display: inline-block;
+  max-height: 380px;
+  overflow: hidden;
+  ${t.mq.m} {
+    width: 50%;
+    padding: 0 0.7rem;
+    max-height: 350px;
+  }
   ${t.mq.l} {
     width: 50%;
     padding: 0 0.7rem;
+    max-height: 380px;
   }
 `
