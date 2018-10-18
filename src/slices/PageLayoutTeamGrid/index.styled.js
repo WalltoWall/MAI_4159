@@ -82,6 +82,8 @@ export const Title = styled.h1`
   text-transform: uppercase;
   font-size: 0.8rem;
   color: ${t.c.darkgrey1};
+  font-family: ${t.ff.sans};
+  letter-spacing: ${t.ls.button};
   padding: 0 0 5px 0;
   margin: 0;
   ${t.mq.s} {
@@ -95,7 +97,9 @@ export const Title = styled.h1`
 export const SubTitle = styled.div`
   text-transform: uppercase;
   font-size: ${t.f(-3)};
-  color: ${t.c.darkgrey1};
+  color: ${t.c.darkgrey2};
+  font-family: ${t.ff.sans};
+  letter-spacing: ${t.ls.button};
   padding: 2px 0;
   margin: 0;
   ${t.mq.s} {

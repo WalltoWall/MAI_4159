@@ -42,18 +42,13 @@ export const Quote = styled(HTMLContent)`
     font-size: ${t.f(-1)};
     font-family: ${t.ff.serif};
     font-weight: 400;
-    &:first-child {
-      color: ${t.c.darkgrey1};      
-    }
-    &:last-child {
-      color: ${t.c.darkgrey2};      
-    }    
+    color: ${t.c.darkgrey1};  
     z-index: 5;
     width: 100%;
     text-align: ${p => p.align === "right" ? "right" : "left"};
     padding: 0 ${t.s(0.5)};
     ${t.mq.s} {
-      font-size: ${t.f(1)};      
+      font-size: ${t.f(2)};      
     }
     ${t.mq.l} {      
       width: 70%;    
