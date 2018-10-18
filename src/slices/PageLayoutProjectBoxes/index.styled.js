@@ -17,10 +17,9 @@ export const Container = styled.div`
   background-color: ${t.c.lightgrey1};
   margin: 0 auto;
   display: block;
-  padding: 4rem 2rem;
+  padding: 4rem 0;
   ${t.mq.l} {
     min-height: 50vh;
-    padding: 4rem 0;
   }
 `
 

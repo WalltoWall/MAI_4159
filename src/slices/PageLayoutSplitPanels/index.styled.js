@@ -52,8 +52,8 @@ export const SplitPanelWrapper = styled.div`
 `
 
 export const DescriptionWrapper = styled.div`
-  width: 100%;
-  padding: 4rem;
+  width: ${t.w.mobile};
+  padding: 3rem 0;
   order: 2;
   ${t.mq.l} {
     width: 45%;
