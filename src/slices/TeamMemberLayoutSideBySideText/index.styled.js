@@ -30,9 +30,11 @@ export const Column = styled.div`
     font-size: ${t.f(0)};   
     margin: 0;
     font-weight: 600;
+    font-family: ${t.ff.sans2};
   }  
   p {
     margin: 5px 0 0 0;
+    font-family: ${t.ff.sans2};
     ${t.mq.l} {         
       padding: 0 ${t.s(4)} 0 0;
     } 
