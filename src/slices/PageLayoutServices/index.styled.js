@@ -103,7 +103,7 @@ export const SectionTitle = styled.div`
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   text-align: center;
-  margin: 4rem 0 2rem 0;
+  margin: 4rem 1rem 2rem 1rem;
 `
 
 export const StyledHtmlClassName = css`
@@ -148,14 +148,15 @@ export const TextWrapper = styled.div`
 
 export const TextBlock = styled.div`
   width: 100%;
-  margin-right: 2rem;
+  margin: 2rem 2rem 0 0;
   ${t.mq.l} {
     width: 45%;
+    margin: 0 2rem 0 0;
   }
 `
 
 export const Projects = styled.div`
-  width: ${t.w.mobile};
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
