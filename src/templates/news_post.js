@@ -4,6 +4,7 @@ import MapToComponents from 'react-map-to-components'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Layout } from 'components/Layout'
+import { NewsPostLayoutTitle } from 'slices/NewsPostLayoutTitle'
 import { NewsPostLayoutHero } from 'slices/NewsPostLayoutHero'
 import { NewsPostLayoutTextBlock } from 'slices/NewsPostLayoutTextBlock'
 import { NewsPostLayoutSideBySideImages } from 'slices/NewsPostLayoutSideBySideImages'
@@ -17,6 +18,7 @@ const NewsPostTemplate = ({ data }) => (
         getType={x => x.__typename.replace(/^Prismic/, '')}
         list={get(data, 'prismicNewsPost.data.layout') || []}
         map={{
+          NewsPostLayoutTitle,
           NewsPostLayoutHero,
           NewsPostLayoutTextBlock,
           NewsPostLayoutSideBySideImages,
@@ -42,6 +44,7 @@ export const query = graphql`
         }
       }
     }
+    ...NewsPostLayoutTitle
     ...NewsPostLayoutHero
     ...NewsPostLayoutTextBlock
     ...NewsPostLayoutSideBySideImages

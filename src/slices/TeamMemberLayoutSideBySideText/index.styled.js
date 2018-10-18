@@ -22,7 +22,7 @@ export const Content = styled.div`
   flex-wrap: wrap;
   ${t.mq.l} {
     flex-direction: row;
-    width: 60%;
+    width: 55%;
   }
 `
 
@@ -33,10 +33,13 @@ export const Column = styled.div`
     font-size: ${t.f(0)};   
     margin: 0;
     font-weight: 600;
+    font-family: ${t.ff.sans2};
   }  
   p {
     margin: 5px 0 0 0;
+    font-family: ${t.ff.sans2};
     color: ${t.c.darkgrey2};
+    line-height: ${t.lh.copy};
     ${t.mq.l} {         
       padding: 0 ${t.s(4)} 0 0;
     } 

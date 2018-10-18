@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-import { Image } from 'components/Image'
 import { getUnlessEmptyString } from 'helpers'
 import {
   Container,

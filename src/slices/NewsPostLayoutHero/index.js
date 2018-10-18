@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { Hero } from 'components/Hero'
 
 export const NewsPostLayoutHero = ({ data }) => (
-  <Hero data={data}/>
+  <Hero data={data} whitebg={true} />
 )
 
 export const query = graphql`

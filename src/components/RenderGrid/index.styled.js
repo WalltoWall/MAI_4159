@@ -28,7 +28,7 @@ export const Title = styled.p`
   letter-spacing: ${p=> p.largeImages ? '0.2rem' : '0.1rem'};
 
   ${t.mq.l} {
-    font-size: ${p=> p.largeImages ? '2rem' : '1.4rem'};
+    font-size: ${p=> p.largeImages ? '1.8rem' : '1.4rem'};
   }
 `
 
@@ -67,8 +67,8 @@ export const OverlayContainer = styled.div`
   -moz-transition: all 0.1s ease-in;
   -o-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
-  ${t.mq.m} {
-    ${p=> p.largeImages ? '55px' : '40px'};
+  ${t.mq.l} {
+    ${p=> p.largeImages ? '60px' : '40px'};
   }
   ${StyledLink}:hover & {
     height: 100%;

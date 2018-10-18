@@ -10,8 +10,8 @@ export const Container = styled.div`
   background-color: white;
   padding: ${t.s(3)} 0 ${t.s(2)} 0;
   ${t.mq.l} {
-    padding: ${t.s(6)} 0 0 0;
-    margin-bottom: -${t.s(3)};
+    padding: ${t.s(5)} 0 0 0;
+    margin-bottom: -${t.s(2)};
   }    
 `
 
@@ -22,7 +22,7 @@ export const Content = styled.div`
   width: 90%;
   margin: 0 auto;
   ${t.mq.l} {
-    width: 60%;
+    width: 55%;
   }
 `
 
@@ -53,19 +53,24 @@ export const Column = styled.div`
   h2 {
     font-family: ${t.ff.sans};
     color: ${t.c.darkgrey1};
-    font-size: ${t.f(5)};
+    font-size: ${t.f(4)};
+    letter-spacing: ${t.ls.button};
     text-transform: uppercase;  
-    margin: ${t.s(0)} 0 0 0;
+    margin: 1rem 0 0 0;
+    ${t.mq.l} {    
+      margin: 0;
+    }
   }
   h3 {
     font-family: ${t.ff.sans};
-    font-size: ${t.f(5)};
+    font-size: ${t.f(4)};
+    letter-spacing: ${t.ls.button};
     color: ${t.c.darkgrey2};
     text-transform: uppercase;  
     margin: 0;
   }
   p {
-    font-family: ${t.ff.sans2};
+    font-family: ${t.ff.serif};
     color: ${t.c.darkgrey1};
     font-weight: 400;
     letter-spacing: 1px;
@@ -78,26 +83,23 @@ export const Column = styled.div`
   span {
     font-family: ${t.ff.sans2};
     color: ${t.c.darkgrey2};
-    font-size: ${t.f(1)};
-    font-weight: 400;
+    font-size: ${t.f(0.5)};
   }
 `
 
 export const SocialContainer = styled.div`
   display: flex;
-  justify-content: space-evenly;
-  width: 40%;  
+  justify-content: left;
+  width: 25%;  
   height: 100%;  
   margin-top: ${t.s(2)};
-  // margin-bottom: ${t.s(4)};
-  ${t.mq.s} {
-    width: 25%;  
-  }
+  align-items: center;
 `
 
 export const StyledLink = styled(Link)`
-  display: block;  
-  width: 20%;
+  display: block; 
+  margin-right: 1rem; 
+  width: 25px;
   height: 100%;
 `
 
@@ -119,6 +121,7 @@ export const StyledInstagramIcon = styled(InstagramIcon)`
 
 export const StyledTwitterIcon = styled(TwitterIcon)`
   fill: ${t.c.yellow};  
+  margin-bottom: -8px;
   transition: fill 200ms;
   :hover {
     fill: ${t.c.darkyellow};

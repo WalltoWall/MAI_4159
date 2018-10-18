@@ -36,7 +36,7 @@ export const PageLayoutSplitPanels = ({ data }) => (
                   __html: get(item, 'description.html'),
                 }}
               />
-              <ServicesButton to="/">learn more</ServicesButton>
+              <ServicesButton to={get(item, 'link.url')}>learn more</ServicesButton>
             </Content>
           </DescriptionWrapper>
         </SplitPanelWrapper>
