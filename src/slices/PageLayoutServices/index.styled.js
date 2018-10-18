@@ -35,22 +35,22 @@ export const Title = styled.h2`
   }
 `
 
-export const Content = styled.div`
+export const Description = styled.div`
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.serif};
   line-height: ${t.lh.copy};
   font-size: ${t.s(1)};
   font-weight: 400;
-  width: 100%;
+  width: ${t.w.mobile};
   text-align: center;
-  padding: 0 2rem 0 2rem;
   margin: -1rem auto 3rem auto;
   ${t.mq.l} {
-    width: 70%;
+    width: ${t.w.desktop};
     font-size: ${t.s(1.5)};
     margin: -1rem auto 6rem auto;
   }
 `
+
 export const Image = styled.img`
   width: 100%;
   padding: 0;
@@ -68,40 +68,30 @@ export const ImageWrapper = styled.div`
 `
 
 export const ImageDescription = styled.div`
-  width: 100%;
+  width: ${t.w.mobile};
   margin: 0 auto;
   color: ${t.c.darkgrey2};
   font-family: ${t.ff.serif};
   line-height: ${t.lh.copy};
   font-size: ${t.f(0)};
-  margin-bottom: 0.6rem;
-  padding: 0 2rem 0 2rem;
+  margin-bottom: 4rem;
   text-align: center;
-  ${t.mq.m} {
-    width: 80%;
-  }
   ${t.mq.l} {
-    width: 60%;
+    width: ${t.w.desktop};
   }
-`
-
-export const Description = styled.div`
-  font-family: ${t.ff.sans2};
-  font-weight: 400;
-  line-height: ${t.lh.copy};
-  font-size: ${t.s(0)};
-  color: ${t.c.darkgrey1};
-  display: block;
 `
 
 export const ImageContainer = styled.div`  
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 100%;
+  width: ${t.w.mobile};
   margin: 2rem auto;
+  ${t.mq.m} {
+    width: ${t.w.tablet};
+  }
   ${t.mq.l} {
-    width: 75%;
+    width: ${t.w.desktop};
   }
 `
 
@@ -158,14 +148,14 @@ export const TextWrapper = styled.div`
 
 export const TextBlock = styled.div`
   width: 100%;
-  margin: 1rem auto;
-  ${t.mq.m} {
+  margin-right: 2rem;
+  ${t.mq.l} {
     width: 45%;
   }
 `
 
 export const Projects = styled.div`
-  width: 100%;
+  width: ${t.w.mobile};
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -175,7 +165,7 @@ export const Projects = styled.div`
     justify-content: space-between;
   }
   ${t.mq.l} {
-    width: 75%;
+    width: ${t.w.desktop};
     margin: 1rem auto;
   }
 `

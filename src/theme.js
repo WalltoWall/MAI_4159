@@ -31,6 +31,11 @@ const theme = {
     heading: '0.2rem',
     button: '0.1rem',
   },
+  width: {
+    mobile: '85%',
+    tablet: '70%',
+    desktop: '60%',
+  },
   fontSize: s => ms(s / 2) + 'rem',
   mediaSizes: {
     t: '20rem',
@@ -62,5 +67,6 @@ theme.r = theme.radius
 theme.s = theme.spacing
 theme.t = theme.transition
 theme.ls = theme.letterSpacing
+theme.w = theme.width
 
 export default theme

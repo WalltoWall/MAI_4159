@@ -2,11 +2,10 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Image } from 'components/Image'
-
+import { Content } from 'components/Content'
 import { 
   Container, 
   ImageContainer, 
-  Content, 
   Column,
   SocialContainer, 
   StyledLinkedinIcon,

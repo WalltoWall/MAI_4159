@@ -11,18 +11,6 @@ export const Container = styled.div`
   }
 `
 
-export const Content = styled.div`
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  ${t.mq.l} {
-    flex-direction: row;
-    width: 55%;
-  }
-`
-
 export const Column = styled.div`
   width: 100%;
   h3 {

@@ -15,17 +15,6 @@ export const Container = styled.div`
   }    
 `
 
-export const Content = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 90%;
-  margin: 0 auto;
-  ${t.mq.l} {
-    width: 55%;
-  }
-`
-
 export const ImageContainer = styled.div`
   height: ${t.s(9)};  
   width: 100%;

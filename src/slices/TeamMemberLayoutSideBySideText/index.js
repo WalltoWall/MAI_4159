@@ -1,7 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Container, Content, Column, Title, TextBlock, paddingTop, MobilePadding } from './index.styled'
+import { Container, Column, Title, TextBlock, paddingTop, MobilePadding } from './index.styled'
 import { get } from 'lodash';
+import { Content } from 'components/Content'
 
 export const TeamMemberLayoutSideBySideText = ({ data }) => (
   <Container>

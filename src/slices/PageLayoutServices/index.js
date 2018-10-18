@@ -4,15 +4,15 @@ import { get } from 'lodash'
 import { HTMLContent } from 'components/HTMLContent'
 import { Image } from 'components/Image'
 import { getUnlessEmptyString } from 'helpers'
+import { Content } from 'components/Content'
 import {
   Container,
   Title,
-  Content,
+  Description,
   ImageWrapper,
   ImageDescription,
   ImageContainer,
   StyledHtmlClassName,
-  TextWrapper,
   TextBlock,
   Projects,
   SectionTitle,
@@ -27,7 +27,7 @@ export const PageLayoutServices = ({ data }) => {
   return (
     <Container background_color={get(data, 'primary.background_color')}>
       <Title>{get(data, 'primary.title1.text')}</Title>
-      <Content>{get(data, 'primary.text.text')}</Content>
+      <Description>{get(data, 'primary.text.text')}</Description>
       <ImageContainer>
         <ImageWrapper>
           <Image
@@ -45,7 +45,7 @@ export const PageLayoutServices = ({ data }) => {
         </ImageWrapper>
       </ImageContainer>
       <ImageDescription>{get(data, 'primary.description.text')}</ImageDescription>
-      <TextWrapper>
+      <Content>
         <TextBlock>
           <HTMLContent
             html={get(data, 'primary.left_text_block.html')}
@@ -58,7 +58,7 @@ export const PageLayoutServices = ({ data }) => {
           className={StyledHtmlClassName}
         />
         </TextBlock>
-      </TextWrapper>
+      </Content>
       <SectionTitle>{serviceName} Work</SectionTitle>
         <Projects>
           {projects.map(project =>

@@ -1,15 +1,15 @@
 import styled from 'react-emotion'
 import t from 'theme'
 
-export const Content = styled.div`
+export const Projects = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: ${t.w.mobile};
   margin: 2rem auto;
   ${t.mq.l} {
-    width: 75%;
+    width: 70%;
   }
 `
 
@@ -17,9 +17,10 @@ export const Container = styled.div`
   background-color: ${t.c.lightgrey1};
   margin: 0 auto;
   display: block;
-  padding: 4rem 0;
+  padding: 4rem 2rem;
   ${t.mq.l} {
     min-height: 50vh;
+    padding: 4rem 0;
   }
 `
 
