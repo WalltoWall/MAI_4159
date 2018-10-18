@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { Container, StyledHTMLContent, Items } from './index.styled'
+import { Container, StyledHTMLContent, Title, Items } from './index.styled'
 
 export const SearchResults = ({ children, query, queryType, ...props }) => (
   <Container>
     <StyledHTMLContent>
-      <h3>Results for {queryType}</h3>
+      <Title>{queryType}</Title>
       <p>
-        Showing {children.length} result
+        Showing {children.length} {queryType.slice(0, -1)} result
         {children.length !== 1 && 's'} for <strong>{query}</strong>
       </p>
     </StyledHTMLContent>

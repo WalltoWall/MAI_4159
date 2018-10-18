@@ -18,6 +18,7 @@ export const Content = styled.div`
 `
 
 export const Form = styled.form`
+  margin-top: ${t.s(0)};
   display: flex;
   min-width: 30%;
   width: 100%;
@@ -25,18 +26,22 @@ export const Form = styled.form`
   ${t.mq.m} {
     width: auto;
   }
+  input {
+    background-color: ${t.c.lightgrey2};
+    font-family: ${t.ff.sans2};
+    // color: ${t.c.darkgrey2};
+  }
 `
 
 export const SearchQuery = styled.input`
   -webkit-appearance: none;
-  border: 0.05rem solid ${t.c.black};
-  border-right-width: 0;
+  border: none;
   color: ${t.c.black};
   flex-grow: 1;
   font-size: ${t.f(1)};
   padding: ${t.s(-1, 0)};
   &::placeholder {
-    color: ${t.c.black};
+    color: ${t.c.darkgrey2};
   }
 `
 
@@ -71,6 +76,6 @@ export const SearchButton = StyledButton.withComponent('button')
 
 export const SearchButtonIcon = styled(AssetIconSearchSVG)`
   height: ${t.s(0)};
-  transform: translate(-10%, -5%);
+  transform: translate(0%, 20%);
   width: ${t.s(0)};
 `

@@ -74,6 +74,9 @@ module.exports = {
                     title {
                       text
                     }
+                    image {
+                      url               
+                    }
                     meta_title1
                     meta_description1
                     layout {
@@ -140,6 +143,7 @@ module.exports = {
           'id',
           'path',
           'title',
+          'image',
           'metaTitle',
           'metaDescription',
           'excerpt',
@@ -154,6 +158,7 @@ module.exports = {
               title: get(node, 'data.title.text'),
               metaTitle: get(node, 'data.meta_title'),
               metaDescription: get(node, 'data.meta_description'),
+              image: get(node, "data.image.url"),
               content,
               excerpt: truncate(content, 200),
             }
