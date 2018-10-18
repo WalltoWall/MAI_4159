@@ -19,7 +19,7 @@ export const Content = styled.div`
   justify-content: center;
   ${t.mq.l} {
     flex-direction: row;
-    width: 60%;
+    width: 55%;
   }
 `
 
@@ -35,6 +35,8 @@ export const Column = styled.div`
   p {
     margin: 5px 0 0 0;
     font-family: ${t.ff.sans2};
+    color: ${t.c.darkgrey2};
+    line-height: ${t.lh.copy};
     ${t.mq.l} {         
       padding: 0 ${t.s(4)} 0 0;
     } 

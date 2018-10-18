@@ -22,7 +22,7 @@ export const Content = styled.div`
   width: 90%;
   margin: 0 auto;
   ${t.mq.l} {
-    width: 60%;
+    width: 55%;
   }
 `
 
@@ -55,7 +55,10 @@ export const Column = styled.div`
     font-size: ${t.f(4)};
     letter-spacing: ${t.ls.button};
     text-transform: uppercase;  
-    margin: ${t.s(0)} 0 0 0;
+    margin: 1rem 0 0 0;
+    ${t.mq.l} {    
+      margin: 0;
+    }
   }
   h3 {
     font-family: ${t.ff.sans};
@@ -78,21 +81,23 @@ export const Column = styled.div`
   span {
     font-family: ${t.ff.sans2};
     color: ${t.c.darkgrey2};
-    font-size: ${t.f(1)};
+    font-size: ${t.f(0.5)};
   }
 `
 
 export const SocialContainer = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: left;
   width: 25%;  
   height: 100%;  
   margin-top: ${t.s(2)};
+  align-items: center;
 `
 
 export const StyledLink = styled(Link)`
-  display: block;  
-  width: 20%;
+  display: block; 
+  margin-right: 1rem; 
+  width: 25px;
   height: 100%;
 `
 
@@ -114,6 +119,7 @@ export const StyledInstagramIcon = styled(InstagramIcon)`
 
 export const StyledTwitterIcon = styled(TwitterIcon)`
   fill: ${t.c.yellow};  
+  margin-bottom: -8px;
   transition: fill 200ms;
   :hover {
     fill: ${t.c.darkyellow};

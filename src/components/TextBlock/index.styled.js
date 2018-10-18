@@ -39,15 +39,12 @@ export const Container = styled.div`
   padding: 4rem 0;
 `
 export const Content = styled.div`
-  width: 80%;
+  width: 90%;
   padding: 0;
   font-family: ${t.ff.sans2};
   ${textAlignment};
-  ${t.mq.m} {
-    width: 60%;
-  }
   ${t.mq.l} {
-    width: 50%;
+    width: 55%;
   }
 `
 export const StyledHtmlClassName = css`
