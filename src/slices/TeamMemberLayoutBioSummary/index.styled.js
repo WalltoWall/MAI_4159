@@ -16,7 +16,7 @@ export const Container = styled.div`
 `
 
 export const ImageContainer = styled.div`
-  height: ${t.s(9)};  
+  height: ${t.s(8)};  
   width: 100%;
   .gatsby-image-outer-wrapper {
     height: 100%;
@@ -27,6 +27,7 @@ export const ImageContainer = styled.div`
   ${t.mq.l} {
     width: 50%;    
     padding-right: ${t.s(2)};
+    height: ${t.s(9.5)};  
   }
 `
 
@@ -60,8 +61,9 @@ export const Column = styled.div`
   p {
     font-family: ${t.ff.serif};
     color: ${t.c.darkgrey1};
-    font-weight: 300;
-    font-size: ${t.f(1.5)};
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: ${t.f(2)};
     line-height: ${t.s(1.5)};
     ${t.mq.l} {         
       padding: 0 ${t.s(4)} 0 0;

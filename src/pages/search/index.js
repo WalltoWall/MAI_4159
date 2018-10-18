@@ -8,16 +8,43 @@ import { getLocationQuery } from 'helpers'
 import { Layout } from 'components/Layout'
 import { SearchBar } from 'components/SearchBar'
 import { SearchResults } from 'components/SearchResults'
-import { Result as SearchResult } from 'components/SearchResults/Result'
+import { ProjectResult } from 'components/SearchResults/ProjectResult'
+import { PageResult } from 'components/SearchResults/PageResult'
+import { MobileNavOverlay } from 'components/Header/Mobile.styled'
+import SearchBackground  from 'assets/search-result-hero.jpg'
+
+import {
+  ClipOverlay,
+  ImageContainer,
+  Title,
+  TitleWrapper,
+} from 'components/Hero/index.styled'
 import {
   Container,
   ContentWrapper,
   Content,
   StyledHTMLContent,
+  HeaderImage,
+  ProjectGridContainer,
 } from './_index.styled'
 
-const renderResult = item => (
-  <SearchResult
+
+const renderProjectResult = item => {
+  return (
+    <ProjectResult
+      key={item.id}
+      path={item.path}
+      title={item.title}
+      metaTitle={item.metaTitle}
+      metaDescription={item.metaDescription}
+      excerpt={item.excerpt}
+      imageUrl={item.image}
+    />
+  )
+}
+
+const renderPageResult = item => (
+  <PageResult
     key={item.id}
     path={item.path}
     title={item.title}
@@ -49,12 +76,33 @@ const initResultView = (query, queryType, render) => (
 
 const renderSearchResult = ({ query, queryType, results }) => (
   <SearchResults query={query} queryType={queryType}>
-    {results.map(renderResult)}
-  </SearchResults>
+    {queryType === "Projects" && (  
+      <ProjectGridContainer>
+        {results.map(renderProjectResult)}
+      </ProjectGridContainer>    
+    )}
+    {queryType === "Pages" && (
+      results.map(renderPageResult)
+    )}
+  </SearchResults>                 
 )
+
 
 const SearchProject = ({ data }) => (
   <Layout>
+    <ImageContainer>
+      <HeaderImage 
+        src={SearchBackground}
+      />      
+      <ClipOverlay 
+        has_filter={"no"} 
+        whitebg={true}
+      />      
+      <TitleWrapper>
+        <Title>Search</Title>
+      </TitleWrapper>      
+      <MobileNavOverlay />
+    </ImageContainer>
     <Location>
       {({ location }) => (
         <Container>
@@ -71,14 +119,14 @@ const SearchProject = ({ data }) => (
           >
             {({ query, results }) => (
               <>
-                <ContentWrapper hasResults={isEmpty(results)}>
+                <ContentWrapper hasResults={isEmpty(results)}>                
                   <Content>
                     {isEmpty(results)
                       ? initResultView(query, 'Projects', true)
                       : renderSearchResult({
                           query,
                           queryType: 'Projects',
-                          results,
+                          results,                          
                         })}
                   </Content>
                 </ContentWrapper>

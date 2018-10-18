@@ -47,6 +47,14 @@ module.exports = {
     'gatsby-plugin-svgr',
     'gatsby-plugin-sharp',
     {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        showSpinner: false,
+        trickle: false,
+        minimum: 0.4,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-emotion',
       options: {
         autoLabel: process.env.NODE_ENV === 'development',
@@ -73,6 +81,9 @@ module.exports = {
                   data {
                     title {
                       text
+                    }
+                    image {
+                      url               
                     }
                     meta_title1
                     meta_description1
@@ -140,6 +151,7 @@ module.exports = {
           'id',
           'path',
           'title',
+          'image',
           'metaTitle',
           'metaDescription',
           'excerpt',
@@ -154,6 +166,7 @@ module.exports = {
               title: get(node, 'data.title.text'),
               metaTitle: get(node, 'data.meta_title'),
               metaDescription: get(node, 'data.meta_description'),
+              image: get(node, "data.image.url"),
               content,
               excerpt: truncate(content, 200),
             }
@@ -264,6 +277,7 @@ module.exports = {
         linkResolver: () => doc => (doc.uid === 'home' ? '/' : `/${doc.uid}/`),
       },
     },
-    'gatsby-transformer-sharp',
+    'gatsby-transformer-sharp',    
+    'gatsby-plugin-netlify-cache',
   ],
 }

@@ -1,13 +1,14 @@
 import styled from 'react-emotion'
 import {css} from 'emotion'
 import t from 'theme'
+import { HTMLContent } from 'components/HTMLContent'
 
 export const Container = styled.div`
   width: 100%; 
   background-color: ${t.c.lightgrey2};
   padding: ${t.s(3)} 0 ${t.s(3)} 0;
   ${t.mq.l} {
-    padding: ${t.s(5)} 0 ${t.s(4)} 0;
+    padding: ${t.s(5.5)} 0 ${t.s(4)} 0;
   }
 `
 
@@ -30,7 +31,7 @@ export const Column = styled.div`
     } 
   }
   ${t.mq.l} {
-    width: 50%;
+    width: ${p=> p.fullWidth ? '100%' : '50%'};
   }
 `
 
@@ -56,5 +57,16 @@ export const MobilePadding = styled.div`
   display: block;
   ${t.mq.l} {
     display: none;
+  }
+`
+
+export const HTMLParagraph = styled(HTMLContent)`
+  margin: 5px 0 0 0;
+  color: ${t.c.darkgrey2};
+  ${t.mq.l} {         
+    padding: 0 ${t.s(4)} 0 0;
+  } 
+  p {
+    margin: 5px 0;
   }
 `

@@ -13,7 +13,7 @@ export const ListTitle = styled.div`
   color: ${t.c.darkgrey1};  
   ${t.mq.s} {
     font-size: ${t.f(3)};
-  }
+  }  
 `
 
 export const Container = styled.div`
@@ -48,25 +48,41 @@ export const ImageContainer = styled.div`
 export const Content = styled.div`
   position: relative;
   background-color: ${t.c.lightgrey2};
-  width: 70%;
+  width: 85%;
   z-index: 3;
   margin: -${t.s(4)} auto ${t.s(4)} auto;
   height: ${t.s(8)};  
-  padding: ${t.s(0)} ${t.s(3)};  
+  padding: ${t.s(0)} ${t.s(1)};  
 
   h2 {
     font-size: ${t.f(3)};
     color: ${t.c.darkgrey1};
-  }
-
-  div {
-    p {
-      color: ${t.c.lightgrey3};
-    }
-  }
-
-  hr {
-    width: 60%;    
+    padding-bottom: 5px;
+    margin-bottom: 0px;
   }
   
+  ${t.mq.l} {
+    padding: ${t.s(0)} ${t.s(3)};  
+    width: 70%;
+  } 
+
+`
+export const DetailContainer = styled.div`
+  span {
+    margin-top: -10px;
+    padding-top: 15px;
+    display: block;
+    color: ${t.c.darkgrey1};
+  }
+  p {
+    margin-top: 5px;
+    color: ${t.c.lightgrey3};
+    font-weight: 600;
+  }
+`
+
+export const StyledHR = styled.hr`
+  margin: 10px auto 10px 0;
+  border-top: 1.5px solid ${t.c.lightgrey3};
+  width: 90%;
 `

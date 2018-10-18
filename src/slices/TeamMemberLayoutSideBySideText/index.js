@@ -1,36 +1,57 @@
 import React from 'react'
+import { HTMLContent } from 'components/HTMLContent'
 import { graphql } from 'gatsby'
-import { Container, Column, Title, TextBlock, paddingTop, MobilePadding } from './index.styled'
-import { get } from 'lodash';
 import { Content } from 'components/Content'
+import { 
+  Container, 
+  Content, 
+  Column, 
+  Title, 
+  TextBlock, 
+  paddingTop, 
+  MobilePadding,
+  HTMLParagraph,
+} from './index.styled'
+import { get, isEmpty } from 'lodash';
 
-export const TeamMemberLayoutSideBySideText = ({ data }) => (
+export const TeamMemberLayoutSideBySideText = ({ data }) => {
+  
+  return (
   <Container>
     <Content>
-      <Column>
+      {!isEmpty(data.items) && (
+        <Column>
         <Title>Awards</Title>
         {get(data, "items").map(award => (
-          <TextBlock
-            key={award.award_name}
-          >  
+          <TextBlock key={award.award_name}>  
             <h3>{award.award_name}</h3>
             <p>{award.award_detail.text}</p>
           </TextBlock>
         ))}
       </Column>
+      )}      
       <Column>
         <MobilePadding />
         <Title>Qualifications</Title>
-        <p>{get(data, "primary.qualifications.text")}</p>
+        <HTMLParagraph html={get(data, "primary.qualifications.html")} />
         <MobilePadding />
-        <Title
-          className={paddingTop}
-        >Experience</Title>
-        <p>{get(data, "primary.experience.text")}</p>
+        {!isEmpty(data.items) && (
+          <>
+            <Title className={paddingTop}>Experience</Title>      
+            <HTMLParagraph html={get(data, "primary.experience.html")} />
+          </>
+        )}        
       </Column>
+      {isEmpty(data.items) && (
+        <Column>
+          <Title>Experience</Title>      
+          <HTMLParagraph html={get(data, "primary.experience.html")} />
+        </Column>
+      )}
     </Content>
   </Container>
 )
+}
 export const query = graphql`
   fragment TeamMemberLayoutSideBySideText on Query {
     prismicTeamMember(id: { eq: $id }) {
@@ -39,11 +60,11 @@ export const query = graphql`
           ... on PrismicTeamMemberLayoutSideBySideText {
             id
             primary {
-              qualifications {
-                text
+              qualifications {                
+                html
               }
-              experience {
-                text
+              experience {                
+                html
               }
             }
             items {
