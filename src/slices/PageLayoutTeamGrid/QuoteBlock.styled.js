@@ -40,6 +40,8 @@ export const Quote = styled(HTMLContent)`
   align-items: ${p => p.align === "left" ? "flex-start" : "flex-end"};
   p {
     font-size: ${t.f(-1)};
+    font-family: ${t.ff.serif};
+    font-weight: 400;
     &:first-child {
       color: ${t.c.darkgrey1};      
     }

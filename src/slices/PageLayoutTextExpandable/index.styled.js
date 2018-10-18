@@ -7,19 +7,27 @@ import Expand from 'react-expand-animated'
 
 export const Container = styled.div`
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 0;
   position: relative;
   background-color: ${t.c.white};
   ${t.mq.m} {
-    padding: 4rem;
+    padding: 4rem 0;
   }
 `
 
-export const Content = styled.div`
+export const TextBlock = styled.div`
   display: flex;
   margin: 1rem 0;
   ${t.mq.m} {
     margin: 1rem auto;
+  }
+`
+
+export const Content = styled.div`
+  width: ${t.w.mobile};
+  margin: 0 auto;
+  ${t.mq.l} {
+    width: ${t.w.desktop};
   }
 `
 

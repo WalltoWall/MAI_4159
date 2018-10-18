@@ -6,6 +6,7 @@ import { Toggle } from 'react-powerplug'
 import {
   Container,
   Content,
+  TextBlock,
   Intro,
   Text,
   StyledExpandButton,
@@ -22,7 +23,7 @@ const renderContent = ( data, index ) => (
     {({toggle, on}) => (
       <>
         <Category>
-          <Content>
+          <TextBlock>
             {get(data, 'intro.text') && (
               <Intro 
                 html={get(data, 'intro.html')} 
@@ -32,7 +33,7 @@ const renderContent = ( data, index ) => (
             <StyledExpandButton 
               isExpanded={on} 
               onClick={toggle} />
-          </Content>
+          </TextBlock>
         </Category>
         <StyledExpand open={on}>
           <Text html={get(data, 'text.html')} />
@@ -44,10 +45,12 @@ const renderContent = ( data, index ) => (
 
 export const PageLayoutTextExpandable = ({ data }) => (
     <Container>
-    <Title>{get(data, 'primary.title1.text')}</Title>    
-      {get(data, 'items', []).map((item, index) => (          
-        renderContent(item, index)              
-      ))}
+    <Content>
+      <Title>{get(data, 'primary.title1.text')}</Title>    
+        {get(data, 'items', []).map((item, index) => (          
+          renderContent(item, index)              
+        ))}
+    </Content>
     </Container>
 )
 
