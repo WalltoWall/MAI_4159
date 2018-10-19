@@ -57,7 +57,6 @@ export const StyledLinkContainer = styled.div`
     display: flex;
   }
 `
-
 export const StyledLink = styled(Link)`
   z-index: 2;
   padding: 0;
