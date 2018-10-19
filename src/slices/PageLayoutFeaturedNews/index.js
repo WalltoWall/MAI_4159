@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
+import {format} from 'date-fns'
 import { Image } from 'components/Image'
 import arrow from 'assets/yellow-arrow.svg'
 import { getUnlessEmptyString } from 'helpers'
@@ -34,22 +35,29 @@ const characterLimit = function(str, length, ending) {
   } 
 }
 
-const renderNewsGrid = ({ alt, key, img, title, url, content, date }) => (
-  <StyledLink to={url} key={key}>
-    <ImageContainer>
-      <Image fluid={img} alt={alt} fadeIn={false} />
-    </ImageContainer>
-    <ContentContainer>
-      <PostDate>{date}</PostDate>
-      <PostTitle>{title}</PostTitle>
-      <PostContent>{content}</PostContent>
-      <ReadMoreWrapper>
-        <ReadMore to={url}>Read more</ReadMore>
-        <ArrowWrapper src={arrow} />
-      </ReadMoreWrapper>
-    </ContentContainer>
-  </StyledLink>
-)
+const renderNewsGrid = ({ alt, key, img, title, url, content, date }) => {
+  const formattedDate = format(
+    new Date(date),
+    'MMM' +' Do' + ' YYYY'
+  )
+  
+  return (
+    <StyledLink to={url} key={key}>
+      <ImageContainer>
+        <Image fluid={img} alt={alt} fadeIn={false} />
+      </ImageContainer>
+      <ContentContainer>
+        <PostDate>{formattedDate}</PostDate>
+        <PostTitle>{title}</PostTitle>
+        <PostContent>{content}</PostContent>
+        <ReadMoreWrapper>
+          <ReadMore to={url}>Read more</ReadMore>
+          <ArrowWrapper src={arrow} />
+        </ReadMoreWrapper>
+      </ContentContainer>
+    </StyledLink>
+  )
+}
 
 export const PageLayoutFeaturedNews = ({ data }) => {
   const featured_news_post = get(data, 'items')

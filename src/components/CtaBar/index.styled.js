@@ -37,6 +37,8 @@ export const CtaHeaderClassName = css`
   }
   p {
     font-family: ${t.ff.sans2};
+    font-size: ${t.s(0.2)};
+    line-height: ${t.lh.copy};
   }
 `
 

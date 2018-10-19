@@ -35,7 +35,7 @@ export const TextBlock = styled.div`
 
 export const Title = styled.div`
   font-size: ${t.f(4)};
-  letter-spacing: 1px;
+  letter-spacing: ${t.ls.button};
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.sans};
   text-transform: uppercase;

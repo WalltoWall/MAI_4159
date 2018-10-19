@@ -8,12 +8,13 @@ import {
   StyledAnchor, 
   Desktop, 
   Mobile,
+  Container,
   FilterMenu,
   NavArrow,
 } from './index.styled'
 
 export const PageLayoutAnchorsMenu = ({ data }) => (
-  <>
+  <Container>
     <Desktop>
       {get(data, 'items').map(item => (
         <StyledAnchor 
@@ -50,7 +51,7 @@ export const PageLayoutAnchorsMenu = ({ data }) => (
         )}
       </Toggle>
     </Mobile>
-  </>
+  </Container>
 )
 
 

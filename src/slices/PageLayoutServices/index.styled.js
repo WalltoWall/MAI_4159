@@ -118,7 +118,8 @@ export const StyledHtmlClassName = css`
   p {
     color: ${t.c.darkgrey1};
     font-family: ${t.ff.sans2};
-    font-size: ${t.f(0)};
+    font-size: ${t.f(0.2)};
+    line-height: ${t.lh.copy};
     margin-bottom: 0.6rem;
     text-align: left;
   }

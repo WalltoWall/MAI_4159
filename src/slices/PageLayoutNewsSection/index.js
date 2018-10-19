@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
+import {format} from 'date-fns'
 import { Image } from 'components/Image'
 import arrow from 'assets/yellow-arrow.svg'
 import { getUnlessEmptyString } from 'helpers'
@@ -87,7 +88,11 @@ class GridList extends React.Component {
                   />
                 </ImageContainer>
                 <ContentContainer>
-                  <PostDate>{get(news_post, 'node.data.date')}</PostDate>
+                  <PostDate>
+                    {format(new Date(get(news_post, 'node.data.date')),
+                      'MMM' +' Do' + ' YYYY'
+                    )}
+                  </PostDate>
                   <PostTitle>{get(news_post,'node.data.article_title.text')}</PostTitle>
                   <PostContent>{this.characterLimit(get(news_post, 'node.data.article_content1.text'))}</PostContent>
                   <ReadMoreWrapper>
