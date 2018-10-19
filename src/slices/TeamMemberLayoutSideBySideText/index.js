@@ -1,7 +1,6 @@
 import React from 'react'
 import { HTMLContent } from 'components/HTMLContent'
 import { graphql } from 'gatsby'
-import { Content } from 'components/Content'
 import { 
   Container, 
   Content, 

@@ -13,7 +13,7 @@ export const Content = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: ${t.w.mobile};
   margin: 2rem auto;
   ${t.mq.l} {
     width: 75%;
@@ -62,7 +62,7 @@ export const Title = styled.p`
 export const StyledLink = styled(Link)`
   position: relative;
   display: block;
-  margin: 1rem;
+  margin: 1rem 0;
   width: 100%;
   height: 14rem;
   min-width: 300px;
@@ -70,6 +70,7 @@ export const StyledLink = styled(Link)`
   ${t.mq.m} {
     width: 42%;
     height: 15rem;
+    margin: 1rem;
   }
   ${t.mq.l} {
     width: 22%;

@@ -13,9 +13,9 @@ export const Container = styled.div`
   }
 `
 export const Content = styled.div`
-  width: 80%;
+  width: ${t.w.mobile};
   ${t.mq.l} {
-    width: 65%;
+    width: ${t.w.desktop};
     padding: 0 1rem;
   }
 `

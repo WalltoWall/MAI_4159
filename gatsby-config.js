@@ -277,6 +277,13 @@ module.exports = {
         linkResolver: () => doc => (doc.uid === 'home' ? '/' : `/${doc.uid}/`),
       },
     },
+    {
+      resolve: 'gatsby-plugin-bugherd',
+      options: {
+        key: 'wi4lcps15xlmmpaktwznxg',
+        showInProduction: true,
+      },
+    },
     'gatsby-transformer-sharp',    
     'gatsby-plugin-netlify-cache',
   ],

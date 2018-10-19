@@ -15,7 +15,7 @@ export const Container = styled.div`
 
 export const LeftColumn = styled.div`
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 0;
   ${t.mq.l} {
     width: 45%;
     padding: 0 2rem 0 3.5rem;
@@ -27,7 +27,7 @@ export const LeftColumn = styled.div`
 
 export const RightColumn = styled.div`
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 0;
   ${t.mq.l} {
     width: 45%;
     padding: 0 5rem 0 2rem;
