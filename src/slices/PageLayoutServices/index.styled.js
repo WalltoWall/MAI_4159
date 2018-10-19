@@ -46,7 +46,7 @@ export const Description = styled.div`
   margin: 1rem auto 3rem auto;
   ${t.mq.l} {
     width: ${t.w.desktop};
-    font-size: ${t.s(1.5)};
+    font-size: ${t.s(1.4)};
     margin: 1rem auto 4rem auto;
   }
   ${t.mq.x} {
@@ -125,7 +125,7 @@ export const StyledHtmlClassName = css`
     letter-spacing: 0.1rem;
   }
   p {
-    color: ${t.c.darkgrey1};
+    color: ${t.c.darkgrey2};
     font-family: ${t.ff.sans2};
     font-size: ${t.f(0.2)};
     line-height: ${t.lh.copy};
@@ -134,7 +134,7 @@ export const StyledHtmlClassName = css`
   }
   ul {
     li {
-      color: ${t.c.darkgrey1};
+      color: ${t.c.darkgrey2};
       font-family: ${t.ff.sans2};
       font-size: ${t.f(0)};
       line-height: 1.8rem;
