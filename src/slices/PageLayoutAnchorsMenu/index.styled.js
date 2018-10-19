@@ -2,6 +2,16 @@ import styled from 'react-emotion'
 import t from 'theme'
 import { ReactComponent as HoverArrowSVG } from 'assets/hov_arrow.svg'
 
+export const Container = styled.div`
+  position: relative;
+  
+  ${t.mq.l}{
+    position: sticky;
+    top: 0;  
+    z-index: 99;
+  }
+`
+
 export const StyledAnchor = styled.a`
   font-color: black;
   z-index: 2;
@@ -28,7 +38,6 @@ export const StyledAnchor = styled.a`
 `
 
 export const Desktop = styled.div`
-  position: relative;
   background-color: ${t.c.darkgrey2};
   display: none;
   justify-content: center;
