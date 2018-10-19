@@ -1,6 +1,7 @@
 import React from 'react'
 import { get, trim, split, startCase, dropRight, head } from 'lodash'
 import classnames from 'classnames'
+
 import { isPathActive } from 'lib/helpers'
 import {
   MobileContainer,
@@ -112,7 +113,7 @@ export class MobileBar extends React.Component {
               >
                 {get(item, 'name')}
               </StyledLink>
-            ))}
+            ))}        
           </SubFilterContainer>
           <StyledLink
             to={'/historic-research/'}
@@ -126,9 +127,11 @@ export class MobileBar extends React.Component {
           <SubFilterChildContainer
             isOpen={this.state.filterOpen}
           >
+          
               <Filter
                 onClick={(e) => this.props.setFilter("All")}
                 isActive={this.props.currentFilter === "All"}
+                style={{paddingLeft: '15%'}}
               >
                 All
               </Filter>          
@@ -140,7 +143,7 @@ export class MobileBar extends React.Component {
               >
                 {trim(filter)}
               </Filter>          
-            ))}      
+            ))}               
           </SubFilterChildContainer>      
         )}
       </MobileContainer>

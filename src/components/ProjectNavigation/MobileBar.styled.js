@@ -96,25 +96,30 @@ export const SubFilterContainer = styled.div`
 `
 
 export const SubFilterChildContainer = styled.div`
+  background: rgb(43,43,43);
+  background: linear-gradient(90deg, rgba(255,252,252,0) 80%, rgba(43,43,43,0.6292892156862745) 100%),
+              linear-gradient(90deg, rgba(43,43,43,0.6292892156862745) 0%, rgba(255,252,252,0) 20%);
+  position: relative;
   display: ${p => p.isOpen ? "none" : "flex"};  
-  width: 100%;
-  align-items: center;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  -webkit-overflow-scrolling: touch;
   background-color: ${t.c.lightgrey3};
   margin: ${t.s(1)} 0 -${t.s(1)} 0;
-  flex-wrap: wrap;
+
   ${t.mq.l} {
     display: none;
   }
 `
 
 export const Filter = styled.div`
-  color: white;
-  width: 50%;
-  font-family: ${t.ff.sans};
-  font-size: ${t.f(1)};
+  display: inline-block;
+  flex: 0 0 auto;
+  color: ${p=> p.isActive ? t.c.yellow : "white"};  
+  opacity: ${p=> p.isActive ? 1 : 0.7};  
+  font-family: ${t.ff.sans2};
+  font-size: ${t.f(1.5)};
   margin: 0;
-  padding: 7px 0;
-  cursor: pointer;
-  border: 1px solid ${t.c.lightgrey4};  
-  background-color: ${p=> p.isActive ? t.c.lightgrey4 : "none"};  
+  z-index: 3;
+  padding: ${t.s(0.5)} ${t.s(1.7)};     
 `
