@@ -35,12 +35,12 @@ export const PageLayoutHero = ({ data }) => (
           <span>We </span>
           <span>re</span>
           <h1>we are mason</h1>
-        </Headline>
-        <SlidingVertical>
+          <SlidingVertical>
           {get(data, 'items').map(item => (
             <span>{item.rotating_text}</span>
           ))}
         </SlidingVertical>
+        </Headline>        
       </RotatedContainer>
     </HeadlineWrapper>
     <SubHeadline> Hawai'i's Future</SubHeadline>
