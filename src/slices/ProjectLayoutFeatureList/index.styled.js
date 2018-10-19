@@ -11,12 +11,18 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: ${t.w.mobile};
-  margin: 2rem auto;
+  margin: 2rem auto;  
+  ${t.mq.m} {
+    align-items: flex-start;
+  }
   ${t.mq.l} {
-    width: 75%;
+    width: ${t.w.desktop};
+  }
+  ${t.mq.x} {
+    width: ${t.w.xl};
   }
 `
 
@@ -65,16 +71,15 @@ export const StyledLink = styled(Link)`
   margin: 1rem 0;
   width: 100%;
   height: 14rem;
-  min-width: 300px;
-  max-width: 400px;
   ${t.mq.m} {
     width: 42%;
     height: 15rem;
-    margin: 1rem;
+    margin: 0.5rem;
   }
   ${t.mq.l} {
-    width: 22%;
+    width: 24%;
     height: 15rem;
+    margin: 0.5%;
   }
   &:hover {
     ${Title} {

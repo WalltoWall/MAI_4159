@@ -20,7 +20,7 @@ const theme = {
   lineHeights: {
     solid: 1,
     title: 1.3,
-    copy: 1.6,
+    copy: 1.65,
   },
   fontFamilies: {
     sans: '"Din Condensed", "Barlow Condensed", Helvetica, sans-serif',
@@ -33,8 +33,9 @@ const theme = {
   },
   width: {
     mobile: '85%',
-    tablet: '70%',
-    desktop: '55%',
+    tablet: '80%',
+    desktop: '70%',
+    xl: '60%',
   },
   fontSize: s => ms(s / 2) + 'rem',
   mediaSizes: {
@@ -42,9 +43,9 @@ const theme = {
     s: '30rem',
     m: '48rem',
     l: '78rem',
-    x: '78rem',
-    xx: '90rem',
-    xxx: '100rem',
+    x: '90rem',
+    xx: '100rem',
+    xxx: '110rem',
   },
   radius: ssv(s => (typeof s === 'number' ? ms(s / 2) + 'rem' : s)),
   spacing: ssv(s => (typeof s === 'number' ? ms(s) + 'rem' : s)),

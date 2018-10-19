@@ -9,14 +9,17 @@ export const Container = styled.div`
   background-color: ${t.c.lightgrey1};
   padding: 3rem 0;
   ${t.mq.l} {
-    padding: 7rem 0;
+    padding: 6rem 0;
   }
 `
 export const Content = styled.div`
   width: ${t.w.mobile};
   ${t.mq.l} {
     width: ${t.w.desktop};
-    padding: 0 1rem;
+    padding: 0;
+  }
+  ${t.mq.x} {
+    width: ${t.w.xl};
   }
 `
 export const StyledHtmlClassName = css`
@@ -31,11 +34,8 @@ export const StyledHtmlClassName = css`
   }
   p {
     color: ${t.c.darkgrey2};
-    font-size: ${t.f(0)};
+    font-size: ${t.f(0.2)};
     font-family: ${t.ff.sans2};
     line-height: ${t.lh.copy};
-    ${t.mq.l} {
-      font-size: ${t.f(1)};
-    }
   }
 `

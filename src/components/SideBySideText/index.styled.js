@@ -3,11 +3,9 @@ import { css } from 'emotion'
 import t from 'theme'
 
 export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   background-color: ${t.c.lightgrey1};
-  padding: 3rem 2rem;
+  padding: 3rem 0;
+  margin: 0 auto;
   ${t.mq.l} {
     padding: 5rem 0;
   }
@@ -17,11 +15,7 @@ export const LeftColumn = styled.div`
   width: 100%;
   padding: 1rem 0;
   ${t.mq.l} {
-    width: 45%;
-    padding: 0 2rem 0 3.5rem;
-  }
-  ${t.mq.x} {
-    width: 35%;
+    width: 50%;
   }
 `
 
@@ -29,14 +23,10 @@ export const RightColumn = styled.div`
   width: 100%;
   padding: 1rem 0;
   ${t.mq.l} {
-    width: 45%;
-    padding: 0 5rem 0 2rem;
+    width: 50%;
     h1 {
       margin-top: 0;
     }
-  }
-  ${t.mq.x} {
-    width: 35%;
   }
 `
 

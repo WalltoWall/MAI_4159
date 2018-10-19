@@ -1,6 +1,7 @@
 import styled from 'react-emotion'
 import t from 'theme'
 import { Button } from 'components/Button'
+import { BodyCopy } from 'components/BodyCopy'
 
 export const Container = styled.div`
   align-items: center;
@@ -30,18 +31,8 @@ export const Headline = styled.h2`
   }
 `
 
-export const Description = styled.div`
-  color: ${t.c.darkgrey2};
-  font-family: ${t.ff.sans2};
-  line-height: ${t.lh.copy};
-  font-weight: 400;
+export const Description = styled(BodyCopy)`
   max-width: 450px;
-  margin: 0 auto 2rem auto;
-  text-align: center;
-  ${t.mq.l} {
-    text-align: left;
-    margin: 0 auto 2rem 0;
-  }
 `
 
 export const SplitPanelWrapper = styled.div`

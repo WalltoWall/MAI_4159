@@ -1,6 +1,7 @@
 import styled from 'react-emotion'
 import t from 'theme'
 import { Link } from 'components/Link'
+import { BodyCopy } from 'components/BodyCopy'
 
 export const Content = styled.div`
   display: flex;
@@ -76,13 +77,8 @@ export const PostTitle = styled.div`
   margin-bottom: 0.5rem;
 `
 
-export const PostContent = styled.div`
-  color: ${t.c.darkgrey2};
-  font-family: ${t.ff.sans2};
-  line-height: ${t.lh.copy};
-  display: block;
-  margin-bottom: 1rem;
-  width: 100%;
+export const PostContent = styled(BodyCopy)`
+  text-align: left;
 `
 
 export const StyledLink = styled(Link)`

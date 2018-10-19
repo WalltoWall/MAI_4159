@@ -1,6 +1,7 @@
 import React from 'react'
 import { get } from 'lodash'
 import { HTMLContent } from 'components/HTMLContent'
+import { Content } from 'components/Content'
 import {
   Container,
   LeftColumn,
@@ -10,6 +11,7 @@ import {
 
 export const SideBySideText = ({ data }) => (
   <Container>
+  <Content>
     <LeftColumn>
       <HTMLContent
         html={get(data, 'primary.left_text.html')}
@@ -22,5 +24,6 @@ export const SideBySideText = ({ data }) => (
         className={StyledHtmlClassName}
       />
     </RightColumn>
+    </Content>
   </Container>
 )

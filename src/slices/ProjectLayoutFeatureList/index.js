@@ -5,9 +5,9 @@ import { Image } from 'components/Image'
 import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
+  Content,
   FeatureName,
   Title,
-  Content,
   StyledLink,
   ImageContainer,
   OverlayContainer,

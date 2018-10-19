@@ -20,6 +20,7 @@ export const Container = styled.div`
   padding: 4rem 0;
   ${t.mq.l} {
     min-height: 50vh;
+    padding: 6rem 0;
   }
 `
 
