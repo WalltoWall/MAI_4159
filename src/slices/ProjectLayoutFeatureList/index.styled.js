@@ -11,23 +11,19 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  width: 100%;
-  margin: 2rem auto;
-  ${t.mq.l} {
-    width: 75%;
+  width: ${t.w.mobile};
+  margin: 2rem auto;  
+  ${t.mq.m} {
+    align-items: flex-start;
   }
-`
-
-export const FeatureName = styled.h2`
-  font-size: ${t.s(2.5)};
-  font-family: ${t.ff.sans};
-  text-transform: uppercase;
-  font-weight: 600;
-  color: ${t.c.darkgrey1};
-  letter-spacing: 0.1rem;
-  margin-top: 0;
+  ${t.mq.l} {
+    width: ${t.w.desktop};
+  }
+  ${t.mq.x} {
+    width: ${t.w.xl};
+  }
 `
 
 export const ImageContainer = styled.div`
@@ -62,18 +58,18 @@ export const Title = styled.p`
 export const StyledLink = styled(Link)`
   position: relative;
   display: block;
-  margin: 1rem;
+  margin: 1rem 0;
   width: 100%;
   height: 14rem;
-  min-width: 300px;
-  max-width: 400px;
   ${t.mq.m} {
     width: 42%;
     height: 15rem;
+    margin: 0.5rem;
   }
   ${t.mq.l} {
-    width: 22%;
+    width: 24%;
     height: 15rem;
+    margin: 0.5%;
   }
   &:hover {
     ${Title} {

@@ -1,5 +1,4 @@
 import styled from 'react-emotion'
-
 import t from 'theme'
 import { ExpandButton } from 'components/ExpandButton'
 import { HTMLContent } from 'components/HTMLContent'
@@ -18,8 +17,11 @@ export const Container = styled.div`
 export const TextBlock = styled.div`
   display: flex;
   margin: 1rem 0;
+  justify-content: space-between;
+  width: 100%;
   ${t.mq.m} {
     margin: 1rem auto;
+    justify-content: center;
   }
 `
 
@@ -57,11 +59,12 @@ export const Text = styled(HTMLContent)`
   p {
     font-family: ${t.ff.sans2};
     color: ${t.c.darkgrey2};
-    line-height: ${t.lh.copy};
+    line-height: 1.2rem;
     text-align: left;
 
     ${t.mq.m} {
       text-align: center;
+      line-height: 0.6rem;
     }
   }
 `
@@ -84,19 +87,4 @@ export const Category = styled.div`
 export const StyledExpand = styled(Expand)`
   width: 100%;
   display: block;
-`
-
-export const Title = styled.div`
-  color: ${t.c.darkgrey1};
-  font-family: ${t.ff.sans};
-  font-size: ${t.f(4)};
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: ${t.ls.heading};
-  ${t.mq.m} {
-    font-size: ${t.f(5)};
-  }
 `

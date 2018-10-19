@@ -1,19 +1,29 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
+import {format} from 'date-fns'
+import { Headline } from 'components/Headline'
 
 import { 
   Container, 
-  Title,
   PostDate,
 } from './index.styled'
 
-export const NewsPostLayoutTitle = ({ data }) => (
+
+export const NewsPostLayoutTitle = ({ data }) => {
+
+    const formattedDate = format(
+    new Date(get(data, 'primary.date1')),
+    'MMMM'+' D'+', '+'YYYY'
+  )
+
+  return (
     <Container>
-      <Title>{get(data, 'primary.title1.text')}</Title>
-      <PostDate>{get(data, 'primary.date1')}</PostDate>
+      <Headline>{get(data, 'primary.title1.text')}</Headline>
+      <PostDate>{formattedDate}</PostDate>
     </Container>
-)
+  )
+}
 
 export const query = graphql`
   fragment NewsPostLayoutTitle on Query {

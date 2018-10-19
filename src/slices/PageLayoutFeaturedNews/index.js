@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import {format} from 'date-fns'
 import { Image } from 'components/Image'
+import { Headline } from 'components/Headline'
 import arrow from 'assets/yellow-arrow.svg'
 import { getUnlessEmptyString } from 'helpers'
 import {
@@ -17,7 +18,6 @@ import {
   PostDate,
   ArrowWrapper,
   ReadMoreWrapper,
-  Headline,
   SectionContainer,
 } from './index.styled'
 
@@ -38,7 +38,7 @@ const characterLimit = function(str, length, ending) {
 const renderNewsGrid = ({ alt, key, img, title, url, content, date }) => {
   const formattedDate = format(
     new Date(date),
-    'MMM' +' Do' + ' YYYY'
+    'MMMM' +' D' +', '+'YYYY'
   )
   
   return (

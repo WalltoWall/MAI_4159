@@ -9,21 +9,24 @@ export const Container = styled.div`
   background-color: ${t.c.white};
   padding: 3rem 0;
   ${t.mq.l} {
-    padding: 7rem 0;
+    padding: 6rem 0;
   }
 `
 export const Content = styled.div`
-  width: 80%;
+  width: ${t.w.mobile};
   ${t.mq.l} {
-    padding: 0 1rem;
-    width: 65%;
+    padding: 0;
+    width: ${t.w.desktop};
+  }
+  ${t.mq.x} {
+    width: ${t.w.xl};
   }
 `
 export const StyledHtmlClassName = css`
   h1 {
     font-size: ${t.f(4)};
     text-transform: uppercase;
-    letter-spacing: 0.1rem;
+    letter-spacing: ${t.ls.button};
     font-family: ${t.ff.sans};
     font-weight: 600;
     color: ${t.c.darkgrey1};
@@ -32,10 +35,8 @@ export const StyledHtmlClassName = css`
     li {
       color: ${t.c.darkgrey2};
       font-family: ${t.ff.sans2};
-      font-size: ${t.f(0)};
-      ${t.mq.l} {
-        font-size: ${t.f(1)};
-      }
+      font-size: ${t.f(0.2)};
+      line-height: ${t.lh.copy};
     }
   }
 `

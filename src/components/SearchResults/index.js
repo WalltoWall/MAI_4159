@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Container, StyledHTMLContent, Title, Items } from './index.styled'
+import { Placeholder } from 'components/Placeholder'
 
 export const SearchResults = ({ children, query, queryType, ...props }) => (
   <Container>
@@ -12,5 +13,6 @@ export const SearchResults = ({ children, query, queryType, ...props }) => (
       </p>
     </StyledHTMLContent>
     <Items>{children}</Items>
+    <Placeholder />
   </Container>
 )

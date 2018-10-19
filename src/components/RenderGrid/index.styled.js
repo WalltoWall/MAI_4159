@@ -39,9 +39,9 @@ export const StyledLink = styled(Link)`
   width: ${p=> p.largeImages ? '100%' : '50%'};
   height: ${p=> p.largeImages ? '20rem' : '10rem'};
   ${t.mq.m} {
-    width: ${p=> p.largeImages ? '46%' : '23%'};
+    width: ${p=> p.largeImages ? '48%' : '23%'};
     height: ${p=> p.largeImages ? '28rem' : '12rem'};
-    margin: ${p=> p.largeImages ? '0.5rem 1%' : '0'};
+    margin: ${p=> p.largeImages ? '0.5rem 1%' : '0.5rem'};
   }
 
   &:hover {
@@ -69,7 +69,7 @@ export const OverlayContainer = styled.div`
   -o-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
   ${t.mq.l} {
-    ${p=> p.largeImages ? '60px' : '40px'};
+    height: ${p=> p.largeImages ? '55px' : '40px'};
   }
   ${StyledLink}:hover & {
     height: 100%;

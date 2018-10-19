@@ -53,17 +53,18 @@ export const StyledHtmlClassName = css`
     font-family: ${t.ff.serif};
     font-weight: 400;
     color: ${t.c.darkgrey1};
+    line-height: 2.6rem;
   }
   ul {
     li {
       color: ${t.c.darkgrey2};
       font-family: ${t.ff.sans2};
-      font-size: ${t.f(0)};
+      font-size: ${t.f(0.2)};
       line-height: ${t.lh.copy};
     }
   }
   p {
-    font-size: ${t.f(0)};
+    font-size: ${t.f(0.2)};
     line-height: ${t.lh.copy};
     font-family: ${t.ff.sans2};
     font-weight: 400;

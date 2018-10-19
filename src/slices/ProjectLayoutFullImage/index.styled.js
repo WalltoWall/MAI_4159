@@ -10,18 +10,18 @@ export const Container = styled.div`
 export const Content = styled.div`
   text-align: center;
   p {
-    font-family: ${t.ff.sans2};
+    font-family: ${t.ff.serif};
     color: ${t.c.darkgrey2};
     padding: 0 2rem;
-    font-size: ${t.f(-1)};
+    font-size: ${t.f(0)};
     line-height: ${t.lh.copy};
-    ${t.mq.l} {
-      font-size: ${t.f(0)};
-    }
   }
   ${t.mq.l} {
-    width: 70%;
+    width: ${t.w.desktop};
     margin-top: -3rem;
+  }
+  ${t.mq.x} {
+    width: ${t.w.xl};
   }
 `
 

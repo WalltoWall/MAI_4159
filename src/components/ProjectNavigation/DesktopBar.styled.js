@@ -31,7 +31,7 @@ export const SubFilterContainer = styled.div`
 `
 
 export const CurrentFilter = styled.h2`
-  font-size: ${t.f(1.5)};
+  font-size: ${t.f(1)};
   display: inline-block;
   margin: 0;
   color: ${p => p.defaultColor ? t.c.white : t.c.yellow};
@@ -133,6 +133,7 @@ export const Filter = styled.p`
   cursor: pointer;
   color: ${p=> p.isActive ? t.c.yellow : "white"};
   font-family: ${t.ff.sans2};
+  letter-spacing: ${t.ls.button};
   font-size: ${t.f(1)};
   font-weight: 600;
 `

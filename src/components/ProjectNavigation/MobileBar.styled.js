@@ -104,9 +104,17 @@ export const SubFilterChildContainer = styled.div`
   overflow-x: auto;
   flex-wrap: nowrap;
   -webkit-overflow-scrolling: touch;
-  background-color: ${t.c.lightgrey3};
+  background-color: ${t.c.lightgrey4};
   margin: ${t.s(1)} 0 -${t.s(1)} 0;
-
+  
+  // ::-webkit-scrollbar {
+  //   width: 0px;    
+  // }
+    
+  // ::-webkit-scrollbar-track-piece {
+  //   background-color: transparent;
+  //   -webkit-border-radius: 6px;
+  // }    
   ${t.mq.l} {
     display: none;
   }

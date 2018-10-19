@@ -1,6 +1,7 @@
 import styled from 'react-emotion'
 import t from 'theme'
 import { Link } from 'components/Link'
+import { BodyCopy } from 'components/BodyCopy'
 
 export const Content = styled.div`
   display: flex;
@@ -43,8 +44,8 @@ export const SectionContainer = styled.div`
   width: ${t.w.mobile};
   align-items: left;
   ${t.mq.l} {
-    padding-bottom: 6rem;
-    width: ${t.w.tablet};
+    padding: 6rem 0;
+    width: ${t.w.desktop};
   }
 `
 
@@ -76,13 +77,8 @@ export const PostTitle = styled.div`
   margin-bottom: 0.5rem;
 `
 
-export const PostContent = styled.div`
-  color: ${t.c.darkgrey2};
-  font-family: ${t.ff.sans2};
-  line-height: ${t.lh.copy};
-  display: block;
-  margin-bottom: 1rem;
-  width: 100%;
+export const PostContent = styled(BodyCopy)`
+  text-align: left;
 `
 
 export const StyledLink = styled(Link)`
@@ -96,7 +92,7 @@ export const StyledLink = styled(Link)`
   ${t.mq.m} {
     width: 33.333333%;
     height: auto;
-    padding: 1rem 1rem 2rem 1rem;
+    padding: 0 1rem 2rem 1rem;
   }
   
   @keyframes fadeIn {
@@ -111,12 +107,13 @@ export const StyledLink = styled(Link)`
 `
 export const ReadMore = styled(Link)`
   font-family: ${t.ff.sans2};
+  color: ${t.c.darkgrey1};
   font-size: ${t.f(-1)};
   text-transform: uppercase;
   letter-spacing: 0.05rem;
   display: inline-block;
   margin: 0;
-  font-weight: 600;
+  font-weight: 700;
 `
 
 export const ContentContainer = styled.div`
@@ -129,20 +126,6 @@ export const ReadMoreWrapper = styled.div`
   align-items: center;
 `
 
-export const Headline = styled.h2`
-  color: ${t.c.darkgrey1};
-  font-family: ${t.ff.sans};
-  font-size: ${t.f(4)};
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: ${t.ls.heading};
-  ${t.mq.m} {
-    font-size: ${t.f(5)};
-  }
-`
 export const ButtonContainer = styled.div`
   width: 100%;
 `

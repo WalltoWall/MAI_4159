@@ -40,8 +40,10 @@ export const SearchQuery = styled.input`
   flex-grow: 1;
   font-size: ${t.f(1)};
   padding: ${t.s(-1, 0)};
+  letter-spacing: ${t.ls.button};
   &::placeholder {
     color: ${t.c.darkgrey2};
+    ${t.ls.button};
   }
 `
 

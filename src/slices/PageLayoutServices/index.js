@@ -5,9 +5,9 @@ import { HTMLContent } from 'components/HTMLContent'
 import { Image } from 'components/Image'
 import { getUnlessEmptyString } from 'helpers'
 import { Content } from 'components/Content'
+import { Headline } from 'components/Headline'
 import {
   Container,
-  Title,
   Description,
   ImageWrapper,
   ImageDescription,
@@ -26,7 +26,7 @@ export const PageLayoutServices = ({ data }) => {
 
   return (
     <Container background_color={get(data, 'primary.background_color')}>
-      <Title>{get(data, 'primary.title1.text')}</Title>
+      <Headline>{get(data, 'primary.title1.text')}</Headline>
       <Description>{get(data, 'primary.text.text')}</Description>
       <ImageContainer>
         <ImageWrapper>

@@ -165,10 +165,10 @@ export const Title = styled.h1`
 `
 
 export const SubTitle = styled.h2`
-  font-size: ${t.f(3)};
+  font-size: ${t.f(2)};
   letter-spacing: 0.1rem;
   color: ${t.c.white};
-  font-weight: 400;
+  font-weight: 600;
   font-family: ${t.ff.sans2};
   margin: -${t.s(2)} 0 1.2rem 0;
   letter-spacing: 0.2rem;

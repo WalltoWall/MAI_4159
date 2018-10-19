@@ -1,9 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-
+import { Content } from 'components/Content'
 import { 
-  Container, 
-  Content, 
+  Container,
   Column, 
   Title, 
   TextBlock, 
@@ -15,7 +14,6 @@ import { get, isEmpty } from 'lodash';
 
 
 export const TeamMemberLayoutSideBySideText = ({ data }) => {
-  
   return (
   <Container>
     <Content>

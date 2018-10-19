@@ -6,6 +6,7 @@ import { Image } from 'components/Image'
 import arrow from 'assets/yellow-arrow.svg'
 import { getUnlessEmptyString } from 'helpers'
 import { Button } from 'components/Button'
+import { Headline } from 'components/Headline'
 import {
   Content,
   Container,
@@ -20,7 +21,6 @@ import {
   ReadMoreWrapper,
   SectionContainer,
   ButtonContainer,
-  Headline,
   ButtonLink,
 } from './index.styled'
 
@@ -32,9 +32,7 @@ export const PageLayoutNewsSection = ({data, rootData}) => {
   return (
     <SectionContainer>
       {get(data, "primary.title1.text") && (
-        <Headline>
-          {get(data, "primary.title1.text")}
-        </Headline>
+        <Headline>{get(data, "primary.title1.text")}</Headline>
       )}      
       <Container>
         <Content>

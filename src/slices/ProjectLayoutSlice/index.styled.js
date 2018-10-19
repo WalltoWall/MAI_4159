@@ -27,11 +27,11 @@ export const Container = styled.div`
   }
 `
 export const Content = styled.div`
-  width: 80%;
+  width: ${t.w.mobile};
   padding: 0;
   font-family: ${t.ff.sans2};
-  ${t.mq.m} {
-    width: 60%;
+  ${t.mq.l} {
+    width: ${t.w.desktop};
   }
 `
 export const StyledHtmlClassName = css`
@@ -39,7 +39,7 @@ export const StyledHtmlClassName = css`
     font-family: ${t.ff.sans};
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: 0.1rem;
+    letter-spacing: ${t.ls.button};
     font-size: ${t.f(4)};
     color: ${t.c.darkgrey1};
   }

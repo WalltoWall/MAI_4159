@@ -1,12 +1,12 @@
 import React from 'react'
 import { get } from 'lodash'
-import { Container, Content, ImageContainer } from './index.styled'
+import { Container, ImageContainer, Description, StyledContent } from './index.styled'
 import { getUnlessEmptyString } from 'helpers'
 import { Image } from 'components/Image'
 
 export const SideBySideImages = ({ data }) => (
   <Container>
-    <Content>
+    <StyledContent>
       {get(data, 'items').map(item => (
         <ImageContainer>
           <Image
@@ -17,7 +17,7 @@ export const SideBySideImages = ({ data }) => (
           />
         </ImageContainer>
       ))}
-      <p>{get(data, 'primary.caption.text')}</p>
-    </Content>
+      <Description>{get(data, 'primary.caption.text')}</Description>
+    </StyledContent>
   </Container>
 )

@@ -18,7 +18,7 @@ const backgroundColor = ({ background_color }) => {
 
 export const Container = styled.div`
   flex-direction: column;
-  padding: 2rem 0 6rem 0;
+  padding: 4rem 0 6rem 0;
   ${backgroundColor};
 `
 
@@ -43,11 +43,14 @@ export const Description = styled.div`
   font-weight: 400;
   width: ${t.w.mobile};
   text-align: center;
-  margin: -1rem auto 3rem auto;
+  margin: 1rem auto 3rem auto;
   ${t.mq.l} {
     width: ${t.w.desktop};
-    font-size: ${t.s(1.5)};
-    margin: -1rem auto 6rem auto;
+    font-size: ${t.s(1.4)};
+    margin: 1rem auto 4rem auto;
+  }
+  ${t.mq.x} {
+    width: ${t.w.xl};
   }
 `
 
@@ -79,6 +82,9 @@ export const ImageDescription = styled.div`
   ${t.mq.l} {
     width: ${t.w.desktop};
   }
+  ${t.mq.x} {
+    width: ${t.w.xl};
+  }
 `
 
 export const ImageContainer = styled.div`  
@@ -93,6 +99,9 @@ export const ImageContainer = styled.div`
   ${t.mq.l} {
     width: ${t.w.desktop};
   }
+  ${t.mq.x} {
+    width: ${t.w.xl};
+  }
 `
 
 export const SectionTitle = styled.div`
@@ -103,7 +112,7 @@ export const SectionTitle = styled.div`
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   text-align: center;
-  margin: 4rem 0 2rem 0;
+  margin: 4rem 1rem 2rem 1rem;
 `
 
 export const StyledHtmlClassName = css`
@@ -116,15 +125,16 @@ export const StyledHtmlClassName = css`
     letter-spacing: 0.1rem;
   }
   p {
-    color: ${t.c.darkgrey1};
+    color: ${t.c.darkgrey2};
     font-family: ${t.ff.sans2};
-    font-size: ${t.f(0)};
+    font-size: ${t.f(0.2)};
+    line-height: ${t.lh.copy};
     margin-bottom: 0.6rem;
     text-align: left;
   }
   ul {
     li {
-      color: ${t.c.darkgrey1};
+      color: ${t.c.darkgrey2};
       font-family: ${t.ff.sans2};
       font-size: ${t.f(0)};
       line-height: 1.8rem;
@@ -148,14 +158,15 @@ export const TextWrapper = styled.div`
 
 export const TextBlock = styled.div`
   width: 100%;
-  margin-right: 2rem;
+  margin: 2rem 2rem 0 0;
   ${t.mq.l} {
     width: 45%;
+    margin: 0 2rem 0 0;
   }
 `
 
 export const Projects = styled.div`
-  width: ${t.w.mobile};
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -167,5 +178,8 @@ export const Projects = styled.div`
   ${t.mq.l} {
     width: ${t.w.desktop};
     margin: 1rem auto;
+  }
+  ${t.mq.x} {
+    width: ${t.w.xl};
   }
 `

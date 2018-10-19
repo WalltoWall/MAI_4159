@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Toggle } from 'react-powerplug'
-
+import { Headline } from 'components/Headline'
 import {
   Container,
   Content,
@@ -12,7 +12,6 @@ import {
   StyledExpandButton,
   Category,
   StyledExpand,
-  Title,
 } from './index.styled'
 
 
@@ -46,7 +45,7 @@ const renderContent = ( data, index ) => (
 export const PageLayoutTextExpandable = ({ data }) => (
     <Container>
     <Content>
-      <Title>{get(data, 'primary.title1.text')}</Title>    
+      <Headline>{get(data, 'primary.title1.text')}</Headline>    
         {get(data, 'items', []).map((item, index) => (          
           renderContent(item, index)              
         ))}

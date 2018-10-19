@@ -20,6 +20,7 @@ export const Container = styled.div`
   padding: 4rem 0;
   ${t.mq.l} {
     min-height: 50vh;
+    padding: 6rem 0;
   }
 `
 
@@ -29,19 +30,3 @@ export const Text = styled.p`
   font-size: 1rem;
 `
 
-export const Headline = styled.h1`
-  color: ${t.c.darkgrey1};
-  font-family: ${t.ff.sans};
-  font-size: ${t.f(4)};
-  font-weight: 600;
-  margin: 0 auto;
-  text-transform: uppercase;
-  letter-spacing: ${t.ls.heading};
-  text-align: center;
-  display: block;
-  z-index: 2;
-  width: 100%;
-  ${t.mq.l} {
-    font-size: ${t.f(5)};
-  }
-`
