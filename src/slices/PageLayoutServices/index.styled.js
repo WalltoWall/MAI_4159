@@ -49,6 +49,9 @@ export const Description = styled.div`
     font-size: ${t.s(1.5)};
     margin: -1rem auto 6rem auto;
   }
+  ${t.mq.x} {
+    width: ${t.w.xl};
+  }
 `
 
 export const Image = styled.img`
@@ -79,6 +82,9 @@ export const ImageDescription = styled.div`
   ${t.mq.l} {
     width: ${t.w.desktop};
   }
+  ${t.mq.x} {
+    width: ${t.w.xl};
+  }
 `
 
 export const ImageContainer = styled.div`  
@@ -92,6 +98,9 @@ export const ImageContainer = styled.div`
   }
   ${t.mq.l} {
     width: ${t.w.desktop};
+  }
+  ${t.mq.x} {
+    width: ${t.w.xl};
   }
 `
 
@@ -169,5 +178,8 @@ export const Projects = styled.div`
   ${t.mq.l} {
     width: ${t.w.desktop};
     margin: 1rem auto;
+  }
+  ${t.mq.x} {
+    width: ${t.w.xl};
   }
 `
