@@ -18,8 +18,11 @@ export const Container = styled.div`
 export const TextBlock = styled.div`
   display: flex;
   margin: 1rem 0;
+  justify-content: space-between;
+  width: 100%;
   ${t.mq.m} {
     margin: 1rem auto;
+    justify-content: center;
   }
 `
 
@@ -57,11 +60,12 @@ export const Text = styled(HTMLContent)`
   p {
     font-family: ${t.ff.sans2};
     color: ${t.c.darkgrey2};
-    line-height: ${t.lh.copy};
+    line-height: 1.2rem;
     text-align: left;
 
     ${t.mq.m} {
       text-align: center;
+      line-height: 0.6rem;
     }
   }
 `
