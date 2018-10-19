@@ -21,10 +21,11 @@ import {
   SectionContainer,
   ButtonContainer,
   Headline,
+  ButtonLink,
 } from './index.styled'
 
 export const PageLayoutNewsSection = ({data, rootData}) => {
-  const newsPosts = get(rootData, 'allPrismicNewsPost.edges').sort((a,b) => {    
+  let newsPosts = get(rootData, 'allPrismicNewsPost.edges').sort((a,b) => {    
     return new Date(get(b, "node.data.date")) - new Date(get(a, "node.data.date"))
   })
 
@@ -37,7 +38,7 @@ export const PageLayoutNewsSection = ({data, rootData}) => {
       )}      
       <Container>
         <Content>
-          <GridList newsPosts={newsPosts}/>    
+          <GridList newsPosts={newsPosts} data={data}/>    
         </Content>
       </Container>      
     </SectionContainer>
@@ -50,7 +51,7 @@ class GridList extends React.Component {
     super(props);
     this.state = {
       items: this.props.newsPosts,
-      visible: 3      
+      visible: (get(this.props.data, "primary.page_context") === "Home") ? 6 : 3      
     };    
   }
 
@@ -103,15 +104,24 @@ class GridList extends React.Component {
               </StyledLink>
             );
           })}
-          {this.state.visible < this.state.items.length &&
-          <ButtonContainer>
-            <Button
-              onClick={this.loadMore}                             
-            >
-              Load more
-            </Button>
-          </ButtonContainer>
-        }
+          {this.state.visible < this.state.items.length && (
+            (get(this.props.data, "primary.page_context") === "News") &&
+              <ButtonContainer>
+                <Button
+                  onClick={this.loadMore}                             
+                >
+                  Load more
+                </Button>
+              </ButtonContainer>
+          )}
+          {
+            (get(this.props.data, "primary.page_context") === "Home") &&
+              <ButtonLink to="/news">
+                <Button>
+                  See more
+                </Button>
+              </ButtonLink>
+          }          
       </>
     );
   }
@@ -128,6 +138,7 @@ export const query = graphql`
               title1 {
                 text
               }             
+              page_context 
             }          
           }
         }
