@@ -41,7 +41,7 @@ export const StyledLink = styled(Link)`
   ${t.mq.m} {
     width: ${p=> p.largeImages ? '48%' : '23%'};
     height: ${p=> p.largeImages ? '28rem' : '12rem'};
-    margin: ${p=> p.largeImages ? '0.5rem 1%' : '0'};
+    margin: ${p=> p.largeImages ? '0.5rem 1%' : '0.5rem'};
   }
 
   &:hover {

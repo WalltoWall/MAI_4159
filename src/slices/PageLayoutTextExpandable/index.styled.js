@@ -1,5 +1,4 @@
 import styled from 'react-emotion'
-
 import t from 'theme'
 import { ExpandButton } from 'components/ExpandButton'
 import { HTMLContent } from 'components/HTMLContent'

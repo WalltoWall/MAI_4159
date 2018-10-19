@@ -7,7 +7,6 @@ import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
   Content,
-  FeatureName,
   Title,
   StyledLink,
   ImageContainer,

@@ -109,7 +109,6 @@ export const StyledInstagramIcon = styled(InstagramIcon)`
 
 export const StyledTwitterIcon = styled(TwitterIcon)`
   fill: ${t.c.yellow};  
-  margin-bottom: -8px;
   transition: fill 200ms;
   :hover {
     fill: ${t.c.darkyellow};

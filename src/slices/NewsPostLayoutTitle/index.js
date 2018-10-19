@@ -14,7 +14,7 @@ export const NewsPostLayoutTitle = ({ data }) => {
 
     const formattedDate = format(
     new Date(get(data, 'primary.date1')),
-    'MMMM' +' D' +', '+'YYYY'
+    'MMMM'+' D'+', '+'YYYY'
   )
 
   return (

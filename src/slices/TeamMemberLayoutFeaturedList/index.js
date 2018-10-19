@@ -1,48 +1,37 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { ListTitle, Container, GridContainer, DetailContainer, ImageContainer, Content, StyledHR } from './index.styled'
+import { ListTitle, Container, GridContainer } from './index.styled'
 import { get, split } from 'lodash'
-import { Image } from 'components/Image'
-import { Link } from 'components/Link'
+import { RenderGrid } from 'components/RenderGrid'
+import { SmallHeadline } from 'components/SmallHeadline'
+import { getUnlessEmptyString } from 'helpers'
 
-export const TeamMemberLayoutFeaturedList = ({ data, rootData }) => {  
+export const TeamMemberLayoutFeaturedList = ({ data, rootData }) => { 
+const projects = get(data, 'items')
+
   return (
-    <>
-    <ListTitle>
+    <Container>
+    <SmallHeadline>
       {split(get(rootData, "prismicTeamMember.data.title"), " ")[0]}'s Featured Projects
-    </ListTitle>
-  <Container>
-    {get(data, "items").map(item => (
+    </SmallHeadline>
       <GridContainer>
-        <Link
-         to={get(item, "project.url")}
-        >
-          <ImageContainer>
-            <Image 
-              fluid={get(item, "project.document[0].data.image.localFile.childImageSharp.fluid")}
-            />          
-          </ImageContainer> 
-        </Link>
-        <Content>
-          <h2>
-            {get(item, "project.document[0].data.title.text")}  
-          </h2>          
-          <StyledHR/>
-          <DetailContainer>
-            <span>Project Type</span>
-            <p>{get(item, "project.document[0].data.project_type.text")}</p>
-          </DetailContainer>
-          <StyledHR/>
-          <DetailContainer>
-            <span>Year Completed</span>
-            <p>{get(item, "project.document[0].data.year_completed")}</p>
-          </DetailContainer>
-        </Content>
+       {projects.map(project =>
+            RenderGrid({
+              key: get(project, 'project.document[0].uid'),
+              alt: getUnlessEmptyString(
+                get(project, 'project.document[0].data.image.alt')
+              ),
+              img: get(
+               project,
+                'project.document[0].data.image.localFile.childImageSharp.fluid'
+                ),
+              title: get(project, 'project.document[0].data.title.text'),
+              url: get(project, 'project.url'),
+              largeImages: false,
+            })
+          )}
       </GridContainer>      
-      
-    ))}    
   </Container>
-  </>
   )
 }
 export const query = graphql`
