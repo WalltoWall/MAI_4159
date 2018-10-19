@@ -16,6 +16,9 @@ export const Container = styled.div`
     height: 800px;
     background-color: ${t.c.white};
   }
+  ${t.mq.x} {
+    height: 1020px;
+  }
 `
 
 export const HeadlineWrapper = styled.div`
@@ -168,6 +171,7 @@ export const SlidingVertical = styled.div`
 
 export const ImageContainer = styled.div`
   width: 100%;
+  height: 100%;
   position: relative;
   overflow: hidden;
   .gatsby-image-outer-wrapper,
@@ -191,7 +195,6 @@ export const Gradient = styled.div`
 `
 
 export const DescriptionWrapper = styled.div`
-  font-family: ${t.ff.sans2};
   line-height: ${t.lh.copy};
   font-weight: 300;
   width: ${t.w.mobile};
@@ -202,7 +205,7 @@ export const DescriptionWrapper = styled.div`
   ${t.mq.l} {
     -webkit-transform: rotate(3deg);
     -ms-transform: rotate(3deg);
-    transform: rotate(3deg) translate(30px, 350px);
+    transform: rotate(3deg) translate(50px, 500px);
     padding: 0 3rem;
     margin: 0;
   }
@@ -227,7 +230,10 @@ export const Overlay = styled.div`
     width: 40%;
     height: 120%;
     top: -50px;
-    right: -50px;
+    right: -80px;
+  }
+  ${t.mq.x} {
+    right: -140px;
   }
 `
 

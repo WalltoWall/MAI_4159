@@ -43,7 +43,7 @@ export const PageLayoutHero = ({ data }) => (
         </SlidingVertical>
       </RotatedContainer>
     </HeadlineWrapper>
-    <SubHeadline> Hawai'i's Future</SubHeadline>
+    <SubHeadline> Hawaii's Future</SubHeadline>
     <Overlay>
       <DescriptionWrapper>
         <HTMLContent
