@@ -10,7 +10,6 @@ export const Content = styled.div`
   width: 100%;
   margin: 0 auto;
   ${t.mq.l} {
-    width: 75%;
     justify-content: flex-start;
     align-content: flex-start;
     margin-top: 2rem;
@@ -40,10 +39,12 @@ export const ArrowWrapper = styled.img`
 export const SectionContainer = styled.div`
   background-color: ${t.c.lightgrey2};
   margin: 0 auto;
-  padding: 4rem 0 4rem 0;
+  padding: 4rem 0 6rem 0;
+  width: ${t.w.mobile};
   align-items: left;
   ${t.mq.l} {
     padding-bottom: 6rem;
+    width: ${t.w.tablet};
   }
 `
 
@@ -90,7 +91,8 @@ export const StyledLink = styled(Link)`
   flex-direction: column;
   flex-wrap: wrap;  
   width: 100%;
-  padding: 1rem;
+  padding: 0;
+  margin: 1rem 0;
   ${t.mq.m} {
     width: 33.333333%;
     height: auto;

@@ -5,8 +5,8 @@ import { Image } from 'components/Image'
 import arrow from 'assets/yellow-arrow.svg'
 import { getUnlessEmptyString } from 'helpers'
 import {
-  Content,
   Container,
+  Content,
   ImageContainer,
   StyledLink,
   PostTitle,
@@ -34,7 +34,7 @@ const characterLimit = function(str, length, ending) {
   } 
 }
 
-const renderFeatureGrid = ({ alt, key, img, title, url, content, date }) => (
+const renderNewsGrid = ({ alt, key, img, title, url, content, date }) => (
   <StyledLink to={url} key={key}>
     <ImageContainer>
       <Image fluid={img} alt={alt} fadeIn={false} />
@@ -60,7 +60,7 @@ export const PageLayoutFeaturedNews = ({ data }) => {
       <Container>
         <Content>
           {featured_news_post.map(featured_news_post =>
-            renderFeatureGrid({
+            renderNewsGrid({
               key: get(featured_news_post, 'featured_news_post.document[0].uid'),
               alt: getUnlessEmptyString(
                 get(featured_news_post, 'featured_news_post.document[0].data.image.alt')

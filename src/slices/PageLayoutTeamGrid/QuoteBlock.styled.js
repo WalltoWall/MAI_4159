@@ -40,18 +40,15 @@ export const Quote = styled(HTMLContent)`
   align-items: ${p => p.align === "left" ? "flex-start" : "flex-end"};
   p {
     font-size: ${t.f(-1)};
-    &:first-child {
-      color: ${t.c.darkgrey1};      
-    }
-    &:last-child {
-      color: ${t.c.darkgrey2};      
-    }    
+    font-family: ${t.ff.serif};
+    font-weight: 400;
+    color: ${t.c.darkgrey1};  
     z-index: 5;
     width: 100%;
     text-align: ${p => p.align === "right" ? "right" : "left"};
     padding: 0 ${t.s(0.5)};
     ${t.mq.s} {
-      font-size: ${t.f(1)};      
+      font-size: ${t.f(2)};      
     }
     ${t.mq.l} {      
       width: 70%;    

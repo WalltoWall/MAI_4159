@@ -194,15 +194,17 @@ export const DescriptionWrapper = styled.div`
   font-family: ${t.ff.sans2};
   line-height: ${t.lh.copy};
   font-weight: 300;
-  width: 100%;
+  width: ${t.w.mobile};
+  margin: 0 auto;
   display: block;
-  padding: 0 3rem;
+  padding: 0;
 
   ${t.mq.l} {
     -webkit-transform: rotate(3deg);
     -ms-transform: rotate(3deg);
     transform: rotate(3deg) translate(30px, 350px);
     padding: 0 3rem;
+    margin: 0;
   }
 `
 

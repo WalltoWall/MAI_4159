@@ -4,8 +4,8 @@ import { get } from 'lodash'
 import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
-  Content,
   Headline,
+  Projects,
 } from './index.styled'
 import { Button } from 'components/Button'
 import { RenderGrid } from 'components/RenderGrid'
@@ -16,23 +16,23 @@ export const PageLayoutProjectBoxes = ({ data }) => {
   return (
     <Container>
       <Headline>{get(data, 'primary.title1.text')}</Headline>
-      <Content>
-        {projects.map(project =>
-          RenderGrid({
-            key: get(project, 'projects.document[0].uid'),
-            alt: getUnlessEmptyString(
-              get(project, 'projects.document[0].data.image.alt')
-            ),
-            img: get(
-              project,
-              'projects.document[0].data.image.localFile.childImageSharp.fluid'
-            ),
-            title: get(project, 'projects.document[0].data.title.text'),
-            url: get(project, 'projects.url'),
-            largeImages: true,
-          })
-        )}
-      </Content>
+        <Projects>
+          {projects.map(project =>
+            RenderGrid({
+              key: get(project, 'projects.document[0].uid'),
+              alt: getUnlessEmptyString(
+                get(project, 'projects.document[0].data.image.alt')
+              ),
+              img: get(
+                project,
+                'projects.document[0].data.image.localFile.childImageSharp.fluid'
+              ),
+              title: get(project, 'projects.document[0].data.title.text'),
+              url: get(project, 'projects.url'),
+              largeImages: true,
+            })
+          )}
+        </Projects>
       <Button to="/all-projects/">see our work</Button>
     </Container>
   )

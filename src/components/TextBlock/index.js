@@ -1,7 +1,8 @@
 import React from 'react'
 import { get } from 'lodash'
 import { HTMLContent } from 'components/HTMLContent'
-import { Container, Content, StyledHtmlClassName, Headline } from './index.styled'
+import { Container, StyledHtmlClassName, Headline } from './index.styled'
+import { Content } from 'components/Content'
 
 export const TextBlock = ({ data }) => {
   return (

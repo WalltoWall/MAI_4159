@@ -38,15 +38,7 @@ export const Container = styled.div`
   flex-wrap: wrap;
   padding: 4rem 0;
 `
-export const Content = styled.div`
-  width: 90%;
-  padding: 0;
-  font-family: ${t.ff.sans2};
-  ${textAlignment};
-  ${t.mq.l} {
-    width: 55%;
-  }
-`
+
 export const StyledHtmlClassName = css`
   h1 {
     font-size: ${t.f(4)};

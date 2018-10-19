@@ -35,12 +35,13 @@ export const Title = styled.p`
 export const StyledLink = styled(Link)`
   position: relative;
   display: block;
-  margin: ${p=> p.largeImages ? '0.5rem 1.2rem' : '0'};
+  margin: ${p=> p.largeImages ? '0.5rem 0' : '0'};
   width: ${p=> p.largeImages ? '100%' : '50%'};
   height: ${p=> p.largeImages ? '20rem' : '10rem'};
   ${t.mq.m} {
-    width: ${p=> p.largeImages ? '45%' : '23%'};
+    width: ${p=> p.largeImages ? '46%' : '23%'};
     height: ${p=> p.largeImages ? '28rem' : '12rem'};
+    margin: ${p=> p.largeImages ? '0.5rem 1%' : '0'};
   }
 
   &:hover {

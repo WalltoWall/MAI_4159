@@ -2,7 +2,7 @@ import styled from 'react-emotion'
 import { css } from 'emotion'
 import t from 'theme'
 
-export const Content = styled.div`
+export const Info = styled.div`
   width: 100%;
   margin: 1rem 2rem;
   padding-bottom: 1.5rem;
@@ -36,24 +36,20 @@ export const Content = styled.div`
   }
 `
 
-export const Container = styled.div`
+export const Content = styled.div`
   margin: 0 auto;
   padding: 2rem 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
+  width: ${t.w.mobile};
   ${t.mq.m} {
-    width: 70%;
+    width: ${t.w.desktop};
   }
   ${t.mq.l} {
-    width: 65%;
     justify-content: space-around;
     padding: 4rem 0;
-  }
-  ${t.mq.xl} {
-    width: 60%;
-  }
+  } 
 `
 
 export const Title = styled.div`

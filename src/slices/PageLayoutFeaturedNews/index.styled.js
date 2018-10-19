@@ -3,17 +3,16 @@ import t from 'theme'
 import { Link } from 'components/Link'
 
 export const Content = styled.div`
+  width: ${t.w.mobile};
+  margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 100%;
-  margin: 0 auto;
   ${t.mq.l} {
-    width: 75%;
-    justify-content: flex-start;
-    align-content: flex-start;
-    margin-top: 1rem;
+    flex-direction: row;
+    width: ${t.w.tablet};
+    justify-content: space-around;
   }
 `
 
@@ -84,11 +83,11 @@ export const StyledLink = styled(Link)`
   flex-direction: column;
   flex-wrap: wrap;  
   width: 100%;
-  padding: 1rem;
-  ${t.mq.m} {
-    width: 50%;
+  margin: 1rem 0;
+  ${t.mq.l} {
+    width: 48%;
     height: auto;
-    padding: 1rem 1rem 2rem 1rem;
+    margin: 1%;
   }
 `
 export const ReadMore = styled(Link)`

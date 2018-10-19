@@ -1,15 +1,15 @@
 import styled from 'react-emotion'
 import t from 'theme'
 
-export const Content = styled.div`
+export const Projects = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: ${t.w.mobile};
   margin: 2rem auto;
   ${t.mq.l} {
-    width: 75%;
+    width: 70%;
   }
 `
 

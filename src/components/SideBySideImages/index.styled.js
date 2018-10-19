@@ -24,7 +24,7 @@ export const Content = styled.div`
     width: 100%;
     margin: 1rem auto;
     ${t.mq.l} {
-      width: 80%;
+      width: ${t.w.desktop};
       font-size: ${t.f(0)};
     }
   }

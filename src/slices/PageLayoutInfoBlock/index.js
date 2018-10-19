@@ -3,24 +3,24 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { HTMLContent } from 'components/HTMLContent'
 import { 
-  Container,
   Content,
+  Info,
   Title,
   StyledHtmlClassName,
 } from './index.styled'
 
 export const PageLayoutInfoBlock = ({ data }) => (
-    <Container>
+    <Content>
        {get(data, 'items', []).map(item => (
-          <Content>
+          <Info>
             <Title>{get(item, 'title1.text')}</Title>
             <HTMLContent
               html={get(item, 'info1.html')}
               className={StyledHtmlClassName}
             />
-          </Content>
+          </Info>
         ))}
-    </Container>
+    </Content>
 )
 
 export const query = graphql`
