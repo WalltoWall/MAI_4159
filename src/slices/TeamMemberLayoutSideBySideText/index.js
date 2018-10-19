@@ -1,5 +1,4 @@
 import React from 'react'
-import { HTMLContent } from 'components/HTMLContent'
 import { graphql } from 'gatsby'
 import { 
   Container, 
@@ -13,8 +12,8 @@ import {
 } from './index.styled'
 import { get, isEmpty } from 'lodash';
 
+
 export const TeamMemberLayoutSideBySideText = ({ data }) => {
-  
   return (
   <Container>
     <Content>

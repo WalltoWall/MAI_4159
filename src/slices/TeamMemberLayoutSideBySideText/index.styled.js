@@ -12,6 +12,20 @@ export const Container = styled.div`
   }
 `
 
+export const Content = styled.div`
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  ${t.mq.l} {
+    flex-direction: row;
+    width: 55%;
+  }
+`
+
 export const Column = styled.div`
   width: 100%;
   h3 {
@@ -21,15 +35,7 @@ export const Column = styled.div`
     font-weight: 600;
     font-family: ${t.ff.sans2};
   }  
-  p {
-    margin: 5px 0 0 0;
-    font-family: ${t.ff.sans2};
-    color: ${t.c.darkgrey2};
-    line-height: ${t.lh.copy};
-    ${t.mq.l} {         
-      padding: 0 ${t.s(4)} 0 0;
-    } 
-  }
+
   ${t.mq.l} {
     width: ${p=> p.fullWidth ? '100%' : '50%'};
   }
@@ -59,14 +65,18 @@ export const MobilePadding = styled.div`
     display: none;
   }
 `
-
 export const HTMLParagraph = styled(HTMLContent)`
   margin: 5px 0 0 0;
   color: ${t.c.darkgrey2};
+  font-family: ${t.ff.sans2};    
+  line-height: ${t.lh.copy};
   ${t.mq.l} {         
     padding: 0 ${t.s(4)} 0 0;
-  } 
+  }   
   p {
     margin: 5px 0;
+    ${t.mq.l} {         
+      padding: 0 ${t.s(4)} 0 0;
+    } 
   }
 `

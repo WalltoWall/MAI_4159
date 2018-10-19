@@ -5,7 +5,6 @@ import { ReactComponent as HoverArrowSVG } from 'assets/hov_arrow.svg'
 
 export const DesktopContainer = styled.div`
   position: relative;
-  padding: 2.1rem;
   background-color: ${t.c.darkgrey2};
   display: none;
   height: ${t.s(3.5)};
@@ -58,7 +57,6 @@ export const StyledLinkContainer = styled.div`
     display: flex;
   }
 `
-
 export const StyledLink = styled(Link)`
   z-index: 2;
   padding: 0;

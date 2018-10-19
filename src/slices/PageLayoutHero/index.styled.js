@@ -111,54 +111,55 @@ export const SubHeadline = styled.span`
   }
 `
 const topToBottom = keyframes`
+
   0% {
-    transform: translate(0, -84px);
-    opacity: 0;
-  }
-
-  5% {
-    transform: translate(0, -104px);
+    transform: translateY(40px) rotateX(90deg);    
     opacity: 1;
   }
 
-  10%, 12% {
-    transform: translate(0, -104px);x
+  2% {
+    transform: rotateX(0deg);    
     opacity: 1;
-  }
-
-  15% {
-    transform: translate(0, -124px);
-    opacity: 0.8;
   }
 
   20% {
-    transform: translate(0, -144px);
-    opacity: 0
+    transform: rotateX(0deg);    
+    opacity: 1;
   }
+  
+  22% {
+    transform: translateY(-40px) rotateX(-90deg);    
+    opacity: 0.5;
+  }
+
+  23% {    
+    opacity: 0;
+  }
+
 `
 
 export const SlidingVertical = styled.div`
   display: none;
-  text-indent: 215px;
+  text-indent: 25px;
   span {
     margin-left: -${t.s(1)};
     font-size: ${t.f(6)};
     letter-spacing: 3px;
     color: ${t.c.white};
-    animation: ${topToBottom} 15s linear 0s infinite;
+    animation: ${topToBottom} 10s linear 0s infinite;
     opacity: 0;
     position: absolute;
     &:nth-child(2) {
-      animation-delay: 2.5s;
+      animation-delay: 2s;
     }
     &:nth-child(3) {
-      animation-delay: 5s;
+      animation-delay: 4s;
     }
     &:nth-child(4) {
-      animation-delay: 7.5s;
+      animation-delay: 6s;
     }
     &:nth-child(5) {
-      animation-delay: 10s;
+      animation-delay: 8s;
     }
     ${t.mq.l} {
       font-size: ${t.f(10)};
