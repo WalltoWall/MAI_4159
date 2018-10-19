@@ -1,8 +1,9 @@
 import styled from 'react-emotion'
 import t from 'theme'
+import { Link } from 'components/Link'
 import { HTMLContent } from 'components/HTMLContent'
 
-export const QuoteContainer = styled.div`
+export const QuoteContainer = styled(Link)`
   display: ${p => (
     (p.context === "mobile" || p.bottom) 
     ? "flex" 
@@ -19,6 +20,7 @@ export const QuoteContainer = styled.div`
   }
   ${t.mq.l} {
     width: 25%;       
+    cursor: default;
   }
 
   ${t.mq.l} {    
@@ -26,7 +28,7 @@ export const QuoteContainer = styled.div`
       (p.context === "desktop" || p.bottom) 
       ? "display: flex" 
       : "display: none"     
-    )       
+    )           
   };
 `
 
@@ -36,7 +38,7 @@ export const Quote = styled(HTMLContent)`
   justify-content: center;
   background: ${t.c.yellow};  
   position: relative; 
-  z-index: 5;
+  z-index: 99;
   align-items: ${p => p.align === "left" ? "flex-start" : "flex-end"};
   p {
     font-size: ${t.f(-1)};
@@ -64,7 +66,7 @@ export const ClipOverlay = styled.div`
   -webkit-transform: rotate(-5deg);
   -ms-transform: rotate(-5deg);
   transform: rotate(-5deg);  
-  z-index: 1;
+  z-index: 5;
   height: 130%;
   width: 52%;
   top: ${p=> p.align === "left" ? '-38px' : '-50px'};
@@ -80,7 +82,7 @@ export const ClipOverlay = styled.div`
 export const ClipContainer = styled.div`  
   position: absolute;
   width: 100%;
-  z-index: 2;
+  z-index: 5;
   height: 100%;
   overflow: hidden;
   ${p => p.align === "left" ? 

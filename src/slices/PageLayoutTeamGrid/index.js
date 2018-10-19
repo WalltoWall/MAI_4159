@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Image } from 'components/Image'
 import { Value, Toggle } from 'react-powerplug'
+
 import { getUnlessEmptyString } from 'helpers'
 import { QuoteBlock } from './QuoteBlock.js'
 import {
@@ -113,8 +114,8 @@ export const PageLayoutTeamGrid = ({ data, rootData }) => {
                     i,
                     list
                   )}
-                </StyledLink>
-                <QuoteBlock index={i} data={data} list={list} />
+                </StyledLink>                
+                <QuoteBlock index={i} data={data} list={list} />              
               </>
             ))}
           </GridContainer>
