@@ -5,7 +5,7 @@ import { CtaBar } from 'components/CtaBar'
 
 export const ProjectLayoutCallToAction = ({ data }) => (
   <CtaBar 
-    title=""
+    title={get(data, 'primary.title1.text')}
     content={get(data, 'primary.text.html')}
     buttonUrl={get(data, 'primary.button_link.url')}
     buttonText={get(data, 'primary.button_text')}
@@ -21,6 +21,9 @@ export const query = graphql`
           ... on PrismicProjectLayoutCallToAction {
             id
             primary {
+              title1 {
+                text
+              }
               text {
                 html
               }

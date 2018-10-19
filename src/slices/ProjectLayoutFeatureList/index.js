@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Image } from 'components/Image'
+import { Headline } from 'components/Headline'
 import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
@@ -31,7 +32,7 @@ export const ProjectLayoutFeatureList = ({ data }) => {
 
   return (
     <Container>
-      <FeatureName>{featuredType}</FeatureName>
+      <Headline>{featuredType}</Headline>
       <Content>
         {projects.map(project =>
           renderFeatureGrid({

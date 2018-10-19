@@ -89,18 +89,3 @@ export const StyledExpand = styled(Expand)`
   width: 100%;
   display: block;
 `
-
-export const Title = styled.div`
-  color: ${t.c.darkgrey1};
-  font-family: ${t.ff.sans};
-  font-size: ${t.f(4)};
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: ${t.ls.heading};
-  ${t.mq.m} {
-    font-size: ${t.f(5)};
-  }
-`

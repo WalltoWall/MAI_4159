@@ -2,10 +2,10 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { HTMLContent } from 'components/HTMLContent'
+import { Headline } from 'components/Headline'
 import { 
   Content,
   Info,
-  Title,
   StyledHtmlClassName,
 } from './index.styled'
 
@@ -13,7 +13,7 @@ export const PageLayoutInfoBlock = ({ data }) => (
     <Content>
        {get(data, 'items', []).map(item => (
           <Info>
-            <Title>{get(item, 'title1.text')}</Title>
+            <Headline alignLeft>{get(item, 'title1.text')}</Headline>
             <HTMLContent
               html={get(item, 'info1.html')}
               className={StyledHtmlClassName}

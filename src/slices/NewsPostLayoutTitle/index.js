@@ -2,10 +2,10 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import {format} from 'date-fns'
+import { Headline } from 'components/Headline'
 
 import { 
   Container, 
-  Title,
   PostDate,
 } from './index.styled'
 
@@ -19,7 +19,7 @@ export const NewsPostLayoutTitle = ({ data }) => {
 
   return (
     <Container>
-      <Title>{get(data, 'primary.title1.text')}</Title>
+      <Headline>{get(data, 'primary.title1.text')}</Headline>
       <PostDate>{formattedDate}</PostDate>
     </Container>
   )

@@ -18,7 +18,7 @@ const backgroundColor = ({ background_color }) => {
 
 export const Container = styled.div`
   flex-direction: column;
-  padding: 2rem 0 6rem 0;
+  padding: 4rem 0 6rem 0;
   ${backgroundColor};
 `
 
@@ -43,11 +43,11 @@ export const Description = styled.div`
   font-weight: 400;
   width: ${t.w.mobile};
   text-align: center;
-  margin: -1rem auto 3rem auto;
+  margin: 1rem auto 3rem auto;
   ${t.mq.l} {
     width: ${t.w.desktop};
     font-size: ${t.s(1.5)};
-    margin: -1rem auto 6rem auto;
+    margin: 1rem auto 4rem auto;
   }
   ${t.mq.x} {
     width: ${t.w.xl};

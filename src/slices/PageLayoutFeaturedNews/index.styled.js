@@ -11,7 +11,7 @@ export const Content = styled.div`
   align-items: flex-start;
   ${t.mq.l} {
     flex-direction: row;
-    width: ${t.w.tablet};
+    width: ${t.w.desktop};
     justify-content: space-around;
   }
 `
@@ -41,7 +41,7 @@ export const SectionContainer = styled.div`
 `
 
 export const Container = styled.div`
-  margin: 0 auto;
+  margin: 1rem auto 0 auto;
   display: flex;
   flex-wrap: wrap;
   align-items: left;
@@ -110,17 +110,3 @@ export const ReadMoreWrapper = styled.div`
   align-items: center;
 `
 
-export const Headline = styled.h2`
-  color: ${t.c.darkgrey1};
-  font-family: ${t.ff.sans};
-  font-size: ${t.f(4)};
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: ${t.ls.heading};
-  ${t.mq.m} {
-    font-size: ${t.f(5)};
-  }
-`

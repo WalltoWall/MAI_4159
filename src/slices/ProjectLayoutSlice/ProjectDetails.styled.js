@@ -26,7 +26,7 @@ export const StyledHtmlClassName = css`
   h1 {
     font-size: ${t.f(4)};
     text-transform: uppercase;
-    letter-spacing: 0.1rem;
+    letter-spacing: ${t.ls.button};
     font-family: ${t.ff.sans};
     font-weight: 600;
     color: ${t.c.darkgrey1};

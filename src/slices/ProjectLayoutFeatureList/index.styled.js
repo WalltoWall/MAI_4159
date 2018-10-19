@@ -26,16 +26,6 @@ export const Content = styled.div`
   }
 `
 
-export const FeatureName = styled.h2`
-  font-size: ${t.s(2.5)};
-  font-family: ${t.ff.sans};
-  text-transform: uppercase;
-  font-weight: 600;
-  color: ${t.c.darkgrey1};
-  letter-spacing: 0.1rem;
-  margin-top: 0;
-`
-
 export const ImageContainer = styled.div`
   height: 100%;
   position: absolute;

@@ -1,11 +1,12 @@
 import React from 'react'
 import { Container, Title, CtaHeaderClassName, Content } from './index.styled'
 import { Button } from 'components/Button'
+import { Headline } from 'components/Headline'
 import { HTMLContent } from 'components/HTMLContent'
 
 export const CtaBar = ({ title, content, buttonText, buttonUrl, background }) => (
   <Container background={background}>
-    <Title>{title}</Title>
+    <Headline white>{title}</Headline>
     <Content>
       <HTMLContent
         html={content}

@@ -4,10 +4,10 @@ import { get } from 'lodash'
 import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
-  Headline,
   Projects,
 } from './index.styled'
 import { Button } from 'components/Button'
+import { Headline } from 'components/Headline'
 import { RenderGrid } from 'components/RenderGrid'
 
 export const PageLayoutProjectBoxes = ({ data }) => {

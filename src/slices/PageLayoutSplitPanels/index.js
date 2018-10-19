@@ -5,7 +5,7 @@ import { Image } from 'components/Image'
 import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
-  Headline,
+  StyledHeadline,
   Description,
   DescriptionWrapper,
   SplitPanelWrapper,
@@ -30,7 +30,7 @@ export const PageLayoutSplitPanels = ({ data }) => (
           </ImageContainer>
           <DescriptionWrapper>
             <Content>
-              <Headline>{get(item, 'title1.text')}</Headline>
+              <StyledHeadline>{get(item, 'title1.text')}</StyledHeadline>
               <Description
                 dangerouslySetInnerHTML={{
                   __html: get(item, 'description.html'),

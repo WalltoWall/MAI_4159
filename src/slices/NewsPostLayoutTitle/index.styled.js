@@ -10,19 +10,6 @@ export const Container = styled.div`
   }    
 `
 
-export const Title = styled.div`
-  font-family: ${t.ff.sans};
-  text-align: center;
-  font-weight: 600;
-  font-size: ${t.f(4)};
-  text-transform: uppercase;
-  letter-spacing: ${t.ls.heading};
-  color: ${t.c.darkgrey1};
-  ${t.mq.l} {
-    font-size: ${t.f(5)};
-  }   
-`
-
 export const PostDate = styled.div`
   font-family: ${t.ff.sans2};
   text-align: center;
