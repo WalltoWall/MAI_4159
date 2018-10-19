@@ -4,6 +4,7 @@ import MapToComponents from 'react-map-to-components'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Layout } from 'components/Layout'
+import { Placeholder } from 'components/Placeholder'
 import { NewsPostLayoutTitle } from 'slices/NewsPostLayoutTitle'
 import { NewsPostLayoutHero } from 'slices/NewsPostLayoutHero'
 import { NewsPostLayoutTextBlock } from 'slices/NewsPostLayoutTextBlock'
@@ -26,7 +27,9 @@ const NewsPostTemplate = ({ data }) => (
         page={get(data, 'prismicNewsPost')}
         rootData={data}
       />
+      <Placeholder />
     </Layout>
+    
   </div>
 )
 
