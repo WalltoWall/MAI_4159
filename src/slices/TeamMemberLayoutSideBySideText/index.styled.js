@@ -12,20 +12,6 @@ export const Container = styled.div`
   }
 `
 
-export const Content = styled.div`
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  ${t.mq.l} {
-    flex-direction: row;
-    width: 55%;
-  }
-`
-
 export const Column = styled.div`
   width: 100%;
   h3 {
@@ -43,6 +29,8 @@ export const Column = styled.div`
 
 export const TextBlock = styled.div`
   margin: ${t.s(1)} 0;
+  font-family: ${t.ff.sans2};
+  color: ${t.c.darkgrey2};
 `
 
 export const Title = styled.div`

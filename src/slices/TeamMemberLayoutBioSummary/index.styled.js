@@ -62,9 +62,8 @@ export const Column = styled.div`
     font-family: ${t.ff.serif};
     color: ${t.c.darkgrey1};
     font-weight: 400;
-    letter-spacing: 1px;
     font-size: ${t.f(2)};
-    line-height: ${t.s(1.5)};
+    line-height: ${t.s(2)};
     ${t.mq.l} {         
       padding: 0 ${t.s(4)} 0 0;
     } 
@@ -79,7 +78,7 @@ export const Column = styled.div`
 export const SocialContainer = styled.div`
   display: flex;
   justify-content: left;
-  width: 25%;  
+  width: 100%;
   height: 100%;  
   margin-top: ${t.s(2)};
   align-items: center;

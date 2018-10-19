@@ -34,7 +34,7 @@ const theme = {
   width: {
     mobile: '85%',
     tablet: '70%',
-    desktop: '60%',
+    desktop: '55%',
   },
   fontSize: s => ms(s / 2) + 'rem',
   mediaSizes: {

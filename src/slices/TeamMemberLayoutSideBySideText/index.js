@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { Content } from 'components/Content'
 import { 
-  Container, 
-  Content, 
+  Container,
   Column, 
   Title, 
   TextBlock, 
