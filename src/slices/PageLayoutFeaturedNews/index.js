@@ -38,7 +38,7 @@ const characterLimit = function(str, length, ending) {
 const renderNewsGrid = ({ alt, key, img, title, url, content, date }) => {
   const formattedDate = format(
     new Date(date),
-    'MMM' +' Do' + ' YYYY'
+    'MMMM' +' D' +', '+'YYYY'
   )
   
   return (

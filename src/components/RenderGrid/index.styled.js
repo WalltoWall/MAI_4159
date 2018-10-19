@@ -39,7 +39,7 @@ export const StyledLink = styled(Link)`
   width: ${p=> p.largeImages ? '100%' : '50%'};
   height: ${p=> p.largeImages ? '20rem' : '10rem'};
   ${t.mq.m} {
-    width: ${p=> p.largeImages ? '46%' : '23%'};
+    width: ${p=> p.largeImages ? '48%' : '23%'};
     height: ${p=> p.largeImages ? '28rem' : '12rem'};
     margin: ${p=> p.largeImages ? '0.5rem 1%' : '0'};
   }
