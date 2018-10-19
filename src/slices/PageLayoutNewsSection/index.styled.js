@@ -142,3 +142,8 @@ export const Headline = styled.h2`
 export const ButtonContainer = styled.div`
   width: 100%;
 `
+
+export const ButtonLink = styled(Link)`
+  width: 100%;
+  margin: 0 auto;
+`
