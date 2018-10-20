@@ -49,7 +49,7 @@ class GridList extends React.Component {
     super(props);
     this.state = {
       items: this.props.newsPosts,
-      visible: (get(this.props.data, "primary.page_context") === "Home") ? 6 : 3      
+      visible: (get(this.props.data, "primary.page_context") === "Home") ? 3 : 3      
     };    
   }
 

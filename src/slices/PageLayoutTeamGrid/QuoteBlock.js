@@ -1,5 +1,7 @@
 import React from 'react'
 import { get, isString } from 'lodash'
+import { Link } from 'components/Link'
+
 import { 
   QuoteContainer,
   Quote, 
@@ -32,8 +34,8 @@ export const QuoteBlock = ({ index, data, list }) => {
   if (isString(context)) {
     return (
       <>
-        {context === 'mobileTop' && (
-          <QuoteContainer context={'mobile'}>
+        {context === 'mobileTop' && (          
+          <QuoteContainer to={get(list[index], "team_member.url")} context={'mobile'}>
             <Quote
               html={get(data, 'primary.top_quote.html')}              
               align={'right'}
@@ -41,10 +43,10 @@ export const QuoteBlock = ({ index, data, list }) => {
             <ClipContainer align={'right'}>
               <ClipOverlay align={'right'}/>
             </ClipContainer>
-          </QuoteContainer>
+          </QuoteContainer>          
         )}
         {context === 'mobileMiddle' && (
-          <QuoteContainer context={'mobile'}>
+          <QuoteContainer to={get(list[index + 1], "team_member.url")} context={'mobile'}>
             <Quote
               html={get(data, 'primary.middle_quote.html')}              
               align={'left'}
@@ -55,7 +57,11 @@ export const QuoteBlock = ({ index, data, list }) => {
           </QuoteContainer>
         )}
         {context === 'desktopTop' && (
-          <QuoteContainer context={'desktop'}>            
+          <QuoteContainer 
+            to={get(list[index], "team_member.url")} 
+            context={'desktop'}
+            onClick={e => e.preventDefault()}
+          >            
             <Quote
               html={get(data, 'primary.top_quote.html')}              
               align={'right'}
@@ -67,7 +73,11 @@ export const QuoteBlock = ({ index, data, list }) => {
           </QuoteContainer>
         )}
         {context === 'desktopMiddle' && (
-          <QuoteContainer context={'desktop'}>
+          <QuoteContainer 
+            to={get(list[index], "team_member.url")} 
+            context={'desktop'}
+            onClick={e => e.preventDefault()}
+          >
             <Quote
               html={get(data, 'primary.middle_quote.html')}              
               align={'left'}
