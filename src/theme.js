@@ -42,7 +42,7 @@ const theme = {
     t: '20rem',
     s: '30rem',
     m: '48rem',
-    l: '78rem',
+    l: '70rem',
     x: '90rem',
     xx: '100rem',
     xxx: '110rem',

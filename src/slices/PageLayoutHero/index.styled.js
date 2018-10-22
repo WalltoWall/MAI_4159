@@ -11,7 +11,6 @@ export const Container = styled.div`
   background-color: ${t.c.darkgrey1};
   position: relative;
   overflow: hidden;
-
   ${t.mq.l} {
     height: 800px;
     background-color: ${t.c.white};
@@ -100,14 +99,12 @@ export const SubHeadline = styled.span`
   text-transform: uppercase;
   z-index: 2;
   ${t.mq.l} {
-    left: 240px;
+    left: 255px;
     display: block;
   }
   ${t.mq.x} {
-    left: 250px;
-  }
-  ${t.mq.xx} {
     left: 260px;
+    top: 54%;
   }
 `
 const topToBottom = keyframes`
@@ -172,11 +169,14 @@ export const SlidingVertical = styled.div`
 
 export const ImageContainer = styled.div`
   width: 100%;
-  height: 100%;
+  height: 400px;
   position: relative;
   overflow: hidden;
   .gatsby-image-outer-wrapper,
   .gatsby-image-wrapper {
+    height: 100%;
+  }
+  ${t.mq.l} {
     height: 100%;
   }
 `
@@ -189,7 +189,6 @@ export const Gradient = styled.div`
   width: 100%;
   opacity: 0.5;
   z-index: 1;
-
   ${t.mq.l} {
     display: block;
   }
@@ -202,13 +201,15 @@ export const DescriptionWrapper = styled.div`
   margin: 0 auto;
   display: block;
   padding: 0;
-
   ${t.mq.l} {
     -webkit-transform: rotate(3deg);
     -ms-transform: rotate(3deg);
-    transform: rotate(3deg) translate(50px, 500px);
+    transform: rotate(3deg) translate(40px, 390px);
     padding: 0 3rem;
     margin: 0;
+  }
+  ${t.mq.x} {
+    transform: rotate(3deg) translate(50px, 500px);
   }
 `
 
@@ -246,10 +247,14 @@ export const StyledHtmlClassName = css`
     color: ${t.c.lightgrey1};
     text-align: center;
     ${t.mq.l} {
-      font-size: ${t.f(5)};
+      font-size: ${t.f(4)};
       text-align: left;
-      width: 320px;
+      width: 300px;
       margin-bottom: 0.5rem;
+    }
+    ${t.mq.x} {
+      font-size: ${t.f(5)};
+      width: 320px;
     }
   }
   p {
@@ -260,7 +265,12 @@ export const StyledHtmlClassName = css`
     font-size: ${t.s(0.5)};
     ${t.mq.l} {
       text-align: left;
+      width: 300px;
+      font-size: ${t.s(0.3)};
+    }
+    ${t.mq.x} {
       width: 320px;
+      font-size: ${t.s(0.5)};
     }
   }
 `
