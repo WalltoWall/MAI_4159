@@ -76,11 +76,11 @@ export class MobileBar extends React.Component {
             }}
           >
             {this.getFilterName(this.props.location.pathname)}
-          </CurrentFilter>
-          <NavArrow
+            <NavArrow
             style={{ right: '3rem', top: '3px' }}
-            active={this.state.filterOpen}
-          />
+            active={this.state.filterOpen}            
+            />
+          </CurrentFilter>          
         </div>
         <PrimaryFilterContainer isOpen={this.state.filterOpen}>
           <StyledLink
@@ -97,11 +97,11 @@ export class MobileBar extends React.Component {
               onClick={e => this.toggleSubFilter(e, false)}
             >
               Building Use
-            </p>
-            <NavArrow
+              <NavArrow
               style={{ top: '12px', right: '2rem' }}
-              active={this.state.subFilterOpen}
-            />
+              active={this.state.subFilterOpen}                          
+              />
+            </p>            
           </div>
           <SubFilterContainer isOpen={this.state.subFilterOpen}>
             {this.props.categories.map(item => (

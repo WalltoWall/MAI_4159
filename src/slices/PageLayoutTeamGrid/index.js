@@ -36,9 +36,11 @@ const RoleFilterBar = ({ filters, setFilter, currentFilter }) => (
             onClick={() => 
             toggle()}
           >
+            <span>Filter: </span>
             {currentFilter}
+            <NavArrow active={on} />
           </CurrentFilter>
-          <NavArrow active={on} />
+          
         </FilterContainer>
         <FilterBarContainer isOpen={on}>
           {filters.map(filter => (

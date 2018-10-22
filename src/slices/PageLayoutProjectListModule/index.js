@@ -18,7 +18,7 @@ const renderGrid = data => (
     <ImageContainer>
       <Image
         alt={getUnlessEmptyString(data.image.alt)}
-        fluid={data.image.localFile.childImageSharp.fluid}
+        fluid={get(data, "image.localFile.childImageSharp.fluid")}
         fadeIn={false}
       />
     </ImageContainer>
