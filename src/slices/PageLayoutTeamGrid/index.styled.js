@@ -119,11 +119,12 @@ export const FilterBarContainer = styled.div`
   padding: ${t.s(1)};
   flex-direction: column;
   align-items: center;
-  background-color: ${t.c.darkgrey2};
+  background-color: ${t.c.lightgrey4};
   color: white;
   ${t.mq.l} {
     display: flex;
     flex-direction: row;
+    background-color: ${t.c.darkgrey2};
   }
 `
 
