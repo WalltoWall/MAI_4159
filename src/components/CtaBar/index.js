@@ -16,4 +16,4 @@ export const CtaBar = ({ title, content, buttonText, buttonUrl, background }) =>
     
     <Button to={buttonUrl}>{buttonText}</Button>
   </Container>
-)
+) 

@@ -14,7 +14,7 @@ import {
   DescriptionWrapper,
   Overlay,
   SlidingVertical,
-  RotatedContainer,
+  RotatedContainer, 
   SubHeadline,
   StyledHtmlClassName,
 } from './index.styled'
@@ -54,7 +54,7 @@ export const PageLayoutHero = ({ data }) => (
     </Overlay>
     <MobileNavOverlay />
   </Container>
-)
+)  
 
 export const query = graphql`
   fragment PageLayoutHero on Query {
