@@ -126,7 +126,7 @@ export const FilterBarContainer = styled.div`
     flex-direction: row;
     background-color: ${t.c.darkgrey2};
   }
-`
+` 
 
 export const CurrentFilter = styled.div`
   cursor: pointer; 
