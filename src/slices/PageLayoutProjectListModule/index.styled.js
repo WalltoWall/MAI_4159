@@ -16,17 +16,22 @@ export const Container = styled.div`
 export const Title = styled.h1`
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.sans};
-  font-size: ${t.f(2)};
-  text-align: center;
-  position: absolute;
+  font-size: ${t.f(0)};
+  
   font-weight: 600;
   margin: 0 auto;
   text-transform: uppercase;
   letter-spacing: ${t.ls.heading};
-  text-align: center;
-  display: block;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+
   z-index: 2;
-  width: 100%;
+  width: 100%;  
+  hover: {
+    margin: auto 0;
+  }
   ${t.mq.l} {
     font-size: ${t.f(4)};
   }
@@ -35,7 +40,7 @@ export const Title = styled.h1`
 export const StyledLink = styled(Link)`
   position: relative;
   display: ${p => p.show ? "block" : "none"};
-  width: 100%;
+  width: ${p=> p.twoInRow ? '100%' : '50%'};
   overflow: hidden;
   padding-top: 60%;
   ${t.mq.l} {
