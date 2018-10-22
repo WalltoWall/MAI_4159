@@ -260,6 +260,7 @@ export const StyledHtmlClassName = css`
   p {
     color: ${t.c.white};
     width: auto;
+    font-weight: 600;
     text-align: center;
     font-family: ${t.ff.sans2};
     font-size: ${t.s(0.5)};

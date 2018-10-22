@@ -32,9 +32,9 @@ const theme = {
     button: '0.1rem',
   },
   width: {
-    mobile: '85%',
+    mobile: '90%',
     tablet: '80%',
-    desktop: '70%',
+    desktop: '75%',
     xl: '60%',
   },
   fontSize: s => ms(s / 2) + 'rem',
