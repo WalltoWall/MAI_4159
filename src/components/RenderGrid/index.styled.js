@@ -26,9 +26,11 @@ export const Title = styled.p`
   font-weight: 600;
   color: ${t.c.darkgrey1};
   letter-spacing: ${p=> p.largeImages ? '0.2rem' : '0.1rem'};
-
   ${t.mq.l} {
-    font-size: ${p=> p.largeImages ? '1.8rem' : '1.4rem'};
+    font-size: ${p=> p.largeImages ? '1.8rem' : '1rem'};
+  }
+  ${t.mq.x} {
+    font-size: ${p=> p.largeImages ? '1.8rem' : '1.2rem'};
   }
 `
 
@@ -39,9 +41,9 @@ export const StyledLink = styled(Link)`
   width: ${p=> p.largeImages ? '100%' : '50%'};
   height: ${p=> p.largeImages ? '20rem' : '10rem'};
   ${t.mq.m} {
-    width: ${p=> p.largeImages ? '48%' : '23%'};
+    width: ${p=> p.largeImages ? '48%' : '24%'};
     height: ${p=> p.largeImages ? '28rem' : '12rem'};
-    margin: ${p=> p.largeImages ? '0.5rem 1%' : '0.5rem'};
+    margin: ${p=> p.largeImages ? '0.5rem 1%' : '0.5rem 0.5%'};
   }
 
   &:hover {

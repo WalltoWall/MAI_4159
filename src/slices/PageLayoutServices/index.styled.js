@@ -171,10 +171,7 @@ export const Projects = styled.div`
   flex-wrap: wrap;
   margin: 0 auto;
   padding-bottom: 1rem;
-  justify-content: space-around;
-  ${t.mq.m} {
-    justify-content: space-between;
-  }
+  justify-content: flex-start;
   ${t.mq.l} {
     width: ${t.w.desktop};
     margin: 1rem auto;
