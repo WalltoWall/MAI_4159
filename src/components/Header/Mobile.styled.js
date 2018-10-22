@@ -69,7 +69,7 @@ export const SearchNavItem = styled.div`
   margin: ${t.s(0)} 0;
   padding: ${t.s(1)} 0;
   color: ${t.c.white};
-  font-size: ${t.f(3)};
+  font-size: ${t.f(2)};
   font-family: ${t.ff.sans2};
 `
 

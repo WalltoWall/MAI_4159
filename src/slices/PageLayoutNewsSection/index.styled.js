@@ -124,7 +124,7 @@ export const ContentContainer = styled.div`
   background-color: ${t.c.white};
   position: relative;
   ${t.mq.m} {
-    min-height: 300px;
+    min-height: 240px;
   }
   ${t.mq.l} {
     min-height: 260px;

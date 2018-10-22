@@ -29,6 +29,9 @@ export const Description = styled.div`
   font-size: ${t.f(0)};
   line-height: ${t.lh.copy};
   text-align: center;
+  ${t.mq.l} {
+    font-size: ${t.f(0.3)};
+  }
 `
 
 export const StyledContent = styled(Content)`

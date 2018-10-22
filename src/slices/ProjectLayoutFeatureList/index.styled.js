@@ -11,7 +11,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   width: ${t.w.mobile};
   margin: 2rem auto;  
@@ -62,9 +62,9 @@ export const StyledLink = styled(Link)`
   width: 100%;
   height: 14rem;
   ${t.mq.m} {
-    width: 42%;
+    width: 49%;
     height: 15rem;
-    margin: 0.5rem;
+    margin: 0.5%;
   }
   ${t.mq.l} {
     width: 24%;
