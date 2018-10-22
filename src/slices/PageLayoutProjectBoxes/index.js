@@ -33,7 +33,7 @@ export const PageLayoutProjectBoxes = ({ data }) => {
             })
           )}
         </Projects>
-      <Button to="/all-projects/">see our work</Button>
+      <Button to="/featured-projects/">see our work</Button>
     </Container>
   )
 }
