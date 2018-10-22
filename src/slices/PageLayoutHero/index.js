@@ -14,7 +14,7 @@ import {
   DescriptionWrapper,
   Overlay,
   SlidingVertical,
-  RotatedContainer,
+  RotatedContainer, 
   SubHeadline,
   StyledHtmlClassName,
 } from './index.styled'
