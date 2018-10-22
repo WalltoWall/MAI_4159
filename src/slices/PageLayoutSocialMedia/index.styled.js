@@ -8,7 +8,7 @@ export const Content = styled.div`
 `
 
 export const ImageContainer = styled.a`  
-  width: 30px;
+  width: 35px;
   display: block;
   margin: 1rem auto;
   .gatsby-image-outer-wrapper {        
@@ -17,11 +17,14 @@ export const ImageContainer = styled.a`
   .gatsby-image-wrapper {        
     height: 100%;
   }
+  ${t.mq.l} {
+    width: 40px;
+  }
 `
 
 export const Container = styled.div`
   margin: 0 auto;
-  padding: 2rem 0 4rem 0;
+  padding: 1rem 0 4rem 0;
   display: flex;
   flex-wrap: wrap;
   width: 100%;

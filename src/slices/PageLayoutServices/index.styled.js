@@ -38,14 +38,15 @@ export const Title = styled.h2`
 export const Description = styled.div`
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.serif};
-  line-height: ${t.lh.copy};
-  font-size: ${t.s(1)};
+  line-height: 2rem;
+  font-size: ${t.s(0.9)};
   font-weight: 400;
   width: ${t.w.mobile};
   text-align: center;
   margin: 1rem auto 3rem auto;
   ${t.mq.l} {
     width: ${t.w.desktop};
+    line-height: 2.5rem;
     font-size: ${t.s(1.4)};
     margin: 1rem auto 4rem auto;
   }
@@ -81,6 +82,7 @@ export const ImageDescription = styled.div`
   text-align: center;
   ${t.mq.l} {
     width: ${t.w.desktop};
+    font-size: ${t.f(0.3)};
   }
   ${t.mq.x} {
     width: ${t.w.xl};
@@ -172,6 +174,10 @@ export const Projects = styled.div`
   margin: 0 auto;
   padding-bottom: 1rem;
   justify-content: flex-start;
+  ${t.mq.s} {
+    width: ${t.w.mobile};
+    margin: 1rem auto;
+  }
   ${t.mq.l} {
     width: ${t.w.desktop};
     margin: 1rem auto;

@@ -50,6 +50,9 @@ export const Content = styled.div`
     justify-content: space-around;
     padding: 4rem 0;
   } 
+  ${t.mq.x} {
+    width: ${t.w.xl};
+  }
 `
 
 export const StyledHtmlClassName = css`

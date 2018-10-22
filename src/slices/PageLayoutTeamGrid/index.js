@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get } from 'lodash'
+import { get, split, trim } from 'lodash'
 import { Image } from 'components/Image'
 import { Value, Toggle } from 'react-powerplug'
 
@@ -36,21 +36,23 @@ const RoleFilterBar = ({ filters, setFilter, currentFilter }) => (
             onClick={() => 
             toggle()}
           >
+            <span>Filter: </span>
             {currentFilter}
+            <NavArrow active={on} />
           </CurrentFilter>
-          <NavArrow active={on} />
+          
         </FilterContainer>
         <FilterBarContainer isOpen={on}>
           {filters.map(filter => (
             <>
               <Filter
                 onClick={e => {
-                  setFilter(filter.role_filter)
+                  setFilter(trim(filter))
                   toggle()
                 }}
-                isActive={currentFilter === filter.role_filter}
+                isActive={currentFilter === trim(filter)}
               >
-                {filter.role_filter}
+                {trim(filter)}
               </Filter>
             </>
           ))}
@@ -81,8 +83,9 @@ const renderGrid = (data, currentFilter) => (
 )
 
 export const PageLayoutTeamGrid = ({ data, rootData }) => {
-  let roleFilters = get(rootData, 'prismicPage.data.role_filters')
+  let roleFilters = split(get(data, 'primary.role_filters1'), ",")
   let teamMembers = data.items
+  
   return (
     <Value initial="All">
       {({ value: currentFilter, set: setFilter }) => (
@@ -128,14 +131,12 @@ export const PageLayoutTeamGrid = ({ data, rootData }) => {
 export const query = graphql`
   fragment PageLayoutTeamGrid on Query {
     prismicPage(id: { eq: $id }) {
-      data {
-        role_filters {
-          role_filter
-        }
+      data {        
         layout {
           ... on PrismicPageLayoutTeamGrid {
             id
             primary {
+              role_filters1
               top_quote {
                 html
               }
