@@ -65,9 +65,13 @@ export const StyledLink = styled(Link)`
     display: inline;
   }
 `
-export const LinkSeparator = styled.span`
+export const LinkSeparator = styled.span`  
   color: ${t.c.yellow};
   padding: 0 ${t.s(0)};
+  display: ${p => p.index === 2 ? "none" : "inline"};
+  ${t.mq.s} {
+    display: inline;
+  }
 `
 export const CopyrightContent = styled.div`
   color: ${t.c.darkgrey2};

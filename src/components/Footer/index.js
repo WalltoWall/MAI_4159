@@ -41,7 +41,11 @@ const render = () => queryData => {
                   {get(item, 'primary.name')}
                 </StyledLink>
                 {menuLength !== index + 1 && (
-                  <LinkSeparator key={get(item, 'id') + index}>|</LinkSeparator>
+                  <LinkSeparator 
+                    key={get(item, 'id') + index}
+                    index={index}>
+                    |
+                  </LinkSeparator>
                 )}
               </React.Fragment>
             ))}
