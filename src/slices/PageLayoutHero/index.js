@@ -54,7 +54,7 @@ export const PageLayoutHero = ({ data }) => (
     </Overlay>
     <MobileNavOverlay />
   </Container>
-) 
+)  
 
 export const query = graphql`
   fragment PageLayoutHero on Query {
