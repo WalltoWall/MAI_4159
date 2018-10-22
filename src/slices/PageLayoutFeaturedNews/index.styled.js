@@ -92,6 +92,7 @@ export const StyledLink = styled(Link)`
 `
 export const ReadMore = styled(Link)`
   font-family: ${t.ff.sans2};
+  color: ${t.c.darkgrey1};
   font-size: ${t.f(-1)};
   text-transform: uppercase;
   letter-spacing: 0.05rem;
