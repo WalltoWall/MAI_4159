@@ -44,6 +44,7 @@ export const OverlayContainer = styled.div`
   height: 100%;    
   justify-content: center;
   align-items: flex-end;
+  text-align: center;
   bottom: 0; 
   color: yellow;
 `

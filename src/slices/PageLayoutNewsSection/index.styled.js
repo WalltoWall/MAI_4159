@@ -31,11 +31,7 @@ export const ImageContainer = styled.div`
   }
 `
 
-export const ArrowWrapper = styled.img`
-  display: inline-block;
-  width: 8px;
-  margin: 0 0.8rem;
-`
+
 
 export const SectionContainer = styled.div`
   background-color: ${t.c.lightgrey2};
@@ -133,4 +129,14 @@ export const ButtonContainer = styled.div`
 export const ButtonLink = styled(Link)`
   width: 100%;
   margin: 0 auto;
+`
+
+export const ArrowWrapper = styled.img`
+  display: inline-block;
+  width: 8px;
+  margin: 0 0.8rem;
+  transition: transform 150ms ease-in-out;
+  ${ReadMoreWrapper}:hover & {    
+    transform: translateX(0.3em);
+  }
 `
