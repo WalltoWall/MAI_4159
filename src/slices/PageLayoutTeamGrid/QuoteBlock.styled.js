@@ -50,12 +50,18 @@ export const Quote = styled(HTMLContent)`
     text-align: ${p => p.align === "right" ? "right" : "left"};
     padding: 0 ${t.s(0.5)};
     ${t.mq.s} {
-      font-size: ${t.f(2)};      
+      font-size: ${t.f(1)};      
     }
     ${t.mq.l} {      
       width: 70%;    
-      padding-right: ${p => p.align === "right" ? t.s(3) : "0"};
-      padding-left: ${p => p.align === "left" ? t.s(3) : "0"};
+      padding-right: ${p => p.align === "right" ? t.s(1) : "0"};
+      padding-left: ${p => p.align === "left" ? t.s(1) : "0"};      
+    }
+    ${t.mq.x} {      
+      width: 70%;    
+      padding-right: ${p => p.align === "right" ? t.s(4) : "0"};
+      padding-left: ${p => p.align === "left" ? t.s(4) : "0"};
+      font-size: ${t.f(2)};      
     }
   }
 `

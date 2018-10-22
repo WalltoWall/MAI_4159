@@ -66,22 +66,23 @@ export const TitleContainer = styled.div`
   flex-direction: column;
   width: 100%;
   background-color: white;
-  transition: opacity ${t.t} ease-in-out;
+  transition: all 100ms ease-in-out;
   opacity: 0.8;
   padding: ${t.s(0.2)} ${t.s(1)};
   
   ${t.mq.l} {
     opacity: 0;
     padding: ${t.s(0)} 0;
+    height: 60px;
+    ${StyledLink}:hover & {
+      opacity: ${p => p.isActive ? 0.8 : 0};
+      height: 100%;
+    }
   }
-  ${StyledLink}:hover & {
-    opacity: ${p => p.isActive ? 0.8 : 0};
-  }
-   
 `
 export const Title = styled.h1`
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: ${t.f(-1)};
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.sans};
   letter-spacing: ${t.ls.button};
@@ -91,13 +92,16 @@ export const Title = styled.h1`
     font-size: ${t.f(1)};
   }
   ${t.mq.l} {
-    font-size: ${t.f(1)};
+    font-size: ${t.f(3)};
+  }
+  ${t.mq.x} {
+    font-size: ${t.f(5)};    
   }
 `
 
 export const SubTitle = styled.div`
   text-transform: uppercase;
-  font-size: ${t.f(-3)};
+  font-size: ${t.f(-2)};
   color: ${t.c.darkgrey2};
   font-family: ${t.ff.sans};
   letter-spacing: ${t.ls.button};
@@ -107,8 +111,11 @@ export const SubTitle = styled.div`
     font-size: ${t.f(-1)};
   }
   ${t.mq.l} {
-    font-size: ${t.f(-0.5)};
+    font-size: ${t.f(1.3)};
   }
+  ${t.mq.x} {
+    font-size: ${t.f(1.7)};
+  } 
 `
 
 export const FilterBarContainer = styled.div`
@@ -120,7 +127,7 @@ export const FilterBarContainer = styled.div`
   padding: ${t.s(1)};
   flex-direction: column;
   align-items: center;
-  background-color: ${t.c.lightgrey4};
+  background-color: ${t.c.lightgrey3};
   color: white;
   ${t.mq.l} {
     display: flex;
