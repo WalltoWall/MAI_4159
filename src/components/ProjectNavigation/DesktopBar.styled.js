@@ -122,7 +122,7 @@ export const SubCategoryContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: ${t.s(3)};
-  background-color: ${t.c.lightgrey4};
+  background-color: ${t.c.lightgrey3};
   ${t.mq.l} {
     display: flex;
   }

@@ -89,6 +89,11 @@ export const StyledCarousel = styled(Carousel)`
     ${t.mq.m} {
       display: block;
     }
+    button {      
+      color: ${t.c.white} !important;
+      font-size: ${t.f(5)} !important;
+      text-shadow: ${t.c.black} 0px 0 5px !important;
+    }
   }  
 `
 export const ImageContainer = styled.div`
