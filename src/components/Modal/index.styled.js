@@ -40,6 +40,7 @@ export const overlayClassName = css`
 export const Container = styled(Modal)`
   -webkit-overflow-scrolling: touch;
   background-color: ${transparentize(0.1, 'white')};  
+  box-shadow: 0px -8px 36px ${t.c.black};
   border-bottom: 4px solid ${t.c.yellow};
   color: ${t.c.black};
   font-family: ${t.ff.sans};
