@@ -5,7 +5,7 @@ import t from 'theme'
 export const Container = styled.div`
   background-color: ${t.c.darkgrey1};
   height: 100%;
-  padding: ${t.s(2)} 0 ${t.s(0)} 0;
+  padding: ${t.s(2.5)} 0 ${t.s(0.5)} 0;
   position: relative;
 `
 export const Content = styled.div`
@@ -76,11 +76,11 @@ export const LinkSeparator = styled.span`
 export const CopyrightContent = styled.div`
   color: ${t.c.darkgrey2};
   font-family: ${t.ff.sans2};
-  padding: 1rem 2rem 0 2rem;
-  font-size: 1rem;
-  font-weight: 500;
+  padding: 1rem 3rem 0 3rem;
+  font-size: ${t.s(-1)};
+  font-weight: 400;
   ${t.mq.l} {
-    font-size: 0.8rem;
+    font-size: ${t.s(-0.5)};
     padding: 0.4rem 0 0 0;
   }
 `

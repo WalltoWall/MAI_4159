@@ -10,7 +10,7 @@ export const Content = styled.div`
   align-items: flex-start;
   width: 100%;
   margin: 0 auto;
-  ${t.mq.l} {
+  ${t.mq.m} {
     justify-content: flex-start;
     align-content: flex-start;
     margin-top: 2rem;
@@ -75,6 +75,8 @@ export const PostTitle = styled.div`
 
 export const PostContent = styled(BodyCopy)`
   text-align: left;
+  margin: 0 auto;
+  overflow: hidden;
 `
 
 export const StyledLink = styled(Link)`
@@ -86,9 +88,14 @@ export const StyledLink = styled(Link)`
   padding: 0;
   margin: 1rem 0;
   ${t.mq.m} {
+    width: 50%;
+    height: auto;
+    padding: 0 0.5rem 2rem 0.5rem;
+  }
+  ${t.mq.l} {
     width: 33.333333%;
     height: auto;
-    padding: 0 1rem 2rem 1rem;
+    padding: 0 0.5rem 2rem 0.5rem;
   }
   
   @keyframes fadeIn {
@@ -115,11 +122,28 @@ export const ReadMore = styled(Link)`
 export const ContentContainer = styled.div`
   padding: 1.5rem;
   background-color: ${t.c.white};
+  position: relative;
+  ${t.mq.m} {
+    min-height: 300px;
+  }
+  ${t.mq.l} {
+    min-height: 260px;
+  }
+  ${t.mq.x} {
+    min-height: 240px;
+  }
 `
 
 export const ReadMoreWrapper = styled.div`
   display: flex;
   align-items: center;
+  position: initial;
+  margin-top: 1rem;
+  ${t.mq.m} {
+    position: absolute;
+    bottom: 25px;
+    margin-top: 0;
+  }
 `
 
 export const ButtonContainer = styled.div`
