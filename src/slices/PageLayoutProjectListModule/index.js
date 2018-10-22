@@ -28,7 +28,7 @@ const renderGrid = data => (
   </>
 )
 
-export const PortfolioGrid = ({ data, currentFilter, setFilter }) => {
+export const PortfolioGrid = ({ data, currentFilter }) => {
   let projects = data.items
   return (
     <Container>

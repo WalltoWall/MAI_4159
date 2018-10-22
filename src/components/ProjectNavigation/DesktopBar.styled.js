@@ -136,4 +136,8 @@ export const Filter = styled.p`
   letter-spacing: ${t.ls.button};
   font-size: ${t.f(1)};
   font-weight: 600;
+  transition: color 150ms ease-in-out;
+  :hover {
+    color: ${t.c.yellow};
+  }
 `
