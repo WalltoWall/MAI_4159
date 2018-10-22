@@ -60,7 +60,7 @@ export const Headline = styled.div`
   color: ${t.c.yellow};
   font-size: ${t.f(6)};
   letter-spacing: 3px;
-  margin: 0;
+  margin: 1rem 0 -1rem 0;
   span {
     display: none;
     &:nth-child(1) {
@@ -75,7 +75,7 @@ export const Headline = styled.div`
     margin: 0;
     ${t.mq.m} {
       margin-top: 10px;
-      font-size: ${t.f(8)};
+      font-size: ${t.f(7)};
     }
     ${t.mq.l} {
       display: none;
@@ -204,7 +204,7 @@ export const DescriptionWrapper = styled.div`
   ${t.mq.l} {
     -webkit-transform: rotate(3deg);
     -ms-transform: rotate(3deg);
-    transform: rotate(3deg) translate(40px, 390px);
+    transform: rotate(3deg) translate(30px, 390px);
     padding: 0 3rem;
     margin: 0;
   }
@@ -232,7 +232,7 @@ export const Overlay = styled.div`
     width: 40%;
     height: 120%;
     top: -50px;
-    right: -80px;
+    right: -70px;
   }
   ${t.mq.x} {
     right: -140px;
