@@ -141,6 +141,13 @@ export const CurrentFilter = styled.div`
   text-align: center;
   padding: ${t.s(1)} 0;
   color: ${t.c.yellow};
+  span {
+    font-size: ${t.f(0.5)};
+    color: ${t.c.lightgrey1};
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+  }
 `
 export const NavArrow = styled(HoverArrowSVG)`
   flex-shrink: 0;
@@ -150,7 +157,7 @@ export const NavArrow = styled(HoverArrowSVG)`
   z-index: 1;
   display: inline-block;
   margin-left: 10px;  
-  right: 4rem;
+  right: 2rem;
   top: 26px;
   ${t.mq.l} {
     display: none;
