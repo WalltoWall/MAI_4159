@@ -13,8 +13,8 @@ import { PageLayoutCtaBar } from 'slices/PageLayoutCtaBar'
 import { PageLayoutServices } from 'slices/PageLayoutServices'
 import { PageLayoutTextBlock } from 'slices/PageLayoutTextBlock'
 import { PageLayoutNewsSection } from 'slices/PageLayoutNewsSection'
-import { PageLayoutAnchorsMenu } from 'slices/PageLayoutAnchorsMenu'
-import { PageLayoutAnchor } from 'slices/PageLayoutAnchor'
+// import { PageLayoutAnchorsMenu } from 'slices/PageLayoutAnchorsMenu'
+// import { PageLayoutAnchor } from 'slices/PageLayoutAnchor'
 import { PageLayoutInfoBlock } from 'slices/PageLayoutInfoBlock'
 import { PageLayoutSocialMedia } from 'slices/PageLayoutSocialMedia'
 import { PageLayoutTextExpandable } from 'slices/PageLayoutTextExpandable'
@@ -39,11 +39,9 @@ const PageTemplate = ({ data, location }) => (
           PageLayoutCtaBar,
           PageLayoutServices,          
           PageLayoutTextBlock,
-          PageLayoutNewsSection,
-          PageLayoutAnchor,
+          PageLayoutNewsSection,          
           PageLayoutInfoBlock,
-          PageLayoutSocialMedia,
-          PageLayoutAnchorsMenu,
+          PageLayoutSocialMedia,          
           PageLayoutTextExpandable,
           PageLayoutTeamGrid,
           PageLayoutFeaturedNews,
@@ -78,12 +76,10 @@ export const query = graphql`
     ...PageLayoutSubPageHero
     ...PageLayoutCtaBar
     ...PageLayoutServices
-    ...PageLayoutTextBlock    
-    ...PageLayoutAnchor
+    ...PageLayoutTextBlock        
     ...PageLayoutInfoBlock
     ...PageLayoutNewsSection
-    ...PageLayoutSocialMedia
-    ...PageLayoutAnchorsMenu
+    ...PageLayoutSocialMedia 
     ...PageLayoutTextExpandable
     ...PageLayoutTeamGrid
     ...PageLayoutFeaturedNews
