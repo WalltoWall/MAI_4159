@@ -38,10 +38,10 @@ export const Quote = styled(HTMLContent)`
   justify-content: center;
   background: ${t.c.yellow};  
   position: relative; 
-  z-index: 99;
+  z-index: 98;
   align-items: ${p => p.align === "left" ? "flex-start" : "flex-end"};
   p {
-    font-size: ${t.f(-1)};
+    font-size: ${t.f(0)};
     font-family: ${t.ff.serif};
     font-weight: 400;
     color: ${t.c.darkgrey1};  
@@ -76,10 +76,15 @@ export const ClipOverlay = styled.div`
   height: 130%;
   width: 52%;
   top: ${p=> p.align === "left" ? '-38px' : '-50px'};
-  left: ${p=> p.align === "left" ? 'unset' : '120px'}; 
+  left: ${p=> p.align === "left" ? 'unset' : '117px'}; 
   right: ${p => p.align === "left" ? '120px' : 'unset'};  
   
-  ${t.mq.l} {           
+  ${t.mq.m} {           
+    left: ${p=> p.align === "left" ? 'unset' : '115px'}; 
+    right: ${p => p.align === "left" ? '110px' : 'unset'};        
+  }
+  
+  ${t.mq.x} {           
     left: ${p=> p.align === "left" ? 'unset' : '115px'}; 
     right: ${p => p.align === "left" ? '110px' : 'unset'};        
   }

@@ -82,14 +82,15 @@ export const TitleContainer = styled.div`
 `
 export const Title = styled.h1`
   text-transform: uppercase;
-  font-size: ${t.f(-1)};
+  font-size: ${t.f(0)};
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.sans};
   letter-spacing: ${t.ls.button};
-  padding: 0 0 5px 0;
+  padding: 0;
   margin: 0;
   ${t.mq.s} {
     font-size: ${t.f(1)};
+    padding: 0 0 5px 0;
   }
   ${t.mq.l} {
     font-size: ${t.f(3)};
@@ -100,6 +101,7 @@ export const Title = styled.h1`
 `
 
 export const SubTitle = styled.div`
+  display: none;
   text-transform: uppercase;
   font-size: ${t.f(-2)};
   color: ${t.c.darkgrey2};
@@ -108,6 +110,7 @@ export const SubTitle = styled.div`
   padding: 2px 0;
   margin: 0;
   ${t.mq.s} {
+    display: block;
     font-size: ${t.f(-1)};
   }
   ${t.mq.l} {
@@ -116,6 +119,7 @@ export const SubTitle = styled.div`
   ${t.mq.x} {
     font-size: ${t.f(1.7)};
   } 
+  
 `
 
 export const FilterBarContainer = styled.div`
@@ -195,4 +199,7 @@ export const Filter = styled.div`
 
 export const FilterContainer = styled.div`
   z-index: 5;
+  position: sticky;
+  top:0;
+  z-index: 99;  
 `
