@@ -53,7 +53,7 @@ export const StyledHtmlClassName = css`
     font-family: ${t.ff.serif};
     font-weight: 400;
     color: ${t.c.darkgrey1};
-    line-height: 2.6rem;
+    line-height: 2.4rem;
   }
   ul {
     li {
