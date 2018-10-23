@@ -16,23 +16,26 @@ export const Container = styled.div`
 export const Title = styled.h1`
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.sans};
-  font-size: ${t.f(0)};
-  
+  font-size: ${p => !p.longText ? t.f(1) : t.f(0)};
   font-weight: 600;
   margin: 0 auto;
   text-transform: uppercase;
   letter-spacing: ${t.ls.heading};
-  
   display: flex;
   justify-content: center;
   align-items: center; 
-
   z-index: 2;
   width: 100%;  
   hover: {
     margin: auto 0;
   }
+  ${t.mq.s} {
+    font-size: ${t.f(3)};
+  }
   ${t.mq.l} {
+    font-size: ${t.f(2)};
+  }
+  ${t.mq.x} {
     font-size: ${t.f(4)};
   }
 `
@@ -44,7 +47,7 @@ export const StyledLink = styled(Link)`
   overflow: hidden;
   padding-top: 60%;
   ${t.mq.l} {
-    width: ${p=> p.twoInRow ? '50%' : '33.333%'};
+    width: ${p=> p.twoInRow ? '50%' : '25%'};
     padding-top: ${p=> p.twoInRow ? '35%' : '20%'};    
   }
   &:hover {
@@ -71,7 +74,7 @@ export const OverlayContainer = styled.div`
   position: absolute;
   display: flex;
   padding: 1rem;
-  height: 50px;
+  height: 55px;
   width: 100%;
   bottom: 0;
   background-color: ${t.c.white};

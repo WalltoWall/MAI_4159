@@ -19,11 +19,13 @@ const renderGrid = data => (
       <Image
         alt={getUnlessEmptyString(data.image.alt)}
         fluid={get(data, "image.localFile.childImageSharp.fluid")}
-        fadeIn={false}
+        fadeIn={false}        
       />
     </ImageContainer>
     <OverlayContainer>
-      <Title>{data.title.text}</Title>
+      <Title
+        longText={data.title.text.length >= 20 }
+      >{data.title.text}</Title>
     </OverlayContainer>
   </>
 )

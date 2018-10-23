@@ -20,17 +20,17 @@ export const Title = styled.p`
   margin: auto;
   width: 100%;
   opacity: 1;
-  font-size: ${p=> p.largeImages ? '1.6rem' : '0.9rem'};
+  font-size: ${p=> p.largeImages && !p.longText ? '1.3rem' : '0.9rem'};
   font-family: ${t.ff.sans};
   text-transform: uppercase;
   font-weight: 600;
   color: ${t.c.darkgrey1};
   letter-spacing: ${p=> p.largeImages ? '0.2rem' : '0.1rem'};
   ${t.mq.l} {
-    font-size: ${p=> p.largeImages ? '1.8rem' : '1rem'};
+    font-size: ${p=> p.largeImages && !p.longText ? '1.5rem' : '1rem'};
   }
   ${t.mq.x} {
-    font-size: ${p=> p.largeImages ? '1.8rem' : '1.2rem'};
+    font-size: ${p=> p.largeImages ? '1.5rem' : '1rem'};
   }
 `
 

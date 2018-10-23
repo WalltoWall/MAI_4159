@@ -97,8 +97,8 @@ export const SubFilterContainer = styled.div`
 
 export const SubFilterChildContainer = styled.div`
   background: rgb(43,43,43);
-  background: linear-gradient(90deg, rgba(255,252,252,0) 80%, rgba(43,43,43,0.6292892156862745) 100%),
-              linear-gradient(90deg, rgba(43,43,43,0.6292892156862745) 0%, rgba(255,252,252,0) 20%);
+  background: linear-gradient(90deg, rgba(255,252,252,0) 90%, rgba(43,43,43,0.6292892156862745) 100%),
+              linear-gradient(90deg, rgba(43,43,43,0.6292892156862745) 0%, rgba(255,252,252,0) 10%);
   position: relative;
   display: ${p => p.isOpen ? "none" : "flex"};  
   overflow-x: auto;
@@ -129,5 +129,5 @@ export const Filter = styled.div`
   font-size: ${t.f(1.5)};
   margin: 0;
   z-index: 3;
-  padding: ${t.s(0.5)} ${t.s(1.7)};     
+  padding: ${t.s(0.5)} ${t.s(0.9)};     
 `
