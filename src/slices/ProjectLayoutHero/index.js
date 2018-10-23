@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Image } from 'components/Image'
+import HoverArrowSVG from 'assets/hov_arrow.svg'
 import { MobileNavOverlay } from 'components/Header/Mobile.styled'
 import { getUnlessEmptyString } from 'helpers'
 import {
@@ -18,6 +19,8 @@ import {
   CarouselContainer,
   StyledCarousel,
   ContentContainer,
+  ArrowControlContainer,
+  ArrowControl,
 } from './index.styled'
 
 export class ProjectLayoutHero extends React.Component {
@@ -62,7 +65,17 @@ export class ProjectLayoutHero extends React.Component {
         </ContentContainer>
         {get(this.props.data, 'items').length > 1 && (
           <CarouselContainer>
-            <StyledCarousel autoplay={true} frameOverflow="show" wrapAround={true}>
+            <StyledCarousel autoplay={true} frameOverflow="show" wrapAround={true}
+            renderCenterLeftControls={({ previousSlide }) => (
+              <ArrowControlContainer onClick={previousSlide}>
+                <ArrowControl rotate={true} src={HoverArrowSVG} />
+              </ArrowControlContainer>
+            )}
+            renderCenterRightControls={({ nextSlide }) => (
+              <ArrowControlContainer onClick={nextSlide}>
+                <ArrowControl src={HoverArrowSVG} />
+              </ArrowControlContainer>
+            )}>
               {get(this.props.data, 'items').map(item => (
                 <ImageContainer key={getUnlessEmptyString(item, 'image.alt')}>
                   <Image

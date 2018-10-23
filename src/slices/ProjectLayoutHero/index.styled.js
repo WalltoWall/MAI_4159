@@ -77,12 +77,6 @@ export const StyledCarousel = styled(Carousel)`
   .slider-slide {
     height: 100% !important;
   }
-  .slider-control-centerleft {
-    display: none;
-  }
-  .slider-control-centerright {
-    display: none;
-  }
 
   .slider-control-bottomcenter {
     display: none;
@@ -94,7 +88,24 @@ export const StyledCarousel = styled(Carousel)`
       font-size: ${t.f(5)} !important;
       text-shadow: ${t.c.black} 0px 0 5px !important;
     }
+  }
+  .slider-control-centerleft {    
+    z-index: 99;
+  }
+  .slider-control-centerright {
+    z-index: 99;
   }  
+
+  ${t.mq.l} {
+    .slider-control-centerleft {
+      display: none;
+      z-index: 99;
+    }
+    .slider-control-centerright {
+      display: none;
+      z-index: 99;
+    }
+  }
 `
 export const ImageContainer = styled.div`
   width: 100%;
@@ -212,4 +223,24 @@ export const InfoLine = styled.hr`
   ${t.mq.x} {
     width: 30%;
   }
+`
+
+export const ArrowControlContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: ${t.s(2)};
+  height: ${t.s(1.5)};
+  cursor: pointer;
+
+  ${t.mq.s} {
+    width: ${t.s(3)};
+    height: ${t.s(2.5)};
+  }
+`
+
+export const ArrowControl = styled.img`
+  height: 100%;
+  object-fit: contain !important;
+  transform: ${p => p.rotate ? 'rotate(180deg)' : 'none'};
 `
