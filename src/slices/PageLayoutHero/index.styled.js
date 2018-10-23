@@ -99,7 +99,7 @@ export const SubHeadline = styled.span`
   z-index: 2;
   ${t.mq.l} {
     left: 228px;
-    top: 54%;
+    top: 55%;
     display: block;
     font-size: ${t.f(2.5)};
   }
@@ -207,16 +207,16 @@ export const DescriptionWrapper = styled.div`
   display: block;
   padding: 0 0.5rem;
   ${t.mq.l} {
-    -webkit-transform: rotate(3deg) translate(30px, 20px);
-    -ms-transform: rotate(3deg) translate(30px, 20px);
-    transform: rotate(3deg) translate(30px, 20px);
+    -webkit-transform: rotate(3deg) translate(30px, 1rem);
+    -ms-transform: rotate(3deg) translate(30px, 1rem);
+    transform: rotate(3deg) translate(30px, 1rem);
     padding: 0 3rem;
     margin: 0;
   }
   ${t.mq.x} {
-    -webkit-transform: rotate(3deg) translate(50px, 20px);
-    -ms-transform: rotate(3deg) translate(50px, 20px);
-    transform: rotate(3deg) translate(50px, 20px);
+    -webkit-transform: rotate(3deg) translate(50px, 1.1rem);
+    -ms-transform: rotate(3deg) translate(50px, 1.1rem);
+    transform: rotate(3deg) translate(50px, 1.1rem);
   }
 `
 

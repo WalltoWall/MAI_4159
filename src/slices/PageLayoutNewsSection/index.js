@@ -49,13 +49,13 @@ class GridList extends React.Component {
     super(props);
     this.state = {
       items: this.props.newsPosts,
-      visible: (get(this.props.data, "primary.page_context") === "Home") ? 3 : 3      
+      visible: (get(this.props.data, "primary.page_context") === "Home") ? 4 : 4      
     };    
   }
 
   loadMore = () => {
     this.setState((prev) => {      
-      return {visible: prev.visible + 3};
+      return {visible: prev.visible + 4};
     });
   }
  
@@ -89,7 +89,7 @@ class GridList extends React.Component {
                 <ContentContainer>
                   <PostDate>
                     {format(new Date(get(news_post, 'node.data.date')),
-                      'MMM' +' Do' + ' YYYY'
+                      'MMMM' +' D' +', '+'YYYY'
                     )}
                   </PostDate>
                   <PostTitle>{get(news_post,'node.data.article_title.text')}</PostTitle>
