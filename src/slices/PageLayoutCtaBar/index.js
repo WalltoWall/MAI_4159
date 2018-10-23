@@ -5,7 +5,7 @@ import { CtaBar } from 'components/CtaBar'
 
 export const PageLayoutCtaBar = ({ data }) => (
   <CtaBar 
-    title={get(data, 'primary.title1.text')}      
+    title={get(data, 'primary.title1.text')}  
     buttonText={"contact us"}
     buttonUrl={get(data, 'primary.button.url')}
     background={"dark"}
@@ -22,7 +22,7 @@ export const query = graphql`
             primary {
               title1 {
                 text
-              }              
+              }
               button {
                 url
               }

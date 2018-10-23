@@ -48,7 +48,7 @@ export const ProjectLayoutFeatureList = ({ data }) => {
           })
         )}
       </Content>
-      <Button to="/all-projects/">view projects</Button>
+      <Button to="/featured-projects/">view projects</Button>
     </Container>
   )
 }

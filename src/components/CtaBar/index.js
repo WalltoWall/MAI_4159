@@ -5,7 +5,7 @@ import { Headline } from 'components/Headline'
 
 export const CtaBar = ({ title, buttonText, buttonUrl, background }) => (
   <Container background={background}>
-    <Headline white>{title}</Headline>    
+    <Headline white>{title}</Headline>
     <Button to={buttonUrl}>{buttonText}</Button>
   </Container>
 ) 

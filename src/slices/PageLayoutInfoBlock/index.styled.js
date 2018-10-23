@@ -22,7 +22,7 @@ export const Info = styled.div`
     }
   }
   ${t.mq.l} {
-    width: 22%;
+    width: 21%;
     border-left: 1px dotted #646e6a;
     border-bottom: none;
     margin: 1.5rem 0;
@@ -31,8 +31,11 @@ export const Info = styled.div`
     &:first-child {
       border-right: none;
     }
+    &:nth-child(3) {
+      width: 29%;
+    }
     &:last-child {
-      width: 30%;
+      width: 29%;
       height: auto;
       border-bottom: 0;
     }

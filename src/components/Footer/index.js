@@ -26,9 +26,6 @@ const render = () => queryData => {
           <FooterLogo src={logo} />
         </Link>
         <BrandContent>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam.
         </BrandContent>
         <MenuContainer>
           <LinkContainer>
@@ -51,8 +48,7 @@ const render = () => queryData => {
             ))}
           </LinkContainer>
           <CopyrightContent>
-            © 2018 Sed ut porttitor purus. Quisque ligula lectus. Proin vitae
-            diam ipsum. Designed by <a href="https://www.walltowall.com" target="blank">Wall-to-Wall Studios</a>.
+            © 2018 Mason<br/>Website designed and developed by<a href="https://www.walltowall.com" target="blank">Wall-to-Wall Studios</a>.
           </CopyrightContent>
         </MenuContainer>
       </Content>
