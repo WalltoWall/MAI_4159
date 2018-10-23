@@ -13,7 +13,7 @@ import {
   OverlayContainer,
 } from './index.styled'
 
-const renderGrid = data => (
+const renderGrid = (data, item, currentFilter) => (
   <>
     <ImageContainer>
       <Image
@@ -22,10 +22,14 @@ const renderGrid = data => (
         fadeIn={false}        
       />
     </ImageContainer>
-    <OverlayContainer>
-      <Title
-        longText={data.title.text.length >= 20 }
-      >{data.title.text}</Title>
+    <OverlayContainer 
+      longText={data.title.text.length >= 23 }
+      bottom={
+        (get(item, 'position') === "Bottom") ||
+        (currentFilter !== "All")
+      }
+    >
+      <Title>{data.title.text}</Title>
     </OverlayContainer>
   </>
 )
@@ -47,7 +51,7 @@ export const PortfolioGrid = ({ data, currentFilter }) => {
             (currentFilter === "All")            
           }
         >
-          {renderGrid(get(item, 'project.document[0].data'))}
+          {renderGrid(get(item, 'project.document[0].data'), item, currentFilter)}
         </StyledLink>
       ))}
     </Container>
