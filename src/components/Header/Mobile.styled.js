@@ -56,9 +56,9 @@ export const MobileNavOverlay = styled.div`
   );
   position: absolute;
   top: 0;
-  height: 100px;
+  height: 200px;
   width: 100%;
-  opacity: 0.5;
+  opacity: 0.7;
   ${t.mq.l} {
     display: none;
   }

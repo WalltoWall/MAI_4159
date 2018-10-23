@@ -52,7 +52,7 @@ const render = () => queryData => {
           </LinkContainer>
           <CopyrightContent>
             © 2018 Sed ut porttitor purus. Quisque ligula lectus. Proin vitae
-            diam ipsum.
+            diam ipsum. Designed by <a href="https://www.walltowall.com" target="blank">Wall-to-Wall Studios</a>.
           </CopyrightContent>
         </MenuContainer>
       </Content>

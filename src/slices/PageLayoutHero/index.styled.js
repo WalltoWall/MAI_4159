@@ -12,11 +12,8 @@ export const Container = styled.div`
   position: relative;
   overflow: hidden;
   ${t.mq.l} {
-    height: 800px;
+    height: 100vh;
     background-color: ${t.c.white};
-  }
-  ${t.mq.x} {
-    height: 1020px;
   }
 `
 
@@ -202,14 +199,16 @@ export const DescriptionWrapper = styled.div`
   display: block;
   padding: 0;
   ${t.mq.l} {
-    -webkit-transform: rotate(3deg);
-    -ms-transform: rotate(3deg);
-    transform: rotate(3deg) translate(30px, 390px);
+    -webkit-transform: rotate(3deg) translate(30px, 240%);
+    -ms-transform: rotate(3deg) translate(30px, 240%);
+    transform: rotate(3deg) translate(30px, 240%);
     padding: 0 3rem;
     margin: 0;
   }
   ${t.mq.x} {
-    transform: rotate(3deg) translate(50px, 500px);
+    -webkit-transform: rotate(3deg) translate(50px, 210%);
+    -ms-transform: rotate(3deg) translate(50px, 210%);
+    transform: rotate(3deg) translate(50px, 210%);
   }
 `
 

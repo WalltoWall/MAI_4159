@@ -1,18 +1,18 @@
 import React from 'react'
 import { get, isEmpty } from 'lodash'
-import { Image } from 'components/Image'
 import { MobileNavOverlay } from 'components/Header/Mobile.styled'
 import { getUnlessEmptyString } from 'helpers'
 import {
   ClipOverlay,
   ImageContainer,
+  StyledImage,
   Title,
   TitleWrapper,
 } from './index.styled'
 
 export const Hero = ({ data, whitebg }) => (
   <ImageContainer>
-    <Image
+    <StyledImage
       alt={getUnlessEmptyString(get(data, 'primary.image.data'))}
       fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
       fadeIn={false}

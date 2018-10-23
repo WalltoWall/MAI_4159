@@ -9,7 +9,7 @@ export const Projects = styled.div`
   width: ${t.w.mobile};
   margin: 2rem auto;
   ${t.mq.l} {
-    width: 70%;
+    width: ${t.w.desktop};
   }
 `
 

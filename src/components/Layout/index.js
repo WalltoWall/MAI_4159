@@ -73,6 +73,7 @@ const render = ({ children }) => queryData => (
             })(document, 'script');
         `}
       </script>
+      <style>@import url("https://use.typekit.net/air2qxr.css");</style>
     </Helmet>
     <ModalProvider>
       <ModalConsumer>
