@@ -1,5 +1,6 @@
 import styled from 'react-emotion'
 import t from 'theme'
+import { Image } from 'components/Image'
 
 const backgroundColor = ({ has_filter }) => {
   switch (has_filter) {
@@ -15,13 +16,16 @@ const backgroundColor = ({ has_filter }) => {
   }
 }
 
+export const StyledImage = styled(Image)`
+  opacity: 0.75;
+`
 
 export const ImageContainer = styled.div`
   position: relative;
   height: ${t.s(9)};
   max-height: 350px;
   overflow: hidden;
-  background-color: ${t.c.darkgrey1};
+  background-color: ${t.c.darkgrey2};
   z-index: 0;
   .gatsby-image-outer-wrapper {
     height: 100%;

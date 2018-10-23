@@ -71,7 +71,7 @@ export const OverlayContainer = styled.div`
   -o-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
   ${t.mq.l} {
-    height: ${p=> p.largeImages ? '55px' : '40px'};
+    height: ${p=> p.largeImages ? '15%' : '40px'};
   }
   ${StyledLink}:hover & {
     height: 100%;
