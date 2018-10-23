@@ -68,7 +68,10 @@ export const StyledLink = styled(Link)`
 export const LinkSeparator = styled.span`  
   color: ${t.c.yellow};
   padding: 0 ${t.s(0)};
-  display: ${p => p.index === 2 ? "none" : "inline"};
+  
+  ${t.mq.t} {
+    display: ${p => p.index === 2 ? "none" : "inline"};
+  }
   ${t.mq.s} {
     display: inline;
   }
