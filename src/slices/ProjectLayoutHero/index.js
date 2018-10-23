@@ -58,7 +58,6 @@ export class ProjectLayoutHero extends React.Component {
                 <h3>year completed</h3>
                 <p>{get(this.props.data, 'primary.year_completed.text')}</p>
               </div>
-              <InfoLine />
             </InfoContainer>
             <ClipOverlay />
           </Content>

@@ -59,12 +59,12 @@ export const Text = styled(HTMLContent)`
   p {
     font-family: ${t.ff.sans2};
     color: ${t.c.darkgrey2};
-    line-height: 1.2rem;
+    line-height: 1.3rem;
+    margin-top: -0.7rem;
     text-align: left;
 
     ${t.mq.m} {
       text-align: center;
-      line-height: 0.6rem;
     }
   }
 `

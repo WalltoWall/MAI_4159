@@ -15,7 +15,10 @@ export const Info = styled.div`
   ${t.mq.s} {
     width: 35%;
     &:last-child {
-     border-bottom: 1px dotted #646e6a;
+     border-bottom: none;
+    }
+    &:nth-child(3) {
+      border-bottom: none;
     }
   }
   ${t.mq.l} {

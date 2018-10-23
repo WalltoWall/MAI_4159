@@ -30,6 +30,12 @@ export const ImageContainer = styled.div`
     display: block;
     height: 240px;
   }
+  ${t.mq.l} {
+    height: 200px;
+  }
+  ${t.mq.x} {
+    height: 250px;
+  }
 `
 
 
@@ -94,7 +100,7 @@ export const StyledLink = styled(Link)`
     padding: 0 0.5rem 2rem 0.5rem;
   }
   ${t.mq.l} {
-    width: 33.333333%;
+    width: 25%;
     height: auto;
     padding: 0 0.5rem 2rem 0.5rem;
   }
@@ -128,10 +134,13 @@ export const ContentContainer = styled.div`
     min-height: 240px;
   }
   ${t.mq.l} {
-    min-height: 260px;
+    min-height: 400px;
   }
   ${t.mq.x} {
-    min-height: 240px;
+    min-height: 300px;
+  }
+  ${t.mq.xx} {
+    min-height: 260px;
   }
 `
 

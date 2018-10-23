@@ -23,8 +23,8 @@ export const ImageContainer = styled.a`
 `
 
 export const Container = styled.div`
-  margin: 0 auto;
-  padding: 1rem 0 4rem 0;
+  margin: -2rem auto 0 auto;
+  padding: 0 0 4rem 0;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
