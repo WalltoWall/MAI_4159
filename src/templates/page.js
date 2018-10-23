@@ -13,8 +13,6 @@ import { PageLayoutCtaBar } from 'slices/PageLayoutCtaBar'
 import { PageLayoutServices } from 'slices/PageLayoutServices'
 import { PageLayoutTextBlock } from 'slices/PageLayoutTextBlock'
 import { PageLayoutNewsSection } from 'slices/PageLayoutNewsSection'
-import { PageLayoutAnchorsMenu } from 'slices/PageLayoutAnchorsMenu'
-import { PageLayoutAnchor } from 'slices/PageLayoutAnchor'
 import { PageLayoutInfoBlock } from 'slices/PageLayoutInfoBlock'
 import { PageLayoutSocialMedia } from 'slices/PageLayoutSocialMedia'
 import { PageLayoutTextExpandable } from 'slices/PageLayoutTextExpandable'
@@ -40,10 +38,8 @@ const PageTemplate = ({ data, location }) => (
           PageLayoutServices,          
           PageLayoutTextBlock,
           PageLayoutNewsSection,
-          PageLayoutAnchor,
           PageLayoutInfoBlock,
           PageLayoutSocialMedia,
-          PageLayoutAnchorsMenu,
           PageLayoutTextExpandable,
           PageLayoutTeamGrid,
           PageLayoutFeaturedNews,
@@ -79,11 +75,9 @@ export const query = graphql`
     ...PageLayoutCtaBar
     ...PageLayoutServices
     ...PageLayoutTextBlock    
-    ...PageLayoutAnchor
     ...PageLayoutInfoBlock
     ...PageLayoutNewsSection
     ...PageLayoutSocialMedia
-    ...PageLayoutAnchorsMenu
     ...PageLayoutTextExpandable
     ...PageLayoutTeamGrid
     ...PageLayoutFeaturedNews

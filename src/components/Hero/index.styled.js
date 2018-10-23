@@ -99,7 +99,7 @@ export const MobileOverlay = styled.div`
   width: 100%;
   opacity: 0.5;
   ${t.mq.l} {
-    display: none;
+    display: ${p=> p.subpage ? "block" : "none"};
   }
 `
 

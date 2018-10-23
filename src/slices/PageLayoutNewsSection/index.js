@@ -43,7 +43,6 @@ export const PageLayoutNewsSection = ({data, rootData}) => {
   )
 }
 
-
 class GridList extends React.Component {
   constructor(props) {
     super(props);

@@ -79,9 +79,10 @@ export const ImageDescription = styled.div`
   line-height: ${t.lh.copy};
   font-size: ${t.f(0)};
   margin-bottom: 4rem;
-  text-align: center;
+  text-align: left;
   ${t.mq.l} {
     width: ${t.w.desktop};
+    text-align: center;
     font-size: ${t.f(0.3)};
   }
   ${t.mq.x} {

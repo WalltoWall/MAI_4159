@@ -31,12 +31,14 @@ export const ImageContainer = styled.div`
 export const Description = styled.div`
   font-family: ${t.ff.serif};
   color: ${t.c.darkgrey2};
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   font-size: ${t.f(0)};
   line-height: ${t.lh.copy};
-  text-align: center;
+  text-align: left;
   ${t.mq.l} {
     font-size: ${t.f(0.3)};
+    text-align: center;
+    padding: 1rem 2rem;
   }
 `
 
