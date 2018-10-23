@@ -81,7 +81,7 @@ export const StyledCarousel = styled(Carousel)`
 
   .slider-control-bottomcenter {
     display: none;
-    ${t.mq.m} {
+    ${t.mq.l} {
       display: block;
     }
     button {      
