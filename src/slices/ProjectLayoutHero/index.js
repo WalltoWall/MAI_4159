@@ -60,19 +60,32 @@ export class ProjectLayoutHero extends React.Component {
             <ClipOverlay />
           </Content>
         </ContentContainer>
-        <CarouselContainer>
-          <StyledCarousel autoplay={false} frameOverflow="show" wrapAround={true}>
-            {get(this.props.data, 'items').map(item => (
-              <ImageContainer key={getUnlessEmptyString(item, 'image.alt')}>
-                <Image
-                  alt={getUnlessEmptyString(item, 'image.alt')}
-                  fluid={get(item, 'image.localFile.childImageSharp.fluid')}
-                  fadeIn={false}
-                />
-              </ImageContainer>
-            ))}
-          </StyledCarousel>
-        </CarouselContainer>
+        {get(this.props.data, 'items').length > 1 && (
+          <CarouselContainer>
+            <StyledCarousel autoplay={true} frameOverflow="show" wrapAround={true}>
+              {get(this.props.data, 'items').map(item => (
+                <ImageContainer key={getUnlessEmptyString(item, 'image.alt')}>
+                  <Image
+                    alt={getUnlessEmptyString(item, 'image.alt')}
+                    fluid={get(item, 'image.localFile.childImageSharp.fluid')}
+                    fadeIn={false}
+                  />
+                </ImageContainer>
+              ))}
+            </StyledCarousel>
+          </CarouselContainer>
+        )}        
+        {get(this.props.data, 'items').length === 1 && (
+          <CarouselContainer>
+            <ImageContainer>
+              <Image
+                alt={getUnlessEmptyString(this.props.data.items[0], 'alt')}
+                fluid={get(this.props, "data.items[0].image.localFile.childImageSharp.fluid")}
+                fadeIn={false}
+              />
+            </ImageContainer>
+          </CarouselContainer>
+        )}
         <MobileNavOverlay />
       </Container>
     )
