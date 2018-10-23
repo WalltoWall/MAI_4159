@@ -11,7 +11,6 @@ import {
   Content,
   Title,
   Header,
-  SubTitle,
   ClipOverlay,
   InfoContainer,
   InfoBlurb,
@@ -43,9 +42,6 @@ export class ProjectLayoutHero extends React.Component {
               <Title>
                 {get(this.props.data, 'primary.project_title.text')}
               </Title>
-              <SubTitle>
-                {get(this.props.data, 'primary.project_subtitle.text')}
-              </SubTitle>
             </Header>
             <InfoContainer>
               <InfoLine />
@@ -112,9 +108,6 @@ export const query = graphql`
             id
             primary {
               project_title {
-                text
-              }
-              project_subtitle {
                 text
               }
               year_completed {

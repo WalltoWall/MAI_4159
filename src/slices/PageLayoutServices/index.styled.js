@@ -122,7 +122,7 @@ export const StyledHtmlClassName = css`
   h2 {
     color: ${t.c.darkgrey1};
     font-family: ${t.ff.sans2};
-    font-size: ${t.f(2)};
+    font-size: ${t.f(1.6)};
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
@@ -140,7 +140,7 @@ export const StyledHtmlClassName = css`
       color: ${t.c.darkgrey2};
       font-family: ${t.ff.sans2};
       font-size: ${t.f(0)};
-      line-height: 1.8rem;
+      line-height: 1.5rem;
     }
   }
 `

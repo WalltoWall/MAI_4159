@@ -166,6 +166,7 @@ export const Title = styled.h1`
   font-weight: 600;
   font-family: ${t.ff.sans};
   letter-spacing: 0.2rem;
+  margin-bottom: 0;
   ${t.mq.l} {
     font-size: ${t.f(5)};
   }
@@ -175,16 +176,6 @@ export const Title = styled.h1`
   ${t.mq.xxx} {
     font-size: ${t.f(9)};
   }
-`
-
-export const SubTitle = styled.h2`
-  font-size: ${t.f(2)};
-  letter-spacing: 0.1rem;
-  color: ${t.c.white};
-  font-weight: 600;
-  font-family: ${t.ff.sans2};
-  margin: -${t.s(2)} 0 1.2rem 0;
-  letter-spacing: 0.2rem;
 `
 
 export const InfoContainer = styled.div``

@@ -7,13 +7,6 @@ import { HTMLContent } from 'components/HTMLContent'
 export const CtaBar = ({ title, content, buttonText, buttonUrl, background }) => (
   <Container background={background}>
     <Headline white>{title}</Headline>
-    <Content>
-      <HTMLContent
-        html={content}
-        className={CtaHeaderClassName}
-      />
-    </Content>
-    
     <Button to={buttonUrl}>{buttonText}</Button>
   </Container>
 ) 
