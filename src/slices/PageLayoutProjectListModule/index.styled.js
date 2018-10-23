@@ -16,7 +16,7 @@ export const Container = styled.div`
 export const Title = styled.h1`
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.sans};
-  font-size: ${p => !p.longText ? t.f(1) : t.f(0)};
+  font-size: ${t.f(1)};
   font-weight: 600;
   margin: 0 auto;
   text-transform: uppercase;
@@ -30,10 +30,10 @@ export const Title = styled.h1`
     margin: auto 0;
   }
   ${t.mq.s} {
-    font-size: ${t.f(3)};
+    font-size: ${t.f(2.5)};
   }
   ${t.mq.l} {
-    font-size: ${t.f(2)};
+    font-size: ${t.f(3)};
   }
   ${t.mq.x} {
     font-size: ${t.f(4)};
@@ -88,7 +88,16 @@ export const OverlayContainer = styled.div`
     height: 100%;
     border-bottom: 1rem solid ${t.c.yellow};
   }
+  ${t.mq.t} {
+    height: ${p => p.longText && p.bottom ? t.s(5) : t.s(4)}
+  }
+  ${t.mq.s} {
+    height: ${p => p.longText && p.bottom ? t.s(4.5) : t.s(4)}
+  }
   ${t.mq.l} {
-    height: 60px;
+    height: ${p => p.longText && p.bottom ? t.s(4.5) : t.s(4)}
+  }
+  ${t.mq.x} {
+    height: ${p => p.longText && p.bottom ? t.s(4.5) : t.s(3.5)}
   }
 `
