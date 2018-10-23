@@ -11,6 +11,7 @@ import { ProjectLayoutFullImage } from 'slices/ProjectLayoutFullImage'
 import { ProjectLayoutSideBySideImages } from 'slices/ProjectLayoutSideBySideImages'
 import { ProjectLayoutCallToAction } from 'slices/ProjectLayoutCallToAction'
 import { ProjectLayoutFeatureList } from 'slices/ProjectLayoutFeatureList'
+import { ProjectLayoutQuoteBlock} from 'slices/ProjectLayoutQuoteBlock'
 
 const ProjectTemplate = ({ data }) => (
   <>
@@ -28,6 +29,7 @@ const ProjectTemplate = ({ data }) => (
           ProjectLayoutFeatureList,
           ProjectLayoutSlice,
           ProjectLayoutSideBySideText,
+          ProjectLayoutQuoteBlock,
         }}
         page={get(data, 'prismicProject')}
         rootData={data}
@@ -57,5 +59,6 @@ export const query = graphql`
     ...ProjectLayoutCallToAction
     ...ProjectLayoutFeatureList
     ...ProjectLayoutSideBySideText
+    ...ProjectLayoutQuoteBlock
   }
 `
