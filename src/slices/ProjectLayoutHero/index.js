@@ -110,6 +110,9 @@ export const query = graphql`
               project_title {
                 text
               }
+              project_subtitle {
+                text
+              }
               year_completed {
                 text
               }

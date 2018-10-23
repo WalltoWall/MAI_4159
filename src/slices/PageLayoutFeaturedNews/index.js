@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get } from 'lodash'
+import { get, slice } from 'lodash'
 import {format} from 'date-fns'
 import { Image } from 'components/Image'
 import { Headline } from 'components/Headline'
@@ -21,17 +21,12 @@ import {
   SectionContainer,
 } from './index.styled'
 
-const characterLimit = function(str, length, ending) { 
-  if (length == null) { 
-    length = 140  
-  } 
-  if (ending == null) { 
-    ending = '...'  
-  } 
-  if (str.length > length) {  
-    return str.substring(0, length - ending.length) + ending  
-  } else {  
+const truncateStr = (str) => { 
+  let arrstr = slice(str.split(" "), 0, 30).join(" ")  
+  if (str.split(" ").length <= 30) {  
     return str  
+  } else {  
+    return arrstr + "..."
   } 
 }
 
@@ -83,7 +78,7 @@ export const PageLayoutFeaturedNews = ({ data }) => {
                 'featured_news_post.document[0].data.article_title.text'
               ),
               url: get(featured_news_post, 'featured_news_post.url'),
-              content: characterLimit(get(featured_news_post, 
+              content: truncateStr(get(featured_news_post, 
                 'featured_news_post.document[0].data.article_content1.text')),
             })
           )}

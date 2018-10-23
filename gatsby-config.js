@@ -202,10 +202,7 @@ module.exports = {
                         primary {
                           title1 {
                             text
-                          }
-                          text {
-                            text
-                          }
+                          }                          
                         }                        
                       }
                       ... on PrismicPageLayoutServices {
