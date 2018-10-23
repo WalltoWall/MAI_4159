@@ -72,13 +72,16 @@ export const Headline = styled.div`
     margin: 0;
     ${t.mq.m} {
       margin-top: 10px;
-      font-size: ${t.f(7)};
+      font-size: ${t.f(6.5)};
     }
     ${t.mq.l} {
       display: none;
     }
   }
   ${t.mq.l} {
+    font-size: ${t.f(9)};
+  }
+  ${t.mq.x} {
     font-size: ${t.f(10)};
   }
 `
@@ -91,17 +94,19 @@ export const SubHeadline = styled.span`
   font-weight: 700;
   letter-spacing: 2px;
   top: 55%;
-  font-size: ${t.f(3.5)};
   color: white;
   text-transform: uppercase;
   z-index: 2;
   ${t.mq.l} {
-    left: 255px;
+    left: 228px;
+    top: 54%;
     display: block;
+    font-size: ${t.f(2.5)};
   }
   ${t.mq.x} {
     left: 260px;
-    top: 54%;
+    top: 55%;
+    font-size: ${t.f(3.5)};
   }
 `
 const topToBottom = keyframes`
@@ -156,6 +161,9 @@ export const SlidingVertical = styled.div`
       animation-delay: 8s;
     }
     ${t.mq.l} {
+      font-size: ${t.f(9)};
+    }
+    ${t.mq.x} {
       font-size: ${t.f(10)};
     }
   }
@@ -197,18 +205,18 @@ export const DescriptionWrapper = styled.div`
   width: ${t.w.mobile};
   margin: 0 auto;
   display: block;
-  padding: 0;
+  padding: 0 0.5rem;
   ${t.mq.l} {
-    -webkit-transform: rotate(3deg) translate(30px, 240%);
-    -ms-transform: rotate(3deg) translate(30px, 240%);
-    transform: rotate(3deg) translate(30px, 240%);
+    -webkit-transform: rotate(3deg) translate(30px, 20px);
+    -ms-transform: rotate(3deg) translate(30px, 20px);
+    transform: rotate(3deg) translate(30px, 20px);
     padding: 0 3rem;
     margin: 0;
   }
   ${t.mq.x} {
-    -webkit-transform: rotate(3deg) translate(50px, 210%);
-    -ms-transform: rotate(3deg) translate(50px, 210%);
-    transform: rotate(3deg) translate(50px, 210%);
+    -webkit-transform: rotate(3deg) translate(50px, 20px);
+    -ms-transform: rotate(3deg) translate(50px, 20px);
+    transform: rotate(3deg) translate(50px, 20px);
   }
 `
 
@@ -224,7 +232,8 @@ export const Overlay = styled.div`
   overflow: hidden;
   ${t.mq.l} {
     position: absolute;
-    display: block;
+    display: flex;
+    align-items: center;
     -webkit-transform: rotate(-3deg);
     -ms-transform: rotate(-3deg);
     transform: rotate(-3deg);
