@@ -25,6 +25,7 @@ export const ImageContainer = styled.div`
   .gatsby-image-wrapper {
     height: 100%;
   }
+  height: 320px;
 `
 
 export const ArrowWrapper = styled.img`
@@ -104,10 +105,22 @@ export const ReadMore = styled(Link)`
 export const ContentContainer = styled.div`
   padding: 1.5rem;
   background-color: ${t.c.white};
+  min-height: 0;
+  ${t.mq.l} {
+    min-height: 280px;
+  }
+  ${t.mq.x} {
+    min-height: 220px;
+  }
 `
 
 export const ReadMoreWrapper = styled.div`
   display: flex;
   align-items: center;
+  position: initial;
+  ${t.mq.l} {
+    position: absolute;
+    bottom: 20px;
+  }
 `
 

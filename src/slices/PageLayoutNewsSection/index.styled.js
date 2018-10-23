@@ -28,6 +28,7 @@ export const ImageContainer = styled.div`
   }
   ${t.mq.s} {
     display: block;
+    height: 240px;
   }
 `
 
