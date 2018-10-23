@@ -10,7 +10,7 @@ import {
   TitleWrapper,
 } from './index.styled'
 
-export const Hero = ({ data, whitebg }) => (
+export const Hero = ({ data, whitebg, subpage }) => (
   <ImageContainer>
     <StyledImage
       alt={getUnlessEmptyString(get(data, 'primary.image.data'))}
@@ -26,6 +26,6 @@ export const Hero = ({ data, whitebg }) => (
         <Title>{get(data, 'primary.title1.text')}</Title>
       </TitleWrapper>
     )}
-    <MobileNavOverlay />
+    <MobileNavOverlay subpage={subpage ? true : false}/>
   </ImageContainer>
 )
