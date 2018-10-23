@@ -19,6 +19,12 @@ export const ImageContainer = styled.div`
   ${t.mq.m} {
     width: 49%;
     padding: 0;
+    height: 300px;
+  }
+  ${t.mq.l} {
+    width: 49%;
+    padding: 0;
+    height: 360px;
   }
 `
 
