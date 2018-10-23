@@ -45,7 +45,7 @@ export const DesktopBar = ({location, categories, filters, setFilter, currentFil
       </StyledLink>                   
       <VerticalLine>|</VerticalLine>
       <SubFilterContainer>
-        <span>Building Use:</span>
+        <span>View by Building Use:</span>
         <CurrentFilter
           defaultColor={getFilterName(location.pathname) === "Select"}
         >

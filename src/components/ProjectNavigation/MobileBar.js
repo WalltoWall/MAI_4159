@@ -68,7 +68,7 @@ export class MobileBar extends React.Component {
     return (
       <MobileContainer>
         <div style={{ position: 'relative' }}>
-          <span>Filter: </span>
+          <span>View By: </span>
           <CurrentFilter 
             onClick={e => {
               this.toggleFilter(e)

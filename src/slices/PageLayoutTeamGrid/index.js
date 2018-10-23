@@ -31,12 +31,12 @@ const RoleFilterBar = ({ filters, setFilter, currentFilter }) => (
   <Toggle>
     {({ toggle, on }) => (
       <>
-        <FilterContainer style={{ position: 'relative' }}>
+        <FilterContainer>
           <CurrentFilter 
             onClick={() => 
             toggle()}
           >
-            <span>Filter: </span>
+            <span>View: </span>
             {currentFilter}
             <NavArrow active={on} />
           </CurrentFilter>
