@@ -12,10 +12,10 @@ export const RenderGrid = ({ alt, key, img, title, url, largeImages }) => (
     <ImageContainer>
       <Image fluid={img} alt={alt} fadeIn={false} />
     </ImageContainer>
-    <OverlayContainer largeImages={largeImages} >
+    <OverlayContainer largeImages={largeImages} longText={title.length >= 20}>
       <Title 
         largeImages={largeImages} 
-        longText={title.length >= 20}              
+        // longText={title.length >= 20}              
       >
         {title}
       </Title>

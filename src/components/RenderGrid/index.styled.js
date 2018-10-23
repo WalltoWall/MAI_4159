@@ -27,7 +27,7 @@ export const Title = styled.p`
   color: ${t.c.darkgrey1};
   letter-spacing: ${p=> p.largeImages ? '0.2rem' : '0.1rem'};
   ${t.mq.l} {
-    font-size: ${p=> p.largeImages && !p.longText ? '1.5rem' : '1rem'};
+    font-size: ${p=> p.largeImages && !p.longText ? '1.5rem' : '1.2rem'};
   }
   ${t.mq.x} {
     font-size: ${p=> p.largeImages ? '1.5rem' : '1rem'};
@@ -59,7 +59,7 @@ export const OverlayContainer = styled.div`
   position: absolute;
   display: flex;
   flex-wrap: wrap;
-  height: ${p=> p.largeImages ? '50px' : '35px'};
+  height: ${p=> p.largeImages && !p.longText ? '50px' : '70px'};
   padding: ${p=> p.largeImages ? '1rem' : '0.5rem'};
   width: 100%;
   bottom: 0;
