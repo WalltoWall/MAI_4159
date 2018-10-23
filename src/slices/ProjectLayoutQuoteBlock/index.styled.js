@@ -1,59 +1,64 @@
-// import styled from 'react-emotion'
-// import t from 'theme'
-// import { Button } from 'components/Button'
-// import { BodyCopy } from 'components/BodyCopy'
-// import { Headline } from 'components/Headline'
+import styled from 'react-emotion'
+import t from 'theme'
 
-// export const Container = styled.div`
-//   align-items: center;
-//   display: flex;
-//   flex-wrap: wrap;
-//   background-color: ${t.c.white};
-//   position: relative;
-//   display: block;
-//   margin: 0 auto;
-// `
+export const Container = styled.div`
+  display: block;
+  margin: 0 auto;
+  padding: 0 0 4rem 0;
+  background-color: ${t.c.white};
+`
 
-// export const StyledHeadline = styled(Headline)`
-//   text-align: center;
-//   ${t.mq.l} {
-//     text-align: left;
-//   }
-// `
+export const QuoteWrapper = styled.div`
+  background-color: ${t.c.yellow};
+  display: block;
+  margin: 0 auto;
+  padding: 2rem;
+  width: ${t.w.mobile};
+  position: relative;
+   ${t.mq.m} {
+  	padding: 3rem;
+  }
+  ${t.mq.l} {
+  	width: ${t.w.desktop};
+  	padding: 4rem;
+  }
+  ${t.mq.x} {
+  	width: ${t.w.xl};
+  }
+`
 
-// export const Description = styled(BodyCopy)`
-//   max-width: 450px;
-// `
+export const Quote = styled.div`
+  color: ${t.c.darkgrey1};
+  font-family: ${t.ff.serif};
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  ${t.mq.l} {
+  	font-size: 1.6rem;
+  	line-height: 2.6rem;
+  }
+`
 
-// export const SplitPanelWrapper = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   flex-wrap: wrap;
-// `
+export const Author = styled.div`
+  color: ${t.c.darkgrey2};
+  font-family: ${t.ff.sans2};
+  font-size: 1rem;
+  margin-top: 1rem;
+`
 
-// export const DescriptionWrapper = styled.div`
-//   width: ${t.w.mobile};
-//   padding: 3rem 0;
-//   order: 2;
-//   ${t.mq.l} {
-//     width: 45%;
-//     order: 1;
-//   }
-// `
 
-// export const ServicesButton = styled(Button)`
-//   float: none;
-//   ${t.mq.l} {
-//     float: left;
-//   }
-// `
+export const QuoteMark = styled.div`
+  color: ${t.c.darkgrey2};
+  font-family: ${t.ff.serif};
+  font-size: 10rem;
+  position: absolute;
+  top: -50px;
+  &:before {
+  	content: ' “ ';
+  }
+   ${t.mq.l} {
+  	font-size: 14rem;
+  }
+`
 
-// export const Content = styled.div`
-//   max-width: none;
-//   float: none;
-//   ${t.mq.l} {
-//     float: right;
-//     max-width: 600px;
-//   }
-// `
+

@@ -1,8 +1,22 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { get } from 'lodash'
+import {
+  Container,
+  Quote,
+  QuoteWrapper,
+  Author,
+  QuoteMark,
+} from './index.styled'
 
 export const ProjectLayoutQuoteBlock = ({ data }) => (
-  <div>hello world</div>
+  <Container>
+    <QuoteWrapper>
+      <QuoteMark />
+      <Quote>{get(data, 'primary.quote.text')}</Quote>
+      <Author>– {get(data, 'primary.author.text')}</Author>
+    </QuoteWrapper>
+  </Container>
 )
 
 export const query = graphql`
@@ -11,7 +25,15 @@ export const query = graphql`
       data {
         layout {
           ... on PrismicProjectLayoutQuoteBlock {
-            id                      
+            id
+            primary {
+              quote {
+                text
+              }
+              author {
+                text
+              }
+            }
           }
         }
       }

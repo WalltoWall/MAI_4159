@@ -11,7 +11,7 @@ import { ProjectLayoutFullImage } from 'slices/ProjectLayoutFullImage'
 import { ProjectLayoutSideBySideImages } from 'slices/ProjectLayoutSideBySideImages'
 import { ProjectLayoutCallToAction } from 'slices/ProjectLayoutCallToAction'
 import { ProjectLayoutFeatureList } from 'slices/ProjectLayoutFeatureList'
-import { ProjectLayoutQuoteBlock} from 'slices/ProjectLayoutQuoteBlock'
+import { ProjectLayoutQuoteBlock } from 'slices/ProjectLayoutQuoteBlock'
 
 const ProjectTemplate = ({ data }) => (
   <>
