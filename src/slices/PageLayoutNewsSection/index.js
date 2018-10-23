@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get } from 'lodash'
+import { get, slice } from 'lodash'
 import {format} from 'date-fns'
 import { Image } from 'components/Image'
 import arrow from 'assets/yellow-arrow.svg'
@@ -57,18 +57,13 @@ class GridList extends React.Component {
       return {visible: prev.visible + 4};
     });
   }
- 
-  characterLimit = (str, length, ending) => { 
-    if (length == null) { 
-      length = 85  
-    } 
-    if (ending == null) { 
-      ending = '...'  
-    } 
-    if (str.length > length) {  
-      return str.substring(0, length - ending.length) + ending  
-    } else {  
+
+  truncateStr = (str) => { 
+    let arrstr = slice(str.split(" "), 0, 12).join(" ")  
+    if (str.split(" ").length <= 12) {  
       return str  
+    } else {  
+      return arrstr + "..."
     } 
   }
 
@@ -92,7 +87,7 @@ class GridList extends React.Component {
                     )}
                   </PostDate>
                   <PostTitle>{get(news_post,'node.data.article_title.text')}</PostTitle>
-                  <PostContent>{this.characterLimit(get(news_post, 'node.data.article_content1.text'))}</PostContent>
+                  <PostContent>{this.truncateStr(get(news_post, 'node.data.article_content1.text'))}</PostContent>
                   <ReadMoreWrapper>
                     <ReadMore to={get(news_post, 'node.uid')}>Read more</ReadMore>
                     <ArrowWrapper src={arrow} />
