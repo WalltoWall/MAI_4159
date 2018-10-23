@@ -4,7 +4,8 @@ import t from 'theme'
 import { ReactComponent as HoverArrowSVG } from 'assets/hov_arrow.svg'
 
 export const DesktopContainer = styled.div`
-  position: relative;
+  position: sticky;
+  top: 0;
   background-color: ${t.c.darkgrey2};
   display: none;
   height: ${t.s(3.5)};
@@ -13,7 +14,7 @@ export const DesktopContainer = styled.div`
   color: ${t.c.white};
   font-size: ${t.f(1)};
   font-weight: 700;
-  z-index: 2;
+  z-index: 99;
   ${t.mq.l} {
     display: flex;
   }
@@ -119,6 +120,9 @@ export const VerticalLine = styled.div`
 
 export const SubCategoryContainer = styled.div`
   display: none;
+  position: sticky;
+  top: 53px;
+  z-index: 98;
   justify-content: center;
   align-items: center;
   height: ${t.s(3)};

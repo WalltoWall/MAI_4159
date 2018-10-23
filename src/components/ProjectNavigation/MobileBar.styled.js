@@ -13,6 +13,9 @@ export const MobileContainer = styled.div`
   ${t.mq.l} {
     display: none;
   }
+  // position: sticky;
+  // top: 0px;
+  // z-index: 98;
   span {
     font-size: ${t.f(0.5)};
     color: ${t.c.lightgrey1};
