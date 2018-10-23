@@ -21,8 +21,9 @@ export const ContentContainer = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   width: 100%;
+  background-color: ${t.c.darkgrey1};
   ${t.mq.l} {
-    width: 25%;
+    width: 22%;
   }
 `
 
@@ -31,12 +32,12 @@ export const Content = styled.div`
   padding-bottom: 1rem;
   position: relative;
   bottom: 0;
-  width: 100%;
-  padding: 0 2rem 2rem 2rem;
+  width: 90%;
+  padding: 0;
+  margin: 0 auto 2rem auto;
   ${t.mq.l} {
     padding: 0 2rem 3rem 3.5rem;
-  }
-  ${t.mq.x} {
+    margin: 0;
   }
 `
 
@@ -61,7 +62,7 @@ export const CarouselContainer = styled.div`
     margin-bottom: 0;
   }
   ${t.mq.l} {
-    width: 75% !important;
+    width: 78% !important;
   }
 `
 
@@ -123,29 +124,25 @@ export const ClipOverlay = styled.div`
   ${t.mq.m} {
     left: -13%;
     height: 143%;
-    width: 134%;
+    width: 145%;
     top: -18%;
   }
   ${t.mq.l} {
     top: -250%;
-    left: -37%;
+    left: -33%;
     height: 370%;
-    width: 135%;
+    width: 150%;
   }
   ${t.mq.x} {
     top: -266%;
     left: -24%;
     height: 387%;
-    width: 133%;
   }
 `
 export const Header = styled.div`
   width: 100%;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
-  ${t.mq.l} {
-    text-align: left;
-  }
 `
 export const Title = styled.h1`
   font-size: ${t.f(6)};
@@ -196,15 +193,6 @@ export const InfoBlurb = css`
 export const InfoLine = styled.hr`
   border-color: ${t.c.lightgrey2};
   opacity: 0.6;
-  width: 100%;
+  width: 100px;
   margin: 0;
-  ${t.mq.m} {
-    width: 50%;
-  }
-  ${t.mq.l} {
-    width: 40%;
-  }
-  ${t.mq.x} {
-    width: 30%;
-  }
 `
