@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { ListTitle, Container, GridContainer } from './index.styled'
+import { Container, GridContainer } from './index.styled'
 import { get, split } from 'lodash'
 import { RenderGrid } from 'components/RenderGrid'
 import { SmallHeadline } from 'components/SmallHeadline'

@@ -20,6 +20,8 @@ import { PageLayoutTeamGrid } from 'slices/PageLayoutTeamGrid'
 import { PageLayoutFeaturedNews } from 'slices/PageLayoutFeaturedNews'
 import { PageLayoutGoogleMap } from 'slices/PageLayoutGoogleMap'
 import { PageLayoutProjectListModule } from 'slices/PageLayoutProjectListModule'
+import { PageLayoutAnchor } from 'slices/PageLayoutAnchor'
+import { PageLayoutAnchorsMenu } from 'slices/PageLayoutAnchorsMenu'
 
 const PageTemplate = ({ data, location }) => (
   <>
@@ -45,6 +47,8 @@ const PageTemplate = ({ data, location }) => (
           PageLayoutFeaturedNews,
           PageLayoutGoogleMap,
           PageLayoutProjectListModule,
+          PageLayoutAnchor,
+          PageLayoutAnchorsMenu,
         }}
         page={get(data, 'prismicPage')}
         rootData={data}
@@ -83,5 +87,7 @@ export const query = graphql`
     ...PageLayoutFeaturedNews
     ...PageLayoutGoogleMap    
     ...PageLayoutProjectListModule
+    ...PageLayoutAnchor
+    ...PageLayoutAnchorsMenu
   }
 `

@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get } from 'lodash'
 import { GoogleMapComponent } from './GoogleMap'
 import { 
   Container,

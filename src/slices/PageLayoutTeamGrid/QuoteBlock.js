@@ -1,6 +1,5 @@
 import React from 'react'
 import { get, isString } from 'lodash'
-import { Link } from 'components/Link'
 
 import { 
   QuoteContainer,

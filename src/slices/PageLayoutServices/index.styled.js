@@ -18,7 +18,7 @@ const backgroundColor = ({ background_color }) => {
 
 export const Container = styled.div`
   flex-direction: column;
-  padding: 4rem 0 6rem 0;
+  padding: 8rem 0 6rem 0;
   ${backgroundColor};
 `
 
@@ -64,6 +64,7 @@ export const Image = styled.img`
 export const ImageWrapper = styled.div`
   max-height: 500px;
   overflow: hidden;
+  margin: 0.5rem 0;
   width: 100%;
   display: block;
    ${t.mq.m} {

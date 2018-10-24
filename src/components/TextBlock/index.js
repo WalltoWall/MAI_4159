@@ -1,18 +1,18 @@
 import React from 'react'
 import { get } from 'lodash'
-import { HTMLContent } from 'components/HTMLContent'
-import { Container, StyledHtmlClassName, Headline } from './index.styled'
+import { Container, StyledHtmlClassName, StyledHTMLContent, Headline } from './index.styled'
 import { Content } from 'components/Content'
 
 export const TextBlock = ({ data }) => {
   return (
     <Container background_color={get(data, 'primary.background_color')}>
-      <Content align_text={get(data, 'primary.align_text')}>
+      <Content>
         <Headline>{get(data, 'article_title.text')}</Headline>
         <Headline>{get(data, 'date')}</Headline>
-        <HTMLContent
+        <StyledHTMLContent
           html={get(data, 'primary.content.html')}
           className={StyledHtmlClassName}
+          align_text={get(data, 'primary.align_text')}
         />
       </Content>
     </Container>

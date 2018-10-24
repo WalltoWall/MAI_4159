@@ -1,6 +1,7 @@
 import styled from 'react-emotion'
 import { css } from 'emotion'
 import t from 'theme'
+import { HTMLContent } from 'components/HTMLContent'
 
 
 const backgroundChooser = ({ background_color }) => {
@@ -19,7 +20,7 @@ const backgroundChooser = ({ background_color }) => {
 
 const textAlignment = ({ align_text }) => {
   switch (align_text) {
-    case 'center':
+    case 'Center':
       return `
         text-align: center;
       `
@@ -39,13 +40,17 @@ export const Container = styled.div`
   padding: 4rem 0;
 `
 
+export const StyledHTMLContent = styled(HTMLContent)`
+  ${textAlignment};
+`
+
 export const StyledHtmlClassName = css`
   h1 {
     font-size: ${t.f(4)};
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     font-family: ${t.ff.sans};
-    font-weight: 600;
+    font-weight: 400;
     color: ${t.c.darkgrey1};
   }
   h2 {
@@ -59,7 +64,7 @@ export const StyledHtmlClassName = css`
     li {
       color: ${t.c.darkgrey2};
       font-family: ${t.ff.sans2};
-      font-size: ${t.f(0.2)};
+      font-size: ${t.f( 0.2)};
       line-height: ${t.lh.copy};
     }
   }

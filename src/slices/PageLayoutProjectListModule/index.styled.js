@@ -31,13 +31,7 @@ export const Title = styled.h1`
   }
   ${t.mq.s} {
     font-size: ${t.f(2.5)};
-  }
-  ${t.mq.l} {
-    font-size: ${t.f(3)};
-  }
-  ${t.mq.x} {
-    font-size: ${t.f(4)};
-  }
+  } 
 `
 
 export const StyledLink = styled(Link)`
