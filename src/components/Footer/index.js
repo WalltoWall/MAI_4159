@@ -48,7 +48,7 @@ const render = () => queryData => {
             ))}
           </LinkContainer>
           <CopyrightContent>
-            © 2018 Mason<br/>Website designed and developed by<a href="https://www.walltowall.com" target="blank">Wall-to-Wall Studios</a>.
+            © 2018 Mason<br/>Website designed and developed by <a href="https://www.walltowall.com" target="blank">Wall-to-Wall Studios</a>.
           </CopyrightContent>
         </MenuContainer>
       </Content>
