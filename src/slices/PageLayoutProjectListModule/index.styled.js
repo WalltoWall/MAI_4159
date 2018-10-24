@@ -17,7 +17,7 @@ export const Title = styled.h1`
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.sans};
   font-size: ${t.f(1)};
-  font-weight: 600;
+  font-weight: 400;
   margin: 0 auto;
   text-transform: uppercase;
   letter-spacing: ${t.ls.heading};
@@ -89,7 +89,7 @@ export const OverlayContainer = styled.div`
     border-bottom: 1rem solid ${t.c.yellow};
   }
   ${t.mq.t} {
-    height: ${p => p.longText && p.bottom ? t.s(5) : t.s(4)}
+    height: ${p => p.longText && p.bottom ? t.s(4) : t.s(4)}
   }
   ${t.mq.s} {
     height: ${p => p.longText && p.bottom ? t.s(4.5) : t.s(4)}

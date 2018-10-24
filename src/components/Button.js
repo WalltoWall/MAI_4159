@@ -7,9 +7,9 @@ export const Button = styled(Link)`
   color: white;
   cursor: pointer;
   font-family: ${t.ff.sans};
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: ${t.ls.button};
-  padding: 1rem 0 0.5rem 0;
+  padding: 0.8rem 0 0.5rem 0;
   font-size: ${p => (p.small ? t.f(-1) : t.f(0))};
   display: block;
   width: ${p => (p.small ? '150px' : '220px')};

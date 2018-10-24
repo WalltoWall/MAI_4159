@@ -23,12 +23,12 @@ const theme = {
     copy: 1.65,
   },
   fontFamilies: {
-    sans: '"Din Condensed", "Barlow Condensed", Helvetica, sans-serif',
+    sans: '"din-condensed", "Barlow Condensed", Helvetica, sans-serif',
     serif: '"Essonnes", "Abhaya Libre", "Times New Roman", serif',
     sans2: '"Quasimoda", "Lato", Helvetica, sans-serif',
   },
   letterSpacing: {
-    heading: '0.2rem',
+    heading: '0.15rem',
     button: '0.1rem',
   },
   width: {

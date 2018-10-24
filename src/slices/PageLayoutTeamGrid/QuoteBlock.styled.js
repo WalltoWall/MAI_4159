@@ -47,21 +47,24 @@ export const Quote = styled(HTMLContent)`
     color: ${t.c.darkgrey1};  
     z-index: 5;
     width: 100%;
+    line-height: 1.3rem;
     text-align: ${p => p.align === "right" ? "right" : "left"};
     padding: 0 ${t.s(0.5)};
     ${t.mq.s} {
-      font-size: ${t.f(1)};      
+      font-size: ${t.f(1)};   
+      line-height: 1.8rem;   
     }
     ${t.mq.l} {      
       width: 70%;    
       padding-right: ${p => p.align === "right" ? t.s(1) : "0"};
-      padding-left: ${p => p.align === "left" ? t.s(1) : "0"};      
+      padding-left: ${p => p.align === "left" ? t.s(1) : "0"};    
     }
     ${t.mq.x} {      
       width: 70%;    
       padding-right: ${p => p.align === "right" ? t.s(4) : "0"};
       padding-left: ${p => p.align === "left" ? t.s(4) : "0"};
-      font-size: ${t.f(2)};      
+      font-size: ${t.f(2)}; 
+      line-height: 2.2rem;     
     }
   }
 `

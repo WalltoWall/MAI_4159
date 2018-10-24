@@ -8,7 +8,7 @@ export const Content = styled.div`
 `
 
 export const ImageContainer = styled.a`  
-  width: 35px;
+  width: 30px;
   display: block;
   margin: 1rem auto;
   .gatsby-image-outer-wrapper {        
@@ -16,9 +16,6 @@ export const ImageContainer = styled.a`
   }
   .gatsby-image-wrapper {        
     height: 100%;
-  }
-  ${t.mq.l} {
-    width: 40px;
   }
 `
 

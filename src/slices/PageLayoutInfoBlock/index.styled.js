@@ -65,7 +65,7 @@ export const StyledHtmlClassName = css`
   h2 {
     font-family: ${t.ff.sans};
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: ${t.ls.button};
     font-size: ${t.f(1.5)};
     color: ${t.c.darkgrey2};

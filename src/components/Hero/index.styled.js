@@ -43,7 +43,7 @@ export const Title = styled.h1`
   text-align: center;
   left: 50%;
   bottom: 25%;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: ${t.ls.heading};
   transform: translate(-50%, 50%);
   ${t.mq.l} {

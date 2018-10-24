@@ -38,7 +38,7 @@ export const Intro = styled(HTMLContent)`
   h1 {
     font-family: ${t.ff.sans};
     font-size: ${t.s(1)};
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: ${t.ls.button};
     text-transform: uppercase;
     color: ${t.c.darkgrey2};
@@ -73,7 +73,7 @@ export const StyledExpandButton = styled(ExpandButton)`
   display: block;
   margin: 0 0 0 1rem;
   ${t.mq.m} {
-    margin: 0 0 0 0.3rem;
+    margin: 0.1rem 0 0 0.3rem;
   }
 `
 

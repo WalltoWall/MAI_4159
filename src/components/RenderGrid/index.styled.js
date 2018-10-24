@@ -23,9 +23,9 @@ export const Title = styled.p`
   font-size: ${p=> p.largeImages && !p.longText ? '1.3rem' : '0.9rem'};
   font-family: ${t.ff.sans};
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 400;
   color: ${t.c.darkgrey1};
-  letter-spacing: ${p=> p.largeImages ? '0.2rem' : '0.1rem'};
+  letter-spacing: ${p=> p.largeImages ? '0.15rem' : '0.1rem'};
   ${t.mq.l} {
     font-size: ${p=> p.largeImages && !p.longText ? '1.5rem' : '1.2rem'};
   }

@@ -56,6 +56,7 @@ export const RotatedContainer = styled.div`
 export const Headline = styled.div`
   color: ${t.c.yellow};
   font-size: ${t.f(6)};
+  font-weight: 400;
   letter-spacing: 3px;
   margin: 1rem 0 -1rem 0;
   span {
@@ -98,15 +99,15 @@ export const SubHeadline = styled.span`
   text-transform: uppercase;
   z-index: 2;
   ${t.mq.l} {
-    left: 228px;
+    left: 240px;
     top: 55%;
     display: block;
     font-size: ${t.f(2.5)};
   }
   ${t.mq.x} {
-    left: 260px;
+    left: 270px;
     top: 55%;
-    font-size: ${t.f(3.5)};
+    font-size: ${t.f(3)};
   }
 `
 const topToBottom = keyframes`
@@ -201,7 +202,7 @@ export const Gradient = styled.div`
 
 export const DescriptionWrapper = styled.div`
   line-height: ${t.lh.copy};
-  font-weight: 300;
+  font-weight: 400;
   width: ${t.w.mobile};
   margin: 0 auto;
   display: block;
@@ -268,7 +269,7 @@ export const StyledHtmlClassName = css`
   p {
     color: ${t.c.white};
     width: auto;
-    font-weight: 600;
+    font-weight: 400;
     text-align: center;
     font-family: ${t.ff.sans2};
     font-size: ${t.s(0.5)};

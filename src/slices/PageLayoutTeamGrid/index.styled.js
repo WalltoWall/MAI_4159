@@ -86,6 +86,7 @@ export const Title = styled.h1`
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.sans};
   letter-spacing: ${t.ls.button};
+  font-weight: 400;
   padding: 0;
   margin: 0;
   ${t.mq.s} {
