@@ -60,7 +60,7 @@ export class ProjectLayoutHero extends React.Component {
         </ContentContainer>
         {get(this.props.data, 'items').length > 1 && (
           <CarouselContainer>
-            <StyledCarousel autoplay={true} frameOverflow="show" wrapAround={true}
+            <StyledCarousel autoplay={true} frameOverflow="hide" wrapAround={true}
             renderCenterLeftControls={({ previousSlide }) => (
               <ArrowControlContainer onClick={previousSlide}>
                 <ArrowControl rotate={true} src={HoverArrowSVG} />

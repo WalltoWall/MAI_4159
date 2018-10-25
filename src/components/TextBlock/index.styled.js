@@ -85,12 +85,12 @@ export const StyledHtmlClassName = css`
     color: white;
     cursor: pointer;
     font-family: ${t.ff.sans};
-    font-weight: 600;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     font-size: ${t.f(3)};
     width: 220px;
-    padding: 0.6rem 0 0.1rem 0;
+    padding: 0.5rem 0 0.1rem 0;
     text-align: center;
     margin: 0 auto;
     display: block;

@@ -175,10 +175,12 @@ export const Title = styled.h1`
   }
   ${t.mq.xxx} {
     font-size: ${t.f(9)};
+    line-height: 5rem;
   }
 `
 
 export const InfoContainer = styled.div``
+
 export const InfoBlurb = css`
   margin-bottom: -6px;
   h3 {
