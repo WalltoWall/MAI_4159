@@ -1,5 +1,6 @@
 import styled from 'react-emotion'
 import t from 'theme'
+
 export const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -9,6 +10,7 @@ export const Container = styled.div`
 `
 export const Content = styled.div`
   text-align: center;
+  width: 100%;
   p {
     font-family: ${t.ff.serif};
     color: ${t.c.darkgrey2};
@@ -29,4 +31,9 @@ export const Content = styled.div`
 export const ImageContainer = styled.div`
   width: 100%;
   object-fit: cover;
+  max-height: 400px;
+  overflow: hidden;
+  ${t.mq.l} {
+    max-height: 600px;
+  }
 `

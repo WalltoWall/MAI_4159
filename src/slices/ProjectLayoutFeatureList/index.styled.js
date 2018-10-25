@@ -47,11 +47,11 @@ export const Title = styled.p`
   font-size: ${t.f(1)};
   font-family: ${t.ff.sans};
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 400;
   color: ${t.c.darkgrey1};
   letter-spacing: 0.1rem;
   ${t.mq.l} {
-    font-size: ${t.f(2)};
+    font-size: ${t.f(1.5)};
   }
 `
 

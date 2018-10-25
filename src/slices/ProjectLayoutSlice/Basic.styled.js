@@ -23,7 +23,7 @@ export const Content = styled.div`
   }
 `
 export const StyledHtmlClassName = css`
-  h2 {
+  h1 {
     font-size: ${t.f(3)};
     font-family: ${t.ff.serif};
     font-weight: 400;

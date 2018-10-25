@@ -28,7 +28,7 @@ export const StyledHtmlClassName = css`
     text-transform: uppercase;
     letter-spacing: ${t.ls.button};
     font-family: ${t.ff.sans};
-    font-weight: 600;
+    font-weight: 400;
     color: ${t.c.darkgrey1};
   }
   ul {

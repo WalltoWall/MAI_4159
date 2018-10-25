@@ -163,7 +163,7 @@ export const Header = styled.div`
 export const Title = styled.h1`
   font-size: ${t.f(6)};
   color: ${t.c.yellow};
-  font-weight: 600;
+  font-weight: 400;
   font-family: ${t.ff.sans};
   letter-spacing: 0.2rem;
   margin-bottom: 0;
