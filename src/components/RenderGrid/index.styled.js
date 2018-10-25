@@ -39,9 +39,17 @@ export const StyledLink = styled(Link)`
   display: block;
   margin: ${p=> p.largeImages ? '0.5rem 0' : '0'};
   width: ${p=> p.largeImages ? '100%' : '50%'};
-  height: ${p=> p.largeImages ? '20rem' : '10rem'};
+  height: ${p=> p.largeImages ? '18rem' : '10rem'};
   ${t.mq.m} {
     width: ${p=> p.largeImages ? '48%' : '24%'};
+    height: ${p=> p.largeImages ? '20rem' : '12rem'};
+    margin: ${p=> p.largeImages ? '0.5rem 1%' : '0.5rem 0.5%'};
+  }
+  ${t.mq.l} {
+    height: ${p=> p.largeImages ? '24rem' : '12rem'};
+    margin: ${p=> p.largeImages ? '0.5rem 1%' : '0.5rem 0.5%'};
+  }
+  ${t.mq.x} {
     height: ${p=> p.largeImages ? '28rem' : '12rem'};
     margin: ${p=> p.largeImages ? '0.5rem 1%' : '0.5rem 0.5%'};
   }

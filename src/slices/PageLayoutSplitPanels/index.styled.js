@@ -22,7 +22,10 @@ export const StyledHeadline = styled(Headline)`
 `
 
 export const Description = styled(BodyCopy)`
-  max-width: 450px;
+  width: 100%;
+  ${t.mq.l} {
+    width: 450px;
+  }
 `
 
 export const SplitPanelWrapper = styled.div`
@@ -60,9 +63,10 @@ export const ImageContainer = styled.div`
   .gatsby-image-wrapper {
     height: 100%;
   }
-  height: 400px;
+  height: 250px;
   ${t.mq.l} {
     width: 55%;
+    height: 400px;
     order: 2;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 3% 100%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 3% 100%);
