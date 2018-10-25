@@ -147,20 +147,20 @@ export const SlidingVertical = styled.div`
     font-size: ${t.f(6)};
     letter-spacing: 3px;
     color: ${t.c.white};
-    animation: ${topToBottom} 10s linear 0s infinite;
+    animation: ${topToBottom} 15s linear 0s infinite;
     opacity: 0;
     position: absolute;
     &:nth-child(2) {
-      animation-delay: 2s;
+      animation-delay: 3s;
     }
     &:nth-child(3) {
-      animation-delay: 4s;
-    }
-    &:nth-child(4) {
       animation-delay: 6s;
     }
+    &:nth-child(4) {
+      animation-delay: 9s;
+    }
     &:nth-child(5) {
-      animation-delay: 8s;
+      animation-delay: 12s;
     }
     ${t.mq.l} {
       font-size: ${t.f(9)};
