@@ -24,8 +24,8 @@ const theme = {
   },
   fontFamilies: {
     sans: '"din-condensed", "Barlow Condensed", Helvetica, sans-serif',
-    serif: '"Essonnes", "Abhaya Libre", "Times New Roman", serif',
-    sans2: '"Quasimoda", "Lato", Helvetica, sans-serif',
+    serif: '"essonnes-text", "Abhaya Libre", "Times New Roman", serif',
+    sans2: '"quasimoda", "Lato", Helvetica, sans-serif',
   },
   letterSpacing: {
     heading: '0.15rem',

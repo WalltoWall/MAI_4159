@@ -133,7 +133,7 @@ module.exports = {
                         }                        
                       }
                       ... on PrismicProjectLayoutCallToAction {
-                        primary {
+                        primary {                          
                           button_text
                         }                        
                       }                    
