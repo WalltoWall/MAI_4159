@@ -27,11 +27,12 @@ export const Content = styled.div`
 export const Form = styled.form`
   margin-top: ${t.s(0)};
   display: flex;
-  min-width: 350px;
+  min-width: 200px;
   width: 100%;
 
   ${t.mq.m} {
     width: auto;
+    min-width: 350px;
   }
   input {
     background-color: ${t.c.lightgrey2};
@@ -73,7 +74,7 @@ const StyledButton = styled(Link)`
   padding: t.s(-2, -0);
   font-size: t.f(-1);
   display: block;
-  width: '100px';
+  min-width: 50px;
   text-align: center;
   text-transform: uppercase;
   font-size: ${t.f(2)};

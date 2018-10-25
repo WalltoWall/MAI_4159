@@ -49,7 +49,7 @@ export const Quote = styled(HTMLContent)`
     width: 100%;
     line-height: 1.3rem;
     text-align: ${p => p.align === "right" ? "right" : "left"};
-    padding: 0 ${t.s(0.5)};
+    padding: 0 ${t.s(0.2)};
     ${t.mq.s} {
       font-size: ${t.f(1)};   
       line-height: 1.8rem;   

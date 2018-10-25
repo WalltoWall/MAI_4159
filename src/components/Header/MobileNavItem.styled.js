@@ -12,7 +12,7 @@ export const StyledLinkClassName = css`
   display: inline-block;
   padding: 1rem 0;
   font-size: ${t.f(2)};
-  font-weight: 700;
+  font-weight: 600;
   font-family: ${t.ff.sans2};
   letter-spacing: 0.2rem;
 `

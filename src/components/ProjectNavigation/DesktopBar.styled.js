@@ -35,7 +35,7 @@ export const CurrentFilter = styled.h2`
   font-size: ${t.f(1)};
   display: inline-block;
   margin: 0;
-  color: ${p => p.defaultColor ? t.c.white : t.c.yellow};
+  color: ${p => p.defaultColor ? t.c.lightgrey2 : t.c.yellow};
   text-align: center;
   cursor: pointer;
   padding-left: 10px;
@@ -64,12 +64,11 @@ export const StyledLink = styled(Link)`
   margin: 0 1rem;
   font-family: ${t.ff.sans2};
   letter-spacing: 0.1rem;
-  color: white;
   -webkit-transition: color 0.2s ease-in;
   -moz-transition: color 0.2s ease-in;
   -o-transition: color 0.2s ease-in;
   transition: color 0.2s ease-in;
-  color: ${p => p.isActive ? t.c.yellow : t.c.white };
+  color: ${p => p.isActive ? t.c.yellow : t.c.lightgrey2 };
   &:hover {    
     ${t.mq.l} {
       color: ${t.c.yellow};
@@ -99,12 +98,9 @@ export const NavArrow = styled(HoverArrowSVG)`
   flex-shrink: 0;
   height: 1rem;
   transform: ${p => (p.active ? 'rotate(90deg)' : 'rotate(0deg)')};
-  position: relative;
   z-index: 1;
   display: inline-block;
-  margin-left: 20px;
-  top: 0;
-  right: 8px;
+  margin-left: 10px;
 
   ${SubFilterContainer}:hover & {    
     transform: rotate(90deg);    
