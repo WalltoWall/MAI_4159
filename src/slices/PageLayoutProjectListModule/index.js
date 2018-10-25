@@ -29,7 +29,13 @@ const renderGrid = (data, item, currentFilter) => (
         (currentFilter !== "All")
       }
     >
-      <Title>{data.title.text}</Title>
+      <Title
+        bottom={
+        (get(item, 'position') === "Bottom") ||
+        (currentFilter !== "All")
+      }>
+        {data.title.text}
+      </Title>
     </OverlayContainer>
   </>
 )
