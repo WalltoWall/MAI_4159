@@ -4,9 +4,16 @@ import { Link } from 'components/Link'
 import { ReactComponent as AssetIconSearchSVG } from 'assets/icon-search.svg'
 
 export const Container = styled.div`
-  padding: 0 ${t.s(0)};
   position: relative;
   z-index: 2;
+  width: ${t.w.mobile};
+  margin: 0 auto;
+  ${t.mq.l} {
+    width: ${t.w.desktop};
+  }
+  ${t.mq.x} {
+    width: ${t.w.xl};
+  }
 `
 
 export const Content = styled.div`
@@ -20,7 +27,7 @@ export const Content = styled.div`
 export const Form = styled.form`
   margin-top: ${t.s(0)};
   display: flex;
-  min-width: 30%;
+  min-width: 350px;
   width: 100%;
 
   ${t.mq.m} {
@@ -28,19 +35,22 @@ export const Form = styled.form`
   }
   input {
     background-color: ${t.c.lightgrey2};
-    font-family: ${t.ff.sans2};
-    // color: ${t.c.darkgrey2};
+    font-family: ${t.ff.sans};
+    letter-spacing: ${t.ls.button};
+    font-size: ${t.f(2)};
   }
 `
 
 export const SearchQuery = styled.input`
   -webkit-appearance: none;
   border: none;
-  color: ${t.c.black};
+  color: ${t.c.darkgrey2};
+  font-family: ${t.ff.serif};
+  font-weight: 400;
+  text-transform: uppercase;
   flex-grow: 1;
   font-size: ${t.f(1)};
   padding: ${t.s(-1, 0)};
-  letter-spacing: ${t.ls.button};
   &::placeholder {
     color: ${t.c.darkgrey2};
     ${t.ls.button};

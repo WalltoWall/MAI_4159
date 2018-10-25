@@ -5,7 +5,10 @@ import { Link } from 'components/Link'
 export const StyledLink = styled(Link)`
   display: block;
   width: 100%;  
-  height: ${t.s(8.5)};
+  height: ${t.s(8)};
+  ${t.mq.s} {
+    width: 50%;  
+  }
   ${t.mq.l} {
     width: 33.333%;  
   }
@@ -14,7 +17,10 @@ export const StyledLink = styled(Link)`
 export const Container = styled.div`
   height: 100%;
   list-style: none;
-  padding: 10px;
+  padding: 0.5rem 0;
+  ${t.mq.s} {
+    padding: 0.5rem; 
+  }
 `
 export const ImageContainer = styled.div`
   height: 100%;

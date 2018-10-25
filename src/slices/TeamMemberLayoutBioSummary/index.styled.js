@@ -46,6 +46,7 @@ export const Column = styled.div`
     letter-spacing: ${t.ls.button};
     text-transform: uppercase;  
     margin: 1rem 0 0 0;
+    font-weight: 400;
     ${t.mq.l} {    
       margin: 0;
     }
@@ -55,7 +56,8 @@ export const Column = styled.div`
     font-size: ${t.f(4)};
     letter-spacing: ${t.ls.button};
     color: ${t.c.darkgrey2};
-    text-transform: uppercase;  
+    text-transform: uppercase; 
+    font-weight: 400;
     margin: 0;
   }
   p {

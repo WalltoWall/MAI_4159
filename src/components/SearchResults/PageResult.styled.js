@@ -9,7 +9,6 @@ export const StyledLink = styled(Link)`
   }
 `
 export const Container = styled.li`
-  width: 70%;
   margin: 0 auto;
   list-style: none;
   margin-bottom: ${t.s(1)};

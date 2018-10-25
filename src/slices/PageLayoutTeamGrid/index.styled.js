@@ -94,17 +94,17 @@ export const Title = styled.h1`
     padding: 0 0 5px 0;
   }
   ${t.mq.l} {
-    font-size: ${t.f(3)};
+    font-size: ${t.f(2.5)};
   }
   ${t.mq.x} {
-    font-size: ${t.f(5)};    
+    font-size: ${t.f(3.5)};    
   }
 `
 
 export const SubTitle = styled.div`
   display: none;
   text-transform: uppercase;
-  font-size: ${t.f(-2)};
+  font-size: ${t.f(-1.5)};
   color: ${t.c.darkgrey2};
   font-family: ${t.ff.sans};
   letter-spacing: ${t.ls.button};
@@ -115,12 +115,8 @@ export const SubTitle = styled.div`
     font-size: ${t.f(-1)};
   }
   ${t.mq.l} {
-    font-size: ${t.f(1.3)};
+    font-size: ${t.f(1)};
   }
-  ${t.mq.x} {
-    font-size: ${t.f(1.7)};
-  } 
-  
 `
 
 export const FilterBarContainer = styled.div`
@@ -201,6 +197,6 @@ export const Filter = styled.div`
 export const FilterContainer = styled.div`
   z-index: 5;
   position: sticky;
-  top:0;
+  top: 0;
   z-index: 99;  
 `

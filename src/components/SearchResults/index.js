@@ -1,6 +1,6 @@
 import React from 'react'
 import {get, head, last} from 'lodash'
-import { Container, StyledHTMLContent, Title, Items } from './index.styled'
+import { Container, StyledHTMLContent, Title, Items, Query } from './index.styled'
 import { Placeholder } from 'components/Placeholder'
 
 export const SearchResults = ({ children, query, queryType, ...props }) => {  
@@ -21,7 +21,7 @@ export const SearchResults = ({ children, query, queryType, ...props }) => {
           {resultLength + " "} 
           {queryType.slice(0, -1) + " "} 
           result
-          {children.length !== 1 && 's'} for <strong>{query}</strong>
+          {children.length !== 1 && 's'} for <Query>{query}</Query>
         </p>
       </StyledHTMLContent>
       <Items>{children}</Items>

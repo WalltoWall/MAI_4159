@@ -8,9 +8,7 @@ export const Container = styled.div`
 `
 
 export const ContentWrapper = styled.div`
-  margin: 0 auto;
-  max-width: ${t.ms.xx};
-  padding: ${p => (p.hasResults ? t.s(6, 0) : t.s(3, 0))};
+  margin: 1rem auto;
   width: 100%;
 `
 

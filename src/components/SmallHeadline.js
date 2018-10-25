@@ -5,7 +5,7 @@ export const SmallHeadline = styled.h1`
   color: ${p => (p.white ? 'white' : '#283f43')};
   font-family: ${t.ff.sans};
   font-size: ${t.f(3.5)};
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: 0;
   margin: ${p => (p.alignLeft ? '0 0 1rem 0' : '0')};
   text-transform: uppercase;
