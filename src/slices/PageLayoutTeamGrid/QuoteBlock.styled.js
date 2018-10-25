@@ -100,7 +100,7 @@ export const ClipContainer = styled.div`
   height: 100%;
   overflow: hidden;
   ${p => p.align === "left" ? 
-    "margin-left: 8rem;"
-  : "margin-left: -8rem;"
+    "left: 8rem;"
+  : "left: -8rem;"
   } 
 `

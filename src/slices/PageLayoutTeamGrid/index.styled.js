@@ -140,6 +140,9 @@ export const FilterBarContainer = styled.div`
 export const CurrentFilter = styled.div`
   cursor: pointer; 
   font-family: ${t.ff.sans2};
+  display: flex;
+  align-items: center;
+  justify-content: center;
   ${t.mq.l} {
     display: none;
   }
@@ -156,18 +159,16 @@ export const CurrentFilter = styled.div`
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
+    margin-right: 15px;
   }
 `
 export const NavArrow = styled(HoverArrowSVG)`
   flex-shrink: 0;
   height: 1.2rem;
   transform: ${p => (p.active ? 'rotate(90deg)' : 'rotate(0deg)')};
-  position: absolute;
   z-index: 1;
   display: inline-block;
   margin-left: 10px;  
-  right: 2rem;
-  top: 26px;
   ${t.mq.l} {
     display: none;
   }

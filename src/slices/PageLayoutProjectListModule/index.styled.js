@@ -16,7 +16,7 @@ export const Container = styled.div`
 export const Title = styled.h1`
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.sans};
-  font-size: ${p=> p.bottom ? t.f(0.5): t.f(2.5) };  
+  font-size: ${p=> p.bottom ? t.f(0.5): t.f(1.8) };  
   font-weight: 400;
   margin: 0 auto;
   text-transform: uppercase;
@@ -47,7 +47,7 @@ export const StyledLink = styled(Link)`
     width: ${p=> p.twoInRow ? '50%' : '25%'};
     padding-top: ${p=> p.twoInRow ? '40%' : '20%'};  
   }
-  ${t.mq.l} {
+  ${t.mq.x} {
     padding-top: ${p=> p.twoInRow ? '35%' : '15%'};  
   }
   &:hover {
@@ -74,7 +74,6 @@ export const OverlayContainer = styled.div`
   position: absolute;
   display: flex;
   padding: 1rem;
-  height: 55px;
   width: 100%;
   bottom: 0;
   background-color: ${t.c.white};
