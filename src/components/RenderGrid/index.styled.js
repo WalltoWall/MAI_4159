@@ -20,14 +20,14 @@ export const Title = styled.p`
   margin: auto;
   width: 100%;
   opacity: 1;
-  font-size: ${p=> p.largeImages && !p.longText ? '1.3rem' : '0.9rem'};
+  font-size: ${p=> p.largeImages && !p.longText ? '1.3rem' : '1rem'};
   font-family: ${t.ff.sans};
   text-transform: uppercase;
   font-weight: 400;
   color: ${t.c.darkgrey1};
   letter-spacing: ${p=> p.largeImages ? '0.15rem' : '0.1rem'};
   ${t.mq.l} {
-    font-size: ${p=> p.largeImages && !p.longText ? '1.5rem' : '1.2rem'};
+    font-size: ${p=> p.largeImages && !p.longText ? '1.5rem' : '1rem'};
   }
   ${t.mq.x} {
     font-size: ${p=> p.largeImages ? '1.5rem' : '1rem'};
@@ -47,11 +47,9 @@ export const StyledLink = styled(Link)`
   }
   ${t.mq.l} {
     height: ${p=> p.largeImages ? '24rem' : '12rem'};
-    margin: ${p=> p.largeImages ? '0.5rem 1%' : '0.5rem 0.5%'};
   }
   ${t.mq.x} {
     height: ${p=> p.largeImages ? '28rem' : '12rem'};
-    margin: ${p=> p.largeImages ? '0.5rem 1%' : '0.5rem 0.5%'};
   }
 
   &:hover {
@@ -67,7 +65,7 @@ export const OverlayContainer = styled.div`
   position: absolute;
   display: flex;
   flex-wrap: wrap;
-  height: ${p=> p.largeImages && !p.longText ? '50px' : '70px'};
+  height: ${p=> p.largeImages && !p.longText ? '50px' : '50px'};
   padding: ${p=> p.largeImages ? '1rem' : '0.5rem'};
   width: 100%;
   bottom: 0;

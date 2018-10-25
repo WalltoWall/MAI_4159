@@ -22,7 +22,7 @@ export const HeadlineWrapper = styled.div`
   text-transform: uppercase;
   text-align: center;
   position: relative;
-  font-weight: 600;
+  font-weight: 400;
   display: block;
   width: 100%;
   background-color: ${t.c.darkgrey1};
@@ -71,6 +71,7 @@ export const Headline = styled.div`
   h1 {
     font-size: ${t.f(5)};
     margin: 0;
+    font-weight: 400;
     ${t.mq.m} {
       margin-top: 10px;
       font-size: ${t.f(6.5)};

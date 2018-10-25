@@ -1,29 +1,15 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-import { Image } from 'components/Image'
-import { Headline } from 'components/Headline'
+import { SmallHeadline } from 'components/SmallHeadline'
+import { RenderGrid } from 'components/RenderGrid'
 import { getUnlessEmptyString } from 'helpers'
 import {
   Container,
   Content,
-  Title,
-  StyledLink,
-  ImageContainer,
-  OverlayContainer,
 } from './index.styled'
 import { Button } from 'components/Button'
 
-const renderFeatureGrid = ({ url, key, img, alt, title }) => (
-  <StyledLink to={url} key={key}>
-    <ImageContainer>
-      <Image alt={alt} fluid={img} fadeIn={false} />
-    </ImageContainer>
-    <OverlayContainer>
-      <Title>{title}</Title>
-    </OverlayContainer>
-  </StyledLink>
-)
 
 export const ProjectLayoutFeatureList = ({ data }) => {
   const featuredType = get(data, 'primary.feature_type')
@@ -31,10 +17,10 @@ export const ProjectLayoutFeatureList = ({ data }) => {
 
   return (
     <Container>
-      <Headline>{featuredType}</Headline>
+      <SmallHeadline>{featuredType}</SmallHeadline>
       <Content>
         {projects.map(project =>
-          renderFeatureGrid({
+          RenderGrid({
             url: get(project, 'projects.url'),
             key: get(project, 'projects.document[0].uid'),
             img: get(

@@ -177,8 +177,8 @@ export const Projects = styled.div`
   padding-bottom: 1rem;
   justify-content: flex-start;
   ${t.mq.s} {
-    width: ${t.w.mobile};
     margin: 1rem auto;
+    width: ${t.w.mobile};
   }
   ${t.mq.l} {
     width: ${t.w.desktop};

@@ -18,7 +18,7 @@ export const StyledLinkClassName = css`
 `
 export const NavArrow = styled(HoverArrowSVG)`
   position: absolute;
-  top: 1.4rem;
+  top: 1.1rem;
   height: 1.3rem;
   margin-left: -1.5rem;
   transition: transform ${t.t};

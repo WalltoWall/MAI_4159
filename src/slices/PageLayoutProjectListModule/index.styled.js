@@ -39,10 +39,16 @@ export const StyledLink = styled(Link)`
   display: ${p => p.show ? "block" : "none"};
   width: ${p=> p.twoInRow ? '100%' : '50%'};
   overflow: hidden;
-  padding-top: 60%;
+  padding-top: ${p=> p.twoInRow ? '50%' : '40%'}; 
+  ${t.mq.m} {
+    padding-top: ${p=> p.twoInRow ? '40%' : '30%'};  
+  }
   ${t.mq.l} {
     width: ${p=> p.twoInRow ? '50%' : '25%'};
-    padding-top: ${p=> p.twoInRow ? '35%' : '20%'};    
+    padding-top: ${p=> p.twoInRow ? '35%' : '20%'};  
+  }
+  ${t.mq.l} {
+    padding-top: ${p=> p.twoInRow ? '30%' : '15%'};  
   }
   &:hover {
     ${Title} {

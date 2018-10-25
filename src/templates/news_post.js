@@ -9,6 +9,7 @@ import { NewsPostLayoutTitle } from 'slices/NewsPostLayoutTitle'
 import { NewsPostLayoutHero } from 'slices/NewsPostLayoutHero'
 import { NewsPostLayoutTextBlock } from 'slices/NewsPostLayoutTextBlock'
 import { NewsPostLayoutSideBySideImages } from 'slices/NewsPostLayoutSideBySideImages'
+import { NewsPostLayoutFullImage } from 'slices/NewsPostLayoutFullImage'
 
 const NewsPostTemplate = ({ data }) => (
   <div>
@@ -23,13 +24,13 @@ const NewsPostTemplate = ({ data }) => (
           NewsPostLayoutHero,
           NewsPostLayoutTextBlock,
           NewsPostLayoutSideBySideImages,
+          NewsPostLayoutFullImage,
         }}
         page={get(data, 'prismicNewsPost')}
         rootData={data}
       />
       <Placeholder />
     </Layout>
-    
   </div>
 )
 
@@ -51,5 +52,6 @@ export const query = graphql`
     ...NewsPostLayoutHero
     ...NewsPostLayoutTextBlock
     ...NewsPostLayoutSideBySideImages
+    ...NewsPostLayoutFullImage
   }
 `

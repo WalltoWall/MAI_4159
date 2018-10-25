@@ -12,7 +12,7 @@ export const GridContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   ${t.mq.m} {
-    width: ${t.w.tablet};
+    width: ${t.w.mobile};
     justify-content: flex-start;
   }
   ${t.mq.l} {

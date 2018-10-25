@@ -208,14 +208,9 @@ export const ArrowControlContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: ${t.s(2)};
-  height: ${t.s(1.5)};
+  width: ${t.s(1.5)};
+  height: ${t.s(1)};
   cursor: pointer;
-
-  ${t.mq.s} {
-    width: ${t.s(3)};
-    height: ${t.s(2.5)};
-  }
 `
 
 export const ArrowControl = styled.img`

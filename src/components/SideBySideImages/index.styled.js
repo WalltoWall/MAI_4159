@@ -20,10 +20,15 @@ export const ImageContainer = styled.div`
     width: 49%;
     padding: 0;
     height: 300px;
+    margin: 0 0.5%;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:n(2)-child {
+      margin-right: 0;
+    }
   }
   ${t.mq.l} {
-    width: 49%;
-    padding: 0;
     height: 320px;
   }
 `
