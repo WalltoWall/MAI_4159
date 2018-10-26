@@ -1,6 +1,5 @@
 import styled from 'react-emotion'
 import t from 'theme'
-import { css } from 'emotion'
 
 export const Container = styled.div`
   display: flex;
@@ -9,14 +8,6 @@ export const Container = styled.div`
   flex-direction: column;
   background-color: ${p => p.background === "dark" ? t.c.darkgrey2 : "white"};
   padding: 5rem 0;
-`
-
-export const CtaHeaderClassName = css`
-  p {
-    font-family: ${t.ff.sans2};
-    font-size: ${t.s(0.2)};
-    line-height: ${t.lh.copy};
-  }
 `
 
 export const Content = styled.div`

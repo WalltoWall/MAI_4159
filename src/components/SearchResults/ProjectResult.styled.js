@@ -35,14 +35,18 @@ export const Image = styled.img`
   
 `
 export const Title = styled.div`
-  position: absolute;
-  bottom: 0;
   text-align: center;
-  background-color: #f6f4f2d1;
-  width: 100%;
-  padding: ${t.s(0)} 0;
   text-transform: uppercase;
   font-family: ${t.ff.sans};
   letter-spacing: 1px;
   color: ${t.c.darkgrey1};
+`
+
+export const TitleContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  background-color: ${t.c.white};
+  width: 100%;
+  padding: ${t.s(0)} 0;
+  opacity: 0.8;
 `

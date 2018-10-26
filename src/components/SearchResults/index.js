@@ -1,5 +1,4 @@
 import React from 'react'
-import {get, head, last} from 'lodash'
 import { Container, StyledHTMLContent, Title, Items, Query } from './index.styled'
 import { Placeholder } from 'components/Placeholder'
 

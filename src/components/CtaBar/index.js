@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, CtaHeaderClassName } from './index.styled'
+import { Container } from './index.styled'
 import { Button } from 'components/Button'
 import { Headline } from 'components/Headline'
 
