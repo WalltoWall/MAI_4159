@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, ImageContainer, Image, StyledLink, Title } from './ProjectResult.styled'
+import { Container, ImageContainer, Image, StyledLink, Title, TitleContainer } from './ProjectResult.styled'
 
 export const ProjectResult = ({
   path,
@@ -12,7 +12,9 @@ export const ProjectResult = ({
     <Container>    
       <ImageContainer>
         <Image src={imageUrl}/>
-        <Title>{metaTitle || title}</Title>
+        <TitleContainer>
+         <Title>{metaTitle || title}</Title>
+        </TitleContainer>
       </ImageContainer>            
     </Container>
   </StyledLink>

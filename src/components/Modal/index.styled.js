@@ -16,15 +16,6 @@ const fadeIn = keyframes`
   }
 `
 
-const maxWidthChooser = ({ size }) => {
-  switch (size) {
-    case 'small':
-      return t.s(10.5)
-    default:
-      return t.s(11)
-  }
-}
-
 export const overlayClassName = css`
   animation: ${fadeIn} ${t.t};
   background: none;
