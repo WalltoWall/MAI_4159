@@ -9,7 +9,7 @@ export const Container = styled.div`
 `
 
 export const QuoteWrapper = styled.div`
-  background-color: ${t.c.yellow};
+  border: 3px solid ${t.c.yellow};
   display: block;
   margin: 0 auto;
   padding: 2rem;
