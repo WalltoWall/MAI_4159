@@ -52,6 +52,7 @@ export const StyledLinkContainer = styled.div`
   align-items: center;
   height: 229px;
   left: -25px;
+  z-index: 1;
   :hover {
     display: flex;
   }
@@ -98,6 +99,7 @@ export const NestedStyledLink = styled(Link)`
 export const NavArrow = styled(HoverArrowSVG)`
   flex-shrink: 0;
   height: 1rem;
+  width: 1rem;
   transform: ${p => (p.active ? 'rotate(90deg)' : 'rotate(0deg)')};
   z-index: 1;
   display: inline-block;
