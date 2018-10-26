@@ -16,6 +16,7 @@ export const Content = styled.div`
   margin: 2rem auto;  
   ${t.mq.m} {
     align-items: flex-start;
+    width: ${t.w.mobile};
   }
   ${t.mq.l} {
     width: ${t.w.desktop};

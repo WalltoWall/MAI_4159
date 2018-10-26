@@ -23,7 +23,7 @@ export const StyledImage = styled(Image)`
 export const ImageContainer = styled.div`
   position: relative;
   height: ${t.s(9)};
-  max-height: 350px;
+  max-height: 300px;
   overflow: hidden;
   background-color: ${t.c.darkgrey2};
   z-index: 0;
@@ -32,6 +32,9 @@ export const ImageContainer = styled.div`
   }
   .gatsby-image-wrapper {
     height: 100%;
+  }
+  ${t.mq.x} {
+    max-height: 350px;
   }
 `
 export const Title = styled.h1`
@@ -47,14 +50,14 @@ export const Title = styled.h1`
   letter-spacing: ${t.ls.heading};
   transform: translate(-50%, 50%);
   ${t.mq.l} {
-    font-size: ${t.f(9)};
-  }
-  ${t.mq.l} {
     bottom: -10%;
     left: 0;
     margin-top: -20px;
-    font-size: ${t.f(9)};
+    font-size: ${t.f(8)};
     transform: none;
+  }
+  ${t.mq.x} {
+    font-size: ${t.f(9)};
   }
 `
 

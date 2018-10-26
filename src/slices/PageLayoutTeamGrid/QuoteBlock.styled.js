@@ -49,7 +49,7 @@ export const Quote = styled(HTMLContent)`
     width: 100%;
     line-height: 1.3rem;
     text-align: ${p => p.align === "right" ? "right" : "left"};
-    padding: 0 ${t.s(0.5)};
+    padding: 0 ${t.s(0.2)};
     ${t.mq.s} {
       font-size: ${t.f(1)};   
       line-height: 1.8rem;   
@@ -100,7 +100,7 @@ export const ClipContainer = styled.div`
   height: 100%;
   overflow: hidden;
   ${p => p.align === "left" ? 
-    "margin-left: 8rem;"
-  : "margin-left: -8rem;"
+    "left: 8rem;"
+  : "left: -8rem;"
   } 
 `

@@ -65,7 +65,7 @@ export const OverlayContainer = styled.div`
   position: absolute;
   display: flex;
   flex-wrap: wrap;
-  height: ${p=> p.largeImages && !p.longText ? '50px' : '50px'};
+  height: ${p=> p.largeImages && !p.longText ? '50px' : '75px'};
   padding: ${p=> p.largeImages ? '1rem' : '0.5rem'};
   width: 100%;
   bottom: 0;

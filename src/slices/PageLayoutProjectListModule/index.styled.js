@@ -16,7 +16,7 @@ export const Container = styled.div`
 export const Title = styled.h1`
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.sans};
-  font-size: ${t.f(1)};
+  font-size: ${p=> p.bottom ? t.f(0.5): t.f(1.8) };  
   font-weight: 400;
   margin: 0 auto;
   text-transform: uppercase;
@@ -30,7 +30,7 @@ export const Title = styled.h1`
     margin: auto 0;
   }
   ${t.mq.s} {
-    font-size: ${t.f(2.5)};
+    font-size: ${p=> p.bottom ? t.f(1): t.f(2.5) };  
   } 
 `
 
@@ -39,16 +39,16 @@ export const StyledLink = styled(Link)`
   display: ${p => p.show ? "block" : "none"};
   width: ${p=> p.twoInRow ? '100%' : '50%'};
   overflow: hidden;
-  padding-top: ${p=> p.twoInRow ? '50%' : '40%'}; 
+  padding-top: ${p=> p.twoInRow ? '65%' : '40%'}; 
   ${t.mq.m} {
-    padding-top: ${p=> p.twoInRow ? '40%' : '30%'};  
+    padding-top: ${p=> p.twoInRow ? '45%' : '30%'};  
   }
   ${t.mq.l} {
     width: ${p=> p.twoInRow ? '50%' : '25%'};
-    padding-top: ${p=> p.twoInRow ? '35%' : '20%'};  
+    padding-top: ${p=> p.twoInRow ? '40%' : '20%'};  
   }
-  ${t.mq.l} {
-    padding-top: ${p=> p.twoInRow ? '30%' : '15%'};  
+  ${t.mq.x} {
+    padding-top: ${p=> p.twoInRow ? '35%' : '15%'};  
   }
   &:hover {
     ${Title} {
@@ -74,12 +74,12 @@ export const OverlayContainer = styled.div`
   position: absolute;
   display: flex;
   padding: 1rem;
-  height: 55px;
   width: 100%;
   bottom: 0;
   background-color: ${t.c.white};
   opacity: 0.8;
   z-index: 5;
+  height: ${p => p.longText ? t.s(4) : t.s(3)};
   -webkit-transition: all 60ms ease-in;
   -moz-transition: all 60ms ease-in;
   -o-transition: all 60ms ease-in;
@@ -89,15 +89,15 @@ export const OverlayContainer = styled.div`
     border-bottom: 1rem solid ${t.c.yellow};
   }
   ${t.mq.t} {
-    height: ${p => p.longText && p.bottom ? t.s(4) : t.s(4)}
+    height: ${p => p.longText && p.bottom ? t.s(4) : t.s(3)}
   }
   ${t.mq.s} {
-    height: ${p => p.longText && p.bottom ? t.s(4.5) : t.s(4)}
+    height: ${p => p.longText && p.bottom ? t.s(4.5) : t.s(3.5)}
   }
   ${t.mq.l} {
-    height: ${p => p.longText && p.bottom ? t.s(4.5) : t.s(4)}
+    height: ${p => p.longText && p.bottom ? t.s(4) : t.s(4)}
   }
   ${t.mq.x} {
-    height: ${p => p.longText && p.bottom ? t.s(4.5) : t.s(3.5)}
+    height: ${p => p.longText && p.bottom ? t.s(3.5) : t.s(3.5)}
   }
 `

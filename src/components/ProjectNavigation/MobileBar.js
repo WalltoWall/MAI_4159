@@ -93,7 +93,7 @@ export class MobileBar extends React.Component {
           <div style={{ position: 'relative' }}>
             <p
               className={navItemClassName}
-              style={{ display: 'inline-block' }}
+              style={{ display: 'inline-flex' }}
               onClick={e => this.toggleSubFilter(e, false)}
             >
               Building Use
@@ -131,7 +131,6 @@ export class MobileBar extends React.Component {
               <Filter
                 onClick={(e) => this.props.setFilter("All")}
                 isActive={this.props.currentFilter === "All"}
-                style={{paddingLeft: '15%'}}
               >
                 All
               </Filter>          
