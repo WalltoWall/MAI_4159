@@ -63,9 +63,6 @@ export const NavList = styled.ul`
   font-weight: 700;
   font-size: ${t.f(0)};
   margin-top: 0.5rem;
-  @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {  
-   line-height: 1rem;
-  }
   ${t.mq.x} {
     font-size: ${t.f(1)};
     -ms-line-height: 1.2rem;
@@ -94,6 +91,7 @@ export const linkActiveClassName = css`
 export const NavArrow = styled(HoverArrowSVG)`
   flex-shrink: 0;
   height: 0.8rem;
+  width: 0.8rem;
   margin-left: -1rem;
   margin-right: 0.6rem;
   position: relative;
