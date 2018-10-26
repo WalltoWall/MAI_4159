@@ -5,9 +5,11 @@ import { ReactComponent as HoverArrowSVG } from 'assets/hov_arrow.svg'
 
 export const Container = styled.div`
   position: relative;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
+  @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) { 
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+  }
 `
 
 export const StyledLinkClassName = css`

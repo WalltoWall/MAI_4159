@@ -25,6 +25,8 @@ export const ImageContainer = styled.div`
   }
   .gatsby-image-wrapper {
     height: 100%;
+    background-size: cover;
+    background-position: center center;
   }
   ${t.mq.s} {
     display: block;
