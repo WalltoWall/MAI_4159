@@ -23,7 +23,7 @@ export const StyledImage = styled(Image)`
 export const ImageContainer = styled.div`
   position: relative;
   height: ${t.s(9)};
-  max-height: 300px;
+  height: 300px;
   overflow: hidden;
   background-color: ${t.c.darkgrey2};
   z-index: 0;
@@ -34,7 +34,7 @@ export const ImageContainer = styled.div`
     height: 100%;
   }
   ${t.mq.x} {
-    max-height: 350px;
+    height: 350px;
   }
 `
 export const Title = styled.h1`
