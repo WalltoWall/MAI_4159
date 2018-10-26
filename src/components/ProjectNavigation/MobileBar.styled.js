@@ -83,7 +83,8 @@ export const linkActiveClassName = css`
 
 export const NavArrow = styled(HoverArrowSVG)`
   flex-shrink: 0;
-  height: 1.2rem;
+  height: 1rem;
+  width: 1rem;
   transform: ${p => (p.active ? 'rotate(90deg)' : 'rotate(0deg)')};
   z-index: 1;
   display: inline-block;
