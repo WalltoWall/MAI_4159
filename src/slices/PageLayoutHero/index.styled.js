@@ -40,6 +40,8 @@ export const HeadlineWrapper = styled.div`
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
+    left: 0;
+    top: 42%;
   }
 `
 export const RotatedContainer = styled.div`
