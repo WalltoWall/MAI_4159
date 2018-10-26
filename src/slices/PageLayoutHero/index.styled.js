@@ -41,6 +41,9 @@ export const HeadlineWrapper = styled.div`
     -ms-transform: none;
     transform: none;
     left: 0;
+    top: 40%;
+  }
+    ${t.mq.x} {
     top: 42%;
   }
 `
@@ -93,7 +96,6 @@ export const Headline = styled.div`
 export const SubHeadline = styled.span`
   display: none;
   font-family: ${t.ff.sans2};
-  position: absolute;
   left: 22%;
   font-weight: 700;
   letter-spacing: 2px;
@@ -102,14 +104,12 @@ export const SubHeadline = styled.span`
   text-transform: uppercase;
   z-index: 2;
   ${t.mq.l} {
-    left: 240px;
-    top: 55%;
+    margin-left: 175px;
     display: block;
     font-size: ${t.f(2.5)};
   }
   ${t.mq.x} {
-    left: 270px;
-    top: 55%;
+    margin-left: 205px;
     font-size: ${t.f(3)};
   }
 `
