@@ -73,6 +73,7 @@ class GridList extends React.Component {
         {this.state.items.slice(0, this.state.visible).map((news_post, index) => {
             return (
               <StyledLink to={"/" + get(news_post, 'node.uid')} key={get(news_post, 'node.uid') + index}>
+              {get(news_post, 'node.data.image.localFile.childImageSharp.fluid') && (  
                 <ImageContainer>
                   <Image 
                     fluid={get(news_post, 'node.data.image.localFile.childImageSharp.fluid')} 
@@ -80,6 +81,7 @@ class GridList extends React.Component {
                     fadeIn={false} 
                   />
                 </ImageContainer>
+                )}
                 <ContentContainer>
                   <PostDate>
                     {format(new Date(get(news_post, 'node.data.date')),
