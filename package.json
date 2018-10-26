@@ -31,6 +31,7 @@
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-source-prismic": "^2.0.0-alpha.2",
     "gatsby-transformer-sharp": "^2.1.1-beta.4",
+    "intersection-observer": "^0.5.1",
     "invariant": "^2.2.4",
     "lodash": "^4.17.10",
     "modern-normalize": "^0.5.0",
