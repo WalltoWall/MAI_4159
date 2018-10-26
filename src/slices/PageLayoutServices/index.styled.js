@@ -123,7 +123,7 @@ export const StyledHtmlClassName = css`
   h2 {
     color: ${t.c.darkgrey1};
     font-family: ${t.ff.sans2};
-    font-size: ${t.f(1.6)};
+    font-size: ${t.f(1.2)};
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1rem;

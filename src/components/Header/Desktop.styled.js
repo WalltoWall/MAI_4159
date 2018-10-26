@@ -93,7 +93,7 @@ export const NavArrow = styled(HoverArrowSVG)`
   height: 0.8rem;
   width: 0.8rem;
   margin-left: -1rem;
-  margin-right: 0.6rem;
+  margin-right: 0.2rem;
   position: relative;
   transition: transform ${t.t};
   transform: translateY(5%);

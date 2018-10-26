@@ -34,7 +34,7 @@ const textAlignment = ({ align_text }) => {
 
 export const Container = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   ${backgroundChooser};
   flex-wrap: wrap;
   padding: 4rem 0;
