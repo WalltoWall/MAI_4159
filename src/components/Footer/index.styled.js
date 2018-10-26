@@ -23,6 +23,7 @@ export const FooterLogo = styled.img`
   margin-top: -${t.s(3.8)};
   z-index: 3;
   width: 80px;
+  height: 100%;
 `
 export const BrandContent = styled.div`
   color: ${t.c.darkgrey2};

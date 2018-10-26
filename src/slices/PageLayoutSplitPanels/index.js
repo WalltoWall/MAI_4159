@@ -12,6 +12,7 @@ import {
   ServicesButton,
   ImageContainer,
   Content,
+  Overlay,
 } from './index.styled'
 import { Link } from 'components/Link'
 
@@ -37,6 +38,7 @@ export const PageLayoutSplitPanels = ({ data }) => (
                 }}
               />
               <ServicesButton to={get(item, 'link.url')}>learn more</ServicesButton>
+              <Overlay />
             </Content>
           </DescriptionWrapper>
         </SplitPanelWrapper>

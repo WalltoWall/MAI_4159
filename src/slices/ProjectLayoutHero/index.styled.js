@@ -204,6 +204,7 @@ export const InfoLine = styled.hr`
   opacity: 0.6;
   width: 100px;
   margin: 0;
+  margin-right: auto;
 `
 
 export const ArrowControlContainer = styled.div`
