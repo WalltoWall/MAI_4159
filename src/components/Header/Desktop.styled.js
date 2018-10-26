@@ -58,17 +58,17 @@ export const NavList = styled.ul`
   letter-spacing: 0.1rem;
   list-style-type: none;
   font-size: 1.1rem;
-  -ms-line-height: 0.8rem;
+  -ms-line-height: 1rem;
   line-height: 1.6rem;
   font-weight: 700;
   font-size: ${t.f(0)};
   margin-top: 0.5rem;
   @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {  
-   line-height: 0.5rem;
+   line-height: 1rem;
   }
   ${t.mq.x} {
     font-size: ${t.f(1)};
-    -ms-line-height: 1rem;
+    -ms-line-height: 1.2rem;
     line-height: 2rem;
     margin-top: 1rem;
   }
