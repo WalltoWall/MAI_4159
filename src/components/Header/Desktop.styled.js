@@ -25,6 +25,11 @@ export const LogoLink = styled(Link)`
   margin: 0 0 0 -29px;
   width: 60px;
   ${t.mq.l} {
+    width: 55px;
+    left: 0;
+    margin: 1rem 0 0 3.5rem;
+  }
+  ${t.mq.x} {
     width: 65px;
     left: 0;
     margin: 1rem 0 0 3.5rem;
@@ -53,8 +58,15 @@ export const NavList = styled.ul`
   letter-spacing: 0.1rem;
   list-style-type: none;
   font-size: 1.1rem;
-  line-height: 2rem;
+  line-height: 1.6rem;
   font-weight: 700;
+  font-size: ${t.f(0)};
+  margin-top: 0.5rem;
+  ${t.mq.x} {
+    font-size: ${t.f(1)};
+    line-height: 2rem;
+    margin-top: 1rem;
+  }
 `
 
 export const navItemClassName = css`

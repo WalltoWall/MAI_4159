@@ -41,9 +41,9 @@ export const Desktop = styled.div`
   background-color: ${t.c.darkgrey2};
   display: none;
   justify-content: center;
-  padding: ${t.s(1)} 0;
+  padding: ${t.s(0.5)} 0;
   color: ${t.c.white};
-  font-size: ${t.f(1)};
+  font-size: ${t.f(0.5)};
   font-weight: 700;
   z-index: 2;
   ${t.mq.l} {
@@ -57,7 +57,7 @@ export const Mobile = styled.div`
   text-align: center;
   padding: ${t.s(1)} 0;
   color: ${t.c.white};
-  font-size: ${t.f(1)};
+  font-size: ${t.f(0.5)};
   font-family: ${t.ff.sans2};
   letter-spacing: 0.1rem;
   font-weight: 700;
@@ -70,7 +70,7 @@ export const Mobile = styled.div`
 export const FilterMenu = styled.h2`
   cursor: pointer;
   color: ${t.c.white};
-  font-size: ${t.f(1)};
+  font-size: ${t.f(0.5)};
   font-weight: 700;
   display: inline;
 `

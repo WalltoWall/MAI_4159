@@ -79,6 +79,7 @@ export const OverlayContainer = styled.div`
   background-color: ${t.c.white};
   opacity: 0.8;
   z-index: 5;
+  height: ${p => p.longText ? t.s(4) : t.s(3)};
   -webkit-transition: all 60ms ease-in;
   -moz-transition: all 60ms ease-in;
   -o-transition: all 60ms ease-in;

@@ -17,7 +17,7 @@ export const MobileContainer = styled.div`
   // top: 0px;
   // z-index: 98;
   span {
-    font-size: ${t.f(0.5)};
+    font-size: ${t.f(0)};
     color: ${t.c.lightgrey1};
     font-weight: 600;
     text-transform: uppercase;
@@ -34,7 +34,7 @@ export const PrimaryFilterContainer = styled.div`
 `
 
 export const CurrentFilter = styled.h2`
-  font-size: ${t.f(1.5)};
+  font-size: ${t.f(0.5)};
   display: inline-flex;
   align-items: center;
   margin: 0;
@@ -67,7 +67,7 @@ export const navItemClassName = css`
   display: block;
   margin: 0 2rem;
   color: ${t.c.white};
-  font-size: ${t.f(1.5)};
+  font-size: ${t.f(0)};
   padding: 0.6rem 0;
   font-weight: 600;
   font-family: ${t.ff.sans2};
@@ -78,6 +78,7 @@ export const navItemClassName = css`
 
 export const linkActiveClassName = css`
   color: ${t.c.yellow};
+  font-size: ${t.f(0.5)};
 `
 
 export const NavArrow = styled(HoverArrowSVG)`
@@ -93,6 +94,7 @@ export const SubFilterContainer = styled.div`
   display: ${p => (p.isOpen ? 'block' : 'none')};
   background-color: ${t.c.lightgrey4};
   padding: 0.5rem 0;
+  font-size: ${t.f(0.5)};
   width: 110%;
   margin-left: -5%;
 `
@@ -133,7 +135,7 @@ export const Filter = styled.div`
   flex: 0 0 auto;
   color: ${p=> p.isActive ? t.c.yellow : t.c.lightgrey2};  
   font-family: ${t.ff.sans2};
-  font-size: ${t.f(1)};
+  font-size: ${t.f(0.5)};
   font-weight: 600;
   cursor: pointer;
   margin: 0;

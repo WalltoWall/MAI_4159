@@ -134,6 +134,7 @@ export const FilterBarContainer = styled.div`
     display: flex;
     flex-direction: row;
     background-color: ${t.c.darkgrey2};
+    padding: ${t.s(0.5)};
   }
 ` 
 
@@ -147,14 +148,14 @@ export const CurrentFilter = styled.div`
     display: none;
   }
   background-color: ${t.c.darkgrey2};
-  font-size: ${t.f(1)};
+  font-size: ${t.f(0.5)};
   letter-spacing: 0.1rem;
   font-weight: 700;
   text-align: center;
   padding: ${t.s(1)} 0;
   color: ${t.c.yellow};
   span {
-    font-size: ${t.f(0.5)};
+    font-size: ${t.f(0)};
     color: ${t.c.lightgrey1};
     font-weight: 600;
     text-transform: uppercase;
@@ -175,7 +176,7 @@ export const NavArrow = styled(HoverArrowSVG)`
 `
 
 export const Filter = styled.div`  
-  font-size: ${t.f(1)};
+  font-size: ${t.f(0.5)};
   font-weight: 700;
   letter-spacing: 0.1rem;
   font-family: ${t.ff.sans2};

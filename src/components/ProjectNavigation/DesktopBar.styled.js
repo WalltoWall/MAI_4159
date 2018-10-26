@@ -12,11 +12,12 @@ export const DesktopContainer = styled.div`
   justify-content: center;
   align-items: center;  
   color: ${t.c.white};
-  font-size: ${t.f(1)};
+  font-size: ${t.f(0)};
   font-weight: 700;
   z-index: 99;
   ${t.mq.l} {
     display: flex;
+    font-size: ${t.f(0.5)};
   }
 `
 
