@@ -39,7 +39,6 @@ export const Container = styled.div`
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 4rem 0;
-  width: 100%;
 `
 
 export const StyledHTMLContent = styled(HTMLContent)`

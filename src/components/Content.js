@@ -7,6 +7,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  -ms-align-items: stretch;
   align-items: flex-start;
   flex-wrap: wrap;
   ${t.mq.l} {
