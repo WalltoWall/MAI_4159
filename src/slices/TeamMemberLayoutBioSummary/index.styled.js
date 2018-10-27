@@ -80,8 +80,7 @@ export const Column = styled.div`
 export const SocialContainer = styled.div`
   display: flex;
   justify-content: left;
-  width: 100%;
-  height: 100%;  
+  width: 100%; 
   margin-top: ${t.s(2)};
   align-items: center;
 `
@@ -90,7 +89,7 @@ export const StyledLink = styled(Link)`
   display: block; 
   margin-right: 1rem; 
   width: 25px;
-  height: 100%;
+  height: 25px;
 `
 
 export const StyledLinkedinIcon = styled(LinkedinIcon)`

@@ -102,10 +102,10 @@ export const Title = styled.h1`
     padding: 0 0 5px 0;
   }
   ${t.mq.l} {
-    font-size: ${t.f(2)};
+    font-size: ${t.f(2.5)};
   }
   ${t.mq.x} {
-    font-size: ${t.f(3)};    
+    font-size: ${t.f(3.5)};    
   }
 `
 
@@ -124,7 +124,7 @@ export const SubTitle = styled.div`
     font-size: ${t.f(-1)};
   }
   ${t.mq.l} {
-    font-size: ${t.f(0)};
+    font-size: ${t.f(-0.5)};
   }
 `
 
