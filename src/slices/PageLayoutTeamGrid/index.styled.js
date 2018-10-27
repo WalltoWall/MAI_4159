@@ -121,7 +121,7 @@ export const SubTitle = styled.div`
   margin: 0;
   ${t.mq.s} {
     display: block;
-    font-size: ${t.f(-1)};
+    font-size: ${t.f(-1.5)};
   }
   ${t.mq.l} {
     font-size: ${t.f(-0.5)};

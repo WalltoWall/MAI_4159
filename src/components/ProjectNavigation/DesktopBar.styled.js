@@ -29,7 +29,7 @@ export const SubFilterContainer = styled.div`
   justify-content: center;
   align-items: center;
   font-family: ${t.ff.sans2};
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.05rem;
 `
 
 export const CurrentFilter = styled.h2`

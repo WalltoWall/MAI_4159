@@ -58,6 +58,7 @@ export const QuoteMark = styled.div`
   }
    ${t.mq.l} {
   	font-size: 14rem;
+    top: -60px;
   }
 `
 
