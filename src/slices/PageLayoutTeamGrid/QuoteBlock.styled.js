@@ -39,6 +39,7 @@ export const Quote = styled(HTMLContent)`
   background: ${t.c.yellow};  
   position: relative; 
   z-index: 98;
+  width: 100%;
   align-items: ${p => p.align === "left" ? "flex-start" : "flex-end"};
   p {
     font-size: ${t.f(0)};
