@@ -18,8 +18,11 @@ const backgroundColor = ({ background_color }) => {
 
 export const Container = styled.div`
   flex-direction: column;
-  padding: 8rem 0 6rem 0;
+  padding: 4rem 0 4rem 0;
   ${backgroundColor};
+  ${t.mq.l} {
+    padding: 8rem 0 6rem 0;
+  }
 `
 
 export const Title = styled.h2`
@@ -38,15 +41,16 @@ export const Title = styled.h2`
 export const Description = styled.div`
   color: ${t.c.darkgrey1};
   font-family: ${t.ff.serif};
-  line-height: 2rem;
+  line-height: 1.8rem;
   font-size: ${t.s(0.9)};
   font-weight: 400;
   width: ${t.w.mobile};
-  text-align: center;
+  text-align: left;
   margin: 1rem auto 3rem auto;
   ${t.mq.l} {
     width: ${t.w.desktop};
-    line-height: 2.5rem;
+    text-align: center;
+    line-height: 2.1rem;
     font-size: ${t.s(1.4)};
     margin: 1rem auto 4rem auto;
   }
@@ -123,7 +127,7 @@ export const StyledHtmlClassName = css`
   h2 {
     color: ${t.c.darkgrey1};
     font-family: ${t.ff.sans2};
-    font-size: ${t.f(1.2)};
+    font-size: ${t.f(0.5)};
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
