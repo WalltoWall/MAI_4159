@@ -46,7 +46,9 @@ export const OverlayContainer = styled.div`
   align-items: flex-end;
   text-align: center;
   bottom: 0; 
+  left: 0;
   color: yellow;
+  z-index: 1;
 `
 
 export const Overlay = styled.div`
@@ -62,14 +64,20 @@ export const Overlay = styled.div`
 export const TitleContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   flex-direction: column;
   width: 100%;
   background-color: white;
   transition: all 100ms ease-in-out;
   opacity: 0.8;
   padding: ${t.s(0.2)} ${t.s(1)};
-  
+  height: 20%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  ${t.mq.s} {
+    height: 30%;
+  }
   ${t.mq.l} {
     opacity: 0;
     padding: ${t.s(0)} 0;
