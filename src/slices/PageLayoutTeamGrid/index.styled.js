@@ -80,7 +80,7 @@ export const TitleContainer = styled.div`
   }
   ${t.mq.l} {
     opacity: 0;
-    padding: ${t.s(0)} 0;
+    padding: ${t.s(0)} ${t.s(0)};
     height: 60px;
     ${StyledLink}:hover & {
       opacity: ${p => p.isActive ? 0.8 : 0};
@@ -102,10 +102,10 @@ export const Title = styled.h1`
     padding: 0 0 5px 0;
   }
   ${t.mq.l} {
-    font-size: ${t.f(2.5)};
+    font-size: ${t.f(2)};
   }
   ${t.mq.x} {
-    font-size: ${t.f(3.5)};    
+    font-size: ${t.f(3)};    
   }
 `
 

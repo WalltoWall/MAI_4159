@@ -67,6 +67,16 @@ export const Text = styled(HTMLContent)`
       text-align: center;
     }
   }
+  h3 {
+    color: ${t.c.darkgrey1};
+    font-family: ${t.ff.sans2};
+    font-size: ${t.f(0)};
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    margin-bottom: 1.4rem;
+  }
 `
 
 export const StyledExpandButton = styled(ExpandButton)`

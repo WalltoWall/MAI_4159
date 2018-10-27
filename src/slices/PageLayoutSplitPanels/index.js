@@ -14,12 +14,10 @@ import {
   Content,
   Overlay,
 } from './index.styled'
-import { Link } from 'components/Link'
 
 export const PageLayoutSplitPanels = ({ data }) => (
   <Container>
     {get(data, 'items', []).map(item => (
-      <Link to={get(item, 'link.url')}>
         <SplitPanelWrapper>
           <ImageContainer>
             <Image
@@ -42,7 +40,6 @@ export const PageLayoutSplitPanels = ({ data }) => (
             </Content>
           </DescriptionWrapper>
         </SplitPanelWrapper>
-      </Link>
     ))}
   </Container>
 )

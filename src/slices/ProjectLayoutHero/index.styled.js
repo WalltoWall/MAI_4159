@@ -165,7 +165,7 @@ export const Title = styled.h1`
   color: ${t.c.yellow};
   font-weight: 400;
   font-family: ${t.ff.sans};
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
   margin-bottom: 0;
   ${t.mq.l} {
     font-size: ${t.f(5)};
