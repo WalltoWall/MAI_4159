@@ -33,10 +33,10 @@ export const ImageContainer = styled.div`
     height: 240px;
   }
   ${t.mq.l} {
-    height: 200px;
+    height: 160px;
   }
   ${t.mq.x} {
-    height: 250px;
+    height: 180px;
   }
 `
 

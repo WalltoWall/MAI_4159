@@ -10,7 +10,7 @@ export const Container = styled.div`
 `
 export const Content = styled.div`
   text-align: center;
-  width: 100%;
+  width: ${t.w.mobile};
   p {
     font-family: ${t.ff.serif};
     color: ${t.c.darkgrey2};

@@ -106,8 +106,9 @@ export const SubTitle = styled.div`
   text-transform: uppercase;
   font-size: ${t.f(-1.5)};
   color: ${t.c.darkgrey2};
-  font-family: ${t.ff.sans};
+  font-family: ${t.ff.sans2};
   letter-spacing: ${t.ls.button};
+  font-weight: 700;
   padding: 2px 0;
   margin: 0;
   ${t.mq.s} {
@@ -115,7 +116,7 @@ export const SubTitle = styled.div`
     font-size: ${t.f(-1)};
   }
   ${t.mq.l} {
-    font-size: ${t.f(1)};
+    font-size: ${t.f(0)};
   }
 `
 

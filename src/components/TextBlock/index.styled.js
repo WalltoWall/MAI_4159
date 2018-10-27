@@ -42,7 +42,10 @@ export const Container = styled.div`
 `
 
 export const StyledHTMLContent = styled(HTMLContent)`
-  ${textAlignment};
+  text-align: left;
+  ${t.mq.l} {
+    ${textAlignment};
+  }
 `
 
 export const StyledHtmlClassName = css`
