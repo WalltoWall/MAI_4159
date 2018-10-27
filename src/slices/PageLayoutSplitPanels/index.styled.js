@@ -89,7 +89,6 @@ export const Overlay = styled.div`
   display: block;
   position: absolute;
   background-color: ${t.c.white};
-  z-index: 1;
   ${t.mq.l} {
     -webkit-transform: rotate(-95deg);
     -ms-transform: rotate(-95deg);
@@ -99,5 +98,7 @@ export const Overlay = styled.div`
     height: 60%;
     width: 120%;
     right: -50%;
+    opactiy: 0.9999;
+    z-index: -1;
   }
 `

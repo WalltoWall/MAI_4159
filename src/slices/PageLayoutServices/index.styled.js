@@ -50,7 +50,7 @@ export const Description = styled.div`
   ${t.mq.l} {
     width: ${t.w.desktop};
     text-align: center;
-    line-height: 2.1rem;
+    line-height: 2.2rem;
     font-size: ${t.s(1.4)};
     margin: 1rem auto 4rem auto;
   }

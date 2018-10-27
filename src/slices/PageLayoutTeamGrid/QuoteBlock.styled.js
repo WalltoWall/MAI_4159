@@ -53,19 +53,19 @@ export const Quote = styled(HTMLContent)`
     padding: 0 ${t.s(0.2)};
     ${t.mq.s} {
       font-size: ${t.f(1)};   
-      line-height: 1.8rem;   
+      line-height: 1.6rem;   
     }
     ${t.mq.l} {      
-      width: 70%;    
+      width: 90%;    
       padding-right: ${p => p.align === "right" ? t.s(1) : "0"};
       padding-left: ${p => p.align === "left" ? t.s(1) : "0"};    
     }
-    ${t.mq.x} {      
-      width: 70%;    
+    ${t.mq.x} {     
+      width: 80%;    
       padding-right: ${p => p.align === "right" ? t.s(4) : "0"};
       padding-left: ${p => p.align === "left" ? t.s(4) : "0"};
       font-size: ${t.f(2)}; 
-      line-height: 2.2rem;     
+      line-height: 2rem;     
     }
   }
 `

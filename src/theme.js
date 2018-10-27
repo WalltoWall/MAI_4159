@@ -20,7 +20,7 @@ const theme = {
   lineHeights: {
     solid: 1,
     title: 1.3,
-    copy: 1.65,
+    copy: 1.55,
   },
   fontFamilies: {
     sans: '"din-condensed", "Barlow Condensed", Helvetica, sans-serif',
