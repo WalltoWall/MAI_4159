@@ -33,7 +33,11 @@ export const PageLayoutProjectBoxes = ({ data }) => {
             })
           )}
         </Projects>
-      <Button to="/featured-projects/">see our work</Button>
+        {get(data, 'primary.button_text') && (
+          <Button to={get(data, 'primary.button_link.url')}>
+          {get(data, 'primary.button_text')}
+        </Button>
+        )}      
     </Container>
   )
 }
@@ -71,6 +75,10 @@ export const query = graphql`
             primary {
               title1 {
                 text
+              }
+              button_text
+              button_link {
+                url
               }
             }
           }
