@@ -22,6 +22,7 @@ import { PageLayoutGoogleMap } from 'slices/PageLayoutGoogleMap'
 import { PageLayoutProjectListModule } from 'slices/PageLayoutProjectListModule'
 import { PageLayoutAnchor } from 'slices/PageLayoutAnchor'
 import { PageLayoutAnchorsMenu } from 'slices/PageLayoutAnchorsMenu'
+import { PageLayoutCmsGuideText } from 'slices/PageLayoutCmsGuideText'
 
 const PageTemplate = ({ data, location }) => (
   <>
@@ -49,6 +50,7 @@ const PageTemplate = ({ data, location }) => (
           PageLayoutProjectListModule,
           PageLayoutAnchor,
           PageLayoutAnchorsMenu,
+          PageLayoutCmsGuideText,
         }}
         page={get(data, 'prismicPage')}
         rootData={data}
@@ -89,5 +91,6 @@ export const query = graphql`
     ...PageLayoutProjectListModule
     ...PageLayoutAnchor
     ...PageLayoutAnchorsMenu
+    ...PageLayoutCmsGuideText
   }
 `
