@@ -1,12 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get } from 'lodash'
+import { get, isEmpty } from 'lodash'
 import { CtaBar } from 'components/CtaBar'
 
 export const PageLayoutCtaBar = ({ data }) => (
   <CtaBar 
     title={get(data, 'primary.title1.text')}  
-    buttonText={"contact us"}
+    buttonText={
+      isEmpty(get(data, 'primary.button_text')) ? 
+      "Contact Us" : 
+      get(data, 'primary.button_text')
+    }
     buttonUrl={get(data, 'primary.button.url')}
     background={"dark"}
   />  
@@ -23,6 +27,7 @@ export const query = graphql`
               title1 {
                 text
               }
+              button_text                          
               button {
                 url
               }

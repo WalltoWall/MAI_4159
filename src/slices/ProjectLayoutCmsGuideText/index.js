@@ -2,16 +2,16 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { CmsGuideText } from 'components/CmsGuideText'
 
-export const PageLayoutCmsGuideText = ({ data }) => (
+export const ProjectLayoutCmsGuideText = ({ data }) => (
   <CmsGuideText data={data} />  
 )
 
 export const query = graphql`
-  fragment PageLayoutCmsGuideText on Query {
-    prismicPage(id: { eq: $id }) {
+  fragment ProjectLayoutCmsGuideText on Query {
+    prismicProject(id: { eq: $id }) {
       data {
         layout {
-          ... on PrismicPageLayoutCmsGuideText {
+          ... on PrismicProjectLayoutCmsGuideText {
             id
             primary {
               text {

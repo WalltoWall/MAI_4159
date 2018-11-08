@@ -10,6 +10,7 @@ import { TeamMemberLayoutTextBlock } from 'slices/TeamMemberLayoutTextBlock'
 import { TeamMemberLayoutSideBySideText } from 'slices/TeamMemberLayoutSideBySideText'
 import { TeamMemberLayoutFeaturedList } from 'slices/TeamMemberLayoutFeaturedList'
 import { TeamMemberLayoutCtaBar } from "slices/TeamMemberLayoutCtaBar"
+import { TeamMemberLayoutCmsGuideText} from "slices/TeamMemberLayoutCmsGuideText"
 
 const TeamMemberTemplate = ({ data }) => (
   <>
@@ -26,6 +27,7 @@ const TeamMemberTemplate = ({ data }) => (
           TeamMemberLayoutSideBySideText,
           TeamMemberLayoutFeaturedList,
           TeamMemberLayoutCtaBar,
+          TeamMemberLayoutCmsGuideText,
         }}
         page={get(data, 'prismicTeamMember')}
         rootData={data}
@@ -52,5 +54,6 @@ export const query = graphql`
     ...TeamMemberLayoutSideBySideText
     ...TeamMemberLayoutFeaturedList
     ...TeamMemberLayoutCtaBar
+    ...TeamMemberLayoutCmsGuideText
   }
 `

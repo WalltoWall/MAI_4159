@@ -108,10 +108,7 @@ export const query = graphql`
                   data {
                     title {
                       text
-                    }
-                    project_type {
-                      text
-                    }                    
+                    }                                   
                     sub_category
                     image {
                       localFile {

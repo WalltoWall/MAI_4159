@@ -48,11 +48,7 @@ export const query = graphql`
                   data {
                     title {
                       text
-                    }
-                    project_type {
-                      text
-                    }
-                    year_completed          
+                    }                    
                     image {
                       localFile {
                         childImageSharp {

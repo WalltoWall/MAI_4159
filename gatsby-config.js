@@ -93,9 +93,6 @@ module.exports = {
                           project_title {
                             text
                           }
-                          project_subtitle {
-                            text
-                          }
                           project_type {
                             text
                           }
