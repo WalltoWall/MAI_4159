@@ -73,7 +73,7 @@ module.exports = {
         name: 'projects',
         query: `
           {
-            allPrismicProject {
+            allPrismicProject (filter: {tags: {ne: "CMS Guide"}}) {
               edges {
                 node {
                   id
@@ -91,9 +91,6 @@ module.exports = {
                       ... on PrismicProjectLayoutHero {
                         primary {
                           project_title {
-                            text
-                          }
-                          project_type {
                             text
                           }
                         }                       
@@ -118,6 +115,16 @@ module.exports = {
                             text
                           }
                           right_text {
+                            text
+                          }
+                        }                        
+                      }
+                      ... on PrismicProjectLayoutQuoteBlock {
+                        primary {
+                          quote {
+                            text
+                          }
+                          author {
                             text
                           }
                         }                        
@@ -173,7 +180,7 @@ module.exports = {
         name: 'pages',
         query: `
           {
-            allPrismicPage {
+            allPrismicPage (filter: {tags: {ne: "CMS Guide"}}) {
               edges {
                 node {
                   id
@@ -233,7 +240,7 @@ module.exports = {
                   }
                 }
               }
-            }
+            }                        
           }
         `,
         store: [
@@ -254,6 +261,172 @@ module.exports = {
               title: get(node, 'data.title.text'),
               metaTitle: get(node, 'data.meta_title'),
               metaDescription: get(node, 'data.meta_description'),
+              content,
+              excerpt: truncate(content, 200),
+            }
+          }),
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+        name: 'pages',
+        query: `
+          {
+            allPrismicTeamMember (filter: {tags: {ne: "CMS Guide"}}) {
+              edges {
+                node {
+                  id
+                  uid
+                  data {
+                    title                  
+                    meta_title
+                    meta_description {
+                      text
+                    }                    
+                    layout {
+                      ... on PrismicTeamMemberLayoutHero {
+                        primary {
+                          title1
+                        }                       
+                      }         
+                      ... on PrismicTeamMemberLayoutSideBySideText {
+                        primary {
+                          qualifications {
+                            text
+                          }     
+                          experience {
+                            text
+                          }                  
+                        }                        
+                        items {
+                          award_name
+                          award_detail {
+                            text
+                          }
+                        }     
+                      }
+                      ... on PrismicTeamMemberLayoutTextBlock {
+                        primary {
+                          content {
+                            text
+                          }                       
+                        }                        
+                      }                                         
+                      ... on PrismicTeamMemberLayoutBioSummary {
+                        primary {
+                          name1
+                          position                     
+                          quote {
+                            text
+                          }
+                          email
+                        }                       
+                      }                                                           
+                    }
+                  }
+                }
+              }
+            }
+          }
+        `,
+        store: [
+          'id',
+          'path',
+          'title',
+          'metaTitle',
+          'metaDescription',
+          'excerpt',
+        ],
+        normalizer: ({ data }) =>
+          get(data, 'allPrismicTeamMember.edges').map(({ node }) => {
+            const content = flatValuesDeep(get(node, 'data.layout')).join(' ')
+            return {
+              id: node.id,
+              path: node.uid === 'home' ? '/' : `/${node.uid}`,
+              title: get(node, 'data.title'),
+              metaTitle: get(node, 'data.meta_title'),
+              metaDescription: get(node, 'data.meta_description.text'),
+              content,
+              excerpt: truncate(content, 200),
+            }
+          }),
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+        name: 'pages',
+        query: `
+          {
+            allPrismicNewsPost (filter: {tags: {ne: "CMS Guide"}}) {
+              edges {
+                node {
+                  id
+                  uid                       
+                  data {                    
+                    title {
+                      text
+                    }                    
+                    article_title {
+                      text
+                    }
+                    article_content1 {
+                      text
+                    }
+                    layout {
+                      ... on PrismicNewsPostLayoutHero {
+                        primary {
+                          title1  {
+                            text
+                          }
+                        }                       
+                      }
+                      ... on PrismicNewsPostLayoutTextBlock {
+                        primary {
+                          content {
+                            text
+                          }                       
+                        }                        
+                      }
+                      ... on PrismicNewsPostLayoutTitle {
+                        primary {
+                          title1 {
+                            text
+                          }             
+                        }                        
+                      }         
+                      ... on PrismicNewsPostLayoutSideBySideImages {
+                        primary {
+                          caption {
+                            text
+                          }                 
+                        }                        
+                      }              
+                    }
+                  }
+                }
+              }
+            }
+          }
+        `,
+        store: [
+          'id',
+          'path',
+          'title',
+          'metaTitle',
+          'metaDescription',
+          'excerpt',
+        ],
+        normalizer: ({ data }) =>
+          get(data, 'allPrismicNewsPost.edges').map(({ node }) => {
+            const content = flatValuesDeep(get(node, 'data.layout')).join(' ')            
+            return {
+              id: node.id,
+              path: `/${node.uid}`,
+              title: get(node, 'data.title.text'),
+              metaTitle: get(node, 'data.article_title.text'),
+              metaDescription: get(node, 'data.article_content1.text'),
               content,
               excerpt: truncate(content, 200),
             }
