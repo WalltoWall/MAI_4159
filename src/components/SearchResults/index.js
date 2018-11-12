@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, StyledHTMLContent, Title, Items, Query } from './index.styled'
 import { Placeholder } from 'components/Placeholder'
 
-export const SearchResults = ({ children, query, queryType, ...props }) => {  
+export const SearchResults = ({ children, query, queryType, ...props }) => {   
   let resultLength
   
   if (queryType === "Projects") {

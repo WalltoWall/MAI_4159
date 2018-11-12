@@ -1,13 +1,16 @@
 const path = require('path')
 const dotenv = require('dotenv')
 const truncate = require('truncate')
-const { get } = require('lodash')
 const {
   castArray,
   cond,
+  compose,
+  flatten,
   flattenDeep,
   isArray,
   isPlainObject,
+  get,
+  getOr,
   map,
   pipe,
   stubTrue,
@@ -158,16 +161,16 @@ module.exports = {
           'excerpt',
         ],
         normalizer: ({ data }) =>
-          get(data, 'allPrismicProject.edges').map(({ node }) => {
-            const content = flatValuesDeep(get(node, 'data.layout')).join(' ')
+          get('allPrismicProject.edges', data).map(({ node }) => {
+            const content = flatValuesDeep(get('data.layout', node)).join(' ')
 
             return {
               id: node.id,
               path: node.uid === 'home' ? '/' : `/${node.uid}`,
-              title: get(node, 'data.title.text'),
-              metaTitle: get(node, 'data.meta_title'),
-              metaDescription: get(node, 'data.meta_description'),
-              image: get(node, "data.image.url"),
+              title: get('data.title.text', node),
+              metaTitle: get('data.meta_title', node),
+              metaDescription: get('data.meta_description', node),
+              image: get("data.image.url", node),
               content,
               excerpt: truncate(content, 200),
             }
@@ -189,8 +192,8 @@ module.exports = {
                     title {
                       text
                     }
-                    meta_title1
-                    meta_description1
+                    meta_title
+                    meta_description
                     layout {
                       ... on PrismicPageLayoutSubPageHero {
                         primary {
@@ -240,39 +243,7 @@ module.exports = {
                   }
                 }
               }
-            }                        
-          }
-        `,
-        store: [
-          'id',
-          'path',
-          'title',
-          'metaTitle',
-          'metaDescription',
-          'excerpt',
-        ],
-        normalizer: ({ data }) =>
-          get(data, 'allPrismicPage.edges').map(({ node }) => {
-            const content = flatValuesDeep(get(node, 'data.layout')).join(' ')
-
-            return {
-              id: node.id,
-              path: node.uid === 'home' ? '/' : `/${node.uid}`,
-              title: get(node, 'data.title.text'),
-              metaTitle: get(node, 'data.meta_title'),
-              metaDescription: get(node, 'data.meta_description'),
-              content,
-              excerpt: truncate(content, 200),
             }
-          }),
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-local-search',
-      options: {
-        name: 'pages',
-        query: `
-          {
             allPrismicTeamMember (filter: {tags: {ne: "CMS Guide"}}) {
               edges {
                 node {
@@ -281,9 +252,7 @@ module.exports = {
                   data {
                     title                  
                     meta_title
-                    meta_description {
-                      text
-                    }                    
+                    meta_description               
                     layout {
                       ... on PrismicTeamMemberLayoutHero {
                         primary {
@@ -328,37 +297,6 @@ module.exports = {
                 }
               }
             }
-          }
-        `,
-        store: [
-          'id',
-          'path',
-          'title',
-          'metaTitle',
-          'metaDescription',
-          'excerpt',
-        ],
-        normalizer: ({ data }) =>
-          get(data, 'allPrismicTeamMember.edges').map(({ node }) => {
-            const content = flatValuesDeep(get(node, 'data.layout')).join(' ')
-            return {
-              id: node.id,
-              path: node.uid === 'home' ? '/' : `/${node.uid}`,
-              title: get(node, 'data.title'),
-              metaTitle: get(node, 'data.meta_title'),
-              metaDescription: get(node, 'data.meta_description.text'),
-              content,
-              excerpt: truncate(content, 200),
-            }
-          }),
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-local-search',
-      options: {
-        name: 'pages',
-        query: `
-          {
             allPrismicNewsPost (filter: {tags: {ne: "CMS Guide"}}) {
               edges {
                 node {
@@ -367,7 +305,9 @@ module.exports = {
                   data {                    
                     title {
                       text
-                    }                    
+                    }       
+                    meta_title
+                    meta_description             
                     article_title {
                       text
                     }
@@ -407,7 +347,7 @@ module.exports = {
                   }
                 }
               }
-            }
+            }                                  
           }
         `,
         store: [
@@ -418,19 +358,28 @@ module.exports = {
           'metaDescription',
           'excerpt',
         ],
-        normalizer: ({ data }) =>
-          get(data, 'allPrismicNewsPost.edges').map(({ node }) => {
-            const content = flatValuesDeep(get(node, 'data.layout')).join(' ')            
-            return {
-              id: node.id,
-              path: `/${node.uid}`,
-              title: get(node, 'data.title.text'),
-              metaTitle: get(node, 'data.article_title.text'),
-              metaDescription: get(node, 'data.article_content1.text'),
-              content,
-              excerpt: truncate(content, 200),
-            }
-          }),
+        normalizer: ({ data }) => {        
+          const nodes = compose(
+            map(node => {
+              const content = flatValuesDeep(get('data.layout', node)).join(' ')                                                          
+
+              return {
+                id: get("id", node),
+                  path: get( "uid", node) === 'home' ? '/' : `/${get( "uid", node)}`,
+                  title: getOr(get('data.title', node), 'data.title.text', node),
+                  metaTitle: get( 'data.meta_title', node),
+                  metaDescription: get( 'data.meta_description', node),
+                  content,
+                  excerpt: truncate(content, 200),
+              }
+            }),
+            map(get('node')),
+            flatten,
+            map(get('edges')),
+            values
+          )(data)       
+          return nodes
+        }          
       },
     },
     {

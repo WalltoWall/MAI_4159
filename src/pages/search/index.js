@@ -115,7 +115,7 @@ const SearchProject = ({ data }) => (
           <Lunr
             query={getLocationQuery(location)}
             index={get(data, 'localSearchProjects.index')}
-            store={get(data, 'localSearchProjects.store')}
+            store={get(data, 'localSearchProjects.store')}            
           >
             {({ query, results }) => (
               <>
