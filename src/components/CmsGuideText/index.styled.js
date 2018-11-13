@@ -6,7 +6,7 @@ import { HTMLContent } from 'components/HTMLContent'
 export const Container = styled.div`
   background-color: ${t.c.white};
   margin: 0 auto;
-  max-width: ${t.ms.xx};
+
   padding: ${t.s(3, 0)};
   width: 100%;
 `
@@ -16,9 +16,9 @@ export const Texts = styled.div`
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  max-width: ${t.ms.l};
+  max-width: ${t.ms.x};
   width: 100%;
-
+  font-size: ${t.f(1)};
   ${t.mq.m} {
     flex-direction: row;
   }
@@ -31,6 +31,29 @@ export const Text = styled(HTMLContent)`
   border-bottom: 1px solid ${t.c.tanLight};
   margin-bottom: ${t.s(2)};
   padding-bottom: ${t.s(2)};
+  h2 {
+    font-family: ${t.ff.sans2};
+    font-size: ${t.f(5)};
+    margin: 3rem 0;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  h3 {
+    font-family: ${t.ff.sans2};
+    font-size: ${t.f(3)};
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 2rem 0;
+  }
+  h4 {
+    font-family: ${t.ff.sans2};
+    font-size: ${t.f(3)};
+    font-weight: 600;
+    color: ${t.c.darkgrey1};
+    text-transform: none;
+    letter-spacing: 0;
+    margin-bottom: 2rem;
+  }
   a {    
     color: #a58400;
   }
