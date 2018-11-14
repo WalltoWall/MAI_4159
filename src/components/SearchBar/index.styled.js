@@ -106,14 +106,14 @@ export const MobileContent = styled.div`
 export const MobileForm = styled.form`
   margin-top: ${t.s(0)};
   display: flex;    
-  width: 50%;
-
+  width: 60%;  
+  margin-left: ${t.s(2)};
   input {
     background-color: transparent;
     font-family: ${t.ff.sans};
     letter-spacing: ${t.ls.button};
     font-size: ${t.f(2)};    
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid white;    
   }
 `
 
@@ -136,12 +136,13 @@ const MobileStyledButton = styled(Link)`
   color: white;
   cursor: pointer;      
   display: block;
-  background: transparent;    
+  background: transparent;  
 `
 
 export const MobileSearchButton = MobileStyledButton.withComponent('button')
 
 export const MobileSearchButtonIcon = styled(AssetIconSearchSVG)`
-  height: ${t.s(1)};  
-  width: ${t.s(1)};  
+  height: ${t.s(0)};  
+  width: ${t.s(0)};  
+  margin-left: -${t.s(3.5)};
 `
