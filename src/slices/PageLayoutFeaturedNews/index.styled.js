@@ -31,7 +31,7 @@ export const ImageContainer = styled.div`
 export const ArrowWrapper = styled.img`
   display: inline-block;
   width: 8px;
-  margin: 0 0.8rem;
+  margin: 0px 0.8rem -2px 0.8rem;
 `
 
 export const SectionContainer = styled.div`

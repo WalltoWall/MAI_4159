@@ -84,12 +84,12 @@ export const ClipOverlay = styled.div`
   right: ${p => p.align === "left" ? '120px' : 'unset'};  
   
   ${t.mq.m} {           
-    left: ${p=> p.align === "left" ? 'unset' : '115px'}; 
+    left: ${p=> p.align === "left" ? 'unset' : '111px'}; 
     right: ${p => p.align === "left" ? '110px' : 'unset'};        
   }
   
   ${t.mq.x} {           
-    left: ${p=> p.align === "left" ? 'unset' : '115px'}; 
+    left: ${p=> p.align === "left" ? 'unset' : '111px'}; 
     right: ${p => p.align === "left" ? '110px' : 'unset'};        
   }
 `

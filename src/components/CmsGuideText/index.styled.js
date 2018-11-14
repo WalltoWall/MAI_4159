@@ -31,6 +31,9 @@ export const Text = styled(HTMLContent)`
   border-bottom: 1px solid ${t.c.tanLight};
   margin-bottom: ${t.s(2)};
   padding-bottom: ${t.s(2)};
+  img {
+    max-width: 100%;
+  }
   h2 {
     font-family: ${t.ff.sans2};
     font-size: ${t.f(5)};

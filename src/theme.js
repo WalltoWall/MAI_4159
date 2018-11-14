@@ -29,6 +29,7 @@ const theme = {
   },
   letterSpacing: {
     heading: '0.15rem',
+    title: '0.1rem',
     button: '0.1rem',
   },
   width: {

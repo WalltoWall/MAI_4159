@@ -16,10 +16,10 @@ export const StyledLinkClassName = css`
   color: ${t.c.white};
   display: inline-block;
   padding: 1rem 0;
-  font-size: ${t.f(2)};
-  font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 500;
   font-family: ${t.ff.sans2};
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
 `
 export const NavArrow = styled(HoverArrowSVG)`
   position: absolute;

@@ -20,7 +20,7 @@ export const Title = styled.h1`
   font-weight: 400;
   margin: 0 auto;
   text-transform: uppercase;
-  letter-spacing: ${t.ls.heading};
+  letter-spacing: ${t.ls.button};
   display: flex;
   justify-content: center;
   align-items: center; 

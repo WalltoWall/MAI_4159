@@ -47,7 +47,7 @@ export const Title = styled.h1`
   left: 50%;
   bottom: 25%;
   font-weight: 400;
-  letter-spacing: ${t.ls.heading};
+  letter-spacing: ${t.ls.button};
   transform: translate(-50%, 50%);
   ${t.mq.l} {
     bottom: -10%;

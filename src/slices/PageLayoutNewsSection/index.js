@@ -138,7 +138,7 @@ export const query = graphql`
         }
       }
     }
-    allPrismicNewsPost {
+    allPrismicNewsPost (filter: {tags: {ne: "CMS Guide"}}) {
       edges {
         node {
           data {                
