@@ -1,11 +1,14 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, navigate, graphql } from 'gatsby'
+import qs from 'querystring'
+import { getLocationQuery } from 'helpers'
+import { Location } from '@reach/router'
 import { get } from 'lodash'
 import { Container, MobileSearchIcon, SearchButtonIcon, SearchNavItem } from './Mobile.styled'
 import { MobileNavItem } from './MobileNavItem.js'
 import { ModalConsumer } from 'controllers/ModalContext'
 import { searchModal } from 'components/Modal/searchModal'
-
+import { SearchBarTemp } from 'components/SearchBar'
 const renderLink = toggleMobileNav => item => (
   <MobileNavItem
     key={get(item, 'id')}
@@ -20,24 +23,19 @@ const render = ({ isOpen, toggle, ...props }) => queryData => (
     {get(queryData, 'prismicNavigation.data.primary', []).map(
       renderLink(toggle)
     )}
-    <SearchNavItem>      
-      <MobileSearchIcon>
-        <ModalConsumer>
-          {({ showModal }) => (
-            <a
-              href="/"
-              onClick={event => {
-                event.preventDefault()
-                showModal(searchModal)
-                toggle()
-              }}
-            > Search
-              <SearchButtonIcon />
-            </a>
-          )}
-        </ModalConsumer>
-      </MobileSearchIcon>
-    </SearchNavItem>
+    <Location>
+      {({ location }) => {        
+        return (
+          <SearchBarTemp
+            query={getLocationQuery(location)}
+            onSubmit={({ query }) => {
+              navigate(`/search${query ? `?${qs.stringify({ query })}` : ''}`)
+              toggle()
+            }}
+          />
+        )            
+      }}
+    </Location>    
   </Container>
 )
 

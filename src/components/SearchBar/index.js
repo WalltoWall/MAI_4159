@@ -9,6 +9,11 @@ import {
   SearchQuery,
   SearchButton,
   SearchButtonIcon,
+  MobileContent,  
+  MobileForm,
+  MobileSearchQuery,
+  MobileSearchButton,
+  MobileSearchButtonIcon
 } from './index.styled'
 
 export const SearchBar = ({ query = '', onSubmit = noop }) => (
@@ -49,3 +54,45 @@ export const SearchBar = ({ query = '', onSubmit = noop }) => (
     </Content>
   </Container>
 )
+
+export const SearchBarTemp = ({ query = '', onSubmit = noop }) => (  
+  <MobileContent>
+    <Formik
+      initialValues={{ query }}
+      onSubmit={(values, { setSubmitting }) => {
+        onSubmit(values)
+        setSubmitting(false)
+      }}
+      render={({
+        values,
+        handleSubmit,
+        handleChange,
+        handleBlur,
+        isSubmitting,
+      }) => (
+        <MobileForm onSubmit={handleSubmit}>
+          <MobileSearchQuery
+            type="text"
+            name="query"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            placeholder="Search&hellip;"
+            value={values.query}
+          />
+          <MobileSearchButton
+            type="submit"
+            ariaLabel="Search"
+            disabled={isSubmitting}
+          >
+            <MobileSearchButtonIcon />
+          </MobileSearchButton>
+        </MobileForm>
+      )}
+    />
+  </MobileContent>  
+)
+
+
+
+
+
