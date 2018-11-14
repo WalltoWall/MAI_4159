@@ -49,7 +49,7 @@ export const StyledLinkContainer = styled.div`
   width: 125%;
   justify-content: center;
   align-items: center;
-  height: 229px;
+  height: 226px;
   left: -25px;
   z-index: 1;
   :hover {

@@ -89,7 +89,7 @@ export const OverlayContainer = styled.div`
     border-bottom: 1rem solid ${t.c.yellow};
   }
   ${t.mq.t} {
-    height: ${p => p.longText && p.bottom ? t.s(4) : t.s(3)}
+    height: ${p => p.longText ? t.s(4.2) : t.s(3)}
   }
   ${t.mq.s} {
     height: ${p => p.longText && p.bottom ? t.s(4.5) : t.s(3.5)}

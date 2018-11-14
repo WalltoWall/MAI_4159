@@ -9,7 +9,7 @@ export const Button = styled(Link)`
   font-family: ${t.ff.sans};
   font-weight: 400;
   letter-spacing: ${t.ls.button};
-  padding: 0.8rem 0 0.5rem 0;
+  padding: 0.8rem 0 0.8rem 0;
   font-size: ${p => (p.small ? t.f(1) : t.f(2))};
   display: block;
   width: ${p => (p.small ? '140px' : '200px')};
