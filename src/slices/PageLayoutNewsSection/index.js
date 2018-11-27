@@ -26,7 +26,7 @@ import {
 
 export const PageLayoutNewsSection = ({data, rootData}) => {
   let newsPosts = get(rootData, 'allPrismicNewsPost.edges').sort((a,b) => {    
-    return new Date(get(b, "node.data.date")) - new Date(get(a, "node.data.date"))
+    return new Date(get(b, "node.data.publish_date")) - new Date(get(a, "node.data.publish_date"))
   })
 
   return (
@@ -73,23 +73,29 @@ class GridList extends React.Component {
         {this.state.items.slice(0, this.state.visible).map((news_post, index) => {
             return (
               <StyledLink to={"/" + get(news_post, 'node.uid')} key={get(news_post, 'node.uid') + index}>
-               {get(news_post, 'node.data.image.localFile.childImageSharp.fluid') && (  
+               {get(news_post, 'node.data.article_thumb_image.localFile.childImageSharp.fluid') && (  
                 <ImageContainer>
                   <Image 
-                    fluid={get(news_post, 'node.data.image.localFile.childImageSharp.fluid')} 
-                    alt={getUnlessEmptyString(get(news_post, 'node.data.image.alt'))} 
+                    fluid={get(news_post, 'node.data.article_thumb_image.localFile.childImageSharp.fluid')} 
+                    alt={getUnlessEmptyString(get(news_post, 'node.data.article_thumb_image.alt'))} 
                     fadeIn={false} 
                   />
                 </ImageContainer>
                 )}
                 <ContentContainer>
                   <PostDate>
-                    {format(new Date(get(news_post, 'node.data.date')),
+                    {format(new Date(get(news_post, 'node.data.publish_date')),
                       'MMMM' +' D' +', '+'YYYY'
                     )}
                   </PostDate>
-                  <PostTitle>{get(news_post,'node.data.article_title.text')}</PostTitle>
-                  <PostContent>{this.truncateStr(get(news_post, 'node.data.article_content1.text'))}</PostContent>
+                  <PostTitle>{get(news_post,'node.data.article_title1.text')}</PostTitle>
+                  <PostContent>
+                    {
+                      get(news_post, 'node.data.article_content.text') ? 
+                      this.truncateStr(get(news_post, 'node.data.article_content.text')) :
+                      ""                      
+                    }
+                  </PostContent>
                   <ReadMoreWrapper>
                     <ReadMore to={get(news_post, 'node.uid')}>Read more</ReadMore>
                     <ArrowWrapper src={arrow} />
@@ -142,14 +148,14 @@ export const query = graphql`
       edges {
         node {
           data {                
-            date
-            article_title {
+            publish_date
+            article_title1 {
               text
             }
-            article_content1 {
+            article_content {
               text
             }
-            image {
+            article_thumb_image {
               alt
               localFile {
                 childImageSharp {

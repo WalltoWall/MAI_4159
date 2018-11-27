@@ -21,11 +21,11 @@ export const PageLayoutProjectBoxes = ({ data }) => {
             RenderGrid({
               key: get(project, 'projects.document[0].uid'),
               alt: getUnlessEmptyString(
-                get(project, 'projects.document[0].data.image.alt')
+                get(project, 'projects.document[0].data.project_thumb_image.alt')
               ),
               img: get(
                 project,
-                'projects.document[0].data.image.localFile.childImageSharp.fluid'
+                'projects.document[0].data.project_thumb_image.localFile.childImageSharp.fluid'
               ),
               title: get(project, 'projects.document[0].data.title.text'),
               url: get(project, 'projects.url'),
@@ -56,7 +56,7 @@ export const query = graphql`
                     title {
                       text
                     }
-                    image {
+                    project_thumb_image {
                       alt
                       localFile {
                         childImageSharp {

@@ -19,11 +19,11 @@ const projects = get(data, 'items')
             RenderGrid({
               key: get(project, 'project.document[0].uid'),
               alt: getUnlessEmptyString(
-                get(project, 'project.document[0].data.image.alt')
+                get(project, 'project.document[0].data.project_thumb_image.alt')
               ),
               img: get(
                project,
-                'project.document[0].data.image.localFile.childImageSharp.fluid'
+                'project.document[0].data.project_thumb_image.localFile.childImageSharp.fluid'
                 ),
               title: get(project, 'project.document[0].data.title.text'),
               url: get(project, 'project.url'),
@@ -49,7 +49,7 @@ export const query = graphql`
                     title {
                       text
                     }                    
-                    image {
+                    project_thumb_image {
                       localFile {
                         childImageSharp {
                           fluid(maxWidth: 800, quality: 90) {

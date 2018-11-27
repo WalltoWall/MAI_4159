@@ -84,10 +84,7 @@ module.exports = {
                   data {
                     title {
                       text
-                    }
-                    image {
-                      url               
-                    }
+                    }                    
                     meta_title1
                     meta_description1
                     layout {
@@ -308,10 +305,10 @@ module.exports = {
                     }       
                     meta_title
                     meta_description             
-                    article_title {
+                    article_title1 {
                       text
                     }
-                    article_content1 {
+                    article_content {
                       text
                     }
                     layout {

@@ -66,20 +66,21 @@ export const PageLayoutFeaturedNews = ({ data }) => {
             renderNewsGrid({
               key: get(featured_news_post, 'featured_news_post.document[0].uid'),
               alt: getUnlessEmptyString(
-                get(featured_news_post, 'featured_news_post.document[0].data.image.alt')
+                get(featured_news_post, 'featured_news_post.document[0].data.article_thumb_image.alt')
               ),
               img: get(
                 featured_news_post,
-                'featured_news_post.document[0].data.image.localFile.childImageSharp.fluid'
+                'featured_news_post.document[0].data.article_thumb_image.localFile.childImageSharp.fluid'
               ),
-              date: get(featured_news_post, 'featured_news_post.document[0].data.date'),
+              date: get(featured_news_post, 'featured_news_post.document[0].data.publish_date'),
               title: get(
                 featured_news_post,
-                'featured_news_post.document[0].data.article_title.text'
+                'featured_news_post.document[0].data.article_title1.text'
               ),
               url: get(featured_news_post, 'featured_news_post.url'),
-              content: truncateStr(get(featured_news_post, 
-                'featured_news_post.document[0].data.article_content1.text')),
+              content: get(featured_news_post, 
+                'featured_news_post.document[0].data.article_content.text') ? truncateStr(get(featured_news_post, 
+                'featured_news_post.document[0].data.article_content.text')) : "",
             })
           )}
         </Content>
@@ -99,14 +100,14 @@ export const query = graphql`
               featured_news_post {
                 document {
                   data {
-                    date
-                    article_title {
+                    publish_date
+                    article_title1 {
                       text
                     }
-                    article_content1 {
+                    article_content {
                       text
                     }
-                    image {
+                    article_thumb_image {
                       alt
                       localFile {
                         childImageSharp {

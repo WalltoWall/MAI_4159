@@ -13,14 +13,15 @@ import {
   OverlayContainer,
 } from './index.styled'
 
-const renderGrid = (data, item, currentFilter) => (
-  <>
+const renderGrid = (data, item, currentFilter) => {
+  return (
+    <>
     <ImageContainer>
       <Image
-        alt={getUnlessEmptyString(data.image.alt)}
-        fluid={get(data, "image.localFile.childImageSharp.fluid")}
+        alt={getUnlessEmptyString(data.project_thumb_image.alt)}
+        fluid={get(data, "project_thumb_image.localFile.childImageSharp.fluid")}
         fadeIn={false}        
-      />
+        />
     </ImageContainer>
     <OverlayContainer 
       longText={data.title.text.length >= 23 }
@@ -28,17 +29,19 @@ const renderGrid = (data, item, currentFilter) => (
         (get(item, 'position') === "Bottom") ||
         (currentFilter !== "All")
       }
-    >
+      >
       <Title
         bottom={
-        (get(item, 'position') === "Bottom") ||
-        (currentFilter !== "All")
-      }>
+          (get(item, 'position') === "Bottom") ||
+          (currentFilter !== "All")
+        }>
         {data.title.text}
       </Title>
     </OverlayContainer>
   </>
+
 )
+}
 
 export const PortfolioGrid = ({ data, currentFilter }) => {
   let projects = data.items
@@ -46,16 +49,16 @@ export const PortfolioGrid = ({ data, currentFilter }) => {
     <Container>
       {projects.map((item, index) => (
         <StyledLink 
-          key={get(item, 'project.url') + index}
-          to={get(item, 'project.url')}
-          twoInRow={
-            (get(item, 'position') === "Top") ||
-            (currentFilter !== "All")
-          }          
-          show={
-            (currentFilter === get(item, 'project.document[0].data.sub_category')) ||
-            (currentFilter === "All")            
-          }
+        key={get(item, 'project.url') + index}
+        to={get(item, 'project.url')}
+        twoInRow={
+          (get(item, 'position') === "Top") ||
+          (currentFilter !== "All")
+        }          
+        show={
+          (currentFilter === get(item, 'project.document[0].data.sub_category')) ||
+          (currentFilter === "All")            
+        }
         >
           {renderGrid(get(item, 'project.document[0].data'), item, currentFilter)}
         </StyledLink>
@@ -76,18 +79,18 @@ export const PageLayoutProjectListModule = ({data, location}) => {
             filters={filters}
             setFilter={setFilter} 
             currentFilter={currentFilter}
-          />
+            />
           <PortfolioGrid 
             data={data} 
             setFilter={setFilter} 
             currentFilter={currentFilter}               
-          />            
+            />            
         </>
       )}
     </Value>
   )
 }       
-    
+
 export const query = graphql`
   fragment PageLayoutProjectListModule on Query {
     prismicPage(id: { eq: $id }) {
@@ -109,8 +112,8 @@ export const query = graphql`
                     title {
                       text
                     }                                   
-                    sub_category
-                    image {
+                    sub_category                    
+                    project_thumb_image {
                       localFile {
                         childImageSharp {
                           fluid(maxWidth: 800, quality: 90) {

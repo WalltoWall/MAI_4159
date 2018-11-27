@@ -7,8 +7,8 @@ export const TextBlock = ({ data }) => {
   return (
     <Container background_color={get(data, 'primary.background_color')}>
       <Content>
-        <Headline>{get(data, 'article_title.text')}</Headline>
-        <Headline>{get(data, 'date')}</Headline>
+        <Headline>{get(data, 'article_title1.text')}</Headline>
+        <Headline>{get(data, 'publish_date')}</Headline>
         <StyledHTMLContent
           html={get(data, 'primary.content.html')}
           className={StyledHtmlClassName}

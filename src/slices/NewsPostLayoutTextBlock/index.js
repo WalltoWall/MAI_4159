@@ -12,10 +12,10 @@ export const query = graphql`
   fragment NewsPostLayoutTextBlock on Query {
     prismicNewsPost(id: { eq: $id }) {
       data {
-        article_title {
+        article_title1 {
           text
         }
-        date
+        publish_date
         layout {
           ... on PrismicNewsPostLayoutTextBlock {
             id
