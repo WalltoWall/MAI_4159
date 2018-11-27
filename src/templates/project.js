@@ -17,7 +17,18 @@ import { ProjectLayoutCmsGuideText } from 'slices/ProjectLayoutCmsGuideText'
 
 const ProjectTemplate = ({ data }) => (
   <>
-    <Helmet title={get(data, 'prismicProject.data.title.text')} />
+     <Helmet>
+      <title>
+        {get(data, 'prismicPage.data.meta_title1') ||
+          get(data, 'prismicPage.data.title.text')}
+      </title>
+        {get(data, 'prismicPage.data.meta_description1') && (
+        <meta
+          name="description"
+          content={get(data, 'prismicPage.data.meta_description1')}
+        />
+      )}
+    </Helmet>
     <Layout>
       <MapToComponents
         getKey={x => x.id}
@@ -51,6 +62,8 @@ export const query = graphql`
         title {
           text
         }
+        meta_title1
+        meta_description1
         layout {
           __typename
         }

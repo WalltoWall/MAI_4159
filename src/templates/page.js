@@ -25,8 +25,19 @@ import { PageLayoutAnchorsMenu } from 'slices/PageLayoutAnchorsMenu'
 import { PageLayoutCmsGuideText } from 'slices/PageLayoutCmsGuideText'
 
 const PageTemplate = ({ data, location }) => (
-  <>
-    <Helmet title={get(data, 'prismicPage.data.title.text')} />
+  <>    
+    <Helmet>
+      <title>
+        {get(data, 'prismicPage.data.meta_title') ||
+          get(data, 'prismicPage.data.title.text')}
+      </title>
+        {get(data, 'prismicPage.data.meta_description') && (
+        <meta
+          name="description"
+          content={get(data, 'prismicPage.data.meta_description')}
+        />
+      )}
+    </Helmet>
     <Layout>
       <MapToComponents
         getKey={x => x.id}
@@ -69,6 +80,8 @@ export const query = graphql`
         title {
           text
         }
+        meta_title
+        meta_description
         layout {
           __typename
         }
