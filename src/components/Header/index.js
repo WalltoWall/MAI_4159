@@ -11,7 +11,7 @@ import { HamburgerMenuContainer, StyledMobile } from './Mobile.styled'
 import t from 'theme'
 
 export const Header = () => (
-  <Toggle initial={{on: true}}>
+  <Toggle>
     {({ on: mobileNavOn, toggle: toggleMobileNav }) => (
       <>
         <Container>
