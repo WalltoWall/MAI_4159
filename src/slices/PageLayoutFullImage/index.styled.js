@@ -11,6 +11,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   text-align: center;
   width: ${t.w.mobile};
+  padding: 4rem 0;
   p {
     font-family: ${t.ff.serif};
     color: ${t.c.darkgrey2};
@@ -19,8 +20,7 @@ export const Content = styled.div`
     line-height: ${t.lh.copy};
   }
   ${t.mq.l} {
-    width: ${t.w.desktop};
-    margin-top: -3rem;
+    width: ${t.w.desktop};    
     font-size: ${t.f(0.3)};
   }
   ${t.mq.x} {
