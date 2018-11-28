@@ -23,6 +23,8 @@ import { PageLayoutProjectListModule } from 'slices/PageLayoutProjectListModule'
 import { PageLayoutAnchor } from 'slices/PageLayoutAnchor'
 import { PageLayoutAnchorsMenu } from 'slices/PageLayoutAnchorsMenu'
 import { PageLayoutCmsGuideText } from 'slices/PageLayoutCmsGuideText'
+import { PageLayoutSideBySideImages } from 'slices/PageLayoutSideBySideImages'
+import { PageLayoutFullImage } from 'slices/PageLayoutFullImage'
 
 const PageTemplate = ({ data, location }) => (
   <>    
@@ -53,6 +55,7 @@ const PageTemplate = ({ data, location }) => (
           PageLayoutTextBlock,
           PageLayoutNewsSection,          
           PageLayoutInfoBlock,
+          PageLayoutFullImage,
           PageLayoutSocialMedia,          
           PageLayoutTextExpandable,
           PageLayoutTeamGrid,
@@ -60,6 +63,7 @@ const PageTemplate = ({ data, location }) => (
           PageLayoutGoogleMap,
           PageLayoutProjectListModule,
           PageLayoutAnchor,
+          PageLayoutSideBySideImages,
           PageLayoutAnchorsMenu,
           PageLayoutCmsGuideText,
         }}
@@ -105,5 +109,7 @@ export const query = graphql`
     ...PageLayoutAnchor
     ...PageLayoutAnchorsMenu
     ...PageLayoutCmsGuideText
+    ...PageLayoutFullImage
+    ...PageLayoutSideBySideImages
   }
 `
