@@ -21,7 +21,6 @@ import {
 } from './DesktopBar.styled'
 
 export const DesktopBar = ({location, categories, filters, setFilter, currentFilter})  => { 
-  console.log("filters are here? ", filters) 
   const getFilterName = (path) => {     
     let initialLabel = split(startCase(trim(path, "/")), " ")    
     if (initialLabel.length > 1) {        
