@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get, split, trim } from 'lodash'
+import { get, split, trim, includes, toLower } from 'lodash'
 import { Image } from 'components/Image'
 import { Value, Toggle } from 'react-powerplug'
 
@@ -23,8 +23,10 @@ import {
 } from './index.styled'
 
 const getActiveState = (currentFilter, targetFilter) => {
-  if (currentFilter === 'All') return true
-  return currentFilter === targetFilter
+  if (currentFilter === 'All') return true  
+  const sanitizedCurrentFilter = toLower(trim(currentFilter))
+  const sanitizedTargetFilter = targetFilter.split(",").map(filter => toLower(trim(filter)))  
+  if (includes(sanitizedTargetFilter, sanitizedCurrentFilter)) return true
 }
 
 const RoleFilterBar = ({ filters, setFilter, currentFilter }) => (
@@ -72,12 +74,12 @@ const renderGrid = (data, currentFilter) => (
       />
     </ImageContainer>
     <OverlayContainer>
-      <TitleContainer isActive={getActiveState(currentFilter, data.department)}>
+      <TitleContainer isActive={getActiveState(currentFilter, data.department1)}>
         <Title>{data.name}</Title>
         <SubTitle>{data.affiliation}</SubTitle>
         <SubTitle>{data.job_title}</SubTitle>
       </TitleContainer>
-      <Overlay isActive={getActiveState(currentFilter, data.department)} />
+      <Overlay isActive={getActiveState(currentFilter, data.department1)} />
     </OverlayContainer>
   </>
 )
@@ -104,7 +106,7 @@ export const PageLayoutTeamGrid = ({ data, rootData }) => {
                     if (
                       !getActiveState(
                         currentFilter,
-                        get(member, 'team_member.document[0].data.department')
+                        get(member, 'team_member.document[0].data.department1')
                       )
                     ) {
                       e.preventDefault()
@@ -154,8 +156,8 @@ export const query = graphql`
                   data {
                     name
                     affiliation
-                    job_title
-                    department
+                    job_title                    
+                    department1
                     photo {
                       alt
                       localFile {
