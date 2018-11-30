@@ -59,7 +59,7 @@ export const PageLayoutFeaturedNews = ({ data }) => {
 
   return (
     <SectionContainer>
-    <Headline>Featured News</Headline>
+    <Headline>Featured Stories</Headline>
       <Container>
         <Content>
           {featured_news_post.map(featured_news_post =>

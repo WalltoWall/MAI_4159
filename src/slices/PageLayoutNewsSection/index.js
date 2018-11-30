@@ -116,9 +116,9 @@ class GridList extends React.Component {
           )}
           {
             (get(this.props.data, "primary.page_context") === "Home") &&
-              <ButtonLink to="/news">
+              <ButtonLink to="/stories">
                 <Button>
-                  More News
+                  More Stories
                 </Button>
               </ButtonLink>
           }          
