@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get, split } from 'lodash'
+import { get, split, trim, toLower } from 'lodash'
 import { ProjectNavigation } from 'components/ProjectNavigation'
 import { Image } from 'components/Image'
 import { getUnlessEmptyString } from 'helpers'
@@ -12,6 +12,10 @@ import {
   Title,
   OverlayContainer,
 } from './index.styled'
+
+const filtersMatch = (currentFilter, targetFilter) => {
+  return toLower(trim(currentFilter)) === toLower(trim(targetFilter))
+}
 
 const renderGrid = (data, item, currentFilter) => {
   return (
@@ -56,7 +60,7 @@ export const PortfolioGrid = ({ data, currentFilter }) => {
           (currentFilter !== "All")
         }          
         show={
-          (currentFilter === get(item, 'project.document[0].data.sub_category')) ||
+          filtersMatch(currentFilter, get(item, 'project.document[0].data.sub_category')) ||
           (currentFilter === "All")            
         }
         >
