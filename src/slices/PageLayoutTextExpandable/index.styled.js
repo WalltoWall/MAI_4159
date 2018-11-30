@@ -66,6 +66,11 @@ export const Text = styled(HTMLContent)`
     ${t.mq.m} {
       text-align: center;
     }
+
+    a {
+      font-weight: 700;
+      text-decoration: underline;
+    }
   }
   h3 {
     color: ${t.c.darkgrey1};
