@@ -41,15 +41,15 @@ export const CurrentFilter = styled.h2`
   padding-left: 10px;
 `
 export const StyledLinkContainer = styled.div`  
-  background-color: ${t.c.lightgrey3};
+  background-color: ${t.c.yellow};
   position: absolute;    
   display: none;
   flex-direction: column;
-  top: 54px;
+  top: 55px;
   width: 125%;
   justify-content: center;
   align-items: center;
-  height: 226px;
+  height: auto;
   left: -25px;
   z-index: 1;
   :hover {
@@ -88,7 +88,7 @@ export const NestedStyledLink = styled(Link)`
   -moz-transition: background-color 0.2s ease-in;
   -o-transition: background-color 0.2s ease-in;
   transition: background-color 0.2s ease-in;
-  
+  color: black;
   &:hover {
     background-color: ${t.c.lightgrey4};    
   }

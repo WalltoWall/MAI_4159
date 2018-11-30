@@ -96,7 +96,7 @@ export class MobileBar extends React.Component {
               style={{ display: 'inline-flex' }}
               onClick={e => this.toggleSubFilter(e, false)}
             >
-              Building Use
+              Architecture
               <NavArrow
               style={{ top: '12px', right: '2rem' }}
               active={this.state.subFilterOpen}                          
