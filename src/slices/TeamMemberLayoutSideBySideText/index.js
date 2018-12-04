@@ -19,7 +19,7 @@ export const TeamMemberLayoutSideBySideText = ({ data }) => {
     <Content>
       {!isEmpty(data.items) && (
         <Column>
-        <Title>Awards</Title>
+        <Title>Recognition</Title>
         {get(data, "items").map(award => (
           <TextBlock key={award.award_name}>  
             <h3>{award.award_name}</h3>
