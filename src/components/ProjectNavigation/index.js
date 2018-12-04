@@ -41,7 +41,6 @@ export const CategoriesBar = (
   }) => {
   const architectureCategories = get(navigation, 'prismicNavigation.data.link_list')  
   const historicCategories = get(navigation, 'prismicNavigation.data.link_list1')  
-  console.log("hahahah   ", historicCategories)
   return (      
     <>
       <DesktopBar 

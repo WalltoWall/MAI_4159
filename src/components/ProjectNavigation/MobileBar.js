@@ -45,7 +45,6 @@ export class MobileBar extends React.Component {
   }
 
   toggleSubFilter = (e, fromParent, target) => {    
-    console.log("yo target is ", target)
     e.stopPropagation()
     if (fromParent) {      
       this.setState({
