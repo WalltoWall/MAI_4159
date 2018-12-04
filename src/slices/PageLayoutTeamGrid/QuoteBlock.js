@@ -18,10 +18,10 @@ export const QuoteBlock = ({ index, data, list }) => {
     case 8:
       context = 'mobileMiddle'
       break
-    case 2:
+    case 5:
       context = 'desktopTop'
       break
-    case 6:
+    case 9:
       context = 'desktopMiddle'
       break
     case list.length - 1:
@@ -59,6 +59,7 @@ export const QuoteBlock = ({ index, data, list }) => {
           <QuoteContainer 
             to={get(list[index], "team_member.url")} 
             context={'desktop'}
+            expand={true}      
             onClick={e => e.preventDefault()}
           >            
             <Quote

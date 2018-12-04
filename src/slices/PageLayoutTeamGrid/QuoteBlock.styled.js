@@ -18,8 +18,8 @@ export const QuoteContainer = styled(Link)`
   ${t.mq.s} { 
     height: ${t.s(9)}; 
   }
-  ${t.mq.l} {
-    width: 25%;       
+  ${t.mq.l} {    
+    width: ${p => p.expand ? "50%" : "25%"};          
     cursor: default;
   }
 
