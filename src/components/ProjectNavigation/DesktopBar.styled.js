@@ -79,7 +79,7 @@ export const StyledLink = styled(Link)`
 
 export const NestedStyledLink = styled(Link)`
   z-index: 2;
-  padding: 12px 0;
+  padding: ${t.s(-1, 1)};
   width: 100%;
   text-align: center;
   font-family: ${t.ff.sans2};
