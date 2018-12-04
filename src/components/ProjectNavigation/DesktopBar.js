@@ -20,7 +20,7 @@ import {
   Filter,
 } from './DesktopBar.styled'
 
-export const DesktopBar = ({location, categories, filters, setFilter, currentFilter})  => { 
+export const DesktopBar = ({location, architectureCategories, historicCategories, filters, setFilter, currentFilter})  => { 
   const getFilterName = (path) => {     
     let initialLabel = split(startCase(trim(path, "/")), " ")    
     if (initialLabel.length > 1) {        
@@ -45,7 +45,7 @@ export const DesktopBar = ({location, categories, filters, setFilter, currentFil
       </StyledLink>                   
       <VerticalLine>|</VerticalLine>
       <SubFilterContainer>
-        <span>View by Architecture:</span>
+        <span>Architecture:</span>
         <CurrentFilter
           defaultColor={getFilterName(location.pathname) === "Select"}
         >
@@ -53,7 +53,7 @@ export const DesktopBar = ({location, categories, filters, setFilter, currentFil
         </CurrentFilter>
         <NavArrow/>
         <StyledLinkContainer>
-        {categories.map(item => (
+        {architectureCategories.map(item => (
           <NestedStyledLink
             key={get(item, 'name')}
             to={get(item, 'link.url', '/')}                
@@ -64,9 +64,29 @@ export const DesktopBar = ({location, categories, filters, setFilter, currentFil
         </StyledLinkContainer>
       </SubFilterContainer>          
       <VerticalLine>|</VerticalLine>
+      <SubFilterContainer>
+        <span>Historic Consulting:</span>
+        <CurrentFilter
+          defaultColor={getFilterName(location.pathname) === "Select"}
+        >
+          {getFilterName(location.pathname)}
+        </CurrentFilter>
+        <NavArrow/>
+        <StyledLinkContainer>
+        {historicCategories.map(item => (
+          <NestedStyledLink
+            key={get(item, 'name')}
+            to={get(item, 'link.url', '/')}                
+          >
+            {get(item, 'name')}
+          </NestedStyledLink>
+        ))}  
+        </StyledLinkContainer>
+      </SubFilterContainer>
+      {/* <VerticalLine>|</VerticalLine>
       <StyledLink to={'/historic-consulting/'}>
         Historical Consulting
-      </StyledLink>        
+      </StyledLink>         */}
     </DesktopContainer>    
      {filters.length > 1 && (
       <SubCategoryContainer>

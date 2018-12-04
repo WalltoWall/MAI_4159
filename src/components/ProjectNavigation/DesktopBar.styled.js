@@ -45,7 +45,7 @@ export const StyledLinkContainer = styled.div`
   position: absolute;    
   display: none;
   flex-direction: column;
-  top: 55px;
+  top: 54px;
   width: 125%;
   justify-content: center;
   align-items: center;

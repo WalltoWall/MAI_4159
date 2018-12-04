@@ -20,8 +20,8 @@ export class MobileBar extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      filterOpen: false,
-      subFilterOpen: false,
+      filterOpen: null,
+      activeSubFilter: null,
     }
   }
   getFilterName(path) {
@@ -44,15 +44,16 @@ export class MobileBar extends React.Component {
     })
   }
 
-  toggleSubFilter = (e, fromParent) => {    
+  toggleSubFilter = (e, fromParent, target) => {    
+    console.log("yo target is ", target)
     e.stopPropagation()
     if (fromParent) {      
       this.setState({
-        subFilterOpen: false,
+        activeSubFilter: null,
       })
     } else {
-      this.setState({
-        subFilterOpen: !this.state.subFilterOpen,
+      this.setState({        
+        activeSubFilter: this.state.activeSubFilter === target ? null : target,
       })
     }    
   }
@@ -90,21 +91,22 @@ export class MobileBar extends React.Component {
           >
             Featured
           </StyledLink>
+          {/* ARCH SUB FILTER START */}
           <div style={{ position: 'relative' }}>
             <p
               className={navItemClassName}
               style={{ display: 'inline-flex' }}
-              onClick={e => this.toggleSubFilter(e, false)}
+              onClick={e => this.toggleSubFilter(e, false, "arch")}
             >
               Architecture
               <NavArrow
               style={{ top: '12px', right: '2rem' }}
-              active={this.state.subFilterOpen}                          
+              active={this.state.activeSubFilter === "arch"}                          
               />
             </p>            
           </div>
-          <SubFilterContainer isOpen={this.state.subFilterOpen}>
-            {this.props.categories.map(item => (
+          <SubFilterContainer isOpen={this.state.activeSubFilter === "arch"}>
+            {this.props.architectureCategories.map(item => (
               <StyledLink
                 key={get(item, 'name')}
                 to={get(item, 'link.url', '/')}
@@ -115,13 +117,36 @@ export class MobileBar extends React.Component {
               </StyledLink>
             ))}        
           </SubFilterContainer>
-          <StyledLink
-            to={'/historic-research/'}
-            getProps={this.getLinkProps()}
-            onClick={e => this.toggleFilter(e)}
-          >
-            Historical Research
-          </StyledLink>
+          {/* ARCH SUB FILTER END */}
+
+
+          {/* HISTORIC SUB FILTER START */}
+          <div style={{ position: 'relative' }}>
+            <p
+              className={navItemClassName}
+              style={{ display: 'inline-flex' }}
+              onClick={e => this.toggleSubFilter(e, false, "hist")}
+            >
+              Historic Consulting
+              <NavArrow
+              style={{ top: '12px', right: '2rem' }}
+              active={this.state.activeSubFilter === "hist"}                          
+              />
+            </p>            
+          </div>
+          <SubFilterContainer isOpen={this.state.activeSubFilter === "hist"}>
+            {this.props.historicCategories.map(item => (
+              <StyledLink
+                key={get(item, 'name')}
+                to={get(item, 'link.url', '/')}
+                getProps={this.getLinkProps()}
+                onClick={e => this.closeAllFilters(e)}
+              >
+                {get(item, 'name')}
+              </StyledLink>
+            ))}        
+          </SubFilterContainer>
+          {/* HISTORIC SUB FILTER END */}
         </PrimaryFilterContainer>
         {this.props.filters.length > 1 && (
           <SubFilterChildContainer

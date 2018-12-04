@@ -17,6 +17,12 @@ export const ProjectNavigation = props => {
                 url
               }              
             }
+            link_list1 {              
+              name
+              link {
+                url
+              }              
+            }
           }
         }
       }
@@ -33,19 +39,23 @@ export const CategoriesBar = (
     setFilter,
     currentFilter, 
   }) => {
-  const categories = get(navigation, 'prismicNavigation.data.link_list')  
+  const architectureCategories = get(navigation, 'prismicNavigation.data.link_list')  
+  const historicCategories = get(navigation, 'prismicNavigation.data.link_list1')  
+  console.log("hahahah   ", historicCategories)
   return (      
     <>
       <DesktopBar 
         filters={filters} 
         location={location} 
-        categories={categories}         
+        architectureCategories={architectureCategories}    
+        historicCategories={historicCategories}     
         setFilter={setFilter}
         currentFilter={currentFilter}
       />
       <MobileBar 
         location={location} 
-        categories={categories} 
+        architectureCategories={architectureCategories} 
+        historicCategories={historicCategories}
         filters={filters}         
         setFilter={setFilter}
         currentFilter={currentFilter}
