@@ -168,13 +168,13 @@ export const Title = styled.h1`
   letter-spacing: 0.1rem;
   margin-bottom: 0;
   ${t.mq.l} {
-    font-size: ${t.f(5)};
+    font-size: ${p => p.longText ? t.f(4) : t.f(5)};    
   }
   ${t.mq.x} {
-    font-size: ${t.f(6)};
+    font-size: ${p => p.longText ? t.f(5) : t.f(6)};    
   }
   ${t.mq.xxx} {
-    font-size: ${t.f(9)};
+    font-size: ${p => p.longText ? t.f(8) : t.f(9)};
     line-height: 5rem;
   }
 `

@@ -39,21 +39,31 @@ export class ProjectLayoutHero extends React.Component {
         <ContentContainer>
           <Content>
             <Header>
-              <Title>
+              <Title
+                longText={get(this.props.data, 'primary.project_title.text').length >= 40}
+              >
                 {get(this.props.data, 'primary.project_title.text')}
               </Title>
             </Header>
             <InfoContainer>
-              <InfoLine />
-              <div className={InfoBlurb}>
-                <h3>project type</h3>
-                <p>{get(this.props.data, 'primary.project_type.text')}</p>
-              </div>
-              <InfoLine />
-              <div className={InfoBlurb}>
-                <h3>year completed</h3>
-                <p>{get(this.props.data, 'primary.year_completed.text')}</p>
-              </div>
+            {get(this.props.data, 'primary.project_type.text') && (
+              <>
+                <InfoLine />
+                <div className={InfoBlurb}>
+                  <h3>project type</h3>
+                  <p>{get(this.props.data, 'primary.project_type.text')}</p>
+                </div>
+              </>
+            )}
+            {get(this.props.data, 'primary.year_completed.text') && (
+              <>
+                <InfoLine />
+                <div className={InfoBlurb}>
+                  <h3>year completed</h3>
+                  <p>{get(this.props.data, 'primary.year_completed.text')}</p>
+                </div>
+              </>
+            )}              
             </InfoContainer>
             <ClipOverlay />
           </Content>
