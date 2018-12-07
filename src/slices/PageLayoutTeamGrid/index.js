@@ -24,8 +24,9 @@ import {
 
 const getActiveState = (currentFilter, targetFilter) => {
   if (currentFilter === 'All') return true  
+  const target = targetFilter || ""
   const sanitizedCurrentFilter = toLower(trim(currentFilter))
-  const sanitizedTargetFilter = targetFilter.split(",").map(filter => toLower(trim(filter)))  
+  const sanitizedTargetFilter = target.split(",").map(filter => toLower(trim(filter)))  
   if (includes(sanitizedTargetFilter, sanitizedCurrentFilter)) return true
 }
 
@@ -106,7 +107,7 @@ export const PageLayoutTeamGrid = ({ data, rootData }) => {
                     if (
                       !getActiveState(
                         currentFilter,
-                        get(member, 'team_member.document[0].data.department1')
+                        get(member, 'team_member.document[0].data.department1') 
                       )
                     ) {
                       e.preventDefault()
