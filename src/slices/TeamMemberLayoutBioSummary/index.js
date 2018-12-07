@@ -8,8 +8,7 @@ import {
   ImageContainer, 
   Column,
   SocialContainer, 
-  StyledLinkedinIcon,
-  StyledInstagramIcon,
+  StyledLinkedinIcon,  
   StyledTwitterIcon,
   StyledLink,
 } from './index.styled'
@@ -19,10 +18,7 @@ export const renderSocial = (item) => {
   switch (get(item, "social_media_type")) {
     case "twitter":
       IconComponent = StyledTwitterIcon
-      break;  
-    case "instagram":
-      IconComponent = StyledInstagramIcon
-      break;
+      break;      
     case "linkedin":
       IconComponent = StyledLinkedinIcon
       break;
@@ -43,7 +39,7 @@ export const renderSocial = (item) => {
 export const TeamMemberLayoutBioSummary = ({ data }) => {
   return (
     <Container>
-      <Content>
+      <Content>        
         <ImageContainer>
           <Image
             alt={get(data, "primary.image.alt")}

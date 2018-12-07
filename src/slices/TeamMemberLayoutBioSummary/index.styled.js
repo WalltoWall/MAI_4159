@@ -1,7 +1,6 @@
 import styled from 'react-emotion'
 import t from 'theme'
 import { ReactComponent as TwitterIcon} from 'assets/twitter_icon.svg'
-import { ReactComponent as InstagramIcon} from 'assets/instagram_icon.svg'
 import { ReactComponent as LinkedinIcon} from 'assets/linkedin_icon.svg'
 import { Link } from 'components/Link'
 
@@ -94,14 +93,6 @@ export const StyledLink = styled(Link)`
 
 export const StyledLinkedinIcon = styled(LinkedinIcon)`
   fill: ${t.c.yellow};
-  transition: fill 200ms;
-  :hover {
-    fill: ${t.c.darkyellow};
-  }  
-`
-
-export const StyledInstagramIcon = styled(InstagramIcon)`
-  fill: ${t.c.yellow};  
   transition: fill 200ms;
   :hover {
     fill: ${t.c.darkyellow};
