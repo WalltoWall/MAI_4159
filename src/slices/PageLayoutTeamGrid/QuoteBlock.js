@@ -1,5 +1,5 @@
 import React from 'react'
-import { get, isString } from 'lodash'
+import { get, isString, isEmpty } from 'lodash'
 
 import { 
   QuoteContainer,
@@ -29,8 +29,7 @@ export const QuoteBlock = ({ index, data, list }) => {
       break
     default:
   }
-
-  if (isString(context)) {
+  if (!isEmpty(context)) {
     return (
       <>
         {context === 'mobileTop' && (          
@@ -99,6 +98,10 @@ export const QuoteBlock = ({ index, data, list }) => {
           </QuoteContainer>
         )}
       </>
+    )
+  } else {
+    return (
+      <></>
     )
   }
 }

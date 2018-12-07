@@ -16,7 +16,7 @@ export const Hero = ({ data, whitebg, subpage }) => (
   <ImageContainer>
 
     {
-      !isEmpty(get(data, 'primary.image.localFile.childImageSharp.fluid')) ?
+      !isEmpty(getUnlessEmptyString(get(data, 'primary.image.localFile.childImageSharp.fluid'))) ?
       (
         <StyledImage
           alt={getUnlessEmptyString(get(data, 'primary.image.data'))}
