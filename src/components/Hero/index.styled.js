@@ -20,6 +20,13 @@ export const StyledImage = styled(Image)`
   opacity: 0.75;
 `
 
+export const PlaceholderImg = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+`
+
 export const ImageContainer = styled.div`
   position: relative;
   height: ${t.s(9)};
