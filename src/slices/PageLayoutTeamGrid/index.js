@@ -20,7 +20,7 @@ import {
   Filter,
   NavArrow,
   FilterContainer,
-} from './index.styled'
+} from './index.styled' 
 
 const getActiveState = (currentFilter, targetFilter) => {
   if (currentFilter === 'All') return true  
