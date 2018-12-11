@@ -52,8 +52,11 @@ export const CarouselContainer = styled.div`
   ${t.mq.l} {
     height: ${t.s(11)};
   }
+  ${t.mq.x} {
+    height: ${t.s(11.6)};
+  }
   ${t.mq.xx} {
-    height: ${t.s(12)};
+    height: ${t.s(11.8)};
   }
   img {
     object-fit: cover;
@@ -132,28 +135,28 @@ export const ClipOverlay = styled.div`
   transform: rotate(-5deg);
   z-index: -1;
   ${t.mq.t} {
-    left: -13%;
-    height: 133%;
-    width: 134%;
-    top: -10%;
+    left: -${t.s(3)};
+    height: ${t.s(6)};
+    top: -${t.s(3)};
+    width: 150%;
   }
   ${t.mq.m} {
-    left: -13%;
-    height: 143%;
-    width: 145%;
-    top: -18%;
+    left: -${t.s(8)};
+    height: ${t.s(6)};
+    top: -${t.s(3)};
+    width: 150%;
   }
   ${t.mq.l} {
-    top: -250%;
-    left: -33%;
-    height: 370%;
+    top: -${t.s(11)};
+    left: -${t.s(2)};
+    height: ${t.s(12.5)};    
     width: 150%;
   }
   ${t.mq.x} {
-    top: -266%;
-    left: -24%;
-    height: 387%;
-  }
+    top: -${t.s(11)};
+    left: -${t.s(4)};
+    height: ${t.s(13)};    
+  }  
 `
 export const Header = styled.div`
   width: 100%;
@@ -171,7 +174,7 @@ export const Title = styled.h1`
     font-size: ${p => p.longText ? t.f(4) : t.f(5)};    
   }
   ${t.mq.x} {
-    font-size: ${p => p.longText ? t.f(5) : t.f(6)};    
+    font-size: ${p => p.longText ? t.f(5) : t.f(6)};        
   }
   ${t.mq.xxx} {
     font-size: ${p => p.longText ? t.f(8) : t.f(9)};
