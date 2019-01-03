@@ -22,12 +22,12 @@ import {
 
 export const DesktopBar = ({location, architectureCategories, historicCategories, filters, setFilter, currentFilter})  => { 
   const getFilterName = (path) => {     
-    let initialLabel = split(startCase(trim(path, "/")), " ")    
+    let initialLabel = split(startCase(trim(path, "/")), " ")        
     if (initialLabel.length > 1) {        
-      if (head(initialLabel) === "Featured" || "Historical") {
+      if (head(initialLabel) === "Featured" ) {
         return "Select"
       } else {
-        return head(dropRight(initialLabel))
+        return initialLabel.join(" ")
       }      
     } else {
       return head(initialLabel)
@@ -66,11 +66,7 @@ export const DesktopBar = ({location, architectureCategories, historicCategories
       <VerticalLine>|</VerticalLine>
       <SubFilterContainer>
         <span>Historic Consulting:</span>
-        <CurrentFilter
-          defaultColor={getFilterName(location.pathname) === "Select"}
-        >
-          {getFilterName(location.pathname)}
-        </CurrentFilter>
+
         <NavArrow/>
         <StyledLinkContainer>
         {historicCategories.map(item => (

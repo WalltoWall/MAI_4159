@@ -46,11 +46,11 @@ export const StyledLinkContainer = styled.div`
   display: none;
   flex-direction: column;
   top: 54px;
-  width: 125%;
+  width: 200%;
   justify-content: center;
   align-items: center;
   height: auto;
-  left: -25px;
+  left: -73px;
   z-index: 1;
   :hover {
     display: flex;
