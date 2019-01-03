@@ -7,18 +7,18 @@ import {
   Title,
 } from './index.styled'
 
-export const RenderGrid = ({ alt, key, img, title, url, largeImages }) => (
-  <StyledLink to={url} key={key} largeImages={largeImages} >
-    <ImageContainer>
-      <Image fluid={img} alt={alt} fadeIn={false} />
-    </ImageContainer>
-    <OverlayContainer largeImages={largeImages} longText={title.length >= 20}>
-      <Title 
-        largeImages={largeImages} 
-        // longText={title.length >= 20}              
-      >
-        {title}
-      </Title>
-    </OverlayContainer>
-  </StyledLink>
-)
+export const RenderGrid = ({ alt, key, img, title, url, largeImages }) => {
+  let text = title ? title : ""
+  return (
+    <StyledLink to={url} key={key} largeImages={largeImages} >
+      <ImageContainer>
+        <Image fluid={img} alt={alt} fadeIn={false} />
+      </ImageContainer>
+      <OverlayContainer largeImages={largeImages} longText={text.length >= 20}>
+        <Title largeImages={largeImages}>
+          {text}
+        </Title>
+      </OverlayContainer>
+    </StyledLink>
+  )
+}
