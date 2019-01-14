@@ -17,7 +17,6 @@ import 'typeface-lato'
 import Typekit from 'react-typekit';
 import favicon from 'assets/favicon.png';
 
-
 // temporarily disable hot loader error for dev
 import { setConfig } from 'react-hot-loader'
 setConfig({ logLevel: 'no-errors-please' })
@@ -97,6 +96,7 @@ const render = ({ children }) => queryData => (
   </>
 )
 
+
 export const Layout = props => (
   <StaticQuery
     query={graphql`
@@ -113,6 +113,7 @@ export const Layout = props => (
     render={render(props)}
   />
 )
+
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
