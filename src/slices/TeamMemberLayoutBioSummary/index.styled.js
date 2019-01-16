@@ -15,7 +15,8 @@ export const Container = styled.div`
 `
 
 export const ImageContainer = styled.div`
-  height: ${t.s(8)};  
+  height: ${t.s(9)};
+  
   width: 100%;
   .gatsby-image-outer-wrapper {
     height: 100%;
@@ -23,11 +24,15 @@ export const ImageContainer = styled.div`
   .gatsby-image-wrapper {
     height: 100%;
   }
+  ${t.mq.m} {    
+    height: ${t.s(10.5)};  
+  }
   ${t.mq.l} {
     width: 50%;    
     padding-right: ${t.s(2)};
     height: ${t.s(9.5)};  
   }
+
 `
 
 
