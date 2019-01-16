@@ -16,7 +16,7 @@ export const Hero = ({ data, whitebg, subpage }) => (
   <ImageContainer>
 
     {
-      !isEmpty(getUnlessEmptyString(get(data, 'primary.image.localFile.childImageSharp.fluid'))) ?
+      !isEmpty(get(data, 'primary.image.localFile.childImageSharp.fluid')) ?
       (
         <StyledImage
           alt={getUnlessEmptyString(get(data, 'primary.image.data'))}
@@ -24,8 +24,8 @@ export const Hero = ({ data, whitebg, subpage }) => (
           fadeIn={false}
         />    
       ) :
-      (
-        <PlaceholderImg alt="marble texture backgrond image" src={defaultTexture} />
+      (      
+        <PlaceholderImg alt="marble texture backgrond image" src={defaultTexture} />       
       )
     }    
     <ClipOverlay 
