@@ -75,12 +75,12 @@ const renderGrid = (data, currentFilter) => (
       />
     </ImageContainer>
     <OverlayContainer>
-      <TitleContainer isActive={getActiveState(currentFilter, data.department1)}>
-        <Title>{data.name}</Title>
-        <SubTitle>{data.affiliation}</SubTitle>
-        <SubTitle>{data.job_title}</SubTitle>
+      <TitleContainer isActive={getActiveState(currentFilter, get(data, 'department1'))}>
+        <Title>{get(data, 'name')}</Title>
+        <SubTitle>{get(data, 'affiliation')}</SubTitle>
+        <SubTitle>{get(data, 'job_title')}</SubTitle>
       </TitleContainer>
-      <Overlay isActive={getActiveState(currentFilter, data.department1)} />
+      <Overlay isActive={getActiveState(currentFilter, get(data, 'department1'))} />
     </OverlayContainer>
   </>
 )
