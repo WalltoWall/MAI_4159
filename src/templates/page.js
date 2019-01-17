@@ -67,7 +67,7 @@ export class PageTemplate extends React.Component {
       id="cms-guide"
       passwordMd5={process.env.GATSBY_CMS_GUIDE_PASSWORD}
     >    
-      {({ authenticated, signin }) =>
+      {({ authenticated, signin }) => 
         authenticated ? (
           this.renderSlices()
         ) : (                    
