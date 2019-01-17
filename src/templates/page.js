@@ -109,6 +109,7 @@ export default PageTemplate
 export const query = graphql`
   query PageTemplate($id: String!) {
     prismicPage(id: { eq: $id }) {
+      uid
       data {
         title {
           text
