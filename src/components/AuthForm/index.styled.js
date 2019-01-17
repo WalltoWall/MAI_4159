@@ -13,7 +13,7 @@ export const Container = styled.div`
   display: flex;
   margin: 0 auto;  
   width: 100%;
-  min-height: 90vh  
+  min-height: 90vh;  
 `
 
 export const Content = styled.div`
