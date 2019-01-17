@@ -4,9 +4,14 @@ import {
   trim, 
   split, 
   startCase, 
-  dropRight, 
-  head
+  head,
 } from 'lodash'
+
+import {
+  __,
+  map
+} from 'lodash/fp'
+
 import {
   DesktopContainer,
   StyledLink,  
@@ -20,7 +25,7 @@ import {
   Filter,
 } from './DesktopBar.styled'
 
-export const DesktopBar = ({location, architectureCategories, historicCategories, filters, setFilter, currentFilter})  => { 
+export const DesktopBar = ({location, architectureCategories, historicCategories, filters, setCurrentFilter, currentFilter})  => { 
   const getFilterName = (path) => {     
     let initialLabel = split(startCase(trim(path, "/")), " ")        
     if (initialLabel.length > 1) {        
@@ -53,14 +58,14 @@ export const DesktopBar = ({location, architectureCategories, historicCategories
         </CurrentFilter>
         <NavArrow/>
         <StyledLinkContainer>
-        {architectureCategories.map(item => (
+        {map(item => (
           <NestedStyledLink
             key={get(item, 'name')}
             to={get(item, 'link.url', '/')}                
           >
             {get(item, 'name')}
           </NestedStyledLink>
-        ))}  
+        ), architectureCategories)}  
         </StyledLinkContainer>
       </SubFilterContainer>          
       <VerticalLine>|</VerticalLine>
@@ -69,38 +74,34 @@ export const DesktopBar = ({location, architectureCategories, historicCategories
 
         <NavArrow/>
         <StyledLinkContainer>
-        {historicCategories.map(item => (
+        {map(item => (
           <NestedStyledLink
             key={get(item, 'name')}
             to={get(item, 'link.url', '/')}                
           >
             {get(item, 'name')}
           </NestedStyledLink>
-        ))}  
+        ), historicCategories)}  
         </StyledLinkContainer>
       </SubFilterContainer>
-      {/* <VerticalLine>|</VerticalLine>
-      <StyledLink to={'/historic-consulting/'}>
-        Historical Consulting
-      </StyledLink>         */}
     </DesktopContainer>    
-     {filters.length > 1 && (
+     {filters.length >= 1 && (
       <SubCategoryContainer>
           <Filter
-            onClick={(e) => setFilter("All")}
+            onClick={(e) => setCurrentFilter("All")}
             isActive={currentFilter === "All"}
           >
             All
           </Filter>          
-        {filters.map((filter, index) => (          
+        {map((filter) => (          
           <Filter
-            onClick={(e) => setFilter(trim(filter))}
-            isActive={currentFilter === trim(filter)}
-            key={filter + index}
+            onClick={(e) => setCurrentFilter(filter['uid'])}
+            isActive={currentFilter === filter['uid']}
+            key={filter['uid'] + 1}            
           >
-            {trim(filter)}
+            {filter['display_name']}
           </Filter>          
-        ))}      
+        ), filters)}      
       </SubCategoryContainer>      
       )}
     </>

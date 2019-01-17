@@ -153,18 +153,18 @@ export class MobileBar extends React.Component {
           >
           
               <Filter
-                onClick={(e) => this.props.setFilter("All")}
+                onClick={(e) => this.props.setCurrentFilter("All")}
                 isActive={this.props.currentFilter === "All"}
               >
                 All
               </Filter>          
             {this.props.filters.map((filter,index) => (          
               <Filter
-                onClick={(e) => this.props.setFilter(trim(filter))}
-                isActive={this.props.currentFilter === trim(filter)}
-                key={index + filter}
+                onClick={(e) => this.props.setCurrentFilter(filter['uid'])}
+                isActive={this.props.currentFilter === filter['uid']}
+                key={index + filter['uid']}                
               >
-                {trim(filter)}
+                {filter['display_name']}
               </Filter>          
             ))}               
           </SubFilterChildContainer>      

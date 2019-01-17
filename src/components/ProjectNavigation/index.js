@@ -36,7 +36,7 @@ export const CategoriesBar = (
     navigation, 
     location, 
     filters,
-    setFilter,
+    setCurrentFilter,
     currentFilter, 
   }) => {
   const architectureCategories = get(navigation, 'prismicNavigation.data.link_list')  
@@ -48,7 +48,7 @@ export const CategoriesBar = (
         location={location} 
         architectureCategories={architectureCategories}    
         historicCategories={historicCategories}     
-        setFilter={setFilter}
+        setCurrentFilter={setCurrentFilter}
         currentFilter={currentFilter}
       />
       <MobileBar 
@@ -56,7 +56,7 @@ export const CategoriesBar = (
         architectureCategories={architectureCategories} 
         historicCategories={historicCategories}
         filters={filters}         
-        setFilter={setFilter}
+        setCurrentFilter={setCurrentFilter}
         currentFilter={currentFilter}
       />           
     </>
@@ -68,7 +68,7 @@ const render = (props) => queryData => (
     location={props.location}     
     navigation={queryData}     
     filters={props.filters}
-    setFilter={props.setFilter}
+    setCurrentFilter={props.setCurrentFilter}
     currentFilter={props.currentFilter}
   />
 )

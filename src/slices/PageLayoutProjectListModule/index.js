@@ -1,6 +1,19 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get, split, trim, toLower } from 'lodash'
+
+import {
+  __,
+  compose,  
+  reject,  
+  flattenDeep,  
+  uniqBy,
+  size,
+  path,
+  map,
+} from 'lodash/fp'
+
+
 import { ProjectNavigation } from 'components/ProjectNavigation'
 import { Image } from 'components/Image'
 import { getUnlessEmptyString } from 'helpers'
@@ -13,22 +26,28 @@ import {
   OverlayContainer,
 } from './index.styled'
 
-const filtersMatch = (currentFilter, targetFilter) => {
-  return toLower(trim(currentFilter)) === toLower(trim(targetFilter))
+const filtersMatch = (currentFilter, projectFilters) => {  
+  let filterMatched = false
+  map(filter => {
+    if (currentFilter === path('project_subcategory.document[0].uid', filter)) {
+      filterMatched = true
+    }
+  }, projectFilters)
+  return filterMatched    
 }
 
-const renderGrid = (data, item, currentFilter) => {
+const renderGrid = (data, item, currentFilter) => {  
   return (
     <>
     <ImageContainer>
       <Image
-        alt={getUnlessEmptyString(data.project_thumb_image.alt)}
+        alt={getUnlessEmptyString('data.project_thumb_image.alt', data)}
         fluid={get(data, "project_thumb_image.localFile.childImageSharp.fluid")}
         fadeIn={false}        
         />
     </ImageContainer>
     <OverlayContainer 
-      longText={data.title.text.length >= 23 }
+      longText={size(get(data, 'title.text')) >= 23}
       bottom={
         (get(item, 'position') === "Bottom") ||
         (currentFilter !== "All")
@@ -39,7 +58,7 @@ const renderGrid = (data, item, currentFilter) => {
           (get(item, 'position') === "Bottom") ||
           (currentFilter !== "All")
         }>
-        {data.title.text}
+        {get(data, 'title.text')}
       </Title>
     </OverlayContainer>
   </>
@@ -51,42 +70,62 @@ export const PortfolioGrid = ({ data, currentFilter }) => {
   let projects = data.items
   return (
     <Container>
-      {projects.map((item, index) => (
-        <StyledLink 
-        key={get(item, 'project.url') + index}
-        to={get(item, 'project.url')}
-        twoInRow={
-          (get(item, 'position') === "Top") ||
-          (currentFilter !== "All")
-        }          
-        show={
-          filtersMatch(currentFilter, get(item, 'project.document[0].data.sub_category')) ||
-          (currentFilter === "All")            
-        }
-        >
-          {renderGrid(get(item, 'project.document[0].data'), item, currentFilter)}
-        </StyledLink>
-      ))}
+      {
+        map((item, index) => (
+          <StyledLink 
+          key={get(item, 'project.url') + index}
+          to={get(item, 'project.url')}
+          twoInRow={
+            (get(item, 'position') === "Top") ||
+            (currentFilter !== "All")
+          }          
+          show={
+            filtersMatch(currentFilter, get(item, 'project.document[0].data.subcategory')) ||
+            (currentFilter === "All")            
+          }
+          >
+            {renderGrid(get(item, 'project.document[0].data'), item, currentFilter)}
+          </StyledLink>
+        ),projects)
+      }
     </Container>
   )
 }
 
-export const PageLayoutProjectListModule = ({data, location}) => {
-  let filters = get(data, "primary.category_filters.text")
-  filters = split(filters, ",")
+export const PageLayoutProjectListModule = ({data, rootData, location}) => {  
+  const getSubCategories = (rootaData) => {
+    const parentUID = path('prismicPage.uid', rootData)    
+
+    let subcategories = compose(      
+      uniqBy('display_name'),
+      map((item) => ({
+        'uid': path('uid', item),
+        'display_name': path("data.display_name", item)
+      })),
+      reject((item) => path('data.parent_category_page.document[0].uid', item) !== parentUID),
+      map('project_subcategory.document[0]'),
+      flattenDeep,
+      map('subcategory'),
+      map('project.document[0].data'),
+      path('items')
+    )(data)    
+    return subcategories
+  }
+
+
   return(
     <Value initial="All">
-      {({ value: currentFilter, set: setFilter }) => (
+      {({ value: currentFilter, set: setCurrentFilter }) => (
         <>
           <ProjectNavigation 
             location={location}
-            filters={filters}
-            setFilter={setFilter} 
+            filters={getSubCategories(rootData)}
+            setCurrentFilter={setCurrentFilter} 
             currentFilter={currentFilter}
             />
           <PortfolioGrid 
             data={data} 
-            setFilter={setFilter} 
+            setCurrentFilter={setCurrentFilter} 
             currentFilter={currentFilter}               
             />            
         </>
@@ -97,16 +136,11 @@ export const PageLayoutProjectListModule = ({data, location}) => {
 
 export const query = graphql`
   fragment PageLayoutProjectListModule on Query {
-    prismicPage(id: { eq: $id }) {
+    prismicPage(id: { eq: $id }) {      
       data {
         layout {
           ... on PrismicPageLayoutProjectListModule {
-            id   
-            primary {
-              category_filters {
-                text
-              }
-            }  
+            id               
             items {
               position
               project {
@@ -115,8 +149,25 @@ export const query = graphql`
                   data {
                     title {
                       text
-                    }                                   
-                    sub_category                    
+                    }                                                       
+                    subcategory {
+                      project_subcategory {
+                        document {
+                          uid
+                          data {
+                            title {
+                              text
+                            }
+                            display_name                            
+                            parent_category_page {
+                              document {
+                                uid
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }                    
                     project_thumb_image {
                       localFile {
                         childImageSharp {
