@@ -95,9 +95,9 @@ export class PageTemplate extends React.Component {
           )}
         </Helmet>
         <Layout>
-          {isPathActive(location.pathname, '/cms-guide')
-            ? this.renderCmsGuideAuth()
-            : this.renderSlices()}
+          {
+            isPathActive(location.pathname, '/cms-guide') ? this.renderCmsGuideAuth() : this.renderSlices()
+          }
         </Layout>
       </>
     )
