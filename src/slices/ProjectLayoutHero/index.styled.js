@@ -70,13 +70,13 @@ export const CarouselContainer = styled.div`
 `
 
 export const StyledCarousel = styled(Carousel)`
-  height: 100% !important;  
+  height: 100% !important;
   width: 100% !important;
   .slider-frame {
     height: 100% !important;
   }
   .slider-list {
-    height: 100% !important;  
+    height: 100% !important;
   }
   .slider-slide {
     height: 100% !important;
@@ -87,18 +87,18 @@ export const StyledCarousel = styled(Carousel)`
     ${t.mq.l} {
       display: block;
     }
-    button {      
+    button {
       color: ${t.c.white} !important;
       font-size: ${t.f(5)} !important;
       text-shadow: ${t.c.black} 0px 0 5px !important;
     }
   }
-  .slider-control-centerleft {    
+  .slider-control-centerleft {
     z-index: 99;
   }
   .slider-control-centerright {
     z-index: 99;
-  }  
+  }
 
   ${t.mq.l} {
     .slider-control-centerleft {
@@ -149,14 +149,14 @@ export const ClipOverlay = styled.div`
   ${t.mq.l} {
     top: -${t.s(11)};
     left: -${t.s(2)};
-    height: ${t.s(12.5)};    
+    height: ${t.s(12.5)};
     width: 150%;
   }
   ${t.mq.x} {
     top: -${t.s(11)};
     left: -${t.s(4)};
-    height: ${t.s(13)};    
-  }  
+    height: ${t.s(13)};
+  }
 `
 export const Header = styled.div`
   width: 100%;
@@ -171,13 +171,13 @@ export const Title = styled.h1`
   letter-spacing: 0.1rem;
   margin-bottom: 0;
   ${t.mq.l} {
-    font-size: ${p => p.longText ? t.f(4) : t.f(5)};    
+    font-size: ${p => (p.longText ? t.f(4) : t.f(5))};
   }
   ${t.mq.x} {
-    font-size: ${p => p.longText ? t.f(5) : t.f(6)};        
+    font-size: ${p => (p.longText ? t.f(5) : t.f(6))};
   }
   ${t.mq.xxx} {
-    font-size: ${p => p.longText ? t.f(8) : t.f(9)};
+    font-size: ${p => (p.longText ? t.f(8) : t.f(9))};
     line-height: 5rem;
   }
 `
@@ -222,5 +222,5 @@ export const ArrowControlContainer = styled.div`
 export const ArrowControl = styled.img`
   height: 100%;
   object-fit: contain !important;
-  transform: ${p => p.rotate ? 'rotate(180deg)' : 'none'};
+  transform: ${p => (p.rotate ? 'rotate(180deg)' : 'none')};
 `

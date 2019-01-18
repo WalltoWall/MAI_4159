@@ -3,7 +3,6 @@ import { css } from 'emotion'
 import t from 'theme'
 import { HTMLContent } from 'components/HTMLContent'
 
-
 const backgroundChooser = ({ background_color }) => {
   switch (background_color) {
     case 'Grey':
@@ -68,7 +67,7 @@ export const StyledHtmlClassName = css`
     li {
       color: ${t.c.darkgrey2};
       font-family: ${t.ff.sans2};
-      font-size: ${t.f( 0.2)};
+      font-size: ${t.f(0.2)};
       line-height: ${t.lh.copy};
     }
   }
@@ -99,14 +98,14 @@ export const StyledHtmlClassName = css`
     margin: 0 auto;
     display: block;
     &:hover {
-     background-color: ${t.c.darkyellow};
-     text-decoration: none;
-     transition: background-color 200ms;
+      background-color: ${t.c.darkyellow};
+      text-decoration: none;
+      transition: background-color 200ms;
     }
   }
 `
 
-export const Headline =  styled.div`
+export const Headline = styled.div`
   display: block;
   font-size: 2rem;
 `

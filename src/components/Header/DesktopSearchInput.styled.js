@@ -12,7 +12,7 @@ export const Container = styled.li`
 export const Form = styled.form`
   display: flex;
   input {
-    padding: 0;    
+    padding: 0;
     ::placeholder {
       color: ${t.c.lightgrey4};
     }
@@ -67,7 +67,6 @@ export const SearchButton = styled.button`
   padding: ${t.s(-2.5, -1)};
   transition: background-color ${t.t};
   background: none;
-
 `
 
 export const SearchButtonIcon = styled(AssetIconSearchSVG)`

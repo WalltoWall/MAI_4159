@@ -25,8 +25,7 @@ const render = () => queryData => {
         <Link to="/">
           <FooterLogo src={logo} />
         </Link>
-        <BrandContent>
-        </BrandContent>
+        <BrandContent />
         <MenuContainer>
           <LinkContainer>
             {menuList.map((item, index) => (
@@ -38,9 +37,7 @@ const render = () => queryData => {
                   {get(item, 'primary.name')}
                 </StyledLink>
                 {menuLength !== index + 1 && (
-                  <LinkSeparator 
-                    key={get(item, 'id') + index}
-                    index={index}>
+                  <LinkSeparator key={get(item, 'id') + index} index={index}>
                     |
                   </LinkSeparator>
                 )}
@@ -48,7 +45,13 @@ const render = () => queryData => {
             ))}
           </LinkContainer>
           <CopyrightContent>
-            © 2018 Mason<br/>Website designed and developed by <a href="https://www.walltowall.com" target="blank">Wall-to-Wall Studios</a>.
+            © 2018 Mason
+            <br />
+            Website designed and developed by{' '}
+            <a href="https://www.walltowall.com" target="blank">
+              Wall-to-Wall Studios
+            </a>
+            .
           </CopyrightContent>
         </MenuContainer>
       </Content>

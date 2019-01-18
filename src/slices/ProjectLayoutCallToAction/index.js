@@ -4,11 +4,11 @@ import { get } from 'lodash'
 import { CtaBar } from 'components/CtaBar'
 
 export const ProjectLayoutCallToAction = ({ data }) => (
-  <CtaBar 
+  <CtaBar
     title={get(data, 'primary.title1.text')}
     buttonUrl={get(data, 'primary.button_link.url')}
     buttonText={get(data, 'primary.button_text')}
-    background={"dark"}
+    background={'dark'}
   />
 )
 

@@ -1,10 +1,10 @@
 import styled from 'react-emotion'
-import {css} from 'emotion'
+import { css } from 'emotion'
 import t from 'theme'
 import { HTMLContent } from 'components/HTMLContent'
 
 export const Container = styled.div`
-  width: 100%; 
+  width: 100%;
   background-color: ${t.c.lightgrey2};
   padding: ${t.s(3)} 0 ${t.s(3)} 0;
   ${t.mq.l} {
@@ -16,14 +16,14 @@ export const Column = styled.div`
   width: 100%;
   h3 {
     color: ${t.c.darkgrey1};
-    font-size: ${t.f(0)};   
+    font-size: ${t.f(0)};
     margin: 0;
     font-weight: 600;
     font-family: ${t.ff.sans2};
-  }  
+  }
 
   ${t.mq.l} {
-    width: ${p=> p.fullWidth ? '100%' : '50%'};
+    width: ${p => (p.fullWidth ? '100%' : '50%')};
   }
 `
 
@@ -56,15 +56,15 @@ export const MobilePadding = styled.div`
 export const HTMLParagraph = styled(HTMLContent)`
   margin: 5px 0 0 0;
   color: ${t.c.darkgrey2};
-  font-family: ${t.ff.sans2};    
+  font-family: ${t.ff.sans2};
   line-height: ${t.lh.copy};
-  ${t.mq.l} {         
+  ${t.mq.l} {
     padding: 0 ${t.s(4)} 0 0;
-  }   
+  }
   p {
     margin: 5px 0;
-    ${t.mq.l} {         
+    ${t.mq.l} {
       padding: 0 ${t.s(4)} 0 0;
-    } 
+    }
   }
 `

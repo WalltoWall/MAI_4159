@@ -2,9 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { TextBlock } from 'components/TextBlock'
 
-export const TeamMemberLayoutTextBlock = ({ data }) => (
-  <TextBlock data={data} />
-)
+export const TeamMemberLayoutTextBlock = ({ data }) => <TextBlock data={data} />
 
 export const query = graphql`
   fragment TeamMemberLayoutTextBlock on Query {

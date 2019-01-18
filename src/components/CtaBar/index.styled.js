@@ -6,7 +6,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: ${p => p.background === "dark" ? t.c.darkgrey2 : "white"};
+  background-color: ${p => (p.background === 'dark' ? t.c.darkgrey2 : 'white')};
   padding: 5rem 0;
 `
 

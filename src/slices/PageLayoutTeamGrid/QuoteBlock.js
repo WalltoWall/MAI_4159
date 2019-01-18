@@ -1,13 +1,12 @@
 import React from 'react'
 import { get, isString, isEmpty } from 'lodash'
 
-import { 
+import {
   QuoteContainer,
-  Quote, 
+  Quote,
   ClipOverlay,
   ClipContainer,
-} 
-from './QuoteBlock.styled'
+} from './QuoteBlock.styled'
 
 export const QuoteBlock = ({ index, data, list }) => {
   let context = ''
@@ -32,76 +31,73 @@ export const QuoteBlock = ({ index, data, list }) => {
   if (!isEmpty(context)) {
     return (
       <>
-        {context === 'mobileTop' && (          
-          <QuoteContainer to={get(list[index], "team_member.url")} context={'mobile'}>
-            <Quote
-              html={get(data, 'primary.top_quote.html')}              
-              align={'right'}
-            />
+        {context === 'mobileTop' && (
+          <QuoteContainer
+            to={get(list[index], 'team_member.url')}
+            context={'mobile'}
+          >
+            <Quote html={get(data, 'primary.top_quote.html')} align={'right'} />
             <ClipContainer align={'right'}>
-              <ClipOverlay align={'right'}/>
+              <ClipOverlay align={'right'} />
             </ClipContainer>
-          </QuoteContainer>          
+          </QuoteContainer>
         )}
         {context === 'mobileMiddle' && (
-          <QuoteContainer to={get(list[index + 1], "team_member.url")} context={'mobile'}>
+          <QuoteContainer
+            to={get(list[index + 1], 'team_member.url')}
+            context={'mobile'}
+          >
             <Quote
-              html={get(data, 'primary.middle_quote.html')}              
+              html={get(data, 'primary.middle_quote.html')}
               align={'left'}
             />
             <ClipContainer align={'left'}>
-              <ClipOverlay align={'left'}/>
+              <ClipOverlay align={'left'} />
             </ClipContainer>
           </QuoteContainer>
         )}
         {context === 'desktopTop' && (
-          <QuoteContainer 
-            to={get(list[index], "team_member.url")} 
+          <QuoteContainer
+            to={get(list[index], 'team_member.url')}
             context={'desktop'}
-            expand={true}      
+            expand={true}
             onClick={e => e.preventDefault()}
-          >            
-            <Quote
-              html={get(data, 'primary.top_quote.html')}              
-              align={'right'}
-            />         
-            <ClipContainer align={'right'}>   
-              <ClipOverlay align={'right'}/>
+          >
+            <Quote html={get(data, 'primary.top_quote.html')} align={'right'} />
+            <ClipContainer align={'right'}>
+              <ClipOverlay align={'right'} />
             </ClipContainer>
-            
           </QuoteContainer>
         )}
         {context === 'desktopMiddle' && (
-          <QuoteContainer 
-            to={get(list[index], "team_member.url")} 
+          <QuoteContainer
+            to={get(list[index], 'team_member.url')}
             context={'desktop'}
             onClick={e => e.preventDefault()}
           >
             <Quote
-              html={get(data, 'primary.middle_quote.html')}              
+              html={get(data, 'primary.middle_quote.html')}
               align={'left'}
             />
             <ClipContainer align={'left'}>
-              <ClipOverlay align={'left'}/>
+              <ClipOverlay align={'left'} />
             </ClipContainer>
           </QuoteContainer>
         )}
         {context === 'bottomEnd' && (
-          <QuoteContainer bottom={true} >
-            <Quote 
-              html={get(data, 'primary.bottom_quote.html')} 
-              align={'right'}               
+          <QuoteContainer bottom={true}>
+            <Quote
+              html={get(data, 'primary.bottom_quote.html')}
+              align={'right'}
             />
-            <ClipContainer align={'right'}> 
-              <ClipOverlay align={'right'}/>
-            </ClipContainer> 
+            <ClipContainer align={'right'}>
+              <ClipOverlay align={'right'} />
+            </ClipContainer>
           </QuoteContainer>
         )}
       </>
     )
   } else {
-    return (
-      <></>
-    )
+    return <></>
   }
 }

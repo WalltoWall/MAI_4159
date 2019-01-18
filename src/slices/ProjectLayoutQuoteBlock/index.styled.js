@@ -15,15 +15,15 @@ export const QuoteWrapper = styled.div`
   padding: 2rem;
   width: ${t.w.mobile};
   position: relative;
-   ${t.mq.m} {
-  	padding: 3rem;
+  ${t.mq.m} {
+    padding: 3rem;
   }
   ${t.mq.l} {
-  	width: ${t.w.desktop};
-  	padding: 4rem;
+    width: ${t.w.desktop};
+    padding: 4rem;
   }
   ${t.mq.x} {
-  	width: ${t.w.xl};
+    width: ${t.w.xl};
   }
 `
 
@@ -34,8 +34,8 @@ export const Quote = styled.div`
   font-size: 1.2rem;
   line-height: 2rem;
   ${t.mq.l} {
-  	font-size: 1.6rem;
-  	line-height: 2.6rem;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
   }
 `
 
@@ -46,7 +46,6 @@ export const Author = styled.div`
   margin-top: 1rem;
 `
 
-
 export const QuoteMark = styled.div`
   color: ${t.c.darkgrey2};
   font-family: ${t.ff.serif};
@@ -54,12 +53,10 @@ export const QuoteMark = styled.div`
   position: absolute;
   top: -50px;
   &:before {
-  	content: ' “ ';
+    content: ' “ ';
   }
-   ${t.mq.l} {
-  	font-size: 14rem;
+  ${t.mq.l} {
+    font-size: 14rem;
     top: -60px;
   }
 `
-
-

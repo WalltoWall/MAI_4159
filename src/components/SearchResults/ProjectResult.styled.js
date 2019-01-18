@@ -4,13 +4,13 @@ import { Link } from 'components/Link'
 
 export const StyledLink = styled(Link)`
   display: block;
-  width: 100%;  
+  width: 100%;
   height: ${t.s(8)};
   ${t.mq.s} {
-    width: 50%;  
+    width: 50%;
   }
   ${t.mq.l} {
-    width: 33.333%;  
+    width: 33.333%;
   }
 `
 
@@ -19,7 +19,7 @@ export const Container = styled.div`
   list-style: none;
   padding: 0.5rem 0;
   ${t.mq.s} {
-    padding: 0.5rem; 
+    padding: 0.5rem;
   }
 `
 export const ImageContainer = styled.div`
@@ -31,8 +31,7 @@ export const ImageContainer = styled.div`
 export const Image = styled.img`
   height: 100%;
   width: 100%;
-  object-fit: cover;  
-  
+  object-fit: cover;
 `
 export const Title = styled.div`
   text-align: center;

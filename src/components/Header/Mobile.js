@@ -4,7 +4,12 @@ import qs from 'querystring'
 import { getLocationQuery } from 'helpers'
 import { Location } from '@reach/router'
 import { get } from 'lodash'
-import { Container, MobileSearchIcon, SearchButtonIcon, SearchNavItem } from './Mobile.styled'
+import {
+  Container,
+  MobileSearchIcon,
+  SearchButtonIcon,
+  SearchNavItem,
+} from './Mobile.styled'
 import { MobileNavItem } from './MobileNavItem.js'
 import { ModalConsumer } from 'controllers/ModalContext'
 import { searchModal } from 'components/Modal/searchModal'
@@ -24,7 +29,7 @@ const render = ({ isOpen, toggle, ...props }) => queryData => (
       renderLink(toggle)
     )}
     <Location>
-      {({ location }) => {        
+      {({ location }) => {
         return (
           <SearchBarTemp
             query={getLocationQuery(location)}
@@ -33,9 +38,9 @@ const render = ({ isOpen, toggle, ...props }) => queryData => (
               toggle()
             }}
           />
-        )            
+        )
       }}
-    </Location>    
+    </Location>
   </Container>
 )
 

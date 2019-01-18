@@ -6,32 +6,33 @@ import { RenderGrid } from 'components/RenderGrid'
 import { SmallHeadline } from 'components/SmallHeadline'
 import { getUnlessEmptyString } from 'helpers'
 
-export const TeamMemberLayoutFeaturedList = ({ data, rootData }) => { 
-const projects = get(data, 'items')
+export const TeamMemberLayoutFeaturedList = ({ data, rootData }) => {
+  const projects = get(data, 'items')
 
   return (
     <Container>
-    <SmallHeadline>
-      {split(get(rootData, "prismicTeamMember.data.title"), " ")[0]}'s Featured Projects
-    </SmallHeadline>
+      <SmallHeadline>
+        {split(get(rootData, 'prismicTeamMember.data.title'), ' ')[0]}
+        's Featured Projects
+      </SmallHeadline>
       <GridContainer>
-       {projects.map(project =>
-            RenderGrid({
-              key: get(project, 'project.document[0].uid'),
-              alt: getUnlessEmptyString(
-                get(project, 'project.document[0].data.project_thumb_image.alt')
-              ),
-              img: get(
-               project,
-                'project.document[0].data.project_thumb_image.localFile.childImageSharp.fluid'
-                ),
-              title: get(project, 'project.document[0].data.title.text'),
-              url: get(project, 'project.url'),
-              largeImages: false,
-            })
-          )}
-      </GridContainer>      
-  </Container>
+        {projects.map(project =>
+          RenderGrid({
+            key: get(project, 'project.document[0].uid'),
+            alt: getUnlessEmptyString(
+              get(project, 'project.document[0].data.project_thumb_image.alt')
+            ),
+            img: get(
+              project,
+              'project.document[0].data.project_thumb_image.localFile.childImageSharp.fluid'
+            ),
+            title: get(project, 'project.document[0].data.title.text'),
+            url: get(project, 'project.url'),
+            largeImages: false,
+          })
+        )}
+      </GridContainer>
+    </Container>
   )
 }
 export const query = graphql`
@@ -48,7 +49,7 @@ export const query = graphql`
                   data {
                     title {
                       text
-                    }                    
+                    }
                     project_thumb_image {
                       localFile {
                         childImageSharp {
@@ -61,7 +62,7 @@ export const query = graphql`
                   }
                 }
               }
-            }       
+            }
           }
         }
       }

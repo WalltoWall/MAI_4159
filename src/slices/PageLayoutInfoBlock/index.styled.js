@@ -15,7 +15,7 @@ export const Info = styled.div`
   ${t.mq.s} {
     width: 35%;
     &:last-child {
-     border-bottom: none;
+      border-bottom: none;
     }
     &:nth-child(3) {
       border-bottom: none;
@@ -55,7 +55,7 @@ export const Content = styled.div`
   ${t.mq.l} {
     justify-content: space-around;
     padding: 4rem 0;
-  } 
+  }
   ${t.mq.x} {
     width: ${t.w.xl};
   }
@@ -72,7 +72,7 @@ export const StyledHtmlClassName = css`
     text-align: center;
     ${t.mq.l} {
       text-align: left;
-     }
+    }
   }
   p {
     color: ${t.c.darkgrey2};

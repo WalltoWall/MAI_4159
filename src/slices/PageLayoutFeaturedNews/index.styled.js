@@ -82,7 +82,7 @@ export const StyledLink = styled(Link)`
   position: relative;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;  
+  flex-wrap: wrap;
   width: 100%;
   margin: 1rem 0;
   ${t.mq.l} {
@@ -123,4 +123,3 @@ export const ReadMoreWrapper = styled.div`
     bottom: 20px;
   }
 `
-

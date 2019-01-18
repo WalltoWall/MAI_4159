@@ -40,51 +40,55 @@ export class ProjectLayoutHero extends React.Component {
           <Content>
             <Header>
               <Title
-                longText={get(this.props.data, 'primary.project_title.text').length >= 40}
+                longText={
+                  get(this.props.data, 'primary.project_title.text').length >=
+                  40
+                }
               >
                 {get(this.props.data, 'primary.project_title.text')}
               </Title>
             </Header>
             <InfoContainer>
-            {get(this.props.data, 'primary.project_type.text') && (
-              <>
-                <InfoLine />
-                <div className={InfoBlurb}>
-                  <h3>project type</h3>
-                  <p>{get(this.props.data, 'primary.project_type.text')}</p>
-                </div>
-              </>
-            )}
-            {get(this.props.data, 'primary.year_completed.text') && (
-              <>
-                <InfoLine />
-                <div className={InfoBlurb}>
-                  <h3>year completed</h3>
-                  <p>{get(this.props.data, 'primary.year_completed.text')}</p>
-                </div>
-              </>
-            )}              
+              {get(this.props.data, 'primary.project_type.text') && (
+                <>
+                  <InfoLine />
+                  <div className={InfoBlurb}>
+                    <h3>project type</h3>
+                    <p>{get(this.props.data, 'primary.project_type.text')}</p>
+                  </div>
+                </>
+              )}
+              {get(this.props.data, 'primary.year_completed.text') && (
+                <>
+                  <InfoLine />
+                  <div className={InfoBlurb}>
+                    <h3>year completed</h3>
+                    <p>{get(this.props.data, 'primary.year_completed.text')}</p>
+                  </div>
+                </>
+              )}
             </InfoContainer>
             <ClipOverlay />
           </Content>
         </ContentContainer>
         {get(this.props.data, 'items').length > 1 && (
           <CarouselContainer>
-            <StyledCarousel 
+            <StyledCarousel
               autoplay={true}
               autoplayInterval={5000}
-              frameOverflow="hide" 
-              wrapAround={true}          
+              frameOverflow="hide"
+              wrapAround={true}
               renderCenterLeftControls={({ previousSlide }) => (
-              <ArrowControlContainer onClick={previousSlide}>
-                <ArrowControl rotate={true} src={HoverArrowSVG} />
-              </ArrowControlContainer>
-            )}
-            renderCenterRightControls={({ nextSlide }) => (
-              <ArrowControlContainer onClick={nextSlide}>
-                <ArrowControl src={HoverArrowSVG} />
-              </ArrowControlContainer>
-            )}>
+                <ArrowControlContainer onClick={previousSlide}>
+                  <ArrowControl rotate={true} src={HoverArrowSVG} />
+                </ArrowControlContainer>
+              )}
+              renderCenterRightControls={({ nextSlide }) => (
+                <ArrowControlContainer onClick={nextSlide}>
+                  <ArrowControl src={HoverArrowSVG} />
+                </ArrowControlContainer>
+              )}
+            >
               {get(this.props.data, 'items').map(item => (
                 <ImageContainer key={getUnlessEmptyString(item, 'image.alt')}>
                   <Image
@@ -96,13 +100,16 @@ export class ProjectLayoutHero extends React.Component {
               ))}
             </StyledCarousel>
           </CarouselContainer>
-        )}        
+        )}
         {get(this.props.data, 'items').length === 1 && (
           <CarouselContainer>
             <ImageContainer>
               <Image
                 alt={getUnlessEmptyString(this.props.data.items[0], 'alt')}
-                fluid={get(this.props, "data.items[0].image.localFile.childImageSharp.fluid")}
+                fluid={get(
+                  this.props,
+                  'data.items[0].image.localFile.childImageSharp.fluid'
+                )}
                 fadeIn={false}
               />
             </ImageContainer>

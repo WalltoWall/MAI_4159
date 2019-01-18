@@ -40,8 +40,6 @@ export const ImageContainer = styled.div`
   }
 `
 
-
-
 export const SectionContainer = styled.div`
   background-color: ${t.c.lightgrey2};
   margin: 0 auto;
@@ -92,7 +90,7 @@ export const StyledLink = styled(Link)`
   position: relative;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;  
+  flex-wrap: wrap;
   width: 100%;
   padding: 0;
   margin: 1rem 0;
@@ -106,16 +104,16 @@ export const StyledLink = styled(Link)`
     height: auto;
     padding: 0 0.5rem 2rem 0.5rem;
   }
-  
+
   @keyframes fadeIn {
     from {
       opacity: 0;
-    }      
+    }
     to {
       opacity: 1;
     }
-  };
-  animation: fadeIn .5s ease-in;
+  }
+  animation: fadeIn 0.5s ease-in;
 `
 export const ReadMore = styled(Link)`
   font-family: ${t.ff.sans2};
@@ -172,7 +170,7 @@ export const ArrowWrapper = styled.img`
   width: 8px;
   margin: 0 0.8rem;
   transition: transform 150ms ease-in-out;
-  ${ReadMoreWrapper}:hover & {    
+  ${ReadMoreWrapper}:hover & {
     transform: translateX(0.3em);
   }
 `

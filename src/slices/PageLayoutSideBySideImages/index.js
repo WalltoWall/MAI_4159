@@ -3,9 +3,7 @@ import { graphql } from 'gatsby'
 import { SideBySideImages } from 'components/SideBySideImages'
 
 export const PageLayoutSideBySideImages = ({ data }) => {
-  return (
-    <SideBySideImages data={data}/>
-  )
+  return <SideBySideImages data={data} />
 }
 
 export const query = graphql`

@@ -17,7 +17,7 @@ import {
   Projects,
   SectionTitle,
 } from './index.styled'
-import { Button }from 'components/Button'
+import { Button } from 'components/Button'
 import { RenderGrid } from 'components/RenderGrid'
 
 export const PageLayoutServices = ({ data }) => {
@@ -32,19 +32,27 @@ export const PageLayoutServices = ({ data }) => {
         <ImageWrapper>
           <Image
             alt={getUnlessEmptyString(data, 'primary.left_image.alt')}
-            fluid={get(data, 'primary.left_image.localFile.childImageSharp.fluid')}
+            fluid={get(
+              data,
+              'primary.left_image.localFile.childImageSharp.fluid'
+            )}
             fadeIn={false}
           />
         </ImageWrapper>
-         <ImageWrapper>
+        <ImageWrapper>
           <Image
             alt={getUnlessEmptyString(data, 'primary.right_image.alt')}
-            fluid={get(data, 'primary.right_image.localFile.childImageSharp.fluid')}
+            fluid={get(
+              data,
+              'primary.right_image.localFile.childImageSharp.fluid'
+            )}
             fadeIn={false}
           />
         </ImageWrapper>
       </ImageContainer>
-      <ImageDescription>{get(data, 'primary.description.text')}</ImageDescription>
+      <ImageDescription>
+        {get(data, 'primary.description.text')}
+      </ImageDescription>
       <Content>
         <TextBlock>
           <HTMLContent
@@ -53,29 +61,29 @@ export const PageLayoutServices = ({ data }) => {
           />
         </TextBlock>
         <TextBlock>
-        <HTMLContent
-          html={get(data, 'primary.right_text_block.html')}
-          className={StyledHtmlClassName}
-        />
+          <HTMLContent
+            html={get(data, 'primary.right_text_block.html')}
+            className={StyledHtmlClassName}
+          />
         </TextBlock>
       </Content>
       <SectionTitle>{serviceName} Work</SectionTitle>
-        <Projects>
-          {projects.map(project =>
-            RenderGrid({
-              key: get(project, 'projects.document[0].uid'),
-              alt: getUnlessEmptyString(
-                get(project, 'projects.document[0].data.project_thumb_image.alt')
-              ),
-              img: get(
-               project,
-                'projects.document[0].data.project_thumb_image.localFile.childImageSharp.fluid'
-                ),
-              title: get(project, 'projects.document[0].data.title.text'),
-              url: get(project, 'projects.url'),
-              largeImages: false,
-            })
-          )}
+      <Projects>
+        {projects.map(project =>
+          RenderGrid({
+            key: get(project, 'projects.document[0].uid'),
+            alt: getUnlessEmptyString(
+              get(project, 'projects.document[0].data.project_thumb_image.alt')
+            ),
+            img: get(
+              project,
+              'projects.document[0].data.project_thumb_image.localFile.childImageSharp.fluid'
+            ),
+            title: get(project, 'projects.document[0].data.title.text'),
+            url: get(project, 'projects.url'),
+            largeImages: false,
+          })
+        )}
       </Projects>
       <Button to="/featured-projects/">view more work</Button>
     </Container>

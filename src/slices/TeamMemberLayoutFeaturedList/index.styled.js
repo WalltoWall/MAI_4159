@@ -20,5 +20,5 @@ export const GridContainer = styled.div`
   }
   ${t.mq.x} {
     width: ${t.w.xl};
-  }  
+  }
 `

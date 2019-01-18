@@ -7,7 +7,7 @@ export const Container = styled.div`
   padding: ${t.s(4)} 1rem 0 1rem;
   ${t.mq.l} {
     padding: ${t.s(5)} 0 0 0;
-  }    
+  }
 `
 
 export const PostDate = styled.div`

@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { SideBySideText} from 'components/SideBySideText'
+import { SideBySideText } from 'components/SideBySideText'
 
 export const ProjectLayoutSideBySideText = ({ data }) => (
   <SideBySideText data={data} />

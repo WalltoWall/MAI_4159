@@ -60,7 +60,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-emotion',
       options: {
-        autoLabel: process.env.NODE_ENV === 'development',
+        autoLabel: true,
       },
     },
     {
@@ -167,7 +167,7 @@ module.exports = {
               title: get('data.title.text', node),
               metaTitle: get('data.meta_title', node),
               metaDescription: get('data.meta_description', node),
-              image: get("data.image.url", node),
+              image: get('data.image.url', node),
               content,
               excerpt: truncate(content, 200),
             }
@@ -355,28 +355,29 @@ module.exports = {
           'metaDescription',
           'excerpt',
         ],
-        normalizer: ({ data }) => {        
+        normalizer: ({ data }) => {
           const nodes = compose(
             map(node => {
-              const content = flatValuesDeep(get('data.layout', node)).join(' ')                                                          
+              const content = flatValuesDeep(get('data.layout', node)).join(' ')
 
               return {
-                id: get("id", node),
-                  path: get( "uid", node) === 'home' ? '/' : `/${get( "uid", node)}`,
-                  title: getOr(get('data.title', node), 'data.title.text', node),
-                  metaTitle: get( 'data.meta_title', node),
-                  metaDescription: get( 'data.meta_description', node),
-                  content,
-                  excerpt: truncate(content, 200),
+                id: get('id', node),
+                path:
+                  get('uid', node) === 'home' ? '/' : `/${get('uid', node)}`,
+                title: getOr(get('data.title', node), 'data.title.text', node),
+                metaTitle: get('data.meta_title', node),
+                metaDescription: get('data.meta_description', node),
+                content,
+                excerpt: truncate(content, 200),
               }
             }),
             map(get('node')),
             flatten,
             map(get('edges')),
             values
-          )(data)       
+          )(data)
           return nodes
-        }          
+        },
       },
     },
     {
@@ -395,7 +396,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-catch-links',
-    'gatsby-transformer-sharp', 
+    'gatsby-transformer-sharp',
     'gatsby-plugin-netlify',
     'gatsby-plugin-netlify-cache',
   ],

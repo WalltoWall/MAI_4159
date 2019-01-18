@@ -13,7 +13,7 @@ export const Content = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  margin: 2rem auto;  
+  margin: 2rem auto;
   ${t.mq.m} {
     align-items: flex-start;
     width: ${t.w.mobile};

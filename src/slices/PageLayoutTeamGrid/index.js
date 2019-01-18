@@ -20,13 +20,15 @@ import {
   Filter,
   NavArrow,
   FilterContainer,
-} from './index.styled' 
+} from './index.styled'
 
 const getActiveState = (currentFilter, targetFilter) => {
-  if (currentFilter === 'All') return true  
-  const target = targetFilter || ""
+  if (currentFilter === 'All') return true
+  const target = targetFilter || ''
   const sanitizedCurrentFilter = toLower(trim(currentFilter))
-  const sanitizedTargetFilter = target.split(",").map(filter => toLower(trim(filter)))  
+  const sanitizedTargetFilter = target
+    .split(',')
+    .map(filter => toLower(trim(filter)))
   if (includes(sanitizedTargetFilter, sanitizedCurrentFilter)) return true
 }
 
@@ -35,15 +37,11 @@ const RoleFilterBar = ({ filters, setFilter, currentFilter }) => (
     {({ toggle, on }) => (
       <>
         <FilterContainer>
-          <CurrentFilter 
-            onClick={() => 
-            toggle()}
-          >
+          <CurrentFilter onClick={() => toggle()}>
             <span>View: </span>
             {currentFilter}
             <NavArrow active={on} />
           </CurrentFilter>
-          
         </FilterContainer>
         <FilterBarContainer isOpen={on}>
           {filters.map(filter => (
@@ -69,26 +67,30 @@ const renderGrid = (data, currentFilter) => (
   <>
     <ImageContainer>
       <Image
-        alt={getUnlessEmptyString(get(data, "photo.alt"))}
-        fluid={get(data, "photo.localFile.childImageSharp.fluid")}
+        alt={getUnlessEmptyString(get(data, 'photo.alt'))}
+        fluid={get(data, 'photo.localFile.childImageSharp.fluid')}
         fadeIn={false}
       />
     </ImageContainer>
     <OverlayContainer>
-      <TitleContainer isActive={getActiveState(currentFilter, get(data, 'department1'))}>
+      <TitleContainer
+        isActive={getActiveState(currentFilter, get(data, 'department1'))}
+      >
         <Title>{get(data, 'name')}</Title>
         <SubTitle>{get(data, 'affiliation')}</SubTitle>
         <SubTitle>{get(data, 'job_title')}</SubTitle>
       </TitleContainer>
-      <Overlay isActive={getActiveState(currentFilter, get(data, 'department1'))} />
+      <Overlay
+        isActive={getActiveState(currentFilter, get(data, 'department1'))}
+      />
     </OverlayContainer>
   </>
 )
 
 export const PageLayoutTeamGrid = ({ data, rootData }) => {
-  let roleFilters = split(get(data, 'primary.role_filters1'), ",")
+  let roleFilters = split(get(data, 'primary.role_filters1'), ',')
   let teamMembers = data.items
-  
+
   return (
     <Value initial="All">
       {({ value: currentFilter, set: setFilter }) => (
@@ -107,7 +109,7 @@ export const PageLayoutTeamGrid = ({ data, rootData }) => {
                     if (
                       !getActiveState(
                         currentFilter,
-                        get(member, 'team_member.document[0].data.department1') 
+                        get(member, 'team_member.document[0].data.department1')
                       )
                     ) {
                       e.preventDefault()
@@ -120,8 +122,8 @@ export const PageLayoutTeamGrid = ({ data, rootData }) => {
                     i,
                     list
                   )}
-                </StyledLink>                
-                <QuoteBlock index={i} data={data} list={list} />              
+                </StyledLink>
+                <QuoteBlock index={i} data={data} list={list} />
               </>
             ))}
           </GridContainer>
@@ -134,7 +136,7 @@ export const PageLayoutTeamGrid = ({ data, rootData }) => {
 export const query = graphql`
   fragment PageLayoutTeamGrid on Query {
     prismicPage(id: { eq: $id }) {
-      data {        
+      data {
         layout {
           ... on PrismicPageLayoutTeamGrid {
             id
@@ -157,7 +159,7 @@ export const query = graphql`
                   data {
                     name
                     affiliation
-                    job_title                    
+                    job_title
                     department1
                     photo {
                       alt

@@ -4,12 +4,8 @@ import { get } from 'lodash'
 import { SmallHeadline } from 'components/SmallHeadline'
 import { RenderGrid } from 'components/RenderGrid'
 import { getUnlessEmptyString } from 'helpers'
-import {
-  Container,
-  Content,
-} from './index.styled'
+import { Container, Content } from './index.styled'
 import { Button } from 'components/Button'
-
 
 export const ProjectLayoutFeatureList = ({ data }) => {
   const featuredType = get(data, 'primary.feature_type')

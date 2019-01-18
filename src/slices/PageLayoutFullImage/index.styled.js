@@ -20,7 +20,7 @@ export const Content = styled.div`
     line-height: ${t.lh.copy};
   }
   ${t.mq.l} {
-    width: ${t.w.desktop};    
+    width: ${t.w.desktop};
     font-size: ${t.f(0.3)};
   }
   ${t.mq.x} {

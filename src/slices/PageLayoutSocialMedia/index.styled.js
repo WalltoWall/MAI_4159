@@ -1,4 +1,3 @@
-
 import styled from 'react-emotion'
 import t from 'theme'
 
@@ -7,14 +6,14 @@ export const Content = styled.div`
   overflow: hidden;
 `
 
-export const ImageContainer = styled.a`  
+export const ImageContainer = styled.a`
   width: 30px;
   display: block;
   margin: 1rem auto;
-  .gatsby-image-outer-wrapper {        
+  .gatsby-image-outer-wrapper {
     height: 100%;
   }
-  .gatsby-image-wrapper {        
+  .gatsby-image-wrapper {
     height: 100%;
   }
 `

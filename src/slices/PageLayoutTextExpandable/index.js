@@ -14,24 +14,16 @@ import {
   StyledExpand,
 } from './index.styled'
 
-
-const renderContent = ( data, index ) => (
-  <Toggle
-    key={data.text.text + index}
-  >
-    {({toggle, on}) => (
+const renderContent = (data, index) => (
+  <Toggle key={data.text.text + index}>
+    {({ toggle, on }) => (
       <>
         <Category>
           <TextBlock>
             {get(data, 'intro.text') && (
-              <Intro 
-                html={get(data, 'intro.html')} 
-                onClick={toggle}
-              />
+              <Intro html={get(data, 'intro.html')} onClick={toggle} />
             )}
-            <StyledExpandButton 
-              isExpanded={on} 
-              onClick={toggle} />
+            <StyledExpandButton isExpanded={on} onClick={toggle} />
           </TextBlock>
         </Category>
         <StyledExpand open={on}>
@@ -39,18 +31,16 @@ const renderContent = ( data, index ) => (
         </StyledExpand>
       </>
     )}
-  </Toggle> 
+  </Toggle>
 )
 
 export const PageLayoutTextExpandable = ({ data }) => (
-    <Container>
+  <Container>
     <Content>
-      <Headline>{get(data, 'primary.title1.text')}</Headline>    
-        {get(data, 'items', []).map((item, index) => (          
-          renderContent(item, index)              
-        ))}
+      <Headline>{get(data, 'primary.title1.text')}</Headline>
+      {get(data, 'items', []).map((item, index) => renderContent(item, index))}
     </Content>
-    </Container>
+  </Container>
 )
 
 export const fragment = graphql`

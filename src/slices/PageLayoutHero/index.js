@@ -14,7 +14,7 @@ import {
   DescriptionWrapper,
   Overlay,
   SlidingVertical,
-  RotatedContainer, 
+  RotatedContainer,
   SubHeadline,
   StyledHtmlClassName,
 } from './index.styled'
@@ -36,11 +36,11 @@ export const PageLayoutHero = ({ data }) => (
           <span>re</span>
           <h1>we are mason</h1>
           <SlidingVertical>
-          {get(data, 'items').map(item => (
-            <span>{item.rotating_text}</span>
-          ))}
-        </SlidingVertical>
-        </Headline>        
+            {get(data, 'items').map(item => (
+              <span>{item.rotating_text}</span>
+            ))}
+          </SlidingVertical>
+        </Headline>
       </RotatedContainer>
       <SubHeadline> Hawaii's Future</SubHeadline>
     </HeadlineWrapper>
@@ -54,7 +54,7 @@ export const PageLayoutHero = ({ data }) => (
     </Overlay>
     <MobileNavOverlay />
   </Container>
-)  
+)
 
 export const query = graphql`
   fragment PageLayoutHero on Query {

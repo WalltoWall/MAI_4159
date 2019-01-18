@@ -2,10 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { getUnlessEmptyString } from 'helpers'
-import {
-  Container,
-  Projects,
-} from './index.styled'
+import { Container, Projects } from './index.styled'
 import { Button } from 'components/Button'
 import { Headline } from 'components/Headline'
 import { RenderGrid } from 'components/RenderGrid'
@@ -16,28 +13,28 @@ export const PageLayoutProjectBoxes = ({ data }) => {
   return (
     <Container>
       <Headline>{get(data, 'primary.title1.text')}</Headline>
-        <Projects>
-          {projects.map(project =>
-            RenderGrid({
-              key: get(project, 'projects.document[0].uid'),
-              alt: getUnlessEmptyString(
-                get(project, 'projects.document[0].data.project_thumb_image.alt')
-              ),
-              img: get(
-                project,
-                'projects.document[0].data.project_thumb_image.localFile.childImageSharp.fluid'
-              ),
-              title: get(project, 'projects.document[0].data.title.text'),
-              url: get(project, 'projects.url'),
-              largeImages: true,
-            })
-          )}
-        </Projects>
-        {get(data, 'primary.button_text') && (
-          <Button to={get(data, 'primary.button_link.url')}>
+      <Projects>
+        {projects.map(project =>
+          RenderGrid({
+            key: get(project, 'projects.document[0].uid'),
+            alt: getUnlessEmptyString(
+              get(project, 'projects.document[0].data.project_thumb_image.alt')
+            ),
+            img: get(
+              project,
+              'projects.document[0].data.project_thumb_image.localFile.childImageSharp.fluid'
+            ),
+            title: get(project, 'projects.document[0].data.title.text'),
+            url: get(project, 'projects.url'),
+            largeImages: true,
+          })
+        )}
+      </Projects>
+      {get(data, 'primary.button_text') && (
+        <Button to={get(data, 'primary.button_link.url')}>
           {get(data, 'primary.button_text')}
         </Button>
-        )}      
+      )}
     </Container>
   )
 }

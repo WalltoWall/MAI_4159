@@ -1,18 +1,11 @@
 import React from 'react'
 import { get } from 'lodash'
-import { 
-  Container,
-  Texts,
-  Text,
-} from './index.styled'
+import { Container, Texts, Text } from './index.styled'
 
 export const CmsGuideText = ({ data }) => (
-  <Container>        
+  <Container>
     <Texts>
-      <Text        
-        html={get(data, 'primary.text.html')}
-        centerOnDesktop={true}
-      />
+      <Text html={get(data, 'primary.text.html')} centerOnDesktop={true} />
     </Texts>
   </Container>
 )

@@ -3,9 +3,7 @@ import { graphql } from 'gatsby'
 import { TextBlock } from 'components/TextBlock'
 
 export const PageLayoutTextBlock = ({ data }) => {
-  return (
-    <TextBlock data={data}/>
-  )
+  return <TextBlock data={data} />
 }
 
 export const query = graphql`

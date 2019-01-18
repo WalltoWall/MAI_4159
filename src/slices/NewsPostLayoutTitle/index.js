@@ -1,20 +1,15 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-import {format} from 'date-fns'
+import { format } from 'date-fns'
 import { Headline } from 'components/Headline'
 
-import { 
-  Container, 
-  PostDate,
-} from './index.styled'
-
+import { Container, PostDate } from './index.styled'
 
 export const NewsPostLayoutTitle = ({ data }) => {
-
-    const formattedDate = format(
+  const formattedDate = format(
     new Date(get(data, 'primary.date1')),
-    'MMMM'+' D'+', '+'YYYY'
+    'MMMM' + ' D' + ', ' + 'YYYY'
   )
 
   return (
@@ -37,7 +32,7 @@ export const query = graphql`
                 text
               }
               date1
-            }        
+            }
           }
         }
       }

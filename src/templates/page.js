@@ -29,7 +29,7 @@ import { PageLayoutSideBySideImages } from 'slices/PageLayoutSideBySideImages'
 import { PageLayoutFullImage } from 'slices/PageLayoutFullImage'
 
 export class PageTemplate extends React.Component {
-  renderSlices=() => (    
+  renderSlices = () => (
     <MapToComponents
       getKey={x => x.id}
       getType={x => x.__typename.replace(/^Prismic/, '')}
@@ -37,15 +37,15 @@ export class PageTemplate extends React.Component {
       map={{
         PageLayoutHero,
         PageLayoutProjectBoxes,
-        PageLayoutSplitPanels,          
-        PageLayoutSubPageHero,          
+        PageLayoutSplitPanels,
+        PageLayoutSubPageHero,
         PageLayoutCtaBar,
-        PageLayoutServices,          
+        PageLayoutServices,
         PageLayoutTextBlock,
-        PageLayoutNewsSection,          
+        PageLayoutNewsSection,
         PageLayoutInfoBlock,
         PageLayoutFullImage,
-        PageLayoutSocialMedia,          
+        PageLayoutSocialMedia,
         PageLayoutTextExpandable,
         PageLayoutTeamGrid,
         PageLayoutFeaturedNews,
@@ -59,22 +59,22 @@ export class PageTemplate extends React.Component {
       page={get(this.props.data, 'prismicPage')}
       rootData={this.props.data}
       location={this.props.location}
-    />        
+    />
   )
 
-  renderCmsGuideAuth = () => (          
+  renderCmsGuideAuth = () => (
     <AuthWall
       id="cms-guide"
       passwordMd5={process.env.GATSBY_CMS_GUIDE_PASSWORD}
-    >    
-      {({ authenticated, signin }) => 
+    >
+      {({ authenticated, signin }) =>
         authenticated ? (
           this.renderSlices()
-        ) : (                    
-          <AuthForm onSubmit={({ password }) => signin(password)} />          
+        ) : (
+          <AuthForm onSubmit={({ password }) => signin(password)} />
         )
       }
-    </AuthWall>    
+    </AuthWall>
   )
 
   render() {
@@ -87,7 +87,7 @@ export class PageTemplate extends React.Component {
             {get(data, 'prismicPage.data.meta_title') ||
               get(data, 'prismicPage.data.title.text')}
           </title>
-            {get(data, 'prismicPage.data.meta_description') && (
+          {get(data, 'prismicPage.data.meta_description') && (
             <meta
               name="description"
               content={get(data, 'prismicPage.data.meta_description')}
@@ -127,14 +127,14 @@ export const query = graphql`
     ...PageLayoutSubPageHero
     ...PageLayoutCtaBar
     ...PageLayoutServices
-    ...PageLayoutTextBlock        
+    ...PageLayoutTextBlock
     ...PageLayoutInfoBlock
     ...PageLayoutNewsSection
-    ...PageLayoutSocialMedia 
+    ...PageLayoutSocialMedia
     ...PageLayoutTextExpandable
     ...PageLayoutTeamGrid
     ...PageLayoutFeaturedNews
-    ...PageLayoutGoogleMap    
+    ...PageLayoutGoogleMap
     ...PageLayoutProjectListModule
     ...PageLayoutAnchor
     ...PageLayoutAnchorsMenu

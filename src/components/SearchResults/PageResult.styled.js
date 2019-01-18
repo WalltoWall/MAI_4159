@@ -34,11 +34,9 @@ export const Title = styled.div`
   color: ${t.c.darkgrey1};
   font-weight: 700;
   font-family: ${t.ff.sans2};
-
 `
 
 export const Excerpt = styled.p`
   color: ${t.c.darkgrey2};
   font-family: ${t.ff.sans2};
-
 `

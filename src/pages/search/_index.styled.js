@@ -29,6 +29,6 @@ export const HeaderImage = styled.img`
 export const ProjectGridContainer = styled.div`
   width: 100%;
   height: 100%;
-  display: flex;  
-  flex-wrap: wrap;  
+  display: flex;
+  flex-wrap: wrap;
 `

@@ -71,7 +71,7 @@ export const Title = styled.h1`
 export const ClipOverlay = styled.div`
   position: absolute;
   ${backgroundColor};
-  background-color: ${p=> p.whitebg ? "white" : backgroundColor};
+  background-color: ${p => (p.whitebg ? 'white' : backgroundColor)};
   -webkit-transform: rotate(-5deg);
   -ms-transform: rotate(-5deg);
   transform: rotate(-5deg);
@@ -109,7 +109,7 @@ export const MobileOverlay = styled.div`
   width: 100%;
   opacity: 0.5;
   ${t.mq.l} {
-    display: ${p=> p.subpage ? "block" : "none"};
+    display: ${p => (p.subpage ? 'block' : 'none')};
   }
 `
 

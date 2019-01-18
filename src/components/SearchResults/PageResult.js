@@ -10,11 +10,13 @@ export const PageResult = ({
   excerpt,
 }) => (
   <Container>
-    <HTMLContent>      
+    <HTMLContent>
       <StyledLink to={path}>
         <Title>{metaTitle || title}</Title>
-        <Excerpt>{(excerpt || metaDescription) && <p>{excerpt || metaDescription}</p>}</Excerpt>
-      </StyledLink>            
+        <Excerpt>
+          {(excerpt || metaDescription) && <p>{excerpt || metaDescription}</p>}
+        </Excerpt>
+      </StyledLink>
     </HTMLContent>
   </Container>
 )

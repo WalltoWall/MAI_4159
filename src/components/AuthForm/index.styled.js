@@ -11,9 +11,9 @@ export const Container = styled.div`
   align-items: center;
   background-color: ${t.c.darkgrey2};
   display: flex;
-  margin: 0 auto;  
+  margin: 0 auto;
   width: 100%;
-  min-height: 90vh;  
+  min-height: 90vh;
 `
 
 export const Content = styled.div`
@@ -26,7 +26,6 @@ export const LockIcon = styled(AssetIconLockSVG)`
   width: ${t.s(2)};
   margin: 0 auto ${t.s(1)};
   display: block;
-
   path {
     fill: ${t.c.white};
   }
@@ -55,8 +54,8 @@ export const Form = styled(FormikForm)`
 `
 
 export const Field = styled(FormikField)`
-  -webkit-appearance: none;  
-  border-right-width: 0;  
+  -webkit-appearance: none;
+  border-right-width: 0;
   border: 0.05rem solid ${t.c.tanLight};
   color: ${t.c.maroon};
   flex-grow: 1;

@@ -1,7 +1,7 @@
 import styled from 'react-emotion'
 import t from 'theme'
-import { ReactComponent as TwitterIcon} from 'assets/twitter_icon.svg'
-import { ReactComponent as LinkedinIcon} from 'assets/linkedin_icon.svg'
+import { ReactComponent as TwitterIcon } from 'assets/twitter_icon.svg'
+import { ReactComponent as LinkedinIcon } from 'assets/linkedin_icon.svg'
 import { Link } from 'components/Link'
 
 export const Container = styled.div`
@@ -11,12 +11,12 @@ export const Container = styled.div`
   ${t.mq.l} {
     padding: ${t.s(5)} 0 0 0;
     margin-bottom: -${t.s(2)};
-  }    
+  }
 `
 
 export const ImageContainer = styled.div`
   height: ${t.s(9)};
-  
+
   width: 100%;
   .gatsby-image-outer-wrapper {
     height: 100%;
@@ -24,23 +24,21 @@ export const ImageContainer = styled.div`
   .gatsby-image-wrapper {
     height: 100%;
   }
-  ${t.mq.m} {    
-    height: ${t.s(10.5)};  
+  ${t.mq.m} {
+    height: ${t.s(10.5)};
   }
   ${t.mq.l} {
-    width: 50%;    
+    width: 50%;
     padding-right: ${t.s(2)};
-    height: ${t.s(9.5)};  
+    height: ${t.s(9.5)};
   }
-
 `
-
 
 export const Column = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: column;    
-  ${t.mq.l} {    
+  flex-direction: column;
+  ${t.mq.l} {
     width: 50%;
   }
   h2 {
@@ -48,10 +46,10 @@ export const Column = styled.div`
     color: ${t.c.darkgrey1};
     font-size: ${t.f(4)};
     letter-spacing: ${t.ls.button};
-    text-transform: uppercase;  
+    text-transform: uppercase;
     margin: 1rem 0 0 0;
     font-weight: 400;
-    ${t.mq.l} {    
+    ${t.mq.l} {
       margin: 0;
     }
   }
@@ -60,7 +58,7 @@ export const Column = styled.div`
     font-size: ${t.f(4)};
     letter-spacing: ${t.ls.button};
     color: ${t.c.darkgrey2};
-    text-transform: uppercase; 
+    text-transform: uppercase;
     font-weight: 400;
     margin: 0;
   }
@@ -70,9 +68,9 @@ export const Column = styled.div`
     font-weight: 400;
     font-size: ${t.f(2)};
     line-height: ${t.s(2)};
-    ${t.mq.l} {         
+    ${t.mq.l} {
       padding: 0 ${t.s(4)} 0 0;
-    } 
+    }
   }
   span {
     font-family: ${t.ff.sans2};
@@ -84,14 +82,14 @@ export const Column = styled.div`
 export const SocialContainer = styled.div`
   display: flex;
   justify-content: left;
-  width: 100%; 
+  width: 100%;
   margin-top: ${t.s(2)};
   align-items: center;
 `
 
 export const StyledLink = styled(Link)`
-  display: block; 
-  margin-right: 1rem; 
+  display: block;
+  margin-right: 1rem;
   width: 25px;
   height: 25px;
 `
@@ -101,13 +99,13 @@ export const StyledLinkedinIcon = styled(LinkedinIcon)`
   transition: fill 200ms;
   :hover {
     fill: ${t.c.darkyellow};
-  }  
+  }
 `
 
 export const StyledTwitterIcon = styled(TwitterIcon)`
-  fill: ${t.c.yellow};  
+  fill: ${t.c.yellow};
   transition: fill 200ms;
   :hover {
     fill: ${t.c.darkyellow};
-  }  
+  }
 `

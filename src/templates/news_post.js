@@ -10,7 +10,7 @@ import { NewsPostLayoutHero } from 'slices/NewsPostLayoutHero'
 import { NewsPostLayoutTextBlock } from 'slices/NewsPostLayoutTextBlock'
 import { NewsPostLayoutSideBySideImages } from 'slices/NewsPostLayoutSideBySideImages'
 import { NewsPostLayoutFullImage } from 'slices/NewsPostLayoutFullImage'
-import { NewsPostLayoutCmsGuideText} from 'slices/NewsPostLayoutCmsGuideText'
+import { NewsPostLayoutCmsGuideText } from 'slices/NewsPostLayoutCmsGuideText'
 
 const NewsPostTemplate = ({ data }) => (
   <div>

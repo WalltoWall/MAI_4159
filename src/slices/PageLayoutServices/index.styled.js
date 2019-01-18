@@ -71,7 +71,7 @@ export const ImageWrapper = styled.div`
   margin: 0.5rem 0;
   width: 100%;
   display: block;
-   ${t.mq.m} {
+  ${t.mq.m} {
     width: 49%;
   }
 `
@@ -95,7 +95,7 @@ export const ImageDescription = styled.div`
   }
 `
 
-export const ImageContainer = styled.div`  
+export const ImageContainer = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

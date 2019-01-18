@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get, slice } from 'lodash'
-import {format} from 'date-fns'
+import { format } from 'date-fns'
 import { Image } from 'components/Image'
 import arrow from 'assets/yellow-arrow.svg'
 import { getUnlessEmptyString } from 'helpers'
@@ -24,106 +24,120 @@ import {
   ButtonLink,
 } from './index.styled'
 
-export const PageLayoutNewsSection = ({data, rootData}) => {
-  let newsPosts = get(rootData, 'allPrismicNewsPost.edges').sort((a,b) => {    
-    return new Date(get(b, "node.data.publish_date")) - new Date(get(a, "node.data.publish_date"))
+export const PageLayoutNewsSection = ({ data, rootData }) => {
+  let newsPosts = get(rootData, 'allPrismicNewsPost.edges').sort((a, b) => {
+    return (
+      new Date(get(b, 'node.data.publish_date')) -
+      new Date(get(a, 'node.data.publish_date'))
+    )
   })
 
   return (
     <SectionContainer>
-      {get(data, "primary.title1.text") && (
-        <Headline>{get(data, "primary.title1.text")}</Headline>
-      )}      
+      {get(data, 'primary.title1.text') && (
+        <Headline>{get(data, 'primary.title1.text')}</Headline>
+      )}
       <Container>
         <Content>
-          <GridList newsPosts={newsPosts} data={data}/>    
+          <GridList newsPosts={newsPosts} data={data} />
         </Content>
-      </Container>      
+      </Container>
     </SectionContainer>
   )
 }
 
 class GridList extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       items: this.props.newsPosts,
-      visible: (get(this.props.data, "primary.page_context") === "Home") ? 4 : 4      
-    };    
+      visible: get(this.props.data, 'primary.page_context') === 'Home' ? 4 : 4,
+    }
   }
 
   loadMore = () => {
-    this.setState((prev) => {      
-      return {visible: prev.visible + 4};
-    });
+    this.setState(prev => {
+      return { visible: prev.visible + 4 }
+    })
   }
 
-  truncateStr = (str) => { 
-    let arrstr = slice(str.split(" "), 0, 12).join(" ")  
-    if (str.split(" ").length <= 12) {  
-      return str  
-    } else {  
-      return arrstr + "..."
-    } 
+  truncateStr = str => {
+    let arrstr = slice(str.split(' '), 0, 12).join(' ')
+    if (str.split(' ').length <= 12) {
+      return str
+    } else {
+      return arrstr + '...'
+    }
   }
 
   render() {
     return (
-      <>    
-        {this.state.items.slice(0, this.state.visible).map((news_post, index) => {
+      <>
+        {this.state.items
+          .slice(0, this.state.visible)
+          .map((news_post, index) => {
             return (
-              <StyledLink to={"/" + get(news_post, 'node.uid')} key={get(news_post, 'node.uid') + index}>
-               {get(news_post, 'node.data.article_thumb_image.localFile.childImageSharp.fluid') && (  
-                <ImageContainer>
-                  <Image 
-                    fluid={get(news_post, 'node.data.article_thumb_image.localFile.childImageSharp.fluid')} 
-                    alt={getUnlessEmptyString(get(news_post, 'node.data.article_thumb_image.alt'))} 
-                    fadeIn={false} 
-                  />
-                </ImageContainer>
+              <StyledLink
+                to={'/' + get(news_post, 'node.uid')}
+                key={get(news_post, 'node.uid') + index}
+              >
+                {get(
+                  news_post,
+                  'node.data.article_thumb_image.localFile.childImageSharp.fluid'
+                ) && (
+                  <ImageContainer>
+                    <Image
+                      fluid={get(
+                        news_post,
+                        'node.data.article_thumb_image.localFile.childImageSharp.fluid'
+                      )}
+                      alt={getUnlessEmptyString(
+                        get(news_post, 'node.data.article_thumb_image.alt')
+                      )}
+                      fadeIn={false}
+                    />
+                  </ImageContainer>
                 )}
                 <ContentContainer>
                   <PostDate>
-                    {format(new Date(get(news_post, 'node.data.publish_date')),
-                      'MMMM' +' D' +', '+'YYYY'
+                    {format(
+                      new Date(get(news_post, 'node.data.publish_date')),
+                      'MMMM' + ' D' + ', ' + 'YYYY'
                     )}
                   </PostDate>
-                  <PostTitle>{get(news_post,'node.data.article_title1.text')}</PostTitle>
+                  <PostTitle>
+                    {get(news_post, 'node.data.article_title1.text')}
+                  </PostTitle>
                   <PostContent>
-                    {
-                      get(news_post, 'node.data.article_content.text') ? 
-                      this.truncateStr(get(news_post, 'node.data.article_content.text')) :
-                      ""                      
-                    }
+                    {get(news_post, 'node.data.article_content.text')
+                      ? this.truncateStr(
+                          get(news_post, 'node.data.article_content.text')
+                        )
+                      : ''}
                   </PostContent>
                   <ReadMoreWrapper>
-                    <ReadMore to={get(news_post, 'node.uid')}>Read more</ReadMore>
+                    <ReadMore to={get(news_post, 'node.uid')}>
+                      Read more
+                    </ReadMore>
                     <ArrowWrapper src={arrow} />
                   </ReadMoreWrapper>
                 </ContentContainer>
               </StyledLink>
-            );
+            )
           })}
-          {this.state.visible < this.state.items.length && (
-            (get(this.props.data, "primary.page_context") === "News") &&
-              <ButtonContainer>
-                <Button
-                  onClick={this.loadMore}                             
-                >
-                  Load more
-                </Button>
-              </ButtonContainer>
-          )}
-          {
-            (get(this.props.data, "primary.page_context") === "Home") &&
-              <ButtonLink to="/stories">
-                <Button>
-                  More Stories
-                </Button>
-              </ButtonLink>
-          }          
+        {this.state.visible < this.state.items.length &&
+          (get(this.props.data, 'primary.page_context') === 'News' && (
+            <ButtonContainer>
+              <Button onClick={this.loadMore}>Load more</Button>
+            </ButtonContainer>
+          ))}
+        {get(this.props.data, 'primary.page_context') === 'Home' && (
+          <ButtonLink to="/stories">
+            <Button>More Stories</Button>
+          </ButtonLink>
+        )}
       </>
-    );
+    )
   }
 }
 
@@ -137,17 +151,17 @@ export const query = graphql`
             primary {
               title1 {
                 text
-              }             
-              page_context 
-            }          
+              }
+              page_context
+            }
           }
         }
       }
     }
-    allPrismicNewsPost (filter: {tags: {ne: "CMS Guide"}}) {
+    allPrismicNewsPost(filter: { tags: { ne: "CMS Guide" } }) {
       edges {
         node {
-          data {                
+          data {
             publish_date
             article_title1 {
               text

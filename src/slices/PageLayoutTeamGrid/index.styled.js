@@ -4,25 +4,25 @@ import { Link } from 'components/Link'
 import { ReactComponent as HoverArrowSVG } from 'assets/hov_arrow.svg'
 
 export const GridContainer = styled.div`
-  display: flex; 
+  display: flex;
   align-items: center;
-  flex-wrap: wrap;  
+  flex-wrap: wrap;
   overflow: hidden;
 `
 
-export const StyledLink = styled(Link)`  
+export const StyledLink = styled(Link)`
   display: flex;
   justify-content: center;
   position: relative;
-  width: 50%;  
-  height: ${t.s(7.5)};  
-  
-  ${t.mq.s} { 
-    height: ${t.s(9)}; 
+  width: 50%;
+  height: ${t.s(7.5)};
+
+  ${t.mq.s} {
+    height: ${t.s(9)};
   }
 
   ${t.mq.l} {
-    width: 25%;  
+    width: 25%;
   }
 `
 
@@ -38,14 +38,14 @@ export const ImageContainer = styled.div`
 `
 
 export const OverlayContainer = styled.div`
-  display: flex;  
+  display: flex;
   position: absolute;
   width: 100%;
-  height: 100%;    
+  height: 100%;
   justify-content: center;
   align-items: flex-end;
   text-align: center;
-  bottom: 0; 
+  bottom: 0;
   left: 0;
   color: yellow;
   z-index: 1;
@@ -56,9 +56,9 @@ export const Overlay = styled.div`
   width: 100%;
   height: 100%;
   z-index: 3;
-  background-color: black; 
-  opacity: ${p => p.isActive ? 0 : .5};
-  cursor: ${p => p.isActive ? "pointer" : "not-allowed"};
+  background-color: black;
+  opacity: ${p => (p.isActive ? 0 : 0.5)};
+  cursor: ${p => (p.isActive ? 'pointer' : 'not-allowed')};
 `
 
 export const TitleContainer = styled.div`
@@ -83,7 +83,7 @@ export const TitleContainer = styled.div`
     padding: ${t.s(0)} ${t.s(0)};
     height: 60px;
     ${StyledLink}:hover & {
-      opacity: ${p => p.isActive ? 0.8 : 0};
+      opacity: ${p => (p.isActive ? 0.8 : 0)};
       height: 100%;
     }
   }
@@ -105,7 +105,7 @@ export const Title = styled.h1`
     font-size: ${t.f(2.5)};
   }
   ${t.mq.x} {
-    font-size: ${t.f(3.5)};    
+    font-size: ${t.f(3.5)};
   }
 `
 
@@ -129,7 +129,7 @@ export const SubTitle = styled.div`
 `
 
 export const FilterBarContainer = styled.div`
-  display: ${p => p.isOpen ? "flex" : "none"};
+  display: ${p => (p.isOpen ? 'flex' : 'none')};
   position: sticky;
   top: 0;
   z-index: 99;
@@ -145,10 +145,10 @@ export const FilterBarContainer = styled.div`
     background-color: ${t.c.darkgrey2};
     padding: ${t.s(0.5)};
   }
-` 
+`
 
 export const CurrentFilter = styled.div`
-  cursor: pointer; 
+  cursor: pointer;
   font-family: ${t.ff.sans2};
   display: flex;
   align-items: center;
@@ -179,13 +179,13 @@ export const NavArrow = styled(HoverArrowSVG)`
   transform: ${p => (p.active ? 'rotate(90deg)' : 'rotate(0deg)')};
   z-index: 1;
   display: inline-block;
-  margin-left: 10px;  
+  margin-left: 10px;
   ${t.mq.l} {
     display: none;
   }
 `
 
-export const Filter = styled.div`  
+export const Filter = styled.div`
   font-size: ${t.f(0.5)};
   font-weight: 700;
   letter-spacing: 0.1rem;
@@ -200,7 +200,7 @@ export const Filter = styled.div`
     margin: 0 ${t.s(1)};
   }
   transition: color ${t.t};
-  color: ${p => p.isActive ? t.c.yellow : t.c.white};
+  color: ${p => (p.isActive ? t.c.yellow : t.c.white)};
   :hover {
     color: ${t.c.yellow};
   }
@@ -210,5 +210,5 @@ export const FilterContainer = styled.div`
   z-index: 5;
   position: sticky;
   top: 0;
-  z-index: 99;  
+  z-index: 99;
 `

@@ -93,27 +93,26 @@ export const SearchButtonIcon = styled(AssetIconSearchSVG)`
   width: ${t.s(0)};
 `
 
-
 export const MobileContent = styled.div`
   display: flex;
   justify-content: center;
   margin-top: ${t.s(1)};
   width: 100%;
-  background-color: ${t.c.lightgrey3};   
+  background-color: ${t.c.lightgrey3};
   padding: 0 0 ${t.s(1.5)} 0;
 `
 
 export const MobileForm = styled.form`
   margin-top: ${t.s(0)};
-  display: flex;    
-  width: 60%;  
+  display: flex;
+  width: 60%;
   margin-left: ${t.s(2)};
   input {
     background-color: transparent;
     font-family: ${t.ff.sans};
     letter-spacing: ${t.ls.button};
-    font-size: ${t.f(2)};    
-    border-bottom: 1px solid white;    
+    font-size: ${t.f(2)};
+    border-bottom: 1px solid white;
   }
 `
 
@@ -123,26 +122,26 @@ export const MobileSearchQuery = styled.input`
   color: ${t.c.white};
   font-size: ${t.f(2)};
   font-family: ${t.ff.sans2};
-  flex-grow: 1;  
+  flex-grow: 1;
   &::placeholder {
     color: ${t.c.white};
     ${t.ls.button};
   }
 `
 
-const MobileStyledButton = styled(Link)`    
-  border: none;  
-  padding: ${t.s(-2, 0)}; 
+const MobileStyledButton = styled(Link)`
+  border: none;
+  padding: ${t.s(-2, 0)};
   color: white;
-  cursor: pointer;      
+  cursor: pointer;
   display: block;
-  background: transparent;  
+  background: transparent;
 `
 
 export const MobileSearchButton = MobileStyledButton.withComponent('button')
 
 export const MobileSearchButtonIcon = styled(AssetIconSearchSVG)`
-  height: ${t.s(0)};  
-  width: ${t.s(0)};  
+  height: ${t.s(0)};
+  width: ${t.s(0)};
   margin-left: -${t.s(3.5)};
 `

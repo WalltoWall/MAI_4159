@@ -44,17 +44,17 @@ export class MobileBar extends React.Component {
     })
   }
 
-  toggleSubFilter = (e, fromParent, target) => {    
+  toggleSubFilter = (e, fromParent, target) => {
     e.stopPropagation()
-    if (fromParent) {      
+    if (fromParent) {
       this.setState({
         activeSubFilter: null,
       })
     } else {
-      this.setState({        
+      this.setState({
         activeSubFilter: this.state.activeSubFilter === target ? null : target,
       })
-    }    
+    }
   }
 
   getLinkProps = () => ({ href, location: { pathname } }) => ({
@@ -69,7 +69,7 @@ export class MobileBar extends React.Component {
       <MobileContainer>
         <div style={{ position: 'relative' }}>
           <span>View By: </span>
-          <CurrentFilter 
+          <CurrentFilter
             onClick={e => {
               this.toggleFilter(e)
               this.toggleSubFilter(e, true)
@@ -77,10 +77,10 @@ export class MobileBar extends React.Component {
           >
             {this.getFilterName(this.props.location.pathname)}
             <NavArrow
-            style={{ right: '3rem', top: '3px' }}
-            active={this.state.filterOpen}            
+              style={{ right: '3rem', top: '3px' }}
+              active={this.state.filterOpen}
             />
-          </CurrentFilter>          
+          </CurrentFilter>
         </div>
         <PrimaryFilterContainer isOpen={this.state.filterOpen}>
           <StyledLink
@@ -95,16 +95,16 @@ export class MobileBar extends React.Component {
             <p
               className={navItemClassName}
               style={{ display: 'inline-flex' }}
-              onClick={e => this.toggleSubFilter(e, false, "arch")}
+              onClick={e => this.toggleSubFilter(e, false, 'arch')}
             >
               Architecture
               <NavArrow
-              style={{ top: '12px', right: '2rem' }}
-              active={this.state.activeSubFilter === "arch"}                          
+                style={{ top: '12px', right: '2rem' }}
+                active={this.state.activeSubFilter === 'arch'}
               />
-            </p>            
+            </p>
           </div>
-          <SubFilterContainer isOpen={this.state.activeSubFilter === "arch"}>
+          <SubFilterContainer isOpen={this.state.activeSubFilter === 'arch'}>
             {this.props.architectureCategories.map(item => (
               <StyledLink
                 key={get(item, 'name')}
@@ -114,26 +114,25 @@ export class MobileBar extends React.Component {
               >
                 {get(item, 'name')}
               </StyledLink>
-            ))}        
+            ))}
           </SubFilterContainer>
           {/* ARCH SUB FILTER END */}
-
 
           {/* HISTORIC SUB FILTER START */}
           <div style={{ position: 'relative' }}>
             <p
               className={navItemClassName}
               style={{ display: 'inline-flex' }}
-              onClick={e => this.toggleSubFilter(e, false, "hist")}
+              onClick={e => this.toggleSubFilter(e, false, 'hist')}
             >
               Historic Consulting
               <NavArrow
-              style={{ top: '12px', right: '2rem' }}
-              active={this.state.activeSubFilter === "hist"}                          
+                style={{ top: '12px', right: '2rem' }}
+                active={this.state.activeSubFilter === 'hist'}
               />
-            </p>            
+            </p>
           </div>
-          <SubFilterContainer isOpen={this.state.activeSubFilter === "hist"}>
+          <SubFilterContainer isOpen={this.state.activeSubFilter === 'hist'}>
             {this.props.historicCategories.map(item => (
               <StyledLink
                 key={get(item, 'name')}
@@ -143,31 +142,28 @@ export class MobileBar extends React.Component {
               >
                 {get(item, 'name')}
               </StyledLink>
-            ))}        
+            ))}
           </SubFilterContainer>
           {/* HISTORIC SUB FILTER END */}
         </PrimaryFilterContainer>
         {this.props.filters.length > 1 && (
-          <SubFilterChildContainer
-            isOpen={this.state.filterOpen}
-          >
-          
+          <SubFilterChildContainer isOpen={this.state.filterOpen}>
+            <Filter
+              onClick={e => this.props.setCurrentFilter('All')}
+              isActive={this.props.currentFilter === 'All'}
+            >
+              All
+            </Filter>
+            {this.props.filters.map((filter, index) => (
               <Filter
-                onClick={(e) => this.props.setCurrentFilter("All")}
-                isActive={this.props.currentFilter === "All"}
-              >
-                All
-              </Filter>          
-            {this.props.filters.map((filter,index) => (          
-              <Filter
-                onClick={(e) => this.props.setCurrentFilter(filter['uid'])}
+                onClick={e => this.props.setCurrentFilter(filter['uid'])}
                 isActive={this.props.currentFilter === filter['uid']}
-                key={index + filter['uid']}                
+                key={index + filter['uid']}
               >
                 {filter['display_name']}
-              </Filter>          
-            ))}               
-          </SubFilterChildContainer>      
+              </Filter>
+            ))}
+          </SubFilterChildContainer>
         )}
       </MobileContainer>
     )

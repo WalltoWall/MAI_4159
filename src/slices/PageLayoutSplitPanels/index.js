@@ -18,28 +18,30 @@ import {
 export const PageLayoutSplitPanels = ({ data }) => (
   <Container>
     {get(data, 'items', []).map(item => (
-        <SplitPanelWrapper>
-          <ImageContainer>
-            <Image
-              key={get(item, 'title1')}
-              fluid={get(item, 'image.localFile.childImageSharp.fluid')}
-              alt={getUnlessEmptyString(get(item, 'image.alt'))}
-              fadeIn={false}
+      <SplitPanelWrapper>
+        <ImageContainer>
+          <Image
+            key={get(item, 'title1')}
+            fluid={get(item, 'image.localFile.childImageSharp.fluid')}
+            alt={getUnlessEmptyString(get(item, 'image.alt'))}
+            fadeIn={false}
+          />
+        </ImageContainer>
+        <DescriptionWrapper>
+          <Content>
+            <StyledHeadline>{get(item, 'title1.text')}</StyledHeadline>
+            <Description
+              dangerouslySetInnerHTML={{
+                __html: get(item, 'description.html'),
+              }}
             />
-          </ImageContainer>
-          <DescriptionWrapper>
-            <Content>
-              <StyledHeadline>{get(item, 'title1.text')}</StyledHeadline>
-              <Description
-                dangerouslySetInnerHTML={{
-                  __html: get(item, 'description.html'),
-                }}
-              />
-              <ServicesButton to={get(item, 'link.url')}>learn more</ServicesButton>
-              <Overlay />
-            </Content>
-          </DescriptionWrapper>
-        </SplitPanelWrapper>
+            <ServicesButton to={get(item, 'link.url')}>
+              learn more
+            </ServicesButton>
+            <Overlay />
+          </Content>
+        </DescriptionWrapper>
+      </SplitPanelWrapper>
     ))}
   </Container>
 )

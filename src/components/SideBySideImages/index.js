@@ -1,6 +1,11 @@
 import React from 'react'
 import { get } from 'lodash'
-import { Container, ImageContainer, Description, StyledContent } from './index.styled'
+import {
+  Container,
+  ImageContainer,
+  Description,
+  StyledContent,
+} from './index.styled'
 import { getUnlessEmptyString } from 'helpers'
 import { Image } from 'components/Image'
 

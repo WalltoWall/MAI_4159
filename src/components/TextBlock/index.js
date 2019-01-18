@@ -1,6 +1,11 @@
 import React from 'react'
 import { get } from 'lodash'
-import { Container, StyledHtmlClassName, StyledHTMLContent, Headline } from './index.styled'
+import {
+  Container,
+  StyledHtmlClassName,
+  StyledHTMLContent,
+  Headline,
+} from './index.styled'
 import { Content } from 'components/Content'
 
 export const TextBlock = ({ data }) => {

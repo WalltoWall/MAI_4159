@@ -4,11 +4,11 @@ import { CtaBar } from 'components/CtaBar'
 import { get } from 'lodash'
 
 export const TeamMemberLayoutCtaBar = ({ data }) => (
-  <CtaBar 
+  <CtaBar
     title={get(data, 'primary.title2.text')}
     buttonUrl={get(data, 'primary.button1.url')}
-    buttonText={"Contact Us"}
-    background={"dark"}
+    buttonText={'Contact Us'}
+    background={'dark'}
   />
 )
 

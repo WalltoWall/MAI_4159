@@ -16,12 +16,10 @@ export const Modal = ({ children, size, hideModal, ...props }) => (
     isOpen
     size={size}
     {...props}
-  >    
+  >
     <CloseButton onClick={hideModal}>
       <CloseIcon />
     </CloseButton>
-    <Content>      
-      {children}
-    </Content>
+    <Content>{children}</Content>
   </Container>
 )

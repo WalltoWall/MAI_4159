@@ -29,4 +29,3 @@ export const Text = styled.p`
   font-family: ${t.ff.sans};
   font-size: 1rem;
 `
-

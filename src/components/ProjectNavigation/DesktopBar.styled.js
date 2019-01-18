@@ -10,13 +10,13 @@ export const DesktopContainer = styled.div`
   display: none;
   height: ${t.s(3.5)};
   justify-content: center;
-  align-items: center;  
+  align-items: center;
   color: ${t.c.white};
   font-size: ${t.f(1)};
   font-weight: 700;
   z-index: 99;
   ${t.mq.l} {
-    display: flex;    
+    display: flex;
   }
 `
 
@@ -35,14 +35,14 @@ export const CurrentFilter = styled.h2`
   font-size: ${t.f(1)};
   display: inline-block;
   margin: 0;
-  color: ${p => p.defaultColor ? t.c.lightgrey2 : t.c.yellow};
+  color: ${p => (p.defaultColor ? t.c.lightgrey2 : t.c.yellow)};
   text-align: center;
   cursor: pointer;
   padding-left: 10px;
 `
-export const StyledLinkContainer = styled.div`  
+export const StyledLinkContainer = styled.div`
   background-color: ${t.c.yellow};
-  position: absolute;    
+  position: absolute;
   display: none;
   flex-direction: column;
   top: 54px;
@@ -69,12 +69,12 @@ export const StyledLink = styled(Link)`
   -moz-transition: color 0.2s ease-in;
   -o-transition: color 0.2s ease-in;
   transition: color 0.2s ease-in;
-  color: ${p => p.isActive ? t.c.yellow : t.c.lightgrey2 };
-  &:hover {    
+  color: ${p => (p.isActive ? t.c.yellow : t.c.lightgrey2)};
+  &:hover {
     ${t.mq.l} {
       color: ${t.c.yellow};
-    }  
-  }  
+    }
+  }
 `
 
 export const NestedStyledLink = styled(Link)`
@@ -90,10 +90,9 @@ export const NestedStyledLink = styled(Link)`
   transition: background-color 0.2s ease-in;
   color: black;
   &:hover {
-    background-color: ${t.c.lightgrey4};    
+    background-color: ${t.c.lightgrey4};
   }
 `
-
 
 export const NavArrow = styled(HoverArrowSVG)`
   flex-shrink: 0;
@@ -104,9 +103,9 @@ export const NavArrow = styled(HoverArrowSVG)`
   display: inline-block;
   margin-left: 10px;
 
-  ${SubFilterContainer}:hover & {    
-    transform: rotate(90deg);    
-  }  
+  ${SubFilterContainer}:hover & {
+    transform: rotate(90deg);
+  }
 `
 export const VerticalLine = styled.div`
   color: ${t.c.yellow};
@@ -114,7 +113,6 @@ export const VerticalLine = styled.div`
   font-weight: 400;
   margin-top: -5px;
 `
-
 
 export const SubCategoryContainer = styled.div`
   display: none;
@@ -133,7 +131,7 @@ export const SubCategoryContainer = styled.div`
 export const Filter = styled.p`
   margin: 0 ${t.s(2)};
   cursor: pointer;
-  color: ${p=> p.isActive ? t.c.yellow : "white"};
+  color: ${p => (p.isActive ? t.c.yellow : 'white')};
   font-family: ${t.ff.sans2};
   letter-spacing: ${t.ls.button};
   font-size: ${t.f(1)};

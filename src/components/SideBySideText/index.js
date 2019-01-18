@@ -11,19 +11,19 @@ import {
 
 export const SideBySideText = ({ data }) => (
   <Container>
-  <Content>
-    <LeftColumn>
-      <HTMLContent
-        html={get(data, 'primary.left_text.html')}
-        className={StyledHtmlClassName}
-      />
-    </LeftColumn>
-    <RightColumn>
-      <HTMLContent
-        html={get(data, 'primary.right_text.html')}
-        className={StyledHtmlClassName}
-      />
-    </RightColumn>
+    <Content>
+      <LeftColumn>
+        <HTMLContent
+          html={get(data, 'primary.left_text.html')}
+          className={StyledHtmlClassName}
+        />
+      </LeftColumn>
+      <RightColumn>
+        <HTMLContent
+          html={get(data, 'primary.right_text.html')}
+          className={StyledHtmlClassName}
+        />
+      </RightColumn>
     </Content>
   </Container>
 )

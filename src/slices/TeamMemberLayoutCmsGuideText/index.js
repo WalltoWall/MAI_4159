@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { CmsGuideText } from 'components/CmsGuideText'
 
 export const TeamMemberLayoutCmsGuideText = ({ data }) => (
-  <CmsGuideText data={data} />  
+  <CmsGuideText data={data} />
 )
 
 export const query = graphql`
@@ -17,7 +17,7 @@ export const query = graphql`
               text {
                 html
               }
-            }            
+            }
           }
         }
       }

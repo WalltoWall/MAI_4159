@@ -9,8 +9,8 @@ import { TeamMemberLayoutBioSummary } from 'slices/TeamMemberLayoutBioSummary'
 import { TeamMemberLayoutTextBlock } from 'slices/TeamMemberLayoutTextBlock'
 import { TeamMemberLayoutSideBySideText } from 'slices/TeamMemberLayoutSideBySideText'
 import { TeamMemberLayoutFeaturedList } from 'slices/TeamMemberLayoutFeaturedList'
-import { TeamMemberLayoutCtaBar } from "slices/TeamMemberLayoutCtaBar"
-import { TeamMemberLayoutCmsGuideText} from "slices/TeamMemberLayoutCmsGuideText"
+import { TeamMemberLayoutCtaBar } from 'slices/TeamMemberLayoutCtaBar'
+import { TeamMemberLayoutCmsGuideText } from 'slices/TeamMemberLayoutCmsGuideText'
 
 const TeamMemberTemplate = ({ data }) => (
   <>
@@ -42,7 +42,7 @@ export const query = graphql`
   query TeamMemberTemplate($id: String!) {
     prismicTeamMember(id: { eq: $id }) {
       data {
-        title                  
+        title
         layout {
           __typename
         }

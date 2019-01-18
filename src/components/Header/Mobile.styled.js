@@ -63,8 +63,8 @@ export const MobileNavOverlay = styled.div`
   }
 `
 
-export const SearchNavItem = styled.div`  
-  background-color: ${t.c.lightgrey3}; 
+export const SearchNavItem = styled.div`
+  background-color: ${t.c.lightgrey3};
   margin: ${t.s(0)} 0;
   padding: ${t.s(1)} 0;
   color: ${t.c.white};
@@ -72,7 +72,7 @@ export const SearchNavItem = styled.div`
   font-family: ${t.ff.sans2};
 `
 
-export const MobileSearchIcon = styled.div`   
+export const MobileSearchIcon = styled.div`
   z-index: 5;
   display: block;
   ${t.mq.l} {
@@ -81,7 +81,7 @@ export const MobileSearchIcon = styled.div`
 `
 export const SearchButtonIcon = styled(AssetIconSearchSVG)`
   cursor: pointer;
-  height: ${t.s(1)}; 
+  height: ${t.s(1)};
   transform: translate(60%, 10%);
-  width: ${t.s(1)};  
+  width: ${t.s(1)};
 `

@@ -3,10 +3,10 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Toggle } from 'react-powerplug'
 
-import { 
-  StyledAnchorContainer, 
-  StyledAnchor, 
-  Desktop, 
+import {
+  StyledAnchorContainer,
+  StyledAnchor,
+  Desktop,
   Mobile,
   Container,
   FilterMenu,
@@ -17,8 +17,8 @@ export const PageLayoutAnchorsMenu = ({ data }) => (
   <Container>
     <Desktop>
       {get(data, 'items').map(item => (
-        <StyledAnchor 
-          key={get(item, 'menu_name')} 
+        <StyledAnchor
+          key={get(item, 'menu_name')}
           href={'#' + get(item, 'anchor_text')}
         >
           {get(item, 'menu_name')}
@@ -27,20 +27,14 @@ export const PageLayoutAnchorsMenu = ({ data }) => (
     </Desktop>
     <Mobile>
       <Toggle initial={false}>
-        {({toggle, on}) => (
+        {({ toggle, on }) => (
           <>
-            <FilterMenu              
-              onClick={toggle}
-            >            
-              Select Service Type
-            </FilterMenu>
+            <FilterMenu onClick={toggle}>Select Service Type</FilterMenu>
             <NavArrow active={on} />
-            <StyledAnchorContainer
-              isOpen={on}
-            >                          
-              {get(data, 'items').map(item => (        
-                <StyledAnchor 
-                  key={get(item, 'menu_name')} 
+            <StyledAnchorContainer isOpen={on}>
+              {get(data, 'items').map(item => (
+                <StyledAnchor
+                  key={get(item, 'menu_name')}
                   href={'#' + get(item, 'anchor_text')}
                 >
                   {get(item, 'menu_name')}
@@ -53,7 +47,6 @@ export const PageLayoutAnchorsMenu = ({ data }) => (
     </Mobile>
   </Container>
 )
-
 
 export const query = graphql`
   fragment PageLayoutAnchorsMenu on Query {

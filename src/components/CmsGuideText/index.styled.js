@@ -57,7 +57,7 @@ export const Text = styled(HTMLContent)`
     letter-spacing: 0;
     margin-bottom: 2rem;
   }
-  a {    
+  a {
     color: #a58400;
   }
   &:last-child {
