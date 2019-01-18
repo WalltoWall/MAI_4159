@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get } from 'lodash'
 import {
   Container,  
 } from './index.styled'
@@ -18,13 +17,13 @@ export const query = graphql`
       data {
         layout {
           ... on PrismicProjectLayoutSpacingModifier {
-            id           
+            id
+            primary {
+              space
+            }
           }
         }
       }
     }
   }
 `
-
-
-// "Prismic__Project__XCbDQhAAACwALMDj"

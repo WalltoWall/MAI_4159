@@ -20,7 +20,7 @@ export const Content = styled.div`
   }
   ${t.mq.l} {
     width: ${t.w.desktop};
-    margin-top: -3rem;
+    margin-top: ${p => (p.normalizeMargin === "True" ? '0' : '-3rem')};    
     font-size: ${t.f(0.3)};
   }
   ${t.mq.x} {

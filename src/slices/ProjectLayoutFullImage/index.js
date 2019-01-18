@@ -5,9 +5,12 @@ import { Image } from 'components/Image'
 import { Container, ImageContainer, Content } from './index.styled'
 import { getUnlessEmptyString } from 'helpers'
 
-export const ProjectLayoutFullImage = ({ data }) => (
+export const ProjectLayoutFullImage = ({ data }) => {
+  return (
   <Container>
-    <Content>
+    <Content
+      normalizeMargin={get(data, 'primary.normalize_margin')}
+    >
       <ImageContainer>
         <Image
           alt={getUnlessEmptyString(data, 'primary.image.alt')}
@@ -18,7 +21,7 @@ export const ProjectLayoutFullImage = ({ data }) => (
       <p>{get(data, 'primary.caption.text')}</p>
     </Content>
   </Container>
-)
+)}
 export const query = graphql`
   fragment ProjectLayoutFullImage on Query {
     prismicProject(id: { eq: $id }) {
@@ -27,6 +30,7 @@ export const query = graphql`
           ... on PrismicProjectLayoutFullImage {
             id
             primary {
+              normalize_margin
               image {
                 alt
                 localFile {
