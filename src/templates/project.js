@@ -14,6 +14,7 @@ import { ProjectLayoutFeatureList } from 'slices/ProjectLayoutFeatureList'
 import { ProjectLayoutQuoteBlock } from 'slices/ProjectLayoutQuoteBlock'
 import { ProjectLayoutCmsHero } from 'slices/ProjectLayoutCmsHero'
 import { ProjectLayoutCmsGuideText } from 'slices/ProjectLayoutCmsGuideText'
+import { ProjectLayoutSpacingModifier} from 'slices/ProjectLayoutSpacingModifier'
 
 const ProjectTemplate = ({ data }) => (
   <>
@@ -45,6 +46,7 @@ const ProjectTemplate = ({ data }) => (
           ProjectLayoutQuoteBlock,
           ProjectLayoutCmsHero,
           ProjectLayoutCmsGuideText,
+          ProjectLayoutSpacingModifier,
         }}
         page={get(data, 'prismicProject')}
         rootData={data}
@@ -79,5 +81,6 @@ export const query = graphql`
     ...ProjectLayoutQuoteBlock
     ...ProjectLayoutCmsHero
     ...ProjectLayoutCmsGuideText
+    ...ProjectLayoutSpacingModifier
   }
 `

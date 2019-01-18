@@ -17,9 +17,9 @@ export const ImageContainer = styled.div`
   display: inline-block;
   overflow: hidden;
   ${t.mq.m} {
-    width: 49%;
+    width: 48%;
     padding: 0;
-    height: 300px;
+    height: ${t.s(7.5)};
     margin: 0 0.5%;
     &:first-child {
       margin-left: 0;
@@ -29,7 +29,13 @@ export const ImageContainer = styled.div`
     }
   }
   ${t.mq.l} {
-    height: 320px;
+    height: ${t.s(8)};
+  }
+  ${t.mq.xx} {
+    min-height: ${t.s(8)};
+  }
+  ${t.mq.xxx} {
+    min-height: ${t.s(9.5)};
   }
 `
 
