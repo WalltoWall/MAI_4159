@@ -31,9 +31,12 @@ export const Content = styled.div`
 export const ImageContainer = styled.div`
   width: 100%;
   object-fit: cover;
-  max-height: 400px;
+  min-height: ${t.s(9)};
   overflow: hidden;
   ${t.mq.l} {
-    max-height: 600px;
+    height: ${t.s(10)};
+  }  
+  ${t.mq.xxx} {
+    height: ${t.s(11)};
   }
 `
