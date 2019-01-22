@@ -41,7 +41,8 @@ export default NewsPostTemplate
 export const query = graphql`
   query NewsPostTemplate($id: String!) {
     prismicNewsPost(id: { eq: $id }) {
-      data {
+      data {        
+        publish_date
         title {
           text
         }
