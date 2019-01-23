@@ -177,8 +177,7 @@ export const Title = styled.h1`
     font-size: ${p => (p.longText ? t.f(5) : t.f(6))};
   }
   ${t.mq.xxx} {
-    font-size: ${p => (p.longText ? t.f(8) : t.f(9))};
-    line-height: 5rem;
+    font-size: ${p => (p.longText ? t.f(7) : t.f(9))};    
   }
 `
 
