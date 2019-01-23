@@ -1,45 +1,71 @@
 import styled from 'react-emotion'
 import t from 'theme'
-import { Content } from 'components/Content'
+import GatsbyImage from 'gatsby-image'
 
 export const Container = styled.div`
-  padding: 2rem 0;
   background-color: white;
+  padding: 2rem 0;
+
   ${t.mq.l} {
     padding: 4rem 0;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+`
+export const Images = styled.div`
+  display: flex;
+  margin: 0 auto;  
+  width: ${t.w.mobile};
+  flex-direction: column;
+
+  ${t.mq.s} {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  ${t.mq.l} {
+    width: ${t.w.desktop};
+  }
+  ${t.mq.x} {
+    max-width: ${t.w.xl};
   }
 `
 
 export const ImageContainer = styled.div`
-  width: 100%;
-  padding: 0.5rem 0;
-  object-fit: cover;
-  display: inline-block;
-  overflow: hidden;
+  margin-bottom: ${t.s(1)};
+
+  ${t.mq.s} {
+    flex: 1 1 0px;
+    margin-bottom: 0;
+    margin-right: ${t.s(1)};
+  }
+
   ${t.mq.m} {
-    width: 48%;
-    padding: 0;
-    height: ${t.s(7.5)};
-    margin: 0 0.5%;
-    &:first-child {
-      margin-left: 0;
-    }
-    &:n(2)-child {
-      margin-right: 0;
-    }
+    margin-right: ${t.s(3)};
   }
+
+  &:last-child {
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+`
+export const StyledImage = styled(GatsbyImage)``
+
+export const CaptionContainer = styled.div`  
+  width: 90%;
+  margin: 0 auto;
   ${t.mq.l} {
-    height: ${t.s(8)};
-  }
-  ${t.mq.xx} {
-    min-height: ${t.s(8)};
-  }
-  ${t.mq.xxx} {
-    min-height: ${t.s(9.5)};
+    width: 65%;
   }
 `
 
-export const Description = styled.div`
+export const Caption = styled.div`
   font-family: ${t.ff.serif};
   color: ${t.c.darkgrey2};
   padding: 1rem 0;
@@ -53,9 +79,3 @@ export const Description = styled.div`
   }
 `
 
-export const StyledContent = styled(Content)`
-  justify-content: space-between;
-  ${t.mq.m} {
-    flex-direction: row;
-  }
-`

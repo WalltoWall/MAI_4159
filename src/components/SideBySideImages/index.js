@@ -3,26 +3,28 @@ import { get } from 'lodash'
 import {
   Container,
   ImageContainer,
-  Description,
-  StyledContent,
+  Caption,
+  Images,
+  StyledImage,
+  CaptionContainer,
 } from './index.styled'
 import { getUnlessEmptyString } from 'helpers'
-import { Image } from 'components/Image'
 
 export const SideBySideImages = ({ data }) => (
   <Container>
-    <StyledContent>
+    <Images>
       {get(data, 'items').map(item => (
-        <ImageContainer>
-          <Image
-            key={getUnlessEmptyString(data, 'primary.image1.alt')}
+        <ImageContainer key={getUnlessEmptyString(data, 'primary.image1.alt')}>
+          <StyledImage            
             alt={getUnlessEmptyString(data, 'primary.image1.alt')}
             fluid={get(item, 'image1.localFile.childImageSharp.fluid')}
             fadeIn={false}
           />
         </ImageContainer>
-      ))}
-      <Description>{get(data, 'primary.caption.text')}</Description>
-    </StyledContent>
+      ))}      
+    </Images>
+    <CaptionContainer>
+      <Caption>{get(data, 'primary.caption.text')}</Caption>
+    </CaptionContainer>
   </Container>
 )

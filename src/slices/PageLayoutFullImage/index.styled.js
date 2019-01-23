@@ -36,4 +36,7 @@ export const ImageContainer = styled.div`
   ${t.mq.l} {
     max-height: 600px;
   }
+  ${t.mq.xxx} {
+    height: ${t.s(11)};
+  }
 `

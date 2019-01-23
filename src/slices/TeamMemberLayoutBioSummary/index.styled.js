@@ -66,16 +66,31 @@ export const Column = styled.div`
     font-family: ${t.ff.serif};
     color: ${t.c.darkgrey1};
     font-weight: 400;
-    font-size: ${t.f(2)};
+    font-size: ${t.f(2)};    
     line-height: ${t.s(2)};
+    font-style: italic;
     ${t.mq.l} {
       padding: 0 ${t.s(4)} 0 0;
     }
   }
+  p:last-of-type {
+    font-family: ${t.ff.serif};
+    color: ${t.c.darkgrey1};
+    font-weight: 400;
+    // text-align: right;
+    font-size: ${t.f(1)};
+    font-style: normal;
+    line-height: ${t.s(2)};
+    margin-top: -0.5rem;
+    ${t.mq.l} {      
+      padding: 0 ${t.s(4)} 0 0;
+    }
+  } 
   span {
+    margin-top: 7px;
     font-family: ${t.ff.sans2};
     color: ${t.c.darkgrey2};
-    font-size: ${t.f(0.5)};
+    font-size: ${t.f(1)};
   }
 `
 

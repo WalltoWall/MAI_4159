@@ -49,6 +49,7 @@ export const TeamMemberLayoutBioSummary = ({ data }) => {
           <h2>{get(data, 'primary.name1')}</h2>
           <h3>{get(data, 'primary.position')}</h3>
           <p>{get(data, 'primary.quote.text')}</p>
+          <p>{get(data, 'primary.quote_attribution')}</p>
           <span>{get(data, 'primary.email')}</span>
           <SocialContainer>
             {get(data, 'items').map(item => renderSocial(item))}
@@ -73,6 +74,7 @@ export const query = graphql`
               quote {
                 text
               }
+              quote_attribution
               image {
                 alt
                 localFile {
