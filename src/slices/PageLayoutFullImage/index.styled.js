@@ -11,6 +11,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   text-align: center;
   width: ${t.w.mobile};
+  padding: ${t.s(1)} 0;
   p {
     font-family: ${t.ff.serif};
     color: ${t.c.darkgrey2};
@@ -20,7 +21,7 @@ export const Content = styled.div`
   }
   ${t.mq.l} {
     width: ${t.w.desktop};
-    margin-top: ${p => (p.normalizeMargin === "True" ? '0' : '-3rem')};    
+    margin-top: 0;
     font-size: ${t.f(0.3)};
   }
   ${t.mq.x} {
