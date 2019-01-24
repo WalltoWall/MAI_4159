@@ -12,7 +12,6 @@ export const ProjectResult = ({
   path,
   title,
   metaTitle,
-  metaDescription,
   imageUrl,
 }) => (
   <StyledLink to={path}>
