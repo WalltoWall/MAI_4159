@@ -38,6 +38,9 @@ export const ImageContainer = styled.div`
   ${t.mq.x} {
     height: 180px;
   }
+  ${t.mq.xxx} {
+    height: ${t.s(8)};
+  }
 `
 
 export const SectionContainer = styled.div`

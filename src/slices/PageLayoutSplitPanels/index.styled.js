@@ -67,11 +67,14 @@ export const ImageContainer = styled.div`
   .gatsby-image-wrapper {
     height: 100%;
   }
-  height: 250px;
+  height: ${t.s(9)};
   ${t.mq.l} {
     width: 55%;
-    height: 400px;
+    height: ${t.s(9)};
     order: 2;
+  }  
+  ${t.mq.xxx} {    
+    height: ${t.s(10.5)};    
   }
 `
 
@@ -100,5 +103,9 @@ export const Overlay = styled.div`
     right: -50%;
     opactiy: 0.9999;
     z-index: -1;
+  }
+  ${t.mq.xxx} {            
+    width: 205%;
+    right: -108%;
   }
 `
