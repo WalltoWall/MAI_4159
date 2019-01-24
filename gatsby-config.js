@@ -89,7 +89,7 @@ module.exports = {
                       url
                     }                 
                     meta_title1
-                    meta_description1
+                    meta_description1                    
                     layout {
                       ... on PrismicProjectLayoutHero {
                         primary {

@@ -11,7 +11,6 @@ export const Container = styled.div`
 export const Content = styled.div`
   text-align: center;
   width: ${t.w.mobile};
-  padding: 4rem 0;
   p {
     font-family: ${t.ff.serif};
     color: ${t.c.darkgrey2};
@@ -21,6 +20,7 @@ export const Content = styled.div`
   }
   ${t.mq.l} {
     width: ${t.w.desktop};
+    margin-top: ${p => (p.normalizeMargin === "True" ? '0' : '-3rem')};    
     font-size: ${t.f(0.3)};
   }
   ${t.mq.x} {
@@ -31,12 +31,6 @@ export const Content = styled.div`
 export const ImageContainer = styled.div`
   width: 100%;
   object-fit: cover;
-  max-height: 400px;
-  overflow: hidden;
-  ${t.mq.l} {
-    max-height: 600px;
-  }
-  ${t.mq.xxx} {
-    height: ${t.s(11)};
-  }
+  padding-bottom: 3rem;  
+  overflow: hidden;  
 `

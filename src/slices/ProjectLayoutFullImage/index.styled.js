@@ -31,13 +31,6 @@ export const Content = styled.div`
 export const ImageContainer = styled.div`
   width: 100%;
   object-fit: cover;
-  padding-bottom: 3rem;
-  // min-height: ${t.s(9)};
-  overflow: hidden;
-  // ${t.mq.l} {
-  //   height: ${t.s(10)};
-  // }  
-  // ${t.mq.xxx} {
-  //   height: ${t.s(11)};
-  // }
+  padding-bottom: 3rem;  
+  overflow: hidden;  
 `
