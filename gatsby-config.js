@@ -64,6 +64,21 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        src: path.join(__dirname, 'src'),
+        assets: path.join(__dirname, 'src', 'assets'),
+        components: path.join(__dirname, 'src', 'components'),
+        controllers: path.join(__dirname, 'src', 'controllers'),
+        lib: path.join(__dirname, 'src', 'lib'),
+        pages: path.join(__dirname, 'src', 'pages'),
+        slices: path.join(__dirname, 'src', 'slices'),
+        templates: path.join(__dirname, 'src', 'templates'),
+        helpers: path.join(__dirname, 'src', 'helpers.js'),
+        theme: path.join(__dirname, 'src', 'theme.js'),
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'assets',
