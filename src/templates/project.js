@@ -14,46 +14,47 @@ import { ProjectLayoutFeatureList } from 'slices/ProjectLayoutFeatureList'
 import { ProjectLayoutQuoteBlock } from 'slices/ProjectLayoutQuoteBlock'
 import { ProjectLayoutCmsHero } from 'slices/ProjectLayoutCmsHero'
 import { ProjectLayoutCmsGuideText } from 'slices/ProjectLayoutCmsGuideText'
-import { ProjectLayoutSpacingModifier} from 'slices/ProjectLayoutSpacingModifier'
+import { ProjectLayoutSpacingModifier } from 'slices/ProjectLayoutSpacingModifier'
 
-const ProjectTemplate = ({ data }) => (
-  <>
-    <Helmet>
-      <title>
-        {get(data, 'prismicPage.data.meta_title1') ||
-          get(data, 'prismicPage.data.title.text')}
-      </title>
-      {get(data, 'prismicPage.data.meta_description1') && (
-        <meta
-          name="description"
-          content={get(data, 'prismicPage.data.meta_description1')}
+const ProjectTemplate = ({ data }) =>
+  console.log(data) || (
+    <>
+      <Helmet>
+        <title>
+          {get(data, 'prismicProject.data.meta_title1') ||
+            get(data, 'prismicProject.data.title.text')}
+        </title>
+        {get(data, 'prismicProject.data.meta_description1') && (
+          <meta
+            name="description"
+            content={get(data, 'prismicProject.data.meta_description1')}
+          />
+        )}
+      </Helmet>
+      <Layout>
+        <MapToComponents
+          getKey={x => x.id}
+          getType={x => x.__typename.replace(/^Prismic/, '')}
+          list={get(data, 'prismicProject.data.layout') || []}
+          map={{
+            ProjectLayoutHero,
+            ProjectLayoutFullImage,
+            ProjectLayoutSideBySideImages,
+            ProjectLayoutCallToAction,
+            ProjectLayoutFeatureList,
+            ProjectLayoutSlice,
+            ProjectLayoutSideBySideText,
+            ProjectLayoutQuoteBlock,
+            ProjectLayoutCmsHero,
+            ProjectLayoutCmsGuideText,
+            ProjectLayoutSpacingModifier,
+          }}
+          page={get(data, 'prismicProject')}
+          rootData={data}
         />
-      )}
-    </Helmet>
-    <Layout>
-      <MapToComponents
-        getKey={x => x.id}
-        getType={x => x.__typename.replace(/^Prismic/, '')}
-        list={get(data, 'prismicProject.data.layout') || []}
-        map={{
-          ProjectLayoutHero,
-          ProjectLayoutFullImage,
-          ProjectLayoutSideBySideImages,
-          ProjectLayoutCallToAction,
-          ProjectLayoutFeatureList,
-          ProjectLayoutSlice,
-          ProjectLayoutSideBySideText,
-          ProjectLayoutQuoteBlock,
-          ProjectLayoutCmsHero,
-          ProjectLayoutCmsGuideText,
-          ProjectLayoutSpacingModifier,
-        }}
-        page={get(data, 'prismicProject')}
-        rootData={data}
-      />
-    </Layout>
-  </>
-)
+      </Layout>
+    </>
+  )
 
 export default ProjectTemplate
 

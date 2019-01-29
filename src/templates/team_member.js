@@ -14,7 +14,7 @@ import { TeamMemberLayoutCmsGuideText } from 'slices/TeamMemberLayoutCmsGuideTex
 
 const TeamMemberTemplate = ({ data }) => (
   <>
-    <Helmet title={get(data, 'prismicNewsPost.data.title.text')} />
+    <Helmet title={get(data, 'prismicTeamMember.data.title.text')} />
     <Layout>
       <MapToComponents
         getKey={x => x.id}
