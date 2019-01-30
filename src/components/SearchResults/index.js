@@ -22,7 +22,7 @@ export const SearchResults = ({ children, query, queryType, ...props }) => {
       <StyledHTMLContent>
         <Title>{queryType}</Title>
         <p>
-          {'Showing' + ' '}
+          {'Showing '}
           {resultLength + ' '}
           {queryType.slice(0, -1) + ' '}
           result

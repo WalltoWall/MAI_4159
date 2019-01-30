@@ -31,7 +31,7 @@ const truncateStr = str => {
 }
 
 const renderNewsGrid = ({ alt, key, img, title, url, content, date }) => {
-  const formattedDate = format(new Date(date), 'MMMM' + ' D' + ', ' + 'YYYY')
+  const formattedDate = format(new Date(date), 'MMMM D, YYYY')
 
   return (
     <StyledLink to={url} key={key}>

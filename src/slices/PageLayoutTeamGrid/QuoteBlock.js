@@ -1,5 +1,5 @@
 import React from 'react'
-import { get, isString, isEmpty } from 'lodash'
+import { get, isEmpty } from 'lodash'
 
 import {
   QuoteContainer,

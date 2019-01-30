@@ -1,9 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get, split, trim, toLower } from 'lodash'
-
+import { get } from 'lodash'
 import {
-  __,
   compose,
   reject,
   flattenDeep,

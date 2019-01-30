@@ -4,15 +4,8 @@ import qs from 'querystring'
 import { getSearchQuery } from 'helpers'
 import { Location } from '@reach/router'
 import { get } from 'lodash'
-import {
-  Container,
-  MobileSearchIcon,
-  SearchButtonIcon,
-  SearchNavItem,
-} from './Mobile.styled'
+import { Container } from './Mobile.styled'
 import { MobileNavItem } from './MobileNavItem.js'
-import { ModalConsumer } from 'controllers/ModalContext'
-import { searchModal } from 'components/Modal/searchModal'
 import { SearchBarTemp } from 'components/SearchBar'
 const renderLink = toggleMobileNav => item => (
   <MobileNavItem
