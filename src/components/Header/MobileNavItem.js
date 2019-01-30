@@ -2,7 +2,7 @@ import React from 'react'
 import { Toggle } from 'react-powerplug'
 import classnames from 'classnames'
 import { Link } from '../Link'
-import { isPathActive } from 'lib/helpers'
+import { isPathActive } from 'helpers'
 
 import {
   Container,

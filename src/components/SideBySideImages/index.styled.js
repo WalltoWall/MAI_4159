@@ -20,7 +20,7 @@ export const Container = styled.div`
 `
 export const Images = styled.div`
   display: flex;
-  margin: 0 auto;  
+  margin: 0 auto;
   width: ${t.w.mobile};
   flex-direction: column;
 
@@ -57,7 +57,7 @@ export const ImageContainer = styled.div`
 `
 export const StyledImage = styled(GatsbyImage)``
 
-export const CaptionContainer = styled.div`  
+export const CaptionContainer = styled.div`
   width: 90%;
   margin: 0 auto;
   ${t.mq.l} {
@@ -78,4 +78,3 @@ export const Caption = styled.div`
     padding: 1rem 2rem;
   }
 `
-

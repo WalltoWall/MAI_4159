@@ -20,7 +20,7 @@ export const Content = styled.div`
   }
   ${t.mq.l} {
     width: ${t.w.desktop};
-    margin-top: ${p => (p.normalizeMargin === "True" ? '0' : '-3rem')};    
+    margin-top: ${p => (p.normalizeMargin === 'True' ? '0' : '-3rem')};
     font-size: ${t.f(0.3)};
   }
   ${t.mq.x} {
@@ -30,6 +30,6 @@ export const Content = styled.div`
 
 export const ImageContainer = styled.div`
   width: 100%;
-  object-fit: cover;  
-  overflow: hidden;  
+  object-fit: cover;
+  overflow: hidden;
 `

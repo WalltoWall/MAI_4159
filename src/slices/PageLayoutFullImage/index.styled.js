@@ -32,5 +32,5 @@ export const Content = styled.div`
 export const ImageContainer = styled.div`
   width: 100%;
   object-fit: cover;
-  overflow: hidden;  
+  overflow: hidden;
 `

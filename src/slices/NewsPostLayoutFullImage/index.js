@@ -3,14 +3,14 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Image } from 'components/Image'
 import { Container, ImageContainer, Content } from './index.styled'
-import { getUnlessEmptyString } from 'helpers'
+import { getUnlessEmpty } from 'helpers'
 
 export const NewsPostLayoutFullImage = ({ data }) => (
   <Container>
     <Content>
       <ImageContainer>
         <Image
-          alt={getUnlessEmptyString(data, 'primary.image.alt')}
+          alt={getUnlessEmpty('primary.image.alt', data)}
           fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
           fadeIn={false}
         />

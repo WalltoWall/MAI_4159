@@ -4,7 +4,7 @@ import { get, slice } from 'lodash'
 import { format } from 'date-fns'
 import { Image } from 'components/Image'
 import arrow from 'assets/yellow-arrow.svg'
-import { getUnlessEmptyString } from 'helpers'
+import { getUnlessEmpty } from 'helpers'
 import { Button } from 'components/Button'
 import { Headline } from 'components/Headline'
 import {
@@ -91,8 +91,9 @@ class GridList extends React.Component {
                         news_post,
                         'node.data.article_thumb_image.localFile.childImageSharp.fluid'
                       )}
-                      alt={getUnlessEmptyString(
-                        get(news_post, 'node.data.article_thumb_image.alt')
+                      alt={getUnlessEmpty(
+                        'node.data.article_thumb_image.alt',
+                        news_post
                       )}
                       fadeIn={false}
                     />

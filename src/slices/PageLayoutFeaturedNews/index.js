@@ -5,7 +5,7 @@ import { format } from 'date-fns'
 import { Image } from 'components/Image'
 import { Headline } from 'components/Headline'
 import arrow from 'assets/yellow-arrow.svg'
-import { getUnlessEmptyString } from 'helpers'
+import { getUnlessEmpty } from 'helpers'
 import {
   Container,
   Content,
@@ -65,7 +65,7 @@ export const PageLayoutFeaturedNews = ({ data }) => {
                 featured_news_post,
                 'featured_news_post.document[0].uid'
               ),
-              alt: getUnlessEmptyString(
+              alt: getUnlessEmpty(
                 get(
                   featured_news_post,
                   'featured_news_post.document[0].data.article_thumb_image.alt'

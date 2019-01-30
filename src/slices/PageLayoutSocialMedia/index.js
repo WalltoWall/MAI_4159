@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Image } from 'components/Image'
-import { getUnlessEmptyString } from 'helpers'
+import { getUnlessEmpty } from 'helpers'
 import { Container, Content, ImageContainer } from './index.styled'
 
 export const PageLayoutSocialMedia = ({ data }) => (
@@ -12,7 +12,7 @@ export const PageLayoutSocialMedia = ({ data }) => (
         <ImageContainer href={get(item, 'link.url')} target="_blank">
           <Image
             fluid={get(item, 'icon.localFile.childImageSharp.fluid')}
-            alt={getUnlessEmptyString(data, 'icon.image.alt')}
+            alt={getUnlessEmpty('icon.image.alt', data)}
             fadeIn={false}
           />
         </ImageContainer>

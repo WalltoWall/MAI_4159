@@ -3,25 +3,24 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Image } from 'components/Image'
 import { Container, ImageContainer, Content } from './index.styled'
-import { getUnlessEmptyString } from 'helpers'
+import { getUnlessEmpty } from 'helpers'
 
 export const ProjectLayoutFullImage = ({ data }) => {
   return (
-  <Container>
-    <Content
-      normalizeMargin={get(data, 'primary.normalize_margin')}
-    >
-      <ImageContainer>
-        <Image
-          alt={getUnlessEmptyString(data, 'primary.image.alt')}
-          fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
-          fadeIn={false}
-        />
-      </ImageContainer>
-      <p>{get(data, 'primary.caption.text')}</p>
-    </Content>
-  </Container>
-)}
+    <Container>
+      <Content normalizeMargin={get(data, 'primary.normalize_margin')}>
+        <ImageContainer>
+          <Image
+            alt={getUnlessEmpty('primary.image.alt', data)}
+            fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
+            fadeIn={false}
+          />
+        </ImageContainer>
+        <p>{get(data, 'primary.caption.text')}</p>
+      </Content>
+    </Container>
+  )
+}
 export const query = graphql`
   fragment ProjectLayoutFullImage on Query {
     prismicProject(id: { eq: $id }) {

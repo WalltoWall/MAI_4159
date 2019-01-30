@@ -15,7 +15,7 @@ import {
 
 import { ProjectNavigation } from 'components/ProjectNavigation'
 import { Image } from 'components/Image'
-import { getUnlessEmptyString } from 'helpers'
+import { getUnlessEmpty } from 'helpers'
 import { Value } from 'react-powerplug'
 import {
   Container,
@@ -40,7 +40,7 @@ const renderGrid = (data, item, currentFilter) => {
     <>
       <ImageContainer>
         <Image
-          alt={getUnlessEmptyString('data.project_thumb_image.alt', data)}
+          alt={getUnlessEmpty('data.project_thumb_image.alt', data)}
           fluid={get(
             data,
             'project_thumb_image.localFile.childImageSharp.fluid'
