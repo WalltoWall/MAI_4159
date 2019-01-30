@@ -13,7 +13,7 @@ export const Container = styled.div`
 
 export const LeftColumn = styled.div`
   width: 100%;
-  padding: 1rem 0;
+  padding: 1rem 2.5rem 1rem 0;
   ${t.mq.l} {
     width: 50%;
   }
