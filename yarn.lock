@@ -5728,11 +5728,6 @@ gatsby-node-helpers@^0.3.0:
     lodash "^4.17.4"
     p-is-promise "^1.1.0"
 
-gatsby-plugin-bugherd@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-bugherd/-/gatsby-plugin-bugherd-1.0.2.tgz#7996621555c1609b1326954a184419cfb3582d3d"
-  integrity sha1-eZZiFVXBYJsTJpVKGEQZz7NYLT0=
-
 gatsby-plugin-catch-links@^2.0.2-rc.1:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.0.6.tgz#a6bd6d5258d53c327c0ceeb1594cca61560ecab1"
