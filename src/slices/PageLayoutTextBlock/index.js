@@ -19,6 +19,10 @@ export const query = graphql`
               }
               background_color
               align_text
+              button_text
+              button_link {
+                url
+              }              
             }
           }
         }

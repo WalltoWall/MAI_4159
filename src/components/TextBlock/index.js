@@ -1,5 +1,6 @@
 import React from 'react'
 import { get } from 'lodash'
+import { Button } from 'components/Button'
 import {
   Container,
   Content,
@@ -16,7 +17,14 @@ export const TextBlock = ({ data }) => {
           className={StyledHtmlClassName}
           align_text={get(data, 'primary.align_text')}
         />
-      </Content>
+      {
+        get(data, 'primary.button_text') && (
+          <Button to={get(data, 'primary.button_link.url')} style={{marginTop:'2rem'}}>
+            {get(data, 'primary.button_text')}
+          </Button>          
+        )
+      }
+      </Content>      
     </Container>
   )
 }
