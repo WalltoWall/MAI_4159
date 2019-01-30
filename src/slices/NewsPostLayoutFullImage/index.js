@@ -1,19 +1,18 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-import { Image } from 'components/Image'
-import { Container, ImageContainer, Content } from './index.styled'
+import { Container, ImageContainer, Content, DesktopImage } from './index.styled'
 import { getUnlessEmpty } from 'helpers'
 
 export const NewsPostLayoutFullImage = ({ data }) => (
   <Container>
     <Content>
       <ImageContainer>
-        <Image
+        <DesktopImage
           alt={getUnlessEmpty('primary.image.alt', data)}
           fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
           fadeIn={false}
-        />
+        />      
       </ImageContainer>
       <p>{get(data, 'primary.caption.text')}</p>
     </Content>
@@ -26,7 +25,7 @@ export const query = graphql`
         layout {
           ... on PrismicNewsPostLayoutFullImage {
             id
-            primary {
+            primary {             
               image {
                 alt
                 localFile {

@@ -1,4 +1,5 @@
 import styled from 'react-emotion'
+import { Image } from 'components/Image'
 import t from 'theme'
 
 export const Container = styled.div`
@@ -30,9 +31,8 @@ export const Content = styled.div`
 export const ImageContainer = styled.div`
   width: 100%;
   object-fit: cover;
-  max-height: 400px;
-  overflow: hidden;
-  ${t.mq.l} {
-    max-height: 600px;
-  }
+  overflow: hidden;  
+`
+
+export const DesktopImage = styled(Image)`
 `
