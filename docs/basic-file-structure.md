@@ -63,12 +63,6 @@ this project.
     React components used for Slices. See the [Slices](concept-slices.md)
     concept documentation for more details.
 
-    - `src/slices/PageBody.js`
-
-      Root Slices file where are Page Body Slices are registered for use in the
-      main page template. See the [Create a Slice](guide-create-a-slice.md)
-      guide for more details.
-
   - `src/templates/`
 
     Reusable React components used as templates for pages. Typically this will

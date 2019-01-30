@@ -64,22 +64,13 @@ Documentation: <https://lodash.com/docs/>
 
 Cross-browser compatible helper functions to manage data.
 
-### styled-components
+### Emotion
 
-Website: <https://styled-components.com/>
+Website: <https://emotion.sh/>
 
-Documentation: <https://styled-components.com/docs/>
+Documentation: <https://emotion.sh/docs/>
 
-Performant CSS-in-JS library to allow writing React components alongside your
-CSS.
-
-### Styled System
-
-Website: <https://jxnblk.com/styled-system/>
-
-Documentation: <https://github.com/jxnblk/styled-system/tree/master/docs>
-
-Responsive, theme-based style props for building design systems with React.
+A performant and flexible CSS-in-JS library
 
 ### `gatsby-image`
 
@@ -103,14 +94,6 @@ Documentation: <https://github.com/nfl/react-helmet>
 
 Manage HTML `<head>` elements such as `<title>` and `<meta>` from within the
 React tree.
-
-### `gatsby-plugin-offline`
-
-Website: <https://www.gatsbyjs.org/packages/gatsby-plugin-offline/>
-
-Documentation: <https://www.gatsbyjs.org/docs/add-offline-support/>
-
-Provide offline PWA support to Gatsby websites using [service workers][service-worker].
 
 [git]: https://git-scm.com/
 [github]: https://github.com/
