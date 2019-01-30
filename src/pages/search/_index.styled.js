@@ -18,6 +18,19 @@ export const Content = styled.div`
 
 export const StyledHTMLContent = styled(HTMLContent)`
   text-align: center;
+  h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: ${t.ff.sans};
+    letter-spacing: 1px;
+    color: ${t.c.darkgrey1};
+    font-size: ${t.f(5)};
+  }
+  p {
+    text-align: center;
+    color: ${t.c.lightgrey3};
+    font-family: ${t.ff.sans2};
+  }
   padding: ${t.s(6.5)} 0;
 `
 export const HeaderImage = styled.img`
