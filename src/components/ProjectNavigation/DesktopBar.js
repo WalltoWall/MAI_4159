@@ -1,7 +1,7 @@
 import React from 'react'
 import { get, trim, split, startCase, head } from 'lodash'
 
-import { __, map } from 'lodash/fp'
+import { map } from 'lodash/fp'
 
 import {
   DesktopContainer,

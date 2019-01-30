@@ -2,7 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { get } from 'lodash'
 import classnames from 'classnames'
-import { isPathActive } from 'lib/helpers'
+import { isPathActive } from 'helpers'
 import { ModalConsumer } from 'controllers/ModalContext'
 import { searchModal } from 'components/Modal/searchModal'
 

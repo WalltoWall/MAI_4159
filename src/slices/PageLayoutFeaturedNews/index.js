@@ -5,7 +5,7 @@ import { format } from 'date-fns'
 import { Image } from 'components/Image'
 import { Headline } from 'components/Headline'
 import arrow from 'assets/yellow-arrow.svg'
-import { getUnlessEmptyString } from 'helpers'
+import { getUnlessEmpty } from 'helpers'
 import {
   Container,
   Content,
@@ -31,7 +31,7 @@ const truncateStr = str => {
 }
 
 const renderNewsGrid = ({ alt, key, img, title, url, content, date }) => {
-  const formattedDate = format(new Date(date), 'MMMM' + ' D' + ', ' + 'YYYY')
+  const formattedDate = format(new Date(date), 'MMMM D, YYYY')
 
   return (
     <StyledLink to={url} key={key}>
@@ -65,7 +65,7 @@ export const PageLayoutFeaturedNews = ({ data }) => {
                 featured_news_post,
                 'featured_news_post.document[0].uid'
               ),
-              alt: getUnlessEmptyString(
+              alt: getUnlessEmpty(
                 get(
                   featured_news_post,
                   'featured_news_post.document[0].data.article_thumb_image.alt'
@@ -125,7 +125,7 @@ export const query = graphql`
                       alt
                       localFile {
                         childImageSharp {
-                          fluid(maxWidth: 500, quality: 90) {
+                          fluid(maxWidth: 800, quality: 90) {
                             ...GatsbyImageSharpFluid_withWebp_noBase64
                           }
                         }

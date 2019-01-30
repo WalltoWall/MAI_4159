@@ -4,7 +4,7 @@ import { get } from 'lodash'
 import { Image } from 'components/Image'
 import HoverArrowSVG from 'assets/hov_arrow.svg'
 import { MobileNavOverlay } from 'components/Header/Mobile.styled'
-import { getUnlessEmptyString } from 'helpers'
+import { getUnlessEmpty } from 'helpers'
 import {
   Container,
   ImageContainer,
@@ -23,10 +23,6 @@ import {
 } from './index.styled'
 
 export class ProjectLayoutHero extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   componentDidMount() {
     setTimeout(() => {
       window.dispatchEvent(new Event('resize'))
@@ -90,9 +86,9 @@ export class ProjectLayoutHero extends React.Component {
               )}
             >
               {get(this.props.data, 'items').map(item => (
-                <ImageContainer key={getUnlessEmptyString(item, 'image.alt')}>
+                <ImageContainer key={getUnlessEmpty('image.alt', item)}>
                   <Image
-                    alt={getUnlessEmptyString(item, 'image.alt')}
+                    alt={getUnlessEmpty('image.alt', item)}
                     fluid={get(item, 'image.localFile.childImageSharp.fluid')}
                     fadeIn={false}
                   />
@@ -105,7 +101,7 @@ export class ProjectLayoutHero extends React.Component {
           <CarouselContainer>
             <ImageContainer>
               <Image
-                alt={getUnlessEmptyString(this.props.data.items[0], 'alt')}
+                alt={getUnlessEmpty('alt', this.props.data.items[0])}
                 fluid={get(
                   this.props,
                   'data.items[0].image.localFile.childImageSharp.fluid'

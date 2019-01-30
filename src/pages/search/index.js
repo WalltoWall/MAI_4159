@@ -4,7 +4,7 @@ import { Location } from '@reach/router'
 import { navigate, graphql } from 'gatsby'
 import { get, isEmpty } from 'lodash'
 import qs from 'querystring'
-import { getLocationQuery } from 'helpers'
+import { getSearchQuery } from 'helpers'
 import { Layout } from 'components/Layout'
 import { SearchBar } from 'components/SearchBar'
 import { SearchResults } from 'components/SearchResults'
@@ -98,13 +98,13 @@ const SearchProject = ({ data }) => (
       {({ location }) => (
         <Container>
           <SearchBar
-            query={getLocationQuery(location)}
+            query={getSearchQuery('?query', location)}
             onSubmit={({ query }) => {
               navigate(`/search${query ? `?${qs.stringify({ query })}` : ''}`)
             }}
           />
           <Lunr
-            query={getLocationQuery(location)}
+            query={getSearchQuery('?query', location)}
             index={get(data, 'localSearchProjects.index')}
             store={get(data, 'localSearchProjects.store')}
           >
@@ -125,7 +125,7 @@ const SearchProject = ({ data }) => (
             )}
           </Lunr>
           <Lunr
-            query={getLocationQuery(location)}
+            query={getSearchQuery('?query', location)}
             index={get(data, 'localSearchPages.index')}
             store={get(data, 'localSearchPages.store')}
           >

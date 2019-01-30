@@ -1,5 +1,5 @@
 import React from 'react'
-import { searchModal } from 'components/Modal/searchModal'
+
 const ModalContext = React.createContext({
   component: null,
   props: {},

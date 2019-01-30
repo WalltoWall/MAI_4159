@@ -2,7 +2,7 @@ import React from 'react'
 import { get, trim, split, startCase, dropRight, head } from 'lodash'
 import classnames from 'classnames'
 
-import { isPathActive } from 'lib/helpers'
+import { isPathActive } from 'helpers'
 import {
   MobileContainer,
   StyledLink,

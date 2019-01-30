@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { MobileNavOverlay } from 'components/Header/Mobile.styled'
 import { Image } from 'components/Image'
-import { getUnlessEmptyString } from 'helpers'
+import { getUnlessEmpty } from 'helpers'
 import { HTMLContent } from 'components/HTMLContent'
 import {
   Gradient,
@@ -24,7 +24,7 @@ export const PageLayoutHero = ({ data }) => (
     <ImageContainer>
       <Gradient />
       <Image
-        alt={getUnlessEmptyString(data, 'primary.image.alt')}
+        alt={getUnlessEmpty('primary.image.alt', data)}
         fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
         fadeIn={false}
       />

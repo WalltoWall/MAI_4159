@@ -14,13 +14,13 @@ export const Content = styled.div`
   p {
     font-family: ${t.ff.serif};
     color: ${t.c.darkgrey2};
-    padding: 0 2rem;
+    padding: 0 2rem 3rem 2rem;
     font-size: ${t.f(0)};
     line-height: ${t.lh.copy};
   }
   ${t.mq.l} {
     width: ${t.w.desktop};
-    margin-top: ${p => (p.normalizeMargin === "True" ? '0' : '-3rem')};    
+    margin-top: ${p => (p.normalizeMargin === 'True' ? '0' : '-3rem')};
     font-size: ${t.f(0.3)};
   }
   ${t.mq.x} {
@@ -31,6 +31,5 @@ export const Content = styled.div`
 export const ImageContainer = styled.div`
   width: 100%;
   object-fit: cover;
-  padding-bottom: 3rem;  
-  overflow: hidden;  
+  overflow: hidden;
 `

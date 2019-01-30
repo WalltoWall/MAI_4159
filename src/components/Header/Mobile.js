@@ -1,18 +1,11 @@
 import React from 'react'
 import { StaticQuery, navigate, graphql } from 'gatsby'
 import qs from 'querystring'
-import { getLocationQuery } from 'helpers'
+import { getSearchQuery } from 'helpers'
 import { Location } from '@reach/router'
 import { get } from 'lodash'
-import {
-  Container,
-  MobileSearchIcon,
-  SearchButtonIcon,
-  SearchNavItem,
-} from './Mobile.styled'
+import { Container } from './Mobile.styled'
 import { MobileNavItem } from './MobileNavItem.js'
-import { ModalConsumer } from 'controllers/ModalContext'
-import { searchModal } from 'components/Modal/searchModal'
 import { SearchBarTemp } from 'components/SearchBar'
 const renderLink = toggleMobileNav => item => (
   <MobileNavItem
@@ -32,7 +25,7 @@ const render = ({ isOpen, toggle, ...props }) => queryData => (
       {({ location }) => {
         return (
           <SearchBarTemp
-            query={getLocationQuery(location)}
+            query={getSearchQuery('?query', location)}
             onSubmit={({ query }) => {
               navigate(`/search${query ? `?${qs.stringify({ query })}` : ''}`)
               toggle()

@@ -1,7 +1,7 @@
 import React from 'react'
 import { get, isEmpty } from 'lodash'
 import { MobileNavOverlay } from 'components/Header/Mobile.styled'
-import { getUnlessEmptyString } from 'helpers'
+import { getUnlessEmpty } from 'helpers'
 import defaultTexture from 'assets/marble_texture.jpg'
 import {
   ClipOverlay,
@@ -16,7 +16,7 @@ export const Hero = ({ data, whitebg, subpage }) => (
   <ImageContainer>
     {!isEmpty(get(data, 'primary.image.localFile.childImageSharp.fluid')) ? (
       <StyledImage
-        alt={getUnlessEmptyString('primary.image.alt', data)}
+        alt={getUnlessEmpty('primary.image.alt', data)}
         fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
         fadeIn={false}
       />

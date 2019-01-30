@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { HTMLContent } from 'components/HTMLContent'
 import { Image } from 'components/Image'
-import { getUnlessEmptyString } from 'helpers'
+import { getUnlessEmpty } from 'helpers'
 import { Content } from 'components/Content'
 import { Headline } from 'components/Headline'
 import {
@@ -31,7 +31,7 @@ export const PageLayoutServices = ({ data }) => {
       <ImageContainer>
         <ImageWrapper>
           <Image
-            alt={getUnlessEmptyString(data, 'primary.left_image.alt')}
+            alt={getUnlessEmpty('primary.left_image.alt', data)}
             fluid={get(
               data,
               'primary.left_image.localFile.childImageSharp.fluid'
@@ -41,7 +41,7 @@ export const PageLayoutServices = ({ data }) => {
         </ImageWrapper>
         <ImageWrapper>
           <Image
-            alt={getUnlessEmptyString(data, 'primary.right_image.alt')}
+            alt={getUnlessEmpty('primary.right_image.alt', data)}
             fluid={get(
               data,
               'primary.right_image.localFile.childImageSharp.fluid'
@@ -72,8 +72,9 @@ export const PageLayoutServices = ({ data }) => {
         {projects.map(project =>
           RenderGrid({
             key: get(project, 'projects.document[0].uid'),
-            alt: getUnlessEmptyString(
-              get(project, 'projects.document[0].data.project_thumb_image.alt')
+            alt: getUnlessEmpty(
+              'projects.document[0].data.project_thumb_image.alt',
+              project
             ),
             img: get(
               project,

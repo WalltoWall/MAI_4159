@@ -4,7 +4,7 @@ import { Container, GridContainer } from './index.styled'
 import { get, split } from 'lodash'
 import { RenderGrid } from 'components/RenderGrid'
 import { SmallHeadline } from 'components/SmallHeadline'
-import { getUnlessEmptyString } from 'helpers'
+import { getUnlessEmpty } from 'helpers'
 
 export const TeamMemberLayoutFeaturedList = ({ data, rootData }) => {
   const projects = get(data, 'items')
@@ -19,8 +19,9 @@ export const TeamMemberLayoutFeaturedList = ({ data, rootData }) => {
         {projects.map(project =>
           RenderGrid({
             key: get(project, 'project.document[0].uid'),
-            alt: getUnlessEmptyString(
-              get(project, 'project.document[0].data.project_thumb_image.alt')
+            alt: getUnlessEmpty(
+              'project.document[0].data.project_thumb_image.alt',
+              project
             ),
             img: get(
               project,

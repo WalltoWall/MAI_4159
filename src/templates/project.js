@@ -14,19 +14,19 @@ import { ProjectLayoutFeatureList } from 'slices/ProjectLayoutFeatureList'
 import { ProjectLayoutQuoteBlock } from 'slices/ProjectLayoutQuoteBlock'
 import { ProjectLayoutCmsHero } from 'slices/ProjectLayoutCmsHero'
 import { ProjectLayoutCmsGuideText } from 'slices/ProjectLayoutCmsGuideText'
-import { ProjectLayoutSpacingModifier} from 'slices/ProjectLayoutSpacingModifier'
+import { ProjectLayoutSpacingModifier } from 'slices/ProjectLayoutSpacingModifier'
 
 const ProjectTemplate = ({ data }) => (
   <>
     <Helmet>
       <title>
-        {get(data, 'prismicPage.data.meta_title1') ||
-          get(data, 'prismicPage.data.title.text')}
+        {get(data, 'prismicProject.data.meta_title1') ||
+          get(data, 'prismicProject.data.title.text')}
       </title>
-      {get(data, 'prismicPage.data.meta_description1') && (
+      {get(data, 'prismicProject.data.meta_description1') && (
         <meta
           name="description"
-          content={get(data, 'prismicPage.data.meta_description1')}
+          content={get(data, 'prismicProject.data.meta_description1')}
         />
       )}
     </Helmet>

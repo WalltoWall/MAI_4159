@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { Image } from 'components/Image'
-import { getUnlessEmptyString } from 'helpers'
+import { getUnlessEmpty } from 'helpers'
 import {
   Container,
   StyledHeadline,
@@ -23,7 +23,7 @@ export const PageLayoutSplitPanels = ({ data }) => (
           <Image
             key={get(item, 'title1')}
             fluid={get(item, 'image.localFile.childImageSharp.fluid')}
-            alt={getUnlessEmptyString(get(item, 'image.alt'))}
+            alt={getUnlessEmpty('image.alt', item)}
             fadeIn={false}
           />
         </ImageContainer>
@@ -58,7 +58,7 @@ export const query = graphql`
                 alt
                 localFile {
                   childImageSharp {
-                    fluid(maxWidth: 500, quality: 90) {
+                    fluid(maxWidth: 1500, quality: 90) {
                       ...GatsbyImageSharpFluid_withWebp_noBase64
                     }
                   }
