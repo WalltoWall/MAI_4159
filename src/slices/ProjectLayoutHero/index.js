@@ -23,10 +23,6 @@ import {
 } from './index.styled'
 
 export class ProjectLayoutHero extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   componentDidMount() {
     setTimeout(() => {
       window.dispatchEvent(new Event('resize'))

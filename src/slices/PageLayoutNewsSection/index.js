@@ -103,7 +103,7 @@ class GridList extends React.Component {
                   <PostDate>
                     {format(
                       new Date(get(news_post, 'node.data.publish_date')),
-                      'MMMM' + ' D' + ', ' + 'YYYY'
+                      'MMMM D, YYYY'
                     )}
                   </PostDate>
                   <PostTitle>
