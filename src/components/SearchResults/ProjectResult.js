@@ -8,12 +8,7 @@ import {
   TitleContainer,
 } from './ProjectResult.styled'
 
-export const ProjectResult = ({
-  path,
-  title,
-  metaTitle,
-  imageUrl,
-}) => (
+export const ProjectResult = ({ path, title, metaTitle, imageUrl }) => (
   <StyledLink to={path}>
     <Container>
       <ImageContainer>

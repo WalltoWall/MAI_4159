@@ -72,9 +72,9 @@ export const ImageContainer = styled.div`
     width: 55%;
     height: ${t.s(9)};
     order: 2;
-  }  
-  ${t.mq.xxx} {    
-    height: ${t.s(10.5)};    
+  }
+  ${t.mq.xxx} {
+    height: ${t.s(10.5)};
   }
 `
 
@@ -104,7 +104,7 @@ export const Overlay = styled.div`
     opactiy: 0.9999;
     z-index: -1;
   }
-  ${t.mq.xxx} {            
+  ${t.mq.xxx} {
     width: 205%;
     right: -108%;
   }

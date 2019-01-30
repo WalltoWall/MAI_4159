@@ -6,7 +6,7 @@ import { Headline } from 'components/Headline'
 
 import { Container, PostDate } from './index.styled'
 
-export const NewsPostLayoutTitle = ({ data, rootData }) => {  
+export const NewsPostLayoutTitle = ({ data, rootData }) => {
   const formattedDate = format(
     new Date(get(rootData, 'prismicNewsPost.data.publish_date')),
     'MMMM' + ' D' + ', ' + 'YYYY'
@@ -23,14 +23,14 @@ export const NewsPostLayoutTitle = ({ data, rootData }) => {
 export const query = graphql`
   fragment NewsPostLayoutTitle on Query {
     prismicNewsPost(id: { eq: $id }) {
-      data {        
+      data {
         layout {
           ... on PrismicNewsPostLayoutTitle {
             id
             primary {
               title1 {
                 text
-              }              
+              }
             }
           }
         }
