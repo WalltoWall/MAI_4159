@@ -47,7 +47,7 @@ export const Content = styled.div`
   width: ${t.w.mobile};
   margin: 0 auto;
   ${t.mq.l} {
-    width: ${t.w.desktop};  
+    width: ${t.w.desktop};
   }
   ${t.mq.x} {
     width: ${t.w.xl};
@@ -63,7 +63,7 @@ export const StyledHTMLContent = styled(HTMLContent)`
 
 export const StyledHtmlClassName = css`
   h1 {
-    font-size: ${t.f(4)};
+    font-size: ${t.f(5.5)};
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     font-family: ${t.ff.sans};
@@ -99,8 +99,8 @@ export const StyledHtmlClassName = css`
   }
   a {
     color: ${t.c.darkyellow};
-    cursor: pointer;    
-    font-weight: 600;    
+    cursor: pointer;
+    font-weight: 600;
   }
 `
 
