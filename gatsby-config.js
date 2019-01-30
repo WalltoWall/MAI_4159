@@ -17,9 +17,19 @@ const {
   values,
 } = require('lodash/fp')
 
-dotenv.config({
+// Load .env files.
+// .env.development - Loaded during `yarn develop`
+// .env.production  - Loaded during `yarn build`
+require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
+
+// Configure the following constants for the project.
+const SITE_TITLE = 'MASON'
+const SITE_TITLE_SHORT = 'MASON'
+const SITE_DESCRIPTION =
+  'We help shape Hawaii’s future, from historic places to contemporary buildings, designing and reimagining architecture that keeps our heritage relevant for our community.'
+const SITE_URL = 'https://masonarch.com'
 
 const valuesDeep = x =>
   cond([
@@ -41,11 +51,15 @@ const flatValuesDeep = pipe(
 
 module.exports = {
   siteMetadata: {
-    title: 'Mason Architects',
-    description: '',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     keywords: '',
   },
   plugins: [
+    // polyfill.io is strictly for local development on IE 11. It is
+    // unnecessary on production since Babel should include everything it
+    // needs.
+    process.env.NODE_ENV === 'development' && 'gatsby-plugin-polyfill-io',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-svgr',
     'gatsby-plugin-sharp',
@@ -415,6 +429,20 @@ module.exports = {
     },
     'gatsby-plugin-catch-links',
     'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: SITE_TITLE,
+        short_name: SITE_TITLE_SHORT,
+        start_url: '/',
+        background_color: '#000000',
+        theme_color: '#ffffff',
+        display: 'minimal-ui',
+        icon: path.join('src', 'assets', 'manifest-icon.png'),
+      },
+    },
+
+    // NOTE: Must be placed at the end of the file in this order!
     'gatsby-plugin-netlify',
     'gatsby-plugin-netlify-cache',
   ],

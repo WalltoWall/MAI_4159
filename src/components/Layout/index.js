@@ -15,7 +15,6 @@ import 'typeface-abhaya-libre'
 import 'typeface-barlow-condensed'
 import 'typeface-lato'
 import Typekit from 'react-typekit'
-import favicon from 'assets/favicon.png'
 
 // temporarily disable hot loader error for dev
 import { setConfig } from 'react-hot-loader'
@@ -58,9 +57,7 @@ const render = ({ children }) => queryData => (
           name: 'keywords',
           content: get(queryData, 'site.siteMetadata.keywords'),
         },
-        { name: 'robots', content: 'noindex' },
       ]}
-      link={[{ rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }]}
     >
       <html lang="en" />
       <Typekit kitId="air2qxr" />
