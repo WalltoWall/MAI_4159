@@ -43,6 +43,17 @@ export const Container = styled.div`
   padding: 4rem 0;
 `
 
+export const Content = styled.div`
+  width: ${t.w.mobile};
+  margin: 0 auto;
+  ${t.mq.l} {
+    width: ${t.w.desktop};  
+  }
+  ${t.mq.x} {
+    width: ${t.w.xl};
+  }
+`
+
 export const StyledHTMLContent = styled(HTMLContent)`
   text-align: left;
   ${t.mq.l} {

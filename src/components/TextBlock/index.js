@@ -2,10 +2,10 @@ import React from 'react'
 import { get } from 'lodash'
 import {
   Container,
+  Content,
   StyledHtmlClassName,
   StyledHTMLContent,  
 } from './index.styled'
-import { Content } from 'components/Content'
 
 export const TextBlock = ({ data }) => {
   return (
