@@ -445,5 +445,5 @@ module.exports = {
     // NOTE: Must be placed at the end of the file in this order!
     'gatsby-plugin-netlify',
     'gatsby-plugin-netlify-cache',
-  ],
+  ].filter(Boolean),
 }
