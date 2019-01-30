@@ -191,6 +191,7 @@ export const ImageContainer = styled.div`
 `
 
 export const Gradient = styled.div`
+  pointer-events: none;
   display: none;
   position: absolute;
   background-image: linear-gradient(
