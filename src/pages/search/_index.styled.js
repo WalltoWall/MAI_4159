@@ -18,6 +18,7 @@ export const Content = styled.div`
 
 export const StyledHTMLContent = styled(HTMLContent)`
   text-align: center;
+  padding: ${t.s(6.5)} 0;
 `
 export const HeaderImage = styled.img`
   width: 100%;
