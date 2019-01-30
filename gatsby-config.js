@@ -189,8 +189,12 @@ module.exports = {
           'metaDescription',
           'excerpt',
         ],
-        normalizer: ({ data }) =>
-          get('allPrismicProject.edges', data).map(({ node }) => {
+        normalizer: ({
+            data
+          }) =>
+          get('allPrismicProject.edges', data).map(({
+            node
+          }) => {
             const content = flatValuesDeep(get('data.layout', node)).join(' ')
 
             return {
@@ -387,15 +391,16 @@ module.exports = {
           'metaDescription',
           'excerpt',
         ],
-        normalizer: ({ data }) => {
+        normalizer: ({
+          data
+        }) => {
           const nodes = compose(
             map(node => {
               const content = flatValuesDeep(get('data.layout', node)).join(' ')
 
               return {
                 id: get('id', node),
-                path:
-                  get('uid', node) === 'home' ? '/' : `/${get('uid', node)}`,
+                path: get('uid', node) === 'home' ? '/' : `/${get('uid', node)}`,
                 title: getOr(get('data.title', node), 'data.title.text', node),
                 metaTitle: get('data.meta_title', node),
                 metaDescription: get('data.meta_description', node),
@@ -418,13 +423,6 @@ module.exports = {
         repositoryName: process.env.PRISMIC_REPOSITORY_NAME,
         accessToken: process.env.PRISMIC_ACCESS_TOKEN,
         linkResolver: () => doc => (doc.uid === 'home' ? '/' : `/${doc.uid}/`),
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-bugherd',
-      options: {
-        key: 'wi4lcps15xlmmpaktwznxg',
-        showInProduction: false,
       },
     },
     'gatsby-plugin-catch-links',

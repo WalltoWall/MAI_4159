@@ -18,7 +18,6 @@
     "formik": "^1.0.1",
     "gatsby": "^2.0.91",
     "gatsby-image": "^2.0.25",
-    "gatsby-plugin-bugherd": "^1.0.2",
     "gatsby-plugin-catch-links": "^2.0.2-rc.1",
     "gatsby-plugin-emotion": "^2.0.5",
     "gatsby-plugin-local-search": "^0.1.2",
