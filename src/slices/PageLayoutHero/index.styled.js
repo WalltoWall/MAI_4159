@@ -196,11 +196,11 @@ export const Gradient = styled.div`
   position: absolute;
   background-image: linear-gradient(
     to right,
-    #000000,
-    #101010,
-    #77777700,
-    #b9b9b900,
-    #ffffff00
+    rgb(0, 0, 0),
+    rgb(15, 15, 15),
+    rgba(119, 119, 119, 0),
+    rgba(185, 185, 185, 0),
+    rgba(255, 255, 255, 0)
   );
   height: 100%;
   width: 100%;
