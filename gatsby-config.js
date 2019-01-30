@@ -424,7 +424,7 @@ module.exports = {
       resolve: 'gatsby-plugin-bugherd',
       options: {
         key: 'wi4lcps15xlmmpaktwznxg',
-        showInProduction: true,
+        showInProduction: false,
       },
     },
     'gatsby-plugin-catch-links',
