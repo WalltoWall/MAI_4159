@@ -3,8 +3,7 @@ import { get } from 'lodash'
 import {
   Container,
   StyledHtmlClassName,
-  StyledHTMLContent,
-  Headline,
+  StyledHTMLContent,  
 } from './index.styled'
 import { Content } from 'components/Content'
 

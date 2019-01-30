@@ -19,6 +19,7 @@ export const query = graphql`
             id
             primary {
               background_color
+              align_text
               content {
                 html
               }

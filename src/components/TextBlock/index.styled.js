@@ -23,7 +23,10 @@ const textAlignment = ({ align_text }) => {
       return `
         text-align: center;
       `
-
+    case 'Left':
+      return `
+        text-align: left;
+      `
     default:
       return `
         text-align: left;
