@@ -55,7 +55,8 @@ class GridList extends React.Component {
     }
   }
 
-  loadMore = () => {
+  loadMore = e => {
+    e.preventDefault()
     this.setState(prev => {
       return { visible: prev.visible + 4 }
     })
