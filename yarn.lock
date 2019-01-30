@@ -782,6 +782,13 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
+"@babel/runtime@^7.2.0":
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.3.1.tgz#574b03e8e8a9898eaf4a872a92ea20b7846f6f2a"
+  integrity sha512-7jGW8ppV0ant637pIqAcFfQDDH1orEPGJb8aXfUozuCU3QqX7rX4DA8iwrbPrR1hcH0FTTHz47yQnk+bl5xHQA==
+  dependencies:
+    regenerator-runtime "^0.12.0"
+
 "@babel/template@^7.1.0", "@babel/template@^7.1.2", "@babel/template@^7.2.2":
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.2.2.tgz#005b3fdf0ed96e88041330379e0da9a708eb2907"
@@ -1147,6 +1154,15 @@
     "@types/node" "*"
     "@types/unist" "*"
     "@types/vfile-message" "*"
+
+"@walltowall/helpers@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@walltowall/helpers/-/helpers-2.0.1.tgz#68a764f01036273504ab733f4964f7bf077cec4e"
+  integrity sha512-lVO0v/H9OR1jqc1o9IuK7o78GmEhwY6WDd4+mUWZgpGfQrp3A/1pcIPAOmebDTH6Tc/MdR47ysqGAuX57zzxPg==
+  dependencies:
+    "@babel/runtime" "^7.2.0"
+    fast-lorem-ipsum "^1.2.0"
+    querystring "^0.2.0"
 
 "@webassemblyjs/ast@1.5.13":
   version "1.5.13"
@@ -5220,6 +5236,11 @@ fast-levenshtein@^2.0.6, fast-levenshtein@~2.0.4:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
+
+fast-lorem-ipsum@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/fast-lorem-ipsum/-/fast-lorem-ipsum-1.2.0.tgz#d637f479de10b3860bf2df1cc9dd3719cb1f4fec"
+  integrity sha512-z42UgC4il5ypxVHOCnS2CML2YUjLGMm8fVRHPkRFbHzggzVsELpwWp6iWY0cvLNKq89h7RAYI9cchDaPaWOueQ==
 
 fastparse@^1.1.1:
   version "1.1.1"

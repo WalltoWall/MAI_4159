@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-import { getUnlessEmptyString } from 'helpers'
+import { getUnlessEmpty } from 'helpers'
 import { Container, Projects } from './index.styled'
 import { Button } from 'components/Button'
 import { Headline } from 'components/Headline'
@@ -17,8 +17,9 @@ export const PageLayoutProjectBoxes = ({ data }) => {
         {projects.map(project =>
           RenderGrid({
             key: get(project, 'projects.document[0].uid'),
-            alt: getUnlessEmptyString(
-              get(project, 'projects.document[0].data.project_thumb_image.alt')
+            alt: getUnlessEmpty(
+              'projects.document[0].data.project_thumb_image.alt',
+              project
             ),
             img: get(
               project,

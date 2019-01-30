@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { SmallHeadline } from 'components/SmallHeadline'
 import { RenderGrid } from 'components/RenderGrid'
-import { getUnlessEmptyString } from 'helpers'
+import { getUnlessEmpty } from 'helpers'
 import { Container, Content } from './index.styled'
 import { Button } from 'components/Button'
 
@@ -23,8 +23,9 @@ export const ProjectLayoutFeatureList = ({ data }) => {
               project,
               'projects.document[0].data.project_thumb_image.localFile.childImageSharp.fluid'
             ),
-            alt: getUnlessEmptyString(
-              get(project, 'projects.document[0].data.project_thumb_image.alt')
+            alt: getUnlessEmpty(
+              project,
+              'projects.document[0].data.project_thumb_image.alt'
             ),
             title: get(project, 'projects.document[0].data.title.text'),
           })

@@ -66,6 +66,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-root-import',
       options: {
+        helpers: '@walltowall/helpers',
         src: path.join(__dirname, 'src'),
         assets: path.join(__dirname, 'src', 'assets'),
         components: path.join(__dirname, 'src', 'components'),
@@ -74,7 +75,6 @@ module.exports = {
         pages: path.join(__dirname, 'src', 'pages'),
         slices: path.join(__dirname, 'src', 'slices'),
         templates: path.join(__dirname, 'src', 'templates'),
-        helpers: path.join(__dirname, 'src', 'helpers.js'),
         theme: path.join(__dirname, 'src', 'theme.js'),
       },
     },

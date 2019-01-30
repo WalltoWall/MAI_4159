@@ -4,7 +4,7 @@ import { get, split, trim, includes, toLower } from 'lodash'
 import { Image } from 'components/Image'
 import { Value, Toggle } from 'react-powerplug'
 
-import { getUnlessEmptyString } from 'helpers'
+import { getUnlessEmpty } from 'helpers'
 import { QuoteBlock } from './QuoteBlock.js'
 import {
   GridContainer,
@@ -67,7 +67,7 @@ const renderGrid = (data, currentFilter) => (
   <>
     <ImageContainer>
       <Image
-        alt={getUnlessEmptyString(get(data, 'photo.alt'))}
+        alt={getUnlessEmpty('photo.alt', data)}
         fluid={get(data, 'photo.localFile.childImageSharp.fluid')}
         fadeIn={false}
       />
