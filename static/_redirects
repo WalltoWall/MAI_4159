@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+http://masonarch.netlify.com/* http://masonarch.com/:splat 301!
