@@ -1,6 +1,6 @@
 import styled from 'react-emotion'
 import t from 'theme'
-import GatsbyImage from 'gatsby-image'
+import { Image } from 'components/Image'
 
 export const Container = styled.div`
   background-color: white;
@@ -55,7 +55,7 @@ export const ImageContainer = styled.div`
     margin-right: 0;
   }
 `
-export const StyledImage = styled(GatsbyImage)``
+export const StyledImage = styled(Image)``
 
 export const CaptionContainer = styled.div`
   width: 90%;
