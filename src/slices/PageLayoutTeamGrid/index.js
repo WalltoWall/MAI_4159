@@ -63,29 +63,37 @@ const RoleFilterBar = ({ filters, setFilter, currentFilter }) => (
   </Toggle>
 )
 
-const renderGrid = (data, currentFilter) => (
-  <>
-    <ImageContainer>
-      <Image
-        alt={getUnlessEmpty('photo.alt', data)}
-        fluid={get(data, 'photo.localFile.childImageSharp.fluid')}
-        fadeIn={false}
-      />
-    </ImageContainer>
-    <OverlayContainer>
-      <TitleContainer
-        isActive={getActiveState(currentFilter, get(data, 'department1'))}
-      >
-        <Title>{get(data, 'name')}</Title>
-        <SubTitle>{get(data, 'affiliation')}</SubTitle>
-        <SubTitle>{get(data, 'job_title')}</SubTitle>
-      </TitleContainer>
-      <Overlay
-        isActive={getActiveState(currentFilter, get(data, 'department1'))}
-      />
-    </OverlayContainer>
-  </>
-)
+const renderGrid = (data, currentFilter) => {
+  const imageFluid = get(data, 'photo.localFile.childImageSharp.fluid')
+  const imageURL = get(data, 'photo.url')
+
+  return (
+    <>
+      {(imageFluid || imageURL) && (
+        <ImageContainer>
+          <Image
+            alt={getUnlessEmpty('photo.alt', data)}
+            fluid={imageFluid}
+            src={imageURL}
+            fadeIn={false}
+          />
+        </ImageContainer>
+      )}
+      <OverlayContainer>
+        <TitleContainer
+          isActive={getActiveState(currentFilter, get(data, 'department1'))}
+        >
+          <Title>{get(data, 'name')}</Title>
+          <SubTitle>{get(data, 'affiliation')}</SubTitle>
+          <SubTitle>{get(data, 'job_title')}</SubTitle>
+        </TitleContainer>
+        <Overlay
+          isActive={getActiveState(currentFilter, get(data, 'department1'))}
+        />
+      </OverlayContainer>
+    </>
+  )
+}
 
 export const PageLayoutTeamGrid = ({ data, rootData }) => {
   let roleFilters = split(get(data, 'primary.role_filters1'), ',')
@@ -109,7 +117,7 @@ export const PageLayoutTeamGrid = ({ data, rootData }) => {
                     if (
                       !getActiveState(
                         currentFilter,
-                        get(member, 'team_member.document[0].data.department1')
+                        get(member, 'team_member.document.data.department1')
                       )
                     ) {
                       e.preventDefault()
@@ -117,7 +125,7 @@ export const PageLayoutTeamGrid = ({ data, rootData }) => {
                   }}
                 >
                   {renderGrid(
-                    get(member, 'team_member.document[0].data'),
+                    get(member, 'team_member.document.data'),
                     currentFilter,
                     i,
                     list
@@ -156,17 +164,19 @@ export const query = graphql`
               team_member {
                 url
                 document {
-                  data {
-                    name
-                    affiliation
-                    job_title
-                    department1
-                    photo {
-                      alt
-                      localFile {
-                        childImageSharp {
-                          fluid(maxWidth: 600, quality: 90) {
-                            ...GatsbyImageSharpFluid_withWebp_noBase64
+                  ... on PrismicTeamMember {
+                    data {
+                      name
+                      affiliation
+                      job_title
+                      department1
+                      photo {
+                        alt
+                        localFile {
+                          childImageSharp {
+                            fluid(maxWidth: 600, quality: 90) {
+                              ...GatsbyImageSharpFluid_withWebp_noBase64
+                            }
                           }
                         }
                       }

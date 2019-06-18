@@ -66,11 +66,13 @@ export const Footer = () => (
         prismicNavigation {
           data {
             primary {
-              id
-              primary {
-                name
-                link {
-                  url
+              ... on PrismicNavigationPrimaryNavItem {
+                id
+                primary {
+                  name
+                  link {
+                    url
+                  }
                 }
               }
             }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-import { Image } from 'components/Image'
+import { Image as ImageBase } from 'components/Image'
 import HoverArrowSVG from 'assets/hov_arrow.svg'
 import { MobileNavOverlay } from 'components/Header/Mobile.styled'
 import { getUnlessEmpty } from 'helpers'
@@ -22,6 +22,16 @@ import {
   ArrowControl,
 } from './index.styled'
 
+const Image = ({ alt, src, img }) => {
+  const imageURL = src
+  const imageFluid = img
+  return (
+    (imageURL || imageFluid) && (
+      <ImageBase alt={alt} src={imageURL} fluid={imageFluid} fadeIn={false} />
+    )
+  )
+}
+
 export class ProjectLayoutHero extends React.Component {
   componentDidMount() {
     setTimeout(() => {
@@ -30,36 +40,34 @@ export class ProjectLayoutHero extends React.Component {
   }
 
   render() {
+    const { data } = this.props
     return (
       <Container>
         <ContentContainer>
           <Content>
             <Header>
               <Title
-                longText={
-                  get(this.props.data, 'primary.project_title.text').length >=
-                  40
-                }
+                longText={get(data, 'primary.project_title.text').length >= 40}
               >
-                {get(this.props.data, 'primary.project_title.text')}
+                {get(data, 'primary.project_title.text')}
               </Title>
             </Header>
             <InfoContainer>
-              {get(this.props.data, 'primary.project_type.text') && (
+              {get(data, 'primary.project_type.text') && (
                 <>
                   <InfoLine />
                   <div className={InfoBlurb}>
                     <h3>project type</h3>
-                    <p>{get(this.props.data, 'primary.project_type.text')}</p>
+                    <p>{get(data, 'primary.project_type.text')}</p>
                   </div>
                 </>
               )}
-              {get(this.props.data, 'primary.year_completed.text') && (
+              {get(data, 'primary.year_completed.text') && (
                 <>
                   <InfoLine />
                   <div className={InfoBlurb}>
                     <h3>year completed</h3>
-                    <p>{get(this.props.data, 'primary.year_completed.text')}</p>
+                    <p>{get(data, 'primary.year_completed.text')}</p>
                   </div>
                 </>
               )}
@@ -67,7 +75,7 @@ export class ProjectLayoutHero extends React.Component {
             <ClipOverlay />
           </Content>
         </ContentContainer>
-        {get(this.props.data, 'items').length > 1 && (
+        {get(data, 'items').length > 1 && (
           <CarouselContainer>
             <StyledCarousel
               autoplay={true}
@@ -85,11 +93,12 @@ export class ProjectLayoutHero extends React.Component {
                 </ArrowControlContainer>
               )}
             >
-              {get(this.props.data, 'items').map(item => (
+              {get(data, 'items').map(item => (
                 <ImageContainer key={getUnlessEmpty('image.alt', item)}>
                   <Image
                     alt={getUnlessEmpty('image.alt', item)}
-                    fluid={get(item, 'image.localFile.childImageSharp.fluid')}
+                    src={get(item, 'image.url')}
+                    img={get(item, 'image.localFile.childImageSharp.fluid')}
                     fadeIn={false}
                   />
                 </ImageContainer>
@@ -97,14 +106,15 @@ export class ProjectLayoutHero extends React.Component {
             </StyledCarousel>
           </CarouselContainer>
         )}
-        {get(this.props.data, 'items').length === 1 && (
+        {get(data, 'items').length === 1 && (
           <CarouselContainer>
             <ImageContainer>
               <Image
-                alt={getUnlessEmpty('alt', this.props.data.items[0])}
-                fluid={get(
-                  this.props,
-                  'data.items[0].image.localFile.childImageSharp.fluid'
+                alt={getUnlessEmpty('alt', data.items[0])}
+                src={get(data, 'items[0].image.url')}
+                img={get(
+                  data,
+                  'items[0].image.localFile.childImageSharp.fluid'
                 )}
                 fadeIn={false}
               />

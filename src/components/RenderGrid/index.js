@@ -7,13 +7,17 @@ import {
   Title,
 } from './index.styled'
 
-export const RenderGrid = ({ alt, key, img, title, url, largeImages }) => {
+export const RenderGrid = ({ alt, key, img, title, src, url, largeImages }) => {
   let text = title ? title : ''
+  const imageURL = src
+  const imageFluid = img
   return (
     <StyledLink to={url} key={key} largeImages={largeImages}>
-      <ImageContainer>
-        <Image fluid={img} alt={alt} fadeIn={false} />
-      </ImageContainer>
+      {(imageURL || imageFluid) && (
+        <ImageContainer>
+          <Image src={imageURL} fluid={imageFluid} alt={alt} fadeIn={false} />
+        </ImageContainer>
+      )}
       <OverlayContainer largeImages={largeImages} longText={text.length >= 20}>
         <Title largeImages={largeImages}>{text}</Title>
       </OverlayContainer>

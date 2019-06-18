@@ -35,16 +35,22 @@ export const renderSocial = item => {
 }
 
 export const TeamMemberLayoutBioSummary = ({ data }) => {
+  const imageURL = get(data, 'primary.image.url')
+  const imageFluid = get(data, 'primary.image.localFile.childImageSharp.fluid')
+
   return (
     <Container>
       <Content>
-        <ImageContainer>
-          <Image
-            alt={get(data, 'primary.image.alt')}
-            fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
-            fadeIn={false}
-          />
-        </ImageContainer>
+        {(imageFluid || imageURL) && (
+          <ImageContainer>
+            <Image
+              alt={get(data, 'primary.image.alt')}
+              src={imageURL}
+              fluid={imageFluid}
+              fadeIn={false}
+            />
+          </ImageContainer>
+        )}
         <Column>
           <h2>{get(data, 'primary.name1')}</h2>
           <h3>{get(data, 'primary.position')}</h3>

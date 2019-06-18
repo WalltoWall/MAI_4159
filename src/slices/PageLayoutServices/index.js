@@ -23,6 +23,16 @@ import { RenderGrid } from 'components/RenderGrid'
 export const PageLayoutServices = ({ data }) => {
   const projects = get(data, 'items')
   const serviceName = get(data, 'primary.title1.text')
+  const imageURLRight = get(data, 'primary.right_image.url')
+  const imageFluidRight = get(
+    data,
+    'primary.right_image.localFile.childImageSharp.fluid'
+  )
+  const imageURLLeft = get(data, 'primary.left_image.url')
+  const imageFluidLeft = get(
+    data,
+    'primary.left_image.localFile.childImageSharp.fluid'
+  )
 
   return (
     <Container background_color={get(data, 'primary.background_color')}>
@@ -32,20 +42,16 @@ export const PageLayoutServices = ({ data }) => {
         <ImageWrapper>
           <Image
             alt={getUnlessEmpty('primary.left_image.alt', data)}
-            fluid={get(
-              data,
-              'primary.left_image.localFile.childImageSharp.fluid'
-            )}
+            fluid={imageFluidLeft}
+            src={imageURLLeft}
             fadeIn={false}
           />
         </ImageWrapper>
         <ImageWrapper>
           <Image
             alt={getUnlessEmpty('primary.right_image.alt', data)}
-            fluid={get(
-              data,
-              'primary.right_image.localFile.childImageSharp.fluid'
-            )}
+            fluid={imageFluidRight}
+            src={imageURLRight}
             fadeIn={false}
           />
         </ImageWrapper>
@@ -71,16 +77,17 @@ export const PageLayoutServices = ({ data }) => {
       <Projects>
         {projects.map(project =>
           RenderGrid({
-            key: get(project, 'projects.document[0].uid'),
+            key: get(project, 'projects.document.uid'),
             alt: getUnlessEmpty(
-              'projects.document[0].data.project_thumb_image.alt',
+              'projects.document.data.project_thumb_image.alt',
               project
             ),
             img: get(
               project,
-              'projects.document[0].data.project_thumb_image.localFile.childImageSharp.fluid'
+              'projects.document.data.project_thumb_image.localFile.childImageSharp.fluid'
             ),
-            title: get(project, 'projects.document[0].data.title.text'),
+            src: get(project, 'projects.document.data.project_thumb_image.url'),
+            title: get(project, 'projects.document.data.title.text'),
             url: get(project, 'projects.url'),
             largeImages: false,
           })
@@ -139,22 +146,24 @@ export const query = graphql`
             items {
               projects {
                 document {
-                  data {
-                    title {
-                      text
-                    }
-                    project_thumb_image {
-                      alt
-                      localFile {
-                        childImageSharp {
-                          fluid(maxWidth: 500, quality: 90) {
-                            ...GatsbyImageSharpFluid_withWebp_noBase64
+                  ... on PrismicProject {
+                    uid
+                    data {
+                      title {
+                        text
+                      }
+                      project_thumb_image {
+                        alt
+                        localFile {
+                          childImageSharp {
+                            fluid(maxWidth: 500, quality: 90) {
+                              ...GatsbyImageSharpFluid_withWebp_noBase64
+                            }
                           }
                         }
                       }
                     }
                   }
-                  uid
                 }
                 url
               }

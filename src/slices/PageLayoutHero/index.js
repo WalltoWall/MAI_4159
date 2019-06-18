@@ -19,42 +19,50 @@ import {
   StyledHtmlClassName,
 } from './index.styled'
 
-export const PageLayoutHero = ({ data }) => (
-  <Container>
-    <ImageContainer>
-      <Gradient />
-      <Image
-        alt={getUnlessEmpty('primary.image.alt', data)}
-        fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
-        fadeIn={false}
-      />
-    </ImageContainer>
-    <HeadlineWrapper>
-      <RotatedContainer>
-        <Headline>
-          <span>We </span>
-          <span>re</span>
-          <h1>we are mason</h1>
-          <SlidingVertical>
-            {get(data, 'items').map(item => (
-              <span>{item.rotating_text}</span>
-            ))}
-          </SlidingVertical>
-        </Headline>
-      </RotatedContainer>
-      <SubHeadline> Hawaii's Future</SubHeadline>
-    </HeadlineWrapper>
-    <Overlay>
-      <DescriptionWrapper>
-        <HTMLContent
-          html={get(data, 'primary.description.html')}
-          className={StyledHtmlClassName}
-        />
-      </DescriptionWrapper>
-    </Overlay>
-    <MobileNavOverlay />
-  </Container>
-)
+export const PageLayoutHero = ({ data }) => {
+  const imageURL = get(data, 'primary.image.url')
+  const imageFluid = get(data, 'primary.image.localFile.childImageSharp.fluid')
+
+  return (
+    <Container>
+      {(imageURL || imageFluid) && (
+        <ImageContainer>
+          <Gradient />
+          <Image
+            alt={getUnlessEmpty('primary.image.alt', data)}
+            src={imageURL}
+            fluid={imageFluid}
+            fadeIn={false}
+          />
+        </ImageContainer>
+      )}
+      <HeadlineWrapper>
+        <RotatedContainer>
+          <Headline>
+            <span>We </span>
+            <span>re</span>
+            <h1>we are mason</h1>
+            <SlidingVertical>
+              {get(data, 'items').map(item => (
+                <span>{item.rotating_text}</span>
+              ))}
+            </SlidingVertical>
+          </Headline>
+        </RotatedContainer>
+        <SubHeadline> Hawaii's Future</SubHeadline>
+      </HeadlineWrapper>
+      <Overlay>
+        <DescriptionWrapper>
+          <HTMLContent
+            html={get(data, 'primary.description.html')}
+            className={StyledHtmlClassName}
+          />
+        </DescriptionWrapper>
+      </Overlay>
+      <MobileNavOverlay />
+    </Container>
+  )
+}
 
 export const query = graphql`
   fragment PageLayoutHero on Query {

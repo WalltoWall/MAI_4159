@@ -6,16 +6,22 @@ import { Container, ImageContainer, Content } from './index.styled'
 import { getUnlessEmpty } from 'helpers'
 
 export const ProjectLayoutFullImage = ({ data }) => {
+  const imageURL = get(data, 'primary.image.url')
+  const imageFluid = get(data, 'primary.image.localFile.childImageSharp.fluid')
+
   return (
     <Container>
       <Content normalizeMargin={get(data, 'primary.normalize_margin')}>
-        <ImageContainer>
-          <Image
-            alt={getUnlessEmpty('primary.image.alt', data)}
-            fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
-            fadeIn={false}
-          />
-        </ImageContainer>
+        {(imageURL || imageFluid) && (
+          <ImageContainer>
+            <Image
+              alt={getUnlessEmpty('primary.image.alt', data)}
+              src={imageURL}
+              fluid={imageFluid}
+              fadeIn={false}
+            />
+          </ImageContainer>
+        )}
         <p>{get(data, 'primary.caption.text')}</p>
       </Content>
     </Container>

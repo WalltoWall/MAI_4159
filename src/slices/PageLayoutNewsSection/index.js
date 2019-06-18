@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { get, slice } from 'lodash'
 import { format } from 'date-fns'
-import { Image } from 'components/Image'
+import { Image as ImageBase } from 'components/Image'
 import arrow from 'assets/yellow-arrow.svg'
 import { getUnlessEmpty } from 'helpers'
 import { Button } from 'components/Button'
@@ -23,6 +23,17 @@ import {
   ButtonContainer,
   ButtonLink,
 } from './index.styled'
+
+const Image = ({ alt, src, img }) => {
+  const imageURL = src
+  const imageFluid = img
+
+  return imageURL || imageFluid ? (
+    <ImageBase fluid={imageFluid} src={imageURL} alt={alt} fadeIn={false} />
+  ) : (
+    <div />
+  )
+}
 
 export const PageLayoutNewsSection = ({ data, rootData }) => {
   let newsPosts = get(rootData, 'allPrismicNewsPost.edges').sort((a, b) => {
@@ -82,24 +93,20 @@ class GridList extends React.Component {
                 to={'/' + get(news_post, 'node.uid')}
                 key={get(news_post, 'node.uid') + index}
               >
-                {get(
-                  news_post,
-                  'node.data.article_thumb_image.localFile.childImageSharp.fluid'
-                ) && (
-                  <ImageContainer>
-                    <Image
-                      fluid={get(
-                        news_post,
-                        'node.data.article_thumb_image.localFile.childImageSharp.fluid'
-                      )}
-                      alt={getUnlessEmpty(
-                        'node.data.article_thumb_image.alt',
-                        news_post
-                      )}
-                      fadeIn={false}
-                    />
-                  </ImageContainer>
-                )}
+                <ImageContainer>
+                  <Image
+                    img={get(
+                      news_post,
+                      'node.data.article_thumb_image.localFile.childImageSharp.fluid'
+                    )}
+                    src={get(news_post, 'node.data.article_thumb_image.url')}
+                    alt={getUnlessEmpty(
+                      'node.data.article_thumb_image.alt',
+                      news_post
+                    )}
+                    fadeIn={false}
+                  />
+                </ImageContainer>
                 <ContentContainer>
                   <PostDate>
                     {format(

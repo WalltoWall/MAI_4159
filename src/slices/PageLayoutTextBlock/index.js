@@ -21,8 +21,10 @@ export const query = graphql`
               align_text
               button_text
               button_link {
-                url
-              }              
+                ... on PrismicLinkType {
+                  url
+                }
+              }
             }
           }
         }
