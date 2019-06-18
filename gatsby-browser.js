@@ -20,9 +20,8 @@ exports.shouldUpdateScroll = () => {
   return true
 }
 
-exports.onRouteUpdate = async () => {
+exports.onRouteUpdate = async ({ location }) => {
   window.__navigatingToLink = false
-  window.__PRISMIC_PREVIEW_DATA = null
 
   // Object-fit/Object-position polyfill for gatsby-image (IE)
   const testImg = document.createElement('img')

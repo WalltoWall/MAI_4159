@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import MapToComponents from 'react-map-to-components'
 import { graphql } from 'gatsby'
@@ -13,13 +13,12 @@ import { NewsPostLayoutFullImage } from 'slices/NewsPostLayoutFullImage'
 import { NewsPostLayoutFullImageGif } from 'slices/NewsPostLayoutFullImageGif'
 import { NewsPostLayoutCmsGuideText } from 'slices/NewsPostLayoutCmsGuideText'
 import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
+import { useDeletePreviewDataEffect, usePreviewData } from 'src/hooks.js'
 
-const IS_BROWSER = typeof window !== 'undefined'
-
-const NewsPostTemplate = ({ data: staticData }) => {
-  const previewData = IS_BROWSER && get(window, '__PRISMIC_PREVIEW_DATA')
-
-  const data = mergePrismicPreviewData({ staticData, previewData })
+const NewsPostTemplate = ({ data: staticData, location }) => {
+  const previewData = usePreviewData()
+  const data = mergePrismicPreviewData({ previewData, staticData })
+  useDeletePreviewDataEffect()
 
   return (
     <div>
@@ -40,6 +39,7 @@ const NewsPostTemplate = ({ data: staticData }) => {
           }}
           page={get(data, 'prismicNewsPost')}
           rootData={data}
+          location={location}
         />
         <Placeholder />
       </Layout>

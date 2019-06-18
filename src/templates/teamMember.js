@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import MapToComponents from 'react-map-to-components'
 import { graphql } from 'gatsby'
@@ -12,13 +12,13 @@ import { TeamMemberLayoutFeaturedList } from 'slices/TeamMemberLayoutFeaturedLis
 import { TeamMemberLayoutCtaBar } from 'slices/TeamMemberLayoutCtaBar'
 import { TeamMemberLayoutCmsGuideText } from 'slices/TeamMemberLayoutCmsGuideText'
 import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
+import { useDeletePreviewDataEffect, usePreviewData } from 'src/hooks.js'
 
-const IS_BROWSER = typeof window !== 'undefined'
+const TeamMemberTemplate = ({ data: staticData, location }) => {
+  const previewData = usePreviewData()
+  const data = mergePrismicPreviewData({ previewData, staticData })
+  useDeletePreviewDataEffect()
 
-const TeamMemberTemplate = ({ data: staticData }) => {
-  const previewData = IS_BROWSER && get(window, '__PRISMIC_PREVIEW_DATA')
-
-  const data = mergePrismicPreviewData({ staticData, previewData })
   return (
     <>
       <Helmet title={get(data, 'prismicTeamMember.data.title.text')} />
@@ -38,6 +38,7 @@ const TeamMemberTemplate = ({ data: staticData }) => {
           }}
           page={get(data, 'prismicTeamMember')}
           rootData={data}
+          location={location}
         />
       </Layout>
     </>

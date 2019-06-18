@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import MapToComponents from 'react-map-to-components'
 import { graphql } from 'gatsby'
@@ -16,13 +16,12 @@ import { ProjectLayoutCmsHero } from 'slices/ProjectLayoutCmsHero'
 import { ProjectLayoutCmsGuideText } from 'slices/ProjectLayoutCmsGuideText'
 import { ProjectLayoutSpacingModifier } from 'slices/ProjectLayoutSpacingModifier'
 import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
+import { useDeletePreviewDataEffect, usePreviewData } from 'src/hooks.js'
 
-const IS_BROWSER = typeof window !== 'undefined'
-
-const ProjectTemplate = ({ data: staticData }) => {
-  const previewData = IS_BROWSER && get(window, '__PRISMIC_PREVIEW_DATA')
-
-  const data = mergePrismicPreviewData({ staticData, previewData })
+const ProjectTemplate = ({ data: staticData, location }) => {
+  const previewData = usePreviewData()
+  const data = mergePrismicPreviewData({ previewData, staticData })
+  useDeletePreviewDataEffect()
 
   return (
     <>
@@ -58,6 +57,7 @@ const ProjectTemplate = ({ data: staticData }) => {
           }}
           page={get(data, 'prismicProject')}
           rootData={data}
+          location={location}
         />
       </Layout>
     </>

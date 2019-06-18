@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
-import { navigate } from 'gatsby'
+import React, { useEffect, useMemo } from 'react'
+import { navigate, useStaticQuery, graphql } from 'gatsby'
 import { usePrismicPreview } from 'gatsby-source-prismic'
 import logoicon from 'assets/logo-yellow.svg'
+import { map, includes, flatten, compose } from 'lodash/fp'
 
 import styled from 'react-emotion'
 import t from 'theme'
@@ -19,13 +20,31 @@ const StyledPreviewContainer = styled.div`
 const StyledLoadingText = styled.h2`
   font-size: 2rem;
   color: white;
+  font-family: ${t.ff.serif};
 `
 
 const PreviewPage = ({ location }) => {
+  const result = useStaticQuery(allPrismicPages)
+
+  const allPrismicPageUids = useMemo(
+    () =>
+      compose(
+        map('node.uid'),
+        flatten,
+        map('edges')
+      )(result),
+    [result]
+  )
+
+  const linkResolver = doc => (doc.uid === 'home' ? '/' : `/${doc.uid}/`)
+
+  const pathResolver = doc =>
+    includes(doc.uid, allPrismicPageUids) ? linkResolver(doc) : '/unpublished'
+
   const { previewData, path } = usePrismicPreview(location, {
-    linkResolver: () => doc => (doc.uid === 'home' ? '/' : `/${doc.uid}/`),
+    linkResolver: () => doc => linkResolver(doc),
     htmlSerializer: () => {},
-    pathResolver: doc => (doc.uid === 'home' ? '/' : `/${doc.uid}/`),
+    pathResolver: pathResolver,
   })
 
   useEffect(
@@ -37,7 +56,7 @@ const PreviewPage = ({ location }) => {
     },
     [previewData, path]
   )
-  debugger
+
   return (
     <StyledPreviewContainer>
       <img src={logoicon} width="200px" height="200px" alt="" />
@@ -47,3 +66,36 @@ const PreviewPage = ({ location }) => {
 }
 
 export default PreviewPage
+
+const allPrismicPages = graphql`
+  {
+    allPrismicPage {
+      edges {
+        node {
+          uid
+        }
+      }
+    }
+    allPrismicProject {
+      edges {
+        node {
+          uid
+        }
+      }
+    }
+    allPrismicNewsPost {
+      edges {
+        node {
+          uid
+        }
+      }
+    }
+    allPrismicTeamMember {
+      edges {
+        node {
+          uid
+        }
+      }
+    }
+  }
+`
