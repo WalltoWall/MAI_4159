@@ -1,5 +1,5 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import MapToComponents from 'react-map-to-components'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
@@ -27,13 +27,14 @@ import { PageLayoutAnchorsMenu } from 'slices/PageLayoutAnchorsMenu'
 import { PageLayoutCmsGuideText } from 'slices/PageLayoutCmsGuideText'
 import { PageLayoutSideBySideImages } from 'slices/PageLayoutSideBySideImages'
 import { PageLayoutFullImage } from 'slices/PageLayoutFullImage'
+import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
 
-export class PageTemplate extends React.Component {
-  renderSlices = () => (
+const PageTemplate = ({ data: staticData, location }) => {
+  const renderSlices = data => (
     <MapToComponents
       getKey={x => x.id}
       getType={x => x.__typename.replace(/^Prismic/, '')}
-      list={get(this.props.data, 'prismicPage.data.layout') || []}
+      list={get(data, 'prismicPage.data.layout') || []}
       map={{
         PageLayoutHero,
         PageLayoutProjectBoxes,
@@ -56,20 +57,20 @@ export class PageTemplate extends React.Component {
         PageLayoutAnchorsMenu,
         PageLayoutCmsGuideText,
       }}
-      page={get(this.props.data, 'prismicPage')}
-      rootData={this.props.data}
-      location={this.props.location}
+      page={get(data, 'prismicPage')}
+      rootData={data}
+      location={location}
     />
   )
 
-  renderCmsGuideAuth = () => (
+  const renderCmsGuideAuth = data => (
     <AuthWall
       id="cms-guide"
       passwordMd5={process.env.GATSBY_CMS_GUIDE_PASSWORD}
     >
       {({ authenticated, signin }) =>
         authenticated ? (
-          this.renderSlices()
+          renderSlices(data)
         ) : (
           <AuthForm onSubmit={({ password }) => signin(password)} />
         )
@@ -77,31 +78,31 @@ export class PageTemplate extends React.Component {
     </AuthWall>
   )
 
-  render() {
-    const { data, location } = this.props
+  const IS_BROWSER = typeof window !== 'undefined'
+  const previewData = IS_BROWSER && get(window, '__PRISMIC_PREVIEW_DATA')
+  const data = mergePrismicPreviewData({ previewData, staticData })
 
-    return (
-      <>
-        <Helmet>
-          <title>
-            {get(data, 'prismicPage.data.meta_title') ||
-              get(data, 'prismicPage.data.title.text')}
-          </title>
-          {get(data, 'prismicPage.data.meta_description') && (
-            <meta
-              name="description"
-              content={get(data, 'prismicPage.data.meta_description')}
-            />
-          )}
-        </Helmet>
-        <Layout>
-          {isPathActive(location.pathname, '/cms-guide')
-            ? this.renderCmsGuideAuth()
-            : this.renderSlices()}
-        </Layout>
-      </>
-    )
-  }
+  return (
+    <>
+      <Helmet>
+        <title>
+          {get(data, 'prismicPage.data.meta_title') ||
+            get(data, 'prismicPage.data.title.text')}
+        </title>
+        {get(data, 'prismicPage.data.meta_description') && (
+          <meta
+            name="description"
+            content={get(data, 'prismicPage.data.meta_description')}
+          />
+        )}
+      </Helmet>
+      <Layout>
+        {isPathActive(location.pathname, '/cms-guide')
+          ? renderCmsGuideAuth(data)
+          : renderSlices(data)}
+      </Layout>
+    </>
+  )
 }
 
 export default PageTemplate

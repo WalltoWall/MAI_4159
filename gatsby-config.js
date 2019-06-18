@@ -103,6 +103,7 @@ module.exports = {
       resolve: 'gatsby-plugin-local-search',
       options: {
         name: 'projects',
+        engine: 'flexsearch',
         query: `
           {
             allPrismicProject (filter: {tags: {ne: "CMS Guide"}}) {
@@ -113,33 +114,33 @@ module.exports = {
                   data {
                     title {
                       text
-                    }   
+                    }
                     project_thumb_image {
                       url
-                    }                 
+                    }
                     meta_title1
-                    meta_description1                    
+                    meta_description1
                     layout {
                       ... on PrismicProjectLayoutHero {
                         primary {
                           project_title {
                             text
                           }
-                        }                       
+                        }
                       }
                       ... on PrismicProjectLayoutSlice {
                         primary {
                           text {
                             text
                           }
-                        }                        
+                        }
                       }
                       ... on PrismicProjectLayoutFullImage {
                         primary {
                           caption {
                             text
                           }
-                        }                        
+                        }
                       }
                       ... on PrismicProjectLayoutSideBySideText {
                         primary {
@@ -149,7 +150,7 @@ module.exports = {
                           right_text {
                             text
                           }
-                        }                        
+                        }
                       }
                       ... on PrismicProjectLayoutQuoteBlock {
                         primary {
@@ -159,20 +160,20 @@ module.exports = {
                           author {
                             text
                           }
-                        }                        
+                        }
                       }
                       ... on PrismicProjectLayoutSideBySideImages {
                         primary {
                           caption {
                             text
                           }
-                        }                        
+                        }
                       }
                       ... on PrismicProjectLayoutCallToAction {
-                        primary {                          
+                        primary {
                           button_text
-                        }                        
-                      }                    
+                        }
+                      }
                     }
                   }
                 }
@@ -189,12 +190,8 @@ module.exports = {
           'metaDescription',
           'excerpt',
         ],
-        normalizer: ({
-            data
-          }) =>
-          get('allPrismicProject.edges', data).map(({
-            node
-          }) => {
+        normalizer: ({ data }) =>
+          get('allPrismicProject.edges', data).map(({ node }) => {
             const content = flatValuesDeep(get('data.layout', node)).join(' ')
 
             return {
@@ -214,6 +211,7 @@ module.exports = {
       resolve: 'gatsby-plugin-local-search',
       options: {
         name: 'pages',
+        engine: 'flexsearch',
         query: `
           {
             allPrismicPage (filter: {tags: {ne: "CMS Guide"}}) {
@@ -232,15 +230,15 @@ module.exports = {
                         primary {
                           title1 {
                             text
-                          }                          
-                        }                       
+                          }
+                        }
                       }
                       ... on PrismicPageLayoutCtaBar {
                         primary {
                           title1 {
                             text
-                          }                          
-                        }                        
+                          }
+                        }
                       }
                       ... on PrismicPageLayoutServices {
                         primary {
@@ -253,14 +251,14 @@ module.exports = {
                           description {
                             text
                           }
-                        }                        
+                        }
                       }
                       ... on PrismicPageLayoutTextBlock {
                         primary {
                           content {
                             text
-                          }                          
-                        }                        
+                          }
+                        }
                       }
                       ... on PrismicPageLayoutSplitPanels {
                         items {
@@ -269,9 +267,9 @@ module.exports = {
                           }
                           description {
                             text
-                          }                          
-                        }                        
-                      }                                         
+                          }
+                        }
+                      }
                     }
                   }
                 }
@@ -283,48 +281,48 @@ module.exports = {
                   id
                   uid
                   data {
-                    title                  
+                    title
                     meta_title
-                    meta_description               
+                    meta_description
                     layout {
                       ... on PrismicTeamMemberLayoutHero {
                         primary {
                           title1
-                        }                       
-                      }         
+                        }
+                      }
                       ... on PrismicTeamMemberLayoutSideBySideText {
                         primary {
                           qualifications {
                             text
-                          }     
+                          }
                           experience {
                             text
-                          }                  
-                        }                        
+                          }
+                        }
                         items {
                           award_name
                           award_detail {
                             text
                           }
-                        }     
+                        }
                       }
                       ... on PrismicTeamMemberLayoutTextBlock {
                         primary {
                           content {
                             text
-                          }                       
-                        }                        
-                      }                                         
+                          }
+                        }
+                      }
                       ... on PrismicTeamMemberLayoutBioSummary {
                         primary {
                           name1
-                          position                     
+                          position
                           quote {
                             text
                           }
                           email
-                        }                       
-                      }                                                           
+                        }
+                      }
                     }
                   }
                 }
@@ -334,13 +332,13 @@ module.exports = {
               edges {
                 node {
                   id
-                  uid                       
-                  data {                    
+                  uid
+                  data {
                     title {
                       text
-                    }       
+                    }
                     meta_title
-                    meta_description             
+                    meta_description
                     article_title1 {
                       text
                     }
@@ -353,34 +351,34 @@ module.exports = {
                           title1  {
                             text
                           }
-                        }                       
+                        }
                       }
                       ... on PrismicNewsPostLayoutTextBlock {
                         primary {
                           content {
                             text
-                          }                       
-                        }                        
+                          }
+                        }
                       }
                       ... on PrismicNewsPostLayoutTitle {
                         primary {
                           title1 {
                             text
-                          }             
-                        }                        
-                      }         
+                          }
+                        }
+                      }
                       ... on PrismicNewsPostLayoutSideBySideImages {
                         primary {
                           caption {
                             text
-                          }                 
-                        }                        
-                      }              
+                          }
+                        }
+                      }
                     }
                   }
                 }
               }
-            }                                  
+            }
           }
         `,
         store: [
@@ -391,16 +389,15 @@ module.exports = {
           'metaDescription',
           'excerpt',
         ],
-        normalizer: ({
-          data
-        }) => {
+        normalizer: ({ data }) => {
           const nodes = compose(
             map(node => {
               const content = flatValuesDeep(get('data.layout', node)).join(' ')
 
               return {
                 id: get('id', node),
-                path: get('uid', node) === 'home' ? '/' : `/${get('uid', node)}`,
+                path:
+                  get('uid', node) === 'home' ? '/' : `/${get('uid', node)}`,
                 title: getOr(get('data.title', node), 'data.title.text', node),
                 metaTitle: get('data.meta_title', node),
                 metaDescription: get('data.meta_description', node),
@@ -422,6 +419,14 @@ module.exports = {
       options: {
         repositoryName: process.env.PRISMIC_REPOSITORY_NAME,
         accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+        schemas: {
+          page: require('./src/schemas/page.json'),
+          news_post: require('./src/schemas/news_post.json'),
+          project: require('./src/schemas/project.json'),
+          project_subcategory: require('./src/schemas/project_subcategory.json'),
+          team_member: require('./src/schemas/team_member.json'),
+          navigation: require('./src/schemas/navigation.json'),
+        },
         linkResolver: () => doc => (doc.uid === 'home' ? '/' : `/${doc.uid}/`),
       },
     },

@@ -1,0 +1,298 @@
+{
+  "Main": {
+    "title": {
+      "type": "Text",
+      "config": {
+        "label": "Title",
+        "useAsTitle": true
+      }
+    },
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID"
+      }
+    },
+    "meta_title": {
+      "type": "Text",
+      "config": {
+        "label": "Meta Title"
+      }
+    },
+    "meta_description": {
+      "type": "Text",
+      "config": {
+        "label": "meta description"
+      }
+    }
+  },
+  "Bio": {
+    "name": {
+      "type": "Text",
+      "config": {
+        "label": "Name"
+      }
+    },
+    "affiliation": {
+      "type": "Text",
+      "config": {
+        "label": "affiliation"
+      }
+    },
+    "job_title": {
+      "type": "Text",
+      "config": {
+        "label": "Job Title"
+      }
+    },
+    "department1": {
+      "type": "Text",
+      "config": {
+        "label": "Department"
+      }
+    },
+    "photo": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Photo"
+      }
+    }
+  },
+  "Layout": {
+    "layout": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "choices": {
+          "hero": {
+            "type": "Slice",
+            "fieldset": "Hero",
+            "description": "header image with title",
+            "icon": "image",
+            "display": "list",
+            "non-repeat": {
+              "has_filter": {
+                "type": "Select",
+                "config": {
+                  "options": ["No", "Yes"],
+                  "default_value": "No",
+                  "label": "has filter?"
+                }
+              },
+              "title1": {
+                "type": "Text",
+                "config": {
+                  "label": "Title"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "cta_bar": {
+            "type": "Slice",
+            "fieldset": "CTA Bar",
+            "description": "simple call to action banner",
+            "icon": "crop_7_5",
+            "display": "list",
+            "non-repeat": {
+              "title2": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "title"
+                }
+              },
+              "button1": {
+                "type": "Link",
+                "config": {
+                  "label": "button"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "bio_summary": {
+            "type": "Slice",
+            "fieldset": "Bio Summary",
+            "description": "summary of team member profile",
+            "icon": "accessibility",
+            "display": "grid",
+            "non-repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "image"
+                }
+              },
+              "name1": {
+                "type": "Text",
+                "config": {
+                  "label": "name"
+                }
+              },
+              "position": {
+                "type": "Text",
+                "config": {
+                  "label": "position"
+                }
+              },
+              "quote": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, heading3, em, o-list-item",
+                  "label": "quote"
+                }
+              },
+              "quote_attribution": {
+                "type": "Text",
+                "config": {
+                  "label": "quote attribution"
+                }
+              },
+              "email": {
+                "type": "Text",
+                "config": {
+                  "label": "email"
+                }
+              }
+            },
+            "repeat": {
+              "social_media_type": {
+                "type": "Select",
+                "config": {
+                  "options": ["linkedin", "twitter"],
+                  "label": "social media type",
+                  "placeholder": "choose one"
+                }
+              },
+              "social_media_link": {
+                "type": "Link",
+                "config": {
+                  "label": "social media link"
+                }
+              }
+            }
+          },
+          "side_by_side_text": {
+            "type": "Slice",
+            "fieldset": "Side by Side Text",
+            "description": "Two column text layout",
+            "icon": "subject",
+            "display": "grid",
+            "non-repeat": {
+              "qualifications": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, heading2, heading3, strong, list-item",
+                  "label": "qualifications"
+                }
+              },
+              "experience": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, heading2, heading3, strong, list-item, o-list-item, o-list-item",
+                  "label": "experience"
+                }
+              }
+            },
+            "repeat": {
+              "award_name": {
+                "type": "Text",
+                "config": {
+                  "label": "recognition"
+                }
+              },
+              "award_detail": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "recognition detail"
+                }
+              }
+            }
+          },
+          "text_block": {
+            "type": "Slice",
+            "fieldset": "Text Block",
+            "description": "long paragraph text block",
+            "icon": "format_align_center",
+            "display": "list",
+            "non-repeat": {
+              "background_color": {
+                "type": "Select",
+                "config": {
+                  "options": ["White", "Grey"],
+                  "default_value": "White",
+                  "label": "Background Color"
+                }
+              },
+              "align_text": {
+                "type": "Select",
+                "config": {
+                  "options": ["Center", "Left"],
+                  "default_value": "Center",
+                  "label": "Align Text"
+                }
+              },
+              "content": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, heading1, heading2, heading3, heading4, heading5, strong, em, hyperlink, image, list-item, o-list-item, o-list-item",
+                  "label": "Content"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "featured_list": {
+            "type": "Slice",
+            "fieldset": "Featured List",
+            "description": "team member's featured projects",
+            "icon": "account_balance",
+            "display": "grid",
+            "non-repeat": {},
+            "repeat": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "select": "document",
+                  "customtypes": ["project"],
+                  "label": "project"
+                }
+              }
+            }
+          },
+          "cms_guide_text": {
+            "type": "Slice",
+            "fieldset": "CMS Guide Text",
+            "description": "used for cms guide only",
+            "icon": "dehaze",
+            "display": "list",
+            "non-repeat": {
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "label": "text"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
+      }
+    }
+  }
+}

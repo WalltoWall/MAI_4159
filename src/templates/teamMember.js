@@ -1,5 +1,5 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import MapToComponents from 'react-map-to-components'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
@@ -11,30 +11,38 @@ import { TeamMemberLayoutSideBySideText } from 'slices/TeamMemberLayoutSideBySid
 import { TeamMemberLayoutFeaturedList } from 'slices/TeamMemberLayoutFeaturedList'
 import { TeamMemberLayoutCtaBar } from 'slices/TeamMemberLayoutCtaBar'
 import { TeamMemberLayoutCmsGuideText } from 'slices/TeamMemberLayoutCmsGuideText'
+import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
 
-const TeamMemberTemplate = ({ data }) => (
-  <>
-    <Helmet title={get(data, 'prismicTeamMember.data.title.text')} />
-    <Layout>
-      <MapToComponents
-        getKey={x => x.id}
-        getType={x => x.__typename.replace(/^Prismic/, '')}
-        list={get(data, 'prismicTeamMember.data.layout') || []}
-        map={{
-          TeamMemberLayoutHero,
-          TeamMemberLayoutBioSummary,
-          TeamMemberLayoutTextBlock,
-          TeamMemberLayoutSideBySideText,
-          TeamMemberLayoutFeaturedList,
-          TeamMemberLayoutCtaBar,
-          TeamMemberLayoutCmsGuideText,
-        }}
-        page={get(data, 'prismicTeamMember')}
-        rootData={data}
-      />
-    </Layout>
-  </>
-)
+const IS_BROWSER = typeof window !== 'undefined'
+
+const TeamMemberTemplate = ({ data: staticData }) => {
+  const previewData = IS_BROWSER && get(window, '__PRISMIC_PREVIEW_DATA')
+
+  const data = mergePrismicPreviewData({ staticData, previewData })
+  return (
+    <>
+      <Helmet title={get(data, 'prismicTeamMember.data.title.text')} />
+      <Layout>
+        <MapToComponents
+          getKey={x => x.id}
+          getType={x => x.__typename.replace(/^Prismic/, '')}
+          list={get(data, 'prismicTeamMember.data.layout') || []}
+          map={{
+            TeamMemberLayoutHero,
+            TeamMemberLayoutBioSummary,
+            TeamMemberLayoutTextBlock,
+            TeamMemberLayoutSideBySideText,
+            TeamMemberLayoutFeaturedList,
+            TeamMemberLayoutCtaBar,
+            TeamMemberLayoutCmsGuideText,
+          }}
+          page={get(data, 'prismicTeamMember')}
+          rootData={data}
+        />
+      </Layout>
+    </>
+  )
+}
 
 export default TeamMemberTemplate
 
