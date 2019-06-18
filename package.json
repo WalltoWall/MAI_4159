@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "@walltowall/helpers": "^2.0.1",
-    "@walltowall/hooks": "^0.2.1",
     "babel-plugin-emotion": "^9.2.8",
     "boolean": "^0.1.3",
     "classnames": "^2.2.6",
