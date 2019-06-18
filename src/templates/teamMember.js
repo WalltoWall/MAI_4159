@@ -12,12 +12,12 @@ import { TeamMemberLayoutFeaturedList } from 'slices/TeamMemberLayoutFeaturedLis
 import { TeamMemberLayoutCtaBar } from 'slices/TeamMemberLayoutCtaBar'
 import { TeamMemberLayoutCmsGuideText } from 'slices/TeamMemberLayoutCmsGuideText'
 import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
-import { useDeletePreviewDataEffect, usePreviewData } from 'src/hooks.js'
+import { deletePreviewData, getPreviewData } from 'src/hooks.js'
 
 const TeamMemberTemplate = ({ data: staticData, location }) => {
-  const previewData = usePreviewData()
+  const previewData = getPreviewData()
   const data = mergePrismicPreviewData({ previewData, staticData })
-  useDeletePreviewDataEffect()
+  deletePreviewData()
 
   return (
     <>

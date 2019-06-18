@@ -13,12 +13,12 @@ import { NewsPostLayoutFullImage } from 'slices/NewsPostLayoutFullImage'
 import { NewsPostLayoutFullImageGif } from 'slices/NewsPostLayoutFullImageGif'
 import { NewsPostLayoutCmsGuideText } from 'slices/NewsPostLayoutCmsGuideText'
 import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
-import { useDeletePreviewDataEffect, usePreviewData } from 'src/hooks.js'
+import { deletePreviewData, getPreviewData } from 'src/hooks.js'
 
 const NewsPostTemplate = ({ data: staticData, location }) => {
-  const previewData = usePreviewData()
+  const previewData = getPreviewData()
   const data = mergePrismicPreviewData({ previewData, staticData })
-  useDeletePreviewDataEffect()
+  deletePreviewData()
 
   return (
     <div>

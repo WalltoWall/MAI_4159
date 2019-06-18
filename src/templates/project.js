@@ -16,12 +16,12 @@ import { ProjectLayoutCmsHero } from 'slices/ProjectLayoutCmsHero'
 import { ProjectLayoutCmsGuideText } from 'slices/ProjectLayoutCmsGuideText'
 import { ProjectLayoutSpacingModifier } from 'slices/ProjectLayoutSpacingModifier'
 import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
-import { useDeletePreviewDataEffect, usePreviewData } from 'src/hooks.js'
+import { deletePreviewData, getPreviewData } from 'src/hooks.js'
 
 const ProjectTemplate = ({ data: staticData, location }) => {
-  const previewData = usePreviewData()
+  const previewData = getPreviewData()
   const data = mergePrismicPreviewData({ previewData, staticData })
-  useDeletePreviewDataEffect()
+  deletePreviewData()
 
   return (
     <>

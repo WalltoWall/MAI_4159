@@ -6,10 +6,10 @@ import NewsPostTemplate from 'src/templates/newsPost'
 import ProjectTemplate from 'src/templates/project'
 import TeamMemberTemplate from 'src/templates/teamMember'
 
-import { usePreviewData } from 'src/hooks.js'
+import { getPreviewData } from 'src/hooks.js'
 
 export const UnpublishedPage = ({ location, ...props }) => {
-  const previewData = usePreviewData()
+  const previewData = getPreviewData()
   const customType = head(keysIn(previewData))
 
   switch (customType) {

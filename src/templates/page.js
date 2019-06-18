@@ -28,7 +28,7 @@ import { PageLayoutCmsGuideText } from 'slices/PageLayoutCmsGuideText'
 import { PageLayoutSideBySideImages } from 'slices/PageLayoutSideBySideImages'
 import { PageLayoutFullImage } from 'slices/PageLayoutFullImage'
 import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
-import { useDeletePreviewDataEffect, usePreviewData } from 'src/hooks.js'
+import { deletePreviewData, getPreviewData } from 'src/hooks.js'
 
 const PageTemplate = ({ data: staticData, location }) => {
   const renderSlices = data => (
@@ -79,9 +79,9 @@ const PageTemplate = ({ data: staticData, location }) => {
     </AuthWall>
   )
 
-  const previewData = usePreviewData()
+  const previewData = getPreviewData()
   const data = mergePrismicPreviewData({ previewData, staticData })
-  useDeletePreviewDataEffect()
+  deletePreviewData()
 
   return (
     <>
