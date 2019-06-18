@@ -6,22 +6,48 @@ import NewsPostTemplate from 'src/templates/newsPost'
 import ProjectTemplate from 'src/templates/project'
 import TeamMemberTemplate from 'src/templates/teamMember'
 
+import { usePreviewData } from 'src/hooks.js'
+
 export const UnpublishedPage = ({ location, ...props }) => {
-  const previewData = window.__PRISMIC_PREVIEW_DATA
+  const previewData = usePreviewData()
   const customType = head(keysIn(previewData))
 
   switch (customType) {
     case 'prismicProject':
-      return <ProjectTemplate location={location} {...props} />
+      return (
+        <ProjectTemplate
+          data={previewData ? null : {}}
+          location={location}
+          {...props}
+        />
+      )
 
     case 'prismicNewsPost':
-      return <NewsPostTemplate location={location} {...props} />
+      return (
+        <NewsPostTemplate
+          data={previewData ? null : {}}
+          location={location}
+          {...props}
+        />
+      )
 
     case 'prismicTeamMember':
-      return <TeamMemberTemplate location={location} {...props} />
+      return (
+        <TeamMemberTemplate
+          data={previewData ? null : {}}
+          location={location}
+          {...props}
+        />
+      )
 
     default:
-      return <PageTemplate location={location} {...props} />
+      return (
+        <PageTemplate
+          data={previewData ? null : {}}
+          location={location}
+          {...props}
+        />
+      )
   }
 }
 
