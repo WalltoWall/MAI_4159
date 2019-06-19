@@ -28,6 +28,7 @@ import { PageLayoutCmsGuideText } from 'slices/PageLayoutCmsGuideText'
 import { PageLayoutSideBySideImages } from 'slices/PageLayoutSideBySideImages'
 import { PageLayoutFullImage } from 'slices/PageLayoutFullImage'
 import { PageLayoutSideBySideTextImage } from 'slices/PageLayoutSideBySideTextImage'
+import { PageLayoutSpacingModifier } from 'slices/PageLayoutSpacingModifier'
 import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
 import { deletePreviewData, getPreviewData } from 'src/hooks.js'
 
@@ -59,6 +60,7 @@ const PageTemplate = ({ data: staticData, location }) => {
         PageLayoutAnchorsMenu,
         PageLayoutCmsGuideText,
         PageLayoutSideBySideTextImage,
+        PageLayoutSpacingModifier,
       }}
       page={get(data, 'prismicPage')}
       rootData={data}
@@ -146,5 +148,6 @@ export const query = graphql`
     ...PageLayoutFullImage
     ...PageLayoutSideBySideImages
     ...PageLayoutSideBySideTextImage
+    ...PageLayoutSpacingModifier
   }
 `
