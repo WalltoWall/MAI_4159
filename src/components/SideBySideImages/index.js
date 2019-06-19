@@ -28,16 +28,21 @@ const Image = ({ item, data }) => {
   )
 }
 
-export const SideBySideImages = ({ data }) => (
-  <Container>
-    <Images>
-      {get(data, 'items').map(item => (
-        <Image item={item} data={data} />
-      ))}
-    </Images>
+export const SideBySideImages = ({ data }) => {
+  const caption = get(data, 'primary.caption.text')
 
-    <CaptionContainer>
-      <Caption>{get(data, 'primary.caption.text')}</Caption>
-    </CaptionContainer>
-  </Container>
-)
+  return (
+    <Container>
+      <Images>
+        {get(data, 'items').map(item => (
+          <Image item={item} data={data} />
+        ))}
+      </Images>
+      {caption && (
+        <CaptionContainer>
+          <Caption>{get(data, 'primary.caption.text')}</Caption>
+        </CaptionContainer>
+      )}
+    </Container>
+  )
+}
