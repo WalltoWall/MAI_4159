@@ -38,11 +38,15 @@ const renderItem = item => {
 }
 
 export const SideBySideTextImage = ({ data }) => {
-  const { items } = data
+  const {
+    items,
+    primary: { background_color },
+  } = data
+
   const itemsSize = size(items)
 
   return (
-    <Container>
+    <Container bg={background_color}>
       {itemsSize === 1 ? (
         <Content>{renderItem(head(items))}</Content>
       ) : (

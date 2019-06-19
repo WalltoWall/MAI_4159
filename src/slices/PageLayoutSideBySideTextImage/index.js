@@ -12,6 +12,9 @@ export const query = graphql`
         layout {
           ... on PrismicPageLayoutSideBySideTextImage {
             id
+            primary {
+              background_color
+            }
             items {
               image_position
               image {

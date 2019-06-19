@@ -3,11 +3,11 @@ import t from 'theme'
 import { HTMLContent } from 'components/HTMLContent'
 
 export const Container = styled.div`
-  background-color: white;
+  background-color: ${p => (p.bg === 'white' ? t.c.white : t.c.lightgrey1)};
   padding: 3rem 0;
   margin: 0 auto;
   ${t.mq.l} {
-    padding: 5rem 0;
+    padding: 4rem 0;
   }
 `
 export const Content = styled.div`
