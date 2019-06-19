@@ -12,6 +12,7 @@ import { NewsPostLayoutSideBySideImages } from 'slices/NewsPostLayoutSideBySideI
 import { NewsPostLayoutFullImage } from 'slices/NewsPostLayoutFullImage'
 import { NewsPostLayoutFullImageGif } from 'slices/NewsPostLayoutFullImageGif'
 import { NewsPostLayoutCmsGuideText } from 'slices/NewsPostLayoutCmsGuideText'
+import { NewsPostLayoutSideBySideTextImage } from 'slices/NewsPostLayoutSideBySideTextImage'
 import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
 import { deletePreviewData, getPreviewData } from 'src/hooks.js'
 
@@ -36,6 +37,7 @@ const NewsPostTemplate = ({ data: staticData, location }) => {
             NewsPostLayoutFullImage,
             NewsPostLayoutCmsGuideText,
             NewsPostLayoutFullImageGif,
+            NewsPostLayoutSideBySideTextImage,
           }}
           page={get(data, 'prismicNewsPost')}
           rootData={data}
@@ -69,5 +71,6 @@ export const query = graphql`
     ...NewsPostLayoutFullImage
     ...NewsPostLayoutCmsGuideText
     ...NewsPostLayoutFullImageGif
+    ...NewsPostLayoutSideBySideTextImage
   }
 `

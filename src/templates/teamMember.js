@@ -11,6 +11,7 @@ import { TeamMemberLayoutSideBySideText } from 'slices/TeamMemberLayoutSideBySid
 import { TeamMemberLayoutFeaturedList } from 'slices/TeamMemberLayoutFeaturedList'
 import { TeamMemberLayoutCtaBar } from 'slices/TeamMemberLayoutCtaBar'
 import { TeamMemberLayoutCmsGuideText } from 'slices/TeamMemberLayoutCmsGuideText'
+import { TeamMemberLayoutSideBySideTextImage } from 'slices/TeamMemberLayoutSideBySideTextImage'
 import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
 import { deletePreviewData, getPreviewData } from 'src/hooks.js'
 
@@ -35,6 +36,7 @@ const TeamMemberTemplate = ({ data: staticData, location }) => {
             TeamMemberLayoutFeaturedList,
             TeamMemberLayoutCtaBar,
             TeamMemberLayoutCmsGuideText,
+            TeamMemberLayoutSideBySideTextImage,
           }}
           page={get(data, 'prismicTeamMember')}
           rootData={data}
@@ -64,5 +66,6 @@ export const query = graphql`
     ...TeamMemberLayoutFeaturedList
     ...TeamMemberLayoutCtaBar
     ...TeamMemberLayoutCmsGuideText
+    ...TeamMemberLayoutSideBySideTextImage
   }
 `

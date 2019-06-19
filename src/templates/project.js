@@ -15,6 +15,7 @@ import { ProjectLayoutQuoteBlock } from 'slices/ProjectLayoutQuoteBlock'
 import { ProjectLayoutCmsHero } from 'slices/ProjectLayoutCmsHero'
 import { ProjectLayoutCmsGuideText } from 'slices/ProjectLayoutCmsGuideText'
 import { ProjectLayoutSpacingModifier } from 'slices/ProjectLayoutSpacingModifier'
+import { ProjectLayoutSideBySideTextImage } from 'slices/ProjectLayoutSideBySideTextImage'
 import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
 import { deletePreviewData, getPreviewData } from 'src/hooks.js'
 
@@ -54,6 +55,7 @@ const ProjectTemplate = ({ data: staticData, location }) => {
             ProjectLayoutCmsHero,
             ProjectLayoutCmsGuideText,
             ProjectLayoutSpacingModifier,
+            ProjectLayoutSideBySideTextImage,
           }}
           page={get(data, 'prismicProject')}
           rootData={data}
@@ -91,5 +93,6 @@ export const query = graphql`
     ...ProjectLayoutCmsHero
     ...ProjectLayoutCmsGuideText
     ...ProjectLayoutSpacingModifier
+    ...ProjectLayoutSideBySideTextImage
   }
 `

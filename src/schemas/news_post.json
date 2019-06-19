@@ -229,6 +229,46 @@
               }
             },
             "repeat": {}
+          },
+          "side_by_side_text_image": {
+            "type": "Slice",
+            "fieldset": "Side By Side Text Image",
+            "description": "Side by Side Text and Image",
+            "icon": "burst_mode",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "image"
+                }
+              },
+              "image_position": {
+                "type": "Select",
+                "config": {
+                  "options": ["Left", "Right"],
+                  "default_value": "Left",
+                  "label": "Image Position"
+                }
+              },
+              "title_text": {
+                "type": "Text",
+                "config": {
+                  "label": "title text"
+                }
+              },
+              "body_text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, heading2, heading3, heading4, strong, em",
+                  "allowTargetBlank": true,
+                  "label": "body text"
+                }
+              }
+            }
           }
         }
       }
