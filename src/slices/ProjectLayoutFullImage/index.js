@@ -8,6 +8,7 @@ import { getUnlessEmpty } from 'helpers'
 export const ProjectLayoutFullImage = ({ data }) => {
   const imageURL = get(data, 'primary.image.url')
   const imageFluid = get(data, 'primary.image.localFile.childImageSharp.fluid')
+  const caption = get(data, 'primary.caption.text')
 
   return (
     <Container>
@@ -22,7 +23,7 @@ export const ProjectLayoutFullImage = ({ data }) => {
             />
           </ImageContainer>
         )}
-        <p>{get(data, 'primary.caption.text')}</p>
+        {caption && <p>{caption}</p>}
       </Content>
     </Container>
   )

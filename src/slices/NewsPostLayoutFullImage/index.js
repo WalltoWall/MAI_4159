@@ -12,7 +12,7 @@ import { getUnlessEmpty } from 'helpers'
 export const NewsPostLayoutFullImage = ({ data }) => {
   const imageFluid = get(data, 'primary.image.localFile.childImageSharp.fluid')
   const imageURL = get(data, 'primary.image.url')
-
+  const caption = get(data, 'primary.caption.text')
   return (
     <Container>
       <Content>
@@ -26,7 +26,7 @@ export const NewsPostLayoutFullImage = ({ data }) => {
             />
           </ImageContainer>
         )}
-        <p>{get(data, 'primary.caption.text')}</p>
+        {caption && <p>{caption}</p>}
       </Content>
     </Container>
   )
