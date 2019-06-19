@@ -18,7 +18,7 @@ const renderItem = item => {
   const imageFluid = get(item, 'image.localFile.childImageSharp.fluid')
 
   return (
-    <ItemContainer imagePosition={image_position}>
+    <ItemContainer key={imageURL} imagePosition={image_position}>
       <TextContent imagePosition={image_position}>
         <Title>{title_text}</Title>
         <StyledHTMLContent html={body_text.html} />
