@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { get } from 'lodash'
 
 const IS_BROWSER = typeof window !== 'undefined'
