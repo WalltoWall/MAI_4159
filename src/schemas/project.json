@@ -359,7 +359,16 @@
             "description": "Side by Side Text and Image",
             "icon": "burst_mode",
             "display": "list",
-            "non-repeat": {},
+            "non-repeat": {
+              "background_color": {
+                "type": "Select",
+                "config": {
+                  "options": ["white", "lightgrey"],
+                  "default_value": "white",
+                  "label": "background color"
+                }
+              }
+            },
             "repeat": {
               "image": {
                 "type": "Image",

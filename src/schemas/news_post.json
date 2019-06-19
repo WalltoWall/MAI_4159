@@ -236,7 +236,16 @@
             "description": "Side by Side Text and Image",
             "icon": "burst_mode",
             "display": "list",
-            "non-repeat": {},
+            "non-repeat": {
+              "background_color": {
+                "type": "Select",
+                "config": {
+                  "options": ["white", "lightgrey"],
+                  "default_value": "white",
+                  "label": "background color"
+                }
+              }
+            },
             "repeat": {
               "image": {
                 "type": "Image",
@@ -269,6 +278,24 @@
                 }
               }
             }
+          },
+          "spacing_modifier": {
+            "type": "Slice",
+            "fieldset": "Spacing Modifier",
+            "description": "slice to resolve spacing issue betwee slices",
+            "icon": "select_all",
+            "display": "list",
+            "non-repeat": {
+              "space": {
+                "type": "Select",
+                "config": {
+                  "options": ["PullsTheNextSliceContentUp"],
+                  "default_value": "PullsTheNextSliceContentUp",
+                  "label": "space"
+                }
+              }
+            },
+            "repeat": {}
           }
         }
       }
