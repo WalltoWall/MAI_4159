@@ -19,7 +19,6 @@ export const ProjectLayoutFullImage = ({ data }) => {
               alt={getUnlessEmpty('primary.image.alt', data)}
               src={imageURL}
               fluid={imageFluid}
-              fadeIn={false}
             />
           </ImageContainer>
         )}

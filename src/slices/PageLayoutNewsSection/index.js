@@ -29,7 +29,7 @@ const Image = ({ alt, src, img }) => {
   const imageFluid = img
 
   return imageURL || imageFluid ? (
-    <ImageBase fluid={imageFluid} src={imageURL} alt={alt} fadeIn={false} />
+    <ImageBase fluid={imageFluid} src={imageURL} alt={alt} />
   ) : (
     <div />
   )
@@ -104,7 +104,6 @@ class GridList extends React.Component {
                       'node.data.article_thumb_image.alt',
                       news_post
                     )}
-                    fadeIn={false}
                   />
                 </ImageContainer>
                 <ContentContainer>

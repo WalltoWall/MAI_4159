@@ -21,7 +21,6 @@ const Image = ({ item, data }) => {
           alt={getUnlessEmpty('primary.image1.alt', data)}
           src={imageURL}
           fluid={imageFluid}
-          fadeIn={false}
         />
       </ImageContainer>
     )

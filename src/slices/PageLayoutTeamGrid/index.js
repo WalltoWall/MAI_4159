@@ -75,7 +75,6 @@ const renderGrid = (data, currentFilter) => {
             alt={getUnlessEmpty('photo.alt', data)}
             fluid={imageFluid}
             src={imageURL}
-            fadeIn={false}
           />
         </ImageContainer>
       )}

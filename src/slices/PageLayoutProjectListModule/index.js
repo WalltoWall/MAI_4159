@@ -48,7 +48,6 @@ const renderGrid = (data, item, currentFilter) => {
             alt={getUnlessEmpty('data.project_thumb_image.alt', data)}
             fluid={imageFluid}
             src={imageURL}
-            fadeIn={false}
           />
         </ImageContainer>
       )}

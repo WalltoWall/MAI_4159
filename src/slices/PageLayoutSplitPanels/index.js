@@ -21,13 +21,7 @@ export const PageLayoutSplitPanels = ({ data }) => {
     const imageFluid = img
     return (
       (imageURL || imageFluid) && (
-        <ImageBase
-          key={key}
-          fluid={imageFluid}
-          src={imageURL}
-          alt={alt}
-          fadeIn={false}
-        />
+        <ImageBase key={key} fluid={imageFluid} src={imageURL} alt={alt} />
       )
     )
   }
@@ -42,7 +36,6 @@ export const PageLayoutSplitPanels = ({ data }) => {
               img={get(item, 'image.localFile.childImageSharp.fluid')}
               src={get(item, 'image.url')}
               alt={getUnlessEmpty('image.alt', item)}
-              fadeIn={false}
             />
           </ImageContainer>
           <DescriptionWrapper>

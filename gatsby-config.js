@@ -78,7 +78,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sharp',
       options: {
-        base64Width: 50,
+        base64Width: 100,
       },
     },
     {

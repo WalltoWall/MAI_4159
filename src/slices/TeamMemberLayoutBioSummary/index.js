@@ -47,7 +47,6 @@ export const TeamMemberLayoutBioSummary = ({ data }) => {
               alt={get(data, 'primary.image.alt')}
               src={imageURL}
               fluid={imageFluid}
-              fadeIn={false}
             />
           </ImageContainer>
         )}

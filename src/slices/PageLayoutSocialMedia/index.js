@@ -11,7 +11,7 @@ const Image = ({ alt, src, img }) => {
 
   return (
     (imageFluid || imageURL) && (
-      <ImageBase alt={alt} src={imageURL} fluid={imageFluid} fadeIn={false} />
+      <ImageBase alt={alt} src={imageURL} fluid={imageFluid} />
     )
   )
 }

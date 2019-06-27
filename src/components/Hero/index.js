@@ -23,7 +23,6 @@ export const Hero = ({ data, whitebg, subpage }) => {
           alt={getUnlessEmpty('primary.image.alt', data)}
           src={imageURL}
           fluid={imageFluid}
-          fadeIn={false}
         />
       ) : (
         <PlaceholderImg

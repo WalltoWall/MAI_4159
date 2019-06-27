@@ -38,7 +38,7 @@ const renderNewsGrid = ({ alt, key, src, img, title, url, content, date }) => {
     <StyledLink to={url} key={key}>
       {(imageURL || imageFluid) && (
         <ImageContainer>
-          <Image src={imageURL} fluid={imageFluid} alt={alt} fadeIn={false} />
+          <Image src={imageURL} fluid={imageFluid} alt={alt} />
         </ImageContainer>
       )}
       <ContentContainer>

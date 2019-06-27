@@ -44,7 +44,6 @@ export const PageLayoutServices = ({ data }) => {
             alt={getUnlessEmpty('primary.left_image.alt', data)}
             fluid={imageFluidLeft}
             src={imageURLLeft}
-            fadeIn={false}
           />
         </ImageWrapper>
         <ImageWrapper>
@@ -52,7 +51,6 @@ export const PageLayoutServices = ({ data }) => {
             alt={getUnlessEmpty('primary.right_image.alt', data)}
             fluid={imageFluidRight}
             src={imageURLRight}
-            fadeIn={false}
           />
         </ImageWrapper>
       </ImageContainer>

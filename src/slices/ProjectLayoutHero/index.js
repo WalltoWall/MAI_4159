@@ -27,7 +27,7 @@ const Image = ({ alt, src, img }) => {
   const imageFluid = img
   return (
     (imageURL || imageFluid) && (
-      <ImageBase alt={alt} src={imageURL} fluid={imageFluid} fadeIn={false} />
+      <ImageBase alt={alt} src={imageURL} fluid={imageFluid} />
     )
   )
 }
@@ -99,7 +99,6 @@ export class ProjectLayoutHero extends React.Component {
                     alt={getUnlessEmpty('image.alt', item)}
                     src={get(item, 'image.url')}
                     img={get(item, 'image.localFile.childImageSharp.fluid')}
-                    fadeIn={false}
                   />
                 </ImageContainer>
               ))}
@@ -116,7 +115,6 @@ export class ProjectLayoutHero extends React.Component {
                   data,
                   'items[0].image.localFile.childImageSharp.fluid'
                 )}
-                fadeIn={false}
               />
             </ImageContainer>
           </CarouselContainer>

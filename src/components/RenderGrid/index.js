@@ -15,7 +15,7 @@ export const RenderGrid = ({ alt, key, img, title, src, url, largeImages }) => {
     <StyledLink to={url} key={key} largeImages={largeImages}>
       {(imageURL || imageFluid) && (
         <ImageContainer>
-          <Image src={imageURL} fluid={imageFluid} alt={alt} fadeIn={false} />
+          <Image src={imageURL} fluid={imageFluid} alt={alt} />
         </ImageContainer>
       )}
       <OverlayContainer largeImages={largeImages} longText={text.length >= 20}>

@@ -22,7 +22,6 @@ export const NewsPostLayoutFullImage = ({ data }) => {
               alt={getUnlessEmpty('primary.image.alt', data)}
               fluid={imageFluid}
               src={imageURL}
-              fadeIn={false}
             />
           </ImageContainer>
         )}

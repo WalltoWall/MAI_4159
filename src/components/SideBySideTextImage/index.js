@@ -29,7 +29,6 @@ const renderItem = item => {
             alt={get(item, 'image.alt', '')}
             src={imageURL}
             fluid={imageFluid}
-            fadeIn={false}
           />
         </ImageContainer>
       )}
