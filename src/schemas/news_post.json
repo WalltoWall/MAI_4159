@@ -285,16 +285,7 @@
             "description": "slice to resolve spacing issue betwee slices",
             "icon": "select_all",
             "display": "list",
-            "non-repeat": {
-              "space": {
-                "type": "Select",
-                "config": {
-                  "options": ["PullsTheNextSliceContentUp"],
-                  "default_value": "PullsTheNextSliceContentUp",
-                  "label": "space"
-                }
-              }
-            },
+            "non-repeat": {},
             "repeat": {}
           }
         }

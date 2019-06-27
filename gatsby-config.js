@@ -188,14 +188,7 @@ module.exports = {
       options: {
         repositoryName: process.env.PRISMIC_REPOSITORY_NAME,
         accessToken: process.env.PRISMIC_ACCESS_TOKEN,
-        schemas: {
-          page: require('./src/schemas/page.json'),
-          news_post: require('./src/schemas/news_post.json'),
-          project: require('./src/schemas/project.json'),
-          project_subcategory: require('./src/schemas/project_subcategory.json'),
-          team_member: require('./src/schemas/team_member.json'),
-          navigation: require('./src/schemas/navigation.json'),
-        },
+        schemas: require('./src/schemas'),
         linkResolver: () => doc => (doc.uid === 'home' ? '/' : `/${doc.uid}/`),
       },
     },

@@ -341,16 +341,7 @@
             "description": "slice to resolve spacing issue betwee slices",
             "icon": "select_all",
             "display": "list",
-            "non-repeat": {
-              "space": {
-                "type": "Select",
-                "config": {
-                  "options": ["UseForStackedSidebySideImage"],
-                  "default_value": "UseForStackedSidebySideImage",
-                  "label": "space"
-                }
-              }
-            },
+            "non-repeat": {},
             "repeat": {}
           },
           "side_by_side_text_image": {
