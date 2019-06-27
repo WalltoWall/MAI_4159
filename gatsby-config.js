@@ -75,7 +75,12 @@ module.exports = {
     process.env.NODE_ENV === 'development' && 'gatsby-plugin-polyfill-io',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-svgr',
-    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        base64Width: 50,
+      },
+    },
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {
