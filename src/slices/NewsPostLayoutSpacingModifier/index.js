@@ -13,9 +13,6 @@ export const query = graphql`
         layout {
           ... on PrismicNewsPostLayoutSpacingModifier {
             id
-            primary {
-              space
-            }
           }
         }
       }

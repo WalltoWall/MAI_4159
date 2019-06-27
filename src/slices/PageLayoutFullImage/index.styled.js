@@ -7,11 +7,14 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: white;
+  padding: 2rem 0;
+  ${t.mq.l} {
+    padding: 4rem 0;
+  }
 `
 export const Content = styled.div`
   text-align: center;
   width: ${t.w.mobile};
-  padding: ${t.s(1)} 0;
   p {
     font-family: ${t.ff.serif};
     color: ${t.c.darkgrey2};

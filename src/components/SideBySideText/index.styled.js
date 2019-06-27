@@ -4,10 +4,10 @@ import t from 'theme'
 
 export const Container = styled.div`
   background-color: ${t.c.lightgrey1};
-  padding: 3rem 0;
+  padding: 2rem 0;
   margin: 0 auto;
   ${t.mq.l} {
-    padding: 5rem 0;
+    padding: 4rem 0;
   }
 `
 

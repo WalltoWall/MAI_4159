@@ -11,7 +11,7 @@ export const ProjectLayoutFullImage = ({ data }) => {
   const caption = get(data, 'primary.caption.text')
 
   return (
-    <Container>
+    <Container normalizeMargin={get(data, 'primary.normalize_margin')}>
       <Content normalizeMargin={get(data, 'primary.normalize_margin')}>
         {(imageURL || imageFluid) && (
           <ImageContainer>
