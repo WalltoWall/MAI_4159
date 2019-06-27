@@ -1,0 +1,75 @@
+query {
+  allPrismicProject(filter: { tags: { ne: "CMS Guide" } }) {
+    edges {
+      node {
+        id
+        uid
+        data {
+          title {
+            text
+          }
+          project_thumb_image {
+            url
+          }
+          meta_title1
+          meta_description1
+          layout {
+            ... on PrismicProjectLayoutHero {
+              primary {
+                project_title {
+                  text
+                }
+              }
+            }
+            ... on PrismicProjectLayoutSlice {
+              primary {
+                text {
+                  text
+                }
+              }
+            }
+            ... on PrismicProjectLayoutFullImage {
+              primary {
+                caption {
+                  text
+                }
+              }
+            }
+            ... on PrismicProjectLayoutSideBySideText {
+              primary {
+                left_text {
+                  text
+                }
+                right_text {
+                  text
+                }
+              }
+            }
+            ... on PrismicProjectLayoutQuoteBlock {
+              primary {
+                quote {
+                  text
+                }
+                author {
+                  text
+                }
+              }
+            }
+            ... on PrismicProjectLayoutSideBySideImages {
+              primary {
+                caption {
+                  text
+                }
+              }
+            }
+            ... on PrismicProjectLayoutCallToAction {
+              primary {
+                button_text
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
