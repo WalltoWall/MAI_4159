@@ -21,6 +21,10 @@ export const StyledLink = styled(Link)`
     height: ${t.s(9)};
   }
 
+  ${t.mq.xxx} {
+    height: ${t.s(9.5)};
+  }
+
   ${t.mq.l} {
     width: 25%;
   }

@@ -4,10 +4,7 @@ import t from 'theme'
 export const Container = styled.div`
   width: 100%;
   background-color: ${t.c.white};
-  padding: ${t.s(4)} 1rem 0 1rem;
-  ${t.mq.l} {
-    padding: ${t.s(5)} 0 0 0;
-  }
+  padding: ${t.s(4)} 0;
 `
 
 export const PostDate = styled.div`

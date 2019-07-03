@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
-import { Image } from 'components/Image'
+import { Image as ImageBase } from 'components/Image'
 import { getUnlessEmpty } from 'helpers'
 import {
   Container,
@@ -15,36 +15,48 @@ import {
   Overlay,
 } from './index.styled'
 
-export const PageLayoutSplitPanels = ({ data }) => (
-  <Container>
-    {get(data, 'items', []).map(item => (
-      <SplitPanelWrapper>
-        <ImageContainer>
-          <Image
-            key={get(item, 'title1')}
-            fluid={get(item, 'image.localFile.childImageSharp.fluid')}
-            alt={getUnlessEmpty('image.alt', item)}
-            fadeIn={false}
-          />
-        </ImageContainer>
-        <DescriptionWrapper>
-          <Content>
-            <StyledHeadline>{get(item, 'title1.text')}</StyledHeadline>
-            <Description
-              dangerouslySetInnerHTML={{
-                __html: get(item, 'description.html'),
-              }}
+export const PageLayoutSplitPanels = ({ data }) => {
+  const Image = ({ key, alt, src, img }) => {
+    const imageURL = src
+    const imageFluid = img
+    return (
+      (imageURL || imageFluid) && (
+        <ImageBase key={key} fluid={imageFluid} src={imageURL} alt={alt} />
+      )
+    )
+  }
+
+  return (
+    <Container>
+      {get(data, 'items', []).map(item => (
+        <SplitPanelWrapper>
+          <ImageContainer>
+            <Image
+              key={get(item, 'title1')}
+              img={get(item, 'image.localFile.childImageSharp.fluid')}
+              src={get(item, 'image.url')}
+              alt={getUnlessEmpty('image.alt', item)}
             />
-            <ServicesButton to={get(item, 'link.url')}>
-              learn more
-            </ServicesButton>
-            <Overlay />
-          </Content>
-        </DescriptionWrapper>
-      </SplitPanelWrapper>
-    ))}
-  </Container>
-)
+          </ImageContainer>
+          <DescriptionWrapper>
+            <Content>
+              <StyledHeadline>{get(item, 'title1.text')}</StyledHeadline>
+              <Description
+                dangerouslySetInnerHTML={{
+                  __html: get(item, 'description.html'),
+                }}
+              />
+              <ServicesButton to={get(item, 'link.url')}>
+                learn more
+              </ServicesButton>
+              <Overlay />
+            </Content>
+          </DescriptionWrapper>
+        </SplitPanelWrapper>
+      ))}
+    </Container>
+  )
+}
 
 export const query = graphql`
   fragment PageLayoutSplitPanels on Query {
@@ -59,7 +71,7 @@ export const query = graphql`
                 localFile {
                   childImageSharp {
                     fluid(maxWidth: 1500, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp_noBase64
+                      ...GatsbyImageSharpFluid_withWebp
                     }
                   }
                 }

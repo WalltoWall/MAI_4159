@@ -30,14 +30,17 @@ const truncateStr = str => {
   }
 }
 
-const renderNewsGrid = ({ alt, key, img, title, url, content, date }) => {
+const renderNewsGrid = ({ alt, key, src, img, title, url, content, date }) => {
   const formattedDate = format(new Date(date), 'MMMM D, YYYY')
-
+  const imageURL = src
+  const imageFluid = img
   return (
     <StyledLink to={url} key={key}>
-      <ImageContainer>
-        <Image fluid={img} alt={alt} fadeIn={false} />
-      </ImageContainer>
+      {(imageURL || imageFluid) && (
+        <ImageContainer>
+          <Image src={imageURL} fluid={imageFluid} alt={alt} />
+        </ImageContainer>
+      )}
       <ContentContainer>
         <PostDate>{formattedDate}</PostDate>
         <PostTitle>{title}</PostTitle>
@@ -61,37 +64,38 @@ export const PageLayoutFeaturedNews = ({ data }) => {
         <Content>
           {featured_news_post.map(featured_news_post =>
             renderNewsGrid({
-              key: get(
-                featured_news_post,
-                'featured_news_post.document[0].uid'
-              ),
+              key: get(featured_news_post, 'featured_news_post.document.uid'),
               alt: getUnlessEmpty(
                 get(
                   featured_news_post,
-                  'featured_news_post.document[0].data.article_thumb_image.alt'
+                  'featured_news_post.document.data.article_thumb_image.alt'
                 )
               ),
               img: get(
                 featured_news_post,
-                'featured_news_post.document[0].data.article_thumb_image.localFile.childImageSharp.fluid'
+                'featured_news_post.document.data.article_thumb_image.localFile.childImageSharp.fluid'
+              ),
+              src: get(
+                featured_news_post,
+                'featured_news_post.document.data.article_thumb_image.url'
               ),
               date: get(
                 featured_news_post,
-                'featured_news_post.document[0].data.publish_date'
+                'featured_news_post.document.data.publish_date'
               ),
               title: get(
                 featured_news_post,
-                'featured_news_post.document[0].data.article_title1.text'
+                'featured_news_post.document.data.article_title1.text'
               ),
               url: get(featured_news_post, 'featured_news_post.url'),
               content: get(
                 featured_news_post,
-                'featured_news_post.document[0].data.article_content.text'
+                'featured_news_post.document.data.article_content.text'
               )
                 ? truncateStr(
                     get(
                       featured_news_post,
-                      'featured_news_post.document[0].data.article_content.text'
+                      'featured_news_post.document.data.article_content.text'
                     )
                   )
                 : '',
@@ -113,26 +117,28 @@ export const query = graphql`
             items {
               featured_news_post {
                 document {
-                  data {
-                    publish_date
-                    article_title1 {
-                      text
-                    }
-                    article_content {
-                      text
-                    }
-                    article_thumb_image {
-                      alt
-                      localFile {
-                        childImageSharp {
-                          fluid(maxWidth: 800, quality: 90) {
-                            ...GatsbyImageSharpFluid_withWebp_noBase64
+                  ... on PrismicNewsPost {
+                    uid
+                    data {
+                      publish_date
+                      article_title1 {
+                        text
+                      }
+                      article_content {
+                        text
+                      }
+                      article_thumb_image {
+                        alt
+                        localFile {
+                          childImageSharp {
+                            fluid(maxWidth: 800, quality: 90) {
+                              ...GatsbyImageSharpFluid_withWebp
+                            }
                           }
                         }
                       }
                     }
                   }
-                  uid
                 }
                 url
               }

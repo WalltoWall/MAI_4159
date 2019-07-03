@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Container } from './index.styled'
+import { SpacingModifier } from 'src/components/SpacingModifier'
 
-export const ProjectLayoutSpacingModifier = ({ data }) => {
-  return <Container />
+export const ProjectLayoutSpacingModifier = () => {
+  return <SpacingModifier />
 }
 
 export const query = graphql`
@@ -13,9 +13,6 @@ export const query = graphql`
         layout {
           ... on PrismicProjectLayoutSpacingModifier {
             id
-            primary {
-              space
-            }
           }
         }
       }

@@ -10,21 +10,38 @@ import {
 } from './index.styled'
 import { getUnlessEmpty } from 'helpers'
 
-export const SideBySideImages = ({ data }) => (
-  <Container>
-    <Images>
-      {get(data, 'items').map(item => (
-        <ImageContainer key={getUnlessEmpty('primary.image1.alt', data)}>
-          <StyledImage
-            alt={getUnlessEmpty('primary.image1.alt', data)}
-            fluid={get(item, 'image1.localFile.childImageSharp.fluid')}
-            fadeIn={false}
-          />
-        </ImageContainer>
-      ))}
-    </Images>
-    <CaptionContainer>
-      <Caption>{get(data, 'primary.caption.text')}</Caption>
-    </CaptionContainer>
-  </Container>
-)
+const Image = ({ item, data }) => {
+  const imageURL = get(item, 'image1.url')
+  const imageFluid = get(item, 'image1.localFile.childImageSharp.fluid')
+
+  return (
+    (imageURL || imageFluid) && (
+      <ImageContainer key={getUnlessEmpty('primary.image1.alt', data)}>
+        <StyledImage
+          alt={getUnlessEmpty('primary.image1.alt', data)}
+          src={imageURL}
+          fluid={imageFluid}
+        />
+      </ImageContainer>
+    )
+  )
+}
+
+export const SideBySideImages = ({ data }) => {
+  const caption = get(data, 'primary.caption.text')
+
+  return (
+    <Container>
+      <Images>
+        {get(data, 'items').map(item => (
+          <Image item={item} data={data} />
+        ))}
+      </Images>
+      {caption && (
+        <CaptionContainer>
+          <Caption>{get(data, 'primary.caption.text')}</Caption>
+        </CaptionContainer>
+      )}
+    </Container>
+  )
+}

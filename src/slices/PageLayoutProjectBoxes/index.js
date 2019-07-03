@@ -16,16 +16,17 @@ export const PageLayoutProjectBoxes = ({ data }) => {
       <Projects>
         {projects.map(project =>
           RenderGrid({
-            key: get(project, 'projects.document[0].uid'),
+            key: get(project, 'projects.document.uid'),
             alt: getUnlessEmpty(
-              'projects.document[0].data.project_thumb_image.alt',
+              'projects.document.data.project_thumb_image.alt',
               project
             ),
             img: get(
               project,
-              'projects.document[0].data.project_thumb_image.localFile.childImageSharp.fluid'
+              'projects.document.data.project_thumb_image.localFile.childImageSharp.fluid'
             ),
-            title: get(project, 'projects.document[0].data.title.text'),
+            src: get(project, 'projects.document.data.project_thumb_image.url'),
+            title: get(project, 'projects.document.data.title.text'),
             url: get(project, 'projects.url'),
             largeImages: true,
           })
@@ -50,22 +51,24 @@ export const query = graphql`
             items {
               projects {
                 document {
-                  data {
-                    title {
-                      text
-                    }
-                    project_thumb_image {
-                      alt
-                      localFile {
-                        childImageSharp {
-                          fluid(maxWidth: 500, quality: 90) {
-                            ...GatsbyImageSharpFluid_withWebp_noBase64
+                  ... on PrismicProject {
+                    uid
+                    data {
+                      title {
+                        text
+                      }
+                      project_thumb_image {
+                        alt
+                        localFile {
+                          childImageSharp {
+                            fluid(maxWidth: 500, quality: 90) {
+                              ...GatsbyImageSharpFluid_withWebp
+                            }
                           }
                         }
                       }
                     }
                   }
-                  uid
                 }
                 url
               }

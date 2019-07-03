@@ -1,5 +1,5 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import MapToComponents from 'react-map-to-components'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
@@ -11,30 +11,43 @@ import { TeamMemberLayoutSideBySideText } from 'slices/TeamMemberLayoutSideBySid
 import { TeamMemberLayoutFeaturedList } from 'slices/TeamMemberLayoutFeaturedList'
 import { TeamMemberLayoutCtaBar } from 'slices/TeamMemberLayoutCtaBar'
 import { TeamMemberLayoutCmsGuideText } from 'slices/TeamMemberLayoutCmsGuideText'
+import { TeamMemberLayoutSideBySideTextImage } from 'slices/TeamMemberLayoutSideBySideTextImage'
+import { TeamMemberLayoutSpacingModifier } from 'slices/TeamMemberLayoutSpacingModifier'
+import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
+import { deletePreviewData, getPreviewData } from 'src/hooks.js'
 
-const TeamMemberTemplate = ({ data }) => (
-  <>
-    <Helmet title={get(data, 'prismicTeamMember.data.title.text')} />
-    <Layout>
-      <MapToComponents
-        getKey={x => x.id}
-        getType={x => x.__typename.replace(/^Prismic/, '')}
-        list={get(data, 'prismicTeamMember.data.layout') || []}
-        map={{
-          TeamMemberLayoutHero,
-          TeamMemberLayoutBioSummary,
-          TeamMemberLayoutTextBlock,
-          TeamMemberLayoutSideBySideText,
-          TeamMemberLayoutFeaturedList,
-          TeamMemberLayoutCtaBar,
-          TeamMemberLayoutCmsGuideText,
-        }}
-        page={get(data, 'prismicTeamMember')}
-        rootData={data}
-      />
-    </Layout>
-  </>
-)
+const TeamMemberTemplate = ({ data: staticData, location }) => {
+  const previewData = getPreviewData()
+  const data = mergePrismicPreviewData({ previewData, staticData })
+  deletePreviewData()
+
+  return (
+    <>
+      <Helmet title={get(data, 'prismicTeamMember.data.title.text')} />
+      <Layout>
+        <MapToComponents
+          getKey={x => x.id}
+          getType={x => x.__typename.replace(/^Prismic/, '')}
+          list={get(data, 'prismicTeamMember.data.layout') || []}
+          map={{
+            TeamMemberLayoutHero,
+            TeamMemberLayoutBioSummary,
+            TeamMemberLayoutTextBlock,
+            TeamMemberLayoutSideBySideText,
+            TeamMemberLayoutFeaturedList,
+            TeamMemberLayoutCtaBar,
+            TeamMemberLayoutCmsGuideText,
+            TeamMemberLayoutSideBySideTextImage,
+            TeamMemberLayoutSpacingModifier,
+          }}
+          page={get(data, 'prismicTeamMember')}
+          rootData={data}
+          location={location}
+        />
+      </Layout>
+    </>
+  )
+}
 
 export default TeamMemberTemplate
 
@@ -55,5 +68,7 @@ export const query = graphql`
     ...TeamMemberLayoutFeaturedList
     ...TeamMemberLayoutCtaBar
     ...TeamMemberLayoutCmsGuideText
+    ...TeamMemberLayoutSideBySideTextImage
+    ...TeamMemberLayoutSpacingModifier
   }
 `

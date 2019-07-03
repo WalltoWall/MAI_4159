@@ -6,17 +6,23 @@ import { Container, ImageContainer, Content } from './index.styled'
 import { getUnlessEmpty } from 'helpers'
 
 export const ProjectLayoutFullImage = ({ data }) => {
+  const imageURL = get(data, 'primary.image.url')
+  const imageFluid = get(data, 'primary.image.localFile.childImageSharp.fluid')
+  const caption = get(data, 'primary.caption.text')
+
   return (
-    <Container>
+    <Container normalizeMargin={get(data, 'primary.normalize_margin')}>
       <Content normalizeMargin={get(data, 'primary.normalize_margin')}>
-        <ImageContainer>
-          <Image
-            alt={getUnlessEmpty('primary.image.alt', data)}
-            fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
-            fadeIn={false}
-          />
-        </ImageContainer>
-        <p>{get(data, 'primary.caption.text')}</p>
+        {(imageURL || imageFluid) && (
+          <ImageContainer>
+            <Image
+              alt={getUnlessEmpty('primary.image.alt', data)}
+              src={imageURL}
+              fluid={imageFluid}
+            />
+          </ImageContainer>
+        )}
+        {caption && <p>{caption}</p>}
       </Content>
     </Container>
   )
@@ -35,7 +41,7 @@ export const query = graphql`
                 localFile {
                   childImageSharp {
                     fluid(maxWidth: 1500, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp_noBase64
+                      ...GatsbyImageSharpFluid_withWebp
                     }
                   }
                 }

@@ -62,11 +62,13 @@ export const Desktop = props => (
         prismicNavigation {
           data {
             primary {
-              id
-              primary {
-                name
-                link {
-                  url
+              ... on PrismicNavigationPrimaryNavItem {
+                id
+                primary {
+                  name
+                  link {
+                    url
+                  }
                 }
               }
             }

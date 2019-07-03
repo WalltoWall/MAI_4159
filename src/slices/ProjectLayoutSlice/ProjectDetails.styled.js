@@ -7,9 +7,9 @@ export const Container = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   background-color: ${t.c.white};
-  padding: 3rem 0;
+  padding: 2rem 0;
   ${t.mq.l} {
-    padding: 6rem 0;
+    padding: 4rem 0;
   }
 `
 export const Content = styled.div`

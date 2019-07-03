@@ -20,7 +20,7 @@ export const QuoteBlock = ({ index, data, list }) => {
     case 5:
       context = 'desktopTop'
       break
-    case 9:
+    case 13:
       context = 'desktopMiddle'
       break
     case list.length - 1:
@@ -32,10 +32,7 @@ export const QuoteBlock = ({ index, data, list }) => {
     return (
       <>
         {context === 'mobileTop' && (
-          <QuoteContainer
-            to={get(list[index], 'team_member.url')}
-            context={'mobile'}
-          >
+          <QuoteContainer context={'mobile'}>
             <Quote html={get(data, 'primary.top_quote.html')} align={'right'} />
             <ClipContainer align={'right'}>
               <ClipOverlay align={'right'} />
@@ -43,10 +40,7 @@ export const QuoteBlock = ({ index, data, list }) => {
           </QuoteContainer>
         )}
         {context === 'mobileMiddle' && (
-          <QuoteContainer
-            to={get(list[index + 1], 'team_member.url')}
-            context={'mobile'}
-          >
+          <QuoteContainer context={'mobile'}>
             <Quote
               html={get(data, 'primary.middle_quote.html')}
               align={'left'}
@@ -58,7 +52,6 @@ export const QuoteBlock = ({ index, data, list }) => {
         )}
         {context === 'desktopTop' && (
           <QuoteContainer
-            to={get(list[index], 'team_member.url')}
             context={'desktop'}
             expand={true}
             onClick={e => e.preventDefault()}
@@ -71,8 +64,8 @@ export const QuoteBlock = ({ index, data, list }) => {
         )}
         {context === 'desktopMiddle' && (
           <QuoteContainer
-            to={get(list[index], 'team_member.url')}
             context={'desktop'}
+            expand={true}
             onClick={e => e.preventDefault()}
           >
             <Quote

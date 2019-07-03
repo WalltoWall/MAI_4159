@@ -1,8 +1,8 @@
 import React from 'react'
-import { Lunr } from 'react-lunr'
 import { Location } from '@reach/router'
 import { navigate, graphql } from 'gatsby'
 import { get, isEmpty } from 'lodash'
+import { useFlexSearch } from 'react-use-flexsearch'
 import qs from 'querystring'
 import { getSearchQuery } from 'helpers'
 import { Layout } from 'components/Layout'
@@ -84,72 +84,66 @@ const renderSearchResult = ({ query, queryType, results }) => (
   </SearchResults>
 )
 
-const SearchProject = ({ data }) => (
-  <Layout>
-    <ImageContainer>
-      <HeaderImage src={SearchBackground} />
-      <ClipOverlay has_filter={'no'} whitebg={true} />
-      <TitleWrapper>
-        <Title>Search</Title>
-      </TitleWrapper>
-      <MobileNavOverlay />
-    </ImageContainer>
-    <Location>
-      {({ location }) => (
-        <Container>
-          <SearchBar
-            query={getSearchQuery('?query', location)}
-            onSubmit={({ query }) => {
-              navigate(`/search${query ? `?${qs.stringify({ query })}` : ''}`)
-            }}
-          />
-          <Lunr
-            query={getSearchQuery('?query', location)}
-            index={get(data, 'localSearchProjects.index')}
-            store={get(data, 'localSearchProjects.store')}
-          >
-            {({ query, results }) => (
-              <>
-                <ContentWrapper hasResults={isEmpty(results)}>
-                  <Content>
-                    {isEmpty(results)
-                      ? initResultView(query, 'Projects', true)
-                      : renderSearchResult({
-                          query,
-                          queryType: 'Projects',
-                          results,
-                        })}
-                  </Content>
-                </ContentWrapper>
-              </>
-            )}
-          </Lunr>
-          <Lunr
-            query={getSearchQuery('?query', location)}
-            index={get(data, 'localSearchPages.index')}
-            store={get(data, 'localSearchPages.store')}
-          >
-            {({ query, results }) => (
-              <>
-                <ContentWrapper hasResults={isEmpty(results)}>
-                  <Content>
-                    {isEmpty(results)
-                      ? initResultView(query, 'Pages', false)
-                      : renderSearchResult({
-                          query,
-                          queryType: 'Pages',
-                          results,
-                        })}
-                  </Content>
-                </ContentWrapper>
-              </>
-            )}
-          </Lunr>
-        </Container>
-      )}
-    </Location>
-  </Layout>
-)
+const SearchProject = ({ data, location }) => {
+  const query = getSearchQuery('?query', location)
+
+  const pageIndex = get(data, 'localSearchPages.index')
+  const pageStore = JSON.parse(get(data, 'localSearchPages.store'))
+
+  const projectIndex = get(data, 'localSearchProjects.index')
+  const projectStore = JSON.parse(get(data, 'localSearchProjects.store'))
+
+  const pageResult = useFlexSearch(query, pageIndex, pageStore)
+  const projectResult = useFlexSearch(query, projectIndex, projectStore)
+
+  return (
+    <Layout>
+      <ImageContainer>
+        <HeaderImage src={SearchBackground} />
+        <ClipOverlay has_filter={'no'} whitebg={true} />
+        <TitleWrapper>
+          <Title>Search</Title>
+        </TitleWrapper>
+        <MobileNavOverlay />
+      </ImageContainer>
+      <Location>
+        {({ location }) => (
+          <Container>
+            <SearchBar
+              query={getSearchQuery('?query', location)}
+              onSubmit={({ query }) => {
+                navigate(`/search${query ? `?${qs.stringify({ query })}` : ''}`)
+              }}
+            />
+            <ContentWrapper hasResults={isEmpty(projectResult)}>
+              <Content>
+                {isEmpty(projectResult)
+                  ? initResultView(query, 'Projects', true)
+                  : renderSearchResult({
+                      query,
+                      queryType: 'Projects',
+                      results: projectResult,
+                    })}
+              </Content>
+            </ContentWrapper>
+
+            <ContentWrapper hasResults={isEmpty(pageResult)}>
+              <Content>
+                {isEmpty(pageResult)
+                  ? initResultView(query, 'Pages', false)
+                  : renderSearchResult({
+                      query,
+                      queryType: 'Pages',
+                      results: pageResult,
+                    })}
+              </Content>
+            </ContentWrapper>
+          </Container>
+        )}
+      </Location>
+    </Layout>
+  )
+}
 
 export default SearchProject
 

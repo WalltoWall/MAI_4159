@@ -12,29 +12,34 @@ import {
   PlaceholderImg,
 } from './index.styled'
 
-export const Hero = ({ data, whitebg, subpage }) => (
-  <ImageContainer>
-    {!isEmpty(get(data, 'primary.image.localFile.childImageSharp.fluid')) ? (
-      <StyledImage
-        alt={getUnlessEmpty('primary.image.alt', data)}
-        fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
-        fadeIn={false}
+export const Hero = ({ data, whitebg, subpage }) => {
+  const imageFluid = get(data, 'primary.image.localFile.childImageSharp.fluid')
+  const imageURL = get(data, 'primary.image.url')
+
+  return (
+    <ImageContainer>
+      {imageFluid || imageURL ? (
+        <StyledImage
+          alt={getUnlessEmpty('primary.image.alt', data)}
+          src={imageURL}
+          fluid={imageFluid}
+        />
+      ) : (
+        <PlaceholderImg
+          alt="marble texture backgrond image"
+          src={defaultTexture}
+        />
+      )}
+      <ClipOverlay
+        has_filter={get(data, 'primary.has_filter')}
+        whitebg={whitebg ? true : false}
       />
-    ) : (
-      <PlaceholderImg
-        alt="marble texture backgrond image"
-        src={defaultTexture}
-      />
-    )}
-    <ClipOverlay
-      has_filter={get(data, 'primary.has_filter')}
-      whitebg={whitebg ? true : false}
-    />
-    {!isEmpty(get(data, 'primary.title1.text')) && (
-      <TitleWrapper>
-        <Title>{get(data, 'primary.title1.text')}</Title>
-      </TitleWrapper>
-    )}
-    <MobileNavOverlay subpage={subpage ? true : false} />
-  </ImageContainer>
-)
+      {!isEmpty(get(data, 'primary.title1.text')) && (
+        <TitleWrapper>
+          <Title>{get(data, 'primary.title1.text')}</Title>
+        </TitleWrapper>
+      )}
+      <MobileNavOverlay subpage={subpage ? true : false} />
+    </ImageContainer>
+  )
+}

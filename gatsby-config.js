@@ -1,4 +1,5 @@
 const path = require('path')
+const fs = require('fs')
 const dotenv = require('dotenv')
 const truncate = require('truncate')
 const {
@@ -23,6 +24,18 @@ const {
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
+
+// Load search queries.
+const queries = {
+  pages: fs.readFileSync(
+    path.resolve(__dirname, 'src/queries/pages.graphql'),
+    'utf-8'
+  ),
+  projects: fs.readFileSync(
+    path.resolve(__dirname, 'src/queries/projects.graphql'),
+    'utf-8'
+  ),
+}
 
 // Configure the following constants for the project.
 const SITE_TITLE = 'MASON'
@@ -62,7 +75,12 @@ module.exports = {
     process.env.NODE_ENV === 'development' && 'gatsby-plugin-polyfill-io',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-svgr',
-    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        base64Width: 100,
+      },
+    },
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {
@@ -103,83 +121,8 @@ module.exports = {
       resolve: 'gatsby-plugin-local-search',
       options: {
         name: 'projects',
-        query: `
-          {
-            allPrismicProject (filter: {tags: {ne: "CMS Guide"}}) {
-              edges {
-                node {
-                  id
-                  uid
-                  data {
-                    title {
-                      text
-                    }   
-                    project_thumb_image {
-                      url
-                    }                 
-                    meta_title1
-                    meta_description1                    
-                    layout {
-                      ... on PrismicProjectLayoutHero {
-                        primary {
-                          project_title {
-                            text
-                          }
-                        }                       
-                      }
-                      ... on PrismicProjectLayoutSlice {
-                        primary {
-                          text {
-                            text
-                          }
-                        }                        
-                      }
-                      ... on PrismicProjectLayoutFullImage {
-                        primary {
-                          caption {
-                            text
-                          }
-                        }                        
-                      }
-                      ... on PrismicProjectLayoutSideBySideText {
-                        primary {
-                          left_text {
-                            text
-                          }
-                          right_text {
-                            text
-                          }
-                        }                        
-                      }
-                      ... on PrismicProjectLayoutQuoteBlock {
-                        primary {
-                          quote {
-                            text
-                          }
-                          author {
-                            text
-                          }
-                        }                        
-                      }
-                      ... on PrismicProjectLayoutSideBySideImages {
-                        primary {
-                          caption {
-                            text
-                          }
-                        }                        
-                      }
-                      ... on PrismicProjectLayoutCallToAction {
-                        primary {                          
-                          button_text
-                        }                        
-                      }                    
-                    }
-                  }
-                }
-              }
-            }
-          }
-        `,
+        engine: 'flexsearch',
+        query: queries.projects,
         store: [
           'id',
           'path',
@@ -189,12 +132,8 @@ module.exports = {
           'metaDescription',
           'excerpt',
         ],
-        normalizer: ({
-            data
-          }) =>
-          get('allPrismicProject.edges', data).map(({
-            node
-          }) => {
+        normalizer: ({ data }) =>
+          get('allPrismicProject.edges', data).map(({ node }) => {
             const content = flatValuesDeep(get('data.layout', node)).join(' ')
 
             return {
@@ -214,175 +153,8 @@ module.exports = {
       resolve: 'gatsby-plugin-local-search',
       options: {
         name: 'pages',
-        query: `
-          {
-            allPrismicPage (filter: {tags: {ne: "CMS Guide"}}) {
-              edges {
-                node {
-                  id
-                  uid
-                  data {
-                    title {
-                      text
-                    }
-                    meta_title
-                    meta_description
-                    layout {
-                      ... on PrismicPageLayoutSubPageHero {
-                        primary {
-                          title1 {
-                            text
-                          }                          
-                        }                       
-                      }
-                      ... on PrismicPageLayoutCtaBar {
-                        primary {
-                          title1 {
-                            text
-                          }                          
-                        }                        
-                      }
-                      ... on PrismicPageLayoutServices {
-                        primary {
-                          title1 {
-                            text
-                          }
-                          text {
-                            text
-                          }
-                          description {
-                            text
-                          }
-                        }                        
-                      }
-                      ... on PrismicPageLayoutTextBlock {
-                        primary {
-                          content {
-                            text
-                          }                          
-                        }                        
-                      }
-                      ... on PrismicPageLayoutSplitPanels {
-                        items {
-                          title1 {
-                            text
-                          }
-                          description {
-                            text
-                          }                          
-                        }                        
-                      }                                         
-                    }
-                  }
-                }
-              }
-            }
-            allPrismicTeamMember (filter: {tags: {ne: "CMS Guide"}}) {
-              edges {
-                node {
-                  id
-                  uid
-                  data {
-                    title                  
-                    meta_title
-                    meta_description               
-                    layout {
-                      ... on PrismicTeamMemberLayoutHero {
-                        primary {
-                          title1
-                        }                       
-                      }         
-                      ... on PrismicTeamMemberLayoutSideBySideText {
-                        primary {
-                          qualifications {
-                            text
-                          }     
-                          experience {
-                            text
-                          }                  
-                        }                        
-                        items {
-                          award_name
-                          award_detail {
-                            text
-                          }
-                        }     
-                      }
-                      ... on PrismicTeamMemberLayoutTextBlock {
-                        primary {
-                          content {
-                            text
-                          }                       
-                        }                        
-                      }                                         
-                      ... on PrismicTeamMemberLayoutBioSummary {
-                        primary {
-                          name1
-                          position                     
-                          quote {
-                            text
-                          }
-                          email
-                        }                       
-                      }                                                           
-                    }
-                  }
-                }
-              }
-            }
-            allPrismicNewsPost (filter: {tags: {ne: "CMS Guide"}}) {
-              edges {
-                node {
-                  id
-                  uid                       
-                  data {                    
-                    title {
-                      text
-                    }       
-                    meta_title
-                    meta_description             
-                    article_title1 {
-                      text
-                    }
-                    article_content {
-                      text
-                    }
-                    layout {
-                      ... on PrismicNewsPostLayoutHero {
-                        primary {
-                          title1  {
-                            text
-                          }
-                        }                       
-                      }
-                      ... on PrismicNewsPostLayoutTextBlock {
-                        primary {
-                          content {
-                            text
-                          }                       
-                        }                        
-                      }
-                      ... on PrismicNewsPostLayoutTitle {
-                        primary {
-                          title1 {
-                            text
-                          }             
-                        }                        
-                      }         
-                      ... on PrismicNewsPostLayoutSideBySideImages {
-                        primary {
-                          caption {
-                            text
-                          }                 
-                        }                        
-                      }              
-                    }
-                  }
-                }
-              }
-            }                                  
-          }
-        `,
+        engine: 'flexsearch',
+        query: queries.pages,
         store: [
           'id',
           'path',
@@ -391,16 +163,15 @@ module.exports = {
           'metaDescription',
           'excerpt',
         ],
-        normalizer: ({
-          data
-        }) => {
+        normalizer: ({ data }) => {
           const nodes = compose(
             map(node => {
               const content = flatValuesDeep(get('data.layout', node)).join(' ')
 
               return {
                 id: get('id', node),
-                path: get('uid', node) === 'home' ? '/' : `/${get('uid', node)}`,
+                path:
+                  get('uid', node) === 'home' ? '/' : `/${get('uid', node)}`,
                 title: getOr(get('data.title', node), 'data.title.text', node),
                 metaTitle: get('data.meta_title', node),
                 metaDescription: get('data.meta_description', node),
@@ -422,6 +193,7 @@ module.exports = {
       options: {
         repositoryName: process.env.PRISMIC_REPOSITORY_NAME,
         accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+        schemas: require('./src/schemas'),
         linkResolver: () => doc => (doc.uid === 'home' ? '/' : `/${doc.uid}/`),
       },
     },

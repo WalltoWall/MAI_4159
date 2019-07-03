@@ -5,26 +5,27 @@ import {
   Container,
   Content,
   StyledHtmlClassName,
-  StyledHTMLContent,  
+  StyledHTMLContent,
 } from './index.styled'
 
 export const TextBlock = ({ data }) => {
   return (
     <Container background_color={get(data, 'primary.background_color')}>
-      <Content>        
+      <Content>
         <StyledHTMLContent
           html={get(data, 'primary.content.html')}
           className={StyledHtmlClassName}
           align_text={get(data, 'primary.align_text')}
         />
-      {
-        get(data, 'primary.button_text') && (
-          <Button to={get(data, 'primary.button_link.url')} style={{marginTop:'2rem'}}>
+        {get(data, 'primary.button_text') && (
+          <Button
+            to={get(data, 'primary.button_link.url')}
+            style={{ marginTop: '2rem' }}
+          >
             {get(data, 'primary.button_text')}
-          </Button>          
-        )
-      }
-      </Content>      
+          </Button>
+        )}
+      </Content>
     </Container>
   )
 }

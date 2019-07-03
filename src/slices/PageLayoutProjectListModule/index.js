@@ -26,7 +26,7 @@ import {
 const filtersMatch = (currentFilter, projectFilters) => {
   let filterMatched = false
   map(filter => {
-    if (currentFilter === path('project_subcategory.document[0].uid', filter)) {
+    if (currentFilter === path('project_subcategory.document.uid', filter)) {
       filterMatched = true
     }
   }, projectFilters)
@@ -34,18 +34,23 @@ const filtersMatch = (currentFilter, projectFilters) => {
 }
 
 const renderGrid = (data, item, currentFilter) => {
+  const imageURL = get(data, 'project_thumb_image.url')
+  const imageFluid = get(
+    data,
+    'project_thumb_image.localFile.childImageSharp.fluid'
+  )
+
   return (
     <>
-      <ImageContainer>
-        <Image
-          alt={getUnlessEmpty('data.project_thumb_image.alt', data)}
-          fluid={get(
-            data,
-            'project_thumb_image.localFile.childImageSharp.fluid'
-          )}
-          fadeIn={false}
-        />
-      </ImageContainer>
+      {(imageURL || imageFluid) && (
+        <ImageContainer>
+          <Image
+            alt={getUnlessEmpty('data.project_thumb_image.alt', data)}
+            fluid={imageFluid}
+            src={imageURL}
+          />
+        </ImageContainer>
+      )}
       <OverlayContainer
         longText={size(get(data, 'title.text')) >= 23}
         bottom={get(item, 'position') === 'Bottom' || currentFilter !== 'All'}
@@ -75,12 +80,12 @@ export const PortfolioGrid = ({ data, currentFilter }) => {
             show={
               filtersMatch(
                 currentFilter,
-                get(item, 'project.document[0].data.subcategory')
+                get(item, 'project.document.data.subcategory')
               ) || currentFilter === 'All'
             }
           >
             {renderGrid(
-              get(item, 'project.document[0].data'),
+              get(item, 'project.document.data'),
               item,
               currentFilter
             )}
@@ -104,12 +109,12 @@ export const PageLayoutProjectListModule = ({ data, rootData, location }) => {
       })),
       reject(
         item =>
-          path('data.parent_category_page.document[0].uid', item) !== parentUID
+          path('data.parent_category_page.document.uid', item) !== parentUID
       ),
-      map('project_subcategory.document[0]'),
+      map('project_subcategory.document'),
       flattenDeep,
       map('subcategory'),
-      map('project.document[0].data'),
+      map('project.document.data'),
       path('items')
     )(data)
     return subcategories
@@ -148,33 +153,39 @@ export const query = graphql`
               project {
                 url
                 document {
-                  data {
-                    title {
-                      text
-                    }
-                    subcategory {
-                      project_subcategory {
-                        document {
-                          uid
-                          data {
-                            title {
-                              text
-                            }
-                            display_name
-                            parent_category_page {
-                              document {
-                                uid
+                  ... on PrismicProject {
+                    data {
+                      title {
+                        text
+                      }
+                      subcategory {
+                        project_subcategory {
+                          document {
+                            ... on PrismicProjectSubcategory {
+                              uid
+                              data {
+                                title {
+                                  text
+                                }
+                                display_name
+                                parent_category_page {
+                                  document {
+                                    ... on PrismicProject {
+                                      uid
+                                    }
+                                  }
+                                }
                               }
                             }
                           }
                         }
                       }
-                    }
-                    project_thumb_image {
-                      localFile {
-                        childImageSharp {
-                          fluid(maxWidth: 800, quality: 90) {
-                            ...GatsbyImageSharpFluid_withWebp_noBase64
+                      project_thumb_image {
+                        localFile {
+                          childImageSharp {
+                            fluid(maxWidth: 800, quality: 90) {
+                              ...GatsbyImageSharpFluid_withWebp
+                            }
                           }
                         }
                       }

@@ -1,6 +1,7 @@
 import styled from 'react-emotion'
 import t from 'theme'
 import { ReactComponent as HoverArrowSVG } from 'assets/hov_arrow.svg'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 export const Container = styled.div`
   position: relative;
@@ -12,7 +13,7 @@ export const Container = styled.div`
   }
 `
 
-export const StyledAnchor = styled.a`
+export const StyledAnchor = styled(AnchorLink)`
   font-color: black;
   z-index: 2;
   padding: 0rem 1rem;

@@ -5,20 +5,28 @@ import { Image } from 'components/Image'
 import { Container, ImageContainer, Content } from './index.styled'
 import { getUnlessEmpty } from 'helpers'
 
-export const PageLayoutFullImage = ({ data }) => (
-  <Container>
-    <Content>
-      <ImageContainer>
-        <Image
-          alt={getUnlessEmpty('primary.image.alt', data)}
-          fluid={get(data, 'primary.image.localFile.childImageSharp.fluid')}
-          fadeIn={false}
-        />
-      </ImageContainer>
-      <p>{get(data, 'primary.caption.text')}</p>
-    </Content>
-  </Container>
-)
+export const PageLayoutFullImage = ({ data }) => {
+  const imageURL = get(data, 'primary.image.url')
+  const imageFluid = get(data, 'primary.image.localFile.childImageSharp.fluid')
+  const caption = get(data, 'primary.caption.text')
+
+  return (
+    <Container>
+      <Content>
+        {(imageURL || imageFluid) && (
+          <ImageContainer>
+            <Image
+              alt={getUnlessEmpty('primary.image.alt', data)}
+              src={imageURL}
+              fluid={imageFluid}
+            />
+          </ImageContainer>
+        )}
+        {caption && <p>{caption}</p>}
+      </Content>
+    </Container>
+  )
+}
 export const query = graphql`
   fragment PageLayoutFullImage on Query {
     prismicPage(id: { eq: $id }) {
@@ -32,7 +40,7 @@ export const query = graphql`
                 localFile {
                   childImageSharp {
                     fluid(maxWidth: 1500, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp_noBase64
+                      ...GatsbyImageSharpFluid_withWebp
                     }
                   }
                 }

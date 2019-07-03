@@ -7,6 +7,11 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: white;
+
+  padding: ${p => (p.normalizeMargin === 'True' ? '2rem 0' : '0 0 2rem 0')};
+  ${t.mq.l} {
+    padding: ${p => (p.normalizeMargin === 'True' ? '4rem 0' : '0 0 4rem 0')};
+  }
 `
 export const Content = styled.div`
   text-align: center;
@@ -14,7 +19,6 @@ export const Content = styled.div`
   p {
     font-family: ${t.ff.serif};
     color: ${t.c.darkgrey2};
-    padding: 0 2rem 3rem 2rem;
     font-size: ${t.f(0)};
     line-height: ${t.lh.copy};
   }

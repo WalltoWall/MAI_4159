@@ -18,16 +18,17 @@ export const TeamMemberLayoutFeaturedList = ({ data, rootData }) => {
       <GridContainer>
         {projects.map(project =>
           RenderGrid({
-            key: get(project, 'project.document[0].uid'),
+            key: get(project, 'project.document.uid'),
             alt: getUnlessEmpty(
-              'project.document[0].data.project_thumb_image.alt',
+              'project.document.data.project_thumb_image.alt',
               project
             ),
             img: get(
               project,
-              'project.document[0].data.project_thumb_image.localFile.childImageSharp.fluid'
+              'project.document.data.project_thumb_image.localFile.childImageSharp.fluid'
             ),
-            title: get(project, 'project.document[0].data.title.text'),
+            src: get(project, 'project.document.data.project_thumb_image.url'),
+            title: get(project, 'project.document.data.title.text'),
             url: get(project, 'project.url'),
             largeImages: false,
           })
@@ -47,15 +48,17 @@ export const query = graphql`
               project {
                 url
                 document {
-                  data {
-                    title {
-                      text
-                    }
-                    project_thumb_image {
-                      localFile {
-                        childImageSharp {
-                          fluid(maxWidth: 800, quality: 90) {
-                            ...GatsbyImageSharpFluid_withWebp_noBase64
+                  ... on PrismicProject {
+                    data {
+                      title {
+                        text
+                      }
+                      project_thumb_image {
+                        localFile {
+                          childImageSharp {
+                            fluid(maxWidth: 800, quality: 90) {
+                              ...GatsbyImageSharpFluid_withWebp
+                            }
                           }
                         }
                       }
