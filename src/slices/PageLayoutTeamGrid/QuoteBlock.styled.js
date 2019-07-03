@@ -19,6 +19,10 @@ export const QuoteContainer = styled(Link)`
     cursor: default;
   }
 
+  ${t.mq.xxx} {
+    height: ${t.s(9.5)};
+  }
+
   ${t.mq.l} {    
     ${p =>
       p.context === 'desktop' || p.bottom ? 'display: flex' : 'display: none'};
