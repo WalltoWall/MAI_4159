@@ -4,18 +4,17 @@ import { Link } from 'components/Link'
 import { HTMLContent } from 'components/HTMLContent'
 
 export const QuoteContainer = styled(Link)`
-  display: ${p => (p.context === 'mobile' || p.bottom ? 'flex' : 'none')};
+  display: ${p => (p.context === 'mobile' ? 'flex' : 'none')};
+  flex-grow: 1;
   position: relative;
   justify-content: flex-end;
   width: 50%;
-  height: ${t.s(7.5)};    
-  flex-grow: ${p => (p.bottom ? '2' : 'inherit')};
+  height: ${t.s(7.5)};
 
-  ${t.mq.s} { 
-    height: ${t.s(9)}; 
+  ${t.mq.s} {
+    height: ${t.s(9)};
   }
-  ${t.mq.l} {    
-    width: ${p => (p.expand ? '50%' : '25%')};          
+  ${t.mq.l} {
     cursor: default;
   }
 
@@ -23,9 +22,9 @@ export const QuoteContainer = styled(Link)`
     height: ${t.s(9.5)};
   }
 
-  ${t.mq.l} {    
-    ${p =>
-      p.context === 'desktop' || p.bottom ? 'display: flex' : 'display: none'};
+  ${t.mq.l} {
+    display: ${p => (p.context === 'desktop' ? 'flex' : 'none')};
+  }
 `
 
 export const Quote = styled(HTMLContent)`
@@ -36,7 +35,7 @@ export const Quote = styled(HTMLContent)`
   position: relative;
   z-index: 98;
   width: 100%;
-  align-items: ${p => (p.align === 'left' ? 'flex-start' : 'flex-end')};
+  align-items: ${p => (p.align === 'right' ? 'flex-start' : 'flex-end')};
   p {
     font-size: ${t.f(0)};
     font-family: ${t.ff.serif};
@@ -45,7 +44,7 @@ export const Quote = styled(HTMLContent)`
     z-index: 5;
     width: 100%;
     line-height: 1.3rem;
-    text-align: ${p => (p.align === 'right' ? 'right' : 'left')};
+    text-align: ${p => (p.align === 'left' ? 'right' : 'left')};
     padding: 0 ${t.s(0.2)};
     ${t.mq.s} {
       font-size: ${t.f(1)};
@@ -53,13 +52,13 @@ export const Quote = styled(HTMLContent)`
     }
     ${t.mq.l} {
       width: 90%;
-      padding-right: ${p => (p.align === 'right' ? t.s(1) : '0')};
-      padding-left: ${p => (p.align === 'left' ? t.s(1) : '0')};
+      padding-right: ${p => (p.align === 'left' ? t.s(1) : '0')};
+      padding-left: ${p => (p.align === 'right' ? t.s(1) : '0')};
     }
     ${t.mq.x} {
       width: 80%;
-      padding-right: ${p => (p.align === 'right' ? t.s(4) : '0')};
-      padding-left: ${p => (p.align === 'left' ? t.s(4) : '0')};
+      padding-right: ${p => (p.align === 'left' ? t.s(4) : '0')};
+      padding-left: ${p => (p.align === 'right' ? t.s(4) : '0')};
       font-size: ${t.f(2)};
       line-height: 2rem;
     }
@@ -75,18 +74,18 @@ export const ClipOverlay = styled.div`
   z-index: 5;
   height: 130%;
   width: 52%;
-  top: ${p => (p.align === 'left' ? '-38px' : '-50px')};
-  left: ${p => (p.align === 'left' ? 'unset' : '117px')};
-  right: ${p => (p.align === 'left' ? '120px' : 'unset')};
+  top: ${p => (p.align === 'right' ? '-38px' : '-50px')};
+  left: ${p => (p.align === 'right' ? 'unset' : '117px')};
+  right: ${p => (p.align === 'right' ? '120px' : 'unset')};
 
   ${t.mq.m} {
-    left: ${p => (p.align === 'left' ? 'unset' : '111px')};
-    right: ${p => (p.align === 'left' ? '110px' : 'unset')};
+    left: ${p => (p.align === 'right' ? 'unset' : '111px')};
+    right: ${p => (p.align === 'right' ? '110px' : 'unset')};
   }
 
   ${t.mq.x} {
-    left: ${p => (p.align === 'left' ? 'unset' : '111px')};
-    right: ${p => (p.align === 'left' ? '110px' : 'unset')};
+    left: ${p => (p.align === 'right' ? 'unset' : '111px')};
+    right: ${p => (p.align === 'right' ? '110px' : 'unset')};
   }
 `
 
@@ -96,5 +95,5 @@ export const ClipContainer = styled.div`
   z-index: 5;
   height: 100%;
   overflow: hidden;
-  ${p => (p.align === 'left' ? 'left: 8rem;' : 'left: -8rem;')};
+  ${p => (p.align === 'right' ? 'left: 8rem;' : 'left: -8rem;')};
 `

@@ -5,4 +5,5 @@ module.exports = {
   project_subcategory: require('./project_subcategory.json'),
   team_member: require('./team_member.json'),
   navigation: require('./navigation.json'),
+  quote_block: require('./quote_block.json'),
 }

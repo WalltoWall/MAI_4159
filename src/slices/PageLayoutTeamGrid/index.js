@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get, split, trim, includes, toLower } from 'lodash'
+import { get, split, trim, includes, toLower, filter } from 'lodash'
 import { Image } from 'components/Image'
 import { Value, Toggle } from 'react-powerplug'
 
@@ -96,7 +96,8 @@ const renderGrid = (data, currentFilter) => {
 
 export const PageLayoutTeamGrid = ({ data, rootData }) => {
   let roleFilters = split(get(data, 'primary.role_filters1'), ',')
-  let teamMembers = data.items
+
+  const items = data.items
 
   return (
     <Value initial="All">
@@ -108,31 +109,39 @@ export const PageLayoutTeamGrid = ({ data, rootData }) => {
             currentFilter={currentFilter}
           />
           <GridContainer>
-            {teamMembers.map((member, i, list) => (
-              <>
-                <StyledLink
-                  to={get(member, 'team_member.url')}
-                  onClick={e => {
-                    if (
-                      !getActiveState(
+            {items.map((item, i, list) => {
+              if (item.item.document.__typename === 'PrismicTeamMember') {
+                return (
+                  <>
+                    <StyledLink
+                      to={get(item, 'item.url')}
+                      onClick={e => {
+                        if (
+                          !getActiveState(
+                            currentFilter,
+                            get(item, 'item.document.data.department1')
+                          )
+                        ) {
+                          e.preventDefault()
+                        }
+                      }}
+                    >
+                      {renderGrid(
+                        get(item, 'item.document.data'),
                         currentFilter,
-                        get(member, 'team_member.document.data.department1')
-                      )
-                    ) {
-                      e.preventDefault()
-                    }
-                  }}
-                >
-                  {renderGrid(
-                    get(member, 'team_member.document.data'),
-                    currentFilter,
-                    i,
-                    list
-                  )}
-                </StyledLink>
-                <QuoteBlock index={i} data={data} list={list} />
-              </>
-            ))}
+                        i,
+                        list
+                      )}
+                    </StyledLink>
+                  </>
+                )
+              }
+
+              if (item.item.document.__typename === 'PrismicQuoteBlock') {
+                const quoteData = item.item.document.data
+                return <QuoteBlock data={quoteData} />
+              }
+            })}
           </GridContainer>
         </>
       )}
@@ -149,18 +158,9 @@ export const query = graphql`
             id
             primary {
               role_filters1
-              top_quote {
-                html
-              }
-              middle_quote {
-                html
-              }
-              bottom_quote {
-                html
-              }
             }
             items {
-              team_member {
+              item {
                 url
                 document {
                   ... on PrismicTeamMember {
@@ -178,6 +178,15 @@ export const query = graphql`
                             }
                           }
                         }
+                      }
+                    }
+                  }
+                  ... on PrismicQuoteBlock {
+                    data {
+                      display
+                      angle
+                      text1 {
+                        html
                       }
                     }
                   }

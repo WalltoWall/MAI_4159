@@ -543,36 +543,15 @@
                 "config": {
                   "label": "role_filters"
                 }
-              },
-              "top_quote": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph, strong",
-                  "label": "Top Quote"
-                }
-              },
-              "middle_quote": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph, strong",
-                  "label": "Middle Quote"
-                }
-              },
-              "bottom_quote": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph, strong",
-                  "label": "Bottom Quote"
-                }
               }
             },
             "repeat": {
-              "team_member": {
+              "item": {
                 "type": "Link",
                 "config": {
                   "select": "document",
-                  "customtypes": ["team_member"],
-                  "label": "team member"
+                  "customtypes": ["team_member", "quote_block"],
+                  "label": "Item"
                 }
               }
             }

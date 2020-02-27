@@ -1,0 +1,34 @@
+{
+  "Main": {
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Title"
+      }
+    },
+    "display": {
+      "type": "Select",
+      "config": {
+        "options": ["Desktop", "Mobile"],
+        "default_value": "Desktop",
+        "label": "Display"
+      }
+    },
+    "angle": {
+      "type": "Select",
+      "config": {
+        "options": ["Left", "Right"],
+        "default_value": "Left",
+        "label": "Angle"
+      }
+    },
+    "text1": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, heading2, heading3, strong, em",
+        "label": "text"
+      }
+    }
+  }
+}
