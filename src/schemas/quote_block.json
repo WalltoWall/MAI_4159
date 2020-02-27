@@ -23,6 +23,15 @@
         "label": "Angle"
       }
     },
+    "minimum_size": {
+      "type": "Select",
+      "config": {
+        "options": ["1/4", "2/4", "3/4"],
+        "default_value": "1/4",
+        "label": "Minimum Size",
+        "placeholder": "only for Desktop"
+      }
+    },
     "text1": {
       "type": "StructuredText",
       "config": {

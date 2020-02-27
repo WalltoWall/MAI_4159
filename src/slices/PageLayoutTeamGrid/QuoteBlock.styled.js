@@ -3,12 +3,25 @@ import t from 'theme'
 import { Link } from 'components/Link'
 import { HTMLContent } from 'components/HTMLContent'
 
+const getWidthFromProps = size => {
+  switch (size) {
+    case '1/4':
+      return 'width: 25%'
+    case '2/4':
+      return 'width: 50%'
+    case '3/4':
+      return 'width: 75%'
+    default:
+      return 'width: 50%'
+  }
+}
+
 export const QuoteContainer = styled(Link)`
   display: ${p => (p.context === 'mobile' ? 'flex' : 'none')};
   flex-grow: 1;
   position: relative;
   justify-content: flex-end;
-  width: 50%;
+  ${p => getWidthFromProps(p.size)};
   height: ${t.s(7.5)};
 
   ${t.mq.s} {

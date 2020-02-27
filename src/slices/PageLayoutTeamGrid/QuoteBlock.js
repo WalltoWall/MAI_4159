@@ -11,6 +11,7 @@ import {
 export const QuoteBlock = ({ data }) => {
   const angle = toLower(data.angle)
   const htmlContent = get(data, 'text1.html')
+  const blockSize = get(data, 'minimum_size')
 
   return (
     <>
@@ -26,7 +27,7 @@ export const QuoteBlock = ({ data }) => {
       {data.display === 'Desktop' && (
         <QuoteContainer
           context={'desktop'}
-          expand={true}
+          size={blockSize}
           onClick={e => e.preventDefault()}
         >
           <Quote html={htmlContent} align={angle} />

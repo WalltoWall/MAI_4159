@@ -185,6 +185,7 @@ export const query = graphql`
                     data {
                       display
                       angle
+                      minimum_size
                       text1 {
                         html
                       }
