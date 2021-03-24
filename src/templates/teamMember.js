@@ -2,6 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import MapToComponents from 'react-map-to-components'
 import { graphql } from 'gatsby'
+import { withPreview } from 'gatsby-source-prismic'
 import { get } from 'lodash'
 import { Layout } from 'components/Layout'
 import { TeamMemberLayoutHero } from 'slices/TeamMemberLayoutHero'
@@ -13,15 +14,8 @@ import { TeamMemberLayoutCtaBar } from 'slices/TeamMemberLayoutCtaBar'
 import { TeamMemberLayoutCmsGuideText } from 'slices/TeamMemberLayoutCmsGuideText'
 import { TeamMemberLayoutSideBySideTextImage } from 'slices/TeamMemberLayoutSideBySideTextImage'
 import { TeamMemberLayoutSpacingModifier } from 'slices/TeamMemberLayoutSpacingModifier'
-// import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
-// import { deletePreviewData, getPreviewData } from 'src/hooks.js'
 
-const TeamMemberTemplate = ({ data: staticData, location }) => {
-  const data = staticData
-  // const previewData = getPreviewData()
-  // const data = mergePrismicPreviewData({ previewData, staticData })
-  // deletePreviewData()
-
+const TeamMemberTemplate = ({ data, location }) => {
   return (
     <>
       <Helmet title={get(data, 'prismicTeamMember.data.title.text')} />
@@ -50,7 +44,7 @@ const TeamMemberTemplate = ({ data: staticData, location }) => {
   )
 }
 
-export default TeamMemberTemplate
+export default withPreview(TeamMemberTemplate)
 
 export const query = graphql`
   query TeamMemberTemplate($id: String!) {

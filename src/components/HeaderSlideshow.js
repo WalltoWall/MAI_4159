@@ -73,6 +73,7 @@ export default class HeaderSlideshow extends React.Component {
           />
           {items.map((item, i) => (
             <StyledHeader
+              key={i}
               isPrevious={
                 currentIndex === (i + 1 < 0 ? items.length - 1 : i + 1)
               }

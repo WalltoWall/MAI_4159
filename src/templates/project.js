@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import MapToComponents from 'react-map-to-components'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
+import { withPreview } from 'gatsby-source-prismic'
 import { Layout } from 'components/Layout'
 import { ProjectLayoutHero } from 'slices/ProjectLayoutHero'
 import { ProjectLayoutSlice } from 'slices/ProjectLayoutSlice'
@@ -16,15 +17,8 @@ import { ProjectLayoutCmsHero } from 'slices/ProjectLayoutCmsHero'
 import { ProjectLayoutCmsGuideText } from 'slices/ProjectLayoutCmsGuideText'
 import { ProjectLayoutSpacingModifier } from 'slices/ProjectLayoutSpacingModifier'
 import { ProjectLayoutSideBySideTextImage } from 'slices/ProjectLayoutSideBySideTextImage'
-// import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
-// import { deletePreviewData, getPreviewData } from 'src/hooks.js'
 
-const ProjectTemplate = ({ data: staticData, location }) => {
-  const data = staticData
-  // const previewData = getPreviewData()
-  // const data = mergePrismicPreviewData({ previewData, staticData })
-  // deletePreviewData()
-
+const ProjectTemplate = ({ data, location }) => {
   return (
     <>
       <Helmet>
@@ -67,7 +61,7 @@ const ProjectTemplate = ({ data: staticData, location }) => {
   )
 }
 
-export default ProjectTemplate
+export default withPreview(ProjectTemplate)
 
 export const query = graphql`
   query ProjectTemplate($id: String!) {

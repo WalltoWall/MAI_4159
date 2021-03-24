@@ -1,9 +1,10 @@
 query {
-  allPrismicPage(filter: { tags: { ne: "CMS Guide" } }) {
+  allPrismicPage {
     edges {
       node {
         id
         uid
+        tags
         data {
           title {
             text
@@ -60,11 +61,12 @@ query {
       }
     }
   }
-  allPrismicTeamMember(filter: { tags: { ne: "CMS Guide" } }) {
+  allPrismicTeamMember {
     edges {
       node {
         id
         uid
+        tags
         data {
           title
           meta_title
@@ -113,11 +115,12 @@ query {
       }
     }
   }
-  allPrismicNewsPost(filter: { tags: { ne: "CMS Guide" } }) {
+  allPrismicNewsPost {
     edges {
       node {
         id
         uid
+        tags
         data {
           title {
             text
