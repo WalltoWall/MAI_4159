@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get, slice } from 'lodash'
+import { get, slice, includes } from 'lodash'
 import { format } from 'date-fns'
 import { Image as ImageBase } from 'components/Image'
 import arrow from 'assets/yellow-arrow.svg'
@@ -36,12 +36,14 @@ const Image = ({ alt, src, img }) => {
 }
 
 export const PageLayoutNewsSection = ({ data, rootData }) => {
-  let newsPosts = get(rootData, 'allPrismicNewsPost.edges').sort((a, b) => {
-    return (
-      new Date(get(b, 'node.data.publish_date')) -
-      new Date(get(a, 'node.data.publish_date'))
-    )
-  })
+  const newsPosts = get(rootData, 'allPrismicNewsPost.edges')
+    .sort((a, b) => {
+      return (
+        new Date(get(b, 'node.data.publish_date')) -
+        new Date(get(a, 'node.data.publish_date'))
+      )
+    })
+    .filter(edge => !includes(get(edge, 'node.tags'), 'CMS Guide'))
 
   return (
     <SectionContainer>
@@ -95,10 +97,7 @@ class GridList extends React.Component {
               >
                 <ImageContainer>
                   <Image
-                    img={get(
-                      news_post,
-                      'node.data.article_thumb_image.localFile.childImageSharp.fluid'
-                    )}
+                    img={get(news_post, 'node.data.article_thumb_image.fluid')}
                     src={get(news_post, 'node.data.article_thumb_image.url')}
                     alt={getUnlessEmpty(
                       'node.data.article_thumb_image.alt',
@@ -166,9 +165,10 @@ export const query = graphql`
         }
       }
     }
-    allPrismicNewsPost(filter: { tags: { ne: "CMS Guide" } }) {
+    allPrismicNewsPost {
       edges {
         node {
+          tags
           data {
             publish_date
             article_title1 {
@@ -179,12 +179,8 @@ export const query = graphql`
             }
             article_thumb_image {
               alt
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 500, quality: 90) {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
-                }
+              fluid(maxWidth: 500) {
+                ...GatsbyPrismicImageFluid
               }
             }
           }

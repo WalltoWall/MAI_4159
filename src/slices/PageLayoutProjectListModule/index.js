@@ -35,10 +35,7 @@ const filtersMatch = (currentFilter, projectFilters) => {
 
 const renderGrid = (data, item, currentFilter) => {
   const imageURL = get(data, 'project_thumb_image.url')
-  const imageFluid = get(
-    data,
-    'project_thumb_image.localFile.childImageSharp.fluid'
-  )
+  const imageFluid = get(data, 'project_thumb_image.fluid')
 
   return (
     <>
@@ -181,12 +178,8 @@ export const query = graphql`
                         }
                       }
                       project_thumb_image {
-                        localFile {
-                          childImageSharp {
-                            fluid(maxWidth: 800, quality: 90) {
-                              ...GatsbyImageSharpFluid_withWebp
-                            }
-                          }
+                        fluid(maxWidth: 800) {
+                          ...GatsbyPrismicImageFluid
                         }
                       }
                     }

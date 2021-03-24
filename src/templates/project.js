@@ -16,13 +16,14 @@ import { ProjectLayoutCmsHero } from 'slices/ProjectLayoutCmsHero'
 import { ProjectLayoutCmsGuideText } from 'slices/ProjectLayoutCmsGuideText'
 import { ProjectLayoutSpacingModifier } from 'slices/ProjectLayoutSpacingModifier'
 import { ProjectLayoutSideBySideTextImage } from 'slices/ProjectLayoutSideBySideTextImage'
-import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
-import { deletePreviewData, getPreviewData } from 'src/hooks.js'
+// import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
+// import { deletePreviewData, getPreviewData } from 'src/hooks.js'
 
 const ProjectTemplate = ({ data: staticData, location }) => {
-  const previewData = getPreviewData()
-  const data = mergePrismicPreviewData({ previewData, staticData })
-  deletePreviewData()
+  const data = staticData
+  // const previewData = getPreviewData()
+  // const data = mergePrismicPreviewData({ previewData, staticData })
+  // deletePreviewData()
 
   return (
     <>

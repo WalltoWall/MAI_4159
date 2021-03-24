@@ -14,13 +14,14 @@ import { NewsPostLayoutFullImageGif } from 'slices/NewsPostLayoutFullImageGif'
 import { NewsPostLayoutCmsGuideText } from 'slices/NewsPostLayoutCmsGuideText'
 import { NewsPostLayoutSideBySideTextImage } from 'slices/NewsPostLayoutSideBySideTextImage'
 import { NewsPostLayoutSpacingModifier } from 'slices/NewsPostLayoutSpacingModifier'
-import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
-import { deletePreviewData, getPreviewData } from 'src/hooks.js'
+// import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
+// import { deletePreviewData, getPreviewData } from 'src/hooks.js'
 
 const NewsPostTemplate = ({ data: staticData, location }) => {
-  const previewData = getPreviewData()
-  const data = mergePrismicPreviewData({ previewData, staticData })
-  deletePreviewData()
+  const data = staticData
+  // const previewData = getPreviewData()
+  // const data = mergePrismicPreviewData({ previewData, staticData })
+  // deletePreviewData()
 
   return (
     <div>

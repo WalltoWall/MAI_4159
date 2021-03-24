@@ -98,7 +98,7 @@ export class ProjectLayoutHero extends React.Component {
                   <Image
                     alt={getUnlessEmpty('image.alt', item)}
                     src={get(item, 'image.url')}
-                    img={get(item, 'image.localFile.childImageSharp.fluid')}
+                    img={get(item, 'image.fluid')}
                   />
                 </ImageContainer>
               ))}
@@ -111,10 +111,7 @@ export class ProjectLayoutHero extends React.Component {
               <Image
                 alt={getUnlessEmpty('alt', data.items[0])}
                 src={get(data, 'items[0].image.url')}
-                img={get(
-                  data,
-                  'items[0].image.localFile.childImageSharp.fluid'
-                )}
+                img={get(data, 'items[0].image.fluid')}
               />
             </ImageContainer>
           </CarouselContainer>
@@ -145,12 +142,8 @@ export const query = graphql`
             items {
               image {
                 alt
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 2000, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
-                  }
+                fluid(maxWidth: 1000) {
+                  ...GatsbyPrismicImageFluid
                 }
               }
             }

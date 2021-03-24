@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import { SideBySideTextImage } from 'src/components/SideBySideTextImage'
 
 export const TeamMemberLayoutSideBySideTextImage = ({ data }) => (
@@ -19,12 +20,8 @@ export const query = graphql`
               image_position
               image {
                 alt
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 800, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
-                  }
+                fluid(maxWidth: 800) {
+                  ...GatsbyPrismicImageFluid
                 }
               }
               title_text

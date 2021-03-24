@@ -1,6 +1,5 @@
 const path = require('path')
 const fs = require('fs')
-const dotenv = require('dotenv')
 const truncate = require('truncate')
 const {
   castArray,
@@ -42,7 +41,6 @@ const SITE_TITLE = 'MASON'
 const SITE_TITLE_SHORT = 'MASON'
 const SITE_DESCRIPTION =
   'We help shape Hawaii’s future, from historic places to contemporary buildings, designing and reimagining architecture that keeps our heritage relevant for our community.'
-const SITE_URL = 'https://masonarch.com'
 
 const valuesDeep = x =>
   cond([
@@ -195,6 +193,7 @@ module.exports = {
         accessToken: process.env.PRISMIC_ACCESS_TOKEN,
         schemas: require('./src/schemas'),
         linkResolver: () => doc => (doc.uid === 'home' ? '/' : `/${doc.uid}/`),
+        shouldDownloadImage: () => true,
       },
     },
     'gatsby-plugin-catch-links',
@@ -208,7 +207,7 @@ module.exports = {
         background_color: '#000000',
         theme_color: '#ffffff',
         display: 'minimal-ui',
-        icon: path.join('src', 'assets', 'manifest-icon.png'),
+        // icon: path.resolve(__dirname, './src/assets/manifest-icon.png'),
       },
     },
 

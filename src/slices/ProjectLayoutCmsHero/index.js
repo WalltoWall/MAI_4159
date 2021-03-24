@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Hero } from 'components/Hero'
 
-export const ProjectLayoutCmsHero = ({ data, subpage }) => (
+export const ProjectLayoutCmsHero = ({ data }) => (
   <>
     <Hero data={data} subpage={true} />
   </>
@@ -22,12 +22,8 @@ export const query = graphql`
               has_filter
               image {
                 alt
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 1400, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
-                  }
+                fluid(maxWidth: 1000) {
+                  ...GatsbyPrismicImageFluid
                 }
               }
             }

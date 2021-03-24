@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { get, split, trim, includes, toLower, filter } from 'lodash'
+import { get, split, trim, includes, toLower } from 'lodash'
 import { Image } from 'components/Image'
 import { Value, Toggle } from 'react-powerplug'
 
@@ -64,7 +64,7 @@ const RoleFilterBar = ({ filters, setFilter, currentFilter }) => (
 )
 
 const renderGrid = (data, currentFilter) => {
-  const imageFluid = get(data, 'photo.localFile.childImageSharp.fluid')
+  const imageFluid = get(data, 'photo.fluid')
   const imageURL = get(data, 'photo.url')
 
   return (
@@ -171,12 +171,8 @@ export const query = graphql`
                       department1
                       photo {
                         alt
-                        localFile {
-                          childImageSharp {
-                            fluid(maxWidth: 600, quality: 90) {
-                              ...GatsbyImageSharpFluid_withWebp
-                            }
-                          }
+                        fluid(maxWidth: 800) {
+                          ...GatsbyPrismicImageFluid
                         }
                       }
                     }

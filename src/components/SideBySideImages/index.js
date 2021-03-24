@@ -12,7 +12,7 @@ import { getUnlessEmpty } from 'helpers'
 
 const Image = ({ item, data }) => {
   const imageURL = get(item, 'image1.url')
-  const imageFluid = get(item, 'image1.localFile.childImageSharp.fluid')
+  const imageFluid = get(item, 'image1.fluid')
 
   return (
     (imageURL || imageFluid) && (
@@ -33,8 +33,8 @@ export const SideBySideImages = ({ data }) => {
   return (
     <Container>
       <Images>
-        {get(data, 'items').map(item => (
-          <Image item={item} data={data} />
+        {get(data, 'items').map((item, idx) => (
+          <Image key={idx} item={item} data={data} />
         ))}
       </Images>
       {caption && (

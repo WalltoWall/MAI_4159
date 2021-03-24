@@ -29,8 +29,8 @@ import { PageLayoutSideBySideImages } from 'slices/PageLayoutSideBySideImages'
 import { PageLayoutFullImage } from 'slices/PageLayoutFullImage'
 import { PageLayoutSideBySideTextImage } from 'slices/PageLayoutSideBySideTextImage'
 import { PageLayoutSpacingModifier } from 'slices/PageLayoutSpacingModifier'
-import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
-import { deletePreviewData, getPreviewData } from 'src/hooks.js'
+// import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
+// import { deletePreviewData, getPreviewData } from 'src/hooks.js'
 
 const PageTemplate = ({ data: staticData, location }) => {
   const renderSlices = data => (
@@ -83,9 +83,10 @@ const PageTemplate = ({ data: staticData, location }) => {
     </AuthWall>
   )
 
-  const previewData = getPreviewData()
-  const data = mergePrismicPreviewData({ previewData, staticData })
-  deletePreviewData()
+  // const previewData = getPreviewData()
+  // const data = mergePrismicPreviewData({ previewData, staticData })
+  // deletePreviewData()
+  const data = staticData
 
   return (
     <>

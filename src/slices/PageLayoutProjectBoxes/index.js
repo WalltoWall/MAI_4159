@@ -23,7 +23,7 @@ export const PageLayoutProjectBoxes = ({ data }) => {
             ),
             img: get(
               project,
-              'projects.document.data.project_thumb_image.localFile.childImageSharp.fluid'
+              'projects.document.data.project_thumb_image.fluid'
             ),
             src: get(project, 'projects.document.data.project_thumb_image.url'),
             title: get(project, 'projects.document.data.title.text'),
@@ -59,12 +59,8 @@ export const query = graphql`
                       }
                       project_thumb_image {
                         alt
-                        localFile {
-                          childImageSharp {
-                            fluid(maxWidth: 500, quality: 90) {
-                              ...GatsbyImageSharpFluid_withWebp
-                            }
-                          }
+                        fluid(maxWidth: 500) {
+                          ...GatsbyPrismicImageFluid
                         }
                       }
                     }

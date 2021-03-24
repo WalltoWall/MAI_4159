@@ -21,7 +21,7 @@ import {
 
 export const PageLayoutHero = ({ data }) => {
   const imageURL = get(data, 'primary.image.url')
-  const imageFluid = get(data, 'primary.image.localFile.childImageSharp.fluid')
+  const imageFluid = get(data, 'primary.image.fluid')
 
   return (
     <Container>
@@ -42,13 +42,13 @@ export const PageLayoutHero = ({ data }) => {
             <span>re</span>
             <h1>we are mason</h1>
             <SlidingVertical>
-              {get(data, 'items').map(item => (
-                <span>{item.rotating_text}</span>
+              {get(data, 'items').map((item, idx) => (
+                <span key={idx}>{item.rotating_text}</span>
               ))}
             </SlidingVertical>
           </Headline>
         </RotatedContainer>
-        <SubHeadline> Hawaii's Future</SubHeadline>
+        <SubHeadline> Hawaii&apos;s Future</SubHeadline>
       </HeadlineWrapper>
       <Overlay>
         <DescriptionWrapper>
@@ -73,12 +73,8 @@ export const query = graphql`
             primary {
               image {
                 alt
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 1000, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
-                  }
+                fluid(maxWidth: 1000) {
+                  ...GatsbyPrismicImageFluid
                 }
               }
               title1 {

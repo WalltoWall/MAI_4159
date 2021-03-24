@@ -36,7 +36,7 @@ export const renderSocial = item => {
 
 export const TeamMemberLayoutBioSummary = ({ data }) => {
   const imageURL = get(data, 'primary.image.url')
-  const imageFluid = get(data, 'primary.image.localFile.childImageSharp.fluid')
+  const imageFluid = get(data, 'primary.image.fluid')
 
   return (
     <Container>
@@ -82,12 +82,8 @@ export const query = graphql`
               quote_attribution
               image {
                 alt
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 1000, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
-                  }
+                fluid(maxWidth: 800) {
+                  ...GatsbyPrismicImageFluid
                 }
               }
             }
