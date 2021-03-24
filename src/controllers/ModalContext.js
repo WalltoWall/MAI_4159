@@ -10,9 +10,12 @@ const ModalContext = React.createContext({
 export const ModalConsumer = ModalContext.Consumer
 
 export class ModalProvider extends React.Component {
-  state = {
-    component: null,
-    props: {},
+  constructor(props) {
+    super(props)
+    this.state = {
+      component: null,
+      props: {},
+    }
   }
 
   showModal = (component, props = {}) => {

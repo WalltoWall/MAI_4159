@@ -210,7 +210,7 @@ module.exports = {
         background_color: '#000000',
         theme_color: '#ffffff',
         display: 'minimal-ui',
-        // icon: path.resolve(__dirname, './src/assets/manifest-icon.png'),
+        icon: path.resolve(__dirname, './src/assets/manifest-icon.png'),
       },
     },
 
