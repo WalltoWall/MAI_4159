@@ -141,6 +141,8 @@ export const PageLayoutTeamGrid = ({ data, rootData }) => {
                 const quoteData = item.item.document.data
                 return <QuoteBlock data={quoteData} />
               }
+
+              return null
             })}
           </GridContainer>
         </>

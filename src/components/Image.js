@@ -3,6 +3,7 @@ import GatsbyImage from 'gatsby-image'
 
 export const Image = ({
   src,
+  alt,
   fluid,
   objectFit = 'cover',
   objectPosition = '50% 50%',
@@ -12,6 +13,7 @@ export const Image = ({
     <GatsbyImage
       {...props}
       fluid={fluid}
+      alt={alt}
       imgStyle={{
         ...props.imgStyle,
         objectFit,
@@ -23,6 +25,7 @@ export const Image = ({
     <img
       {...props}
       width="100%"
+      alt={alt}
       height="100%"
       src={src}
       loading="lazy"

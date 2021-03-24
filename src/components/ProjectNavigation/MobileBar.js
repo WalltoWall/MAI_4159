@@ -92,7 +92,7 @@ export class MobileBar extends React.Component {
           </StyledLink>
           {/* ARCH SUB FILTER START */}
           <div style={{ position: 'relative' }}>
-            <p
+            <button
               className={navItemClassName}
               style={{ display: 'inline-flex' }}
               onClick={e => this.toggleSubFilter(e, false, 'arch')}
@@ -102,7 +102,7 @@ export class MobileBar extends React.Component {
                 style={{ top: '12px', right: '2rem' }}
                 active={this.state.activeSubFilter === 'arch'}
               />
-            </p>
+            </button>
           </div>
           <SubFilterContainer isOpen={this.state.activeSubFilter === 'arch'}>
             {this.props.architectureCategories.map(item => (
@@ -120,7 +120,7 @@ export class MobileBar extends React.Component {
 
           {/* HISTORIC SUB FILTER START */}
           <div style={{ position: 'relative' }}>
-            <p
+            <button
               className={navItemClassName}
               style={{ display: 'inline-flex' }}
               onClick={e => this.toggleSubFilter(e, false, 'hist')}
@@ -130,7 +130,7 @@ export class MobileBar extends React.Component {
                 style={{ top: '12px', right: '2rem' }}
                 active={this.state.activeSubFilter === 'hist'}
               />
-            </p>
+            </button>
           </div>
           <SubFilterContainer isOpen={this.state.activeSubFilter === 'hist'}>
             {this.props.historicCategories.map(item => (
