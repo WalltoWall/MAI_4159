@@ -1,5 +1,9 @@
 # Developer Documentation
 
+## Project Specifics
+
+- Node Version 10.24.0, see: `.node-version`.
+
 The following collection of documents aims to provide an overview of
 development on this project.
 
