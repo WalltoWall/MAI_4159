@@ -9,6 +9,7 @@ export const BodyCopy = styled.div`
   font-weight: 400;
   margin: 0 auto 2rem auto;
   text-align: center;
+
   ${t.mq.l} {
     text-align: left;
     margin: 0 auto 2rem 0;

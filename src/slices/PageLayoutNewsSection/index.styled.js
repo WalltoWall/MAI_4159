@@ -7,9 +7,10 @@ export const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   width: 100%;
   margin: 0 auto;
+
   ${t.mq.m} {
     justify-content: flex-start;
     align-content: flex-start;
@@ -85,23 +86,24 @@ export const PostTitle = styled.div`
 
 export const PostContent = styled(BodyCopy)`
   text-align: left;
-  margin: 0 auto;
   overflow: hidden;
+  margin: 0 auto 2rem 0;
 `
 
 export const StyledLink = styled(Link)`
-  position: relative;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  position: relative;
   width: 100%;
   padding: 0;
   margin: 1rem 0;
+
   ${t.mq.m} {
     width: 50%;
     height: auto;
     padding: 0 0.5rem 2rem 0.5rem;
   }
+
   ${t.mq.l} {
     width: 25%;
     height: auto;
@@ -116,8 +118,17 @@ export const StyledLink = styled(Link)`
       opacity: 1;
     }
   }
+
   animation: fadeIn 0.5s ease-in;
 `
+
+export const ReadMoreWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  position: initial;
+  margin-top: auto;
+`
+
 export const ReadMore = styled(Link)`
   font-family: ${t.ff.sans2};
   color: ${t.c.darkgrey1};
@@ -130,32 +141,26 @@ export const ReadMore = styled(Link)`
 `
 
 export const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   padding: 1.5rem;
   background-color: ${t.c.white};
-  position: relative;
+  flex-grow: 1;
+
   ${t.mq.m} {
     min-height: 240px;
   }
+
   ${t.mq.l} {
     min-height: 400px;
   }
+
   ${t.mq.x} {
     min-height: 300px;
   }
+
   ${t.mq.xx} {
     min-height: 260px;
-  }
-`
-
-export const ReadMoreWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  position: initial;
-  margin-top: 1rem;
-  ${t.mq.m} {
-    position: absolute;
-    bottom: 25px;
-    margin-top: 0;
   }
 `
 
