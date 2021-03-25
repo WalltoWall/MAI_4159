@@ -21,7 +21,7 @@ export const ProjectLayoutFeatureList = ({ data }) => {
             key: get(project, 'projects.document.uid'),
             img: get(
               project,
-              'projects.document.data.project_thumb_image.localFile.childImageSharp.fluid'
+              'projects.document.data.project_thumb_image.fluid'
             ),
             src: get(project, 'projects.document.data.project_thumb_image.url'),
             alt: getUnlessEmpty(
@@ -55,12 +55,8 @@ export const query = graphql`
                       }
                       project_thumb_image {
                         alt
-                        localFile {
-                          childImageSharp {
-                            fluid(maxWidth: 500, quality: 90) {
-                              ...GatsbyImageSharpFluid_withWebp
-                            }
-                          }
+                        fluid(maxWidth: 500) {
+                          ...GatsbyPrismicImageFluid
                         }
                       }
                     }

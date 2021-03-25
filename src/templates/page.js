@@ -4,6 +4,7 @@ import MapToComponents from 'react-map-to-components'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
 import { isPathActive } from 'helpers'
+import { withPreview } from 'gatsby-source-prismic'
 import { Layout } from 'components/Layout'
 import { AuthWall } from 'controllers/AuthWall'
 import { AuthForm } from 'components/AuthForm'
@@ -29,10 +30,8 @@ import { PageLayoutSideBySideImages } from 'slices/PageLayoutSideBySideImages'
 import { PageLayoutFullImage } from 'slices/PageLayoutFullImage'
 import { PageLayoutSideBySideTextImage } from 'slices/PageLayoutSideBySideTextImage'
 import { PageLayoutSpacingModifier } from 'slices/PageLayoutSpacingModifier'
-import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
-import { deletePreviewData, getPreviewData } from 'src/hooks.js'
 
-const PageTemplate = ({ data: staticData, location }) => {
+const PageTemplate = ({ data, location }) => {
   const renderSlices = data => (
     <MapToComponents
       getKey={x => x.id}
@@ -83,10 +82,6 @@ const PageTemplate = ({ data: staticData, location }) => {
     </AuthWall>
   )
 
-  const previewData = getPreviewData()
-  const data = mergePrismicPreviewData({ previewData, staticData })
-  deletePreviewData()
-
   return (
     <>
       <Helmet>
@@ -110,7 +105,7 @@ const PageTemplate = ({ data: staticData, location }) => {
   )
 }
 
-export default PageTemplate
+export default withPreview(PageTemplate)
 
 export const query = graphql`
   query PageTemplate($id: String!) {

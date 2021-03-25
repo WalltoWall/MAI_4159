@@ -7,7 +7,7 @@ import { getUnlessEmpty } from 'helpers'
 
 export const ProjectLayoutFullImage = ({ data }) => {
   const imageURL = get(data, 'primary.image.url')
-  const imageFluid = get(data, 'primary.image.localFile.childImageSharp.fluid')
+  const imageFluid = get(data, 'primary.image.fluid')
   const caption = get(data, 'primary.caption.text')
 
   return (
@@ -38,12 +38,8 @@ export const query = graphql`
               normalize_margin
               image {
                 alt
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 1500, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
-                  }
+                fluid(maxWidth: 1000) {
+                  ...GatsbyPrismicImageFluid
                 }
               }
               caption {

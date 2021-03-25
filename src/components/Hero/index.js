@@ -13,7 +13,7 @@ import {
 } from './index.styled'
 
 export const Hero = ({ data, whitebg, subpage }) => {
-  const imageFluid = get(data, 'primary.image.localFile.childImageSharp.fluid')
+  const imageFluid = get(data, 'primary.image.fluid')
   const imageURL = get(data, 'primary.image.url')
 
   return (

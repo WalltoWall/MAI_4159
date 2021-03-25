@@ -73,7 +73,7 @@ export const PageLayoutFeaturedNews = ({ data }) => {
               ),
               img: get(
                 featured_news_post,
-                'featured_news_post.document.data.article_thumb_image.localFile.childImageSharp.fluid'
+                'featured_news_post.document.data.article_thumb_image.fluid'
               ),
               src: get(
                 featured_news_post,
@@ -129,12 +129,8 @@ export const query = graphql`
                       }
                       article_thumb_image {
                         alt
-                        localFile {
-                          childImageSharp {
-                            fluid(maxWidth: 800, quality: 90) {
-                              ...GatsbyImageSharpFluid_withWebp
-                            }
-                          }
+                        fluid(maxWidth: 800) {
+                          ...GatsbyPrismicImageFluid
                         }
                       }
                     }

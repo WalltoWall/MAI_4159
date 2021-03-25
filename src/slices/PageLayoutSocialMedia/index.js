@@ -18,11 +18,11 @@ const Image = ({ alt, src, img }) => {
 export const PageLayoutSocialMedia = ({ data }) => {
   return (
     <Container>
-      {get(data, 'items', []).map(item => (
-        <Content>
+      {get(data, 'items', []).map((item, idx) => (
+        <Content key={idx}>
           <ImageContainer href={get(item, 'link.url')} target="_blank">
             <Image
-              img={get(item, 'icon.localFile.childImageSharp.fluid')}
+              img={get(item, 'icon.fluid')}
               src={get(item, 'icon.url')}
               alt={getUnlessEmpty('icon.image.alt', data)}
             />
@@ -43,12 +43,8 @@ export const query = graphql`
             items {
               icon {
                 alt
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 500, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
-                  }
+                fluid(maxWidth: 500) {
+                  ...GatsbyPrismicImageFluid
                 }
               }
               link {

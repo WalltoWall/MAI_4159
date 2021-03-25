@@ -2,6 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import MapToComponents from 'react-map-to-components'
 import { graphql } from 'gatsby'
+import { withPreview } from 'gatsby-source-prismic'
 import { get } from 'lodash'
 import { Layout } from 'components/Layout'
 import { Placeholder } from 'components/Placeholder'
@@ -14,14 +15,8 @@ import { NewsPostLayoutFullImageGif } from 'slices/NewsPostLayoutFullImageGif'
 import { NewsPostLayoutCmsGuideText } from 'slices/NewsPostLayoutCmsGuideText'
 import { NewsPostLayoutSideBySideTextImage } from 'slices/NewsPostLayoutSideBySideTextImage'
 import { NewsPostLayoutSpacingModifier } from 'slices/NewsPostLayoutSpacingModifier'
-import { mergePrismicPreviewData } from 'gatsby-source-prismic/dist/index.cjs'
-import { deletePreviewData, getPreviewData } from 'src/hooks.js'
 
-const NewsPostTemplate = ({ data: staticData, location }) => {
-  const previewData = getPreviewData()
-  const data = mergePrismicPreviewData({ previewData, staticData })
-  deletePreviewData()
-
+const NewsPostTemplate = ({ data, location }) => {
   return (
     <div>
       <Helmet title={get(data, 'prismicNewsPost.data.title.text')} />
@@ -51,7 +46,7 @@ const NewsPostTemplate = ({ data: staticData, location }) => {
   )
 }
 
-export default NewsPostTemplate
+export default withPreview(NewsPostTemplate)
 
 export const query = graphql`
   query NewsPostTemplate($id: String!) {

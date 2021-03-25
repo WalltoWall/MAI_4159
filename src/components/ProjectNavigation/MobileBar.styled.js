@@ -74,6 +74,9 @@ export const navItemClassName = css`
   letter-spacing: 0.1rem;
   cursor: pointer;
   align-items: center;
+  background: transparent;
+  border: 0;
+  outline: none;
 `
 
 export const linkActiveClassName = css`

@@ -7,8 +7,8 @@ import { Content, Info, StyledHtmlClassName } from './index.styled'
 
 export const PageLayoutInfoBlock = ({ data }) => (
   <Content>
-    {get(data, 'items', []).map(item => (
-      <Info>
+    {get(data, 'items', []).map((item, idx) => (
+      <Info key={idx}>
         <Headline alignLeft>{get(item, 'title1.text')}</Headline>
         <HTMLContent
           html={get(item, 'info1.html')}

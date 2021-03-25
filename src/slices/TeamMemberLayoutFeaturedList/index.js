@@ -13,7 +13,7 @@ export const TeamMemberLayoutFeaturedList = ({ data, rootData }) => {
     <Container>
       <SmallHeadline>
         {split(get(rootData, 'prismicTeamMember.data.title'), ' ')[0]}
-        's Featured Projects
+        &apos;s Featured Projects
       </SmallHeadline>
       <GridContainer>
         {projects.map(project =>
@@ -25,7 +25,7 @@ export const TeamMemberLayoutFeaturedList = ({ data, rootData }) => {
             ),
             img: get(
               project,
-              'project.document.data.project_thumb_image.localFile.childImageSharp.fluid'
+              'project.document.data.project_thumb_image.fluid'
             ),
             src: get(project, 'project.document.data.project_thumb_image.url'),
             title: get(project, 'project.document.data.title.text'),
@@ -54,12 +54,8 @@ export const query = graphql`
                         text
                       }
                       project_thumb_image {
-                        localFile {
-                          childImageSharp {
-                            fluid(maxWidth: 800, quality: 90) {
-                              ...GatsbyImageSharpFluid_withWebp
-                            }
-                          }
+                        fluid(maxWidth: 600) {
+                          ...GatsbyPrismicImageFluid
                         }
                       }
                     }

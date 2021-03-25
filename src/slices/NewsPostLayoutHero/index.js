@@ -19,12 +19,8 @@ export const query = graphql`
               }
               image {
                 alt
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 1500, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
-                  }
+                fluid(maxWidth: 1000) {
+                  ...GatsbyPrismicImageFluid
                 }
               }
             }

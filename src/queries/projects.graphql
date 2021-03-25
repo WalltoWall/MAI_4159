@@ -1,9 +1,10 @@
 query {
-  allPrismicProject(filter: { tags: { ne: "CMS Guide" } }) {
+  allPrismicProject {
     edges {
       node {
         id
         uid
+        tags
         data {
           title {
             text

@@ -1,13 +1,14 @@
 const path = require('path')
 const fs = require('fs')
-const dotenv = require('dotenv')
 const truncate = require('truncate')
 const {
   castArray,
   cond,
   compose,
   flatten,
+  filter,
   flattenDeep,
+  includes,
   isArray,
   isPlainObject,
   get,
@@ -16,6 +17,7 @@ const {
   pipe,
   stubTrue,
   values,
+  join,
 } = require('lodash/fp')
 
 // Load .env files.
@@ -42,7 +44,6 @@ const SITE_TITLE = 'MASON'
 const SITE_TITLE_SHORT = 'MASON'
 const SITE_DESCRIPTION =
   'We help shape Hawaii’s future, from historic places to contemporary buildings, designing and reimagining architecture that keeps our heritage relevant for our community.'
-const SITE_URL = 'https://masonarch.com'
 
 const valuesDeep = x =>
   cond([
@@ -62,6 +63,10 @@ const flatValuesDeep = pipe(
   flattenDeep
 )
 
+const filterCMSGuideEdges = filter(
+  edge => !includes('CMS Guide', get('edge.node.tags', edge))
+)
+
 module.exports = {
   siteMetadata: {
     title: SITE_TITLE,
@@ -69,18 +74,8 @@ module.exports = {
     keywords: '',
   },
   plugins: [
-    // polyfill.io is strictly for local development on IE 11. It is
-    // unnecessary on production since Babel should include everything it
-    // needs.
-    process.env.NODE_ENV === 'development' && 'gatsby-plugin-polyfill-io',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-svgr',
-    {
-      resolve: 'gatsby-plugin-sharp',
-      options: {
-        base64Width: 100,
-      },
-    },
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {
@@ -132,21 +127,26 @@ module.exports = {
           'metaDescription',
           'excerpt',
         ],
-        normalizer: ({ data }) =>
-          get('allPrismicProject.edges', data).map(({ node }) => {
-            const content = flatValuesDeep(get('data.layout', node)).join(' ')
+        normalizer: ({ data }) => {
+          return compose(
+            map(edge => {
+              const content = join(' ', flatValuesDeep(edge.node.data.layout))
 
-            return {
-              id: node.id,
-              path: node.uid === 'home' ? '/' : `/${node.uid}`,
-              title: get('data.title.text', node),
-              metaTitle: get('data.meta_title', node),
-              metaDescription: get('data.meta_description', node),
-              image: get('data.project_thumb_image.url', node),
-              content,
-              excerpt: truncate(content, 200),
-            }
-          }),
+              return {
+                id: get('node.id', edge),
+                path: edge.node.uid === 'home' ? '/' : `/${edge.node.uid}`,
+                title: get('node.data.title.text', edge),
+                metaTitle: get('node.data.meta_title', edge),
+                metaDescription: get('node.data.meta_description', edge),
+                image: get('node.data.project_thumb_image.url', edge),
+                content,
+                excerpt: truncate(content, 200),
+              }
+            }),
+            filterCMSGuideEdges,
+            get('allPrismicProject.edges')
+          )(data)
+        },
       },
     },
     {
@@ -180,10 +180,12 @@ module.exports = {
               }
             }),
             map(get('node')),
+            filterCMSGuideEdges,
             flatten,
             map(get('edges')),
             values
           )(data)
+
           return nodes
         },
       },
@@ -191,14 +193,14 @@ module.exports = {
     {
       resolve: 'gatsby-source-prismic',
       options: {
-        repositoryName: process.env.PRISMIC_REPOSITORY_NAME,
-        accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+        repositoryName: process.env.GATSBY_PRISMIC_REPOSITORY_NAME,
+        accessToken: process.env.GATSBY_PRISMIC_ACCESS_TOKEN,
         schemas: require('./src/schemas'),
         linkResolver: () => doc => (doc.uid === 'home' ? '/' : `/${doc.uid}/`),
+        shouldDownloadImage: () => false,
       },
     },
     'gatsby-plugin-catch-links',
-    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -208,7 +210,7 @@ module.exports = {
         background_color: '#000000',
         theme_color: '#ffffff',
         display: 'minimal-ui',
-        icon: path.join('src', 'assets', 'manifest-icon.png'),
+        icon: path.resolve(__dirname, './src/assets/manifest-icon.png'),
       },
     },
 

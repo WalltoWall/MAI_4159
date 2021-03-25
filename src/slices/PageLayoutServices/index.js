@@ -24,15 +24,9 @@ export const PageLayoutServices = ({ data }) => {
   const projects = get(data, 'items')
   const serviceName = get(data, 'primary.title1.text')
   const imageURLRight = get(data, 'primary.right_image.url')
-  const imageFluidRight = get(
-    data,
-    'primary.right_image.localFile.childImageSharp.fluid'
-  )
+  const imageFluidRight = get(data, 'primary.right_image.fluid')
   const imageURLLeft = get(data, 'primary.left_image.url')
-  const imageFluidLeft = get(
-    data,
-    'primary.left_image.localFile.childImageSharp.fluid'
-  )
+  const imageFluidLeft = get(data, 'primary.left_image.fluid')
 
   return (
     <Container background_color={get(data, 'primary.background_color')}>
@@ -82,7 +76,7 @@ export const PageLayoutServices = ({ data }) => {
             ),
             img: get(
               project,
-              'projects.document.data.project_thumb_image.localFile.childImageSharp.fluid'
+              'projects.document.data.project_thumb_image.fluid'
             ),
             src: get(project, 'projects.document.data.project_thumb_image.url'),
             title: get(project, 'projects.document.data.title.text'),
@@ -113,22 +107,14 @@ export const query = graphql`
               }
               left_image {
                 alt
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 700, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
-                  }
+                fluid(maxWidth: 700) {
+                  ...GatsbyPrismicImageFluid
                 }
               }
               right_image {
                 alt
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 700, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
-                  }
+                fluid(maxWidth: 700) {
+                  ...GatsbyPrismicImageFluid
                 }
               }
               description {
@@ -152,12 +138,8 @@ export const query = graphql`
                       }
                       project_thumb_image {
                         alt
-                        localFile {
-                          childImageSharp {
-                            fluid(maxWidth: 500, quality: 90) {
-                              ...GatsbyImageSharpFluid_withWebp
-                            }
-                          }
+                        fluid(maxWidth: 500) {
+                          ...GatsbyPrismicImageFluid
                         }
                       }
                     }

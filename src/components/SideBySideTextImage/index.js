@@ -15,7 +15,7 @@ import {
 const renderItem = item => {
   const { title_text, body_text, image_position } = item
   const imageURL = get(item, 'image.url')
-  const imageFluid = get(item, 'image.localFile.childImageSharp.fluid')
+  const imageFluid = get(item, 'image.fluid')
 
   return (
     <ItemContainer key={imageURL} imagePosition={image_position}>

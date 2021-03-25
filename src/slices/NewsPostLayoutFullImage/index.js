@@ -10,7 +10,7 @@ import {
 import { getUnlessEmpty } from 'helpers'
 
 export const NewsPostLayoutFullImage = ({ data }) => {
-  const imageFluid = get(data, 'primary.image.localFile.childImageSharp.fluid')
+  const imageFluid = get(data, 'primary.image.fluid')
   const imageURL = get(data, 'primary.image.url')
   const caption = get(data, 'primary.caption.text')
   return (
@@ -40,12 +40,8 @@ export const query = graphql`
             primary {
               image {
                 alt
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 1500, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
-                  }
+                fluid(maxWidth: 1000) {
+                  ...GatsbyPrismicImageFluid
                 }
               }
               caption {

@@ -28,12 +28,12 @@ export const PageLayoutSplitPanels = ({ data }) => {
 
   return (
     <Container>
-      {get(data, 'items', []).map(item => (
-        <SplitPanelWrapper>
+      {get(data, 'items', []).map((item, idx) => (
+        <SplitPanelWrapper key={idx}>
           <ImageContainer>
             <Image
               key={get(item, 'title1')}
-              img={get(item, 'image.localFile.childImageSharp.fluid')}
+              img={get(item, 'image.fluid')}
               src={get(item, 'image.url')}
               alt={getUnlessEmpty('image.alt', item)}
             />
@@ -68,12 +68,8 @@ export const query = graphql`
             items {
               image {
                 alt
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 1500, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
-                  }
+                fluid(maxWidth: 1000) {
+                  ...GatsbyPrismicImageFluid
                 }
               }
               title1 {
