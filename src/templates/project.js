@@ -66,6 +66,7 @@ export default withPreview(ProjectTemplate)
 export const query = graphql`
   query ProjectTemplate($id: String!) {
     prismicProject(id: { eq: $id }) {
+      _previewable
       data {
         title {
           text

@@ -51,6 +51,7 @@ export default withPreview(NewsPostTemplate)
 export const query = graphql`
   query NewsPostTemplate($id: String!) {
     prismicNewsPost(id: { eq: $id }) {
+      _previewable
       data {
         publish_date
         title {
