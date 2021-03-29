@@ -49,6 +49,7 @@ export default withPreview(TeamMemberTemplate)
 export const query = graphql`
   query TeamMemberTemplate($id: String!) {
     prismicTeamMember(id: { eq: $id }) {
+      _previewable
       data {
         title
         layout {

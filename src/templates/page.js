@@ -110,6 +110,7 @@ export default withPreview(PageTemplate)
 export const query = graphql`
   query PageTemplate($id: String!) {
     prismicPage(id: { eq: $id }) {
+      _previewable
       uid
       data {
         title {
