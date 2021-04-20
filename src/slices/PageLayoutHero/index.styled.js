@@ -177,7 +177,7 @@ export const SlidingVertical = styled.div`
 `
 
 export const ImageContainer = styled.div`
-  background-color: ${t.c.lightgrey4};
+  background-color: ${t.c.darkgrey2};
   width: 100%;
   height: 400px;
   position: relative;

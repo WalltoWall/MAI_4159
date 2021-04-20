@@ -3,6 +3,7 @@ import t from 'theme'
 import { ReactComponent as TwitterIcon } from 'assets/twitter_icon.svg'
 import { ReactComponent as LinkedinIcon } from 'assets/linkedin_icon.svg'
 import { Link } from 'components/Link'
+import { Image } from 'components/Image'
 
 export const Container = styled.div`
   width: 100%;
@@ -15,7 +16,6 @@ export const Container = styled.div`
 `
 
 export const ImageContainer = styled.div`
-  background-color: ${t.c.lightgrey4};
   height: ${t.s(9)};
 
   width: 100%;
@@ -124,4 +124,8 @@ export const StyledTwitterIcon = styled(TwitterIcon)`
   :hover {
     fill: ${t.c.darkyellow};
   }
+`
+
+export const StyledImage = styled(Image)`
+  background-color: ${t.c.darkgrey2};
 `

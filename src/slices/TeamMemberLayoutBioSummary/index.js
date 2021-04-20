@@ -11,6 +11,7 @@ import {
   StyledLinkedinIcon,
   StyledTwitterIcon,
   StyledLink,
+  StyledImage,
 } from './index.styled'
 
 export const renderSocial = item => {
@@ -43,7 +44,7 @@ export const TeamMemberLayoutBioSummary = ({ data }) => {
       <Content>
         {(imageFluid || imageURL) && (
           <ImageContainer>
-            <Image
+            <StyledImage
               alt={get(data, 'primary.image.alt')}
               src={imageURL}
               fluid={imageFluid}
