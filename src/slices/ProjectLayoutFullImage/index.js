@@ -38,8 +38,8 @@ export const query = graphql`
               normalize_margin
               image {
                 alt
-                fluid(maxWidth: 1000) {
-                  ...GatsbyPrismicImageFluid
+                fluid(maxWidth: 1250) {
+                  ...GatsbyPrismicImageFluid_noBase64
                 }
               }
               caption {

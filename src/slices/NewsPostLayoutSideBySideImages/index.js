@@ -16,8 +16,8 @@ export const query = graphql`
             items {
               image1 {
                 alt
-                fluid(maxWidth: 800) {
-                  ...GatsbyPrismicImageFluid
+                fluid(maxWidth: 1000) {
+                  ...GatsbyPrismicImageFluid_noBase64
                 }
               }
             }

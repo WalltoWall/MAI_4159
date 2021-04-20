@@ -43,8 +43,8 @@ export const query = graphql`
             items {
               icon {
                 alt
-                fluid(maxWidth: 500) {
-                  ...GatsbyPrismicImageFluid
+                fluid(maxWidth: 650) {
+                  ...GatsbyPrismicImageFluid_noBase64
                 }
               }
               link {

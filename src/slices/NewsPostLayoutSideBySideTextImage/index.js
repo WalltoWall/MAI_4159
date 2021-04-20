@@ -20,8 +20,8 @@ export const query = graphql`
               image_position
               image {
                 alt
-                fluid(maxWidth: 800) {
-                  ...GatsbyPrismicImageFluid
+                fluid(maxWidth: 1000) {
+                  ...GatsbyPrismicImageFluid_noBase64
                 }
               }
               title_text

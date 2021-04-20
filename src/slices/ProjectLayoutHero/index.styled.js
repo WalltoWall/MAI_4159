@@ -112,6 +112,7 @@ export const StyledCarousel = styled(Carousel)`
   }
 `
 export const ImageContainer = styled.div`
+  background-color: ${t.c.lightgrey4};
   width: 100%;
   height: 100%;
 

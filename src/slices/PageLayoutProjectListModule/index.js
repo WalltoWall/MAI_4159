@@ -178,8 +178,8 @@ export const query = graphql`
                         }
                       }
                       project_thumb_image {
-                        fluid(maxWidth: 800) {
-                          ...GatsbyPrismicImageFluid
+                        fluid(maxWidth: 1000) {
+                          ...GatsbyPrismicImageFluid_noBase64
                         }
                       }
                     }

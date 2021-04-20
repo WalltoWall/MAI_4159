@@ -57,6 +57,7 @@ export const ServicesButton = styled(Button)`
 
 // sadly, we won't be can't use clip-path because its not supported by ie or edge
 export const ImageContainer = styled.div`
+  background-color: ${t.c.lightgrey4};
   width: 100%;
   order: 1;
   z-index: 0;

@@ -31,6 +31,7 @@ export const StyledLink = styled(Link)`
 `
 
 export const ImageContainer = styled.div`
+  background-color: ${t.c.lightgrey4};
   height: 100%;
   width: 100%;
   .gatsby-image-outer-wrapper {

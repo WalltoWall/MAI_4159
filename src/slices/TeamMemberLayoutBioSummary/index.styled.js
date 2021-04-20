@@ -15,6 +15,7 @@ export const Container = styled.div`
 `
 
 export const ImageContainer = styled.div`
+  background-color: ${t.c.lightgrey4};
   height: ${t.s(9)};
 
   width: 100%;

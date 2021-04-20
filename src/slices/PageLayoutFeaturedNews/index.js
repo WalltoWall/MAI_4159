@@ -129,8 +129,8 @@ export const query = graphql`
                       }
                       article_thumb_image {
                         alt
-                        fluid(maxWidth: 800) {
-                          ...GatsbyPrismicImageFluid
+                        fluid(maxWidth: 1000) {
+                          ...GatsbyPrismicImageFluid_noBase64
                         }
                       }
                     }

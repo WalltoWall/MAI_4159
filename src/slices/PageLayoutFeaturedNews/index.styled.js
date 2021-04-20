@@ -17,6 +17,7 @@ export const Content = styled.div`
 `
 
 export const ImageContainer = styled.div`
+  background-color: ${t.c.lightgrey4};
   display: block;
   width: 100%;
   .gatsby-image-outer-wrapper {

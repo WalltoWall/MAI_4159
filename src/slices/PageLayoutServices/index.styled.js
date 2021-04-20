@@ -96,6 +96,7 @@ export const ImageDescription = styled.div`
 `
 
 export const ImageContainer = styled.div`
+  background-color: ${t.c.lightgrey4};
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

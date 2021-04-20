@@ -38,6 +38,7 @@ export const Images = styled.div`
 `
 
 export const ImageContainer = styled.div`
+  background-color: ${t.c.lightgrey4};
   margin-bottom: ${t.s(1)};
 
   ${t.mq.s} {

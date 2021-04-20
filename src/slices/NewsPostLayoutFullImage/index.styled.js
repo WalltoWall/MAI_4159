@@ -36,6 +36,7 @@ export const ImageContainer = styled.div`
   width: 100%;
   object-fit: cover;
   overflow: hidden;
+  background-color: ${t.c.lightgrey4};
 `
 
 export const DesktopImage = styled(Image)``

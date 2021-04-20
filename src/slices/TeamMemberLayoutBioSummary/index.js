@@ -82,8 +82,8 @@ export const query = graphql`
               quote_attribution
               image {
                 alt
-                fluid(maxWidth: 800) {
-                  ...GatsbyPrismicImageFluid
+                fluid(maxWidth: 1000) {
+                  ...GatsbyPrismicImageFluid_noBase64
                 }
               }
             }

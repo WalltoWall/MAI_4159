@@ -107,14 +107,14 @@ export const query = graphql`
               }
               left_image {
                 alt
-                fluid(maxWidth: 700) {
-                  ...GatsbyPrismicImageFluid
+                fluid(maxWidth: 850) {
+                  ...GatsbyPrismicImageFluid_noBase64
                 }
               }
               right_image {
                 alt
-                fluid(maxWidth: 700) {
-                  ...GatsbyPrismicImageFluid
+                fluid(maxWidth: 850) {
+                  ...GatsbyPrismicImageFluid_noBase64
                 }
               }
               description {
@@ -138,8 +138,8 @@ export const query = graphql`
                       }
                       project_thumb_image {
                         alt
-                        fluid(maxWidth: 500) {
-                          ...GatsbyPrismicImageFluid
+                        fluid(maxWidth: 650) {
+                          ...GatsbyPrismicImageFluid_noBase64
                         }
                       }
                     }

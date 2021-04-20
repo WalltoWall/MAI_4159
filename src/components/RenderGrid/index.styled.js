@@ -3,6 +3,7 @@ import t from 'theme'
 import { Link } from 'components/Link'
 
 export const ImageContainer = styled.div`
+  background-color: ${t.c.lightgrey4};
   height: 100%;
   position: absolute;
   top: 0;
