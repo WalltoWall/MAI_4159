@@ -33,7 +33,7 @@ export const Content = styled.div`
 `
 
 export const ImageContainer = styled.div`
-  background-color: ${t.c.lightgrey4};
+  background-color: ${t.c.darkgrey2};
   width: 100%;
   object-fit: cover;
   overflow: hidden;

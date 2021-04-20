@@ -66,7 +66,7 @@ export const Image = styled.img`
 `
 
 export const ImageWrapper = styled.div`
-  background-color: ${t.c.lightgrey4};
+  background-color: ${t.c.darkgrey2};
   max-height: 500px;
   overflow: hidden;
   margin: 0.5rem 0;

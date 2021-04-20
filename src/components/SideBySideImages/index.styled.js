@@ -56,7 +56,7 @@ export const ImageContainer = styled.div`
   }
 `
 export const StyledImage = styled(Image)`
-  background-color: ${t.c.lightgrey4};
+  background-color: ${t.c.darkgrey2};
 `
 
 export const CaptionContainer = styled.div`
