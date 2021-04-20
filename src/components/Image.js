@@ -15,6 +15,7 @@ export const Image = ({
       fluid={fluid}
       alt={alt}
       loading="eager"
+      fadeIn={false}
       imgStyle={{
         ...props.imgStyle,
         objectFit,
