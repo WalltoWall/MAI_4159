@@ -21,7 +21,6 @@ export const Content = styled.div`
   }
 `
 export const ImageContainer = styled.div`
-  background-color: ${t.c.lightgrey4};
   margin-bottom: ${t.s(1)};
   width: 100%;
   ${t.mq.s} {

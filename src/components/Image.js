@@ -14,6 +14,7 @@ export const Image = ({
       {...props}
       fluid={fluid}
       alt={alt}
+      loading="eager"
       imgStyle={{
         ...props.imgStyle,
         objectFit,
@@ -28,7 +29,7 @@ export const Image = ({
       alt={alt}
       height="100%"
       src={src}
-      loading="lazy"
+      loading="eager"
       style={{
         fontFamily: `"object-fit: ${objectFit}; object-position: ${objectPosition}"`,
         objectFit: objectFit,

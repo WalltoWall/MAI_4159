@@ -66,6 +66,7 @@ export const Image = styled.img`
 `
 
 export const ImageWrapper = styled.div`
+  background-color: ${t.c.lightgrey4};
   max-height: 500px;
   overflow: hidden;
   margin: 0.5rem 0;
@@ -96,7 +97,6 @@ export const ImageDescription = styled.div`
 `
 
 export const ImageContainer = styled.div`
-  background-color: ${t.c.lightgrey4};
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

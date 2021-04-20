@@ -38,7 +38,6 @@ export const Images = styled.div`
 `
 
 export const ImageContainer = styled.div`
-  background-color: ${t.c.lightgrey4};
   margin-bottom: ${t.s(1)};
 
   ${t.mq.s} {
@@ -56,7 +55,9 @@ export const ImageContainer = styled.div`
     margin-right: 0;
   }
 `
-export const StyledImage = styled(Image)``
+export const StyledImage = styled(Image)`
+  background-color: ${t.c.lightgrey4};
+`
 
 export const CaptionContainer = styled.div`
   width: 90%;

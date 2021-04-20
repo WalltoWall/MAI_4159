@@ -17,7 +17,7 @@
     "emotion-server": "^9.2.5",
     "formik": "^1.0.1",
     "gatsby": "2.25.0",
-    "gatsby-image": "^2.0.25",
+    "gatsby-image": "^3.3.0",
     "gatsby-plugin-catch-links": "^2.0.2-rc.1",
     "gatsby-plugin-emotion": "^2.0.5",
     "gatsby-plugin-local-search": "^1.0.0-engines.6",

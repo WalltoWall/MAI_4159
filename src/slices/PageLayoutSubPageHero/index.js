@@ -2,11 +2,9 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Hero } from 'components/Hero'
 
-export const PageLayoutSubPageHero = ({ data }) => (
-  <>
-    <Hero data={data} subpage={true} />
-  </>
-)
+export const PageLayoutSubPageHero = ({ data }) => {
+  return <Hero data={data} subpage={true} whitebg={true} />
+}
 
 export const query = graphql`
   fragment PageLayoutSubPageHero on Query {
