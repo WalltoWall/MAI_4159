@@ -8,7 +8,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+
   ${t.mq.l} {
     flex-direction: row;
     width: ${t.w.desktop};
@@ -107,6 +107,8 @@ export const ContentContainer = styled.div`
   padding: 1.5rem;
   background-color: ${t.c.white};
   min-height: 0;
+  flex-grow: 1;
+
   ${t.mq.l} {
     min-height: 280px;
   }
