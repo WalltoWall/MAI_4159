@@ -110,7 +110,10 @@ export const PageLayoutTeamGrid = ({ data, rootData }) => {
           />
           <GridContainer>
             {items.map((item, i, list) => {
-              if (item.item.document.__typename === 'PrismicTeamMember') {
+              const doc = item.item.document
+              if (!doc) return null
+
+              if (doc.__typename === 'PrismicTeamMember') {
                 return (
                   <>
                     <StyledLink
@@ -137,7 +140,7 @@ export const PageLayoutTeamGrid = ({ data, rootData }) => {
                 )
               }
 
-              if (item.item.document.__typename === 'PrismicQuoteBlock') {
+              if (doc.__typename === 'PrismicQuoteBlock') {
                 const quoteData = item.item.document.data
                 return <QuoteBlock data={quoteData} />
               }
